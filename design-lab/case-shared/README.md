@@ -1,0 +1,182 @@
+# Formal shared case components
+
+This directory is the single maintained component source for the formal case collection at `design-lab/paper-cases.html` and its `case-records.html` reader. New case authors supply JSON under `case-content/<kind>/` and an independent ledger; see [the author contract](../case-content/README.md). They do not copy or modify these renderers.
+
+`collection.js` resolves the saved registry (including legacy aliases), loads one schemaVersion 1 config, and invokes the accepted template. `collection-records.js` is the sole source/message reader for every manifest. The registry is `../case-content/catalog.json`; loading or previewing a case does not write it. All record URLs resolve existing raw files, without duplicating archives.
+
+
+These are the active static-site components used by training, inference, recovery and ablation cases and their record readers. There is no build step. Case adapters retain editorial decisions and archive-specific parsing; shared code renders presentation data.
+
+## Load order and page shell
+
+Use `body.case-site`, `.case-content`, `.case-header-inner` and `.case-catalog` for the common width, navigation and typography. Load page-specific layout CSS first, then `case-shell.css`, the relevant template CSS, and **`evidence-system.css` last**. Do not add local overrides for evidence fonts, borders, highlights or event separators.
+
+Load deferred scripts in this order: `site-paths.js`, `evidence-ui.js`, `task-source.js`, optional `case-templates.js` or `inference-case.js`, then the case adapter. `CaseTaskSource.create(task)` renders exact `task.question` user messages in a closed disclosure, retaining original slot numbers and skipping empty slots.
+
+## CaseSidebar
+
+Both formal case/record pages load `case-sidebar.js` and `case-sidebar.css`; the shell owns sidebar position, while this component owns its DOM, typography, current-item state, folding and drawer behavior. Load the sidebar script before page adapters and its CSS after the shell. Do not create local sidebar markup or menu handlers.
+
+`CaseSidebar.mount(aside, {title, current?, groups})` returns `{update(config), setCurrent(itemId), close()}`. Each group is `{id, label, open?, onOpen?, items?, sections?}`; optional sections are `{id, label, items}` and render as plain, non-collapsing reading subgroups inside the category; each item is `{id, label, href?, download?, onSelect?, singleLine?, title?}`. IDs are stable strings. Links and buttons use the same item geometry. Lazy record readers may fetch a group through `onOpen`; it runs only on a user's opening gesture, never on programmatic render/selection. Updates preserve other groups' fold states. Selecting an item opens its parent group. Record adapters retain source/message parsing and provide only labels and callbacks.
+
+`await CaseSidebar.cases(aside, activeKind, caseId)` reads the central training/inference/recovery/ablation registry; the collection entry point uses the same `mount` interface with its already-loaded registry. Case pages opt in with `data-case-kind="training"`, `"inference"`, `"recovery"` or `"ablation"` on their aside. All pages use one drawer lifecycle: toggle, item selection, outside click, Escape with focus restoration, and automatic close when returning to a wide viewport. Validate lazy loading, fold persistence, selection, and drawer behavior in both live entry points.
+
+`CaseSidebar.caseItem(kind, entry)` is the common formatter for both collection sidebar entry points. Registered entries provide `{id, code, indexTitle, title}`: the formatter joins code and short title, keeps the slug-based link, exposes the full title on hover, and sets `singleLine` for the case-only CSS rule. Source/message entries omit this option and retain wrapping. Short labels must actually fit; the component does not clip or abbreviate them. Codes are fixed catalog data, not array positions. User-requested reorganizations may explicitly reassign them; automatic sorting does not.
+
+`CaseSidebar.caseGroup(catalogGroup)` is the shared catalog-to-sidebar adapter used by both entry points. A catalog group may declare ordered `sections: [{id, label}]`; every registered case in it names one `section`. The adapter groups cases while preserving their order within each section. Unregistered previews without a section remain directly visible under the category. Source/message readers omit sections and retain the existing two-level layout. Section labels use ordinary 14px text and the same item measure, without another disclosure control or extra indentation.
+
+`CaseCollection.title(config, entry)` joins the optional code and full case title. The collection uses it for the heading and browser title; the record reader uses it for browser/return-link context while retaining the current source name as its visible heading. Unregistered previews fall back to their full title.
+
+## EvidenceUI
+
+All text is inserted through DOM text nodes. `prose(text)` interprets explicit backticks and fenced code only; ordinary quotes stay ordinary text. `markdown(text)` additionally handles headings, lists and bold for readable raw records. Raw-file views and download links should keep the original bytes.
+
+- `frame(title, body, {tone, code})`: shared label and evidence box; tone is empty, `before` or `after`. A string body uses prose, or a literal code block with `code: true`.
+- `actionSequence(events)`: call on one line, return on the next, 4px between events, no internal rules. `action(event)` and `reply(event)` are also available.
+- `reasoningDisclosure(branches, {label, open, key, ariaLabel})`: optional paired reasoning; branches contain `title`, `text`, `highlights`, `tone`. Closed by default.
+- `fields(objectOrEntries, {labels, renderValue})`: shared row layout; `guidance(fields)` supplies the accepted teacher field labels.
+- `pair(...nodes)`, `arrow()`, `make(tag, className, text)`: shared composition primitives.
+
+An action is already formatted **display data**, not an arbitrary raw tool call:
+
+```js
+{
+  type: 'action',
+  name: 'open',
+  args: 'file="guide.txt"',
+  result: 'handle: 1',
+  highlights: { args: [{ start: 6, end: 15, text: 'guide.txt' }] }
+}
+```
+
+`result` is optional. `returnTone: "before" | "after" | "neutral"` can give a return its own reviewed semantic color; omission or an empty string inherits the frame. A successful response to a wrong request is not automatically an erroneous return. The adapter decides which parameters or return fields to show and serializes them into strings. A reply is `{type: 'reply', text, excerpt?, label?, highlights: {text: spans}}`. Do not add business logic or importance heuristics to the components.
+
+### Reviewed highlights
+
+Each span is `{start, end, text}` with JavaScript UTF-16 offsets, start inclusive and end exclusive. Span arrays may be empty. Each span must be nonempty and in bounds; spans must be ordered, non-overlapping, and exactly match the displayed text. `validateSpans()` and `highlightedText()` reject violations instead of guessing another occurrence. Rendering preserves source text and does not automatically mark matching tokens elsewhere.
+
+Actions accept `highlights.name`, `.args`, `.result`, or `.call`. A `call` span addresses the full `name(args)` string and can cover the function and arguments as one semantic unit; nested function text keeps weight 600. Do not overlap `call` spans with name/args spans. A mark is an editorial decision: keep its source locator and reason in case data or audit notes, not the visible UI. The shared component never chooses what to mark.
+
+## CaseTemplates.training(config)
+
+Returns an article node and does not load archives. Config:
+
+```js
+{
+  title, summary, originalTask,
+  branches: [{title, summary, tone, events,
+    reasoning: {title, text, highlights}}],
+  guidance: {title, fields, checks, takeaway},
+  links: [{label, href, download}]
+}
+```
+
+`originalTask`, reasoning, guidance, checks, takeaway and links are optional at the component level. Published case pages must supply the original task, as required by the editorial SKILL. `fields` uses teacher fields such as `decision_rule` and `recovery_check`; `checks` is a separate object/entry list of execution results. Optional `frameTitle`, guidance `label`, `resultLabel`, and `tone` customize captions without changing geometry. Resolve archive stage names or case IDs before calling this template.
+
+## CaseTemplates.sequence(config)
+
+Returns a task followed by an ordered evidence sequence, without requiring a paired-method comparison. Supply `title`, `summary`, `originalTask`, optional `sequenceTitle`, and `steps: [{title, summary?, tone?, events, reasoning?}]`. Each step's tone describes that local event; an observation can stay neutral between an error and a correction. A reasoning object is `{title, text, highlights?, tone?}`; an array supplies several explicitly sourced passages in one closed disclosure.
+
+Optional `reference: {title, summary?, tone?, events?, reasoning?, collapsed?, disclosureLabel?, frameTitle?, position?, compact?}` retains a reference path. `position: 'before'` places it after the task and before the sequence; the default is `'after'`. With `compact: true`, the reference title becomes its evidence-frame caption instead of a separate section heading; optional `frameTitle` can override the caption. Omit repeated summary prose when the calls already establish the reference path. `collapsed: true` keeps its calls and reasoning in a closed disclosure; otherwise the calls are visible and reasoning remains independently closed. Existing behavior is unchanged when the new options are omitted.
+
+Top-level `compact: true` reduces spacing between steps, their reasoning disclosures and a preceding reference, using shared composition styles. It does not change evidence typography, marks or within-frame event spacing. Optional `result: {title?, summary?, fields?, tone?}` uses the shared field layout when a separate result is needed. `links: [{label, href, download?}]` supplies the footer. These interfaces use EvidenceUI events and reviewed spans exactly as training does; they do not extract or infer case facts.
+
+For example, a non-fuel sequence can supply `steps: [{title: 'File unavailable', tone: 'before', events: [{type: 'action', name: 'read', args: 'path="guide.txt"', result: 'File not found'}]}, {title: 'Locate the file', events: [{type: 'action', name: 'list', args: 'directory="docs"', result: 'guide.txt'}]}, {title: 'Read the located file', tone: 'after', events: [{type: 'action', name: 'read', args: 'path="docs/guide.txt"', result: 'Installation guide'}]}]`; no archive IDs, tool names or fuel-specific fields are part of the template.
+
+
+## InferenceCase.mount(root, config)
+
+Replaces the root with a task, two method selectors and turn-aligned comparisons. Config contains `title`, `summary`, `task`, `methods`, `turns`, and optionally `defaultPair`, `presentEvent`, `recordLink` and `download`.
+
+- Each method: `{id, name, heading?, description?, turns: [eventArrays], tones?, reasoning?}`. Reasoning entries contain `{text, highlights}`. IDs must be unique.
+- Each turn: `{label, title?, summary?, outcome?(method, index)}`. Every method must provide one event array per displayed turn.
+- `presentEvent(rawEvent)` may adapt raw records to the EvidenceUI event schema. Omit it when events already use that schema.
+- `recordLink(method)` returns the corresponding record URL. `download` is `{href, label?}`.
+- `defaultPair` contains two distinct known IDs. URL `left`/`right` choices take priority; selecting the same method as the other side swaps the pair. Reasoning disclosure state survives selection changes.
+
+The returned API is `{select(side, id), selected(), refresh()}`. The template manages the page's comparison URL; mount one interactive comparison per page.
+
+## Checks
+
+Run the shared component and loading checks from the repository root:
+
+```sh
+node --test design-lab/case-shared/tests/*.cjs
+node design-lab/case-shared/validate-case.cjs
+```
+
+The current collection adapter is `collection.js`; all four record types use `collection-records.js`. Accepted content is represented by JSON in `../case-content/`, not one script per case.
+
+### Optional comparison continuation
+
+`InferenceCase.mount` accepts `afterTurns(pair)`, called after the selected turns on every render. Return a DOM node for additional evidence tied to the two selected method objects (or null). Selection changes rebuild the node; keep any disclosure state needed across selections in the adapter. Existing comparison behavior is unchanged when omitted.
+
+`selectionLabels: [leftLabel, rightLabel]` optionally names the two selection controls (including their accessible labels). Defaults remain 左侧方法 / 右侧方法.
+
+Reviewed highlight spans may specify `tone: "before" | "after"` to assign local semantic color independently of the containing frame. Omitted tone inherits the frame. Unknown tones are rejected. This is an editorial input, never inferred from method or result.
+
+
+## Common semantic typography
+
+`case-shell.css` owns complete font, size, weight and line-height definitions through `--case-serif` / `--sans` and these roles. `CaseTemplates` and `InferenceCase` attach them to generated content; adapters composing extra sections use the same roles. Do not complete a shared heading's missing font with a page-global `h2` rule.
+
+| Role | Common rendering |
+| --- | --- |
+| `.case-title` | Case title: serif 500, 30px / 1.4; 26px on narrow screens. |
+| `.case-reader-title` | Record-reader title: serif 500, 26px / 1.4; 24px narrow. |
+| `.case-branch-title` | Branch title: serif 500, 20px / 1.45. |
+| `.case-section-title` | Section title: serif 500, 21px / 1.45. |
+| `.case-summary` | Task summary: sans 400, 15px / 1.65, soft text, 12px bottom margin. Applies to `div.ev-prose` as well as paragraphs. |
+| `.case-footer` | Case/record footer: sans 400, 14px / 1.65, 26px link gap, 18px top padding, margin 24px 0 30px. |
+
+Template CSS owns branch grids, sequence grouping, comparison controls and their local spacing, not an alternate typography system. Existing training/inference page CSS no longer supplies competing common heading/footer definitions. Body evidence, result values, field labels, frame labels, actions and reasoning continue to use `EvidenceUI` and `evidence-system.css` (15px body, 13px code/labels, 112px field labels). Case-specific reader controls may keep their own layout.
+
+Result annotations use `fields(..., {renderValue})` and `highlightedText(text, spans)` directly. Store literal formatted result text and individually reviewed spans with source locators in presentation data; no formatting or coloring is inferred from method identity, success or numeric value.
+
+## Common theme control
+
+Load `case-theme.js` on each current case/record page. It automatically mounts the existing header `.reading-theme` or `.theme-toggle` button without replacing the header. `CaseTheme.mount(button)` is idempotent; `CaseTheme.set(dark)` sets the theme and synchronizes mounted controls. The shared control uses the training header's sun/moon SVG shapes, the existing `steerdistill-theme` storage key, and Chinese light/dark action labels. `case-shell.css` owns icon size, strokes, hover treatment and state visibility. Do not also attach page-local theme handlers.
+
+The collection adapter passes the original task into the selected shared template, so the task disclosure appears once.
+
+### Highlighted inline code
+
+`EvidenceUI.highlightedText(text, spans, {inlineCode:true})` composes explicit backtick code with manually chosen semantic marks. Span offsets and text still refer to the untouched input (including delimiters); only the displayed backticks are removed. Ordinary single quotes stay literal. The default remains literal, so action returns and existing consumers retain their text behavior. The collection enables this option for ablation guidance excerpts.
+
+
+## Review consistency (2026-11-01)
+
+Semantic marks use the same foreground and translucent background in actions, replies, reasoning and result fields. A marked function keeps its 600 syntax weight but inherits the mark's explicit color, even inside an oppositely colored or neutral frame. Inline code nested inside a mark has a transparent inner background so its neutral syntax background cannot cover semantic color. Unmarked inline code remains neutral.
+
+Narrow comparison layouts keep each method's description inside its corresponding first-turn frame. Desktop keeps it under the branch heading and hides the in-frame duplicate. This preserves the same explanatory content at both widths without repeating it at every turn.
+
+Catalog groups can declare `retiredCases` for withdrawn slugs. Formal case and record URLs for these slugs resolve to the category's first retained entry and clear incompatible method/source selections. Raw files remain intact; historical presentation JSON is held in the pre-publication archive; ordinary unregistered author previews still work.
+
+
+## Navigation and font loading
+
+The two formal HTML entry points preload the same local serif and sans WOFF2 files with `crossorigin`; shared font faces use `font-display: swap`. Initial content is never hidden pending font loading. Font URLs stay stable so the browser can reuse its cache across case/record pages.
+
+Within the formal case collection, ordinary case links keep the current document, header, font faces and stylesheets. `CaseCollection.navigate` fetches the destination config before replacing its main content and updating the current sidebar entry. A request counter ensures the latest navigation wins; browser Back/Forward restore URL-selected methods. Modified clicks, downloads, external links and record-reader links retain native navigation. Method selectors preserve the history entry's state when updating their query parameters.
+
+Catalog/config requests are deduplicated and retained only for the current document. They revalidate on a fresh page load so local editorial changes remain visible after Reload. Pointer/focus intent prefetches only the linked case's presentation JSON; raw trajectories and other records are never prefetched. A failed request is evicted. Sidebar/scroll geometry is kept while a destination loads, without an empty page, spinner or faded overlay.
+
+Run `node --test design-lab/case-shared/tests/collection-loading.test.cjs` for the real loader's in-flight/resolved cache reuse, failed-request retry and out-of-order navigation commit checks (small browser-shell stub). Browser QA on 2026-11-01 covered cross-category navigation, method selection with Back/Forward, dark theme persistence, narrow drawer/overflow, record preloads and return navigation; see [site maintenance](../../docs/site-maintenance/README.md).
+
+
+## Sidebar visual hierarchy
+
+The accepted continuous-rail style is the default. Historical presentation alternatives are not public entry points.
+
+Within the continuous rail, non-interactive reading-group labels use the site serif at 13px / 1.6, normal 400 weight and theme-aware muted ink. Case links retain the 14px sans face and their active/hover treatment. Top-level disclosure labels remain 15px sans with their disclosure marker. This separates structural headings from clickable titles without extra icons, badges or uppercase micro-labels.
+
+
+## ArticleCaseEmbed / ArticleCaseRail
+
+`article-embed.js` 与 `article-embed.css` 是正文案例使用的嵌入组件。先加载 EvidenceUI 与 evidence-system，再加载这两份文件。样式不包含文档、首屏或全局调色板规则；宿主提供字体及纸张颜色变量。根目录 `index.html` 使用独立正文样式，不加载历史预览页全局样式。
+
+`ArticleCaseEmbed.mount(container, {case, variant: 'flow'})` 使用已经核对的展示数据。方法卡读取 `carouselBranches`，导航使用 `title`，卡片使用可选 `frameTitle`；`resultCells` 统一显示底部字段与精确高亮。默认正文不显示推理/指导原文入口，完整详情保留在 `href` 指向的正式案例。卡片及标题分别按全方法自然最大高度对齐，字体加载和尺寸变化后重算，横滚不改变后文位置。
+
+`ArticleCaseRail.mount(container, {id, label, items, initial, stability: 'content'})` 是共享横向轨道；`items` 为 `{id, title, node}`，返回 `{element, position, destroy}`。支持触摸、触摸板、方法标题定位和键盘；尺寸变化后重新定位已选方法。正式正文使用 `content` 策略；历史实验页面已归档。
+
+展示数据中的 `href` 是站点相对路径，调用者通过 `SitePaths.url()` 解析，不能依赖宿主页面目录。正文数据在 `../article-content/cases.zh.json`；维护与验收见 [站点维护](../../docs/site-maintenance/README.md)。

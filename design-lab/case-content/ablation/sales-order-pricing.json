@@ -1,0 +1,1745 @@
+{
+  "schemaVersion": 1,
+  "id": "sales-order-pricing",
+  "kind": "ablation",
+  "title": "创建订单明细前，用系统定价计算折扣",
+  "summary": "为 Joe’s Auto Repair 创建订单，包含 10 个油滤芯、4 套刹车片和 2 块电池，并应用系统折扣。订单已创建，日期为 2025-10-23，尚未添加明细。",
+  "template": "comparison",
+  "originalTask": {
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "For customer_account 'Joe's Auto Repair' (price_tier 'silver'), create a sales_order with a requested_ship_date of '2026-01-05' containing three order_lines: 10 units of part SKU 'OIL-FLTR-001', 4 units of 'BRK-TOY-001', and 2 units of 'BAT-12V-600CCA', letting the system apply the appropriate discount_rules and setting backorder_status to 'allow' for any lines that cannot be fully filled."
+        }
+      ]
+    ]
+  },
+  "presentation": {
+    "methods": [
+      {
+        "id": "student_structured",
+        "name": "Student 结构化指导",
+        "description": "未查询系统定价，直接按标价创建订单明细。",
+        "tones": [
+          "before"
+        ],
+        "turns": [
+          [
+            {
+              "type": "action",
+              "name": "create_sales_order_line",
+              "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
+              "result": "discount_percent=0.0",
+              "highlights": {
+                "args": [
+                  {
+                    "start": 0,
+                    "end": 35,
+                    "text": "unit_price=9.99, discount_percent=0"
+                  }
+                ]
+              },
+              "source": {
+                "message": 14,
+                "returnMessage": 15,
+                "argsFields": [
+                  "unit_price",
+                  "discount_percent",
+                  "backorder_status"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            }
+          ]
+        ],
+        "guidance": {
+          "precondition": "The tool `mcp_server_create_sales_order_line` for the third item (BAT-12V-600CCA) has returned a success response, confirming all three requested items are added to the sales order.",
+          "decision_rule": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete. The assistant should now provide a final summary of the order.",
+          "expected_transition": "The assistant provides a final confirmation message summarizing the order details, including the order number, ship date, and the specific items added.",
+          "recovery_check": "If the tool had returned an error during the creation of the third line, the assistant would need to verify the error message and retry the line creation or report the specific failure."
+        },
+        "guidanceExcerpt": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete.",
+        "guidanceHighlights": [
+          {
+            "start": 129,
+            "end": 149,
+            "text": "the task is complete",
+            "tone": "before"
+          }
+        ],
+        "guidanceSource": "steering_prompt.txt",
+        "lines": [
+          {
+            "id": 21,
+            "sales_order_id": 11,
+            "sku": "OIL-FLTR-001",
+            "quantity_ordered": 10,
+            "unit_price": 9.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 22,
+            "sales_order_id": 11,
+            "sku": "BRK-TOY-001",
+            "quantity_ordered": 4,
+            "unit_price": 89.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 23,
+            "sales_order_id": 11,
+            "sku": "BAT-12V-600CCA",
+            "quantity_ordered": 2,
+            "unit_price": 129.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          }
+        ],
+        "resultLines": [
+          {
+            "text": "油滤芯：10 个，单价 9.99，折扣 0%",
+            "highlights": [
+              {
+                "start": 9,
+                "end": 22,
+                "text": "单价 9.99，折扣 0%",
+                "tone": "before"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 21,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "OIL-FLTR-001"
+            }
+          },
+          {
+            "text": "刹车片：4 套，单价 89.99，折扣 0%",
+            "highlights": [
+              {
+                "start": 8,
+                "end": 22,
+                "text": "单价 89.99，折扣 0%",
+                "tone": "before"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 22,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BRK-TOY-001"
+            }
+          },
+          {
+            "text": "电池：2 块，单价 129.99，折扣 0%",
+            "highlights": [],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 23,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BAT-12V-600CCA"
+            }
+          }
+        ],
+        "result": "others",
+        "source": "sales_order_comparison/point_2/student_structured",
+        "record": {
+          "sourceId": "sales_order_comparison/point_2/student_structured/student/trajectory.json",
+          "message": 14
+        }
+      },
+      {
+        "id": "teacher_structured",
+        "name": "Teacher 结构化指导",
+        "description": "先查询系统定价，再用返回的价格和折扣创建订单明细。",
+        "tones": [
+          "after"
+        ],
+        "turns": [
+          [
+            {
+              "type": "action",
+              "name": "apply_pricing_rules_to_line",
+              "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
+              "result": "discount_percent=8.0",
+              "highlights": {
+                "result": [
+                  {
+                    "start": 0,
+                    "end": 20,
+                    "text": "discount_percent=8.0"
+                  }
+                ]
+              },
+              "source": {
+                "message": 14,
+                "returnMessage": 15,
+                "argsFields": [
+                  "part_id",
+                  "quantity_ordered",
+                  "order_date"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            },
+            {
+              "type": "action",
+              "name": "create_sales_order_line",
+              "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
+              "result": "discount_percent=8.0",
+              "highlights": {
+                "args": [
+                  {
+                    "start": 0,
+                    "end": 35,
+                    "text": "unit_price=9.19, discount_percent=8"
+                  }
+                ]
+              },
+              "source": {
+                "message": 20,
+                "returnMessage": 21,
+                "argsFields": [
+                  "unit_price",
+                  "discount_percent",
+                  "backorder_status"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            }
+          ]
+        ],
+        "guidance": {
+          "precondition": "Customer 'Joe's Auto Repair' (ID: 1) exists, warehouse 1 is available, and parts 'OIL-FLTR-001' (ID: 1), 'BRK-TOY-001' (ID: 2), and 'BAT-12V-600CCA' (ID: 3) are in the system.",
+          "decision_rule": "Create a sales order for the specified customer and warehouse. For each requested part, retrieve its details, apply pricing rules to determine the correct unit price and discount percentage, and then create the sales order lines with the specified quantities and a 'allow' backorder status.",
+          "expected_transition": "A sales order (ID: 11) is created with three lines (IDs: 21, 22, 23) containing the correct quantities, prices (reflecting applied discounts), and 'allow' backorder status.",
+          "recovery_check": "Verify that sales order SO-JOE-001 contains three lines with quantities 10, 4, and 2 respectively, and that the backorder_status for each line is 'allow'."
+        },
+        "guidanceExcerpt": "For each requested part, retrieve its details, apply pricing rules to determine the correct unit price and discount percentage, and then create the sales order lines with the specified quantities and a 'allow' backorder status.",
+        "guidanceHighlights": [
+          {
+            "start": 47,
+            "end": 126,
+            "text": "apply pricing rules to determine the correct unit price and discount percentage",
+            "tone": "after"
+          }
+        ],
+        "guidanceSource": "steering_prompt.txt",
+        "lines": [
+          {
+            "id": 21,
+            "sales_order_id": 11,
+            "sku": "OIL-FLTR-001",
+            "quantity_ordered": 10,
+            "unit_price": 9.19,
+            "discount_percent": 8,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 22,
+            "sales_order_id": 11,
+            "sku": "BRK-TOY-001",
+            "quantity_ordered": 4,
+            "unit_price": 85.49,
+            "discount_percent": 5,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 23,
+            "sales_order_id": 11,
+            "sku": "BAT-12V-600CCA",
+            "quantity_ordered": 2,
+            "unit_price": 129.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          }
+        ],
+        "resultLines": [
+          {
+            "text": "油滤芯：10 个，单价 9.19，折扣 8%",
+            "highlights": [
+              {
+                "start": 9,
+                "end": 22,
+                "text": "单价 9.19，折扣 8%",
+                "tone": "after"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 21,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "OIL-FLTR-001"
+            }
+          },
+          {
+            "text": "刹车片：4 套，单价 85.49，折扣 5%",
+            "highlights": [
+              {
+                "start": 8,
+                "end": 22,
+                "text": "单价 85.49，折扣 5%",
+                "tone": "after"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 22,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BRK-TOY-001"
+            }
+          },
+          {
+            "text": "电池：2 块，单价 129.99，折扣 0%",
+            "highlights": [],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 23,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BAT-12V-600CCA"
+            }
+          }
+        ],
+        "result": "complete",
+        "source": "sales_order_comparison/point_2/teacher_structured",
+        "record": {
+          "sourceId": "sales_order_comparison/point_2/teacher_structured/student/trajectory.json",
+          "message": 14
+        }
+      },
+      {
+        "id": "teacher_freeform",
+        "name": "Teacher 自由文本指导",
+        "description": "指导称任务已完成；agent 仍查询定价并创建订单明细。",
+        "tones": [
+          "after"
+        ],
+        "turns": [
+          [
+            {
+              "type": "action",
+              "name": "apply_pricing_rules_to_line",
+              "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
+              "result": "discount_percent=8.0",
+              "highlights": {
+                "result": [
+                  {
+                    "start": 0,
+                    "end": 20,
+                    "text": "discount_percent=8.0"
+                  }
+                ]
+              },
+              "source": {
+                "message": 14,
+                "returnMessage": 15,
+                "argsFields": [
+                  "part_id",
+                  "quantity_ordered",
+                  "order_date"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            },
+            {
+              "type": "action",
+              "name": "create_sales_order_line",
+              "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
+              "result": "discount_percent=8.0",
+              "highlights": {
+                "args": [
+                  {
+                    "start": 0,
+                    "end": 35,
+                    "text": "unit_price=9.19, discount_percent=8"
+                  }
+                ]
+              },
+              "source": {
+                "message": 20,
+                "returnMessage": 21,
+                "argsFields": [
+                  "unit_price",
+                  "discount_percent",
+                  "backorder_status"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            }
+          ]
+        ],
+        "guidance": {
+          "guidance": "The sales order for 'Joe's Auto Repair' has been successfully created with the requested ship date, all three specified order lines, and the correct pricing derived from the system's discount rules. Since all requirements, including the backorder status and specific quantities, have been fulfilled, the task is complete."
+        },
+        "guidanceExcerpt": "Since all requirements, including the backorder status and specific quantities, have been fulfilled, the task is complete.",
+        "guidanceHighlights": [
+          {
+            "start": 101,
+            "end": 121,
+            "text": "the task is complete",
+            "tone": "before"
+          }
+        ],
+        "guidanceSource": "steering_prompt.txt",
+        "lines": [
+          {
+            "id": 21,
+            "sales_order_id": 11,
+            "sku": "OIL-FLTR-001",
+            "quantity_ordered": 10,
+            "unit_price": 9.19,
+            "discount_percent": 8,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 22,
+            "sales_order_id": 11,
+            "sku": "BRK-TOY-001",
+            "quantity_ordered": 4,
+            "unit_price": 85.49,
+            "discount_percent": 5,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 23,
+            "sales_order_id": 11,
+            "sku": "BAT-12V-600CCA",
+            "quantity_ordered": 2,
+            "unit_price": 129.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          }
+        ],
+        "resultLines": [
+          {
+            "text": "油滤芯：10 个，单价 9.19，折扣 8%",
+            "highlights": [
+              {
+                "start": 9,
+                "end": 22,
+                "text": "单价 9.19，折扣 8%",
+                "tone": "after"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 21,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "OIL-FLTR-001"
+            }
+          },
+          {
+            "text": "刹车片：4 套，单价 85.49，折扣 5%",
+            "highlights": [
+              {
+                "start": 8,
+                "end": 22,
+                "text": "单价 85.49，折扣 5%",
+                "tone": "after"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 22,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BRK-TOY-001"
+            }
+          },
+          {
+            "text": "电池：2 块，单价 129.99，折扣 0%",
+            "highlights": [],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 23,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BAT-12V-600CCA"
+            }
+          }
+        ],
+        "result": "complete",
+        "source": "sales_order_comparison/point_2/teacher_freeform",
+        "record": {
+          "sourceId": "sales_order_comparison/point_2/teacher_freeform/student/trajectory.json",
+          "message": 14
+        }
+      },
+      {
+        "id": "external_structured",
+        "name": "GPT 结构化指导",
+        "description": "指导要求沿用订单日期；agent 查询定价后创建订单明细。",
+        "tones": [
+          "after"
+        ],
+        "turns": [
+          [
+            {
+              "type": "action",
+              "name": "apply_pricing_rules_to_line",
+              "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
+              "result": "discount_percent=8.0",
+              "highlights": {
+                "result": [
+                  {
+                    "start": 0,
+                    "end": 20,
+                    "text": "discount_percent=8.0"
+                  }
+                ]
+              },
+              "source": {
+                "message": 10,
+                "returnMessage": 11,
+                "argsFields": [
+                  "part_id",
+                  "quantity_ordered",
+                  "order_date"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            },
+            {
+              "type": "action",
+              "name": "create_sales_order_line",
+              "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
+              "result": "discount_percent=8.0",
+              "highlights": {
+                "args": [
+                  {
+                    "start": 0,
+                    "end": 35,
+                    "text": "unit_price=9.19, discount_percent=8"
+                  }
+                ]
+              },
+              "source": {
+                "message": 20,
+                "returnMessage": 21,
+                "argsFields": [
+                  "unit_price",
+                  "discount_percent",
+                  "backorder_status"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            }
+          ]
+        ],
+        "guidance": {
+          "precondition": "Sales order SO-JOE-001 already exists as ID 11 for customer ID 1 at warehouse ID 1, with requested_ship_date 2026-01-05 and order_date 2025-10-23; its three lines still need to be created.",
+          "decision_rule": "Next, look up OIL-FLTR-001. Then, one tool call per turn, look up the other two SKUs, apply pricing rules separately to each part using customer_account_id 1, the returned category, requested quantity, and order_date 2025-10-23, and create lines 1–3 from the returned pricing. Set backorder_status to allow on each line.",
+          "expected_transition": "The immediate next call returns the part ID, category, and list price for OIL-FLTR-001. Subsequent calls produce system-calculated discounts and create all three lines on sales_order_id 11 with quantities 10, 4, and 2.",
+          "recovery_check": "After all line creations, call list_sales_order_lines for sales_order_id 11 and confirm exactly three expected SKUs and quantities, system-derived prices/discounts, and backorder_status allow; only then report completion."
+        },
+        "guidanceExcerpt": "Then, one tool call per turn, look up the other two SKUs, apply pricing rules separately to each part using customer_account_id 1, the returned category, requested quantity, and order_date 2025-10-23, and create lines 1–3 from the returned pricing.",
+        "guidanceHighlights": [
+          {
+            "start": 58,
+            "end": 101,
+            "text": "apply pricing rules separately to each part",
+            "tone": "after"
+          }
+        ],
+        "guidanceSource": "steering_prompt.txt",
+        "lines": [
+          {
+            "id": 21,
+            "sales_order_id": 11,
+            "sku": "OIL-FLTR-001",
+            "quantity_ordered": 10,
+            "unit_price": 9.19,
+            "discount_percent": 8,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 22,
+            "sales_order_id": 11,
+            "sku": "BRK-TOY-001",
+            "quantity_ordered": 4,
+            "unit_price": 85.49,
+            "discount_percent": 5,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 23,
+            "sales_order_id": 11,
+            "sku": "BAT-12V-600CCA",
+            "quantity_ordered": 2,
+            "unit_price": 129.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          }
+        ],
+        "resultLines": [
+          {
+            "text": "油滤芯：10 个，单价 9.19，折扣 8%",
+            "highlights": [
+              {
+                "start": 9,
+                "end": 22,
+                "text": "单价 9.19，折扣 8%",
+                "tone": "after"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 21,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "OIL-FLTR-001"
+            }
+          },
+          {
+            "text": "刹车片：4 套，单价 85.49，折扣 5%",
+            "highlights": [
+              {
+                "start": 8,
+                "end": 22,
+                "text": "单价 85.49，折扣 5%",
+                "tone": "after"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 22,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BRK-TOY-001"
+            }
+          },
+          {
+            "text": "电池：2 块，单价 129.99，折扣 0%",
+            "highlights": [],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 23,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BAT-12V-600CCA"
+            }
+          }
+        ],
+        "result": "complete",
+        "source": "sales_order_comparison/point_2/external_structured",
+        "record": {
+          "sourceId": "sales_order_comparison/point_2/external_structured/student/trajectory.json",
+          "message": 10
+        }
+      }
+    ],
+    "defaultPair": [
+      "teacher_structured",
+      "student_structured"
+    ],
+    "selectionLabels": [
+      "左侧指导",
+      "右侧指导"
+    ],
+    "turns": [
+      {
+        "label": "10 个油滤芯 · 操作节选"
+      }
+    ],
+    "details": {
+      "guidanceTitle": "指导内容",
+      "guidanceLabel": "指导原文节选",
+      "resultTitle": "执行结果 · 三条订单明细"
+    }
+  },
+  "records": {
+    "defaultSource": "sales_order_comparison/point_2/teacher_structured/student/trajectory.json",
+    "defaultMessage": 14,
+    "sources": [
+      {
+        "id": "sales_order_comparison/point_2/student_structured/analysis_request.json",
+        "label": "Student 结构化指导 · analysis_request.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/analysis_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/analysis_response.json",
+        "label": "Student 结构化指导 · analysis_response.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/analysis_response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/intervention.json",
+        "label": "Student 结构化指导 · intervention.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/intervention.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/steering_prompt.txt",
+        "label": "Student 结构化指导 · 指导",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/steering_prompt.txt",
+        "primary": true,
+        "format": "guidance"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/completion.json",
+        "label": "Student 结构化指导 · student/completion.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/completion.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/execution.json",
+        "label": "Student 结构化指导 · student/execution.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/final.db",
+        "label": "Student 结构化指导 · student/final.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/initial.db",
+        "label": "Student 结构化指导 · student/initial.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/initial.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/pre_state.db",
+        "label": "Student 结构化指导 · student/pre_state.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/pre_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/prefix_replay.json",
+        "label": "Student 结构化指导 · student/prefix_replay.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/prefix_replay.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/00.json",
+        "label": "Student 结构化指导 · student/requests/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/01.json",
+        "label": "Student 结构化指导 · student/requests/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/02.json",
+        "label": "Student 结构化指导 · student/requests/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/03.json",
+        "label": "Student 结构化指导 · student/requests/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/04.json",
+        "label": "Student 结构化指导 · student/requests/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/05.json",
+        "label": "Student 结构化指导 · student/requests/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/requests/06.json",
+        "label": "Student 结构化指导 · student/requests/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/requests/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/00.json",
+        "label": "Student 结构化指导 · student/responses/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/01.json",
+        "label": "Student 结构化指导 · student/responses/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/02.json",
+        "label": "Student 结构化指导 · student/responses/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/03.json",
+        "label": "Student 结构化指导 · student/responses/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/04.json",
+        "label": "Student 结构化指导 · student/responses/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/05.json",
+        "label": "Student 结构化指导 · student/responses/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/responses/06.json",
+        "label": "Student 结构化指导 · student/responses/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/responses/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/task_verifier.py",
+        "label": "Student 结构化指导 · student/task_verifier.py",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/task_verifier.py",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/tool_schema.json",
+        "label": "Student 结构化指导 · student/tool_schema.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/tool_schema.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/trajectory.json",
+        "label": "Student 结构化指导 · 轨迹",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/verification.log",
+        "label": "Student 结构化指导 · student/verification.log",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/verification.log",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/verification_trace.json",
+        "label": "Student 结构化指导 · 验证",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/verification_trace.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/student_structured/student/verify.code.json",
+        "label": "Student 结构化指导 · student/verify.code.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/student_structured/student/verify.code.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/analysis_request.json",
+        "label": "Teacher 结构化指导 · analysis_request.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/analysis_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/analysis_response.json",
+        "label": "Teacher 结构化指导 · analysis_response.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/analysis_response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/intervention.json",
+        "label": "Teacher 结构化指导 · intervention.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/intervention.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/steering_prompt.txt",
+        "label": "Teacher 结构化指导 · 指导",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/steering_prompt.txt",
+        "primary": true,
+        "format": "guidance"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/completion.json",
+        "label": "Teacher 结构化指导 · student/completion.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/completion.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/execution.json",
+        "label": "Teacher 结构化指导 · student/execution.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/final.db",
+        "label": "Teacher 结构化指导 · student/final.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/initial.db",
+        "label": "Teacher 结构化指导 · student/initial.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/initial.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/pre_state.db",
+        "label": "Teacher 结构化指导 · student/pre_state.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/pre_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/prefix_replay.json",
+        "label": "Teacher 结构化指导 · student/prefix_replay.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/prefix_replay.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/00.json",
+        "label": "Teacher 结构化指导 · student/requests/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/01.json",
+        "label": "Teacher 结构化指导 · student/requests/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/02.json",
+        "label": "Teacher 结构化指导 · student/requests/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/03.json",
+        "label": "Teacher 结构化指导 · student/requests/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/04.json",
+        "label": "Teacher 结构化指导 · student/requests/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/05.json",
+        "label": "Teacher 结构化指导 · student/requests/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/06.json",
+        "label": "Teacher 结构化指导 · student/requests/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/07.json",
+        "label": "Teacher 结构化指导 · student/requests/07.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/07.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/08.json",
+        "label": "Teacher 结构化指导 · student/requests/08.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/08.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/requests/09.json",
+        "label": "Teacher 结构化指导 · student/requests/09.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/requests/09.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/00.json",
+        "label": "Teacher 结构化指导 · student/responses/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/01.json",
+        "label": "Teacher 结构化指导 · student/responses/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/02.json",
+        "label": "Teacher 结构化指导 · student/responses/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/03.json",
+        "label": "Teacher 结构化指导 · student/responses/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/04.json",
+        "label": "Teacher 结构化指导 · student/responses/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/05.json",
+        "label": "Teacher 结构化指导 · student/responses/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/06.json",
+        "label": "Teacher 结构化指导 · student/responses/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/07.json",
+        "label": "Teacher 结构化指导 · student/responses/07.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/07.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/08.json",
+        "label": "Teacher 结构化指导 · student/responses/08.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/08.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/responses/09.json",
+        "label": "Teacher 结构化指导 · student/responses/09.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/responses/09.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/task_verifier.py",
+        "label": "Teacher 结构化指导 · student/task_verifier.py",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/task_verifier.py",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/tool_schema.json",
+        "label": "Teacher 结构化指导 · student/tool_schema.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/tool_schema.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/trajectory.json",
+        "label": "Teacher 结构化指导 · 轨迹",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/verification.log",
+        "label": "Teacher 结构化指导 · student/verification.log",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/verification.log",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/verification_trace.json",
+        "label": "Teacher 结构化指导 · 验证",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/verification_trace.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_structured/student/verify.code.json",
+        "label": "Teacher 结构化指导 · student/verify.code.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_structured/student/verify.code.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/analysis_request.json",
+        "label": "Teacher 自由文本指导 · analysis_request.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/analysis_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/analysis_response.json",
+        "label": "Teacher 自由文本指导 · analysis_response.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/analysis_response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/intervention.json",
+        "label": "Teacher 自由文本指导 · intervention.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/intervention.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/steering_prompt.txt",
+        "label": "Teacher 自由文本指导 · 指导",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/steering_prompt.txt",
+        "primary": true,
+        "format": "guidance"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/completion.json",
+        "label": "Teacher 自由文本指导 · student/completion.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/completion.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/execution.json",
+        "label": "Teacher 自由文本指导 · student/execution.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/final.db",
+        "label": "Teacher 自由文本指导 · student/final.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/initial.db",
+        "label": "Teacher 自由文本指导 · student/initial.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/initial.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/pre_state.db",
+        "label": "Teacher 自由文本指导 · student/pre_state.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/pre_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/prefix_replay.json",
+        "label": "Teacher 自由文本指导 · student/prefix_replay.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/prefix_replay.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/00.json",
+        "label": "Teacher 自由文本指导 · student/requests/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/01.json",
+        "label": "Teacher 自由文本指导 · student/requests/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/02.json",
+        "label": "Teacher 自由文本指导 · student/requests/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/03.json",
+        "label": "Teacher 自由文本指导 · student/requests/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/04.json",
+        "label": "Teacher 自由文本指导 · student/requests/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/05.json",
+        "label": "Teacher 自由文本指导 · student/requests/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/06.json",
+        "label": "Teacher 自由文本指导 · student/requests/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/07.json",
+        "label": "Teacher 自由文本指导 · student/requests/07.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/07.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/08.json",
+        "label": "Teacher 自由文本指导 · student/requests/08.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/08.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/requests/09.json",
+        "label": "Teacher 自由文本指导 · student/requests/09.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/requests/09.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/00.json",
+        "label": "Teacher 自由文本指导 · student/responses/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/01.json",
+        "label": "Teacher 自由文本指导 · student/responses/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/02.json",
+        "label": "Teacher 自由文本指导 · student/responses/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/03.json",
+        "label": "Teacher 自由文本指导 · student/responses/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/04.json",
+        "label": "Teacher 自由文本指导 · student/responses/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/05.json",
+        "label": "Teacher 自由文本指导 · student/responses/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/06.json",
+        "label": "Teacher 自由文本指导 · student/responses/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/07.json",
+        "label": "Teacher 自由文本指导 · student/responses/07.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/07.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/08.json",
+        "label": "Teacher 自由文本指导 · student/responses/08.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/08.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/responses/09.json",
+        "label": "Teacher 自由文本指导 · student/responses/09.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/responses/09.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/task_verifier.py",
+        "label": "Teacher 自由文本指导 · student/task_verifier.py",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/task_verifier.py",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/tool_schema.json",
+        "label": "Teacher 自由文本指导 · student/tool_schema.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/tool_schema.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/trajectory.json",
+        "label": "Teacher 自由文本指导 · 轨迹",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/verification.log",
+        "label": "Teacher 自由文本指导 · student/verification.log",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/verification.log",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/verification_trace.json",
+        "label": "Teacher 自由文本指导 · 验证",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/verification_trace.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/teacher_freeform/student/verify.code.json",
+        "label": "Teacher 自由文本指导 · student/verify.code.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/teacher_freeform/student/verify.code.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/analysis_request.json",
+        "label": "GPT 结构化指导 · analysis_request.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/analysis_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/analysis_response.json",
+        "label": "GPT 结构化指导 · analysis_response.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/analysis_response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/intervention.json",
+        "label": "GPT 结构化指导 · intervention.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/intervention.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/steering_prompt.txt",
+        "label": "GPT 结构化指导 · 指导",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/steering_prompt.txt",
+        "primary": true,
+        "format": "guidance"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/completion.json",
+        "label": "GPT 结构化指导 · student/completion.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/completion.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/execution.json",
+        "label": "GPT 结构化指导 · student/execution.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/final.db",
+        "label": "GPT 结构化指导 · student/final.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/initial.db",
+        "label": "GPT 结构化指导 · student/initial.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/initial.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/pre_state.db",
+        "label": "GPT 结构化指导 · student/pre_state.db",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/pre_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/prefix_replay.json",
+        "label": "GPT 结构化指导 · student/prefix_replay.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/prefix_replay.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/00.json",
+        "label": "GPT 结构化指导 · student/requests/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/01.json",
+        "label": "GPT 结构化指导 · student/requests/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/02.json",
+        "label": "GPT 结构化指导 · student/requests/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/03.json",
+        "label": "GPT 结构化指导 · student/requests/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/04.json",
+        "label": "GPT 结构化指导 · student/requests/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/05.json",
+        "label": "GPT 结构化指导 · student/requests/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/06.json",
+        "label": "GPT 结构化指导 · student/requests/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/07.json",
+        "label": "GPT 结构化指导 · student/requests/07.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/07.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/08.json",
+        "label": "GPT 结构化指导 · student/requests/08.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/08.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/requests/09.json",
+        "label": "GPT 结构化指导 · student/requests/09.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/requests/09.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/00.json",
+        "label": "GPT 结构化指导 · student/responses/00.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/00.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/01.json",
+        "label": "GPT 结构化指导 · student/responses/01.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/01.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/02.json",
+        "label": "GPT 结构化指导 · student/responses/02.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/02.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/03.json",
+        "label": "GPT 结构化指导 · student/responses/03.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/03.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/04.json",
+        "label": "GPT 结构化指导 · student/responses/04.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/04.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/05.json",
+        "label": "GPT 结构化指导 · student/responses/05.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/05.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/06.json",
+        "label": "GPT 结构化指导 · student/responses/06.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/06.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/07.json",
+        "label": "GPT 结构化指导 · student/responses/07.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/07.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/08.json",
+        "label": "GPT 结构化指导 · student/responses/08.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/08.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/responses/09.json",
+        "label": "GPT 结构化指导 · student/responses/09.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/responses/09.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/task_verifier.py",
+        "label": "GPT 结构化指导 · student/task_verifier.py",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/task_verifier.py",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/tool_schema.json",
+        "label": "GPT 结构化指导 · student/tool_schema.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/tool_schema.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/trajectory.json",
+        "label": "GPT 结构化指导 · 轨迹",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/verification.log",
+        "label": "GPT 结构化指导 · student/verification.log",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/verification.log",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/verification_trace.json",
+        "label": "GPT 结构化指导 · 验证",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/verification_trace.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_comparison/point_2/external_structured/student/verify.code.json",
+        "label": "GPT 结构化指导 · student/verify.code.json",
+        "url": "data/cases/ablation_case/sales_order_comparison/point_2/external_structured/student/verify.code.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_source/failed/trajectory.json",
+        "label": "原始来源 · failed/trajectory.json",
+        "url": "data/cases/ablation_case/sales_order_source/failed/trajectory.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_source/failed/verify.code.json",
+        "label": "原始来源 · failed/verify.code.json",
+        "url": "data/cases/ablation_case/sales_order_source/failed/verify.code.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_source/reference/final.db",
+        "label": "原始来源 · reference/final.db",
+        "url": "data/cases/ablation_case/sales_order_source/reference/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_source/reference/initial.db",
+        "label": "原始来源 · reference/initial.db",
+        "url": "data/cases/ablation_case/sales_order_source/reference/initial.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "sales_order_source/reference/trajectory.json",
+        "label": "原始来源 · reference/trajectory.json",
+        "url": "data/cases/ablation_case/sales_order_source/reference/trajectory.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_source/reference/verify.code.json",
+        "label": "原始来源 · reference/verify.code.json",
+        "url": "data/cases/ablation_case/sales_order_source/reference/verify.code.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "sales_order_source/steering_record.json",
+        "label": "原始来源 · steering_record.json",
+        "url": "data/cases/ablation_case/sales_order_source/steering_record.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "run_manifest.json",
+        "label": "原始来源 · run_manifest.json",
+        "url": "data/cases/ablation_case/run_manifest.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "results.json",
+        "label": "原始来源 · results.json",
+        "url": "data/cases/ablation_case/results.json",
+        "primary": false,
+        "format": "auto"
+      }
+    ]
+  }
+}

@@ -1,10 +1,10 @@
 Website visual reference: OxyGen, https://air-embodied-brain.github.io/OxyGen/
 Reference project: https://github.com/air-embodied-brain/OxyGen (Apache License 2.0; see OxyGen-LICENSE.txt).
-This adaptation uses newly authored HTML, CSS and JavaScript, with the reference's editorial layout, typography and color palette. Demo assets and case content are from SteerDistill.
+This adaptation uses newly authored HTML, CSS and JavaScript, with the reference's editorial layout, typography and color palette. Research case content is from SteerDistill.
 
-Libre Baskerville, Source Sans 3, Source Serif 4 fonts: SIL Open Font License 1.1. See fonts/*LICENSE.txt.
-Chinese demo font: see demos/FONT-LICENSE.txt.
-Case viewer Chinese font: a glyph subset of Noto Sans CJK SC, from
-https://github.com/notofonts/noto-cjk, distributed under SIL Open Font License
-1.1. See fonts/NotoSansSC-LICENSE.txt. The subset retains only characters used
-in the selected case presentation.
+Libre Baskerville, Source Sans 3, Source Serif 4 fonts: SIL Open Font License 1.1.
+See fonts/Libre-LICENSE.txt, fonts/SourceSans-LICENSE.txt and fonts/SourceSerif-LICENSE.txt.
+
+Chinese fonts: glyph subsets of Noto Sans CJK SC, from
+https://github.com/notofonts/noto-cjk, distributed under SIL Open Font License 1.1.
+See fonts/NotoSansSC-LICENSE.txt. The subsets cover the Chinese presentation text.

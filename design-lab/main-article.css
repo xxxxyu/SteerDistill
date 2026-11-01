@@ -1,0 +1,39 @@
+/* Chinese article composition. Hero geometry remains owned by the accepted P2 sheets. */
+.zh-article{--article-serif:Libre,'Songti SC',Georgia,serif;--article-sans:SourceSans,'PingFang SC','Microsoft YaHei',Arial,sans-serif;padding-bottom:24px}
+.main-chapter{padding-top:56px;margin:0 0 18px;scroll-margin-top:0}
+.main-prose{width:min(710px,calc(100% - 2 * var(--reading-gutter)));margin:0 auto 24px}
+.main-prose h2{font:400 32px/1.45 var(--article-serif);letter-spacing:-.4px;margin:0 0 24px}
+.main-prose p{font:18px/1.9 var(--article-sans);margin:0 0 20px;color:var(--soft)}
+.main-prose p:last-child{margin-bottom:0}
+.main-prose strong{font-weight:600;color:var(--ink)}
+.main-prose code{font:.84em/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--deep);padding:.08em .25em;box-decoration-break:clone;overflow-wrap:anywhere}
+.zh-article .article-case{margin-block:28px 30px}
+.zh-article .article-case+.main-prose{margin-top:30px}
+.method-diagram,.target-diagram{width:min(850px,calc(100% - 48px));margin:30px auto;padding:22px 0;border-block:1px solid var(--hair);color:var(--soft);font-family:var(--article-sans)}
+.method-diagram>h3,.target-diagram>h3{font:400 22px/1.5 var(--article-serif);color:var(--ink);margin:0 0 24px}
+.method-path{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin:0;padding:0}
+.method-path li{position:relative;min-width:0;border-top:2px solid var(--hair);padding-top:13px}
+.method-path li:not(:last-child)::after{content:'→';position:absolute;right:-23px;top:9px;color:var(--blue);font:20px/1.5 var(--article-sans)}
+.method-path h4{font:600 17px/1.6 var(--article-sans);margin:0 0 10px;color:var(--ink)}
+.method-path p{font:15px/1.8 var(--article-sans);margin:0}
+.method-retry{width:50%;margin:12px 0 0 25%}
+.method-retry svg{display:block;width:100%;overflow:visible}
+.method-retry path,.target-merge path{fill:none;stroke:var(--blue);stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.method-retry text{font:14px var(--article-sans);fill:var(--soft)}
+.target-layout{display:grid;grid-template-columns:minmax(0,1.5fr) 60px minmax(0,1fr);gap:22px;align-items:center}
+.target-row{padding:15px 0;border-top:1px solid var(--hair)}
+.target-row:last-child{border-bottom:1px solid var(--hair)}
+.target-when{font:15px/1.5 var(--article-sans);color:var(--muted);margin:0 0 7px}
+.target-source{font:17px/1.6 var(--article-sans);margin:0;color:var(--ink)}
+.target-loss{display:block;font:15px/1.6 var(--article-sans);color:var(--soft);margin-top:4px}
+.target-merge svg{display:block;width:60px;height:160px}
+.target-learner{border-block:1px solid var(--hair);padding:24px 0}
+.target-name{font:600 18px/1.7 var(--article-sans);margin:0 0 8px;color:var(--ink)}
+.target-input{font:16px/1.65 var(--article-sans);color:var(--blue);margin:0}
+.main-resources{padding:55px 0 32px}
+.resource-links{width:min(850px,calc(100% - 48px));margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;font-family:var(--article-sans)}
+.resource-links a{display:block;border-top:1px solid var(--hair);padding-top:14px;text-decoration:none}
+.resource-links strong{display:block;font:500 18px/1.6 var(--article-sans);margin-bottom:5px;color:var(--blue)}
+.resource-links span{display:block;font:15px/1.7 var(--article-sans);color:var(--muted)}
+@media(max-width:760px){.main-chapter{padding-top:38px}.main-prose h2{font-size:27px;margin-bottom:20px}.main-prose p{font-size:17px;line-height:1.9}.method-path{grid-template-columns:1fr;gap:24px}.method-path li{padding-top:12px}.method-path li:not(:last-child)::after{content:'↓';right:0;top:auto;bottom:-24px}.method-retry{display:none}.method-diagram>h3,.target-diagram>h3{font-size:21px}.target-layout{grid-template-columns:1fr;gap:12px}.target-merge{height:30px;text-align:center}.target-merge svg{display:none}.target-merge::after{content:'↓';font:24px/1 var(--article-sans);color:var(--blue)}.target-learner{padding:18px 0}.resource-links{grid-template-columns:1fr;gap:20px}.main-resources{padding-top:38px}}
+@media(max-width:430px){.method-diagram,.target-diagram,.resource-links{width:calc(100% - 36px)}}

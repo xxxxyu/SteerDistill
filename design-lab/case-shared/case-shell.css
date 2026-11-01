@@ -1,0 +1,62 @@
+/* One geometry for every case and record reader. Load after case-specific styles. */
+@font-face{font-family:Libre;src:url('fonts/libre.woff2') format('woff2');font-style:normal;font-display:swap}@font-face{font-family:SourceSans;src:url('fonts/sans.woff2') format('woff2');font-style:normal;font-display:swap}
+html{overflow-y:scroll;scrollbar-gutter:stable}
+body.case-site{--paper:#fffefa;--deep:#f3f1eb;--ink:#292825;--soft:#454440;--muted:#696760;--hair:#dedbd2;--blue:#315f78;--red:#a33a31;--case-serif:Libre,'Songti SC',Georgia,serif;--sans:SourceSans,'PingFang SC','Microsoft YaHei',Arial,sans-serif;margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 var(--sans)}
+html[data-theme=dark] body.case-site{--paper:#20221f;--deep:#292c28;--ink:#ebe8de;--soft:#d0cfc5;--muted:#a7aba1;--hair:#474c44;--blue:#98c3d5;--red:#e39888;color-scheme:dark}
+.case-site *{box-sizing:border-box}
+body.case-site .case-content,body.case-site .case-header-inner{width:min(1080px,calc(100% - 290px));max-width:none;margin-left:max(250px,calc((100% - 1080px)/2));margin-right:40px}
+body.case-site .case-content{padding:28px 0 35px;min-width:0;min-height:calc(100vh - 64px);border:0;background:none}
+body.case-site .case-shell-wrap{width:100%;max-width:none;margin:0;padding:0;display:block}
+body.case-site .case-shell-wrap>.case-library-grid{display:block}
+body.case-site .case-header{position:sticky;top:0;z-index:200;background:var(--paper);border:0;border-bottom:1px solid var(--hair);padding:0}
+body.case-site .case-header-inner{height:64px;min-height:64px;display:flex;align-items:center;flex-wrap:nowrap;gap:26px;padding:0}
+.case-site .case-header-inner :is(.brand,.reading-brand){font:500 20px/1.3 Libre,Georgia,serif;letter-spacing:0;color:var(--ink);text-decoration:none;margin:0 auto 0 0;white-space:nowrap}
+.case-site .case-header-inner nav{display:flex;align-items:center;gap:26px;order:initial;width:auto;margin:0;font:14px/1.5 var(--sans)}
+.case-site .case-header-inner nav a{padding:0;color:var(--soft);text-decoration:none}
+.case-site .case-header-inner nav a[aria-current]{border-bottom:1px solid var(--blue)}
+.case-site .case-header-inner :is(.theme-toggle,.reading-theme){width:23px;height:25px;display:grid;place-items:center;margin:0;padding:0;border:0;background:none;color:var(--ink);cursor:pointer;flex-shrink:0}
+.case-site .case-header-inner :is(.menu,.library-menu-toggle){display:none;margin:0;padding:0;border:0;background:none;font:14px/1.5 var(--sans);color:var(--ink);cursor:pointer;white-space:nowrap}
+body.case-site .case-catalog{position:fixed;top:91px;left:max(18px,calc(50% - 780px));width:206px;max-height:calc(100vh - 112px);padding:0 12px 0 0;overflow:auto;z-index:150;font:14px/1.55 var(--sans);background:none;box-shadow:none;border:0}
+body.case-site #library-case-index{margin-top:0}
+body.case-site .training-story-head,body.case-site .intro{max-width:none;margin:0 0 20px}
+
+
+.case-site .original-task{margin:14px 0 20px}
+.case-site .original-task>summary{font:14px/1.6 var(--sans)}
+.case-site .original-task .original-turns{padding:14px;border:1px solid var(--hair);background:var(--paper)}
+.case-site .original-turn+.original-turn{margin-top:18px}
+.case-site .original-turn h3{font:400 13px/1.5 var(--sans);color:var(--muted);margin:0 0 6px}
+.case-site .original-turn p{font:15px/1.65 var(--sans);white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.case-site .case-content>.training-story{width:100%;max-width:none}
+.case-site .case-content .training-story-head{border:0}
+/* Semantic typography shared by training, comparison and sequence compositions. */
+.case-site .case-content .case-title{font:500 30px/1.4 var(--case-serif);letter-spacing:normal;margin:0 0 12px;color:var(--ink)}
+.case-site .case-content .case-reader-title{font:500 26px/1.4 var(--case-serif);letter-spacing:normal;margin:0 0 12px;color:var(--ink)}
+.case-site .case-content .case-branch-title{font:500 20px/1.45 var(--case-serif);letter-spacing:normal;margin:0;color:var(--ink)}
+.case-site .case-content .case-section-title{font:500 21px/1.45 var(--case-serif);letter-spacing:normal;margin:0 0 12px;color:var(--ink)}
+.case-site .case-content .case-summary{font:400 15px/1.65 var(--sans);max-width:none;margin:0 0 12px;color:var(--soft)}
+.case-site .case-content .case-footer{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap;border-top:1px solid var(--hair);padding:18px 0 0;margin:24px 0 30px;font:400 14px/1.65 var(--sans)}
+.case-site .case-content .case-footer a{color:var(--blue);text-underline-offset:4px}
+@media(max-width:1199px){
+ body.case-site .case-content,body.case-site .case-header-inner{width:min(1080px,calc(100% - 64px));margin-left:auto;margin-right:auto}
+ body.case-site .case-catalog{display:none;left:18px;top:76px;width:285px;max-height:calc(100vh - 94px);padding:20px;background:var(--paper);border:1px solid var(--hair);box-shadow:0 8px 35px #0002}
+ body.case-site:is(.menu-open,.case-menu-open) .case-catalog{display:block}
+ .case-site .case-header-inner :is(.menu,.library-menu-toggle){display:block}
+ .case-site .case-header-inner{gap:22px}
+}
+@media(max-width:800px){
+ body.case-site .case-content,body.case-site .case-header-inner{width:calc(100% - 40px)}
+ body.case-site .case-content{padding-top:22px}
+ .case-site .case-header-inner{gap:16px}
+ .case-site .case-header-inner nav{gap:16px}
+ .case-site .case-header-inner :is(.brand,.reading-brand){font-size:18px}
+ .case-site .case-header-inner nav a[href*="p2.html"]{display:none}
+ .case-site .case-content .case-title{font-size:26px}
+ .case-site .case-content .case-reader-title{font-size:24px}
+}
+
+/* Theme icon and state are identical on every case and record reader. */
+.case-site .case-header-inner .case-theme{border-radius:50%}
+.case-site .case-header-inner .case-theme:hover{background:var(--deep)}
+.case-site .case-header-inner .case-theme svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+html[data-theme=light] .case-theme .theme-sun,html[data-theme=dark] .case-theme .theme-moon{display:none}
