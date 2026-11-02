@@ -1,9 +1,8 @@
-(async()=>{
+/* Render the same post for direct reading and the homepage continuation. */
+window.ResearchArticle = (() => {
  'use strict';
- const U=EvidenceUI,root=document.querySelector('#main-article');
- const articleURL=new URL('design-lab/main-article.zh.json',document.baseURI),caseURL=new URL('design-lab/article-content/cases.zh.json',document.baseURI);
- const pageHash=id=>new URL('index.html#'+id,document.baseURI).href;
- const make=(tag,cls,value)=>U.make(tag,cls,value);
+ const U=EvidenceUI,make=(tag,cls,value)=>U.make(tag,cls,value);
+ const url=path=>SitePaths.url(path);
  function prose(section){const node=make('div','main-prose');section.append(node);return node}
  function methodDiagram(block){
   const figure=make('figure','method-diagram'),title=make('h3','',block.title),list=make('ol','method-path');
@@ -21,34 +20,43 @@
   const merge=make('div','target-merge');merge.setAttribute('aria-hidden','true');merge.innerHTML='<svg viewBox="0 0 60 160"><path d="M0 30H28V80H55M0 130H28V80M48 73L55 80L48 87"/></svg>';
   const learner=make('div','target-learner');learner.append(make('p','target-name',block.learner),make('p','target-input',block.learnerInput));layout.append(sources,merge,learner);figure.append(title,layout);return figure;
  }
- function applyHero(data){
-  document.title=data.paperTitle;const heading=document.querySelector('.paper-identity h1');heading.setAttribute('aria-label',data.paperTitle);
-  const subtitle=data.paperTitle.replace(/^SteerDistill:\s*/,''),parts=subtitle.split(' via '),title=document.querySelector('.paper-full-title');title.replaceChildren(document.createTextNode(parts[0]));if(parts.length>1){title.append(make('br','title-break'),document.createTextNode(' via '+parts.slice(1).join(' via ')))}
-  const hero=data.hero,tldr=document.querySelector('.paper-tldr');tldr.replaceChildren(make('strong','','TL;DR'),document.createTextNode(' '+hero.tldr));
-  const nav=document.querySelector('.reading-header nav');nav.replaceChildren();for(const item of hero.nav){const a=make('a','',item.label);a.href=pageHash(item.id);nav.append(a)}
-  const links=document.querySelector('.paper-resources');links.replaceChildren();for(const item of hero.links){const a=make('a','',item.label);a.href=new URL(item.href,document.baseURI);links.append(a)}
-  const notes=document.querySelector('.paper-author-notes');notes.replaceChildren(make('span','','* '+hero.authorNotes.equal),make('span','','‡ '+hero.authorNotes.lead));
-  document.querySelector('.press-figure-head strong').textContent=hero.benchmarkTitle;
-  const caption=document.querySelector('.press-caption>a');caption.textContent=hero.benchmarkCaptionLink.label;caption.href=hero.benchmarkCaptionLink.href.startsWith('#')?pageHash(hero.benchmarkCaptionLink.href.slice(1)):new URL(hero.benchmarkCaptionLink.href,document.baseURI);
-  document.querySelectorAll('.concept-motion svg>text').forEach((node,i)=>{node.textContent=hero.conceptLabels[i]});document.querySelector('.concept-foot>a').textContent=hero.conceptMethodLink;
-  document.querySelector('.article-footer>span').textContent=data.footer.brand;document.querySelector('.article-footer>a').textContent=data.footer.codeLabel;
+
+ let content;
+ async function load(){
+  if(!content)content=Promise.all(['design-lab/main-article.zh.json','design-lab/article-content/cases.zh.json'].map(async path=>{
+   const response=await fetch(url(path));if(!response.ok)throw Error('Article data unavailable');return response.json();
+  })).catch(error=>{content=null;throw error});
+  return content;
  }
- try{
-  const responses=await Promise.all([fetch(articleURL,{cache:'no-cache'}),fetch(caseURL,{cache:'no-cache'})]);if(responses.some(r=>!r.ok))throw Error('正文数据无法读取');const [data,cases]=await Promise.all(responses.map(r=>r.json()));applyHero(data);root.replaceChildren();
-  const registry=new Map(cases.sections.map(section=>[section.id,section.case]));
-  for(const chapter of data.sections){
-   const section=make('section','main-chapter');section.id=chapter.id;let copy=prose(section);copy.append(make('h2','',chapter.title));
-   for(const block of chapter.blocks){
-    if(block.type==='paragraph'){if(!copy)copy=prose(section);const p=make('p');if(block.id)p.id=block.id;p.innerHTML=block.html;copy.append(p)}
-    else if(block.type==='case'){const evidence=registry.get(block.caseKey);if(!evidence)throw Error('案例缺失：'+block.caseKey);ArticleCaseEmbed.mount(section,{case:{...evidence,href:SitePaths.url(evidence.href)},variant:'flow'});copy=null}
-    else if(block.type==='method-diagram'){section.append(methodDiagram(block));copy=null}
-    else if(block.type==='target-diagram'){section.append(targetDiagram(block));copy=null}
+ async function mount(root){
+  if(root.dataset.ready==='true')return;
+  try{
+   const [data,cases]=await load(),registry=new Map(cases.sections.map(section=>[section.id,section.case]));
+   const fragment=document.createDocumentFragment(),notes=[];
+   for(const chapter of data.sections){
+    const section=make('section','main-chapter');section.id=chapter.id;let copy=prose(section);copy.append(make('h2','',chapter.title));
+    for(const block of chapter.blocks){
+     if(block.type==='paragraph'){
+      if(!copy)copy=prose(section);const p=make('p');if(block.id)p.id=block.id;p.innerHTML=block.html;
+      if(block.note){
+       const number=notes.length+1,note=block.note,group=make('div','noted-paragraph');
+       const ref=make('a','note-ref',String(number));ref.href='#note-'+note.id;ref.id='ref-'+note.id;ref.setAttribute('aria-label','注 '+number);ref.setAttribute('role','doc-noteref');const sup=make('sup');sup.append(ref);p.append(sup);
+       const side=make('aside','sidenote');side.setAttribute('aria-label','注 '+number);side.append(make('span','',String(number)),document.createTextNode(' '+note.text));group.append(p,side);copy.append(group);notes.push({...note,number});
+      }else copy.append(p);
+     }else if(block.type==='case'){
+      const evidence=registry.get(block.caseKey);if(!evidence)throw Error('Missing case: '+block.caseKey);
+      ArticleCaseEmbed.mount(section,{case:{...evidence,href:url(evidence.href)},variant:'flow'});copy=null;
+     }else if(block.type==='method-diagram'){section.append(methodDiagram(block));copy=null}
+     else if(block.type==='target-diagram'){section.append(targetDiagram(block));copy=null}
+    }
+    fragment.append(section);
    }
-   root.append(section);
-  }
-  const resources=make('section','main-resources');resources.id=data.resources.id;const heading=prose(resources);heading.append(make('h2','',data.resources.title));const links=make('nav','resource-links');links.setAttribute('aria-label',data.resources.title);
-  for(const item of data.resources.links){const a=make('a');a.href=new URL(item.href,document.baseURI);a.append(make('strong','',item.label),make('span','',item.description));links.append(a)}resources.append(links);root.append(resources);
-  root.dataset.ready='true';document.dispatchEvent(new CustomEvent('article:ready',{detail:data}));
-  await document.fonts.ready;requestAnimationFrame(()=>requestAnimationFrame(()=>{if(location.hash)document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({block:'start'})}));
- }catch(error){root.textContent='正文暂时无法读取，请刷新重试。';console.error(error)}
+   const endnotes=make('section','post-endnotes');endnotes.id='notes';endnotes.setAttribute('role','doc-endnotes');endnotes.append(make('h2','','注释'));const list=make('ol');
+   for(const note of notes){const li=make('li');li.id='note-'+note.id;li.append(document.createTextNode(note.text+' '));const back=make('a','note-back','返回正文');back.href='#ref-'+note.id;back.setAttribute('aria-label','返回注 '+note.number+' 的正文');li.append(back);list.append(li)}endnotes.append(list);fragment.append(endnotes);
+   const resources=make('section','main-resources');resources.id=data.resources.id;resources.append(make('h2','',data.resources.title));const links=make('nav','resource-links');links.setAttribute('aria-label',data.resources.title);
+   for(const item of data.resources.links){const a=make('a');a.href=url(item.href);a.append(make('strong','',item.label),make('span','',item.description));links.append(a)}resources.append(links);fragment.append(resources);
+   root.replaceChildren(fragment);root.dataset.ready='true';document.dispatchEvent(new CustomEvent('article:ready',{detail:data}));
+  }catch(error){root.replaceChildren(make('p','','文章暂时无法读取。'));const retry=make('button','article-retry','重新载入');retry.onclick=()=>mount(root);root.append(retry);console.error(error)}
+ }
+ return {mount,load};
 })();

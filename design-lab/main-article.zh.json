@@ -1,80 +1,19 @@
 {
   "schemaVersion": 1,
-  "paperTitle": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
-  "hero": {
-    "tldr": "让 Teacher 指导量化 agent 修正失败决策，再把修正蒸馏进模型。训练后的 agent 独立执行任务，无需 Teacher。",
-    "nav": [
-      {
-        "id": "problem",
-        "label": "问题"
-      },
-      {
-        "id": "method",
-        "label": "方法"
-      },
-      {
-        "id": "guidance",
-        "label": "指导设计"
-      },
-      {
-        "id": "recovery",
-        "label": "自主恢复"
-      },
-      {
-        "id": "results",
-        "label": "训练成本"
-      }
-    ],
-    "links": [
-      {
-        "label": "代码",
-        "href": "https://github.com/ustccuigm/bitdistill"
-      },
-      {
-        "label": "实验数据",
-        "href": "experiments/data/benchmark_results.csv"
-      },
-      {
-        "label": "案例集",
-        "href": "design-lab/paper-cases.html"
-      }
-    ],
-    "benchmarkTitle": "基准测试结果",
-    "benchmarkReference": "BF16 参考",
-    "benchmarkCaptionLink": {
-      "label": "训练与执行成本",
-      "href": "#results"
-    },
-    "conceptLabels": [
-      "定位分歧",
-      "指导与核验",
-      "蒸馏学习"
-    ],
-    "conceptCaptions": [
-      "对齐环境状态，找到行为分歧。",
-      "Teacher 给出指导，student 执行并接受核验。",
-      "把修正蒸馏进量化模型，推理时独立执行。"
-    ],
-    "conceptMethodLink": "了解方法",
-    "authorNotes": {
-      "equal": "共同一作",
-      "lead": "Project lead"
-    }
-  },
   "sections": [
     {
       "id": "problem",
-      "title": "工具选对了，参数仍可能用错",
+      "title": "一个参数，暴露了什么问题",
       "blocks": [
         {
           "type": "paragraph",
           "id": "problem-cost",
-          "html": "Agent 完成一项任务，往往需要反复调用模型和工具。低比特量化可以降低模型推理的开销，但一次参数理解上的偏差，就可能让后续执行偏离用户的要求。"
+          "html": "看一条失败轨迹时，我们最关心的是：agent 究竟从哪一步开始偏离了任务？对量化模型来说，问题有时很局部——它选对了工具，也理解了用户的大意，却没有把要求翻译成接口接受的参数。"
         },
         {
           "type": "paragraph",
           "id": "problem-parameter",
-          "html": "例如，用户要求“按更新时间降序”。Agent 需要把它写成工具实际接受的参数：<code>sortBy</code> 应该填排序字段，还是排序方向？"
+          "html": "下面这次调用就是如此。用户要求“按更新时间降序”，而工具的 <code>sortBy</code> 虽被描述为排序字段，允许值却只有 <code>ASC</code> 和 <code>DESC</code>。这时，agent 需要结合枚举约束理解参数，而不只是凭参数名猜测。"
         },
         {
           "type": "case",
@@ -83,33 +22,38 @@
         {
           "type": "paragraph",
           "id": "problem-meaning",
-          "html": "要写出符合接口定义的调用，agent 需要把“降序”映射到允许的参数值。更长的任务还会把这类判断与文件位置、缺失信息和不断变化的环境状态连接起来。"
+          "html": "BF16 和 SteerDistill 填入了 <code>DESC</code>；几种量化基线则写入字段名，或把字段与方向拼在一起。这类错误留下了很具体的学习目标：需要修正的是某一个决策，而不是重新学习整段任务流程。"
         }
-      ]
+      ],
+      "navTitle": "参数与决策"
     },
     {
       "id": "method",
-      "title": "在出错的位置，找到可执行的改法",
+      "title": "多试几次，为什么还不够",
       "blocks": [
         {
           "type": "paragraph",
           "id": "method-data",
-          "html": "训练需要覆盖 agent 真正会遇到的困难。离线蒸馏的数据可能没有包含 student 出错时的上下文；使用当前 student 的交互轨迹，可以找到这些上下文，却不等于已经构造出了可执行的改法。即便继续重试，正确响应也可能很少。"
+          "html": "找到错误之后，一个自然的想法是让模型多试几次。但在同样的上下文里，它也可能反复作出相同判断。我们想知道：缺少的究竟是尝试次数，还是能让下一次尝试改变方向的信息？"
         },
         {
           "type": "paragraph",
           "id": "method-diagnostic",
-          "html": "在 BFCL V4 多轮诊断中，我们把每次尝试都放回同一处出错前的历史和环境状态。每个分歧点最多尝试四次，无指导重试只有 <strong>9.6%</strong> 的分歧点至少出现一次正确动作；Teacher 指导将这一比例提高到 <strong>82.3%</strong>。"
+          "html": "我们在 BFCL V4 多轮任务的行为分歧点做了一个诊断：每次都恢复到相同的出错前状态，最多尝试四次。无指导重试时，只有 <strong>9.6%</strong> 的分歧点至少出现一次正确动作；加入 Teacher 指导后，这一比例达到 <strong>82.3%</strong>。",
+          "note": {
+            "id": "diagnostic",
+            "text": "这里统计的是分歧点的 Pass@4：四次尝试中至少有一次正确动作的比例。每次尝试使用同一处历史与环境状态。"
+          }
         },
         {
           "type": "paragraph",
           "id": "method-localize",
-          "html": "SteerDistill 从失败的 student 轨迹出发，用同一任务、同一初始环境下成功的 Teacher 轨迹作参考。定位依据是动作带来的环境状态变化：不同的调用可以达到相同效果，不必因为文本不同就干预。真正出现行为分歧时，再恢复出错前的历史和环境。"
+          "html": "这也决定了我们怎样构造训练材料。先让量化 agent 实际执行，保留它遇到的上下文；再用成功的 Teacher 轨迹寻找行为开始分岔的位置。对齐时看的是环境状态变化：两种调用若达到了相同效果，就没有必要只因文字不同而改写它。"
         },
         {
           "type": "paragraph",
           "id": "method-example",
-          "html": "指导要指出 agent 此刻漏掉了什么条件。读取文件的例子中，缺少的就是进入目标目录这一步。"
+          "html": "有用的指导往往很具体。下面的 agent 知道应该读哪个文件，却把“文件存在”误当成了“文件在当前目录”。补上目录切换，就能让原本失败的读取继续进行。"
         },
         {
           "type": "case",
@@ -118,7 +62,7 @@
         {
           "type": "paragraph",
           "id": "method-loop",
-          "html": "指导本身也可能不够准确。SteerDistill 将 student 的执行结果反馈给 Teacher，让下一次指导针对实际没有通过核验的地方继续修订。"
+          "html": "指导是否有效，要看 agent 接下来做了什么。我们把执行结果反馈给 Teacher；如果修正没有通过核验，就让它根据这次失败调整指导，再从原状态尝试。"
         },
         {
           "type": "method-diagram",
@@ -147,18 +91,27 @@
         {
           "type": "paragraph",
           "id": "method-retention",
-          "html": "一个长任务最后失败，并不意味着其中每一步都没有训练价值。SteerDistill 保留已经通过局部核验的修正，即使后续仍未完成任务。消融中，去掉局部核验会明显降低表现；反过来，只留下最终成功的整条轨迹，也没有带来更好的结果。"
+          "html": "另一个观察关乎数据筛选。一条长轨迹最后失败，并不意味着前面已经修好的步骤没有价值。我们保留通过局部核验的修正；在消融中，去掉核验会降低表现，而只保留最终成功的整条轨迹，也没有得到更好的结果。训练材料的价值，可以在比“整题做对”更细的粒度上判断。",
+          "note": {
+            "id": "retention",
+            "text": "BFCL V4 消融：完整方法 46.84；去掉局部核验 42.18；仅保留最终成功轨迹 46.30。"
+          }
         }
-      ]
+      ],
+      "navTitle": "重试与修正"
     },
     {
       "id": "learning",
-      "title": "把修正学进去，把指导拿掉",
+      "title": "拿掉指导以后，还能做对吗",
       "blocks": [
         {
           "type": "paragraph",
           "id": "learning-goal",
-          "html": "修正轮次的监督来自<strong>带指导的冻结 student</strong>；其他轮次继续接受<strong>全精度 Teacher</strong> 的监督。正在训练的量化模型始终不看指导，学习这些监督模型给出的预测。"
+          "html": "接下来才是训练问题：提示加进去以后能做对，拿掉提示还能不能做对？我们让正在训练的量化模型始终不看指导。修正轮次由带指导的冻结 student 提供监督，其他轮次则继续向全精度 Teacher 学习。",
+          "note": {
+            "id": "supervision",
+            "text": "修正轮次使用 forward KL，监督来自本轮冻结的量化 student；其他轮次使用 reverse KL，监督来自冻结的 BF16 Teacher。"
+          }
         },
         {
           "type": "target-diagram",
@@ -181,18 +134,19 @@
         {
           "type": "paragraph",
           "id": "learning-cycle",
-          "html": "更新后的模型进入下一轮采样，暴露新的交互轨迹和需要修订的决策。通过这样的循环，指导逐渐转化为模型自身的行为；部署时只运行量化 agent。"
+          "html": "模型更新后，再让它独立执行新一轮任务，观察还会在哪些地方出错。这个循环把“这一次有人提醒才做对”转变为训练目标，部署时不需要保留 Teacher 或指导提示。"
         }
-      ]
+      ],
+      "navTitle": "修正如何内化"
     },
     {
       "id": "guidance",
-      "title": "指导是否指出了遗漏的步骤",
+      "title": "一条指导，怎样影响后续执行",
       "blocks": [
         {
           "type": "paragraph",
           "id": "guidance-content",
-          "html": "SteerDistill 的指导分别说明：哪里出现偏差、何时适用、下一步按什么规则行动。关键是这些内容能否指出眼前遗漏的步骤。下面从同一张订单状态出发，对照不同来源与表达方式的指导，以及 agent 随后真正写入的价格和折扣。"
+          "html": "指导也可能误判当前状态。为了看清它怎样影响后续行动，我们从同一张订单、同一段对话出发，分别注入四种指导，观察 agent 是否先查询定价，以及最终写入了什么价格和折扣。"
         },
         {
           "type": "case",
@@ -201,23 +155,28 @@
         {
           "type": "paragraph",
           "id": "guidance-observation",
-          "html": "Teacher 结构化指导要求先应用定价规则；Student 结构化指导却提前判断任务已经完成。另一条值得注意的路径是 Teacher 自由文本：指导也误判了完成状态，但 agent 仍继续查询定价，并写入折扣。指导的内容和执行的结果，需要分别看。"
+          "html": "这里最有意思的并不只是哪个分支成功。Teacher 结构化指导指出要先应用定价规则；Student 结构化指导却判断任务已经完成。Teacher 自由文本也误判了完成状态，但执行 agent 仍继续查询并写入折扣。只读指导，会漏掉后面这一步；只看最终结果，又看不到指导中原有的问题。"
         },
         {
           "type": "paragraph",
           "id": "guidance-study",
-          "html": "在 BFCL V4 的消融实验中，保持干预位置、参考轨迹和核验方式不变，结构化 Teacher 指导优于自由文本指导；保持格式不变，全精度 Teacher 作为指导来源也优于 student 和外部 GPT 模型。"
+          "html": "这正是执行核验有用的地方：指导是对下一步的建议，工具调用和环境变化才告诉我们修正是否发生。在整体消融中，结构化 Teacher 指导的表现更好；具体到某一条轨迹，仍然要沿着“指导—执行—结果”把因果看完。",
+          "note": {
+            "id": "guidance-study",
+            "text": "BFCL V4，Qwen3-8B / W4A16。比较指导格式时，干预位置、参考轨迹与核验固定；比较来源时，格式与参考固定。"
+          }
         }
-      ]
+      ],
+      "navTitle": "指导与执行"
     },
     {
       "id": "recovery",
-      "title": "没有 Teacher，也能沿着反馈继续执行",
+      "title": "报错之后，下一步该查什么",
       "blocks": [
         {
           "type": "paragraph",
           "id": "recovery-deploy",
-          "html": "训练中的修订会回到出错之前；部署中的 agent 则要处理已经发生的错误。加油案例展示了训练后 SteerDistill 的一条执行路径：首次调用被拒绝后，它查询当前状态，重新确定需要补入的油量。"
+          "html": "训练时可以恢复到出错前的状态；实际部署时，agent 面对的则是已经发生的报错。因此，除了看第一次调用是否正确，我们也关心它如何使用后续反馈。下面这条加油轨迹中，SteerDistill 首次调用被拒绝，随后主动查询当前油量，再调整加油量。"
         },
         {
           "type": "case",
@@ -226,30 +185,40 @@
         {
           "type": "paragraph",
           "id": "recovery-meaning",
-          "html": "报错没有直接给出剩余油量。Agent 主动查询状态，厘清“本次新增多少”和“最终装满多少”的区别，再据此调整调用。"
+          "html": "报错本身没有给出剩余油量。Agent 需要意识到还缺一项状态信息，主动查询，再区分“本次新增多少”和“最终装满多少”。这条路径展示了我们希望恢复的另一种行动能力：第一次没做对时，仍能找到下一步该查什么、该改什么。"
         }
-      ]
+      ],
+      "navTitle": "从报错中恢复"
     },
     {
       "id": "results",
-      "title": "更有用的修正，也改变了训练代价",
+      "title": "修正的价值，如何反映到成本上",
       "blocks": [
         {
           "type": "paragraph",
           "id": "cost-checkpoint",
-          "html": "在 Qwen3-8B、W4A16 的 τ²-Bench 实验中，SteerDistill 训练到 32 GPU 小时的检查点，成功率比训练到 96 GPU 小时的 QeRL 高 1.84 个百分点，训练 GPU 小时约减少 67%。这里的 GPU 小时按端到端训练耗时乘 GPU 数计算。"
+          "html": "更有针对性的修正，也反映在训练过程里。在 Qwen3-8B、W4A16 的 τ²-Bench 实验中，SteerDistill 训练到 32 GPU 小时的检查点，成功率比训练到 96 GPU 小时的 QeRL 高 1.84 个百分点。",
+          "note": {
+            "id": "training-cost",
+            "text": "GPU 小时为端到端训练耗时乘 GPU 数；所有运行使用 8 张 A100 80GB。对应检查点的成功率为 31.68% 与 29.84%。"
+          }
         },
         {
           "type": "paragraph",
           "id": "cost-behavior",
-          "html": "在同一实验设置下，按各方法各自成功完成的任务统计，SteerDistill 的平均输出 token 少于其他量化基线，也更接近 BF16；交互步数与工具调用次数同样更少。更准确地选择下一步，既关系到任务能否完成，也关系到完成它需要走多长的轨迹。"
+          "html": "执行时也有相似的现象：SteerDistill 成功轨迹的平均输出 token 更少，交互步数和工具调用次数也更少。学会选择下一步，不仅关系到能否完成任务，也关系到要绕多少路才能完成。",
+          "note": {
+            "id": "inference-cost",
+            "text": "同一设置下，分别统计各方法成功完成的任务：SteerDistill 平均输出 4.0K token，量化基线 4.1K–5.2K，BF16 为 3.9K。"
+          }
         },
         {
           "type": "paragraph",
           "id": "closing-insight",
-          "html": "长任务的成败往往由许多局部决策累积而成。即使没有走到终点，已经找到并核验过的修正，也值得成为下一轮训练的材料。"
+          "html": "回看这些实验，最有价值的训练材料不一定是一条从头到尾都正确的示范。它也可以来自一次参数误读、一个遗漏的前提，或者一条尚未走到终点的轨迹。关键是把错误定位清楚，找到可以执行的修正，再用环境反馈确认它确实起了作用。"
         }
-      ]
+      ],
+      "navTitle": "训练与执行成本"
     }
   ],
   "resources": {
@@ -273,8 +242,17 @@
       }
     ]
   },
-  "footer": {
-    "brand": "SteerDistill · 清华大学智能产业研究院",
-    "codeLabel": "代码与数据"
+  "post": {
+    "title": "量化之后，如何找回 Agent 的行动能力",
+    "author": {
+      "name": "Xiangyu Li",
+      "href": "https://xxxxyu.github.io/"
+    },
+    "date": "2026-11-02",
+    "intro": "一次工具调用失误，能告诉我们什么？从参数误读到状态查询，我们沿着几条真实轨迹，看看量化 agent 在哪里卡住，以及怎样把这些失败变成有用的训练材料。",
+    "titleLines": [
+      "量化之后，",
+      "如何找回 Agent 的行动能力"
+    ]
   }
 }

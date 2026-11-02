@@ -3,9 +3,9 @@
   const root = document.querySelector('[data-concept-motion]');
   if (!root) return;
   let captions = [
-    '对齐环境状态，找到行为分歧。',
-    'Teacher 给出指导，student 执行并接受核验。',
-    '把修正蒸馏进量化模型，推理时独立执行。'
+    'Align environment states to locate behavioral divergence.',
+    'Teacher guidance is tested through student execution.',
+    'Distill corrections; act independently at inference.'
   ];
   const control = root.querySelector('[data-concept-play]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -16,11 +16,10 @@
     root.dataset.stage = stage;
     root.classList.toggle('is-paused', !playing);
     root.querySelector('[data-concept-caption]').textContent = captions[stage];
-    control.textContent = playing ? '暂停 Ⅱ' : '播放 ▷';
+    control.textContent = playing ? 'Pause Ⅱ' : 'Play ▷';
     control.setAttribute('aria-pressed', String(playing));
-    control.setAttribute('aria-label', playing ? '暂停方法动效' : '播放方法动效');
+    control.setAttribute('aria-label', playing ? 'Pause method animation' : 'Play method animation');
   }
-  document.addEventListener('article:ready', event => { if(event.detail?.hero?.conceptCaptions){captions=event.detail.hero.conceptCaptions;render();} });
   control.addEventListener('click', () => { playing = !playing; render(); });
   reduced.addEventListener('change', () => { if (reduced.matches) { playing = false; render(); } });
   const observer = new IntersectionObserver(entries => {
@@ -28,9 +27,16 @@
     root.classList.toggle('is-offscreen', !visible);
   });
   observer.observe(root);
-  const timer = setInterval(() => {
-    if (playing && visible && !document.hidden) { stage = (stage + 1) % captions.length; render(); }
-  }, 3600);
-  window.addEventListener('pagehide', () => { clearInterval(timer); observer.disconnect(); }, { once: true });
+  let timer;
+  function start() {
+    clearInterval(timer);
+    observer.observe(root);
+    timer = setInterval(() => {
+      if (playing && visible && !document.hidden) { stage = (stage + 1) % captions.length; render(); }
+    }, 3600);
+  }
+  start();
+  window.addEventListener('pagehide', () => { clearInterval(timer); observer.disconnect(); });
+  window.addEventListener('pageshow', start);
   render();
 })();

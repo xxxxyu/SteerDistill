@@ -6,7 +6,7 @@ window.CaseSidebar=(()=>{
  function previewUrl(href){const url=new URL(href,location.href),variant=previewVariant();if(variant&&!url.searchParams.has('sidebar'))url.searchParams.set('sidebar',variant);return url.pathname+url.search+url.hash;}
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
  function bind(root){
-  const button=document.querySelector('.case-header-inner .menu,.case-header-inner .library-menu-toggle');
+  const button=document.querySelector('.site-header .site-menu');
   if(!button)return;drawer={root,button};button.setAttribute('aria-controls',root.id);button.setAttribute('aria-expanded','false');
   button.onclick=()=>setOpen(!document.body.classList.contains('case-menu-open'));
  }

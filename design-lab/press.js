@@ -13,12 +13,12 @@ const settingRows=which=>data.filter(r=>r.model===which&&(!expanded||r.precision
 const file=location.pathname.split('/').pop().replace('.html','');document.querySelectorAll('[data-press-link]').forEach(a=>{if(a.dataset.pressLink===file)a.setAttribute('aria-current','page')});
 function grouped(){
  const active=comparison==='key'?['BF16','QeRL','Ours']:methods;
- const wide=document.body.classList.contains('layout-p2');
+ const wide=document.body.dataset.page === 'home';
  const w=wide?1280:1000,h=wide?330:420,L=48,R=18,T=32,B=wide?55:67,plotW=w-L-R,plotH=h-T-B,group=plotW/5;
  const unit=comparison==='key'?37:20,gap=comparison==='key'?6:4,total=active.length*(unit+gap)-gap;
  let axisLabels="",barLabels="";
- let s=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(model+' '+precision)} 五项基准测试的方法得分比较，纵轴从零开始">`;
- s+=`<text x="${L}" y="14" class="axis-label">得分（%）</text>`;
+ let s=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(model+' '+precision)} scores on five benchmarks; vertical axis starts at zero">`;
+ s+=`<text x="${L}" y="14" class="axis-label">Score (%)</text>`;
  [0,25,50,75,100].forEach(t=>{const y=T+plotH*(1-t/100);if(t!==0)s+=`<line x1="${L}" x2="${w-R}" y1="${y}" y2="${y}" class="gridline"/>`;axisLabels+=`<text x="${L-12}" y="${y+4}" text-anchor="end" class="tick">${t}</text>`});
  benchmarks.forEach(([key,title],i)=>{
   const start=L+i*group+(group-total)/2;
@@ -48,9 +48,9 @@ function render(){
  let summary;
  if(type==='multiples')summary=metric==='average'?'五项基准的平均分，比较各模型的七种方法。':'所选基准上，三个模型的七种方法对比。';
  else if(type==='horizontal'&&metric!=='average')summary='所选基准的七种方法对比，BF16 为全精度参考。';
- else summary=`${model}${expanded?' · '+precision:''}：平均分 ${ours.average.toFixed(2)}（BF16：${bf.average.toFixed(2)}），较最强量化基线 ${best.method} 高 ${(ours.average-best.average).toFixed(2)} 分。`;
+ else summary=`${model}${expanded?' · '+precision:''}: average score ${ours.average.toFixed(2)} (BF16: ${bf.average.toFixed(2)}), ${(ours.average-best.average).toFixed(2)} points above the strongest quantized baseline, ${best.method}.`;
  root.querySelector('[data-press-summary]').textContent=summary;
- const settingLabel=root.querySelector('[data-press-setting-label]');if(settingLabel)settingLabel.textContent=precision+' · BF16 参考';
+ const settingLabel=root.querySelector('[data-press-setting-label]');if(settingLabel)settingLabel.textContent=precision+' · BF16 reference';
  root.dataset.ready='true';
 }
 root.querySelectorAll('[data-press-model]').forEach(b=>b.onclick=()=>{if(!data.length)return;model=b.dataset.pressModel;precision=b.dataset.pressPrecision||'W4A16';render()});
@@ -63,5 +63,5 @@ fetch(expanded?'experiments/data/benchmark_results.csv':'experiments/data/result
   const lines=csv.trim().split(/\r?\n/),keys=lines.shift().split(',');
   return lines.map(line=>Object.fromEntries(line.split(',').map((v,i)=>[keys[i],i<3?v:Number(v)])));
  });
-}).then(d=>{data=d;render()}).catch(()=>{root.querySelector('.press-plot').textContent='基准数据暂时无法读取，请刷新重试。'});
+}).then(d=>{data=d;render()}).catch(()=>{root.querySelector('.press-plot').textContent='Benchmark data could not be loaded. Please reload.'});
 })();

@@ -1,41 +1,66 @@
 # Site maintenance
 
-The repository root is the static publication tree for https://xxxxyu.github.io/SteerDistill/.
+This repository is a static publication tree. GitHub Pages serves the root at https://xxxxyu.github.io/SteerDistill/. The 2026-11-02 page split is reviewed through the local preview before replacing the published version.
 
-## Source map
+## Four entry pages, one shell
 
-| Purpose | Maintained source |
+| Entry | Purpose | Language |
+| --- | --- | --- |
+| `index.html` | Paper identity, benchmark overview, TL;DR and concept animation | English |
+| `article.html` | Independent research blog post, Xiangyu Li byline, contents and notes | Chinese |
+| `design-lab/paper-cases.html` | Thirteen reviewed full cases | Chinese |
+| `design-lab/case-records.html` | Original trajectories and record navigation | Chinese |
+
+The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.
+
+### Sources and ownership
+
+| Change | Edit |
 | --- | --- |
-| Homepage and accepted hero | `index.html` |
-| Chinese article and hero labels | `design-lab/main-article.zh.json` |
-| Article composition | `design-lab/main-article.js` and `.css` |
-| Four inline cases | `design-lab/article-content/cases.zh.json` |
+| Navigation markup, labels and destinations | `site/templates/header.html` |
+| Fonts, paper colors, theme palette, global navigation geometry | `site/site.css` |
+| Initial theme and interaction | `site/theme-init.js`, `site/site.js` |
+| Homepage paper identity and overview content | `site/templates/home.html` |
+| Homepage composition | `site/home.css` |
+| Benchmark rendering / concept animation | `design-lab/press.js`, `design-lab/p2-concept.js` |
+| Article title, author, sections, paragraphs and footnotes | `design-lab/main-article.zh.json` |
+| Article renderer and instructional diagrams | `design-lab/main-article.js`, `design-lab/main-article.css` |
+| Blog layout, reading navigation and responsive notes | `site/article.css`, `site/reading.js` |
+| Continuous homepage-to-article reading | `site/home.js` |
+| Case/record body templates | `site/templates/paper-cases.html`, `site/templates/case-records.html` |
+| Approved inline case excerpts | `design-lab/article-content/cases.zh.json` |
 | Full cases and registry | `design-lab/case-content/` |
-| Case reader and raw record reader | `design-lab/paper-cases.html`, `design-lab/case-records.html` |
-| Shared evidence, layout, sidebar, URL handling | `design-lab/case-shared/` |
-| Original records and expansion pool | `data/` |
-| Benchmark chart inputs and figures | `experiments/` |
+| Shared evidence, case layout, sidebar, URL resolution | `design-lab/case-shared/` |
+| Original records / benchmark figures and inputs | `data/`, `experiments/` |
 
-The accepted presentation uses a 1080px page, 710px article text, and 850px inline evidence. Inline method rails share title/body heights across all methods; scrolling does not move following prose. Detailed reasoning and original guidance stay in the full case pages. Keep article excerpts concise rather than reproducing the complete case interface.
+Run `node scripts/build-pages.mjs` after editing templates or article metadata. It generates all four HTML entry pages with one header, one footer and shared asset declarations. No framework server or package installation is required; commit generated pages together with their sources. `node scripts/build-pages.mjs --check` detects stale output. Do not edit generated HTML directly.
 
-## Editing and verification
+## Reading behavior
 
-Read the [case author contract](../../design-lab/case-content/README.md) and [shared interfaces](../../design-lab/case-shared/README.md). Review each method, action, and reasoning excerpt against original records. Highlights are explicit, individually reviewed spans; the renderer does not choose them. Add case-specific editorial ledgers under `cases/<kind>/` when extending the collection.
+The homepage progressively renders the same article component below its English closing section. Scrolling remains entirely native: no wheel interception, artificial scroll thresholds or forced document reload. Crossing into the article updates the URL to `article.html`, the title and active navigation using `replaceState`; scrolling back restores the homepage address. Passive scrolling does not create history entries. Explicit links retain normal browser navigation. Reloading or sharing the article URL opens the independent post without the landing page.
 
-Run from the repository root:
+The article uses a 1080px outer measure, 680px prose column, left contents rail and 204px contextual notes on sufficiently wide screens. Evidence expands locally to 850px. Below 1280px, notes move to a generated endnote list; below 900px, contents becomes a disclosure. Each footnote is authored once alongside its paragraph and rendered consistently in either view. Six short section labels come from the same chapter data as the headings.
+
+Article metadata uses `post.title` for the document title and optional `post.titleLines` for intentional heading line breaks. `post.author`, `post.date`, `post.intro` belong to the blog, not the paper author block. A paragraph can provide `note: { id, text }`; the renderer generates stable references, notes and return links. Chapter `id` values remain stable for external links.
+
+Old `design-lab/p2.html` links still redirect to the root. Homepage links with existing article section hashes redirect to the independent post. All assets resolve through `SitePaths.url()` and support the GitHub project prefix. Raw task paths are never rewritten.
+
+## Case editing and verification
+
+Read the [case author contract](../../design-lab/case-content/README.md) and [shared interfaces](../../design-lab/case-shared/README.md). Highlights remain explicit, individually reviewed spans. This page split neither changes the thirteen cases nor adds new cases.
 
 ```sh
+node scripts/build-pages.mjs --check
+node --test scripts/site.test.cjs
 node design-lab/case-shared/validate-case.cjs
 node --test design-lab/case-shared/tests/*.cjs
 python3 -m http.server 18775
 ```
 
-Check desktop and narrow screens, light/dark themes, all five benchmark settings, method navigation, original-record links, and browser Back/Forward. With inline rails, check following-section document coordinates before/after changing methods. Check both root hosting and a `/SteerDistill/` URL prefix.
+Check root and `/SteerDistill/` hosting, five benchmark settings, scroll continuation in both directions, standalone article/deep links, theme persistence, narrow-screen contents and notes, and case/record links. Verify equal-height rails after method changes. Use local preview while reviewing new layout revisions; the published branch remains `codex/steerdistill-site`.
 
-Resource URLs in presentation JSON are site-relative, without a leading slash. `SitePaths.url()` resolves them from the shared script location, preserving GitHub Pages project prefixes. Do not apply URL rewriting to raw task content or filesystem paths. Keep local font names stable for browser caching; bump script/style query versions when shipping changes.
+## Prior cleanup and retained evidence
 
-## Publication cleanup
+Former layout studies, demos and temporary screenshots were archived outside the repository before removal. [The cleanup manifest](cleanup-manifest.json) records that operation. Original `data/` bytes remain available, including unselected cases. Three appendix candidates are retained as [editorial records](appendix-candidates.md).
 
-The accepted Chinese homepage is the root entry. `design-lab/p2.html` redirects while preserving its query/hash. Former layout studies, candidate preview pages, demos, and temporary screenshots were removed after a complete external archive was made. [The cleanup manifest](cleanup-manifest.json) records that operation. All original `data/` bytes remain available, including unselected cases for later review. The three appendix candidates are retained as [editorial records](appendix-candidates.md), not separate public trial interfaces.
-
-The original local archive is external to this repository; its portable location hint appears in the manifest. No unpublished manuscript notes are included in this publication tree. Preserve the root MIT license, OxyGen notice/license, and font licenses when distributing the site.
+No unpublished manuscript notes are included here. Preserve the MIT license, OxyGen notice/license and font licenses. Research decisions and the manuscript fact map are maintained in the private paper repository, separately from this public site.

@@ -1,0 +1,37 @@
+<main id="content"><div class="home-main" id="top">
+<section class="press-hero"><div class="press-intro">
+  <header class="paper-identity">
+    <h1 aria-label="SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering"><span class="paper-name">SteerDistill</span>
+      <span class="paper-full-title">Quantizing LLM Agents<br class="title-break"> via Closed-Loop Teacher Steering</span></h1>
+    <div class="paper-byline" aria-label="Authors"><span><a href="https://github.com/ustccuigm" target="_blank" rel="noopener noreferrer">Genming Cui</a><sup>*</sup></span><span><a href="https://xxxxyu.github.io/" target="_blank" rel="noopener noreferrer">Xiangyu Li</a><sup>*,‡</sup></span><span><a href="https://scholar.google.com/citations?user=5C9woXAAAAAJ" target="_blank" rel="noopener noreferrer">Zixu Hao</a></span><span><a href="https://xinding-bot.github.io/" target="_blank" rel="noopener noreferrer">Xin Ding</a></span><span><a href="https://yunxinliu.github.io/" target="_blank" rel="noopener noreferrer">Yunxin Liu</a></span><span><a href="https://tingcao952.github.io/" target="_blank" rel="noopener noreferrer">Ting Cao</a></span></div><p class="paper-author-notes"><span>* Equal contribution</span><span>‡ Project lead</span></p>
+    <p class="paper-affiliation">Institute for AI Industry Research (AIR), Tsinghua University</p>
+    <nav class="paper-resources" aria-label="Project resources">
+      <a href="https://github.com/ustccuigm/bitdistill">Code</a>
+      <a href="experiments/data/benchmark_results.csv">Data</a>
+      <a href="design-lab/paper-cases.html">Cases</a>
+    </nav>
+
+  </header>
+  <div class="paper-overview"><p class="paper-tldr"><strong>TL;DR</strong> Teacher guidance helps a quantized agent correct failed decisions. Distillation turns those corrections into independent behavior—no teacher at inference.</p><figure class="concept-motion" data-concept-motion data-stage="0" aria-label="Training method overview">
+  <div class="concept-head"><button type="button" data-concept-play aria-pressed="true" aria-label="Pause method animation">Pause Ⅱ</button></div>
+  <svg viewBox="0 0 410 142" role="img" aria-label="Locate behavioral divergence, steer and verify corrections, then distill them into an independent quantized agent.">
+    <defs><marker id="concept-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1L7 4L1 7" fill="none" stroke="currentColor"/></marker></defs>
+    <g class="concept-locate"><path d="M8 71H42L67 48H91" class="concept-path failed"/><path d="M42 71L67 93H91" class="concept-path reference"/><circle cx="42" cy="71" r="5" class="concept-node"/><path d="M77 43L87 53M87 43L77 53" class="concept-cross"/><path d="M77 92L81 96L88 87" class="concept-check"/></g>
+    <path d="M111 71H151" class="concept-connector" marker-end="url(#concept-arrow)"/>
+    <g class="concept-steer"><text x="202" y="16" class="concept-teacher" text-anchor="middle">Teacher</text><path d="M202 23V44" class="concept-guide" marker-end="url(#concept-arrow)"/><path d="M181 61A24 24 0 1 1 179 84" class="concept-loop" marker-end="url(#concept-arrow)"/><path d="M192 73L200 81L214 64" class="concept-check"/></g>
+    <path d="M250 71H290" class="concept-connector" marker-end="url(#concept-arrow)"/>
+    <g class="concept-learn"><rect x="317" y="47" width="49" height="49" rx="3" class="concept-chip"/>
+      <path d="M329 41V47M342 41V47M355 41V47M329 96V102M342 96V102M355 96V102M311 59H317M311 72H317M311 85H317M366 59H372M366 72H372M366 85H372" class="concept-pins"/>
+      <rect x="328" y="58" width="9" height="9" class="concept-bit"/><rect x="346" y="58" width="9" height="9" class="concept-bit"/><rect x="328" y="76" width="9" height="9" class="concept-bit"/><rect x="346" y="76" width="9" height="9" class="concept-bit"/>
+    </g>
+    <circle r="3" class="concept-packet"/>
+    <text x="50" y="132" text-anchor="middle">Locate</text><text x="202" y="132" text-anchor="middle">Steer & verify</text><text x="342" y="132" text-anchor="middle">Distill</text>
+  </svg>
+  <div class="concept-foot"><p data-concept-caption>Align environment states to locate behavioral divergence.</p><a href="article.html#method" aria-label="Read about the method">The method</a></div>
+</figure></div>
+</div>
+<figure class="press-chart" data-press-chart="grouped" data-press-settings="expanded" data-default-comparison="all"><div class="press-figure-head"><strong>Benchmark results</strong><span data-press-setting-label>W4A16 · BF16 reference</span></div><div class="press-chart-tools"><div class="press-models" role="group" aria-label="Model and precision settings"><button data-press-model="Qwen3-8B" data-press-precision="W4A16" aria-pressed="true">Qwen3-8B<span>W4A16</span></button><button data-press-model="Qwen3-8B" data-press-precision="W4A8" aria-pressed="false">Qwen3-8B<span>W4A8</span></button><button data-press-model="Qwen3-8B" data-press-precision="W2A16" aria-pressed="false">Qwen3-8B<span>W2A16</span></button><button data-press-model="Qwen3.5-4B" data-press-precision="W4A16" aria-pressed="false">Qwen3.5-4B<span>W4A16</span></button><button data-press-model="Gemma 4 12B-it" data-press-precision="W4A16" aria-pressed="false">Gemma 4 12B-it<span>W4A16</span></button></div></div><div class="press-legend" aria-label="Methods"></div><div class="press-plot" aria-live="polite"></div><figcaption class="press-caption"><span data-press-summary></span><a href="article.html#results">Training & inference cost</a></figcaption></figure></section>
+<section class="reading-bridge"><p>Behind the results</p><h2>How do quantized agents<br>recover their ability to act?</h2><a href="article.html">Read the research story <span>↓</span></a><p class="bridge-hint">Continue scrolling · Article in Chinese</p></section>
+</div>
+{{post}}
+</main>
