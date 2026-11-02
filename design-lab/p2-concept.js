@@ -9,29 +9,33 @@
   // Each window: reveal begins, reveal ends, optional fade begins/ends.
   // A repeated window redraws the same route after feedback, from the same state.
   const tracks = [
+    ['locate-context', [[400, 700]]],
     ['decision-1', [[400, 700]], 'bar'],
     ['decision-2', [[760, 1060]], 'bar'],
     ['decision-3', [[1120, 1420]], 'bar'],
     ['decision-4', [[1480, 1780]], 'bar'],
     ['failure', [[1820, 2070]]],
+    ['guidance-label', [[2300, 2620]]],
     ['guidance', [[2300, 2620]]],
     ['guidance-initial', [[2530, 2810, 6300, 6600]]],
     ['to-agent', [[2900, 3250, 6300, 6600], [7100, 7450]], 'line'],
     ['to-agent-tip', [[3170, 3300, 6300, 6600], [7370, 7500]]],
-    ['retry-1', [[3400, 3700, 6300, 6600], [7600, 7900]], 'bar'],
-    ['retry-failed', [[3820, 4120, 6300, 6600]], 'bar'],
+    ['retry-label', [[3400, 3700, 6300, 6600], [7600, 7900]]],
+    ['retry-failed', [[3400, 3700, 6300, 6600]], 'bar'],
     ['to-verify', [[4300, 4530, 6300, 6600], [8420, 8650]], 'line'],
     ['to-verify-tip', [[4460, 4590, 6300, 6600], [8580, 8710]]],
+    ['verify-label', [[4700, 4960, 6300, 6600], [8840, 9200]]],
     ['verify-failed', [[4700, 4960, 6300, 6600]]],
-    ['feedback-label', [[5100, 5450]]],
+    ['feedback-label', [[5100, 6100]]],
     ['feedback', [[5100, 6100]], 'line'],
     ['feedback-tip', [[6000, 6170]]],
     ['guidance-refined', [[6650, 7000]]],
-    ['retry-2', [[8010, 8310]], 'bar'],
+    ['retry-corrected', [[7600, 7900]], 'bar'],
     ['verified', [[8840, 9200]], 'line'],
-    ['pass-label', [[9400, 9680]]],
+    ['distill-label', [[9400, 10400]]],
     ['retain', [[9400, 10400]], 'line'],
     ['retain-tip', [[10300, 10470]]],
+    ['learn-context', [[10700, 11000]]],
     ...Array.from({length:6}, (_, i) => [`learn-${i+1}`, [[10700+i*320,11000+i*320]], 'bar'])
   ];
   const smooth = 'cubic-bezier(.22,.61,.36,1)';

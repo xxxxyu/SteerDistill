@@ -39,3 +39,25 @@ test('reduced motion shows the completed accepted route without a running animat
  const f=fixture(true);assert.equal(f.root.dataset.motionRunning,'false');
  assert.ok(f.animations.every(a=>a.state==='paused'&&a.currentTime===14000));
 });
+
+test('labels follow their visual units and only one local retry is visible at a time',()=>{
+ const {animations}=fixture();const byId=id=>animations.find(a=>a.id===id);
+ const opacityAt=(id,time)=>{
+  const frames=byId(id).frames,t=time/17000;
+  for(let i=1;i<frames.length;i++)if(t<=frames[i].offset){
+   const a=frames[i-1],b=frames[i];return a.opacity+(b.opacity-a.opacity)*(t-a.offset)/(b.offset-a.offset);
+  }
+  return 0;
+ };
+ for(let t=0;t<=17000;t+=20){
+  const active=id=>opacityAt(id,t)>0.001;
+  assert.equal(active('locate-context'),active('decision-1'));
+  assert.equal(active('guidance-label'),active('guidance'));
+  assert.equal(active('retry-label'),active('retry-failed')||active('retry-corrected'));
+  assert.equal(active('verify-label'),active('verify-failed')||active('verified'));
+  assert.equal(active('learn-context'),active('learn-1'));
+  assert.equal(active('feedback-label'),active('feedback'));
+  assert.equal(active('distill-label'),active('retain'));
+  assert.ok(!(active('retry-failed')&&active('retry-corrected')));
+ }
+});
