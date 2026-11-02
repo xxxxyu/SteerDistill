@@ -1,6 +1,6 @@
 # Site maintenance
 
-This repository is a static publication tree. GitHub Pages serves the root at https://xxxxyu.github.io/SteerDistill/. The 2026-11-02 page split is reviewed through the local preview before replacing the published version.
+This repository is a static publication tree. GitHub Pages serves the root at https://xxxxyu.github.io/SteerDistill/. The 2026-11-02 revision separates the English project landing from the Chinese research article while retaining continuous scrolling between them. All four entry pages share the navigation, theme and typography.
 
 ## Four entry pages, one shell
 
@@ -62,7 +62,7 @@ Read the [case author contract](../../design-lab/case-content/README.md) and [sh
 
 ```sh
 node scripts/build-pages.mjs --check
-node --test scripts/site.test.cjs
+node --test scripts/site.test.cjs scripts/concept-motion.test.cjs
 node design-lab/case-shared/validate-case.cjs
 node --test design-lab/case-shared/tests/*.cjs
 python3 -m http.server 18775
