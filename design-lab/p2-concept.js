@@ -2,10 +2,12 @@
   'use strict';
   const root = document.querySelector('[data-concept-motion]');
   if (!root) return;
-  let captions = [
-    'Align environment states to locate behavioral divergence.',
-    'Teacher guidance is tested through student execution.',
-    'Distill corrections; act independently at inference.'
+  const captions = [
+    'Find where the agent’s actions go wrong.',
+    'The agent executes a teacher-guided retry.',
+    'Feedback refines guidance; retry from the same state.',
+    'Keep the correction once locally verified.',
+    'Learn the correction without the guidance.'
   ];
   const control = root.querySelector('[data-concept-play]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -33,7 +35,7 @@
     observer.observe(root);
     timer = setInterval(() => {
       if (playing && visible && !document.hidden) { stage = (stage + 1) % captions.length; render(); }
-    }, 3600);
+    }, 2800);
   }
   start();
   window.addEventListener('pagehide', () => { clearInterval(timer); observer.disconnect(); });

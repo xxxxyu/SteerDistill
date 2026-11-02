@@ -44,35 +44,43 @@
     </nav>
 
   </header>
-  <div class="paper-overview"><div class="paper-tldr"><p class="tldr-heading"><span>TL;DR</span><strong>Recover the ability to act.</strong></p><p>Teacher steering corrects a quantized agent’s failed decisions. Distillation makes these corrections its own—so it can act independently at inference.</p></div><figure class="concept-motion" data-concept-motion data-stage="0" aria-label="Training method overview">
-  <div class="concept-head"><button type="button" data-concept-play aria-pressed="true" aria-label="Pause method animation">Pause Ⅱ</button></div>
-  <svg viewBox="0 0 410 154" role="img" aria-label="Locate a failed action, verify a teacher-guided correction, then distill the correction for independent execution.">
+  <div class="paper-overview"><div class="paper-tldr"><p class="tldr-heading"><span>TL;DR</span><strong>Learn to act where quantization fails.</strong></p><p>Correct decisions are scarce in a quantized agent’s failure contexts. SteerDistill refines teacher guidance using execution feedback, then distills the verified corrections into an agent that acts without guidance.</p></div><figure class="concept-motion" data-concept-motion data-stage="0" aria-label="Training method overview" aria-describedby="concept-caption">
+  <div class="concept-head"><a href="article.html#method">Closed-loop teacher steering</a><button type="button" data-concept-play aria-pressed="true" aria-label="Pause method animation">Pause Ⅱ</button></div>
+  <svg viewBox="0 0 410 168" role="img" aria-label="Locate the failed decision. Teacher guidance leads to an agent retry and local verification. Failed verification feeds back to the teacher to refine guidance and retry from the same state. Verified corrections are distilled for unassisted inference.">
+    <defs>
+      <marker id="steer-arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L6 3L0 6Z" fill="var(--blue)"/></marker>
+      <marker id="feedback-arrow" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L6 3L0 6Z" fill="var(--red)"/></marker>
+    </defs>
     <g class="concept-locate">
-      <text x="0" y="14">Locate the failed decision</text>
-      <path d="M0 32H410" class="concept-track"/>
-      <path d="M0 32H48M60 32H108M120 32H168" class="concept-strip neutral"/>
-      <path d="M180 32H228" class="concept-strip failed"/>
-      <path d="M241 27L251 37M251 27L241 37" class="concept-cross"/>
+      <text x="0" y="12">Locate the failed decision</text>
+      <path d="M0 26H410" class="concept-track"/>
+      <path d="M0 26H48M60 26H108M120 26H168" class="concept-strip neutral"/>
+      <path d="M180 26H228" class="concept-strip failed"/>
+      <path d="M241 21L251 31M251 21L241 31" class="concept-cross"/>
     </g>
     <g class="concept-steer">
-      <text x="0" y="66">Steer, execute &amp; verify</text><text x="279" y="66" class="concept-teacher">Teacher</text>
-      <path d="M0 84H410" class="concept-track"/>
-      <path d="M0 84H48M60 84H108M120 84H168" class="concept-strip neutral"/>
-      <path d="M180 84H228M240 84H288M300 84H348" class="concept-strip corrected"/>
-      <path d="M271 62H204V76M200 72L204 76L208 72" class="concept-guide"/>
-      <path d="M364 83L370 89L381 76" class="concept-check"/>
+      <text x="0" y="57" class="concept-teacher">Teacher guidance</text>
+      <text x="167" y="57">Agent retry</text><text x="309" y="57">Verify</text>
+      <path d="M0 72H38M44 72H82" class="concept-strip guidance"/>
+      <path d="M100 72H153M251 72H297" class="concept-forward" marker-end="url(#steer-arrow)"/>
+      <path d="M167 72H197M203 72H233" class="concept-strip attempt"/>
+      <path d="M318 67L328 77M328 67L318 77" class="concept-cross concept-rejected"/>
+      <path d="M315 72L321 78L333 65" class="concept-check concept-accepted"/>
+      <path d="M323 87V116H40V87" class="concept-feedback" marker-end="url(#feedback-arrow)"/>
+      <text x="181" y="107" text-anchor="middle" class="concept-feedback-label">Failed check → refine guidance</text>
+      <path d="M347 72H397V155H370" class="concept-retain" marker-end="url(#steer-arrow)"/>
+      <text x="385" y="107" text-anchor="end" class="concept-pass-label">Pass</text>
     </g>
     <g class="concept-learn">
-      <text x="0" y="118">Distill for independent execution</text>
-      <path d="M0 136H410" class="concept-track"/>
-      <path d="M0 136H48M60 136H108M120 136H168M180 136H228M240 136H288M300 136H348" class="concept-strip corrected"/>
-      <path d="M364 135L370 141L381 128" class="concept-check"/>
+      <text x="0" y="140">Distill corrections · act without guidance</text>
+      <path d="M0 155H348" class="concept-track"/>
+      <path d="M0 155H48M60 155H108M120 155H168M180 155H228M240 155H288M300 155H348" class="concept-strip corrected"/>
     </g>
   </svg>
-  <div class="concept-foot"><p data-concept-caption>Align environment states to locate behavioral divergence.</p><a href="article.html#method" aria-label="Read about the method">The method</a></div>
+  <span id="concept-caption" data-concept-caption hidden>Find where the agent’s actions go wrong.</span>
 </figure></div>
 </div>
-<figure class="press-chart" data-press-chart="grouped" data-press-settings="expanded" data-default-comparison="all"><div class="press-figure-head"><strong>Benchmark results</strong><span data-press-setting-label>W4A16 · BF16 reference</span></div><div class="press-chart-tools"><div class="press-models" role="group" aria-label="Model and precision settings"><button data-press-model="Qwen3-8B" data-press-precision="W4A16" aria-pressed="true">Qwen3-8B<span>W4A16</span></button><button data-press-model="Qwen3-8B" data-press-precision="W4A8" aria-pressed="false">Qwen3-8B<span>W4A8</span></button><button data-press-model="Qwen3-8B" data-press-precision="W2A16" aria-pressed="false">Qwen3-8B<span>W2A16</span></button><button data-press-model="Qwen3.5-4B" data-press-precision="W4A16" aria-pressed="false">Qwen3.5-4B<span>W4A16</span></button><button data-press-model="Gemma 4 12B-it" data-press-precision="W4A16" aria-pressed="false">Gemma 4 12B-it<span>W4A16</span></button></div></div><div class="press-legend" aria-label="Methods"></div><div class="press-plot" aria-live="polite"></div><figcaption class="press-caption"><span data-press-summary></span><a href="article.html#results">Training & inference cost</a></figcaption></figure></section>
+<figure class="press-chart" data-press-chart="grouped" data-press-settings="expanded" data-default-comparison="all"><div class="press-figure-head"><strong>Benchmark results</strong></div><div class="press-chart-tools"><div class="press-models" role="group" aria-label="Model and precision settings"><button data-press-model="Qwen3-8B" data-press-precision="W4A16" aria-pressed="true">Qwen3-8B<span>W4A16</span></button><button data-press-model="Qwen3-8B" data-press-precision="W4A8" aria-pressed="false">Qwen3-8B<span>W4A8</span></button><button data-press-model="Qwen3-8B" data-press-precision="W2A16" aria-pressed="false">Qwen3-8B<span>W2A16</span></button><button data-press-model="Qwen3.5-4B" data-press-precision="W4A16" aria-pressed="false">Qwen3.5-4B<span>W4A16</span></button><button data-press-model="Gemma 4 12B-it" data-press-precision="W4A16" aria-pressed="false">Gemma 4 12B-it<span>W4A16</span></button></div></div><div class="press-legend" aria-label="Methods"></div><div class="press-plot" aria-live="polite"></div><figcaption class="press-caption"><span data-press-summary></span><a href="article.html#results">Training & inference cost</a></figcaption></figure></section>
 <section class="task-demos" aria-labelledby="demo-title">
   <header class="demo-heading"><h2 id="demo-title">SteerDistill in action</h2><p>From a request to a completed task.</p></header>
   <div class="demo-grid">
