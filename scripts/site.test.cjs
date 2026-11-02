@@ -12,7 +12,7 @@ test('every entry uses the same shell and resolves its local dependencies',()=>{
   assert.equal((html.match(/class="site-theme"/g)||[]).length,1,file);
   assert.match(html,/site\/site\.css/);assert.match(html,/site\/site\.js/);
   assert.doesNotMatch(html,/case-theme\.js|site-shell\.js/);
-  for(const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)){
+  for(const match of html.matchAll(/(?:src|href|poster)="([^"#]+)"/g)){
    if(/^(?:https?:|mailto:|data:)/.test(match[1]))continue;
    const asset=decodeURIComponent(match[1].split(/[?#]/)[0]);
    assert.ok(fs.existsSync(path.resolve(root,path.dirname(file),asset)),`${file}: ${asset}`);

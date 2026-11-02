@@ -31,19 +31,26 @@ The navigation labels are shared and deliberately Chinese: SteerDistill / 研究
 | Approved inline case excerpts | `design-lab/article-content/cases.zh.json` |
 | Full cases and registry | `design-lab/case-content/` |
 | Shared evidence, case layout, sidebar, URL resolution | `design-lab/case-shared/` |
+| Homepage task video placeholders and provenance | `demos/`, `docs/site-maintenance/demo-sources.json` |
 | Original records / benchmark figures and inputs | `data/`, `experiments/` |
 
-Run `node scripts/build-pages.mjs` after editing templates or article metadata. It generates all four HTML entry pages with one header, one footer and shared asset declarations. No framework server or package installation is required; commit generated pages together with their sources. `node scripts/build-pages.mjs --check` detects stale output. Do not edit generated HTML directly.
+Run `node scripts/build-pages.mjs` after editing templates or article metadata. It generates all four HTML entry pages with one header and shared asset declarations. No framework server or package installation is required; commit generated pages together with their sources. `node scripts/build-pages.mjs --check` detects stale output. Do not edit generated HTML directly.
 
 ## Reading behavior
 
-The homepage progressively renders the same article component below its English closing section. Scrolling remains entirely native: no wheel interception, artificial scroll thresholds or forced document reload. Crossing into the article updates the URL to `article.html`, the title and active navigation using `replaceState`; scrolling back restores the homepage address. Passive scrolling does not create history entries. Explicit links retain normal browser navigation. Reloading or sharing the article URL opens the independent post without the landing page.
+The homepage progressively renders the same article component below its task demonstration section. Scrolling remains entirely native: no wheel interception, artificial scroll thresholds or forced document reload. Crossing into the article updates the URL to `article.html`, the title and active navigation using `replaceState`; scrolling back restores the homepage address. Passive scrolling does not create history entries. Explicit links retain normal browser navigation. Reloading or sharing the article URL opens the independent post without the landing page.
 
-The article uses a 1080px outer measure, 680px prose column, left contents rail and 204px contextual notes on sufficiently wide screens. Evidence expands locally to 850px. Below 1280px, notes move to a generated endnote list; below 900px, contents becomes a disclosure. Each footnote is authored once alongside its paragraph and rendered consistently in either view. Six short section labels come from the same chapter data as the headings.
+The article uses a symmetric 1080px grid: 172px contents, 28px gap, 680px reading column, 28px gap, 172px contextual notes. All case embeds, figures and resource links share the 680px reading measure. Below 1160px, both rails collapse together: contents becomes a disclosure and notes move to the endnote list; the reading column stays centered. The post ends with its resource links, without a duplicated site footer. Each footnote is authored once alongside its paragraph and rendered consistently in either view. Six short section labels come from the same chapter data as the headings.
 
 Article metadata uses `post.title` for the document title and optional `post.titleLines` for intentional heading line breaks. `post.author`, `post.date`, `post.intro` belong to the blog, not the paper author block. A paragraph can provide `note: { id, text }`; the renderer generates stable references, notes and return links. Chapter `id` values remain stable for external links.
 
 Old `design-lab/p2.html` links still redirect to the root. Homepage links with existing article section hashes redirect to the independent post. All assets resolve through `SitePaths.url()` and support the GitHub project prefix. Raw task paths are never rewritten.
+
+## Homepage demonstrations
+
+The two temporary videos are restored byte-for-byte from `ustccuigm/bitdistill` gh-pages, not new benchmark evidence. They show the task-adapted SteerDistill checkpoint on BestBuy tasks 47 and 52. The original comparison used different training budgets; do not turn these placeholders into a benchmark claim. The source commit, original paths and blob hashes are recorded in `demo-sources.json`. Replace the video sources, posters, accessible names and task captions together in `site/templates/home.html` when the final demos are ready. The player uses native controls and `preload="none"`, without autoplay.
+
+The hero uses a large Libre title, italic Source Serif paper title, tinted TL;DR panel, and a small three-stage SVG. The bars illustrate locating a failed decision, verifying teacher steering, then distilling the correction; they do not encode measured latency or action counts. Animation pause and reduced-motion behavior are shared with the existing concept controller.
 
 ## Case editing and verification
 

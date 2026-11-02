@@ -4,7 +4,7 @@
   if (!surface) return;
   const root = surface.querySelector('#main-article');
   const contents = surface.querySelector('.post-toc details');
-  const narrow = matchMedia('(max-width:900px)');
+  const narrow = matchMedia('(max-width:1159px)');
   const layoutContents = () => { contents.open = !narrow.matches; };
   layoutContents(); narrow.addEventListener('change', layoutContents);
   let pending = false;
@@ -24,7 +24,7 @@
     update();
     // Desktop notes stay beside their paragraph, with a real endnote fallback for narrow screens.
     root.querySelectorAll('.note-ref').forEach(link => link.addEventListener('click', e => {
-      if (!matchMedia('(min-width:1280px)').matches) return;
+      if (!matchMedia('(min-width:1160px)').matches) return;
       e.preventDefault();const note=link.closest('.noted-paragraph').querySelector('.sidenote');
       note.tabIndex=-1;note.focus({preventScroll:true});
     }));
