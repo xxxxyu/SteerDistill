@@ -1,0 +1,104 @@
+{
+  "sourceRepository": "https://github.com/ustccuigm/bitdistill",
+  "sourceBranch": "gh-pages",
+  "sourceCommit": "bf85f6869c3b2f3a6fce064af13b7b409ddfcfb7",
+  "importedAt": "2026-11-04",
+  "files": [
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/README.txt",
+      "sha256": "3f5c51e21d8640e9f98d316c3328690c3cf3729776ee39304b14ef158f85327b"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/case_data.zip",
+      "sha256": "e3e7947cada2148053ddb2ebc94de59ce056edb39e3e3d5aa92b05c1e7f37fc7"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/category_score.jsonl",
+      "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/checksums.json",
+      "sha256": "1e71b89ebcf00f9b713b75d0062ecb2a54ab4a3c9c902da6e769f5ed3a82f70f"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/evidence.json",
+      "sha256": "6930b9a81655680caaccd98dc34aba6b4b855548bab2a30c682e623c7d46faf6"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/recovery_excerpt.json",
+      "sha256": "9dfb1c07eb4f287ff91d93953ffab662cba606d2bd9d2685f6466c44edef31a6"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/recovery_suffix.json",
+      "sha256": "25f3420c0a9b17193d4c313392cbe8aad21f4b6227c00315455ba32e586b187a"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+      "sha256": "2c052373569d7cf4aefbbe44db8d5372ccc7c4ab69a0050df40d29c9d7283cf3"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/README.txt",
+      "sha256": "d4cfd72866e329d4b3d2a2b9bd9febff8de9f6f101bdd61208e0c0b0f9a8f642"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/case_data.zip",
+      "sha256": "0e68379b5959e9e7656fc32f59306c8f988af1dd711ce734bfe85a740c2bbd57"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/category_score.jsonl",
+      "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/checksums.json",
+      "sha256": "5b1f32c2dc129065ad1ba0a47c848ee95d1405f93eee5b827ea2bb87ca205840"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/evidence.json",
+      "sha256": "c9889223f4efeb23f7ba8cfbb97ba1acd535d41e073117851b9d0bbbc26c6099"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/recovery_excerpt.json",
+      "sha256": "5e9a828c16164caae54cbd9b94c7e35aaebbbf38e09c5f505bcf65c298c2aa5d"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/recovery_suffix.json",
+      "sha256": "1cfc72fcfdcd37b89bc58532555454252a7099c00770c49cbc0ec1e2236f888d"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+      "sha256": "f373eb883a6dc37a39b257d03106c888823cb3df96bc26a26a3682d6d085a26d"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/README.txt",
+      "sha256": "91ccbe5b5acf842be72a84230a3f3cf8fd2c849e5d63198fe33597f7f618f0f3"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/case_data.zip",
+      "sha256": "e9a3c68d13357435bf8d63db81f569a811e2efc8ef1518c2fd8eb0eccf9f56de"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/category_score.jsonl",
+      "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/checksums.json",
+      "sha256": "b7363b5ec01fbd9d5caa177229f849aaaf2a6d2499ee52624d68b07345b39a29"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/evidence.json",
+      "sha256": "796253bed9b36447954642f7ae2f743b5beb1a438bac5c73daedc34f47e8f9ba"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/recovery_excerpt.json",
+      "sha256": "ef4f3c569476de87915ca15d57a94e93a342fa8392d2991a8ea35be5d9153c59"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/recovery_suffix.json",
+      "sha256": "3dbe58a17ace0d331beedfdfa25a64964e38a0ed362c50bba45e9ab8fce9f7a7"
+    },
+    {
+      "path": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+      "sha256": "c0f82d5ebd1606141adffe7dba0fd1c6cdbf21d4862b4b0141adf916e5ca86b1"
+    }
+  ]
+}

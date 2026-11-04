@@ -8,7 +8,7 @@ This repository is a static publication tree. GitHub Pages serves the root at ht
 | --- | --- | --- |
 | `index.html` | Paper identity, benchmark overview, TL;DR and concept animation | English |
 | `article.html` | Independent research blog post, Xiangyu Li byline, contents and notes | Chinese |
-| `design-lab/paper-cases.html` | Thirteen reviewed full cases | Chinese |
+| `design-lab/paper-cases.html` | Sixteen full cases (three new recovery cases awaiting user review) | Chinese |
 | `design-lab/case-records.html` | Original trajectories and record navigation | Chinese |
 
 The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.
@@ -58,7 +58,9 @@ The benchmark follows directly beneath the hero; precision stays in the setting 
 
 ## Case editing and verification
 
-Read the [case author contract](../../design-lab/case-content/README.md) and [shared interfaces](../../design-lab/case-shared/README.md). Highlights remain explicit, individually reviewed spans. This page split neither changes the thirteen cases nor adds new cases.
+The [2026-11-04 review batch](case-batch-20261104.md) adds R3–R5 using the existing sequence template. Ten upstream training packages remain deferred; selection priorities and evidence gaps are recorded in that batch note. The public release remains unchanged until user review.
+
+Read the [case author contract](../../design-lab/case-content/README.md) and [shared interfaces](../../design-lab/case-shared/README.md). Highlights remain explicit, individually reviewed spans.
 
 ```sh
 node scripts/build-pages.mjs --check

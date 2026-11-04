@@ -5,7 +5,7 @@ const root=new URL('../',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
 const data=JSON.parse(await read('design-lab/main-article.zh.json'));
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const version='release20261102';
+const version='review20261104';
 const sharedCSS=['site/site.css'];
 const articleCSS=['design-lab/case-shared/evidence-system.css','design-lab/case-shared/article-embed.css','design-lab/main-article.css','site/article.css'];
 const sharedJS=['design-lab/case-shared/site-paths.js','site/site.js'];

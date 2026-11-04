@@ -4,7 +4,7 @@
 .teacher-reading{margin-top:30px}.training-takeaway{margin:18px 0 0;font-size:15px}
 @media(max-width:800px){.training-branches{grid-template-columns:1fr;grid-template-rows:none;gap:22px}.training-branch{display:flex;flex-direction:column;gap:10px}}
 .sequence-reference>.ev-prose,.sequence-step>.ev-prose{color:var(--soft)}
-.sequence-step+.sequence-step{margin-top:18px}.sequence-step>.ev-prose{margin-bottom:10px}
+.sequence-step+.sequence-step{margin-top:18px}.evidence-reader .sequence-step>.ev-prose{margin-bottom:10px}
 .sequence-reference,.sequence-result{margin-top:24px}.sequence-reference-evidence{margin-top:12px}
 .sequence-reference-compact .sequence-reference-evidence{margin-top:0}
 .sequence-compact>.sequence-reference{margin-top:0}.sequence-compact>.sequence-steps+.sequence-reference{margin-top:18px}

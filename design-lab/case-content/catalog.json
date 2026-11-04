@@ -137,6 +137,27 @@
           "url": "design-lab/case-content/recovery/tool-name-recovery.json",
           "code": "R2",
           "indexTitle": "工具名纠错"
+        },
+        {
+          "id": "create-before-write",
+          "title": "写入报错后，先创建文件再重试",
+          "url": "design-lab/case-content/recovery/create-before-write.json",
+          "code": "R3",
+          "indexTitle": "创建后写入"
+        },
+        {
+          "id": "message-session-retry",
+          "title": "消息发送接连报错，修正参数并登录重试",
+          "url": "design-lab/case-content/recovery/message-session-retry.json",
+          "code": "R4",
+          "indexTitle": "登录后发送"
+        },
+        {
+          "id": "brake-pressure-retry",
+          "title": "刹车踩到一半仍无法启动，踩到底后重试成功",
+          "url": "design-lab/case-content/recovery/brake-pressure-retry.json",
+          "code": "R5",
+          "indexTitle": "刹车力度"
         }
       ]
     },
