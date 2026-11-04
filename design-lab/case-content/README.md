@@ -48,6 +48,7 @@ Catalog groups may define ordered `sections: [{id, label}]` for reading subgroup
 - Reserve each branch heading for its method/intervention name (`heading` may be omitted to use `name`); put observed behavior in `description`. Do not insert a full-width schema/protocol explanation between paired headings and action frames. Material common tool constraints belong in the task background.
 - Retain all available inference methods. Selections update actions, reasoning, observed results and records together. Branch color reflects local behavior, not full-task score.
 - Optional `details:{guidanceTitle,guidanceLabel,resultTitle}` enables the accepted ablation continuation. Each method then supplies `guidanceExcerpt`, `guidanceHighlights`, `guidance` (four original fields, or `{guidance: "freeform text"}`), and `resultLines:[{text,highlights,source}]`. This uses the existing fields/highlight components; do not invent a renderer.
+- Optional method `guidanceAnalysis:{text,highlights,source}` preserves a reviewed excerpt from the advisor's guidance-generation analysis. It appears inside that method's existing full-guidance disclosure, clearly attributed and separated from the final guidance. Do not use the executing agent's `reasoning` field for advisor analysis. Preserve mistaken beliefs as attributed quotes; a different final instruction does not establish self-correction. Analysis uses the same explicit semantic spans and source ledger as other passages.
 
 All event arrays use **display-ready** EvidenceUI strings:
 

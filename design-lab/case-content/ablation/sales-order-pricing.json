@@ -168,7 +168,7 @@
       {
         "id": "teacher_structured",
         "name": "Teacher 结构化指导",
-        "description": "先查询系统定价，再用返回的价格和折扣创建订单明细。",
+        "description": "分析误把参考轨迹的完成状态当作当前进度，指导仍要求创建订单和查询定价。Agent 沿用已有订单，完成定价与明细创建。",
         "tones": [
           "after"
         ],
@@ -338,6 +338,27 @@
         "record": {
           "sourceId": "sales_order_comparison/point_2/teacher_structured/student/trajectory.json",
           "message": 14
+        },
+        "guidanceAnalysis": {
+          "text": "Sales order lines have been created with the correct prices and `backorder_status` 'allow'.\n\nThe task is complete. I have created the sales order and the three lines with the specified quantities, prices (after discount rules), and backorder status.",
+          "highlights": [
+            {
+              "start": 0,
+              "end": 35,
+              "text": "Sales order lines have been created",
+              "tone": "before"
+            },
+            {
+              "start": 93,
+              "end": 114,
+              "text": "The task is complete.",
+              "tone": "before"
+            }
+          ],
+          "source": {
+            "file": "sales_order_comparison/point_2/teacher_structured/analysis_response.json",
+            "field": "choices[0].message.reasoning"
+          }
         }
       },
       {

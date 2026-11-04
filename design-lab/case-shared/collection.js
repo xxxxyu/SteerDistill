@@ -20,7 +20,18 @@ window.CaseCollection=(()=>{
  function sidebar(catalog,c){return CaseSidebar.mount(document.querySelector('.case-catalog'),{title:'案例目录',current:c.kind+'/'+c.id,groups:catalog.groups.map(CaseSidebar.caseGroup)})}
  function details(pair,settings,open){const section=U.make('section','step');if(settings.guidanceTitle)section.append(U.make('h2','case-section-title',settings.guidanceTitle));
   if(pair.some(m=>m.guidanceExcerpt))section.append(U.frame(settings.guidanceLabel||'指导原文节选',U.fields(pair.map(m=>[m.name,m]),{renderValue:m=>{const p=U.make('div','ev-prose');p.append(U.highlightedText(m.guidanceExcerpt||'',m.guidanceHighlights||[],{inlineCode:true}));return p}})));
-  pair.forEach(m=>{if(!m.guidance)return;const d=U.make('details','ev-disclosure');d.open=open.get(m.id)||false;d.addEventListener('toggle',()=>open.set(m.id,d.open));d.append(U.make('summary','',m.name+' · 完整指导'),U.frame(m.name,m.guidance.guidance?U.prose(m.guidance.guidance):U.guidance(m.guidance)));section.append(d)});
+  pair.forEach(m=>{
+   if(!m.guidance)return;
+   const d=U.make('details','ev-disclosure'),body=U.make('div','guidance-detail-stack');
+   d.open=open.get(m.id)||false;d.addEventListener('toggle',()=>open.set(m.id,d.open));
+   if(m.guidanceAnalysis){
+    const analysis=U.make('div','ev-prose');
+    analysis.append(U.highlightedText(m.guidanceAnalysis.text,m.guidanceAnalysis.highlights||[],{inlineCode:true}));
+    body.append(U.frame(m.name+' · 指导生成分析节选',analysis));
+   }
+   body.append(U.frame(m.name+' · 最终指导',m.guidance.guidance?U.prose(m.guidance.guidance):U.guidance(m.guidance)));
+   d.append(U.make('summary','',m.name+' · 完整指导'),body);section.append(d);
+  });
   if(pair.some(m=>m.resultLines)){section.append(U.arrow(),U.frame(settings.resultTitle||'执行结果',U.fields(pair.map(m=>[m.name,m.resultLines||[]]),{renderValue:lines=>{const p=U.make('div','ev-prose');lines.forEach((line,i)=>{if(i)p.append('\n');p.append(U.highlightedText(line.text,line.highlights||[]))});return p}})))}return section;
  }
  function mount(root,c,entry){const p=c.presentation,heading=title(c,entry),links=[{label:'完整记录',href:record(c)}];if(c.records.download)links.push({...c.records.download,download:true});

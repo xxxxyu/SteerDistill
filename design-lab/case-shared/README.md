@@ -109,6 +109,8 @@ The current collection adapter is `collection.js`; all four record types use `co
 
 ### Optional comparison continuation
 
+A comparison method may supply `guidanceAnalysis: {text, highlights, source}`. The collection's full-guidance disclosure shows this attributed advisor-analysis excerpt before the unchanged final guidance, using the existing EvidenceUI frames and marks. It stays separate from the executing agent's reasoning. Disclosure state remains keyed to method ID when either side changes. Methods without analysis retain their ordinary full-guidance view.
+
 `InferenceCase.mount` accepts `afterTurns(pair)`, called after the selected turns on every render. Return a DOM node for additional evidence tied to the two selected method objects (or null). Selection changes rebuild the node; keep any disclosure state needed across selections in the adapter. Existing comparison behavior is unchanged when omitted.
 
 `selectionLabels: [leftLabel, rightLabel]` optionally names the two selection controls (including their accessible labels). Defaults remain 左侧方法 / 右侧方法.
