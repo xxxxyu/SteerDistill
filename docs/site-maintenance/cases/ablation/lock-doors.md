@@ -99,3 +99,7 @@ manifest 收录本目标原始目录全部 1,631 个文件，直接链接现有�
 
 
 - 浏览器复核后仅调整 Student /008 回复显示：保留 `<summary>` 前的原文段落，显式标为节选，避免将 transport 式标签作为正文；确认问题及其红色区间不变。
+
+## Accepted-case language pass · 2026-11-05
+
+User accepted A5/A2/A3. Task and method summaries now use direct Chinese descriptions of the request, action and observed result. Repeated guidance explanations and redundant bilingual result labels were shortened; each result highlight was reviewed and relocated to the new exact phrase. Displayed action names omit the common `mcp_tool_` namespace (for example `mcp_tool_touch` → `touch`); source locators, actual operation suffixes, arguments, returns and event order are unchanged. Function-name spans were adjusted to the shorter display names. Quoted guidance/reasoning and raw records retain their original identifiers and text.

@@ -61,3 +61,18 @@ Author handoff initially excluded catalog and shared components; coordinator int
 ## Root visual review
 
 Student's sequence retains a red outcome frame because the extra parent-directory file remains. Its first touch is explicitly before/red; the later corrective cd and touch are after/blue through the shared per-action tone interface. Only the directory argument on cd retains a blue span; the corrected touch is not additionally highlighted. All null returns stay neutral. This separates the successful corrective steps from the remaining side effect instead of coloring every call by the final branch result. Method names, selectors and optional disclosures follow the other ablation pages; successful final replies and redundant checker-status lines were removed.
+
+## Accepted-case language pass · 2026-11-05
+
+User accepted A5/A2/A3. Task and method summaries now use direct Chinese descriptions of the request, action and observed result. Repeated guidance explanations and redundant bilingual result labels were shortened; each result highlight was reviewed and relocated to the new exact phrase. Displayed action names omit the common `mcp_tool_` namespace (for example `mcp_tool_touch` → `touch`); source locators, actual operation suffixes, arguments, returns and event order are unchanged. Function-name spans were adjusted to the shorter display names. Quoted guidance/reasoning and raw records retain their original identifiers and text.
+
+### GPT branch inventory check
+
+A separate read-only audit found no existing GPT/external branch for `multi_turn_base_12`. Checked the site import, nx published `reviewed-20261105/reserve/multi_turn_base_12`, and these remote evidence collections under `/mnt/genming/`:
+
+- `ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/`
+- `ablation-supervision-20261105/reviewed-cases/multi_turn_base_12/`, including all-guidance, all-trials and selected guidance/trajectory directories
+- `ablation-bfcl-discovery-20261104` and `ablation-benchmark-designed-20261104/focused-discovery`
+- Project indexes for one-missing-branch, one-missing-guidance, guidance-only-followup and existing-partial-followup
+
+Only Teacher structured, Teacher freeform and Student structured guidance exist; discovery contains unguided runs. The selection controls also list only Student and Teacher freeform. No model was rerun; the page retains the four available methods including unguided.

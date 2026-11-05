@@ -3,7 +3,7 @@
   "id": "convert-then-refuel",
   "kind": "ablation",
   "title": "换算出加仑数后，还要执行加油",
-  "summary": "用户要求加入 38 升汽油，加仑数保留两位小数。当前已换算得 10.038536 加仑，油箱仍有 10.0 加仑。加油工具的参数表示新增油量，因此下一步应加入 10.04 加仑。",
+  "summary": "用户要求加入 38 升汽油，并将换算后的加仑数保留两位小数。换算已经完成，应加入 10.04 加仑。油箱当前有 10.0 加仑，尚未执行加油。",
   "template": "comparison",
   "originalTask": {
     "question": [
@@ -26,7 +26,7 @@
       {
         "id": "teacher_structured",
         "name": "Teacher 结构化指导",
-        "description": "指导要求实际加油；agent 加入 10.04 加仑后确认完成。",
+        "description": "按指导加入 10.04 加仑汽油，然后确认完成。",
         "tones": [
           "after"
         ],
@@ -34,7 +34,7 @@
           [
             {
               "type": "action",
-              "name": "mcp_tool_fillFuelTank",
+              "name": "fillFuelTank",
               "args": "fuelAmount=10.04",
               "result": "fuelLevel=20.04",
               "highlights": {
@@ -98,12 +98,12 @@
         "guidanceSource": "data/cases/ablation_case/reviewed-20261105/main/multi_turn_base_74/trial-history/guidance/teacher_structured/attempt-1/guidance.json",
         "resultLines": [
           {
-            "text": "油量：10.0 → 20.04 加仑；实际加入 10.04 加仑。",
+            "text": "加入 10.04 加仑，油量从 10.0 增至 20.04 加仑。",
             "highlights": [
               {
-                "start": 3,
-                "end": 15,
-                "text": "10.0 → 20.04",
+                "start": 16,
+                "end": 29,
+                "text": "10.0 增至 20.04",
                 "tone": "after"
               }
             ],
@@ -118,7 +118,7 @@
       {
         "id": "student_structured",
         "name": "Student 结构化指导",
-        "description": "指导明确要求加入 10.04 加仑，agent 执行加油并报告总油量。",
+        "description": "按指导加入 10.04 加仑汽油，并报告加油后的总油量。",
         "tones": [
           "after"
         ],
@@ -126,7 +126,7 @@
           [
             {
               "type": "action",
-              "name": "mcp_tool_fillFuelTank",
+              "name": "fillFuelTank",
               "args": "fuelAmount=10.04",
               "result": "fuelLevel=20.04",
               "highlights": {
@@ -190,12 +190,12 @@
         "guidanceSource": "data/cases/ablation_case/reviewed-20261105/main/multi_turn_base_74/trial-history/guidance/student_structured/attempt-0/guidance.json",
         "resultLines": [
           {
-            "text": "油量：10.0 → 20.04 加仑；实际加入 10.04 加仑。",
+            "text": "加入 10.04 加仑，油量从 10.0 增至 20.04 加仑。",
             "highlights": [
               {
-                "start": 3,
-                "end": 15,
-                "text": "10.0 → 20.04",
+                "start": 16,
+                "end": 29,
+                "text": "10.0 增至 20.04",
                 "tone": "after"
               }
             ],
@@ -210,7 +210,7 @@
       {
         "id": "teacher_freeform",
         "name": "Teacher 自由文本指导",
-        "description": "指导给出了加油调用，agent 却只回复已加油，未执行这一步。",
+        "description": "指导给出了加油调用，agent 却没有执行，直接回复已完成加油。",
         "tones": [
           "before"
         ],
@@ -276,11 +276,11 @@
         "guidanceSource": "data/cases/ablation_case/reviewed-20261105/main/multi_turn_base_74/trial-history/guidance/teacher_freeform/attempt-0/guidance.json",
         "resultLines": [
           {
-            "text": "油量仍为 10.0 加仑；换算后未执行加油。",
+            "text": "没有加油，油量仍为 10.0 加仑。",
             "highlights": [
               {
-                "start": 2,
-                "end": 9,
+                "start": 7,
+                "end": 14,
                 "text": "仍为 10.0",
                 "tone": "before"
               }
@@ -296,7 +296,7 @@
       {
         "id": "external_structured",
         "name": "GPT 结构化指导",
-        "description": "指导要求调用成功后再结束，agent 却只确认换算结果，没有执行加油。",
+        "description": "指导要求实际加油后再结束，agent 却认为换算后任务就已完成，只回复了换算结果。",
         "tones": [
           "before"
         ],
@@ -365,11 +365,11 @@
         "guidanceSource": "data/cases/ablation_case/reviewed-20261105/main/multi_turn_base_74/trial-history/guidance/external_structured/attempt-0/guidance.json",
         "resultLines": [
           {
-            "text": "油量仍为 10.0 加仑；换算后未执行加油。",
+            "text": "没有加油，油量仍为 10.0 加仑。",
             "highlights": [
               {
-                "start": 2,
-                "end": 9,
+                "start": 7,
+                "end": 14,
                 "text": "仍为 10.0",
                 "tone": "before"
               }
@@ -385,7 +385,7 @@
       {
         "id": "unguided",
         "name": "无指导",
-        "description": "换算后直接结束，回复确认了数值，却没有调用加油工具。",
+        "description": "换算完成后就结束了回复，没有调用加油工具。",
         "tones": [
           "before"
         ],
@@ -441,11 +441,11 @@
         "guidanceHighlights": [],
         "resultLines": [
           {
-            "text": "油量仍为 10.0 加仑；换算后未执行加油。",
+            "text": "没有加油，油量仍为 10.0 加仑。",
             "highlights": [
               {
-                "start": 2,
-                "end": 9,
+                "start": 7,
+                "end": 14,
                 "text": "仍为 10.0",
                 "tone": "before"
               }

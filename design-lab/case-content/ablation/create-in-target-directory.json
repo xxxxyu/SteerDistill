@@ -3,7 +3,7 @@
   "id": "create-in-target-directory",
   "kind": "ablation",
   "title": "创建文件前，先进入目标目录",
-  "summary": "在 Documents 中创建 summary.txt，文件若已存在则报错。查询已确认目标文件不存在，当前目录仍是 /alex。find 的 path 只指定查询范围；touch 在当前目录创建文件。",
+  "summary": "用户要求在 `Documents` 中创建 `summary.txt`，如果文件已存在则报错。查询显示该文件不存在，但当前目录仍是 `/alex`：`find` 只查询指定路径，不会切换目录；`touch` 会在当前目录创建文件。",
   "template": "comparison",
   "originalTask": {
     "question": [
@@ -32,12 +32,12 @@
       {
         "id": "teacher_structured",
         "name": "Teacher 结构化指导",
-        "description": "先切换到 Documents，再创建文件。",
+        "description": "先进入 Documents，再创建文件。",
         "turns": [
           [
             {
               "type": "action",
-              "name": "mcp_tool_cd",
+              "name": "cd",
               "args": "folder=\"Documents\"",
               "result": "current_working_directory=\"Documents\"",
               "returnTone": "neutral",
@@ -59,7 +59,7 @@
             },
             {
               "type": "action",
-              "name": "mcp_tool_touch",
+              "name": "touch",
               "args": "file_name=\"summary.txt\"",
               "result": "null",
               "returnTone": "neutral",
@@ -117,11 +117,11 @@
         ],
         "resultLines": [
           {
-            "text": "文件创建在 /alex/Documents/summary.txt。",
+            "text": "文件位于 /alex/Documents/summary.txt。",
             "highlights": [
               {
-                "start": 6,
-                "end": 33,
+                "start": 5,
+                "end": 32,
                 "text": "/alex/Documents/summary.txt",
                 "tone": "after"
               }
@@ -136,12 +136,12 @@
       {
         "id": "student_structured",
         "name": "Student 结构化指导",
-        "description": "先在错误位置创建文件，随后发现问题并在 Documents 中重建，但留下了多余副本。",
+        "description": "先把文件建在 /alex。发现位置不对后，又在 Documents 中创建了一份，但没有删除最初误建的文件。",
         "turns": [
           [
             {
               "type": "action",
-              "name": "mcp_tool_touch",
+              "name": "touch",
               "args": "file_name=\"summary.txt\"",
               "result": "null",
               "returnTone": "neutral",
@@ -149,8 +149,8 @@
                 "name": [
                   {
                     "start": 0,
-                    "end": 14,
-                    "text": "mcp_tool_touch",
+                    "end": 5,
+                    "text": "touch",
                     "tone": "before"
                   }
                 ]
@@ -164,7 +164,7 @@
             },
             {
               "type": "action",
-              "name": "mcp_tool_cd",
+              "name": "cd",
               "args": "folder=\"Documents\"",
               "result": "current_working_directory=\"Documents\"",
               "returnTone": "neutral",
@@ -187,7 +187,7 @@
             },
             {
               "type": "action",
-              "name": "mcp_tool_touch",
+              "name": "touch",
               "args": "file_name=\"summary.txt\"",
               "result": "null",
               "returnTone": "neutral",
@@ -254,12 +254,12 @@
         ],
         "resultLines": [
           {
-            "text": "目标文件 /alex/Documents/summary.txt 已创建，但 /alex/summary.txt 仍保留。",
+            "text": "Documents 中已有目标文件，但 /alex/summary.txt 也留了下来。",
             "highlights": [
               {
-                "start": 39,
-                "end": 60,
-                "text": "/alex/summary.txt 仍保留",
+                "start": 20,
+                "end": 43,
+                "text": "/alex/summary.txt 也留了下来",
                 "tone": "before"
               }
             ],
@@ -273,12 +273,12 @@
       {
         "id": "teacher_freeform",
         "name": "Teacher 自由文本指导",
-        "description": "把查询路径当作创建位置，未切换目录就创建文件，并误报已在 Documents 中完成。",
+        "description": "误以为查询过 Documents 就能直接在其中创建文件。实际文件建在了 /alex，却回复已在 Documents 中完成。",
         "turns": [
           [
             {
               "type": "action",
-              "name": "mcp_tool_touch",
+              "name": "touch",
               "args": "file_name=\"summary.txt\"",
               "result": "null",
               "returnTone": "neutral",
@@ -286,8 +286,8 @@
                 "name": [
                   {
                     "start": 0,
-                    "end": 14,
-                    "text": "mcp_tool_touch",
+                    "end": 5,
+                    "text": "touch",
                     "tone": "before"
                   }
                 ]
@@ -353,11 +353,11 @@
         ],
         "resultLines": [
           {
-            "text": "文件创建在 /alex/summary.txt；Documents 仍为空。",
+            "text": "文件位于 /alex/summary.txt，Documents 中没有创建文件。",
             "highlights": [
               {
-                "start": 6,
-                "end": 23,
+                "start": 5,
+                "end": 22,
                 "text": "/alex/summary.txt",
                 "tone": "before"
               }
@@ -372,12 +372,12 @@
       {
         "id": "unguided",
         "name": "无指导",
-        "description": "原始失败轨迹也在查询后直接创建文件，遗漏了切换目录。",
+        "description": "查询后直接创建文件，没有先进入 Documents，也误报文件已建在目标目录。",
         "turns": [
           [
             {
               "type": "action",
-              "name": "mcp_tool_touch",
+              "name": "touch",
               "args": "file_name=\"summary.txt\"",
               "result": "null",
               "returnTone": "neutral",
@@ -385,8 +385,8 @@
                 "name": [
                   {
                     "start": 0,
-                    "end": 14,
-                    "text": "mcp_tool_touch",
+                    "end": 5,
+                    "text": "touch",
                     "tone": "before"
                   }
                 ]
@@ -446,11 +446,11 @@
         ],
         "resultLines": [
           {
-            "text": "文件创建在 /alex/summary.txt；Documents 仍为空。",
+            "text": "文件位于 /alex/summary.txt，Documents 中没有创建文件。",
             "highlights": [
               {
-                "start": 6,
-                "end": 23,
+                "start": 5,
+                "end": 22,
                 "text": "/alex/summary.txt",
                 "tone": "before"
               }

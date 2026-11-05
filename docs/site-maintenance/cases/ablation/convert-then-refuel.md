@@ -118,3 +118,7 @@ JSON 的每个展示事件、推理与结果含 site-relative `source.file`、me
 - `design-lab/case-records.html?group=ablation&case=convert-then-refuel&source=teacher_structured-trajectory&message=6`
 
 无需重新运行实验，未提交 commit。技术核对与用户最终接受分开。
+
+## Accepted-case language pass · 2026-11-05
+
+User accepted A5/A2/A3. Task and method summaries now use direct Chinese descriptions of the request, action and observed result. Repeated guidance explanations and redundant bilingual result labels were shortened; each result highlight was reviewed and relocated to the new exact phrase. Displayed action names omit the common `mcp_tool_` namespace (for example `mcp_tool_touch` → `touch`); source locators, actual operation suffixes, arguments, returns and event order are unchanged. Function-name spans were adjusted to the shorter display names. Quoted guidance/reasoning and raw records retain their original identifiers and text.

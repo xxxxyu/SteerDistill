@@ -3,7 +3,7 @@
   "id": "lock-doors",
   "kind": "ablation",
   "title": "发现车门未锁后，执行锁门还是再次确认",
-  "summary": "用户要求检查并锁好所有车门。状态查询已返回：驾驶席、副驾驶席、左后和右后车门均未锁；锁门工具可用，unlock=false 表示锁定。",
+  "summary": "用户要求检查并锁好所有车门。查询发现四扇门都未锁，接下来应调用锁门工具，将 `unlock` 设为 `false`。",
   "template": "comparison",
   "originalTask": {
     "question": [
@@ -38,12 +38,12 @@
       {
         "id": "teacher_structured",
         "name": "Teacher 结构化指导",
-        "description": "指导要求锁定所有车门；agent 执行锁门后确认完成。",
+        "description": "按指导锁好四扇车门，然后向用户确认完成。",
         "turns": [
           [
             {
               "type": "action",
-              "name": "mcp_tool_lockDoors",
+              "name": "lockDoors",
               "args": "unlock=false, door=[\"driver\", \"passenger\", \"rear_left\", \"rear_right\"]",
               "result": "lockStatus=\"locked\", remainingUnlockedDoors=0",
               "highlights": {
@@ -128,12 +128,12 @@
         },
         "resultLines": [
           {
-            "text": "四扇门均为 locked；未锁车门：0",
+            "text": "四扇车门全部锁好。",
             "highlights": [
               {
-                "start": 13,
-                "end": 19,
-                "text": "未锁车门：0",
+                "start": 4,
+                "end": 8,
+                "text": "全部锁好",
                 "tone": "after"
               }
             ],
@@ -152,7 +152,7 @@
       {
         "id": "student_structured",
         "name": "Student 结构化指导",
-        "description": "指导要求锁定所有车门；agent 仍把任务理解为先报告状态，再次询问是否锁门。",
+        "description": "虽然指导要求锁门，agent 仍认为用户只是要检查状态，于是再次询问是否锁门。",
         "turns": [
           [
             {
@@ -226,12 +226,12 @@
         },
         "resultLines": [
           {
-            "text": "四扇门均为 unlocked；未锁车门：4",
+            "text": "四扇车门仍未锁。",
             "highlights": [
               {
-                "start": 15,
-                "end": 21,
-                "text": "未锁车门：4",
+                "start": 4,
+                "end": 7,
+                "text": "仍未锁",
                 "tone": "before"
               }
             ],
@@ -250,7 +250,7 @@
       {
         "id": "teacher_freeform",
         "name": "Teacher 自由文本指导",
-        "description": "指导直接给出锁门调用；agent 仍将请求理解为状态查询，再次询问是否锁门。",
+        "description": "指导已给出锁门调用，agent 却把任务理解为查询状态，再次询问是否锁门。",
         "turns": [
           [
             {
@@ -319,12 +319,12 @@
         },
         "resultLines": [
           {
-            "text": "四扇门均为 unlocked；未锁车门：4",
+            "text": "四扇车门仍未锁。",
             "highlights": [
               {
-                "start": 15,
-                "end": 21,
-                "text": "未锁车门：4",
+                "start": 4,
+                "end": 7,
+                "text": "仍未锁",
                 "tone": "before"
               }
             ],
@@ -343,12 +343,12 @@
       {
         "id": "external_structured",
         "name": "GPT 结构化指导",
-        "description": "指导指出用户已要求锁门；agent 执行锁门并确认完成。",
+        "description": "按指导执行锁门，然后向用户确认完成。",
         "turns": [
           [
             {
               "type": "action",
-              "name": "mcp_tool_lockDoors",
+              "name": "lockDoors",
               "args": "unlock=false, door=[\"driver\", \"passenger\", \"rear_left\", \"rear_right\"]",
               "result": "lockStatus=\"locked\", remainingUnlockedDoors=0",
               "highlights": {
@@ -433,12 +433,12 @@
         },
         "resultLines": [
           {
-            "text": "四扇门均为 locked；未锁车门：0",
+            "text": "四扇车门全部锁好。",
             "highlights": [
               {
-                "start": 13,
-                "end": 19,
-                "text": "未锁车门：0",
+                "start": 4,
+                "end": 8,
+                "text": "全部锁好",
                 "tone": "after"
               }
             ],
@@ -457,7 +457,7 @@
       {
         "id": "unguided",
         "name": "无指导",
-        "description": "查询发现四扇门均未锁后，agent 只报告状态并再次请求确认。",
+        "description": "发现四扇门都未锁后，只向用户报告状态，并询问是否需要锁门。",
         "turns": [
           [
             {
@@ -510,12 +510,12 @@
         "guidance": null,
         "resultLines": [
           {
-            "text": "四扇门均为 unlocked；未锁车门：4",
+            "text": "四扇车门仍未锁。",
             "highlights": [
               {
-                "start": 15,
-                "end": 21,
-                "text": "未锁车门：4",
+                "start": 4,
+                "end": 7,
+                "text": "仍未锁",
                 "tone": "before"
               }
             ],

@@ -188,7 +188,8 @@
         }
       ],
       "retiredCases": [
-        "sales-order-header"
+        "sales-order-header",
+        "enter-before-rename"
       ]
     }
   ]

@@ -42,3 +42,9 @@
 - `steerdistill-case-editorial` SKILL 补入优势展示选例原则及跨运行选择的证据边界，技能验证通过。
 
 本轮为本地预览，等待用户审阅；未发布。
+
+## User acceptance and language cleanup
+
+User accepted A5, A2 and A3. A4 is now explicitly retired through the shared catalog interface: its old case URL resolves to the current ablation collection instead of rendering the unlisted preview. Raw evidence is preserved. The A5 GPT inventory was independently rechecked on nx; no existing branch was found (scope recorded in its case ledger).
+
+All three task summaries, branch descriptions and state rows were edited for natural Chinese. Display calls omit only the repeated `mcp_tool_` namespace; original quoted guidance/reasoning, source records and operation suffixes are preserved. Exact name/state highlights were updated and revalidated. No shared renderer or per-page CSS fork was added.
