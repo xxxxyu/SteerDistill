@@ -1,0 +1,114 @@
+{
+  "local_accepted": false,
+  "comparison_before_continuation": true,
+  "guidance_only_first_request": true,
+  "unsteered_requests": 0,
+  "continuation_role": "diagnostic continuation; not an accepted local correction",
+  "final_score": {
+    "valid": true,
+    "passed": false,
+    "finish": "final_response",
+    "official_state": {
+      "valid": false,
+      "error_message": "Model instance for VehicleControlAPI does not match the state with ground truth instance.",
+      "error_type": "multi_turn:instance_state_mismatch",
+      "details": {
+        "differences": {
+          "remainingUnlockedDoors": {
+            "model": 4,
+            "ground_truth": 0
+          },
+          "doorStatus": {
+            "model": {
+              "driver": "unlocked",
+              "passenger": "unlocked",
+              "rear_left": "unlocked",
+              "rear_right": "unlocked"
+            },
+            "ground_truth": {
+              "driver": "locked",
+              "passenger": "locked",
+              "rear_left": "locked",
+              "rear_right": "locked"
+            }
+          }
+        },
+        "model_instance_state": {
+          "fuelLevel": 15.5,
+          "batteryVoltage": 12.8,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 4,
+          "doorStatus": {
+            "driver": "unlocked",
+            "passenger": "unlocked",
+            "rear_left": "unlocked",
+            "rear_right": "unlocked"
+          },
+          "acTemperature": 22.0,
+          "fanSpeed": 60,
+          "acMode": "auto",
+          "humidityLevel": 45.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 100.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 35.0,
+          "frontRightTirePressure": 35.0,
+          "rearLeftTirePressure": 33.0,
+          "rearRightTirePressure": 33.0,
+          "long_context": false
+        },
+        "ground_truth_instance_state": {
+          "fuelLevel": 15.5,
+          "batteryVoltage": 12.8,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 0,
+          "doorStatus": {
+            "driver": "locked",
+            "passenger": "locked",
+            "rear_left": "locked",
+            "rear_right": "locked"
+          },
+          "acTemperature": 22.0,
+          "fanSpeed": 60,
+          "acMode": "auto",
+          "humidityLevel": 45.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 100.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 35.0,
+          "frontRightTirePressure": 35.0,
+          "rearLeftTirePressure": 33.0,
+          "rearRightTirePressure": 33.0,
+          "long_context": false
+        }
+      }
+    },
+    "official_response": {
+      "valid": false,
+      "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+      "error_type": "multi_turn:execution_response_mismatch",
+      "details": {
+        "missing_items": [
+          "{'lockStatus': 'locked', 'remainingUnlockedDoors': 0}"
+        ],
+        "model_response (including all previous turns)": [
+          "{'doorStatus': {'driver': 'unlocked', 'passenger': 'unlocked', 'rear_left': 'unlocked', 'rear_right': 'unlocked'}}"
+        ],
+        "ground_truth_response (only the current turn)": [
+          "{'lockStatus': 'locked', 'remainingUnlockedDoors': 0}"
+        ]
+      }
+    },
+    "semantic_errors": [],
+    "goal_turn": 0,
+    "scope": "User turn 0; earlier turns must have passed unchanged original checkers",
+    "guidance_injected_only_first_request": true,
+    "teacher": false
+  }
+}

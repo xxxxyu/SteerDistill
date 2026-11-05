@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-b923eff5fb3cb93a",
+  "model": "case-model",
+  "created": 1793800724,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_lockDoors\", \"arguments\": \"{\\\"unlock\\\": false, \\\"door\\\": [\\\"driver\\\", \\\"passenger\\\", \\\"rear_left\\\", \\\"rear_right\\\"]}\"}}\n</tool_call>",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4253,
+    "total_tokens": 4312,
+    "completion_tokens": 59,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

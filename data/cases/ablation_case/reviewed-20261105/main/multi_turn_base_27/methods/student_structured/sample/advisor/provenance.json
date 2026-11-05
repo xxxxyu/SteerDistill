@@ -1,0 +1,5 @@
+{
+  "reused_generated_guidance": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-001/advisor",
+  "guidance_sha256": "9a589991ecb676477db5dc637dc44bc0ff0893a9673d24e609a561a43dff0407",
+  "new_advisor_generation": false
+}

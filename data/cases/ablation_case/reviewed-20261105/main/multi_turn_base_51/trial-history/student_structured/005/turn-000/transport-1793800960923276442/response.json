@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-a3d383cebcc17bf1",
+  "model": "case-model",
+  "created": 1793800960,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nThe current door status indicates that all doors (driver, passenger, rear left, rear right) are unlocked. To ensure safety, I will now initiate the process to lock all doors.\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_lockDoors\", \"arguments\": \"{\\\"unlock\\\": false, \\\"door\\\": [\\\"driver\\\", \\\"passenger\\\", \\\"rear_left\\\", \\\"rear_right\\\"]}\"}}\n</tool_call>",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4237,
+    "total_tokens": 4333,
+    "completion_tokens": 96,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

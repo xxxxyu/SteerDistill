@@ -1,0 +1,7 @@
+{
+  "context": "146341f5935222904f318eb3eaa0b86bc57d56416d475e2c856b8a6f61f9557d",
+  "state": "d3c68590caee17e444b92be8b67f776e5f05347fbbe8ceb4acb15bb0f471551e",
+  "guidance": "7950fb7f9b901aa2515d2e42c77feb95822e50cdd73350294a7050c47e547d97",
+  "seed": 71782927,
+  "model": "/mnt/genming/Arctic-AWM-BitDistiller-full/arctic_quant/w4a16/turn_level/common/initial-unified-awq-w4a16-g64"
+}

@@ -8,7 +8,7 @@ This repository is a static publication tree. GitHub Pages serves the root at ht
 | --- | --- | --- |
 | `index.html` | Paper identity, benchmark overview, TL;DR and concept animation | English |
 | `article.html` | Independent research blog post, Xiangyu Li byline, contents and notes | Chinese |
-| `design-lab/paper-cases.html` | Sixteen accepted full cases | Chinese |
+| `design-lab/paper-cases.html` | Nineteen full cases (A2–A4 pending user review) | Chinese |
 | `design-lab/case-records.html` | Original trajectories and record navigation | Chinese |
 
 The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.

@@ -1,0 +1,51 @@
+{
+  "verified": true,
+  "state": {
+    "GorillaFileSystem": {
+      "class": "GorillaFileSystem",
+      "attributes": {
+        "long_context": false,
+        "root": {
+          "class": "Directory",
+          "attributes": {
+            "name": "alex",
+            "contents": {
+              "workspace": {
+                "class": "Directory",
+                "attributes": {
+                  "name": "workspace",
+                  "contents": {
+                    "project_plan.md": {
+                      "class": "File",
+                      "attributes": {
+                        "name": "project_plan.md",
+                        "content": "Initial project plan details."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "TicketAPI": {
+      "class": "TicketAPI",
+      "attributes": {
+        "ticket_queue": [
+          {
+            "description": "Servers are down unexpectedly.",
+            "id": 12,
+            "priority": 3
+          }
+        ],
+        "ticket_counter": 1,
+        "current_user": null
+      }
+    }
+  },
+  "state_sha256": "7e5735defd898fa8f759c192a4bd361c9f355d07f61edf693b828e82dbda6a3c",
+  "context_sha256": "81689f07aeee1775de3818c1c8577eff3d1112e0640f5dac0fbed7b223aa896b",
+  "replayed": 0
+}

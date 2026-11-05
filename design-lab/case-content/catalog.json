@@ -175,6 +175,27 @@
           ],
           "code": "A1",
           "indexTitle": "订单折扣"
+        },
+        {
+          "id": "lock-doors",
+          "title": "发现车门未锁后，执行锁门还是再次确认",
+          "url": "design-lab/case-content/ablation/lock-doors.json",
+          "code": "A2",
+          "indexTitle": "执行锁车"
+        },
+        {
+          "id": "convert-then-refuel",
+          "title": "换算出加仑数后，还要执行加油",
+          "url": "design-lab/case-content/ablation/convert-then-refuel.json",
+          "code": "A3",
+          "indexTitle": "换算后加油"
+        },
+        {
+          "id": "enter-before-rename",
+          "title": "重命名文件前，先进入文件所在目录",
+          "url": "design-lab/case-content/ablation/enter-before-rename.json",
+          "code": "A4",
+          "indexTitle": "进入目录重命名"
         }
       ],
       "retiredCases": [

@@ -5,3 +5,5 @@
 .evidence-reader .comparison-first-turn>.ev-prose{margin-bottom:12px}
 .evidence-reader .comparison-mobile-summary{display:none}
 @media(max-width:800px){.evidence-reader .comparison-mobile-summary{display:block;margin:0 0 10px;color:var(--soft)}}
+/* Give long method names a full line on phones instead of clipping the selection. */
+@media(max-width:520px){.method-selects{grid-template-columns:1fr;gap:8px}.method-selects label{display:flex}.method-selects .selection-label{margin-bottom:0}}

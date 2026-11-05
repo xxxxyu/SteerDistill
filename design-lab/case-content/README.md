@@ -97,3 +97,7 @@ An explicit safe `group`/`case` URL can load an unregistered JSON at its prescri
 Withdrawn cases are listed in the catalog group's `retiredCases`; they are no longer available as formal unregistered previews. Preserve their raw data; historical presentation files remain in the pre-publication archive. This keeps withdrawal distinct from an author preview awaiting review.
 
 For a tool return whose meaning differs from its frame, set its manually reviewed `returnTone` to `before`, `after` or `neutral`. Omission or an empty string inherits the frame. For example, a returned price can be valid for the requested date even when the agent selected the wrong date. This is an evidence decision, not a method-wide formatting rule.
+
+### Optional unguided comparison
+
+A comparison method may omit `guidance`, `guidanceExcerpt` and `guidanceHighlights`. The shared guidance table renders “未提供指导” for that row and creates no full-guidance disclosure. Use the same method interface for actions, optional reasoning, results and source links. Keep unguided out of `defaultPair` when it is supplementary. If the only source is a full original run from a different start state, name it accordingly and describe the relevant difference; never represent it as a matched continuation.

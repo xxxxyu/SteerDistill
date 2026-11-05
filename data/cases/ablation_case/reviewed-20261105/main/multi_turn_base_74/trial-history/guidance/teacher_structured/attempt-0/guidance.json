@@ -1,0 +1,6 @@
+{
+  "text": "{\"precondition\":\"VehicleControlAPI.attributes.fuelLevel == 10.0\",\"decision_rule\":\"Call mcp_tool_fillFuelTank with fuelAmount=10.04 to refill 38L (10.04 gal)\",\"expected_transition\":\"VehicleControlAPI.attributes.fuelLevel == 20.04\",\"recovery_check\":\"Verify fuelLevel increased by 10.04\"}",
+  "variant": "teacher_structured",
+  "actual_model_generation": true,
+  "evidence_sha256": "afa3ca0f14dda135c397917bc0b561a72bee547c8efb35a53cdf9d2ef1f36518"
+}

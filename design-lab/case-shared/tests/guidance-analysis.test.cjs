@@ -8,12 +8,12 @@ const vm=require('node:vm');
 // selector are replaced, so swaps exercise the actual continuation renderer.
 function harness(){
  const element=tag=>({tagName:tag,children:[],className:'',dataset:{},handlers:{},
-  append(...nodes){this.children.push(...nodes)},addEventListener(event,fn){this.handlers[event]=fn},
+  setAttribute(key,value){this[key]=value},append(...nodes){this.children.push(...nodes)},addEventListener(event,fn){this.handlers[event]=fn},
   get textContent(){return this.children.map(n=>typeof n==='string'?n:n.textContent).join('')},
   set textContent(value){this.children=[value]}
  });
  const context={URL,URLSearchParams,Map,console,
-  document:{createElement:element,createTextNode:text=>({textContent:text}),querySelector(){return null}},
+  document:{createElement:element,createElementNS:(_,tag)=>element(tag),createTextNode:text=>({textContent:text}),querySelector(){return null}},
   SitePaths:{url:url=>url},CaseSidebar:{},InferenceCase:{mount:(_,config)=>config}
  };
  context.window=context;
@@ -41,4 +41,19 @@ test('advisor analysis stays attributed and preserves its disclosure across meth
  assert.equal(swapped[1].open,true);
  assert.doesNotMatch(swapped[0].textContent,/Already complete/);
  assert.match(swapped[1].textContent,/Teacher · 指导生成分析节选/);
+});
+
+
+test('unguided comparison has an explicit empty intervention and retains its result',()=>{
+ const C=harness(),guided={id:'teacher',name:'Teacher',guidance:{decision_rule:'Act.'},guidanceExcerpt:'Act.',resultLines:[{text:'Done'}]},
+  unguided={id:'unguided',name:'无指导',resultLines:[{text:'Unchanged'}]};
+ const config=C.mount({}, {id:'example',kind:'ablation',template:'comparison',title:'Example',summary:'Task',originalTask:{},
+  records:{defaultSource:'trace',sources:[]},presentation:{methods:[guided,unguided],turns:[],details:{}}});
+ for(const pair of [[guided,unguided],[unguided,guided]]){
+  const section=config.afterTurns(pair);
+  assert.match(section.textContent,/未提供指导/);
+  assert.match(section.textContent,/Unchanged/);
+  assert.equal(walk(section).filter(n=>n.tagName==='details').length,1);
+  assert.doesNotMatch(section.textContent,/无指导 · 完整指导/);
+ }
 });

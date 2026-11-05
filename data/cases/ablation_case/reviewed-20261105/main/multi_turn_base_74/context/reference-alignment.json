@@ -1,0 +1,196 @@
+{
+  "verified": true,
+  "exact_state_replay": true,
+  "reference": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/teacher-reference-atomic-repair",
+  "source_successful_reference": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/teacher-reference-atomic-repair",
+  "local_target": {
+    "state": {
+      "MathAPI": {
+        "class": "MathAPI",
+        "attributes": {}
+      },
+      "VehicleControlAPI": {
+        "class": "VehicleControlAPI",
+        "attributes": {
+          "fuelLevel": 20.04,
+          "batteryVoltage": 12.6,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 4,
+          "doorStatus": {
+            "driver": "unlocked",
+            "passenger": "unlocked",
+            "rear_left": "unlocked",
+            "rear_right": "unlocked"
+          },
+          "acTemperature": 25.0,
+          "fanSpeed": 50,
+          "acMode": "auto",
+          "humidityLevel": 50.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 50.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 32.0,
+          "frontRightTirePressure": 32.0,
+          "rearLeftTirePressure": 30.0,
+          "rearRightTirePressure": 30.0,
+          "long_context": false
+        }
+      }
+    },
+    "responses": [
+      {
+        "fuelLevel": 20.04
+      }
+    ]
+  },
+  "restored_state": {
+    "MathAPI": {
+      "class": "MathAPI",
+      "attributes": {}
+    },
+    "VehicleControlAPI": {
+      "class": "VehicleControlAPI",
+      "attributes": {
+        "fuelLevel": 10.0,
+        "batteryVoltage": 12.6,
+        "engine_state": "stopped",
+        "remainingUnlockedDoors": 4,
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "brakePedalStatus": "released",
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0,
+        "long_context": false
+      }
+    }
+  },
+  "restored_state_sha256": "d3c68590caee17e444b92be8b67f776e5f05347fbbe8ceb4acb15bb0f471551e",
+  "restored_context_sha256": "146341f5935222904f318eb3eaa0b86bc57d56416d475e2c856b8a6f61f9557d",
+  "official_score": {
+    "valid": true,
+    "passed": true,
+    "official_state": {
+      "valid": true
+    },
+    "official_response": {
+      "valid": true
+    }
+  },
+  "suffix_replay": [
+    {
+      "source_response": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/teacher-reference-atomic-repair/turn-000/response.json",
+      "execution": [
+        {
+          "turn": 0,
+          "tool": "fillFuelTank",
+          "arguments": {
+            "fuelAmount": 10.04
+          },
+          "response": {
+            "fuelLevel": 20.04
+          },
+          "before": {
+            "MathAPI": {
+              "class": "MathAPI",
+              "attributes": {}
+            },
+            "VehicleControlAPI": {
+              "class": "VehicleControlAPI",
+              "attributes": {
+                "fuelLevel": 10.0,
+                "batteryVoltage": 12.6,
+                "engine_state": "stopped",
+                "remainingUnlockedDoors": 4,
+                "doorStatus": {
+                  "driver": "unlocked",
+                  "passenger": "unlocked",
+                  "rear_left": "unlocked",
+                  "rear_right": "unlocked"
+                },
+                "acTemperature": 25.0,
+                "fanSpeed": 50,
+                "acMode": "auto",
+                "humidityLevel": 50.0,
+                "headLightStatus": "off",
+                "parkingBrakeStatus": "released",
+                "brakePedalStatus": "released",
+                "distanceToNextVehicle": 50.0,
+                "cruiseStatus": "inactive",
+                "destination": "None",
+                "frontLeftTirePressure": 32.0,
+                "frontRightTirePressure": 32.0,
+                "rearLeftTirePressure": 30.0,
+                "rearRightTirePressure": 30.0,
+                "long_context": false
+              }
+            }
+          },
+          "after": {
+            "MathAPI": {
+              "class": "MathAPI",
+              "attributes": {}
+            },
+            "VehicleControlAPI": {
+              "class": "VehicleControlAPI",
+              "attributes": {
+                "fuelLevel": 20.04,
+                "batteryVoltage": 12.6,
+                "engine_state": "stopped",
+                "remainingUnlockedDoors": 4,
+                "doorStatus": {
+                  "driver": "unlocked",
+                  "passenger": "unlocked",
+                  "rear_left": "unlocked",
+                  "rear_right": "unlocked"
+                },
+                "acTemperature": 25.0,
+                "fanSpeed": 50,
+                "acMode": "auto",
+                "humidityLevel": 50.0,
+                "headLightStatus": "off",
+                "parkingBrakeStatus": "released",
+                "brakePedalStatus": "released",
+                "distanceToNextVehicle": 50.0,
+                "cruiseStatus": "inactive",
+                "destination": "None",
+                "frontLeftTirePressure": 32.0,
+                "frontRightTirePressure": 32.0,
+                "rearLeftTirePressure": 30.0,
+                "rearRightTirePressure": 30.0,
+                "long_context": false
+              }
+            }
+          },
+          "semantic_tool_error": false,
+          "user_turn": 0
+        }
+      ]
+    },
+    {
+      "source_response": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/teacher-reference-atomic-repair/turn-001/response.json",
+      "execution": []
+    }
+  ],
+  "reference_verifier_assistance": true,
+  "reference_assistance": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/reference-assistance.json",
+  "not_unguided_teacher_performance": true,
+  "learner_original_context_preserved": true
+}

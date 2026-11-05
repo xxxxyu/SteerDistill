@@ -1,0 +1,4 @@
+{
+  "text": "{\n\n\"precondition\": \"Current door status indicates all doors are unlocked.\",\n\"decision_rule\": \"If doors are unlocked, execute mcp_tool_lockDoors with unlock=False and specify all doors in the door array.\",\n\"expected_transition\": \"All doors are locked, confirmed by updated doorStatus in VehicleControlAPI.\",\n\"recovery_check\": \"Verify lockStatus and remainingUnlockedDoors post-execution to ensure alignment with ground truth.\"\n}",
+  "variant": "teacher_structured"
+}

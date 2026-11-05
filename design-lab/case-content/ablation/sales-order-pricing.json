@@ -3,7 +3,7 @@
   "id": "sales-order-pricing",
   "kind": "ablation",
   "title": "创建订单明细前，用系统定价计算折扣",
-  "summary": "为 Joe’s Auto Repair 创建订单，包含 10 个油滤芯、4 套刹车片和 2 块电池，并应用系统折扣。订单已创建，日期为 2025-10-23，尚未添加明细。",
+  "summary": "为 Joe’s Auto Repair 创建订单，包含 10 个油滤芯、4 套刹车片和 2 块电池，并应用系统折扣。有指导的分支从一张日期为 2025-10-23、尚无明细的订单继续执行。",
   "template": "comparison",
   "originalTask": {
     "question": [
@@ -17,154 +17,6 @@
   },
   "presentation": {
     "methods": [
-      {
-        "id": "student_structured",
-        "name": "Student 结构化指导",
-        "description": "未查询系统定价，直接按标价创建订单明细。",
-        "tones": [
-          "before"
-        ],
-        "turns": [
-          [
-            {
-              "type": "action",
-              "name": "create_sales_order_line",
-              "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
-              "result": "discount_percent=0.0",
-              "highlights": {
-                "args": [
-                  {
-                    "start": 0,
-                    "end": 35,
-                    "text": "unit_price=9.99, discount_percent=0"
-                  }
-                ]
-              },
-              "source": {
-                "message": 14,
-                "returnMessage": 15,
-                "argsFields": [
-                  "unit_price",
-                  "discount_percent",
-                  "backorder_status"
-                ],
-                "resultFields": [
-                  "discount_percent"
-                ]
-              }
-            }
-          ]
-        ],
-        "guidance": {
-          "precondition": "The tool `mcp_server_create_sales_order_line` for the third item (BAT-12V-600CCA) has returned a success response, confirming all three requested items are added to the sales order.",
-          "decision_rule": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete. The assistant should now provide a final summary of the order.",
-          "expected_transition": "The assistant provides a final confirmation message summarizing the order details, including the order number, ship date, and the specific items added.",
-          "recovery_check": "If the tool had returned an error during the creation of the third line, the assistant would need to verify the error message and retry the line creation or report the specific failure."
-        },
-        "guidanceExcerpt": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete.",
-        "guidanceHighlights": [
-          {
-            "start": 129,
-            "end": 149,
-            "text": "the task is complete",
-            "tone": "before"
-          }
-        ],
-        "guidanceSource": "steering_prompt.txt",
-        "lines": [
-          {
-            "id": 21,
-            "sales_order_id": 11,
-            "sku": "OIL-FLTR-001",
-            "quantity_ordered": 10,
-            "unit_price": 9.99,
-            "discount_percent": 0,
-            "backorder_status": "allow"
-          },
-          {
-            "id": 22,
-            "sales_order_id": 11,
-            "sku": "BRK-TOY-001",
-            "quantity_ordered": 4,
-            "unit_price": 89.99,
-            "discount_percent": 0,
-            "backorder_status": "allow"
-          },
-          {
-            "id": 23,
-            "sales_order_id": 11,
-            "sku": "BAT-12V-600CCA",
-            "quantity_ordered": 2,
-            "unit_price": 129.99,
-            "discount_percent": 0,
-            "backorder_status": "allow"
-          }
-        ],
-        "resultLines": [
-          {
-            "text": "油滤芯：10 个，单价 9.99，折扣 0%",
-            "highlights": [
-              {
-                "start": 9,
-                "end": 22,
-                "text": "单价 9.99，折扣 0%",
-                "tone": "before"
-              }
-            ],
-            "source": {
-              "file": "student/final.db",
-              "table": "sales_order_lines",
-              "id": 21,
-              "fields": [
-                "unit_price",
-                "discount_percent"
-              ],
-              "partSku": "OIL-FLTR-001"
-            }
-          },
-          {
-            "text": "刹车片：4 套，单价 89.99，折扣 0%",
-            "highlights": [
-              {
-                "start": 8,
-                "end": 22,
-                "text": "单价 89.99，折扣 0%",
-                "tone": "before"
-              }
-            ],
-            "source": {
-              "file": "student/final.db",
-              "table": "sales_order_lines",
-              "id": 22,
-              "fields": [
-                "unit_price",
-                "discount_percent"
-              ],
-              "partSku": "BRK-TOY-001"
-            }
-          },
-          {
-            "text": "电池：2 块，单价 129.99，折扣 0%",
-            "highlights": [],
-            "source": {
-              "file": "student/final.db",
-              "table": "sales_order_lines",
-              "id": 23,
-              "fields": [
-                "unit_price",
-                "discount_percent"
-              ],
-              "partSku": "BAT-12V-600CCA"
-            }
-          }
-        ],
-        "result": "others",
-        "source": "sales_order_comparison/point_2/student_structured",
-        "record": {
-          "sourceId": "sales_order_comparison/point_2/student_structured/student/trajectory.json",
-          "message": 14
-        }
-      },
       {
         "id": "teacher_structured",
         "name": "Teacher 结构化指导",
@@ -359,6 +211,154 @@
             "file": "sales_order_comparison/point_2/teacher_structured/analysis_response.json",
             "field": "choices[0].message.reasoning"
           }
+        }
+      },
+      {
+        "id": "student_structured",
+        "name": "Student 结构化指导",
+        "description": "未查询系统定价，直接按标价创建订单明细。",
+        "tones": [
+          "before"
+        ],
+        "turns": [
+          [
+            {
+              "type": "action",
+              "name": "create_sales_order_line",
+              "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
+              "result": "discount_percent=0.0",
+              "highlights": {
+                "args": [
+                  {
+                    "start": 0,
+                    "end": 35,
+                    "text": "unit_price=9.99, discount_percent=0"
+                  }
+                ]
+              },
+              "source": {
+                "message": 14,
+                "returnMessage": 15,
+                "argsFields": [
+                  "unit_price",
+                  "discount_percent",
+                  "backorder_status"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            }
+          ]
+        ],
+        "guidance": {
+          "precondition": "The tool `mcp_server_create_sales_order_line` for the third item (BAT-12V-600CCA) has returned a success response, confirming all three requested items are added to the sales order.",
+          "decision_rule": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete. The assistant should now provide a final summary of the order.",
+          "expected_transition": "The assistant provides a final confirmation message summarizing the order details, including the order number, ship date, and the specific items added.",
+          "recovery_check": "If the tool had returned an error during the creation of the third line, the assistant would need to verify the error message and retry the line creation or report the specific failure."
+        },
+        "guidanceExcerpt": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete.",
+        "guidanceHighlights": [
+          {
+            "start": 129,
+            "end": 149,
+            "text": "the task is complete",
+            "tone": "before"
+          }
+        ],
+        "guidanceSource": "steering_prompt.txt",
+        "lines": [
+          {
+            "id": 21,
+            "sales_order_id": 11,
+            "sku": "OIL-FLTR-001",
+            "quantity_ordered": 10,
+            "unit_price": 9.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 22,
+            "sales_order_id": 11,
+            "sku": "BRK-TOY-001",
+            "quantity_ordered": 4,
+            "unit_price": 89.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          },
+          {
+            "id": 23,
+            "sales_order_id": 11,
+            "sku": "BAT-12V-600CCA",
+            "quantity_ordered": 2,
+            "unit_price": 129.99,
+            "discount_percent": 0,
+            "backorder_status": "allow"
+          }
+        ],
+        "resultLines": [
+          {
+            "text": "油滤芯：10 个，单价 9.99，折扣 0%",
+            "highlights": [
+              {
+                "start": 9,
+                "end": 22,
+                "text": "单价 9.99，折扣 0%",
+                "tone": "before"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 21,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "OIL-FLTR-001"
+            }
+          },
+          {
+            "text": "刹车片：4 套，单价 89.99，折扣 0%",
+            "highlights": [
+              {
+                "start": 8,
+                "end": 22,
+                "text": "单价 89.99，折扣 0%",
+                "tone": "before"
+              }
+            ],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 22,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BRK-TOY-001"
+            }
+          },
+          {
+            "text": "电池：2 块，单价 129.99，折扣 0%",
+            "highlights": [],
+            "source": {
+              "file": "student/final.db",
+              "table": "sales_order_lines",
+              "id": 23,
+              "fields": [
+                "unit_price",
+                "discount_percent"
+              ],
+              "partSku": "BAT-12V-600CCA"
+            }
+          }
+        ],
+        "result": "others",
+        "source": "sales_order_comparison/point_2/student_structured",
+        "record": {
+          "sourceId": "sales_order_comparison/point_2/student_structured/student/trajectory.json",
+          "message": 14
         }
       },
       {
@@ -707,6 +707,79 @@
           "sourceId": "sales_order_comparison/point_2/external_structured/student/trajectory.json",
           "message": 10
         }
+      },
+      {
+        "id": "unguided",
+        "name": "无指导 · 原始轨迹",
+        "description": "从任务起点创建日期为 2026-01-01 的订单，未查询系统定价，三条明细均按标价写入。",
+        "tones": [
+          ""
+        ],
+        "turns": [
+          [
+            {
+              "type": "action",
+              "name": "create_sales_order_line",
+              "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
+              "result": "discount_percent=0.0",
+              "source": {
+                "file": "sales_order_source/failed/trajectory.json",
+                "message": 14,
+                "returnMessage": 15,
+                "argsFields": [
+                  "unit_price",
+                  "discount_percent",
+                  "backorder_status"
+                ],
+                "resultFields": [
+                  "discount_percent"
+                ]
+              }
+            }
+          ]
+        ],
+        "record": {
+          "sourceId": "sales_order_source/failed/trajectory.json",
+          "message": 14
+        },
+        "resultLines": [
+          {
+            "text": "油滤芯：10 个，单价 9.99，折扣 0%",
+            "source": {
+              "file": "sales_order_source/failed/trajectory.json",
+              "message": 15,
+              "fields": [
+                "quantity_ordered",
+                "unit_price",
+                "discount_percent"
+              ]
+            }
+          },
+          {
+            "text": "刹车片：4 套，单价 89.99，折扣 0%",
+            "source": {
+              "file": "sales_order_source/failed/trajectory.json",
+              "message": 17,
+              "fields": [
+                "quantity_ordered",
+                "unit_price",
+                "discount_percent"
+              ]
+            }
+          },
+          {
+            "text": "电池：2 块，单价 129.99，折扣 0%",
+            "source": {
+              "file": "sales_order_source/failed/trajectory.json",
+              "message": 19,
+              "fields": [
+                "quantity_ordered",
+                "unit_price",
+                "discount_percent"
+              ]
+            }
+          }
+        ]
       }
     ],
     "defaultPair": [
@@ -714,8 +787,8 @@
       "student_structured"
     ],
     "selectionLabels": [
-      "左侧指导",
-      "右侧指导"
+      "左侧方法",
+      "右侧方法"
     ],
     "turns": [
       {
@@ -1700,9 +1773,9 @@
       },
       {
         "id": "sales_order_source/failed/trajectory.json",
-        "label": "原始来源 · failed/trajectory.json",
+        "label": "无指导 · 原始任务轨迹",
         "url": "data/cases/ablation_case/sales_order_source/failed/trajectory.json",
-        "primary": false,
+        "primary": true,
         "format": "auto"
       },
       {

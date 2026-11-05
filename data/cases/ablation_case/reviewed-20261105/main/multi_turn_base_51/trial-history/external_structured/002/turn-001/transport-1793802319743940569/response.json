@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-964d14836561abe8",
+  "model": "case-model",
+  "created": 1793802319,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nAll car doors have been successfully locked. The remaining unlocked doors count is now 0, indicating that the vehicle is secure. Done. I have confirmed and secured all doors.",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4418,
+    "total_tokens": 4458,
+    "completion_tokens": 40,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

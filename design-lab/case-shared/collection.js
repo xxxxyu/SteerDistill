@@ -19,7 +19,7 @@ window.CaseCollection=(()=>{
  }
  function sidebar(catalog,c){return CaseSidebar.mount(document.querySelector('.case-catalog'),{title:'案例目录',current:c.kind+'/'+c.id,groups:catalog.groups.map(CaseSidebar.caseGroup)})}
  function details(pair,settings,open){const section=U.make('section','step');if(settings.guidanceTitle)section.append(U.make('h2','case-section-title',settings.guidanceTitle));
-  if(pair.some(m=>m.guidanceExcerpt))section.append(U.frame(settings.guidanceLabel||'指导原文节选',U.fields(pair.map(m=>[m.name,m]),{renderValue:m=>{const p=U.make('div','ev-prose');p.append(U.highlightedText(m.guidanceExcerpt||'',m.guidanceHighlights||[],{inlineCode:true}));return p}})));
+  if(pair.some(m=>m.guidanceExcerpt))section.append(U.frame(settings.guidanceLabel||'指导原文节选',U.fields(pair.map(m=>[m.name,m]),{renderValue:m=>{const p=U.make('div','ev-prose');p.append(U.highlightedText(m.guidanceExcerpt||(m.guidance?'':'未提供指导'),m.guidanceHighlights||[],{inlineCode:true}));return p}})));
   pair.forEach(m=>{
    if(!m.guidance)return;
    const d=U.make('details','ev-disclosure'),body=U.make('div','guidance-detail-stack');

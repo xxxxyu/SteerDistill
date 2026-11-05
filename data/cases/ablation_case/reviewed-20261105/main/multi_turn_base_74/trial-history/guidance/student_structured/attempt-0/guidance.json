@@ -1,0 +1,6 @@
+{
+  "text": "{\n\n\"precondition\": \"Current fuel level is 10.0 gallons, and the user requests adding 38 liters (equivalent to 10.04 gallons).\",\n\"decision_rule\": \"Call mcp_tool_fillFuelTank with fuelAmount=10.04 to add the converted gallon value to the fuel tank.\",\n\"expected_transition\": \"Fuel level updates to 20.04 gallons (10.0 + 10.04) in VehicleControlAPI.\",\n\"recovery_check\": \"Verify fuelLevel equals 20.04 and confirm the gallon-based addition was applied.\"\n}",
+  "variant": "student_structured",
+  "actual_model_generation": true,
+  "evidence_sha256": "2428e41994d924458ea7ed193e66bc48487b70fa43c8607c78da6239fce0eb12"
+}

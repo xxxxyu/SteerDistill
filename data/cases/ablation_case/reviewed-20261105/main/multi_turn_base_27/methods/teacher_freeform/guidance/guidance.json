@@ -1,0 +1,4 @@
+{
+  "text": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_cd\", \"arguments\": \"{\\\"folder\\\": \\\"workspace\\\"}\"}}\n</tool_call>",
+  "variant": "teacher_freeform"
+}

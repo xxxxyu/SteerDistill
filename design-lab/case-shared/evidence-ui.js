@@ -71,11 +71,11 @@ window.EvidenceUI=(()=>{
   if(event.result!==undefined){if(typeof event.result!=='string')throw new TypeError('Displayed action result must be a string');const ret=make('span','ev-return'+(event.returnTone?' ev-return-'+event.returnTone:''));ret.append('→ ',highlightedText(event.result,h.result||[]));code.append('\n',ret);}
   el.append(code);return el;
  }
- function reply(event){const el=make('div','ev-reply');el.append(make('p','ev-reply-label',event.label||(event.excerpt?'Agent 回复 · 节选':'Agent 回复')));const p=make('p','ev-prose');p.append(highlightedText(event.text,event.highlights?.text||[]));el.append(p);return el;}
+ function reply(event){const el=make('div','ev-reply');el.append(make('p','ev-reply-label',event.label||(event.excerpt?'Agent 回复 · 节选':'Agent 回复')));const p=make('p','ev-prose');p.append(highlightedText(event.text,event.highlights?.text||[],{inlineCode:true}));el.append(p);return el;}
  function actionSequence(events){const el=make('div','ev-action-sequence');events.forEach(e=>{if(e.type==='action')el.append(action(e));else if(e.type==='reply')el.append(reply(e));else throw new TypeError(`Unknown evidence event type: ${e.type}`);});return el;}
  function reasoningDisclosure(branches,{label='查看 agent 推理节选',open=false,key,ariaLabel}={}){
   const el=make('details','ev-disclosure reasoning');el.open=open;if(key!==undefined)el.dataset.reasoningTurn=String(key);const summary=make('summary','',label);if(ariaLabel)summary.setAttribute('aria-label',ariaLabel);el.append(summary);
-  const items=branches.map(b=>{const body=make('div','ev-prose');body.append(highlightedText(b.text,b.highlights||[]));return frame(b.title,body,{tone:b.tone||''});});
+  const items=branches.map(b=>{const body=make('div','ev-prose');body.append(highlightedText(b.text,b.highlights||[],{inlineCode:true}));return frame(b.title,body,{tone:b.tone||''});});
   el.append(items.length===1?items[0]:pair(...items));return el;
  }
  function arrow(){const el=make('div','ev-arrow');el.setAttribute('aria-hidden','true');const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'),path=document.createElementNS('http://www.w3.org/2000/svg','path');svg.setAttribute('viewBox','0 0 24 20');path.setAttribute('d','M9 2h6v8h6l-9 8-9-8h6Z');svg.append(path);el.append(svg);return el;}

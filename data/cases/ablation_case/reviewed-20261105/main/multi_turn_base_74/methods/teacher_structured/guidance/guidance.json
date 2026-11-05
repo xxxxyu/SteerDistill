@@ -1,0 +1,6 @@
+{
+  "text": "{\"precondition\":\"Current fuelLevel is 10.0 and the converted gallon value is 10.04\",\"decision_rule\":\"Execute fuel refill using the converted gallon value\",\"expected_transition\":\"Fuel tank refill completes, updating fuelLevel to 20.04\",\"recovery_check\":\"Verify fuelLevel increases to 20.04 post-refill\"}",
+  "variant": "teacher_structured",
+  "actual_model_generation": true,
+  "evidence_sha256": "2428e41994d924458ea7ed193e66bc48487b70fa43c8607c78da6239fce0eb12"
+}

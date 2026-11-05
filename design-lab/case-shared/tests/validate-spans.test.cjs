@@ -30,3 +30,11 @@ test('inline code supports a partial code span and a span crossing code boundari
  const whole=U.highlightedText(text,[{start:0,end:text.length,text}],{inlineCode:true});
  assert.equal(whole.children[0].textContent,'A alpha beta Z');assert.equal(whole.children[0].children.filter(c=>c.tagName==='code').length,1);
 });
+
+test('reply code syntax uses the shared formatter without changing annotated source offsets',()=>{
+ const text="Use `lockDoors` after 'confirming'.",node=U.reply({text,highlights:{text:[{start:5,end:14,text:'lockDoors',tone:'after'}]}});
+ assert.equal(node.textContent,"Agent 回复Use lockDoors after 'confirming'.");
+ const descendants=n=>[n,...(n.children||[]).filter(x=>typeof x!=='string').flatMap(descendants)];
+ const mark=descendants(node).find(n=>n.tagName==='mark');
+ assert.equal(mark.className,'ev-mark-after');assert.equal(mark.children[0].tagName,'code');
+});

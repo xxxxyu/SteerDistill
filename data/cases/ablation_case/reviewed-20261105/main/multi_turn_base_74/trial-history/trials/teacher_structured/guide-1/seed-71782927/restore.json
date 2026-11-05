@@ -1,0 +1,42 @@
+{
+  "verified": true,
+  "state": {
+    "MathAPI": {
+      "class": "MathAPI",
+      "attributes": {}
+    },
+    "VehicleControlAPI": {
+      "class": "VehicleControlAPI",
+      "attributes": {
+        "fuelLevel": 10.0,
+        "batteryVoltage": 12.6,
+        "engine_state": "stopped",
+        "remainingUnlockedDoors": 4,
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "brakePedalStatus": "released",
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0,
+        "long_context": false
+      }
+    }
+  },
+  "state_sha256": "d3c68590caee17e444b92be8b67f776e5f05347fbbe8ceb4acb15bb0f471551e",
+  "context_sha256": "146341f5935222904f318eb3eaa0b86bc57d56416d475e2c856b8a6f61f9557d",
+  "replayed": 2
+}

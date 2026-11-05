@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-b3a6389ad7ee3061",
+  "model": "case-model",
+  "created": 1793803231,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_mv\", \"arguments\": \"{\\\"source\\\": \\\"project_plan.md\\\", \\\"destination\\\": \\\"project_overview.md\\\"}\"}}\n</tool_call>",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4690,
+    "total_tokens": 4740,
+    "completion_tokens": 50,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

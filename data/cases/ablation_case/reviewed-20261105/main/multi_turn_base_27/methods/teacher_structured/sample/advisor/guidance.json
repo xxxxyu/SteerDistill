@@ -1,0 +1,4 @@
+{
+  "text": "{\n\n\"precondition\": \"Current directory is not set to 'workspace'\",\n\"decision_rule\": \"Change directory to 'workspace' before renaming the file\",\n\"expected_transition\": \"Successfully rename 'project_plan.md' to 'project_overview.md' within 'workspace' directory\",\n\"recovery_check\": \"Verify file existence in 'workspace' directory post-operation\"\n}",
+  "variant": "teacher_structured"
+}

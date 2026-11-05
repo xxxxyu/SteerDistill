@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-bdb3e547edc7c71b",
+  "model": "case-model",
+  "created": 1793799793,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nDone. I have locked all doors successfully. All doors are now secured, and there are no remaining unlocked doors. Let me know if you need further assistance!",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4370,
+    "total_tokens": 4407,
+    "completion_tokens": 37,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

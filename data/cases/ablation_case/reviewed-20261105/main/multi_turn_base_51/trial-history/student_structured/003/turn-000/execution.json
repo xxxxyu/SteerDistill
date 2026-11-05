@@ -1,0 +1,137 @@
+[
+  {
+    "turn": 0,
+    "tool": "lockDoors",
+    "arguments": {
+      "unlock": false,
+      "door": [
+        "driver",
+        "passenger",
+        "rear_left",
+        "rear_right"
+      ]
+    },
+    "response": {
+      "lockStatus": "locked",
+      "remainingUnlockedDoors": 0
+    },
+    "before": {
+      "MessageAPI": {
+        "class": "MessageAPI",
+        "attributes": {
+          "generated_ids": [],
+          "user_count": 4,
+          "user_map": {
+            "Alice": "USR001",
+            "Bob": "USR002",
+            "Catherine": "USR003",
+            "Daniel": "USR004"
+          },
+          "inbox": [
+            {
+              "USR002": "My name is Alice. I want to connect."
+            },
+            {
+              "USR003": "Could you upload the file?"
+            },
+            {
+              "USR004": "Could you upload the file?"
+            }
+          ],
+          "message_count": 3,
+          "current_user": null
+        }
+      },
+      "VehicleControlAPI": {
+        "class": "VehicleControlAPI",
+        "attributes": {
+          "fuelLevel": 15.5,
+          "batteryVoltage": 12.8,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 4,
+          "doorStatus": {
+            "driver": "unlocked",
+            "passenger": "unlocked",
+            "rear_left": "unlocked",
+            "rear_right": "unlocked"
+          },
+          "acTemperature": 22.0,
+          "fanSpeed": 60,
+          "acMode": "auto",
+          "humidityLevel": 45.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 100.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 35.0,
+          "frontRightTirePressure": 35.0,
+          "rearLeftTirePressure": 33.0,
+          "rearRightTirePressure": 33.0,
+          "long_context": false
+        }
+      }
+    },
+    "after": {
+      "MessageAPI": {
+        "class": "MessageAPI",
+        "attributes": {
+          "generated_ids": [],
+          "user_count": 4,
+          "user_map": {
+            "Alice": "USR001",
+            "Bob": "USR002",
+            "Catherine": "USR003",
+            "Daniel": "USR004"
+          },
+          "inbox": [
+            {
+              "USR002": "My name is Alice. I want to connect."
+            },
+            {
+              "USR003": "Could you upload the file?"
+            },
+            {
+              "USR004": "Could you upload the file?"
+            }
+          ],
+          "message_count": 3,
+          "current_user": null
+        }
+      },
+      "VehicleControlAPI": {
+        "class": "VehicleControlAPI",
+        "attributes": {
+          "fuelLevel": 15.5,
+          "batteryVoltage": 12.8,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 0,
+          "doorStatus": {
+            "driver": "locked",
+            "passenger": "locked",
+            "rear_left": "locked",
+            "rear_right": "locked"
+          },
+          "acTemperature": 22.0,
+          "fanSpeed": 60,
+          "acMode": "auto",
+          "humidityLevel": 45.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 100.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 35.0,
+          "frontRightTirePressure": 35.0,
+          "rearLeftTirePressure": 33.0,
+          "rearRightTirePressure": 33.0,
+          "long_context": false
+        }
+      }
+    },
+    "semantic_tool_error": false,
+    "user_turn": 0
+  }
+]

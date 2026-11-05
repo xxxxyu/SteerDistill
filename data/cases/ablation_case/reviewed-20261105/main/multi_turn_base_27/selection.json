@@ -1,0 +1,374 @@
+{
+  "task": "multi_turn_base_27",
+  "identity": "3c56dd35d52961387a75b2c6b3391ed664dabaeffe48f287def4f3fcac9a9425",
+  "canonical": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+  "ours": {
+    "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+    "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_structured/attempt-0/student/score.json",
+    "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_structured/attempt-0",
+    "role": "teacher_structured",
+    "accepted_success": true,
+    "failed": false,
+    "passed": true,
+    "seed": 71782826,
+    "guidance_sha256": "39aa4644e29b459468156abfec8558778bb91e2c72af3ff53f3fae8f5f07189a",
+    "guidance_representation": "structured JSON",
+    "guidance_only_first_request": true,
+    "unsteered_requests": 2
+  },
+  "controls": {
+    "teacher_freeform": {
+      "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+      "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-0/student/score.json",
+      "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-0",
+      "role": "teacher_freeform",
+      "accepted_success": false,
+      "failed": true,
+      "passed": false,
+      "seed": 71782826,
+      "guidance_sha256": "7e2f750e3f8eef42f17b1877531ee34f897e7f8cebfb8c976a3daf0f9ba91960",
+      "guidance_representation": "tool-action text",
+      "guidance_only_first_request": true,
+      "unsteered_requests": 0
+    },
+    "student_structured": {
+      "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+      "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-002/student/score.json",
+      "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-002",
+      "role": "student_structured",
+      "accepted_success": false,
+      "failed": true,
+      "passed": false,
+      "seed": 71782828,
+      "guidance_sha256": "9a589991ecb676477db5dc637dc44bc0ff0893a9673d24e609a561a43dff0407",
+      "guidance_representation": "structured JSON",
+      "guidance_only_first_request": true,
+      "unsteered_requests": 0
+    }
+  },
+  "all_sample_paths": {
+    "teacher_structured": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_structured/attempt-0/student/score.json"
+    ],
+    "teacher_freeform": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-1/student/score.json"
+    ],
+    "student_structured": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-001/student/score.json",
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-000/student/score.json",
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-002/student/score.json"
+    ],
+    "external_structured": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/external_structured/attempt-0/student/score.json"
+    ]
+  },
+  "selection_policy": {
+    "unit": "selected individual trajectory",
+    "required_failed_controls": 2,
+    "ours": "One locally accepted success followed by successful unsteered continuation",
+    "controls": "At least one valid semantically failed trajectory per selected control",
+    "prior_successes_disqualify": false,
+    "preserve_all_trials": true,
+    "additional_samples_per_control": 4,
+    "additional_actor_seeds": [
+      71782826,
+      71782827,
+      71782828,
+      71782829
+    ],
+    "no_aggregate_or_paired_seed_claim": true,
+    "target": 10
+  },
+  "verification": [
+    {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+        "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_structured/attempt-0/student/score.json",
+        "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_structured/attempt-0",
+        "role": "teacher_structured",
+        "accepted_success": true,
+        "failed": false,
+        "passed": true,
+        "seed": 71782826,
+        "guidance_sha256": "39aa4644e29b459468156abfec8558778bb91e2c72af3ff53f3fae8f5f07189a",
+        "guidance_representation": "structured JSON",
+        "guidance_only_first_request": true,
+        "unsteered_requests": 2
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "workspace": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "workspace",
+                      "contents": {
+                        "project_overview.md": {
+                          "class": "File",
+                          "attributes": {
+                            "name": "project_overview.md",
+                            "content": "Initial project plan details."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "TicketAPI": {
+          "class": "TicketAPI",
+          "attributes": {
+            "ticket_queue": [
+              {
+                "description": "Servers are down unexpectedly.",
+                "id": 12,
+                "priority": 3
+              }
+            ],
+            "ticket_counter": 1,
+            "current_user": null
+          }
+        }
+      },
+      "official_state": {
+        "valid": true
+      },
+      "official_response": {
+        "valid": true
+      }
+    },
+    {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+        "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-0/student/score.json",
+        "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-0",
+        "role": "teacher_freeform",
+        "accepted_success": false,
+        "failed": true,
+        "passed": false,
+        "seed": 71782826,
+        "guidance_sha256": "7e2f750e3f8eef42f17b1877531ee34f897e7f8cebfb8c976a3daf0f9ba91960",
+        "guidance_representation": "tool-action text",
+        "guidance_only_first_request": true,
+        "unsteered_requests": 0
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "workspace": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "workspace",
+                      "contents": {
+                        "project_plan.md": {
+                          "class": "File",
+                          "attributes": {
+                            "name": "project_plan.md",
+                            "content": "Initial project plan details."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "TicketAPI": {
+          "class": "TicketAPI",
+          "attributes": {
+            "ticket_queue": [
+              {
+                "description": "Servers are down unexpectedly.",
+                "id": 12,
+                "priority": 3
+              }
+            ],
+            "ticket_counter": 1,
+            "current_user": null
+          }
+        }
+      },
+      "official_state": {
+        "valid": false,
+        "error_message": "Model instance for GorillaFileSystem does not match the state with ground truth instance.",
+        "error_type": "multi_turn:instance_state_mismatch",
+        "details": {
+          "differences": {
+            "root": {
+              "model": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_plan.md': <<File: project_plan.md, Content: Initial project plan details.>>}>}>",
+              "ground_truth": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_overview.md': <<File: project_overview.md, Content: Initial project plan details.>>}>}>"
+            }
+          },
+          "model_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_plan.md': <<File: project_plan.md, Content: Initial project plan details.>>}>}>"
+          },
+          "ground_truth_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_overview.md': <<File: project_overview.md, Content: Initial project plan details.>>}>}>"
+          }
+        }
+      },
+      "official_response": {
+        "valid": false,
+        "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+        "error_type": "multi_turn:execution_response_mismatch",
+        "details": {
+          "missing_items": [
+            "{'current_working_directory': 'workspace'}",
+            "{'result': \"'project_plan.md' moved to 'project_overview.md'\"}"
+          ],
+          "model_response (including all previous turns)": [
+            "{'error': \"mv: cannot move 'project_plan.md': No such file or directory\"}"
+          ],
+          "ground_truth_response (only the current turn)": [
+            "{'current_working_directory': 'workspace'}",
+            "{'result': \"'project_plan.md' moved to 'project_overview.md'\"}"
+          ]
+        }
+      }
+    },
+    {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27",
+        "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-002/student/score.json",
+        "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-002",
+        "role": "student_structured",
+        "accepted_success": false,
+        "failed": true,
+        "passed": false,
+        "seed": 71782828,
+        "guidance_sha256": "9a589991ecb676477db5dc637dc44bc0ff0893a9673d24e609a561a43dff0407",
+        "guidance_representation": "structured JSON",
+        "guidance_only_first_request": true,
+        "unsteered_requests": 0
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "workspace": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "workspace",
+                      "contents": {
+                        "project_plan.md": {
+                          "class": "File",
+                          "attributes": {
+                            "name": "project_plan.md",
+                            "content": "Initial project plan details."
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "TicketAPI": {
+          "class": "TicketAPI",
+          "attributes": {
+            "ticket_queue": [
+              {
+                "description": "Servers are down unexpectedly.",
+                "id": 12,
+                "priority": 3
+              }
+            ],
+            "ticket_counter": 1,
+            "current_user": null
+          }
+        }
+      },
+      "official_state": {
+        "valid": false,
+        "error_message": "Model instance for GorillaFileSystem does not match the state with ground truth instance.",
+        "error_type": "multi_turn:instance_state_mismatch",
+        "details": {
+          "differences": {
+            "root": {
+              "model": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_plan.md': <<File: project_plan.md, Content: Initial project plan details.>>}>}>",
+              "ground_truth": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_overview.md': <<File: project_overview.md, Content: Initial project plan details.>>}>}>"
+            }
+          },
+          "model_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_plan.md': <<File: project_plan.md, Content: Initial project plan details.>>}>}>"
+          },
+          "ground_truth_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_overview.md': <<File: project_overview.md, Content: Initial project plan details.>>}>}>"
+          }
+        }
+      },
+      "official_response": {
+        "valid": false,
+        "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+        "error_type": "multi_turn:execution_response_mismatch",
+        "details": {
+          "missing_items": [
+            "{'current_working_directory': 'workspace'}",
+            "{'result': \"'project_plan.md' moved to 'project_overview.md'\"}"
+          ],
+          "model_response (including all previous turns)": [
+            "{'error': \"mv: cannot move 'project_plan.md': No such file or directory\"}"
+          ],
+          "ground_truth_response (only the current turn)": [
+            "{'current_working_directory': 'workspace'}",
+            "{'result': \"'project_plan.md' moved to 'project_overview.md'\"}"
+          ]
+        }
+      }
+    }
+  ],
+  "review": {
+    "approved": true,
+    "time": 1793803615.6981375,
+    "identity": "3c56dd35d52961387a75b2c6b3391ed664dabaeffe48f287def4f3fcac9a9425",
+    "ours_score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_structured/attempt-0/student/score.json",
+    "control_scores": {
+      "teacher_freeform": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/ablations/teacher_freeform/attempt-0/student/score.json",
+      "student_structured": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/single-trial-samples/student_structured/sample-002/student/score.json"
+    },
+    "explanation": "The successful selected student enters workspace and actually renames the existing file; both selected controls terminate after the parent-directory missing-file error, leaving the requested filename unchanged. Exact same initial state and context; offline replay reproduces the verdicts. Prior successful control samples are retained.",
+    "guidance_review": "Teacher free-form sample contains a tool-action instruction. Student-structured sample states the directory prerequisite but the sampled student fails to execute it. These are selected individual execution outcomes, not aggregate or all-seed superiority."
+  },
+  "qualified": true
+}

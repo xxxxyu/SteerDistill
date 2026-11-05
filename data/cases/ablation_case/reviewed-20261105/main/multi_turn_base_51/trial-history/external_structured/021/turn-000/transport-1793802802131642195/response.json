@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-ae1a3a4c1f175822",
+  "model": "case-model",
+  "created": 1793802802,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_lockDoors\", \"arguments\": \"{\\\"unlock\\\": false, \\\"door\\\": [\\\"driver\\\", \\\"passenger\\\", \\\"rear_left\\\", \\\"rear_right\\\"]}\"}}\n</tool_call>",
+        "reasoning": "\nOkay, let's see. The user wants to make sure all doors are properly locked. I first called the list_tools to find available options. Then, I used mcp_tool_displayCarStatus with \"doors\" as the option to check the current status. The response showed all doors are unlocked. Now, I need to take action to lock them.\n\nLooking back at the tools, there's mcp_tool_lockDoors. The parameters require unlock (boolean) and door (array). Since the doors are unlocked, I should set unlock to false and specify all doors: driver, passenger, rear_left, rear_right. That should lock all of them. Let me structure the call correctly with those parameters.\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4382,
+    "total_tokens": 4583,
+    "completion_tokens": 201,
+    "completion_tokens_details": {
+      "reasoning_tokens": 143
+    }
+  }
+}

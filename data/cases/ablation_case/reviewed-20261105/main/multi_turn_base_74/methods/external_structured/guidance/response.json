@@ -1,0 +1,26 @@
+{
+  "id": "resp_090ed5e0d2bff5a5016aebe311e49c87d0a15b27300ecaa16f",
+  "object": "chat.completion",
+  "created": 1793843991,
+  "model": "gpt-5.6-sol",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"decision_rule\":\"Call `call_tool` once with `tool_name` set to `mcp_tool_fillFuelTank` and `arguments` set to the JSON string `{\\\"fuelAmount\\\":10.04}`; do not repeat the conversion or claim completion before this call succeeds.\",\"expected_transition\":\"The refill adds 10.04 gallons, changing `VehicleControlAPI.attributes.fuelLevel` from 10.0 to 20.04 while leaving the other vehicle attributes unchanged.\",\"precondition\":\"The required tool list has already been retrieved, and 38 liters has already been converted to 10.038536 gallons and rounded to the requested two-decimal amount, 10.04 gallons. The tank has not yet been refilled and its current fuel level is 10.0.\",\"recovery_check\":\"Verify that the tool response is `{\\\"fuelLevel\\\":20.04}`; then continue normally without repeating this correction.\"}",
+        "reasoning_content": "**Correcting JSON fuel output**"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16987,
+    "completion_tokens": 285,
+    "total_tokens": 17272,
+    "completion_tokens_details": {
+      "reasoning_tokens": 86
+    }
+  },
+  "service_tier": "default"
+}

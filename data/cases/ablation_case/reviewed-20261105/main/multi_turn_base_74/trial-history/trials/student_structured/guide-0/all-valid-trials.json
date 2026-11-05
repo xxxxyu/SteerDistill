@@ -1,0 +1,50 @@
+[
+  {
+    "case": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74",
+    "sample": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/trials/student_structured/guide-0/seed-71782927",
+    "score": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/trials/student_structured/guide-0/seed-71782927/score.json",
+    "guidance": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/guidance/student_structured/attempt-0/guidance.json",
+    "actor_seed": 71782927,
+    "local": {
+      "result": "correct",
+      "reason": "Reached the replay-verified local correction state"
+    },
+    "local_accepted": true,
+    "passed": true,
+    "whole_task_passed": true,
+    "unsteered_requests": 1,
+    "substantive_whole_task_failure": false
+  },
+  {
+    "case": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74",
+    "sample": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/trials/student_structured/guide-0/seed-71782928",
+    "score": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/trials/student_structured/guide-0/seed-71782928/score.json",
+    "guidance": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/guidance/student_structured/attempt-0/guidance.json",
+    "actor_seed": 71782928,
+    "local": {
+      "result": "correct",
+      "reason": "Reached the replay-verified local correction state"
+    },
+    "local_accepted": true,
+    "passed": true,
+    "whole_task_passed": true,
+    "unsteered_requests": 1,
+    "substantive_whole_task_failure": false
+  },
+  {
+    "case": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74",
+    "sample": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/trials/student_structured/guide-0/seed-71782929",
+    "score": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/trials/student_structured/guide-0/seed-71782929/score.json",
+    "guidance": "/mnt/genming/ablation-pending-reference-repair-20261105/cases/multi_turn_base_74/guidance/student_structured/attempt-0/guidance.json",
+    "actor_seed": 71782929,
+    "local": {
+      "result": "correct",
+      "reason": "Reached the replay-verified local correction state"
+    },
+    "local_accepted": true,
+    "passed": true,
+    "whole_task_passed": true,
+    "unsteered_requests": 1,
+    "substantive_whole_task_failure": false
+  }
+]

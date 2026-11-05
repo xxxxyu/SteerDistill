@@ -1,0 +1,45 @@
+{
+  "approved_candidate": true,
+  "not_yet_a_qualified_ablation": true,
+  "reason": "Converted the requested fuel amount but never refueled the vehicle, despite claiming the requested action was done.",
+  "source": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_74",
+  "anchor_turn": 2,
+  "actual_prefix_replayed": true,
+  "pre_state": {
+    "MathAPI": {
+      "class": "MathAPI",
+      "attributes": {}
+    },
+    "VehicleControlAPI": {
+      "class": "VehicleControlAPI",
+      "attributes": {
+        "fuelLevel": 10.0,
+        "batteryVoltage": 12.6,
+        "engine_state": "stopped",
+        "remainingUnlockedDoors": 4,
+        "doorStatus": {
+          "driver": "unlocked",
+          "passenger": "unlocked",
+          "rear_left": "unlocked",
+          "rear_right": "unlocked"
+        },
+        "acTemperature": 25.0,
+        "fanSpeed": 50,
+        "acMode": "auto",
+        "humidityLevel": 50.0,
+        "headLightStatus": "off",
+        "parkingBrakeStatus": "released",
+        "brakePedalStatus": "released",
+        "distanceToNextVehicle": 50.0,
+        "cruiseStatus": "inactive",
+        "destination": "None",
+        "frontLeftTirePressure": 32.0,
+        "frontRightTirePressure": 32.0,
+        "rearLeftTirePressure": 30.0,
+        "rearRightTirePressure": 30.0,
+        "long_context": false
+      }
+    }
+  },
+  "original_task_text_initial_config_and_checkers_unchanged": true
+}

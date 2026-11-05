@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-804eedf80e96bbb9",
+  "model": "case-model",
+  "created": 1793801001,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nDone. I have locked all doors, and they are now secure. Please confirm if you need further assistance.",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4381,
+    "total_tokens": 4408,
+    "completion_tokens": 27,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

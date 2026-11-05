@@ -1,0 +1,6 @@
+{
+  "text": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_fillFuelTank\", \"arguments\": \"{\\\"fuelAmount\\\": 10.04}\"}}\n</tool_call>",
+  "variant": "teacher_freeform",
+  "actual_model_generation": true,
+  "evidence_sha256": "2428e41994d924458ea7ed193e66bc48487b70fa43c8607c78da6239fce0eb12"
+}

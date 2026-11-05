@@ -1,0 +1,590 @@
+{
+  "task": "multi_turn_base_51",
+  "identity": "be4b8797f7e22f22b3b4c693a28b2ce838165af6cf33d021f54026eab9688e65",
+  "canonical": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51",
+  "ours": {
+    "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51",
+    "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_structured/attempt-0/student/score.json",
+    "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_structured/attempt-0",
+    "role": "teacher_structured",
+    "accepted_success": true,
+    "failed": false,
+    "passed": true,
+    "seed": 71782826,
+    "guidance_sha256": "71caafca51be67eb7b72e55972f5b671055e1e68b51b91030dcba490edcb6daf",
+    "guidance_representation": "structured JSON",
+    "guidance_only_first_request": true,
+    "unsteered_requests": 1
+  },
+  "controls": {
+    "teacher_freeform": {
+      "case": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829",
+      "score": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-0/student/score.json",
+      "sample": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-0",
+      "role": "teacher_freeform",
+      "accepted_success": false,
+      "failed": true,
+      "passed": false,
+      "seed": 71782829,
+      "guidance_sha256": "e71f44dfa2770e087572935e7904f1d086a1cfaae553c41dff5bc8b839e083a7",
+      "guidance_representation": "tool-action text",
+      "guidance_only_first_request": true,
+      "unsteered_requests": 0
+    },
+    "student_structured": {
+      "case": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836",
+      "score": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-0/student/score.json",
+      "sample": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-0",
+      "role": "student_structured",
+      "accepted_success": false,
+      "failed": true,
+      "passed": false,
+      "seed": 71782836,
+      "guidance_sha256": "a1f08bf541608d050627a18c67319eac44f5099832f6445ab8223078ff2fb836",
+      "guidance_representation": "structured JSON",
+      "guidance_only_first_request": true,
+      "unsteered_requests": 0
+    }
+  },
+  "all_sample_paths": {
+    "teacher_structured": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782828/ablations/teacher_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/teacher_structured/attempt-0/student/score.json"
+    ],
+    "teacher_freeform": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782845/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782843/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-1/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-2/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-3/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782846/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782848/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782851/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782847/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782828/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782844/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782850/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782849/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/teacher_freeform/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/teacher_freeform/attempt-1/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/teacher_freeform/attempt-2/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/teacher_freeform/attempt-3/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782852/ablations/teacher_freeform/attempt-0/student/score.json"
+    ],
+    "student_structured": [
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782834/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782839/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782838/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782841/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782837/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782835/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782828/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-1/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782840/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782842/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782842/ablations/student_structured/attempt-1/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782842/ablations/student_structured/attempt-2/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782842/ablations/student_structured/attempt-3/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782833/ablations/student_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782833/ablations/student_structured/attempt-1/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782833/ablations/student_structured/attempt-2/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782833/ablations/student_structured/attempt-3/student/score.json"
+    ],
+    "external_structured": [
+      "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782845/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782843/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782846/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782848/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782851/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782834/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782847/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782839/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782838/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782841/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782837/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782835/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782828/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782844/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782850/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782849/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782840/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782827/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782852/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782842/ablations/external_structured/attempt-0/student/score.json",
+      "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782833/ablations/external_structured/attempt-0/student/score.json"
+    ]
+  },
+  "selection_policy": {
+    "unit": "selected individual trajectory",
+    "required_failed_controls": 2,
+    "ours": "One locally accepted success followed by successful unsteered continuation",
+    "controls": "At least one valid semantically failed trajectory per selected control",
+    "prior_successes_disqualify": false,
+    "preserve_all_trials": true,
+    "additional_samples_per_control": 4,
+    "additional_actor_seeds": [
+      71782826,
+      71782827,
+      71782828,
+      71782829
+    ],
+    "no_aggregate_or_paired_seed_claim": true,
+    "target": 10
+  },
+  "verification": [
+    {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51",
+        "score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_structured/attempt-0/student/score.json",
+        "sample": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_structured/attempt-0",
+        "role": "teacher_structured",
+        "accepted_success": true,
+        "failed": false,
+        "passed": true,
+        "seed": 71782826,
+        "guidance_sha256": "71caafca51be67eb7b72e55972f5b671055e1e68b51b91030dcba490edcb6daf",
+        "guidance_representation": "structured JSON",
+        "guidance_only_first_request": true,
+        "unsteered_requests": 1
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "MessageAPI": {
+          "class": "MessageAPI",
+          "attributes": {
+            "generated_ids": [],
+            "user_count": 4,
+            "user_map": {
+              "Alice": "USR001",
+              "Bob": "USR002",
+              "Catherine": "USR003",
+              "Daniel": "USR004"
+            },
+            "inbox": [
+              {
+                "USR002": "My name is Alice. I want to connect."
+              },
+              {
+                "USR003": "Could you upload the file?"
+              },
+              {
+                "USR004": "Could you upload the file?"
+              }
+            ],
+            "message_count": 3,
+            "current_user": null
+          }
+        },
+        "VehicleControlAPI": {
+          "class": "VehicleControlAPI",
+          "attributes": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 0,
+            "doorStatus": {
+              "driver": "locked",
+              "passenger": "locked",
+              "rear_left": "locked",
+              "rear_right": "locked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          }
+        }
+      },
+      "official_state": {
+        "valid": true
+      },
+      "official_response": {
+        "valid": true
+      }
+    },
+    {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829",
+        "score": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-0/student/score.json",
+        "sample": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-0",
+        "role": "teacher_freeform",
+        "accepted_success": false,
+        "failed": true,
+        "passed": false,
+        "seed": 71782829,
+        "guidance_sha256": "e71f44dfa2770e087572935e7904f1d086a1cfaae553c41dff5bc8b839e083a7",
+        "guidance_representation": "tool-action text",
+        "guidance_only_first_request": true,
+        "unsteered_requests": 0
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "MessageAPI": {
+          "class": "MessageAPI",
+          "attributes": {
+            "generated_ids": [],
+            "user_count": 4,
+            "user_map": {
+              "Alice": "USR001",
+              "Bob": "USR002",
+              "Catherine": "USR003",
+              "Daniel": "USR004"
+            },
+            "inbox": [
+              {
+                "USR002": "My name is Alice. I want to connect."
+              },
+              {
+                "USR003": "Could you upload the file?"
+              },
+              {
+                "USR004": "Could you upload the file?"
+              }
+            ],
+            "message_count": 3,
+            "current_user": null
+          }
+        },
+        "VehicleControlAPI": {
+          "class": "VehicleControlAPI",
+          "attributes": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 4,
+            "doorStatus": {
+              "driver": "unlocked",
+              "passenger": "unlocked",
+              "rear_left": "unlocked",
+              "rear_right": "unlocked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          }
+        }
+      },
+      "official_state": {
+        "valid": false,
+        "error_message": "Model instance for VehicleControlAPI does not match the state with ground truth instance.",
+        "error_type": "multi_turn:instance_state_mismatch",
+        "details": {
+          "differences": {
+            "remainingUnlockedDoors": {
+              "model": 4,
+              "ground_truth": 0
+            },
+            "doorStatus": {
+              "model": {
+                "driver": "unlocked",
+                "passenger": "unlocked",
+                "rear_left": "unlocked",
+                "rear_right": "unlocked"
+              },
+              "ground_truth": {
+                "driver": "locked",
+                "passenger": "locked",
+                "rear_left": "locked",
+                "rear_right": "locked"
+              }
+            }
+          },
+          "model_instance_state": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 4,
+            "doorStatus": {
+              "driver": "unlocked",
+              "passenger": "unlocked",
+              "rear_left": "unlocked",
+              "rear_right": "unlocked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          },
+          "ground_truth_instance_state": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 0,
+            "doorStatus": {
+              "driver": "locked",
+              "passenger": "locked",
+              "rear_left": "locked",
+              "rear_right": "locked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          }
+        }
+      },
+      "official_response": {
+        "valid": false,
+        "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+        "error_type": "multi_turn:execution_response_mismatch",
+        "details": {
+          "missing_items": [
+            "{'lockStatus': 'locked', 'remainingUnlockedDoors': 0}"
+          ],
+          "model_response (including all previous turns)": [
+            "{'doorStatus': {'driver': 'unlocked', 'passenger': 'unlocked', 'rear_left': 'unlocked', 'rear_right': 'unlocked'}}"
+          ],
+          "ground_truth_response (only the current turn)": [
+            "{'lockStatus': 'locked', 'remainingUnlockedDoors': 0}"
+          ]
+        }
+      }
+    },
+    {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836",
+        "score": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-0/student/score.json",
+        "sample": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-0",
+        "role": "student_structured",
+        "accepted_success": false,
+        "failed": true,
+        "passed": false,
+        "seed": 71782836,
+        "guidance_sha256": "a1f08bf541608d050627a18c67319eac44f5099832f6445ab8223078ff2fb836",
+        "guidance_representation": "structured JSON",
+        "guidance_only_first_request": true,
+        "unsteered_requests": 0
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "MessageAPI": {
+          "class": "MessageAPI",
+          "attributes": {
+            "generated_ids": [],
+            "user_count": 4,
+            "user_map": {
+              "Alice": "USR001",
+              "Bob": "USR002",
+              "Catherine": "USR003",
+              "Daniel": "USR004"
+            },
+            "inbox": [
+              {
+                "USR002": "My name is Alice. I want to connect."
+              },
+              {
+                "USR003": "Could you upload the file?"
+              },
+              {
+                "USR004": "Could you upload the file?"
+              }
+            ],
+            "message_count": 3,
+            "current_user": null
+          }
+        },
+        "VehicleControlAPI": {
+          "class": "VehicleControlAPI",
+          "attributes": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 4,
+            "doorStatus": {
+              "driver": "unlocked",
+              "passenger": "unlocked",
+              "rear_left": "unlocked",
+              "rear_right": "unlocked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          }
+        }
+      },
+      "official_state": {
+        "valid": false,
+        "error_message": "Model instance for VehicleControlAPI does not match the state with ground truth instance.",
+        "error_type": "multi_turn:instance_state_mismatch",
+        "details": {
+          "differences": {
+            "remainingUnlockedDoors": {
+              "model": 4,
+              "ground_truth": 0
+            },
+            "doorStatus": {
+              "model": {
+                "driver": "unlocked",
+                "passenger": "unlocked",
+                "rear_left": "unlocked",
+                "rear_right": "unlocked"
+              },
+              "ground_truth": {
+                "driver": "locked",
+                "passenger": "locked",
+                "rear_left": "locked",
+                "rear_right": "locked"
+              }
+            }
+          },
+          "model_instance_state": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 4,
+            "doorStatus": {
+              "driver": "unlocked",
+              "passenger": "unlocked",
+              "rear_left": "unlocked",
+              "rear_right": "unlocked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          },
+          "ground_truth_instance_state": {
+            "fuelLevel": 15.5,
+            "batteryVoltage": 12.8,
+            "engine_state": "stopped",
+            "remainingUnlockedDoors": 0,
+            "doorStatus": {
+              "driver": "locked",
+              "passenger": "locked",
+              "rear_left": "locked",
+              "rear_right": "locked"
+            },
+            "acTemperature": 22.0,
+            "fanSpeed": 60,
+            "acMode": "auto",
+            "humidityLevel": 45.0,
+            "headLightStatus": "off",
+            "parkingBrakeStatus": "released",
+            "brakePedalStatus": "released",
+            "distanceToNextVehicle": 100.0,
+            "cruiseStatus": "inactive",
+            "destination": "None",
+            "frontLeftTirePressure": 35.0,
+            "frontRightTirePressure": 35.0,
+            "rearLeftTirePressure": 33.0,
+            "rearRightTirePressure": 33.0,
+            "long_context": false
+          }
+        }
+      },
+      "official_response": {
+        "valid": false,
+        "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+        "error_type": "multi_turn:execution_response_mismatch",
+        "details": {
+          "missing_items": [
+            "{'lockStatus': 'locked', 'remainingUnlockedDoors': 0}"
+          ],
+          "model_response (including all previous turns)": [
+            "{'doorStatus': {'driver': 'unlocked', 'passenger': 'unlocked', 'rear_left': 'unlocked', 'rear_right': 'unlocked'}}"
+          ],
+          "ground_truth_response (only the current turn)": [
+            "{'lockStatus': 'locked', 'remainingUnlockedDoors': 0}"
+          ]
+        }
+      }
+    }
+  ],
+  "review": {
+    "approved": true,
+    "time": 1793803149.114814,
+    "identity": "be4b8797f7e22f22b3b4c693a28b2ce838165af6cf33d021f54026eab9688e65",
+    "ours_score": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_51/ablations/teacher_structured/attempt-0/student/score.json",
+    "control_scores": {
+      "teacher_freeform": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782829/ablations/teacher_freeform/attempt-0/student/score.json",
+      "student_structured": "/mnt/genming/ablation-bfcl-parallel-repeats-20261104/cases/multi_turn_base_51-seed-71782836/ablations/student_structured/attempt-0/student/score.json"
+    },
+    "explanation": "The successful selected student actually locks all four doors and completes without further injected guidance. Both selected control students stop and request confirmation, leaving all four doors unlocked despite an explicit locking request. This is a real unmet goal, with matching restored state and context; offline replay reproduces all verdicts.",
+    "guidance_review": "Teacher free-form output is raw tool-action text, retained as generated guidance rather than described as prose. Student-structured guidance gives the locking rule but the sampled student does not execute it. Selected samples may have different seeds; no claim of consistent failure or aggregate advantage."
+  },
+  "qualified": true
+}

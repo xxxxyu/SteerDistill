@@ -1,0 +1,11 @@
+{
+  "task_id": "multi_turn_base_51",
+  "category": "multi_turn_base",
+  "method": "BF16",
+  "seed": 85503261,
+  "trial_index": 2,
+  "seconds": 96.40524482727051,
+  "replica_index": 0,
+  "gpu": "0",
+  "trajectory_sha256": "b9160267c033f5f5e90d254c8390c54cd1265b68dde9f9b819cce3ce3e7704fc"
+}

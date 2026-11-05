@@ -1,0 +1,49 @@
+{
+  "valid": true,
+  "passed": false,
+  "finish": "final_response",
+  "official_state": {
+    "valid": false,
+    "error_message": "Model instance for GorillaFileSystem does not match the state with ground truth instance.",
+    "error_type": "multi_turn:instance_state_mismatch",
+    "details": {
+      "differences": {
+        "root": {
+          "model": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_plan.md': <<File: project_plan.md, Content: Initial project plan details.>>}>}>",
+          "ground_truth": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_overview.md': <<File: project_overview.md, Content: Initial project plan details.>>}>}>"
+        }
+      },
+      "model_instance_state": {
+        "long_context": false,
+        "root": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_plan.md': <<File: project_plan.md, Content: Initial project plan details.>>}>}>"
+      },
+      "ground_truth_instance_state": {
+        "long_context": false,
+        "root": "<Directory: alex, Parent: None, Contents: {'workspace': <Directory: workspace, Parent: alex, Contents: {'project_overview.md': <<File: project_overview.md, Content: Initial project plan details.>>}>}>"
+      }
+    }
+  },
+  "official_response": {
+    "valid": false,
+    "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+    "error_type": "multi_turn:execution_response_mismatch",
+    "details": {
+      "missing_items": [
+        "{'current_working_directory': 'workspace'}",
+        "{'result': \"'project_plan.md' moved to 'project_overview.md'\"}"
+      ],
+      "model_response (including all previous turns)": [
+        "{'error': \"mv: cannot move 'project_plan.md': No such file or directory\"}"
+      ],
+      "ground_truth_response (only the current turn)": [
+        "{'current_working_directory': 'workspace'}",
+        "{'result': \"'project_plan.md' moved to 'project_overview.md'\"}"
+      ]
+    }
+  },
+  "semantic_errors": [],
+  "goal_turn": 0,
+  "scope": "User turn 0; earlier turns must have passed unchanged original checkers",
+  "guidance_injected_only_first_request": true,
+  "teacher": false
+}
