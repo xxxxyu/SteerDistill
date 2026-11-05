@@ -1,0 +1,29 @@
+{
+  "verified": true,
+  "state": {
+    "GorillaFileSystem": {
+      "class": "GorillaFileSystem",
+      "attributes": {
+        "long_context": false,
+        "root": {
+          "class": "Directory",
+          "attributes": {
+            "name": "alex",
+            "contents": {
+              "Documents": {
+                "class": "Directory",
+                "attributes": {
+                  "name": "Documents",
+                  "contents": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "state_sha256": "698284594f91bc66d0f133a9551186d9626114490a8826d8d7ba0a28dcbaa049",
+  "context_sha256": "43c74e56c718c4f07264cc0fb3d02fe312a4900e89ce870d604eef4787d2ee2e",
+  "replayed": 0
+}

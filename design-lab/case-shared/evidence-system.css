@@ -41,3 +41,6 @@
 /* Semantic marks keep one color treatment across prose, calls and inline code. */
 .evidence-reader .ev-frame mark :is(.ev-function,code){color:inherit}
 .evidence-reader .ev-frame mark code{background:transparent}
+
+/* A reviewed corrective action can have a different tone from its final-outcome frame. */
+.evidence-reader .ev-action.ev-neutral{--ev-accent:var(--soft)}

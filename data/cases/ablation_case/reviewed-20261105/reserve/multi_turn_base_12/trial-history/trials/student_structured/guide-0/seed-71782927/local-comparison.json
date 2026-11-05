@@ -1,0 +1,58 @@
+{
+  "checked_before_continuation": true,
+  "exact_reference_state": true,
+  "exact_reference_observation": true,
+  "actual_state": {
+    "GorillaFileSystem": {
+      "class": "GorillaFileSystem",
+      "attributes": {
+        "long_context": false,
+        "root": {
+          "class": "Directory",
+          "attributes": {
+            "name": "alex",
+            "contents": {
+              "Documents": {
+                "class": "Directory",
+                "attributes": {
+                  "name": "Documents",
+                  "contents": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "target": {
+    "state": {
+      "GorillaFileSystem": {
+        "class": "GorillaFileSystem",
+        "attributes": {
+          "long_context": false,
+          "root": {
+            "class": "Directory",
+            "attributes": {
+              "name": "alex",
+              "contents": {
+                "Documents": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "Documents",
+                    "contents": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": [
+      {
+        "current_working_directory": "Documents"
+      }
+    ]
+  }
+}

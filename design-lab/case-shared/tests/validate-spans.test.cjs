@@ -38,3 +38,11 @@ test('reply code syntax uses the shared formatter without changing annotated sou
  const mark=descendants(node).find(n=>n.tagName==='mark');
  assert.equal(mark.className,'ev-mark-after');assert.equal(mark.children[0].tagName,'code');
 });
+
+test('mixed sequences retain explicit action tone independently of neutral tool returns',()=>{
+ const repaired=U.action({name:'cd',args:'folder="Documents"',result:'null',tone:'after',returnTone:'neutral'});
+ assert.equal(repaired.className,'ev-action ev-after');
+ const code=repaired.children[0];assert.equal(code.children.find(c=>c.className==='ev-return ev-return-neutral').textContent,'→ null');
+ assert.equal(U.action({name:'touch',args:'',tone:'before'}).className,'ev-action ev-before');
+ assert.throws(()=>U.action({name:'touch',tone:'success'}),/Unknown action tone/);
+});

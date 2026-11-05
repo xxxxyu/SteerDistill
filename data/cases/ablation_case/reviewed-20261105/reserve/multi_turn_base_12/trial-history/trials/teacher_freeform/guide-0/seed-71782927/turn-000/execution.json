@@ -1,0 +1,65 @@
+[
+  {
+    "turn": 0,
+    "tool": "touch",
+    "arguments": {
+      "file_name": "summary.txt"
+    },
+    "response": null,
+    "before": {
+      "GorillaFileSystem": {
+        "class": "GorillaFileSystem",
+        "attributes": {
+          "long_context": false,
+          "root": {
+            "class": "Directory",
+            "attributes": {
+              "name": "alex",
+              "contents": {
+                "Documents": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "Documents",
+                    "contents": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "after": {
+      "GorillaFileSystem": {
+        "class": "GorillaFileSystem",
+        "attributes": {
+          "long_context": false,
+          "root": {
+            "class": "Directory",
+            "attributes": {
+              "name": "alex",
+              "contents": {
+                "Documents": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "Documents",
+                    "contents": {}
+                  }
+                },
+                "summary.txt": {
+                  "class": "File",
+                  "attributes": {
+                    "name": "summary.txt",
+                    "content": ""
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "semantic_tool_error": false,
+    "user_turn": 0
+  }
+]

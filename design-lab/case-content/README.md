@@ -101,3 +101,5 @@ For a tool return whose meaning differs from its frame, set its manually reviewe
 ### Optional unguided comparison
 
 A comparison method may omit `guidance`, `guidanceExcerpt` and `guidanceHighlights`. The shared guidance table renders “未提供指导” for that row and creates no full-guidance disclosure. Use the same method interface for actions, optional reasoning, results and source links. Keep unguided out of `defaultPair` when it is supplementary. If the only source is a full original run from a different start state, name it accordingly and describe the relevant difference; never represent it as a matched continuation.
+
+Action events also accept an explicit `tone: "before" | "after" | "neutral"` for manually reviewed mixed sequences. A corrective action may be blue inside a red final-outcome frame; `returnTone` still controls whether its tool return should stay neutral. This is separate from per-span highlighting and must not be inferred from method identity or the final score.

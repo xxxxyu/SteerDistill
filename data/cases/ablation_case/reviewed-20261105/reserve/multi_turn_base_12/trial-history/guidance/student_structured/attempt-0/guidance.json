@@ -1,0 +1,6 @@
+{
+  "text": "{\n\n\"precondition\": \"Current directory is not 'Documents'\", \n\"decision_rule\": \"Navigate to 'Documents' directory before creating the file\", \n\"expected_transition\": \"Change current directory to 'Documents' successfully\", \n\"recovery_check\": \"Verify 'summary.txt' is created within 'Documents'\"\n}",
+  "variant": "student_structured",
+  "actual_model_generation": true,
+  "evidence_sha256": "9d2f4e47d00f640d3c9fa9b95f2a09e5743dac06098c33db45940b0445a08da4"
+}

@@ -1,0 +1,370 @@
+{
+  "task": "multi_turn_base_12",
+  "qualified": true,
+  "ours": {
+    "found": true,
+    "selected": {
+      "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+      "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_structured/guide-0/seed-71782927",
+      "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_structured/guide-0/seed-71782927/score.json",
+      "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/teacher_structured/attempt-0/guidance.json",
+      "actor_seed": 71782927,
+      "local": {
+        "result": "correct",
+        "reason": "Reached the replay-verified local correction state"
+      },
+      "local_accepted": true,
+      "passed": true,
+      "whole_task_passed": true,
+      "unsteered_requests": 2,
+      "substantive_whole_task_failure": false
+    },
+    "history": [
+      {
+        "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+        "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_structured/guide-0/seed-71782927",
+        "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_structured/guide-0/seed-71782927/score.json",
+        "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/teacher_structured/attempt-0/guidance.json",
+        "actor_seed": 71782927,
+        "local": {
+          "result": "correct",
+          "reason": "Reached the replay-verified local correction state"
+        },
+        "local_accepted": true,
+        "passed": true,
+        "whole_task_passed": true,
+        "unsteered_requests": 2,
+        "substantive_whole_task_failure": false
+      }
+    ]
+  },
+  "controls": {
+    "teacher_freeform": {
+      "found": true,
+      "selected": {
+        "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+        "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_freeform/guide-0/seed-71782927",
+        "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_freeform/guide-0/seed-71782927/score.json",
+        "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/teacher_freeform/attempt-0/guidance.json",
+        "actor_seed": 71782927,
+        "local": {
+          "result": "inconclusive",
+          "reason": "No decisive rejected operation or verified local transition"
+        },
+        "local_accepted": false,
+        "passed": false,
+        "whole_task_passed": false,
+        "unsteered_requests": 1,
+        "substantive_whole_task_failure": true
+      },
+      "history": [
+        {
+          "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+          "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_freeform/guide-0/seed-71782927",
+          "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_freeform/guide-0/seed-71782927/score.json",
+          "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/teacher_freeform/attempt-0/guidance.json",
+          "actor_seed": 71782927,
+          "local": {
+            "result": "inconclusive",
+            "reason": "No decisive rejected operation or verified local transition"
+          },
+          "local_accepted": false,
+          "passed": false,
+          "whole_task_passed": false,
+          "unsteered_requests": 1,
+          "substantive_whole_task_failure": true
+        }
+      ]
+    },
+    "student_structured": {
+      "found": true,
+      "selected": {
+        "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+        "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782928",
+        "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782928/score.json",
+        "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/student_structured/attempt-0/guidance.json",
+        "actor_seed": 71782928,
+        "local": {
+          "result": "inconclusive",
+          "reason": "No decisive rejected operation or verified local transition"
+        },
+        "local_accepted": false,
+        "passed": false,
+        "whole_task_passed": false,
+        "unsteered_requests": 3,
+        "substantive_whole_task_failure": true
+      },
+      "history": [
+        {
+          "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+          "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782927",
+          "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782927/score.json",
+          "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/student_structured/attempt-0/guidance.json",
+          "actor_seed": 71782927,
+          "local": {
+            "result": "correct",
+            "reason": "Reached the replay-verified local correction state"
+          },
+          "local_accepted": true,
+          "passed": true,
+          "whole_task_passed": true,
+          "unsteered_requests": 3,
+          "substantive_whole_task_failure": false
+        },
+        {
+          "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+          "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782928",
+          "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782928/score.json",
+          "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/student_structured/attempt-0/guidance.json",
+          "actor_seed": 71782928,
+          "local": {
+            "result": "inconclusive",
+            "reason": "No decisive rejected operation or verified local transition"
+          },
+          "local_accepted": false,
+          "passed": false,
+          "whole_task_passed": false,
+          "unsteered_requests": 3,
+          "substantive_whole_task_failure": true
+        }
+      ]
+    }
+  },
+  "replay_audits": {
+    "teacher_structured": {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+        "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_structured/guide-0/seed-71782927",
+        "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_structured/guide-0/seed-71782927/score.json",
+        "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/teacher_structured/attempt-0/guidance.json",
+        "actor_seed": 71782927,
+        "local": {
+          "result": "correct",
+          "reason": "Reached the replay-verified local correction state"
+        },
+        "local_accepted": true,
+        "passed": true,
+        "whole_task_passed": true,
+        "unsteered_requests": 2,
+        "substantive_whole_task_failure": false
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "Documents": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "Documents",
+                      "contents": {
+                        "summary.txt": {
+                          "class": "File",
+                          "attributes": {
+                            "name": "summary.txt",
+                            "content": ""
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "official_state": {
+        "valid": true
+      },
+      "official_response": {
+        "valid": true
+      }
+    },
+    "teacher_freeform": {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+        "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_freeform/guide-0/seed-71782927",
+        "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/teacher_freeform/guide-0/seed-71782927/score.json",
+        "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/teacher_freeform/attempt-0/guidance.json",
+        "actor_seed": 71782927,
+        "local": {
+          "result": "inconclusive",
+          "reason": "No decisive rejected operation or verified local transition"
+        },
+        "local_accepted": false,
+        "passed": false,
+        "whole_task_passed": false,
+        "unsteered_requests": 1,
+        "substantive_whole_task_failure": true
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "Documents": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "Documents",
+                      "contents": {}
+                    }
+                  },
+                  "summary.txt": {
+                    "class": "File",
+                    "attributes": {
+                      "name": "summary.txt",
+                      "content": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "official_state": {
+        "valid": false,
+        "error_message": "Model instance for GorillaFileSystem does not match the state with ground truth instance.",
+        "error_type": "multi_turn:instance_state_mismatch",
+        "details": {
+          "differences": {
+            "root": {
+              "model": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {}>, 'summary.txt': <<File: summary.txt, Content: >>}>",
+              "ground_truth": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>}>"
+            }
+          },
+          "model_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {}>, 'summary.txt': <<File: summary.txt, Content: >>}>"
+          },
+          "ground_truth_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>}>"
+          }
+        }
+      },
+      "official_response": {
+        "valid": false,
+        "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+        "error_type": "multi_turn:execution_response_mismatch",
+        "details": {
+          "missing_items": [
+            "{'current_working_directory': 'Documents'}"
+          ],
+          "model_response (including all previous turns)": [
+            "{'matches': []}",
+            "None"
+          ],
+          "ground_truth_response (only the current turn)": [
+            "{'current_working_directory': 'Documents'}",
+            "None"
+          ]
+        }
+      }
+    },
+    "student_structured": {
+      "verified": true,
+      "sample": {
+        "case": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12",
+        "sample": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782928",
+        "score": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/trials/student_structured/guide-0/seed-71782928/score.json",
+        "guidance": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/guidance/student_structured/attempt-0/guidance.json",
+        "actor_seed": 71782928,
+        "local": {
+          "result": "inconclusive",
+          "reason": "No decisive rejected operation or verified local transition"
+        },
+        "local_accepted": false,
+        "passed": false,
+        "whole_task_passed": false,
+        "unsteered_requests": 3,
+        "substantive_whole_task_failure": true
+      },
+      "exact_action_transition_replay": true,
+      "original_verdict_reproduced": true,
+      "final_state": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "Documents": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "Documents",
+                      "contents": {
+                        "summary.txt": {
+                          "class": "File",
+                          "attributes": {
+                            "name": "summary.txt",
+                            "content": ""
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "summary.txt": {
+                    "class": "File",
+                    "attributes": {
+                      "name": "summary.txt",
+                      "content": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "official_state": {
+        "valid": false,
+        "error_message": "Model instance for GorillaFileSystem does not match the state with ground truth instance.",
+        "error_type": "multi_turn:instance_state_mismatch",
+        "details": {
+          "differences": {
+            "root": {
+              "model": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>, 'summary.txt': <<File: summary.txt, Content: >>}>",
+              "ground_truth": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>}>"
+            }
+          },
+          "model_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>, 'summary.txt': <<File: summary.txt, Content: >>}>"
+          },
+          "ground_truth_instance_state": {
+            "long_context": false,
+            "root": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>}>"
+          }
+        }
+      },
+      "official_response": {
+        "valid": true
+      }
+    }
+  },
+  "requires_manual_quality_review": true,
+  "evaluation_unit": "selected local recovery intervention; native whole-task outcomes retained",
+  "original_benchmark_task_unchanged": true,
+  "whole_episode_accuracy_claim": false
+}

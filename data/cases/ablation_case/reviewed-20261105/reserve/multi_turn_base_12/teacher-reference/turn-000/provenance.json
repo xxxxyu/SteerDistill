@@ -1,0 +1,5 @@
+{
+  "actual_model_source": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/teacher-reference/turn-000/response.json",
+  "response_sha256": "811632a6f48ee9324b2d5809a4abfc966ca7d94940c76ee814336315be21aa03",
+  "not_a_new_generation": true
+}

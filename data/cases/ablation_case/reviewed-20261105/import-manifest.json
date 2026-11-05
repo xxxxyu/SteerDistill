@@ -9790,6 +9790,1530 @@
     {
       "path": "main/multi_turn_base_51/unguided/turn-002/transport-1793796532184322130/response.json",
       "sha256": "0bec31303d09b703090bc6f1ac39f06a6c59f3d37b3044cfcc4ef68917410801"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/anchor-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/failed-decision.json",
+      "sha256": "04d1bcbab13b93b7a1f5fdd040bd6f07d2ad1bd9922f862aa5ea7480fb02a703"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/failed-execution.json",
+      "sha256": "4b54210653c379b9f33e18c8f9dc561a60080ee6188c16b8400e60469ea57572"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/manual-quality-review.json",
+      "sha256": "c4cd1bc7eb29ef87eecde7b73c11274d56b0c193f321b721531cc0e5422cde0e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/prefix-execution.json",
+      "sha256": "c535f8b9d50c618a18220eea7c1571826ab8e8cebf84fbdd43fa970b560f30f8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/reference-alignment.json",
+      "sha256": "8032c4a154a2905195f7c58ebce1fddd3947ec48f8eb514aade298c60d653573"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/scope.json",
+      "sha256": "52bd6f54c9d4b4ca7a43bfccfeb84235fc2636c6afe57b6ce136943d0a8da7ac"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/semantic-admission.json",
+      "sha256": "b67512cdeb5a4bd49abb530ebad3b368f49cdb7c44d8d15af77ab977d2c13957"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/context/task.json",
+      "sha256": "fffc71d9a8d09ac30820c6ab122b152c63f854134ac0ec4ca46f416caf909529"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/budget.json",
+      "sha256": "7820861746b7605e808d45f00ab5a1e75e8d8db46a0849e59b97644a43b8d5da"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/guidance.json",
+      "sha256": "46e84798b0822e83b0c0efe5f25bca1cad622055e31aac4c47f6692c4c1d0930"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/request.json",
+      "sha256": "4865fdfe9f1b3ff5ccdcedef6c8f5fc44b3e7d368b1447832cda7d71afc20787"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/response.json",
+      "sha256": "00f8a85925e9d7e4b00fc43d9390985fafb4698392f89008a631f437b5a48020"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/timing.json",
+      "sha256": "5f138dd9c974abe7d9e3a1b9a0e188b0c093c509af5c11e39d4d31782fb0b246"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/transport-1793843557817739331/request.json",
+      "sha256": "be4c953742334c33c150ff324df67bbee988ecd40f085c180aa1676c0ca0bc16"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/transport-1793843557817739331/response.json",
+      "sha256": "f59c1312c51f0bbed4dfd3e40b4ba3deadc143338bfee4cf27b5233dd01726b4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/guidance/transport-1793843557817739331/stream.jsonl",
+      "sha256": "58271c8bb797229da98a4a6f85362b04563a4a1ac1d0d3550227b83a4d513b82"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/execution.json",
+      "sha256": "32c0c46dec03a2b719ef31ca61f880fb61590a5b78d330a3c2136baa9c8e86a3"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/identity.json",
+      "sha256": "333a31a85ba2e41306116c1b8ec021adf76a1a5aa30c898413ce6fffd8065aea"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/local-comparison.json",
+      "sha256": "f53b4a1eeee1c7bfde52210d1fa9cb8118677a8969e607d43811fe215702c9ec"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/score.json",
+      "sha256": "72740fa6d4a038de48a592deec7de4dc7d0189bcc9b50c466bebb04fcce7b6f9"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/trajectory.json",
+      "sha256": "df83925309fe061d41ab9528fe9593a556e940112efa1184df9e609766a17d2d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/budget.json",
+      "sha256": "81be494e1b3e04f5bfccf32ceb7bb5dd93348023c6c8458441701ffde443d614"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/execution.json",
+      "sha256": "d4f8e15818e409475891624883df75efa91138f133c26a54fea1cb8c3d29c47c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/message.json",
+      "sha256": "56cae23d34d7baeda154e682d38b77b1d7ad9327116e41cf7bc95c5d3797ea0b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/request.json",
+      "sha256": "edab08d1966d03c306222797f5495e23b58c91e374d7c539848b78c6f3a6f19a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/response.json",
+      "sha256": "6d77df54fb293538721b37e58421d1ff8cc01372ca7f0745219ea975cb8fcaee"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/timing.json",
+      "sha256": "e06f803a1431531ded1f0aad6cfd622a36ed3dff68650a7e6d2a6bf110b0b989"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/transport-1793843596291834756/request.json",
+      "sha256": "77cd2fc760e1e33069131161e85d3c0a89c0a6834483f0df040c6ad0fe1365d4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/transport-1793843596291834756/response.json",
+      "sha256": "5343677a9defb9e836b854695507cf5cc5b2b92c251dc0d861885b808a4b175a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-000/transport-1793843596291834756/stream.jsonl",
+      "sha256": "2a249c2a7c9be5ecc7f4c232317c35a0b2fab3ae58a4d9a81ffac316982d448e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/budget.json",
+      "sha256": "9adf54a88f9ffffb7ec1d859a2136bb77d1b28b6ced091a34cefbf2737f2ae7e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/execution.json",
+      "sha256": "8cca4f8cdcfdf47202807bab6360f8a038bb0b4558c1e90bcf2c76d3f1848122"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/message.json",
+      "sha256": "6b221e0b0e2722bfef5fd13323b32f0c970e19178d6667b6d0d9801e7f093c02"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/pre-context.json",
+      "sha256": "ac1e3d38d47948be3ee45d94e1254643bbf4f2e3d8318a25ac166a935a22f747"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/request.json",
+      "sha256": "df59e46745424aae23f25b25c2cc3d71cb4ee7ada9e231f214c9c9ee232f687c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/response.json",
+      "sha256": "f98f4121ad2dd9127c14241bf189a9ee292f336f2e1d02864c2349995cf04a04"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/timing.json",
+      "sha256": "e68f32876834d00946fdc28543b281fa54c8455af8feb5af96be2e2ad4b7702f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/transport-1793843600750251302/request.json",
+      "sha256": "f452545c3032f8a0e7eb6b2666ef8294669883437eb18f16a2fb6ecc60a99259"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/transport-1793843600750251302/response.json",
+      "sha256": "1b0bc74ce40148c63e0e2221cb7f3978c3b4785a77f09883b74b899ac142435a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-001/transport-1793843600750251302/stream.jsonl",
+      "sha256": "bf22a903e9b510b9189363aad29a5e57a1a87995e1168b043a9093eccc710377"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/budget.json",
+      "sha256": "ff84702b0389c57632682bd7ff7db3cdc660e8d1180c7bd0873639c2025e5872"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/execution.json",
+      "sha256": "f4b81c24768704d509176e1c965c46ed6e77d20c11c7b4989b1aa580baddac5f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/message.json",
+      "sha256": "b739ed195035358e03902aad47d0de78a87591e8b6177938639a9fccc490b836"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/pre-context.json",
+      "sha256": "8471da686fcf16c4a69f13465fb93557ea019b063231757be82bfda47facd973"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/request.json",
+      "sha256": "2a53f7999a229d2863e8c77bc6b1aa976e374c1325f3cc50b337c9ce125a5539"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/response.json",
+      "sha256": "96d4f2f5c9eb4521a7505a08760be2791e0660c74b030157f44568aeca7abcb2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/timing.json",
+      "sha256": "582e57dffbaf5c7042f1a8e0ae2b14207960994762e43a8122eb99725e821103"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/transport-1793843614882282431/request.json",
+      "sha256": "acc1c65ac9e8336a814363e0349f4f26697d0231868798f8ad7ee84ec1097a89"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/transport-1793843614882282431/response.json",
+      "sha256": "b03ccd514febeac8b6b0aa621e0052414bbd3d6c6d24ab8e0f660f1ca41d13b8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-002/transport-1793843614882282431/stream.jsonl",
+      "sha256": "b522ccfe4e147a39166c24d5e9aa4759f3d80bad1668957e64ff62d7bb643ea5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/budget.json",
+      "sha256": "31fcf7392654ce6e538f8568b564f344aaf7307d6b8611a676456389963db86f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/message.json",
+      "sha256": "105d13c6bfab4fd1c28cdb13ff84ab1d51dcf8a323678a9b35ecd485246e4a19"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/pre-context.json",
+      "sha256": "86be13373e76ae5947cbd6674fdd9359623c7de1bdd324b746623059c7152049"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/request.json",
+      "sha256": "d50d54dbaf52a3b56a50bdf9a3a6026f595755efb52eb19a12647370a9845680"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/response.json",
+      "sha256": "06221d5968e4e58d8a40a6f4f81155521fb0d62a56a7ffdb596ba5fd960ab8fa"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/timing.json",
+      "sha256": "ec13d24989d1f59fde501cb2df46c025f0e136f50b46943e923a7849ad2e8187"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/transport-1793843623775939217/request.json",
+      "sha256": "76524ca91f87d480b540e6c047fb56179886d42079d7e0d54ee7f824b603e636"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/transport-1793843623775939217/response.json",
+      "sha256": "78e93ddf9555381dbae82cf51e1805731574deb9c0eab13aa39daef250ca31f8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/student_structured/sample/turn-003/transport-1793843623775939217/stream.jsonl",
+      "sha256": "8781a20cc987f83e311cfa57439f85179e11fee8440c1fd284447f2f1aff4309"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/budget.json",
+      "sha256": "b8a5613e7ee970502818fe7bd71d68bf225df46bb4956e1ae1a3403cdcfa6e9e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/guidance.json",
+      "sha256": "aaea82ca5a117763a550790378fddeb69d8819613abf40c604432108f3fdf840"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/request.json",
+      "sha256": "b29e971a007ba90d842736de9851206f47b0b5cde9f9093010e53d06e32a9f10"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/response.json",
+      "sha256": "ec2087775f6bf8916016fe1f10fbcd2cfc16b5421ed40133bfe764475dc91e3f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/timing.json",
+      "sha256": "b9716524fb827b6a1735d130bbf734e992997116e49a30bd1d2c6dd53745b85b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/transport-1793843542922749752/request.json",
+      "sha256": "f9ec01a465085e156d80575099b844ed00bf2066f47b92fa61a89f55be508beb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/transport-1793843542922749752/response.json",
+      "sha256": "ab3ef7790a72d43f280c9e074bc1db9b2d0d69b82463bc01e2bed51cc7a4a160"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/guidance/transport-1793843542922749752/stream.jsonl",
+      "sha256": "2cc7d80592f6a93223eadb1a741fc042f69f2fa14e04ea6feef87c45a16434cf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/execution.json",
+      "sha256": "aecd05228de34c0ac4fff4beefcbdaad884fdb5779d71b76c265296c28611aff"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/identity.json",
+      "sha256": "db9fa1f0ab470eb41a1df72de7236286c8cd8032049cfd03fbd9a92330e0bacf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/local-comparison.json",
+      "sha256": "f53b4a1eeee1c7bfde52210d1fa9cb8118677a8969e607d43811fe215702c9ec"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/score.json",
+      "sha256": "8cadb0e9cb1444bd7d22fd16d722300e518a0b0e84154f9b79b96fbae4f4e981"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/trajectory.json",
+      "sha256": "e53db596ba893ad487f53432689c66ee482b6dadeb662096eb3197b8a0242030"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/budget.json",
+      "sha256": "c01ea579a954ca19b7023fcb96619e2853eca5bcf4e96cf3f7418212cea74a26"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/execution.json",
+      "sha256": "d4f8e15818e409475891624883df75efa91138f133c26a54fea1cb8c3d29c47c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/message.json",
+      "sha256": "ab7d04e1c43a5ab9e7cc8aa6ff7572579fed768f5d85edf6e21eba90d5a233cd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/request.json",
+      "sha256": "aae00e3667fdb87a7dc65b80dc6817ea4b618b2ca94579dbc6dfd6b150df88d5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/response.json",
+      "sha256": "e415fc188f4300ea762fd500c1e277568530ea217b3f15f8619d6cbd5ee45d59"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/timing.json",
+      "sha256": "d31b6a84e23eeb48f53e7a3457ee375f3c4da5374c5eac719cf935657257af1a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/transport-1793843548866810786/request.json",
+      "sha256": "699fbe12bf18b6ff2efc589d836d590efb70a9e1014768910b5974764594b9d0"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/transport-1793843548866810786/response.json",
+      "sha256": "4a9fc175be98d52b2c5c86f78d98d02c084888e036722bd98d7f857acbe29ddf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-000/transport-1793843548866810786/stream.jsonl",
+      "sha256": "6cd1fae16fc428e3bdaf9e57510e564606d0bcce6d8d3ed084c990d07cad98c4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/budget.json",
+      "sha256": "86863317f04b27919cfbe72ad9bb38b2b5da8328be3751cee8e4ee9bdd4a31fd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/message.json",
+      "sha256": "e526fe77a0e962dc16bb6fb1aad9943bd840714ac472e3b8873d60c9e12b6444"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/pre-context.json",
+      "sha256": "e31f64a54e327925d8698ffc1b7038a3aaf007b7db2cf71030674a1ffa10b7c2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/request.json",
+      "sha256": "7d39746b6ba75881d917fafd834a3afb2ea6d603ed651b6b05786a1702393101"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/response.json",
+      "sha256": "7d3992f6af81c257070c4c3cc15fc589bfe9662e074cb037120faece1acd4059"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/timing.json",
+      "sha256": "5ac0688c7c4ae80e28c0ffa79ef512580c2af0513fea45c76c1a35af76b9b64d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/transport-1793843553975871310/request.json",
+      "sha256": "552c31f786f36a01f0b416407bfc85b074c51588e1841e0b62c5d639e0f88db5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/transport-1793843553975871310/response.json",
+      "sha256": "6ca5fbff77d625856eb1a4d165a9a42396bf7c8b2a7c733fd873e05c58e3070f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_freeform/sample/turn-001/transport-1793843553975871310/stream.jsonl",
+      "sha256": "06c1c7be0ad4327e2dabdfa104a062054bb4affbb4aba10be2373e0dacb6dd84"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/budget.json",
+      "sha256": "7820861746b7605e808d45f00ab5a1e75e8d8db46a0849e59b97644a43b8d5da"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/guidance.json",
+      "sha256": "95bb52d2e1ffcdc22e6348aa5fc5d9ca35a4c4574df40a2529ae7469db417143"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/request.json",
+      "sha256": "4865fdfe9f1b3ff5ccdcedef6c8f5fc44b3e7d368b1447832cda7d71afc20787"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/response.json",
+      "sha256": "d6e1365a9517583679b66defc3005ee7eb4919d31e77a5982cc0946354b0db76"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/timing.json",
+      "sha256": "b35e3dea51185653db0db454a6b99e9c72c5c2f11e58500051ec6d50d6d4ef9a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/transport-1793843519495382377/request.json",
+      "sha256": "be4c953742334c33c150ff324df67bbee988ecd40f085c180aa1676c0ca0bc16"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/transport-1793843519495382377/response.json",
+      "sha256": "f76f7492d7b865381d22c00c161274369057dcbae96d0699117b04b5dea0cd06"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/guidance/transport-1793843519495382377/stream.jsonl",
+      "sha256": "40896f19f5e013f9396d8cf8e1ee5a15cf3fcb698308a0bd15e4c58b6145dfd3"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/execution.json",
+      "sha256": "1a2d0deceb5d931299d9526d7d09bf6a54714b85e7fc09b061c1a84fa81579b4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/identity.json",
+      "sha256": "8a47d0d5b6bba81773a10f565c2ac55de57a9766ea6a2bdacd78aa89a865cac4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/local-comparison.json",
+      "sha256": "ac900691ee90331cadf8948c59b99ae4790b025f838905fb0764f1d038d9671d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/score.json",
+      "sha256": "fc0f2e409db3170eeebde54862d29cc6ce861763851cec9c2f8ed92fd9357648"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/trajectory.json",
+      "sha256": "e82d7c2fe2d1995154be44b684f68a973c00ac6e29957aa27378fa5199ea609d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/budget.json",
+      "sha256": "7a2451415479404ba36b500b032d579bf406929d5fae02533abfa1db2a6675e8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/execution.json",
+      "sha256": "7c3feadfc2276783eeefd182e2eab4aac4eafdc806a94e9d68cc9e7c3bdf5021"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/message.json",
+      "sha256": "3f9fdf9382bc43aa2f63b79a9d3608ceb877e8c134599fbea2226fabd04f5672"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/request.json",
+      "sha256": "9944122f7d0f3df942d2652e6434378cbba8833ac6895e225e45e957b18d5dd4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/response.json",
+      "sha256": "eaf71515a1ec6fbb185cf26e0472cedd7d2f9e94ca30c185b5b5c5dd2c55a745"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/timing.json",
+      "sha256": "cf798988b2840a5a9d47d4376eae50ed3f41f9cb8a98b8c3795e4f044c644c76"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/transport-1793843525840875847/request.json",
+      "sha256": "8931f02c61b92ee53eb836d6814665860455a243a45acaa592ef342b786d4789"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/transport-1793843525840875847/response.json",
+      "sha256": "a979a4709bdea31c83e706a04ba05a8b7e56003d53a2d0f77c16782287b9b0fd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-000/transport-1793843525840875847/stream.jsonl",
+      "sha256": "af8bab93fa80fcc71ceecd90c4e5421e9226c84c1fd34aeb8f94fcf41fd6006a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/budget.json",
+      "sha256": "549d9736ffabbc2d19de64b6b2abb9a4152ecace98435d7d84b724b1c205e213"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/execution.json",
+      "sha256": "8ad30a410ce2ee2048550c6c445d447a3841feed027a8d63ea0bcec013cf7ddb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/message.json",
+      "sha256": "169dee37db4e6e4b828708172e91e5b72512d746872bcaa46422a956582f9005"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/pre-context.json",
+      "sha256": "f38fda6ca185b726e7ba035622e17e06a91ed5732f4ecf0411607c02b0116195"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/request.json",
+      "sha256": "8201feec44a6cf28aeede49280d1566e5a6196d3c703435f72b50659b8ca2423"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/response.json",
+      "sha256": "f693b0adbf0836b7464d7595f84848f5d70bdd8d3c4bdd26b231b78d748f6ba1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/timing.json",
+      "sha256": "2346ce543b495d1af2361c14aa012e12b6598ef9162aa1dde3f2192ed53f021b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/transport-1793843536214137913/request.json",
+      "sha256": "bd7360d84e019f0cdef2ff99323aadb871a3bd824bde8d8f210215b139791933"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/transport-1793843536214137913/response.json",
+      "sha256": "092f01483166017bec485d5e3c4738c96f949e16911f5d36b5238b16ae6de4a1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-001/transport-1793843536214137913/stream.jsonl",
+      "sha256": "2cdff589a88d01dc9b7f6a96d65b45ce7054d9b0d2384cf494dd7a601bfaa0fc"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/budget.json",
+      "sha256": "e8be9cdb05a14c40ab65be20456e1d36fc9ed497bd2e6bb222419bf172bf48e8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/message.json",
+      "sha256": "e5082fb2373d86d86dde1f76f6bc7fa8e11a614e63c10a758918efe1f0295ee1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/pre-context.json",
+      "sha256": "8de7b67a0933f16accc9f707d46de9d4f77e1b7165dc2a9b148761c00b79ec74"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/request.json",
+      "sha256": "8d81d24cd47f92466812c52c85f624ecd8bc854140452f95d74c76f037cfb0da"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/response.json",
+      "sha256": "a00b86f31e562e6cf8d5ff61f3f6b5f13657f40a330d9212fb41263bd0b303a8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/timing.json",
+      "sha256": "b46d530d104a49ad159e4446e8c45170db69fa70be12d6fcde0032e854db7b4b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/transport-1793843542256546884/request.json",
+      "sha256": "f9ebd4a2bc7006ea6801610469bde5200e934e95f60c508c2cf675921225b23d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/transport-1793843542256546884/response.json",
+      "sha256": "2fe3acb5490917eee0ee0283343b583b3d4c3495eb6f05ca66e44f22a78aef97"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/methods/teacher_structured/sample/turn-002/transport-1793843542256546884/stream.jsonl",
+      "sha256": "b019496a0093b51cecf28d8192c89824f87592910ecc0aa43d6b47ce4e947ece"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/selection.json",
+      "sha256": "1101224ce783367a015c7902c3f31d5bbdd5a041e93ffae6e45a19ddcf6875f3"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/execution.json",
+      "sha256": "1a2d0deceb5d931299d9526d7d09bf6a54714b85e7fc09b061c1a84fa81579b4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-000/execution.json",
+      "sha256": "7c3feadfc2276783eeefd182e2eab4aac4eafdc806a94e9d68cc9e7c3bdf5021"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-000/provenance.json",
+      "sha256": "e68819c24a44844287b7f276d451ae7803c138af25953951c06b26f90c85a8a2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-000/response.json",
+      "sha256": "9bfa266efe1cef682d790175ace561b21965d9df73103e8ef3b553737ba80a94"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-001/execution.json",
+      "sha256": "8ad30a410ce2ee2048550c6c445d447a3841feed027a8d63ea0bcec013cf7ddb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-001/provenance.json",
+      "sha256": "647e33ce86ac95ec5f7f4586c5b46bd8af7f091b1eaaa4773c860fafe4361b31"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-001/response.json",
+      "sha256": "0994b745506b4cca5aee0e8a03f24866e14d9f96c4ef4d69c4f7e42ce81cfc0a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-002/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-002/provenance.json",
+      "sha256": "caf70272af684b28bef9143ae77ab9cc971672a3ef63b03acea4a33fc109d269"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/teacher-reference/turn-002/response.json",
+      "sha256": "dbd03fa1bd47c49ce03dec68bcc8ee63174e46862559d6dfcac2a9711083146f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/budget.json",
+      "sha256": "7820861746b7605e808d45f00ab5a1e75e8d8db46a0849e59b97644a43b8d5da"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/guidance.json",
+      "sha256": "46e84798b0822e83b0c0efe5f25bca1cad622055e31aac4c47f6692c4c1d0930"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/request.json",
+      "sha256": "4865fdfe9f1b3ff5ccdcedef6c8f5fc44b3e7d368b1447832cda7d71afc20787"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/response.json",
+      "sha256": "00f8a85925e9d7e4b00fc43d9390985fafb4698392f89008a631f437b5a48020"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/timing.json",
+      "sha256": "5f138dd9c974abe7d9e3a1b9a0e188b0c093c509af5c11e39d4d31782fb0b246"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/transport-1793843557817739331/request.json",
+      "sha256": "be4c953742334c33c150ff324df67bbee988ecd40f085c180aa1676c0ca0bc16"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/transport-1793843557817739331/response.json",
+      "sha256": "f59c1312c51f0bbed4dfd3e40b4ba3deadc143338bfee4cf27b5233dd01726b4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/student_structured/attempt-0/transport-1793843557817739331/stream.jsonl",
+      "sha256": "58271c8bb797229da98a4a6f85362b04563a4a1ac1d0d3550227b83a4d513b82"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/budget.json",
+      "sha256": "b8a5613e7ee970502818fe7bd71d68bf225df46bb4956e1ae1a3403cdcfa6e9e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/guidance.json",
+      "sha256": "aaea82ca5a117763a550790378fddeb69d8819613abf40c604432108f3fdf840"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/request.json",
+      "sha256": "b29e971a007ba90d842736de9851206f47b0b5cde9f9093010e53d06e32a9f10"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/response.json",
+      "sha256": "ec2087775f6bf8916016fe1f10fbcd2cfc16b5421ed40133bfe764475dc91e3f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/timing.json",
+      "sha256": "b9716524fb827b6a1735d130bbf734e992997116e49a30bd1d2c6dd53745b85b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/transport-1793843542922749752/request.json",
+      "sha256": "f9ec01a465085e156d80575099b844ed00bf2066f47b92fa61a89f55be508beb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/transport-1793843542922749752/response.json",
+      "sha256": "ab3ef7790a72d43f280c9e074bc1db9b2d0d69b82463bc01e2bed51cc7a4a160"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_freeform/attempt-0/transport-1793843542922749752/stream.jsonl",
+      "sha256": "2cc7d80592f6a93223eadb1a741fc042f69f2fa14e04ea6feef87c45a16434cf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/budget.json",
+      "sha256": "7820861746b7605e808d45f00ab5a1e75e8d8db46a0849e59b97644a43b8d5da"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/guidance.json",
+      "sha256": "95bb52d2e1ffcdc22e6348aa5fc5d9ca35a4c4574df40a2529ae7469db417143"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/request.json",
+      "sha256": "4865fdfe9f1b3ff5ccdcedef6c8f5fc44b3e7d368b1447832cda7d71afc20787"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/response.json",
+      "sha256": "d6e1365a9517583679b66defc3005ee7eb4919d31e77a5982cc0946354b0db76"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/timing.json",
+      "sha256": "b35e3dea51185653db0db454a6b99e9c72c5c2f11e58500051ec6d50d6d4ef9a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/transport-1793843519495382377/request.json",
+      "sha256": "be4c953742334c33c150ff324df67bbee988ecd40f085c180aa1676c0ca0bc16"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/transport-1793843519495382377/response.json",
+      "sha256": "f76f7492d7b865381d22c00c161274369057dcbae96d0699117b04b5dea0cd06"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/guidance/teacher_structured/attempt-0/transport-1793843519495382377/stream.jsonl",
+      "sha256": "40896f19f5e013f9396d8cf8e1ee5a15cf3fcb698308a0bd15e4c58b6145dfd3"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/all-valid-trials.json",
+      "sha256": "ed27c40d67e736c496d1a9880f94b0e67c63bc9de4580207e87d1653d6298b3f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/execution.json",
+      "sha256": "b71aa401ca774da4c439b00d3d72c0902426c87f3d7b3d8e5d1649cbf7cd7fd6"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/identity.json",
+      "sha256": "45f90d679a159a00bc98e31399ae41b3dc4a3a621ced224800d2ad2b73bff37c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/local-comparison.json",
+      "sha256": "ac900691ee90331cadf8948c59b99ae4790b025f838905fb0764f1d038d9671d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/score.json",
+      "sha256": "fc0f2e409db3170eeebde54862d29cc6ce861763851cec9c2f8ed92fd9357648"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/trajectory.json",
+      "sha256": "0682ee06755dad171616c8b848af403d96a8b71f6e15592133b6d5974def4ffe"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/budget.json",
+      "sha256": "81be494e1b3e04f5bfccf32ceb7bb5dd93348023c6c8458441701ffde443d614"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/execution.json",
+      "sha256": "7c3feadfc2276783eeefd182e2eab4aac4eafdc806a94e9d68cc9e7c3bdf5021"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/message.json",
+      "sha256": "544553e9e54eb46e2f75bab20d17a7607a0b6e34692950b4645a7e5ffa7ec781"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/request.json",
+      "sha256": "9fa7dbd68f898a38246cd6bdb30b493599551b77946cd482d4a402bb270a364f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/response.json",
+      "sha256": "327a56bc04c904607059c4eb74a4457f878283960c4fde2a26dbb2d2d854be7b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/timing.json",
+      "sha256": "2ab0d7203c4d6468c0709510dd64a697c1fff51172d3a976bdedfacc440c9e2a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/transport-1793843565555222376/request.json",
+      "sha256": "085a574c68ed63b0b0efa9c34ea852ace0ab19d55f3e610fda59e66e81bc8ed5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/transport-1793843565555222376/response.json",
+      "sha256": "df183fe6d6ee3e55c22c50e717d478fe465b39963532bfa3fb19a3a0c792f166"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-000/transport-1793843565555222376/stream.jsonl",
+      "sha256": "7240bffcbdc48c6e94733d5c252c8a013572a0b9ae2bd3417ea19118d82b7fc6"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/budget.json",
+      "sha256": "e6f642f820baaae80c99b4cb3da84f1f796db56a1c8a6f72ec6c7437f02f3d9d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/execution.json",
+      "sha256": "1d123aa301c656d6a208bc169e84e45331f2c7af6bbc3fb8c161838051a67ddd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/message.json",
+      "sha256": "a582a64d9a2fcafceeca434a5f3281b6ad62309c7ea1bcc7c4fc783ab3cc6b7a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/pre-context.json",
+      "sha256": "5973158246af20ca03c6599985636d5d7f5fe38edcb513caf7c029d7edbb28a6"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/request.json",
+      "sha256": "815f70861753f61543bfd66981226e7523d07dccdb2231d19a6fa726a97c998e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/response.json",
+      "sha256": "0c13a2f7c3865e41832725972f220b27fbb0f9fbde609a00e911bb95ddeab70e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/timing.json",
+      "sha256": "1d311a4aa14167bf8a26e04481575de6534c15db962918eb474bbac86f2f753f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/transport-1793843582668392544/request.json",
+      "sha256": "5747ddefddfe5d2b41b63f75051a6e8816ca154db0b1c41be12e0faa2f15b712"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/transport-1793843582668392544/response.json",
+      "sha256": "353cbdae1a2085fdd1d15786364f9a8e7f931967f300281693680f1d38fec4cc"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-001/transport-1793843582668392544/stream.jsonl",
+      "sha256": "eb499659a0492fab0505860f7e69e3bf6ca3b640d89c0f3e41d68b0744f60ed0"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/budget.json",
+      "sha256": "cf24d8da017b6567f7e329b3142d2ab1970f183cc0725c771f37a2ecbb31f093"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/execution.json",
+      "sha256": "27ccb120127f2e1a1d2c71156277568efde90538665d98bbfa40d33839d2b5c0"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/message.json",
+      "sha256": "7cdfe85e1d5bfd416dbe32c9c65fe0dd38c1cd9ffbc79d03a8438188380dddbf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/pre-context.json",
+      "sha256": "3a4809e377abb80160ba7e0808fa89b18f2c56b2a518be9fae64f30ccbf273fb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/request.json",
+      "sha256": "a4fb8accb39e247b458ea1b1380d23d4174b2edca9b05a87f2df5e40d59ac4c6"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/response.json",
+      "sha256": "c4a685967b3fd2a660ac22f82a48d2d21974608ea30eba3e8674b8b22782524d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/timing.json",
+      "sha256": "fff1ddb5a3cbd3bb3068ddce01d40386d938b0d685012c12ea5d7c84aad77842"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/transport-1793843589811930878/request.json",
+      "sha256": "479b9058567ad7ed8d112f574fada52ee86e7b6c445480ce313cf1f2856f5570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/transport-1793843589811930878/response.json",
+      "sha256": "ec5b8af1c8e87e999fb21e6a987ef33b274a94f521de510490427c3beeeadfa2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-002/transport-1793843589811930878/stream.jsonl",
+      "sha256": "d60d3db9d2b87b542314c64bb911ecd2215d30510d794d1078db86d54ba4cebd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/budget.json",
+      "sha256": "c42d794e3faf4e2e3392d21fd90d30062a624cdf69192a0794d56b77277a9d85"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/message.json",
+      "sha256": "e5082fb2373d86d86dde1f76f6bc7fa8e11a614e63c10a758918efe1f0295ee1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/pre-context.json",
+      "sha256": "49575f754e3394922580b1bca88b46c00f7ecfe9cb5c8ffc24753df01aed0707"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/request.json",
+      "sha256": "aeaf40308361d17aea27c5a3eb3b3eb8ab3b337e88535e502c9a5e33fb9e24ea"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/response.json",
+      "sha256": "d8d4a34c84544b9eaaec6a916925caaab1d28887a994fe152187201ccc1f24a4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/timing.json",
+      "sha256": "1d5fa2954211d6266a7a42f9fdddbfc8c48d20b942ba22052aa9219d9d9a5ba9"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/transport-1793843595619163994/request.json",
+      "sha256": "1eb6865f82edf769224710a50e577fa8390206945e540bc57b7b95824d5dce1f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/transport-1793843595619163994/response.json",
+      "sha256": "bc4e53391c4c669a2993fcfa47dd2985ae69ed08cda3e91739c5cc885b64c671"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782927/turn-003/transport-1793843595619163994/stream.jsonl",
+      "sha256": "848bdf47bf438db3252aa88aa24e0e04020324930258b902bc2d617313ec55f5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/execution.json",
+      "sha256": "32c0c46dec03a2b719ef31ca61f880fb61590a5b78d330a3c2136baa9c8e86a3"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/identity.json",
+      "sha256": "333a31a85ba2e41306116c1b8ec021adf76a1a5aa30c898413ce6fffd8065aea"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/local-comparison.json",
+      "sha256": "f53b4a1eeee1c7bfde52210d1fa9cb8118677a8969e607d43811fe215702c9ec"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/score.json",
+      "sha256": "72740fa6d4a038de48a592deec7de4dc7d0189bcc9b50c466bebb04fcce7b6f9"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/trajectory.json",
+      "sha256": "df83925309fe061d41ab9528fe9593a556e940112efa1184df9e609766a17d2d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/budget.json",
+      "sha256": "81be494e1b3e04f5bfccf32ceb7bb5dd93348023c6c8458441701ffde443d614"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/execution.json",
+      "sha256": "d4f8e15818e409475891624883df75efa91138f133c26a54fea1cb8c3d29c47c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/message.json",
+      "sha256": "56cae23d34d7baeda154e682d38b77b1d7ad9327116e41cf7bc95c5d3797ea0b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/request.json",
+      "sha256": "edab08d1966d03c306222797f5495e23b58c91e374d7c539848b78c6f3a6f19a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/response.json",
+      "sha256": "6d77df54fb293538721b37e58421d1ff8cc01372ca7f0745219ea975cb8fcaee"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/timing.json",
+      "sha256": "e06f803a1431531ded1f0aad6cfd622a36ed3dff68650a7e6d2a6bf110b0b989"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/transport-1793843596291834756/request.json",
+      "sha256": "77cd2fc760e1e33069131161e85d3c0a89c0a6834483f0df040c6ad0fe1365d4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/transport-1793843596291834756/response.json",
+      "sha256": "5343677a9defb9e836b854695507cf5cc5b2b92c251dc0d861885b808a4b175a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-000/transport-1793843596291834756/stream.jsonl",
+      "sha256": "2a249c2a7c9be5ecc7f4c232317c35a0b2fab3ae58a4d9a81ffac316982d448e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/budget.json",
+      "sha256": "9adf54a88f9ffffb7ec1d859a2136bb77d1b28b6ced091a34cefbf2737f2ae7e"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/execution.json",
+      "sha256": "8cca4f8cdcfdf47202807bab6360f8a038bb0b4558c1e90bcf2c76d3f1848122"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/message.json",
+      "sha256": "6b221e0b0e2722bfef5fd13323b32f0c970e19178d6667b6d0d9801e7f093c02"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/pre-context.json",
+      "sha256": "ac1e3d38d47948be3ee45d94e1254643bbf4f2e3d8318a25ac166a935a22f747"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/request.json",
+      "sha256": "df59e46745424aae23f25b25c2cc3d71cb4ee7ada9e231f214c9c9ee232f687c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/response.json",
+      "sha256": "f98f4121ad2dd9127c14241bf189a9ee292f336f2e1d02864c2349995cf04a04"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/timing.json",
+      "sha256": "e68f32876834d00946fdc28543b281fa54c8455af8feb5af96be2e2ad4b7702f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/transport-1793843600750251302/request.json",
+      "sha256": "f452545c3032f8a0e7eb6b2666ef8294669883437eb18f16a2fb6ecc60a99259"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/transport-1793843600750251302/response.json",
+      "sha256": "1b0bc74ce40148c63e0e2221cb7f3978c3b4785a77f09883b74b899ac142435a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-001/transport-1793843600750251302/stream.jsonl",
+      "sha256": "bf22a903e9b510b9189363aad29a5e57a1a87995e1168b043a9093eccc710377"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/budget.json",
+      "sha256": "ff84702b0389c57632682bd7ff7db3cdc660e8d1180c7bd0873639c2025e5872"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/execution.json",
+      "sha256": "f4b81c24768704d509176e1c965c46ed6e77d20c11c7b4989b1aa580baddac5f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/message.json",
+      "sha256": "b739ed195035358e03902aad47d0de78a87591e8b6177938639a9fccc490b836"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/pre-context.json",
+      "sha256": "8471da686fcf16c4a69f13465fb93557ea019b063231757be82bfda47facd973"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/request.json",
+      "sha256": "2a53f7999a229d2863e8c77bc6b1aa976e374c1325f3cc50b337c9ce125a5539"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/response.json",
+      "sha256": "96d4f2f5c9eb4521a7505a08760be2791e0660c74b030157f44568aeca7abcb2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/timing.json",
+      "sha256": "582e57dffbaf5c7042f1a8e0ae2b14207960994762e43a8122eb99725e821103"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/transport-1793843614882282431/request.json",
+      "sha256": "acc1c65ac9e8336a814363e0349f4f26697d0231868798f8ad7ee84ec1097a89"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/transport-1793843614882282431/response.json",
+      "sha256": "b03ccd514febeac8b6b0aa621e0052414bbd3d6c6d24ab8e0f660f1ca41d13b8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-002/transport-1793843614882282431/stream.jsonl",
+      "sha256": "b522ccfe4e147a39166c24d5e9aa4759f3d80bad1668957e64ff62d7bb643ea5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/budget.json",
+      "sha256": "31fcf7392654ce6e538f8568b564f344aaf7307d6b8611a676456389963db86f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/message.json",
+      "sha256": "105d13c6bfab4fd1c28cdb13ff84ab1d51dcf8a323678a9b35ecd485246e4a19"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/pre-context.json",
+      "sha256": "86be13373e76ae5947cbd6674fdd9359623c7de1bdd324b746623059c7152049"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/request.json",
+      "sha256": "d50d54dbaf52a3b56a50bdf9a3a6026f595755efb52eb19a12647370a9845680"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/response.json",
+      "sha256": "06221d5968e4e58d8a40a6f4f81155521fb0d62a56a7ffdb596ba5fd960ab8fa"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/timing.json",
+      "sha256": "ec13d24989d1f59fde501cb2df46c025f0e136f50b46943e923a7849ad2e8187"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/transport-1793843623775939217/request.json",
+      "sha256": "76524ca91f87d480b540e6c047fb56179886d42079d7e0d54ee7f824b603e636"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/transport-1793843623775939217/response.json",
+      "sha256": "78e93ddf9555381dbae82cf51e1805731574deb9c0eab13aa39daef250ca31f8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/student_structured/guide-0/seed-71782928/turn-003/transport-1793843623775939217/stream.jsonl",
+      "sha256": "8781a20cc987f83e311cfa57439f85179e11fee8440c1fd284447f2f1aff4309"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/all-valid-trials.json",
+      "sha256": "aedccc98ac173b20df397a8fdac886d12a7ec5a2a8c7dcb66b99064ee2af0d02"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/execution.json",
+      "sha256": "aecd05228de34c0ac4fff4beefcbdaad884fdb5779d71b76c265296c28611aff"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/identity.json",
+      "sha256": "db9fa1f0ab470eb41a1df72de7236286c8cd8032049cfd03fbd9a92330e0bacf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/local-comparison.json",
+      "sha256": "f53b4a1eeee1c7bfde52210d1fa9cb8118677a8969e607d43811fe215702c9ec"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/score.json",
+      "sha256": "8cadb0e9cb1444bd7d22fd16d722300e518a0b0e84154f9b79b96fbae4f4e981"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/trajectory.json",
+      "sha256": "e53db596ba893ad487f53432689c66ee482b6dadeb662096eb3197b8a0242030"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/budget.json",
+      "sha256": "c01ea579a954ca19b7023fcb96619e2853eca5bcf4e96cf3f7418212cea74a26"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/execution.json",
+      "sha256": "d4f8e15818e409475891624883df75efa91138f133c26a54fea1cb8c3d29c47c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/message.json",
+      "sha256": "ab7d04e1c43a5ab9e7cc8aa6ff7572579fed768f5d85edf6e21eba90d5a233cd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/request.json",
+      "sha256": "aae00e3667fdb87a7dc65b80dc6817ea4b618b2ca94579dbc6dfd6b150df88d5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/response.json",
+      "sha256": "e415fc188f4300ea762fd500c1e277568530ea217b3f15f8619d6cbd5ee45d59"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/timing.json",
+      "sha256": "d31b6a84e23eeb48f53e7a3457ee375f3c4da5374c5eac719cf935657257af1a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/transport-1793843548866810786/request.json",
+      "sha256": "699fbe12bf18b6ff2efc589d836d590efb70a9e1014768910b5974764594b9d0"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/transport-1793843548866810786/response.json",
+      "sha256": "4a9fc175be98d52b2c5c86f78d98d02c084888e036722bd98d7f857acbe29ddf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-000/transport-1793843548866810786/stream.jsonl",
+      "sha256": "6cd1fae16fc428e3bdaf9e57510e564606d0bcce6d8d3ed084c990d07cad98c4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/budget.json",
+      "sha256": "86863317f04b27919cfbe72ad9bb38b2b5da8328be3751cee8e4ee9bdd4a31fd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/message.json",
+      "sha256": "e526fe77a0e962dc16bb6fb1aad9943bd840714ac472e3b8873d60c9e12b6444"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/pre-context.json",
+      "sha256": "e31f64a54e327925d8698ffc1b7038a3aaf007b7db2cf71030674a1ffa10b7c2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/request.json",
+      "sha256": "7d39746b6ba75881d917fafd834a3afb2ea6d603ed651b6b05786a1702393101"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/response.json",
+      "sha256": "7d3992f6af81c257070c4c3cc15fc589bfe9662e074cb037120faece1acd4059"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/timing.json",
+      "sha256": "5ac0688c7c4ae80e28c0ffa79ef512580c2af0513fea45c76c1a35af76b9b64d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/transport-1793843553975871310/request.json",
+      "sha256": "552c31f786f36a01f0b416407bfc85b074c51588e1841e0b62c5d639e0f88db5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/transport-1793843553975871310/response.json",
+      "sha256": "6ca5fbff77d625856eb1a4d165a9a42396bf7c8b2a7c733fd873e05c58e3070f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_freeform/guide-0/seed-71782927/turn-001/transport-1793843553975871310/stream.jsonl",
+      "sha256": "06c1c7be0ad4327e2dabdfa104a062054bb4affbb4aba10be2373e0dacb6dd84"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/all-valid-trials.json",
+      "sha256": "7fe4fa663efda44fd0b8af6a535001586ae962d22047968c29b2cd88088c71f5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/execution.json",
+      "sha256": "1a2d0deceb5d931299d9526d7d09bf6a54714b85e7fc09b061c1a84fa81579b4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/identity.json",
+      "sha256": "8a47d0d5b6bba81773a10f565c2ac55de57a9766ea6a2bdacd78aa89a865cac4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/local-comparison.json",
+      "sha256": "ac900691ee90331cadf8948c59b99ae4790b025f838905fb0764f1d038d9671d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/restore.json",
+      "sha256": "942e09216170bddca5ecb03553c5bd5361046c7379f59f1d43c6fd72a30387ae"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/score.json",
+      "sha256": "fc0f2e409db3170eeebde54862d29cc6ce861763851cec9c2f8ed92fd9357648"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/trajectory.json",
+      "sha256": "e82d7c2fe2d1995154be44b684f68a973c00ac6e29957aa27378fa5199ea609d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/budget.json",
+      "sha256": "7a2451415479404ba36b500b032d579bf406929d5fae02533abfa1db2a6675e8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/execution.json",
+      "sha256": "7c3feadfc2276783eeefd182e2eab4aac4eafdc806a94e9d68cc9e7c3bdf5021"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/message.json",
+      "sha256": "3f9fdf9382bc43aa2f63b79a9d3608ceb877e8c134599fbea2226fabd04f5672"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/request.json",
+      "sha256": "9944122f7d0f3df942d2652e6434378cbba8833ac6895e225e45e957b18d5dd4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/response.json",
+      "sha256": "eaf71515a1ec6fbb185cf26e0472cedd7d2f9e94ca30c185b5b5c5dd2c55a745"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/timing.json",
+      "sha256": "cf798988b2840a5a9d47d4376eae50ed3f41f9cb8a98b8c3795e4f044c644c76"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/transport-1793843525840875847/request.json",
+      "sha256": "8931f02c61b92ee53eb836d6814665860455a243a45acaa592ef342b786d4789"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/transport-1793843525840875847/response.json",
+      "sha256": "a979a4709bdea31c83e706a04ba05a8b7e56003d53a2d0f77c16782287b9b0fd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-000/transport-1793843525840875847/stream.jsonl",
+      "sha256": "af8bab93fa80fcc71ceecd90c4e5421e9226c84c1fd34aeb8f94fcf41fd6006a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/budget.json",
+      "sha256": "549d9736ffabbc2d19de64b6b2abb9a4152ecace98435d7d84b724b1c205e213"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/execution.json",
+      "sha256": "8ad30a410ce2ee2048550c6c445d447a3841feed027a8d63ea0bcec013cf7ddb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/message.json",
+      "sha256": "169dee37db4e6e4b828708172e91e5b72512d746872bcaa46422a956582f9005"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/pre-context.json",
+      "sha256": "f38fda6ca185b726e7ba035622e17e06a91ed5732f4ecf0411607c02b0116195"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/request.json",
+      "sha256": "8201feec44a6cf28aeede49280d1566e5a6196d3c703435f72b50659b8ca2423"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/response.json",
+      "sha256": "f693b0adbf0836b7464d7595f84848f5d70bdd8d3c4bdd26b231b78d748f6ba1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/timing.json",
+      "sha256": "2346ce543b495d1af2361c14aa012e12b6598ef9162aa1dde3f2192ed53f021b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/transport-1793843536214137913/request.json",
+      "sha256": "bd7360d84e019f0cdef2ff99323aadb871a3bd824bde8d8f210215b139791933"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/transport-1793843536214137913/response.json",
+      "sha256": "092f01483166017bec485d5e3c4738c96f949e16911f5d36b5238b16ae6de4a1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-001/transport-1793843536214137913/stream.jsonl",
+      "sha256": "2cdff589a88d01dc9b7f6a96d65b45ce7054d9b0d2384cf494dd7a601bfaa0fc"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/budget.json",
+      "sha256": "e8be9cdb05a14c40ab65be20456e1d36fc9ed497bd2e6bb222419bf172bf48e8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/message.json",
+      "sha256": "e5082fb2373d86d86dde1f76f6bc7fa8e11a614e63c10a758918efe1f0295ee1"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/pre-context.json",
+      "sha256": "8de7b67a0933f16accc9f707d46de9d4f77e1b7165dc2a9b148761c00b79ec74"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/request.json",
+      "sha256": "8d81d24cd47f92466812c52c85f624ecd8bc854140452f95d74c76f037cfb0da"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/response.json",
+      "sha256": "a00b86f31e562e6cf8d5ff61f3f6b5f13657f40a330d9212fb41263bd0b303a8"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/timing.json",
+      "sha256": "b46d530d104a49ad159e4446e8c45170db69fa70be12d6fcde0032e854db7b4b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/transport-1793843542256546884/request.json",
+      "sha256": "f9ebd4a2bc7006ea6801610469bde5200e934e95f60c508c2cf675921225b23d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/transport-1793843542256546884/response.json",
+      "sha256": "2fe3acb5490917eee0ee0283343b583b3d4c3495eb6f05ca66e44f22a78aef97"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/trial-history/trials/teacher_structured/guide-0/seed-71782927/turn-002/transport-1793843542256546884/stream.jsonl",
+      "sha256": "b019496a0093b51cecf28d8192c89824f87592910ecc0aa43d6b47ce4e947ece"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/context.json",
+      "sha256": "4b892983b92d4c8376f518b92c5790bd4c9f102a3b4614f4c6dcebb7206445d5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/execution.json",
+      "sha256": "51028445fec81e581fb78abe24a83fa8f915946ea711677f159e4641adbedfda"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/restore.json",
+      "sha256": "d0cbe1015c58548057ad2c991eca35d105cc05ea97a5a3096edefe8ae1d18293"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/score.json",
+      "sha256": "527559dbe5f63d13c0a45a40f672d2c253580c790458fbec581a900a56d46a7b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/trajectory.json",
+      "sha256": "ddaac58cdf49cc2097ca0ddcc83f23763a99ec556eace7605844df5534b26e30"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/budget.json",
+      "sha256": "f3d38c2cbaaaceece50b6614fbb5dcb73bd12377f07fee2426cca4a2d1a0d825"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/execution.json",
+      "sha256": "500c4cd3ced453dee4b68590823b3c995ace8729ba210adf58a023e0dc5af6d3"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/message.json",
+      "sha256": "152a64bc2bc67a5916516483d2911a611bc325db70004c7e14d1591872993bbd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/pre-context.json",
+      "sha256": "4b892983b92d4c8376f518b92c5790bd4c9f102a3b4614f4c6dcebb7206445d5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/request.json",
+      "sha256": "172145300bbc28168ced60220fbfe172255b2ac49259688839ab0f478a9d3024"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/response.json",
+      "sha256": "f9a8cd693b63e04c508e95c4706ed3590d5e7919e9b993a2d0a1a7466d5a23fd"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/transport-1793798890681883979/request.json",
+      "sha256": "e06d9d63a35e4aaa3547fb99a9adf043fb4a23156f0760ef13c065c214182352"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/transport-1793798890681883979/response.json",
+      "sha256": "34f242241e072236550cb5d17401af57f0ed555f957673d2153322096d404ecb"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-000/transport-1793798890681883979/stream.jsonl",
+      "sha256": "f095b4ac768dde08a2c40a6ff607b6670c0c9a9bb449ebfb87f35ec656ee95be"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/budget.json",
+      "sha256": "64ca975069e7a4cfcc4b0545a3acdae6b0aa846cec8d94f9b8edf08bf72946a9"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/execution.json",
+      "sha256": "e976c41c2ebf8a8bd1edc168c13bd8608aee639dd63f99dcef59771f3c339b0a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/message.json",
+      "sha256": "e9ad816809a010674c237cba61382936d552c49d721363a40d8b41ad04f3dbda"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/pre-context.json",
+      "sha256": "e4040b09804fb3b27d33eddcf931008e8a9dcb5a4d989f6b1449360170bea063"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/request.json",
+      "sha256": "efaca22383c01ba46b3d18b421eec8c9587fafe07199279bf29510c2ecd12dc4"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/response.json",
+      "sha256": "ce1c3e22e240f7fb4b36075cd3cda81bba7fe13466d5e02860ab4dd07ba77c3b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/transport-1793798901087331440/request.json",
+      "sha256": "97efc4f08936e025ea192d27c502fd08bcf7f916193dc9c50dc5ffb82195099b"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/transport-1793798901087331440/response.json",
+      "sha256": "52667fdee7d3b58123fd99ac7487f71e09f5c3f9009acec797ece73f4249d997"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-001/transport-1793798901087331440/stream.jsonl",
+      "sha256": "b2a36e211d13c969ef84e9a2b51c6763a478dfa119b29491502bfe9a3dcbbb6f"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/budget.json",
+      "sha256": "6d8bbf59b9329cafcd2365cb4ae330eea4b9ab042b06c1376607c98eefffa767"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/execution.json",
+      "sha256": "50796ba64afdb5244cc71196078d00d11c0308a7ed38283aa7addead07d43f8a"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/message.json",
+      "sha256": "df4bce09af9f641c1e8ef40745dfa133fa3cebc3167f54092919ed33b3a8426c"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/pre-context.json",
+      "sha256": "efec3236c1b96bed141dbad0ef9ba4e0da55779741e9195e922b63c1c50ca560"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/request.json",
+      "sha256": "201ffd10b477745e4b029f36418ca800ccdd70b0a25f60a5a05e5e974da41754"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/response.json",
+      "sha256": "04d1bcbab13b93b7a1f5fdd040bd6f07d2ad1bd9922f862aa5ea7480fb02a703"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/transport-1793798919449552671/request.json",
+      "sha256": "35603c7758b06848ffdadb51588b45a75b2cca320c32b42e2ae388f80a9bab01"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/transport-1793798919449552671/response.json",
+      "sha256": "64a1f389380ad396f5b122cc950e20f7213c9630c8765dfd678006f608ebb8f5"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-002/transport-1793798919449552671/stream.jsonl",
+      "sha256": "87e0deba28d92d1599491c42752c8095a3900d1b587a007a793e623634af43bf"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/budget.json",
+      "sha256": "8dcd47edc7679d9322ea25ad39d361a8830630f22b9e414e59f537bb72804abc"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/execution.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/message.json",
+      "sha256": "104dc3c95026d8736b2c903888b0839202a07fa22508e3cf81cd76bb49c61d30"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/pre-context.json",
+      "sha256": "a233e56d3671dd3af35db25ef7e6081deb3d4e983711ee4040a9981f2584e873"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/request.json",
+      "sha256": "0e17e73edae284ccf67833bb52f113a5053a7cecae8a6d8dca1b509d02e9ddd2"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/response.json",
+      "sha256": "1a988ff0189d914c41a0c8170a530d227134bd4edce33a1c54ce9e7b8e240b87"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/transport-1793798924588503804/request.json",
+      "sha256": "6c46e7cd37e1603d076306dd63e8de6a9b1d5fd880f7372ef17a92966f83368d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/transport-1793798924588503804/response.json",
+      "sha256": "613cfe22473a03fad712002efbf034b525f1889d43897480ed4e7dac3f302f9d"
+    },
+    {
+      "path": "reserve/multi_turn_base_12/unguided/turn-003/transport-1793798924588503804/stream.jsonl",
+      "sha256": "6356f6c58dfa6754f68e91a20098188325e93e682b6d3334bd1c825c85c1b17b"
     }
   ]
 }

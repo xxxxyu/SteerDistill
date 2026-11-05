@@ -1,0 +1,212 @@
+{
+  "verified": true,
+  "exact_state_replay": true,
+  "reference": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/aligned-teacher-reference",
+  "source_successful_reference": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/teacher-reference",
+  "local_target": {
+    "state": {
+      "GorillaFileSystem": {
+        "class": "GorillaFileSystem",
+        "attributes": {
+          "long_context": false,
+          "root": {
+            "class": "Directory",
+            "attributes": {
+              "name": "alex",
+              "contents": {
+                "Documents": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "Documents",
+                    "contents": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": [
+      {
+        "current_working_directory": "Documents"
+      }
+    ]
+  },
+  "restored_state": {
+    "GorillaFileSystem": {
+      "class": "GorillaFileSystem",
+      "attributes": {
+        "long_context": false,
+        "root": {
+          "class": "Directory",
+          "attributes": {
+            "name": "alex",
+            "contents": {
+              "Documents": {
+                "class": "Directory",
+                "attributes": {
+                  "name": "Documents",
+                  "contents": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "restored_state_sha256": "698284594f91bc66d0f133a9551186d9626114490a8826d8d7ba0a28dcbaa049",
+  "restored_context_sha256": "6d8f432f36e681c1cd240ae6275137146650cbb88f419acd4b77ce12b399fd97",
+  "official_score": {
+    "valid": true,
+    "passed": true,
+    "official_state": {
+      "valid": true
+    },
+    "official_response": {
+      "valid": true
+    }
+  },
+  "reference_verifier_assistance": false,
+  "suffix_replay": [
+    {
+      "source_response": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/teacher-reference/turn-000/response.json",
+      "execution": [
+        {
+          "turn": 0,
+          "tool": "cd",
+          "arguments": {
+            "folder": "Documents"
+          },
+          "response": {
+            "current_working_directory": "Documents"
+          },
+          "before": {
+            "GorillaFileSystem": {
+              "class": "GorillaFileSystem",
+              "attributes": {
+                "long_context": false,
+                "root": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "alex",
+                    "contents": {
+                      "Documents": {
+                        "class": "Directory",
+                        "attributes": {
+                          "name": "Documents",
+                          "contents": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "after": {
+            "GorillaFileSystem": {
+              "class": "GorillaFileSystem",
+              "attributes": {
+                "long_context": false,
+                "root": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "alex",
+                    "contents": {
+                      "Documents": {
+                        "class": "Directory",
+                        "attributes": {
+                          "name": "Documents",
+                          "contents": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "semantic_tool_error": false,
+          "user_turn": 0
+        }
+      ]
+    },
+    {
+      "source_response": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/teacher-reference/turn-001/response.json",
+      "execution": [
+        {
+          "turn": 1,
+          "tool": "touch",
+          "arguments": {
+            "file_name": "summary.txt"
+          },
+          "response": null,
+          "before": {
+            "GorillaFileSystem": {
+              "class": "GorillaFileSystem",
+              "attributes": {
+                "long_context": false,
+                "root": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "alex",
+                    "contents": {
+                      "Documents": {
+                        "class": "Directory",
+                        "attributes": {
+                          "name": "Documents",
+                          "contents": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "after": {
+            "GorillaFileSystem": {
+              "class": "GorillaFileSystem",
+              "attributes": {
+                "long_context": false,
+                "root": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "alex",
+                    "contents": {
+                      "Documents": {
+                        "class": "Directory",
+                        "attributes": {
+                          "name": "Documents",
+                          "contents": {
+                            "summary.txt": {
+                              "class": "File",
+                              "attributes": {
+                                "name": "summary.txt",
+                                "content": ""
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "semantic_tool_error": false,
+          "user_turn": 0
+        }
+      ]
+    },
+    {
+      "source_response": "/mnt/genming/ablation-reviewed-semantic-backfill-20261105/cases/multi_turn_base_12/teacher-reference/turn-002/response.json",
+      "execution": []
+    }
+  ],
+  "original_task_and_native_checkers_unchanged": true,
+  "teacher_outputs_never_edited": true
+}

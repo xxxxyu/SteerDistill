@@ -61,13 +61,14 @@ window.EvidenceUI=(()=>{
  function pair(...items){const el=make('div','pair ev-pair');el.append(...items);return el;}
  function action(event){
   const name=event.name,args=event.args??'';
+  if(event.tone!==undefined&&!['before','after','neutral'].includes(event.tone))throw new TypeError('Unknown action tone');
   if(typeof name!=='string'||typeof args!=='string')throw new TypeError('Action name and displayed args must be strings; adapt raw records before rendering');
   if(event.returnTone!==undefined&&!['','before','after','neutral'].includes(event.returnTone))throw new TypeError('Unknown action return tone');
   const text=`${name}(${args})`,h=event.highlights||{},spans=[...(h.call||[])];
   for(const [field,offset,value] of [['name',0,name],['args',name.length+1,args]]){validateSpans(value,h[field]||[]);spans.push(...(h[field]||[]).map(s=>({...s,start:s.start+offset,end:s.end+offset})));}
   spans.sort((a,b)=>a.start-b.start);
   const call=marked(text,spans,(parent,start,end)=>{if(start<name.length){parent.append(make('span','ev-function',text.slice(start,Math.min(end,name.length))));start=Math.min(end,name.length);}if(start<end)parent.append(document.createTextNode(text.slice(start,end)));});
-  const el=make('div','ev-action'),code=make('pre','ev-code');code.append(call);
+  const el=make('div','ev-action'+(event.tone?' ev-'+event.tone:'')),code=make('pre','ev-code');code.append(call);
   if(event.result!==undefined){if(typeof event.result!=='string')throw new TypeError('Displayed action result must be a string');const ret=make('span','ev-return'+(event.returnTone?' ev-return-'+event.returnTone:''));ret.append('→ ',highlightedText(event.result,h.result||[]));code.append('\n',ret);}
   el.append(code);return el;
  }

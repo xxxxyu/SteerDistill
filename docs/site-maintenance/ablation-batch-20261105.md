@@ -1,5 +1,7 @@
 # Ablation case batch — 2026-11-05
 
+Historical import record. Current selections and defaults are in [the subsequent reselection review](ablation-reselection-20261105.md).
+
 ## Scope and acceptance
 
 User requested the first three reviewed candidates and optional unguided outputs for every ablation case. A2–A4 are implemented in the formal collection and ready for user acceptance; they are not yet published. A1 keeps its guided default pair. The article's embedded examples are unchanged.

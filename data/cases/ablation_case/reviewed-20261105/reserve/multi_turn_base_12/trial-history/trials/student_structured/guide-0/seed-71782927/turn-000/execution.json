@@ -1,0 +1,60 @@
+[
+  {
+    "turn": 0,
+    "tool": "cd",
+    "arguments": {
+      "folder": "Documents"
+    },
+    "response": {
+      "current_working_directory": "Documents"
+    },
+    "before": {
+      "GorillaFileSystem": {
+        "class": "GorillaFileSystem",
+        "attributes": {
+          "long_context": false,
+          "root": {
+            "class": "Directory",
+            "attributes": {
+              "name": "alex",
+              "contents": {
+                "Documents": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "Documents",
+                    "contents": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "after": {
+      "GorillaFileSystem": {
+        "class": "GorillaFileSystem",
+        "attributes": {
+          "long_context": false,
+          "root": {
+            "class": "Directory",
+            "attributes": {
+              "name": "alex",
+              "contents": {
+                "Documents": {
+                  "class": "Directory",
+                  "attributes": {
+                    "name": "Documents",
+                    "contents": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "semantic_tool_error": false,
+    "user_turn": 0
+  }
+]

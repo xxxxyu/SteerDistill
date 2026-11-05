@@ -1,0 +1,119 @@
+{
+  "kind": "reviewed actual semantic failure",
+  "source_response": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_12/student/turn-002/response.json",
+  "execution": [
+    {
+      "turn": 2,
+      "tool": "touch",
+      "arguments": {
+        "file_name": "summary.txt"
+      },
+      "response": null,
+      "before": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "Documents": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "Documents",
+                      "contents": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "after": {
+        "GorillaFileSystem": {
+          "class": "GorillaFileSystem",
+          "attributes": {
+            "long_context": false,
+            "root": {
+              "class": "Directory",
+              "attributes": {
+                "name": "alex",
+                "contents": {
+                  "Documents": {
+                    "class": "Directory",
+                    "attributes": {
+                      "name": "Documents",
+                      "contents": {}
+                    }
+                  },
+                  "summary.txt": {
+                    "class": "File",
+                    "attributes": {
+                      "name": "summary.txt",
+                      "content": ""
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "semantic_tool_error": false,
+      "user_turn": 0
+    }
+  ],
+  "substantive_error": "Searched Documents but created summary.txt in /alex and falsely claimed it was created inside Documents.",
+  "original_official_score": {
+    "valid": true,
+    "passed": false,
+    "finish": "final_response",
+    "official_state": {
+      "valid": false,
+      "error_message": "Model instance for GorillaFileSystem does not match the state with ground truth instance.",
+      "error_type": "multi_turn:instance_state_mismatch",
+      "details": {
+        "differences": {
+          "root": {
+            "model": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {}>, 'summary.txt': <<File: summary.txt, Content: >>}>",
+            "ground_truth": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>}>"
+          }
+        },
+        "model_instance_state": {
+          "long_context": false,
+          "root": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {}>, 'summary.txt': <<File: summary.txt, Content: >>}>"
+        },
+        "ground_truth_instance_state": {
+          "long_context": false,
+          "root": "<Directory: alex, Parent: None, Contents: {'Documents': <Directory: Documents, Parent: alex, Contents: {'summary.txt': <<File: summary.txt, Content: >>}>}>"
+        }
+      }
+    },
+    "official_response": {
+      "valid": false,
+      "error_message": "Model response execution results so far does not contain all the ground truth response execution results for turn 0.",
+      "error_type": "multi_turn:execution_response_mismatch",
+      "details": {
+        "missing_items": [
+          "{'current_working_directory': 'Documents'}"
+        ],
+        "model_response (including all previous turns)": [
+          "{'matches': []}",
+          "None"
+        ],
+        "ground_truth_response (only the current turn)": [
+          "{'current_working_directory': 'Documents'}",
+          "None"
+        ]
+      }
+    },
+    "semantic_errors": [],
+    "goal_turn": 0,
+    "scope": "User turn 0; earlier turns must have passed unchanged original checkers",
+    "guidance_injected_only_first_request": false,
+    "teacher": false
+  }
+}

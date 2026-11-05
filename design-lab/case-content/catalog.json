@@ -166,15 +166,11 @@
       "label": "消融对照",
       "cases": [
         {
-          "id": "sales-order-pricing",
-          "title": "创建订单明细前，用系统定价计算折扣",
-          "url": "design-lab/case-content/ablation/sales-order-pricing.json",
-          "aliases": [
-            "sales_order_source",
-            "point_2"
-          ],
-          "code": "A1",
-          "indexTitle": "订单折扣"
+          "id": "create-in-target-directory",
+          "title": "创建文件前，先进入目标目录",
+          "url": "design-lab/case-content/ablation/create-in-target-directory.json",
+          "code": "A5",
+          "indexTitle": "查询与工作目录"
         },
         {
           "id": "lock-doors",
@@ -189,13 +185,6 @@
           "url": "design-lab/case-content/ablation/convert-then-refuel.json",
           "code": "A3",
           "indexTitle": "换算后加油"
-        },
-        {
-          "id": "enter-before-rename",
-          "title": "重命名文件前，先进入文件所在目录",
-          "url": "design-lab/case-content/ablation/enter-before-rename.json",
-          "code": "A4",
-          "indexTitle": "进入目录重命名"
         }
       ],
       "retiredCases": [
