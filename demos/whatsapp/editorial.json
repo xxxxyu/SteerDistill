@@ -1,0 +1,680 @@
+{
+  "bf16": {
+    "precision": "BF16",
+    "steps": [
+      {
+        "title": "Accept the welcome screen",
+        "actionTone": "neutral",
+        "review": "常规欢迎页，动作有效。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Focus the phone number field",
+        "actionTone": "neutral",
+        "review": "先聚焦手机号输入框。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter a test phone number",
+        "actionTone": "neutral",
+        "review": "测试环境登录输入，号码值不是能力差异。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Continue to verification",
+        "actionTone": "neutral",
+        "review": "提交手机号进入验证码页面。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for verification",
+        "actionTone": "neutral",
+        "review": "等待自动验证，未手动输入验证码。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Focus the name field",
+        "actionTone": "after",
+        "review": "进入姓名输入框，避免空字段提交。",
+        "thoughtHighlights": [
+          {
+            "text": "先点击名字输入框",
+            "tone": "after",
+            "reason": "姓名必须真正输入到字段中，不能只认为已填写。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.click",
+            "tone": "after",
+            "reason": "聚焦姓名字段，QAD 分支缺失这一步。"
+          }
+        ]
+      },
+      {
+        "title": "Enter the profile name",
+        "actionTone": "after",
+        "review": "输入姓名后下一截图可见 Test User。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "\"Test User\"",
+            "tone": "after",
+            "reason": "下一截图中字段实际写入了姓名。"
+          }
+        ]
+      },
+      {
+        "title": "Complete profile setup",
+        "actionTone": "after",
+        "review": "提交已填写姓名，随后到达聊天列表。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open Project Alpha",
+        "actionTone": "after",
+        "review": "进入任务指定群组。",
+        "thoughtHighlights": [
+          {
+            "text": "Project Alpha 🚀",
+            "tone": "after",
+            "reason": "选定任务要求的群，而不是创建新群。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try the overflow menu",
+        "actionTone": "neutral",
+        "review": "打开三点菜单以找投票入口；下一页未提供 Poll。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Look inside More",
+        "actionTone": "neutral",
+        "review": "继续探索 More 子菜单，没有找到投票；不视为有效投票操作。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Switch to the attachment menu",
+        "actionTone": "after",
+        "review": "思考明确发现 More 没有投票，转向底部加号。",
+        "thoughtHighlights": [
+          {
+            "text": "左下角的加号按钮",
+            "tone": "after",
+            "reason": "实际投票入口在附件菜单。"
+          },
+          {
+            "text": "刚才的More菜单里没找到创建投票的选项",
+            "tone": "after",
+            "reason": "原思考记录了发现错误入口后主动换路。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Choose Poll",
+        "actionTone": "after",
+        "review": "附件菜单中的 Poll 为实际入口。",
+        "thoughtHighlights": [
+          {
+            "text": "Poll",
+            "tone": "after",
+            "reason": "进入投票编辑页。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Focus the poll question",
+        "actionTone": "neutral",
+        "review": "正常字段聚焦。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter the poll question",
+        "actionTone": "after",
+        "review": "写入任务要求的 Next meeting?。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "Next meeting?",
+            "tone": "after",
+            "reason": "投票字段与用户要求一致。"
+          }
+        ]
+      },
+      {
+        "title": "Focus the first option",
+        "actionTone": "neutral",
+        "review": "正常聚焦首项。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter Monday",
+        "actionTone": "after",
+        "review": "第一选项符合请求。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "Monday",
+            "tone": "after",
+            "reason": "投票字段与用户要求一致。"
+          }
+        ]
+      },
+      {
+        "title": "Focus the second option",
+        "actionTone": "neutral",
+        "review": "正常聚焦第二项。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter Tuesday",
+        "actionTone": "after",
+        "review": "第二选项符合请求。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "Tuesday",
+            "tone": "after",
+            "reason": "投票字段与用户要求一致。"
+          }
+        ]
+      },
+      {
+        "title": "Send the poll",
+        "actionTone": "after",
+        "review": "点击后最终页面出现实际投票。",
+        "thoughtHighlights": [
+          {
+            "text": "“Send Poll”",
+            "tone": "after",
+            "reason": "确认发出已填好的投票。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Finish after the poll appears",
+        "actionTone": "after",
+        "review": "环境核验群名、问题和两选项一致。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "'finished'",
+            "tone": "after",
+            "reason": "最终投票已出现在群聊中，随后提交完成。"
+          }
+        ]
+      }
+    ]
+  },
+  "ours": {
+    "precision": "W4A16",
+    "steps": [
+      {
+        "title": "Accept the welcome screen",
+        "actionTone": "neutral",
+        "review": "欢迎页通过；原思考提到创建群组但任务无需新建群，不强调。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter a test phone number",
+        "actionTone": "neutral",
+        "review": "测试手机号输入，页面此时已有可用焦点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Continue to verification",
+        "actionTone": "neutral",
+        "review": "进入验证界面。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Tap the verification field",
+        "actionTone": "neutral",
+        "review": "点击验证字段；实际验证码由页面自动填充，不声称执行了思考中拟输入的随机验证码。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Tap a verification slot",
+        "actionTone": "neutral",
+        "review": "记录为点击，后续自动进入资料页；没有实际输入 1，不高亮该意图。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Focus the name field",
+        "actionTone": "after",
+        "review": "先聚焦姓名，与 QAD 忽略此操作形成分歧。",
+        "thoughtHighlights": [
+          {
+            "text": "先点击名字输入框",
+            "tone": "after",
+            "reason": "姓名必须真正输入到字段中，不能只认为已填写。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.click",
+            "tone": "after",
+            "reason": "聚焦姓名字段，QAD 分支缺失这一步。"
+          }
+        ]
+      },
+      {
+        "title": "Enter the profile name",
+        "actionTone": "after",
+        "review": "输入 Test User；保留原思考的重复表述。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "\"Test User\"",
+            "tone": "after",
+            "reason": "下一截图中字段实际写入了姓名。"
+          }
+        ]
+      },
+      {
+        "title": "Complete profile setup",
+        "actionTone": "after",
+        "review": "有姓名的资料页成功提交。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open Project Alpha",
+        "actionTone": "after",
+        "review": "进入指定群组。",
+        "thoughtHighlights": [
+          {
+            "text": "Project Alpha 🚀",
+            "tone": "after",
+            "reason": "选定任务要求的群，而不是创建新群。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open the attachment menu",
+        "actionTone": "after",
+        "review": "直接通过加号进入附件菜单。",
+        "thoughtHighlights": [
+          {
+            "text": "左下角的加号按钮",
+            "tone": "after",
+            "reason": "实际投票入口在附件菜单。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Choose Poll",
+        "actionTone": "after",
+        "review": "选取 Poll 进入创建页。",
+        "thoughtHighlights": [
+          {
+            "text": "Poll",
+            "tone": "after",
+            "reason": "进入投票编辑页。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Focus the poll question",
+        "actionTone": "neutral",
+        "review": "正常字段聚焦。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter the poll question",
+        "actionTone": "after",
+        "review": "写入请求的问题文本。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "Next meeting?",
+            "tone": "after",
+            "reason": "投票字段与用户要求一致。"
+          }
+        ]
+      },
+      {
+        "title": "Focus the first option",
+        "actionTone": "neutral",
+        "review": "第一选项聚焦。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter Monday",
+        "actionTone": "after",
+        "review": "第一选项符合请求。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "Monday",
+            "tone": "after",
+            "reason": "投票字段与用户要求一致。"
+          }
+        ]
+      },
+      {
+        "title": "Focus the second option",
+        "actionTone": "neutral",
+        "review": "第二选项聚焦。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter Tuesday",
+        "actionTone": "after",
+        "review": "第二选项符合请求。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "Tuesday",
+            "tone": "after",
+            "reason": "投票字段与用户要求一致。"
+          }
+        ]
+      },
+      {
+        "title": "Send the poll",
+        "actionTone": "after",
+        "review": "发送后屏幕出现问题与两选项。",
+        "thoughtHighlights": [
+          {
+            "text": "“Send Poll”",
+            "tone": "after",
+            "reason": "确认发出已填好的投票。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Finish after the poll appears",
+        "actionTone": "after",
+        "review": "提交与实际最终投票、环境检查一致。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "'finished'",
+            "tone": "after",
+            "reason": "最终投票已出现在群聊中，随后提交完成。"
+          }
+        ]
+      }
+    ]
+  },
+  "qad": {
+    "precision": "W4A16",
+    "steps": [
+      {
+        "title": "Accept the welcome screen",
+        "actionTone": "neutral",
+        "review": "欢迎页动作成功。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter a test phone number",
+        "actionTone": "neutral",
+        "review": "手机号已有效输入。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Continue to verification",
+        "actionTone": "neutral",
+        "review": "进入验证。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for verification",
+        "actionTone": "neutral",
+        "review": "等待自动验证，合理。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for the profile screen",
+        "actionTone": "neutral",
+        "review": "加载过渡等待，非错误循环。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Type without focusing the name field",
+        "actionTone": "before",
+        "review": "未聚焦姓名框，屏幕姓名仍为空。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "未先聚焦姓名字段，输入未落入目标框。"
+          }
+        ]
+      },
+      {
+        "title": "Submit an empty name field",
+        "actionTone": "before",
+        "review": "误认为已填写，点击 Next 后提示 Please enter your name。",
+        "thoughtHighlights": [
+          {
+            "text": "The name \"User\" has been entered",
+            "tone": "before",
+            "reason": "与当前空白姓名框矛盾，导致提交失败。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "字段仍为空，错误地认为填好。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "同一空字段继续提交。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "同一空字段继续提交。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "同一空字段继续提交。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Type the name again",
+        "actionTone": "before",
+        "review": "没有重新聚焦字段，输入仍未写入姓名。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "空字段提交未推进。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "空字段提交未推进。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "空字段提交未推进。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try a different name",
+        "actionTone": "before",
+        "review": "意识到重复点击无效，但只换文本，未解决焦点。",
+        "thoughtHighlights": [
+          {
+            "text": "Repeatedly clicking \"Next\" without changing the input may not progress the task.",
+            "tone": "after",
+            "reason": "确实察觉重复动作没有推进，不能把这部分正确观察染红。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "姓名仍未显示，继续点击。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "把拟输入的 Project Alpha User 误认为字段内容。",
+        "thoughtHighlights": [
+          {
+            "text": "The name field is already filled with \"Project Alpha User\"",
+            "tone": "before",
+            "reason": "新名字同样没有写入实际字段。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "缺少字段确认，继续无效提交。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Retype without fixing focus",
+        "actionTone": "before",
+        "review": "归因输入状态，但未执行聚焦。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Retype the name again",
+        "actionTone": "before",
+        "review": "缺少聚焦，姓名仍为空。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Retype the name again",
+        "actionTone": "before",
+        "review": "重复输入未改变字段。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Retype the name again",
+        "actionTone": "before",
+        "review": "重复输入未改变字段。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Return to clicking Next",
+        "actionTone": "before",
+        "review": "改回点击 Next，声称可能 UI 问题；实际姓名为空。",
+        "thoughtHighlights": [
+          {
+            "text": "suggesting a possible UI bug or validation glitch",
+            "tone": "before",
+            "reason": "把缺失输入误判为页面故障。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "沿用 UI 故障假设，无进展。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next again",
+        "actionTone": "before",
+        "review": "错误称再点 Next 是换策略，实际重复。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try Next once more",
+        "actionTone": "before",
+        "review": "意识到重复失败但再次提交空字段。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same submission",
+        "actionTone": "before",
+        "review": "同一预测与动作继续重复。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same submission",
+        "actionTone": "before",
+        "review": "同一预测与动作继续重复。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Reach the step limit",
+        "actionTone": "before",
+        "review": "仍无姓名、未到群聊；30 步上限终止。",
+        "thoughtHighlights": [
+          {
+            "text": "switching strategy to bypass by clicking \"Next\" again",
+            "tone": "before",
+            "reason": "声称换策略，执行仍是相同提交，循环没有解除。"
+          }
+        ],
+        "actionHighlights": []
+      }
+    ]
+  }
+}

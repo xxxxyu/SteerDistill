@@ -3,7 +3,7 @@
 Research website for **SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering**.
 
 - Website: https://xxxxyu.github.io/SteerDistill/
-- English project homepage: `index.html`
+- English project homepage: `index.html` (including four interactive task replays at `#demo`)
 - Chinese research article: `article.html`
 - Full cases: `design-lab/paper-cases.html`
 - Raw-record reader: `design-lab/case-records.html`

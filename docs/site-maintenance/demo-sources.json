@@ -1,29 +1,67 @@
 {
-  "repository": "https://github.com/ustccuigm/bitdistill",
-  "branch": "gh-pages",
-  "commit": "bfaf2194d0b6678f97d0694945064ad3ecf8c2f3",
-  "status": "Temporary task demonstrations; replace before final release.",
-  "checkpoint": "Task-adapted SteerDistill (original ours-specialist runs)",
-  "assets": [
-    {
-      "file": "demos/bestbuy-47.mp4",
-      "sourcePath": "demos/comparison/BestBuy-47-ours-specialist.screen.mp4",
-      "gitBlob": "6d540d4e5a82035db7faba03146270af809d11bf"
-    },
-    {
-      "file": "demos/bestbuy-47.task-poster.jpg",
-      "sourcePath": "demos/comparison/BestBuy-47-ours-specialist.screen.task-poster.jpg",
-      "gitBlob": "c7b6ded836521a67777a6c556f4e8e0aea94be15"
-    },
-    {
-      "file": "demos/bestbuy-52.mp4",
-      "sourcePath": "demos/comparison/BestBuy-52-ours-specialist.screen.mp4",
-      "gitBlob": "d64cc9e6b16ea0dba58ec7f43f753dabad76bdf0"
-    },
-    {
-      "file": "demos/bestbuy-52.task-poster.jpg",
-      "sourcePath": "demos/comparison/BestBuy-52-ours-specialist.screen.task-poster.jpg",
-      "gitBlob": "8503c2fac30a2a70d288425f8fcfa45edac448c1"
-    }
-  ]
+  "active": {
+    "builder": "../../scripts/build-demo.py",
+    "defaultComparison": [
+      "bf16",
+      "ours"
+    ],
+    "methodOrder": [
+      "bf16",
+      "ours",
+      "qad"
+    ],
+    "catalog": "../../demos/catalog.json",
+    "defaultTask": "wps",
+    "tasks": [
+      {
+        "id": "wps",
+        "source": "../../demos/wps/source.json",
+        "replay": "../../demos/wps/replay.json"
+      },
+      {
+        "id": "slack",
+        "source": "../../demos/slack/source.json",
+        "replay": "../../demos/slack/replay.json"
+      },
+      {
+        "id": "whatsapp",
+        "source": "../../demos/whatsapp/source.json",
+        "replay": "../../demos/whatsapp/replay.json"
+      },
+      {
+        "id": "news",
+        "source": "../../demos/news/source.json",
+        "replay": "../../demos/news/replay.json"
+      }
+    ]
+  },
+  "previousPlaceholders": {
+    "repository": "https://github.com/ustccuigm/bitdistill",
+    "branch": "gh-pages",
+    "commit": "bfaf2194d0b6678f97d0694945064ad3ecf8c2f3",
+    "status": "Replaced on the homepage by the WPS interactive replay; assets retained for source history.",
+    "checkpoint": "Task-adapted SteerDistill (original ours-specialist runs)",
+    "assets": [
+      {
+        "file": "demos/bestbuy-47.mp4",
+        "sourcePath": "demos/comparison/BestBuy-47-ours-specialist.screen.mp4",
+        "gitBlob": "6d540d4e5a82035db7faba03146270af809d11bf"
+      },
+      {
+        "file": "demos/bestbuy-47.task-poster.jpg",
+        "sourcePath": "demos/comparison/BestBuy-47-ours-specialist.screen.task-poster.jpg",
+        "gitBlob": "c7b6ded836521a67777a6c556f4e8e0aea94be15"
+      },
+      {
+        "file": "demos/bestbuy-52.mp4",
+        "sourcePath": "demos/comparison/BestBuy-52-ours-specialist.screen.mp4",
+        "gitBlob": "d64cc9e6b16ea0dba58ec7f43f753dabad76bdf0"
+      },
+      {
+        "file": "demos/bestbuy-52.task-poster.jpg",
+        "sourcePath": "demos/comparison/BestBuy-52-ours-specialist.screen.task-poster.jpg",
+        "gitBlob": "8503c2fac30a2a70d288425f8fcfa45edac448c1"
+      }
+    ]
+  }
 }

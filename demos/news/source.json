@@ -1,0 +1,37 @@
+{
+  "package": "SteerDistill-FourTasks-FullTrajectories-And-Media.zip",
+  "source": "nx:/mnt/genming/demo-readable-20261103/",
+  "sha256": "382f85303f19b430b71d21bf4bbde099cf9bad6a5b335c225389aefe5a2e7bd4",
+  "selection": "First qualifying matched-repeat triple in experiment order for each task. Require student success, BF16 success, QAD failure, and student episode time lower than BF16. Post-hoc examples, not aggregate speed or reliability claims.",
+  "timing": "Same perf_counter boundaries: first observation after reset and warmup through evaluator completion or 30-action cap; includes screenshot acquisition, generation, browser actions and waits. Excludes model loading, reset, warmup and recording export.",
+  "limitations": [
+    "All three arms use one physical A100 per experiment, sequentially. Other jobs remain active.",
+    "Identical full browser state is not certified; tasks and reset protocol match.",
+    "QAD is an earlier three-update Qwen3-VL baseline; BF16 and student are brownie lineage. Not a matched-training ablation.",
+    "Selected timing advantage does not establish an advantage averaged over repeats or retries.",
+    "CUDA Graphs are enabled for every model. Prefix caching and low-temperature sampling, where used, apply to all models in that experiment.",
+    "Prompts and task descriptions are unchanged; no teacher guidance."
+  ],
+  "records": {
+    "bf16": {
+      "turns": "raw/bf16/turns.jsonl",
+      "metrics": "raw/bf16/metrics.json",
+      "outcome": "raw/bf16/outcome.json",
+      "model-provenance": "raw/bf16/model-provenance.json"
+    },
+    "ours": {
+      "turns": "raw/ours/turns.jsonl",
+      "metrics": "raw/ours/metrics.json",
+      "outcome": "raw/ours/outcome.json",
+      "model-provenance": "raw/ours/model-provenance.json"
+    },
+    "qad": {
+      "turns": "raw/qad/turns.jsonl",
+      "metrics": "raw/qad/metrics.json",
+      "outcome": "raw/qad/outcome.json",
+      "model-provenance": "raw/qad/model-provenance.json"
+    }
+  },
+  "precisionEvidence": "../wps/precision-source.json",
+  "task": "googlenews-4"
+}

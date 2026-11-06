@@ -1,0 +1,15 @@
+{
+  "label": "qad",
+  "repeat": 2,
+  "env_id": "slack",
+  "task_id": "5",
+  "description": "Send the file \"Team_Offsite.jpg\" to design team in Acme Corp",
+  "success": false,
+  "steps": 30,
+  "episode_seconds": 34.565862326009665,
+  "inference_seconds": 12.719911807973403,
+  "output_tokens": 1600,
+  "initial_image_sha256": "90518d1000e5f62f09170f6e443919ec3a0217751d73b96766863db01a29a7bc",
+  "directory": "/mnt/genming/benchmark-fast-sampling-20261103/qad/repeat-2/slack-5",
+  "status": "completed"
+}

@@ -1,0 +1,459 @@
+{
+  "bf16": {
+    "precision": "BF16",
+    "steps": [
+      {
+        "title": "Open Acme Corp",
+        "actionTone": "neutral",
+        "review": "进入目标工作区；三种方法此步均有效，不突出。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open design-team",
+        "actionTone": "after",
+        "review": "进入目标频道，为上传选定正确目的地。",
+        "thoughtHighlights": [
+          {
+            "text": "进入design-team频道",
+            "tone": "after",
+            "reason": "明确目标频道；这是发送对象约束。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open the attachment menu",
+        "actionTone": "after",
+        "review": "实际点击加号后下一截图出现附件菜单；与 QAD 没有打开菜单相对照。",
+        "thoughtHighlights": [
+          {
+            "text": "加号按钮",
+            "tone": "after",
+            "reason": "有效点击目标与 QAD 的无效坐标形成差异。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.click",
+            "tone": "after",
+            "reason": "这里的调用实际打开菜单；具体坐标不高亮。"
+          }
+        ]
+      },
+      {
+        "title": "Choose Photo Library",
+        "actionTone": "after",
+        "review": "实际菜单项 Photo Library 触发图片上传。",
+        "thoughtHighlights": [
+          {
+            "text": "Photo Library",
+            "tone": "after",
+            "reason": "在已打开的菜单中选择相册继续操作。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for the upload",
+        "actionTone": "neutral",
+        "review": "屏幕有上传提示；正常等待。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Keep waiting for the upload",
+        "actionTone": "neutral",
+        "review": "仍在上传；保留完整等待耗时，不增加高亮。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open attachments again",
+        "actionTone": "neutral",
+        "review": "前一张图片已出现在聊天中，这一步再次打开附件；保留重复上传，不描述成必要恢复。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Choose Photo Library again",
+        "actionTone": "neutral",
+        "review": "第二次选择相册并触发上传；保留原动作，不包装成优势。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for the second upload",
+        "actionTone": "neutral",
+        "review": "第二次上传等待。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Keep waiting for the upload",
+        "actionTone": "neutral",
+        "review": "等待图片呈现；没有新的分歧。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Finish after the image appears",
+        "actionTone": "after",
+        "review": "最终截图有两张上传图片，环境判成功；只强调已上传，不宣称恰好发送一次。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "'finished'",
+            "tone": "after",
+            "reason": "图片出现后提交完成，环境核验成功。"
+          }
+        ]
+      }
+    ]
+  },
+  "ours": {
+    "precision": "W4A16",
+    "steps": [
+      {
+        "title": "Open Acme Corp",
+        "actionTone": "neutral",
+        "review": "进入目标工作区；三种方法此步均有效，不突出。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open design-team",
+        "actionTone": "after",
+        "review": "进入目标频道，为上传选定正确目的地。",
+        "thoughtHighlights": [
+          {
+            "text": "进入design-team频道",
+            "tone": "after",
+            "reason": "明确目标频道；这是发送对象约束。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open the attachment menu",
+        "actionTone": "after",
+        "review": "实际点击加号后下一截图出现附件菜单；与 QAD 没有打开菜单相对照。",
+        "thoughtHighlights": [
+          {
+            "text": "加号按钮",
+            "tone": "after",
+            "reason": "有效点击目标与 QAD 的无效坐标形成差异。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.click",
+            "tone": "after",
+            "reason": "这里的调用实际打开菜单；具体坐标不高亮。"
+          }
+        ]
+      },
+      {
+        "title": "Choose Photo Library",
+        "actionTone": "after",
+        "review": "实际菜单项 Photo Library 触发图片上传。",
+        "thoughtHighlights": [
+          {
+            "text": "Photo Library",
+            "tone": "after",
+            "reason": "在已打开的菜单中选择相册继续操作。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for the upload",
+        "actionTone": "neutral",
+        "review": "屏幕有上传提示；正常等待。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Keep waiting for the upload",
+        "actionTone": "neutral",
+        "review": "仍在上传；保留完整等待耗时，不增加高亮。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open attachments again",
+        "actionTone": "neutral",
+        "review": "前一张图片已出现在聊天中，这一步再次打开附件；保留重复上传，不描述成必要恢复。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Choose Photo Library again",
+        "actionTone": "neutral",
+        "review": "第二次选择相册并触发上传；保留原动作，不包装成优势。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for the second upload",
+        "actionTone": "neutral",
+        "review": "第二次上传等待。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Keep waiting for the upload",
+        "actionTone": "neutral",
+        "review": "等待图片呈现；没有新的分歧。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Finish after the image appears",
+        "actionTone": "after",
+        "review": "最终截图有两张上传图片，环境判成功；只强调已上传，不宣称恰好发送一次。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "'finished'",
+            "tone": "after",
+            "reason": "图片出现后提交完成，环境核验成功。"
+          }
+        ]
+      }
+    ]
+  },
+  "qad": {
+    "precision": "W4A16",
+    "steps": [
+      {
+        "title": "Open Acme Corp",
+        "actionTone": "neutral",
+        "review": "成功进入工作区，不能因最终失败把前置操作染红。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open design-team",
+        "actionTone": "after",
+        "review": "成功打开目标频道，与其他方法相同。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Tap beside the attachment button",
+        "actionTone": "before",
+        "review": "执行坐标 (39,717) 未打开附件菜单；正确调用落点更靠左。",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.click",
+            "tone": "before",
+            "reason": "点击后没有展开附件菜单，任务停在此处。"
+          }
+        ]
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "屏幕仍为聊天窗口，继续点击相同位置，没有选择附件。",
+        "thoughtHighlights": [
+          {
+            "text": "Clicking this icon will open the file picker",
+            "tone": "before",
+            "reason": "一次点击未生效后，仍预测相同落点将打开选择器。"
+          }
+        ],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "截图与上一轮相同，执行落点没有调整。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 6 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 7 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 8 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 9 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 10 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 11 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 12 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 13 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 14 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 15 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 16 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 17 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 18 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 19 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 20 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 21 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 22 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 23 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 24 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 25 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 26 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 27 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 28 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Repeat the same tap",
+        "actionTone": "before",
+        "review": "已逐条核对第 29 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Reach the step limit",
+        "actionTone": "before",
+        "review": "已逐条核对第 30 步：思考仍预测打开文件选择器，动作仍为 (39,717)，截图未变；只在循环开端及末尾标重点。",
+        "thoughtHighlights": [
+          {
+            "text": "Clicking it will open the file picker",
+            "tone": "before",
+            "reason": "相同预测持续到行动次数上限，实际界面没有推进。"
+          }
+        ],
+        "actionHighlights": []
+      }
+    ]
+  }
+}

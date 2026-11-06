@@ -5,7 +5,7 @@ const root=new URL('../',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
 const data=JSON.parse(await read('design-lab/main-article.zh.json'));
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const version='cases20261106final';
+const version='demos20261106';
 const sharedCSS=['site/site.css'];
 const articleCSS=['design-lab/case-shared/evidence-system.css','design-lab/case-shared/article-embed.css','design-lab/main-article.css','site/article.css'];
 const sharedJS=['design-lab/case-shared/site-paths.js','site/site.js'];
@@ -15,7 +15,7 @@ function post(){return `<section class="post-surface" lang="zh-CN" data-article-
 <article class="post-article" id="article-start"><header class="post-heading"><h1>${(data.post.titleLines||[data.post.title]).map(escape).join('<br>')}</h1><p class="post-byline"><a rel="author" href="${escape(data.post.author.href)}">${escape(data.post.author.name)}</a><time datetime="${data.post.date}">${data.post.date.replaceAll('-',' / ')}</time></p><p class="post-intro">${escape(data.post.intro)}</p></header>
 <div id="main-article" class="zh-article"><p class="article-loading">正在载入文章…</p><noscript>请开启 JavaScript 阅读正文与交互案例。</noscript></div></article></div></section>`}
 const pages=[
-{path:'index.html',page:'home',lang:'en',title:'SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering',css:['site/home.css',...articleCSS],js:['design-lab/press.js','design-lab/p2-concept.js',...articleJS,'site/home.js'],body:(await read('site/templates/home.html')).replace('{{post}}',post())},
+{path:'index.html',page:'home',lang:'en',title:'SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering',css:['site/home.css',...articleCSS,'site/demo-replay.css'],js:['design-lab/press.js','design-lab/p2-concept.js',...articleJS,'site/demo-timing.js','site/demo-replay.js','site/demo-gallery.js','site/home.js'],body:(await read('site/templates/home.html')).replace('{{post}}',post())},
 {path:'article.html',page:'article',lang:'zh-CN',title:data.post.title+' · SteerDistill',css:articleCSS,js:articleJS,body:'<main id="content">'+post()+'</main>'},
 ...['paper-cases','case-records'].map(name=>({path:`design-lab/${name}.html`,page:'cases',lang:'zh-CN',title:'案例分析 · SteerDistill',name,css:['collection','case-shell','case-sidebar','case-templates','inference-case','evidence-system'].map(x=>'design-lab/case-shared/'+x+'.css'),js:['case-sidebar','evidence-ui','task-source','case-templates','inference-case','collection',...(name==='case-records'?['collection-records']:[])].map(x=>'design-lab/case-shared/'+x+'.js')}))
 ];

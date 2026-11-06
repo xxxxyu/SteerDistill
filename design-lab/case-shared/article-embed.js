@@ -1,13 +1,13 @@
 /* One editorial dataset, three article compositions. Evidence formatting stays shared. */
 window.ArticleCaseRail=(()=>{
  const U=EvidenceUI;
- function mount(root,{id,label,items,initial=items[0]?.id,stability=''}){
+ function mount(root,{id,label,items,initial=items[0]?.id,stability='',language='zh'}){
   const rail=U.make('div','case-rail'),toolbar=U.make('div','rail-toolbar'),nav=U.make('nav','rail-methods'),controls=U.make('div','rail-controls'),track=U.make('div','rail-track');
-  if(stability)rail.dataset.stability=stability;nav.setAttribute('aria-label',label+'：定位方法');track.id='rail-'+id;track.tabIndex=0;track.setAttribute('role','region');track.setAttribute('aria-label',label+'，可横向滚动');
-  const previous=U.make('button','','‹'),next=U.make('button','','›');for(const [button,title] of [[previous,'查看左侧方法'],[next,'查看右侧方法']]){button.type='button';button.setAttribute('aria-label',title);button.title=title;button.setAttribute('aria-controls',track.id);controls.append(button)}
+  if(stability)rail.dataset.stability=stability;nav.setAttribute('aria-label',label+(language==='en'?' methods':'：定位方法'));track.id='rail-'+id;track.tabIndex=0;track.setAttribute('role','region');track.setAttribute('aria-label',label+(language==='en'?', scroll horizontally to compare methods':'，可横向滚动'));
+  const previous=U.make('button','','‹'),next=U.make('button','','›');for(const [button,title] of [[previous,language==='en'?'Previous method':'查看左侧方法'],[next,language==='en'?'Next method':'查看右侧方法']]){button.type='button';button.setAttribute('aria-label',title);button.title=title;button.setAttribute('aria-controls',track.id);controls.append(button)}
   const tabs=[];let current=0,navigationTarget=null,pending=false,stableHeight=0,lastWidth=0,resizeTarget=null,hasPositioned=false;
   function position(index,behavior='smooth'){const node=track.children[index];if(!node)return;hasPositioned=true;navigationTarget=index;track.scrollTo({left:node.getBoundingClientRect().left-track.getBoundingClientRect().left+track.scrollLeft,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':behavior});schedule()}
-  items.forEach((item,index)=>{const card=U.make('div','rail-card');card.id=track.id+'-'+item.id;card.append(item.node);track.append(card);const button=U.make('button','rail-method',item.title);button.type='button';button.setAttribute('aria-controls',card.id);button.onclick=()=>position(index);tabs.push(button);nav.append(button)});
+  items.forEach((item,index)=>{const card=U.make('div','rail-card');card.id=track.id+'-'+item.id;card.append(item.node);track.append(card);const button=U.make('button','rail-method',item.title);if(item.detail)button.append(' ',U.make('span','rail-method-detail',item.detail));button.type='button';button.setAttribute('aria-controls',card.id);button.onclick=()=>position(index);tabs.push(button);nav.append(button)});
   function update(){
    const bounds=track.getBoundingClientRect(),max=track.scrollWidth-track.clientWidth;previous.disabled=track.scrollLeft<3;next.disabled=track.scrollLeft>max-3;let near=Infinity;const visible=[];
    for(let i=0;i<track.children.length;i++){const card=track.children[i],rect=card.getBoundingClientRect(),d=Math.abs(rect.left-bounds.left);if(d<near){near=d;current=i}const frame=card.firstElementChild;if(!stability)frame.style.height='';if(Math.min(rect.right,bounds.right)-Math.max(rect.left,bounds.left)>Math.min(80,rect.width/4))visible.push(frame)}
