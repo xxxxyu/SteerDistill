@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-b0c479277b4883ec",
+  "model": "case-model",
+  "created": 1793888280,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_ticket_login\", \"arguments\": \"{\\\"username\\\": \\\"user123\\\", \\\"password\\\": \\\"12345\\\"}\"}}\n</tool_call>",
+        "reasoning": "\nOkay, the user tried to create a support ticket but got an error about not being authenticated. Let me check the tools available. There's mcp_tool_ticket_login which handles authenticating for the ticket system. The user provided their username and password in the previous message, so I should use those credentials to log in. Once authenticated, they can try creating the ticket again. I'll call the login tool with the provided username 'user123' and password '12345'. Then, after successful login, proceed to create the ticket.\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4923,
+    "total_tokens": 5088,
+    "completion_tokens": 165,
+    "completion_tokens_details": {
+      "reasoning_tokens": 113
+    }
+  }
+}

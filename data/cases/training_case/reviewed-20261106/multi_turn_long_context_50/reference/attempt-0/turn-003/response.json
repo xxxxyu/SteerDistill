@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-b0cd46a7928a0f54",
+  "model": "case-model",
+  "created": 1793930342,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nThe car doors have been successfully unlocked, and the headlights are now turned on to improve visibility. Let me know if you need further assistance!\n\nDone. I have unlocked the car doors and activated the headlights.",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4038,
+    "total_tokens": 4084,
+    "completion_tokens": 46,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

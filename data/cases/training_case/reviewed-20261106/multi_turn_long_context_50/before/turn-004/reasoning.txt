@@ -1,0 +1,7 @@
+Okay, so the user is trying to unlock their car doors and turn on the headlights, but the tools they're using are returning errors. Let me double-check the list of available tools again.
+
+In the initial list_tools response, there's a tool called mcp_tool_16_lockDoors, which allows unlocking doors. The parameters require an 'unlock' boolean and a 'door' array. The user initially tried specifying all doors, then changed to "all". But the error persists. Maybe the tool isn't actually available, or the parameters are incorrectly formatted. 
+
+Similarly, for the headlights, there's mcp_tool_20_setHeadlights with a 'mode' parameter. The user set it to "on", but the tool isn't found. Could there be a typo in the tool name? Like maybe it's supposed to be mcp_tool_setHeadlights without the trailing numbers?
+
+Alternatively, perhaps the MCP environment doesn't support these specific tools anymore. The user might need to contact support or check if the tools are enabled. Since the tools keep failing, the best response is to inform the user that the requested features aren't available through the current MCP setup and suggest alternative solutions if possible.

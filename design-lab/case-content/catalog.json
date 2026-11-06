@@ -15,6 +15,13 @@
           ],
           "code": "T1",
           "indexTitle": "目录定位"
+        },
+        {
+          "id": "tool-list-numbering",
+          "title": "解锁车门时，把列表序号误当成工具名",
+          "url": "design-lab/case-content/training/tool-list-numbering.json",
+          "code": "T2",
+          "indexTitle": "工具列表序号"
         }
       ]
     },
@@ -166,30 +173,20 @@
       "label": "消融对照",
       "cases": [
         {
-          "id": "create-in-target-directory",
-          "title": "创建文件前，先进入目标目录",
-          "url": "design-lab/case-content/ablation/create-in-target-directory.json",
-          "code": "A5",
-          "indexTitle": "查询与工作目录"
-        },
-        {
-          "id": "lock-doors",
-          "title": "发现车门未锁后，执行锁门还是再次确认",
-          "url": "design-lab/case-content/ablation/lock-doors.json",
-          "code": "A2",
-          "indexTitle": "执行锁车"
-        },
-        {
-          "id": "convert-then-refuel",
-          "title": "换算出加仑数后，还要执行加油",
-          "url": "design-lab/case-content/ablation/convert-then-refuel.json",
-          "code": "A3",
-          "indexTitle": "换算后加油"
+          "id": "ticket-login-before-create",
+          "title": "创建工单前，先登录工单系统",
+          "url": "design-lab/case-content/ablation/ticket-login-before-create.json",
+          "code": "A6",
+          "indexTitle": "登录后建单"
         }
       ],
       "retiredCases": [
         "sales-order-header",
-        "enter-before-rename"
+        "enter-before-rename",
+        "sales-order-pricing",
+        "create-in-target-directory",
+        "lock-doors",
+        "convert-then-refuel"
       ]
     }
   ]

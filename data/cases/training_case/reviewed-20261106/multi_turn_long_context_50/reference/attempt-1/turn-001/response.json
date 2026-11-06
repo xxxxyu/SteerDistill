@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-ab723ebec5d4b09b",
+  "model": "case-model",
+  "created": 1793930355,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_setHeadlights\", \"arguments\": \"{\\\"mode\\\": \\\"on\\\"}\"}}\n</tool_call>",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3746,
+    "total_tokens": 3785,
+    "completion_tokens": 39,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

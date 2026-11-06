@@ -1,0 +1,11 @@
+{
+  "goal_turn": 0,
+  "source_student": "/mnt/genming/training-bfcl-long-context-search-20261106/discovery/cases/multi_turn_long_context_50/student",
+  "original_request": [
+    {
+      "role": "user",
+      "content": "Hey there, I noticed that all of my car doors seem to have locked themselves up, and with my schedule being pretty tight today, I'm in quite a pinch. I could really use your help to get those doors unlocked. It'd be fantastic if you could also switch on the headlights. It's getting a bit darker out here than expected, and visibility's not great!"
+    }
+  ],
+  "previously_passed_user_turns": []
+}

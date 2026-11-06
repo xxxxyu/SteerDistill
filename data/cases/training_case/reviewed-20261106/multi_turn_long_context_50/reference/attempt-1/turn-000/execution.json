@@ -1,0 +1,85 @@
+[
+  {
+    "turn": 0,
+    "tool": "lockDoors",
+    "arguments": {
+      "unlock": true,
+      "door": [
+        "driver",
+        "passenger",
+        "rear_left",
+        "rear_right"
+      ]
+    },
+    "response": {
+      "lockStatus": "unlocked",
+      "remainingUnlockedDoors": 4
+    },
+    "before": {
+      "VehicleControlAPI": {
+        "class": "VehicleControlAPI",
+        "attributes": {
+          "fuelLevel": 10.5,
+          "batteryVoltage": 12.6,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 0,
+          "doorStatus": {
+            "driver": "locked",
+            "passenger": "locked",
+            "rear_left": "locked",
+            "rear_right": "locked"
+          },
+          "acTemperature": 22.0,
+          "fanSpeed": 70,
+          "acMode": "auto",
+          "humidityLevel": 45.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 30.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 32.0,
+          "frontRightTirePressure": 32.0,
+          "rearLeftTirePressure": 30.0,
+          "rearRightTirePressure": 30.0,
+          "long_context": true
+        }
+      }
+    },
+    "after": {
+      "VehicleControlAPI": {
+        "class": "VehicleControlAPI",
+        "attributes": {
+          "fuelLevel": 10.5,
+          "batteryVoltage": 12.6,
+          "engine_state": "stopped",
+          "remainingUnlockedDoors": 4,
+          "doorStatus": {
+            "driver": "unlocked",
+            "passenger": "unlocked",
+            "rear_left": "unlocked",
+            "rear_right": "unlocked"
+          },
+          "acTemperature": 22.0,
+          "fanSpeed": 70,
+          "acMode": "auto",
+          "humidityLevel": 45.0,
+          "headLightStatus": "off",
+          "parkingBrakeStatus": "released",
+          "brakePedalStatus": "released",
+          "distanceToNextVehicle": 30.0,
+          "cruiseStatus": "inactive",
+          "destination": "None",
+          "frontLeftTirePressure": 32.0,
+          "frontRightTirePressure": 32.0,
+          "rearLeftTirePressure": 30.0,
+          "rearRightTirePressure": 30.0,
+          "long_context": true
+        }
+      }
+    },
+    "semantic_tool_error": false,
+    "user_turn": 0
+  }
+]

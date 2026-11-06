@@ -485,836 +485,673 @@
     },
     {
       "id": "guidance",
-      "heading": "指导从哪里来",
+      "heading": "指导如何影响后续执行",
       "paragraphs": [
-        "指导的来源和表达方式，会怎样影响 agent 的执行？从同一张订单出发，可以观察这些差异如何反映在折扣写入中。"
+        "指导需要指出下一步该做什么。下面的任务中，交易系统已经登录，独立的工单系统却还未认证。我们从同一执行状态出发，观察不同指导下，agent 如何继续创建工单。"
       ],
       "case": {
         "kind": "ablation",
-        "id": "sales-order-pricing",
-        "code": "A1",
-        "title": "同一张订单，折扣是否写入",
-        "task": "同一张订单需要添加 10 个油滤芯，以下为定价与写入节选。",
-        "href": "design-lab/paper-cases.html?group=ablation&case=sales-order-pricing",
+        "id": "ticket-login-before-create",
+        "code": "A6",
+        "title": "登录成功之后，工单是否真的创建",
+        "task": "创建优先级为 3 的交易问题工单。用户已提供登录信息，工单系统尚未登录。",
+        "href": "design-lab/paper-cases.html?group=ablation&case=ticket-login-before-create",
         "layout": "comparison",
         "branches": [
           {
+            "id": "teacher_structured",
             "title": "Teacher 结构化指导",
+            "frameTitle": "Teacher 结构化指导 · 先登录，再创建",
             "tone": "after",
             "events": [
               {
                 "type": "action",
-                "name": "apply_pricing_rules_to_line",
-                "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "result": [
-                    {
-                      "start": 0,
-                      "end": 20,
-                      "text": "discount_percent=8.0"
-                    }
-                  ]
-                },
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
                 "source": {
-                  "message": 14,
-                  "returnMessage": 15,
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
                   "argsFields": [
-                    "part_id",
-                    "quantity_ordered",
-                    "order_date"
+                    "username",
+                    "password"
                   ],
                   "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
               },
               {
                 "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "args": [
-                    {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.19, discount_percent=8"
-                    }
-                  ]
-                },
+                "name": "create_ticket",
+                "args": "priority=3, …",
+                "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "message": 20,
-                  "returnMessage": 21,
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
                   "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
+                    "title",
+                    "description",
+                    "priority"
                   ],
                   "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                    "id",
+                    "title",
+                    "description",
+                    "status",
+                    "priority",
+                    "created_by"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
               }
             ],
-            "focusEvents": [
+            "resultCells": [
               {
-                "type": "action",
-                "name": "apply_pricing_rules_to_line",
-                "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "result": [
-                    {
-                      "start": 0,
-                      "end": 20,
-                      "text": "discount_percent=8.0"
-                    }
-                  ]
-                },
-                "source": {
-                  "message": 14,
-                  "returnMessage": 15,
-                  "argsFields": [
-                    "part_id",
-                    "quantity_ordered",
-                    "order_date"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                "label": "队列",
+                "value": "1 条",
+                "highlights": [
+                  {
+                    "start": 0,
+                    "end": 3,
+                    "text": "1 条",
+                    "tone": "after"
+                  }
+                ]
               },
               {
-                "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "args": [
-                    {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.19, discount_percent=8"
-                    }
-                  ]
-                },
-                "source": {
-                  "message": 20,
-                  "returnMessage": 21,
-                  "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                "label": "描述",
+                "value": "仅含交易问题",
+                "highlights": [
+                  {
+                    "start": 0,
+                    "end": 6,
+                    "text": "仅含交易问题",
+                    "tone": "after"
+                  }
+                ]
               }
-            ],
-            "result": {
-              "text": "油滤芯：10 个，单价 9.19，折扣 8%",
-              "highlights": [
-                {
-                  "start": 9,
-                  "end": 22,
-                  "text": "单价 9.19，折扣 8%",
-                  "tone": "after"
-                }
-              ],
-              "source": {
-                "file": "student/final.db",
-                "table": "sales_order_lines",
-                "id": 21,
-                "fields": [
-                  "unit_price",
-                  "discount_percent"
-                ],
-                "partSku": "OIL-FLTR-001"
-              }
-            },
-            "focusSummary": "指导要求先应用定价规则，再创建订单明细。"
+            ]
           },
           {
-            "title": "Student 结构化指导",
+            "id": "teacher_freeform",
+            "title": "Teacher 自由文本指导",
+            "frameTitle": "Teacher 自由文本指导 · 登录后未重试创建",
             "tone": "before",
             "events": [
               {
                 "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
-                "result": "discount_percent=0.0",
+                "name": "create_ticket",
+                "args": "priority=3, …",
+                "result": "User not authenticated. Please log in to create a ticket.",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
+                  "argsFields": [
+                    "title",
+                    "description",
+                    "priority"
+                  ],
+                  "resultFields": [
+                    "error"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "before",
                 "highlights": {
-                  "args": [
+                  "result": [
                     {
                       "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.99, discount_percent=0"
+                      "end": 23,
+                      "text": "User not authenticated.",
+                      "tone": "before"
                     }
                   ]
                 },
-                "source": {
-                  "message": 14,
-                  "returnMessage": 15,
-                  "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
-                  ]
-                }
-              }
-            ],
-            "focusEvents": [
+                "excerpt": true,
+                "returnTone": "before"
+              },
               {
                 "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
-                "result": "discount_percent=0.0",
-                "highlights": {
-                  "args": [
-                    {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.99, discount_percent=0"
-                    }
-                  ]
-                },
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
                 "source": {
-                  "message": 14,
-                  "returnMessage": 15,
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
                   "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
+                    "username",
+                    "password"
                   ],
                   "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
               }
             ],
-            "result": {
-              "text": "油滤芯：10 个，单价 9.99，折扣 0%",
-              "highlights": [
-                {
-                  "start": 9,
-                  "end": 22,
-                  "text": "单价 9.99，折扣 0%",
-                  "tone": "before"
-                }
-              ],
-              "source": {
-                "file": "student/final.db",
-                "table": "sales_order_lines",
-                "id": 21,
-                "fields": [
-                  "unit_price",
-                  "discount_percent"
-                ],
-                "partSku": "OIL-FLTR-001"
+            "resultCells": [
+              {
+                "label": "队列",
+                "value": "0 条",
+                "highlights": [
+                  {
+                    "start": 0,
+                    "end": 3,
+                    "text": "0 条",
+                    "tone": "before"
+                  }
+                ]
+              },
+              {
+                "label": "描述",
+                "value": "未创建",
+                "highlights": []
               }
-            },
-            "focusSummary": "指导提前判断任务已完成，没有指出遗漏的定价步骤。"
+            ]
           }
         ],
-        "details": {
-          "label": "查看两种指导的关键内容",
-          "branches": [
-            {
-              "title": "Teacher 结构化指导",
-              "tone": "after",
-              "text": "For each requested part, retrieve its details, apply pricing rules to determine the correct unit price and discount percentage, and then create the sales order lines with the specified quantities and a 'allow' backorder status.",
-              "highlights": [
-                {
-                  "start": 47,
-                  "end": 126,
-                  "text": "apply pricing rules to determine the correct unit price and discount percentage",
-                  "tone": "after"
-                }
-              ]
-            },
-            {
-              "title": "Student 结构化指导",
-              "tone": "before",
-              "text": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete.",
-              "highlights": [
-                {
-                  "start": 129,
-                  "end": 149,
-                  "text": "the task is complete",
-                  "tone": "before"
-                }
-              ]
-            }
-          ]
-        },
         "carouselInitial": "teacher_structured",
         "carouselBranches": [
           {
             "id": "teacher_structured",
             "title": "Teacher 结构化指导",
+            "frameTitle": "Teacher 结构化指导 · 先登录，再创建",
             "tone": "after",
             "events": [
               {
                 "type": "action",
-                "name": "apply_pricing_rules_to_line",
-                "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "result": [
-                    {
-                      "start": 0,
-                      "end": 20,
-                      "text": "discount_percent=8.0"
-                    }
-                  ]
-                },
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
                 "source": {
-                  "message": 14,
-                  "returnMessage": 15,
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
                   "argsFields": [
-                    "part_id",
-                    "quantity_ordered",
-                    "order_date"
+                    "username",
+                    "password"
                   ],
                   "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
               },
               {
                 "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "args": [
-                    {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.19, discount_percent=8"
-                    }
-                  ]
-                },
+                "name": "create_ticket",
+                "args": "priority=3, …",
+                "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "message": 20,
-                  "returnMessage": 21,
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
                   "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
+                    "title",
+                    "description",
+                    "priority"
                   ],
                   "resultFields": [
-                    "discount_percent"
-                  ]
-                }
-              }
-            ],
-            "result": {
-              "text": "油滤芯：10 个，单价 9.19，折扣 8%",
-              "highlights": [
-                {
-                  "start": 9,
-                  "end": 22,
-                  "text": "单价 9.19，折扣 8%",
-                  "tone": "after"
-                }
-              ],
-              "source": {
-                "file": "student/final.db",
-                "table": "sales_order_lines",
-                "id": 21,
-                "fields": [
-                  "unit_price",
-                  "discount_percent"
-                ],
-                "partSku": "OIL-FLTR-001"
-              }
-            },
-            "details": {
-              "label": "查看指导节选",
-              "branches": [
-                {
-                  "title": "指导原文",
-                  "tone": "after",
-                  "text": "For each requested part, retrieve its details, apply pricing rules to determine the correct unit price and discount percentage, and then create the sales order lines with the specified quantities and a 'allow' backorder status.",
-                  "highlights": [
-                    {
-                      "start": 47,
-                      "end": 126,
-                      "text": "apply pricing rules to determine the correct unit price and discount percentage",
-                      "tone": "after"
-                    }
+                    "id",
+                    "title",
+                    "description",
+                    "status",
+                    "priority",
+                    "created_by"
                   ],
-                  "source": "sales_order_comparison/point_2/teacher_structured/steering_prompt.txt"
-                }
-              ]
-            },
-            "frameTitle": "Teacher 结构化指导 · 先查定价，再写入折扣",
-            "resultCells": [
-              {
-                "label": "单价",
-                "value": "9.19",
-                "highlights": [
-                  {
-                    "start": 0,
-                    "end": 4,
-                    "text": "9.19",
-                    "tone": "after"
-                  }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "unit_price"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
-              },
-              {
-                "label": "折扣",
-                "value": "8%",
-                "highlights": [
-                  {
-                    "start": 0,
-                    "end": 2,
-                    "text": "8%",
-                    "tone": "after"
-                  }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "discount_percent"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
-              }
-            ],
-            "articleDescription": ""
-          },
-          {
-            "id": "student_structured",
-            "title": "Student 结构化指导",
-            "tone": "before",
-            "events": [
-              {
-                "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.99, discount_percent=0, backorder_status=\"allow\"",
-                "result": "discount_percent=0.0",
-                "highlights": {
-                  "args": [
-                    {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.99, discount_percent=0"
-                    }
-                  ]
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
                 },
-                "source": {
-                  "message": 14,
-                  "returnMessage": 15,
-                  "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
               }
             ],
-            "result": {
-              "text": "油滤芯：10 个，单价 9.99，折扣 0%",
-              "highlights": [
-                {
-                  "start": 9,
-                  "end": 22,
-                  "text": "单价 9.99，折扣 0%",
-                  "tone": "before"
-                }
-              ],
-              "source": {
-                "file": "student/final.db",
-                "table": "sales_order_lines",
-                "id": 21,
-                "fields": [
-                  "unit_price",
-                  "discount_percent"
-                ],
-                "partSku": "OIL-FLTR-001"
-              }
-            },
-            "details": {
-              "label": "查看指导节选",
-              "branches": [
-                {
-                  "title": "指导原文",
-                  "tone": "before",
-                  "text": "Since all three requested items (OIL-FLTR-001, BRK-TOY-001, and BAT-12V-600CCA) have been successfully added to the sales order, the task is complete.",
-                  "highlights": [
-                    {
-                      "start": 129,
-                      "end": 149,
-                      "text": "the task is complete",
-                      "tone": "before"
-                    }
-                  ],
-                  "source": "sales_order_comparison/point_2/student_structured/steering_prompt.txt"
-                }
-              ]
-            },
-            "frameTitle": "Student 结构化指导 · 提前判定完成，未查定价",
             "resultCells": [
               {
-                "label": "单价",
-                "value": "9.99",
+                "label": "队列",
+                "value": "1 条",
                 "highlights": [
                   {
                     "start": 0,
-                    "end": 4,
-                    "text": "9.99",
-                    "tone": "before"
+                    "end": 3,
+                    "text": "1 条",
+                    "tone": "after"
                   }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "unit_price"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
+                ]
               },
               {
-                "label": "折扣",
-                "value": "0%",
+                "label": "描述",
+                "value": "仅含交易问题",
                 "highlights": [
                   {
                     "start": 0,
-                    "end": 2,
-                    "text": "0%",
-                    "tone": "before"
+                    "end": 6,
+                    "text": "仅含交易问题",
+                    "tone": "after"
                   }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "discount_percent"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
+                ]
               }
-            ],
-            "articleDescription": ""
+            ]
           },
           {
             "id": "teacher_freeform",
             "title": "Teacher 自由文本指导",
-            "tone": "after",
+            "frameTitle": "Teacher 自由文本指导 · 登录后未重试创建",
+            "tone": "before",
             "events": [
               {
                 "type": "action",
-                "name": "apply_pricing_rules_to_line",
-                "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
-                "result": "discount_percent=8.0",
+                "name": "create_ticket",
+                "args": "priority=3, …",
+                "result": "User not authenticated. Please log in to create a ticket.",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
+                  "argsFields": [
+                    "title",
+                    "description",
+                    "priority"
+                  ],
+                  "resultFields": [
+                    "error"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "before",
                 "highlights": {
                   "result": [
                     {
                       "start": 0,
-                      "end": 20,
-                      "text": "discount_percent=8.0"
+                      "end": 23,
+                      "text": "User not authenticated.",
+                      "tone": "before"
                     }
                   ]
                 },
-                "source": {
-                  "message": 14,
-                  "returnMessage": 15,
-                  "argsFields": [
-                    "part_id",
-                    "quantity_ordered",
-                    "order_date"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                "excerpt": true,
+                "returnTone": "before"
               },
               {
                 "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
-                "result": "discount_percent=8.0",
-                "highlights": {
-                  "args": [
-                    {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.19, discount_percent=8"
-                    }
-                  ]
-                },
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
                 "source": {
-                  "message": 20,
-                  "returnMessage": 21,
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
                   "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
+                    "username",
+                    "password"
                   ],
                   "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
               }
             ],
-            "result": {
-              "text": "油滤芯：10 个，单价 9.19，折扣 8%",
-              "highlights": [
-                {
-                  "start": 9,
-                  "end": 22,
-                  "text": "单价 9.19，折扣 8%",
-                  "tone": "after"
-                }
-              ],
-              "source": {
-                "file": "student/final.db",
-                "table": "sales_order_lines",
-                "id": 21,
-                "fields": [
-                  "unit_price",
-                  "discount_percent"
-                ],
-                "partSku": "OIL-FLTR-001"
-              }
-            },
-            "details": {
-              "label": "查看指导节选",
-              "branches": [
-                {
-                  "title": "指导原文",
-                  "tone": "before",
-                  "text": "Since all requirements, including the backorder status and specific quantities, have been fulfilled, the task is complete.",
-                  "highlights": [
-                    {
-                      "start": 101,
-                      "end": 121,
-                      "text": "the task is complete",
-                      "tone": "before"
-                    }
-                  ],
-                  "source": "sales_order_comparison/point_2/teacher_freeform/steering_prompt.txt"
-                }
-              ]
-            },
-            "frameTitle": "Teacher 自由文本指导 · 提前判定完成，仍查定价",
             "resultCells": [
               {
-                "label": "单价",
-                "value": "9.19",
+                "label": "队列",
+                "value": "0 条",
                 "highlights": [
                   {
                     "start": 0,
-                    "end": 4,
-                    "text": "9.19",
-                    "tone": "after"
+                    "end": 3,
+                    "text": "0 条",
+                    "tone": "before"
                   }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "unit_price"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
+                ]
               },
               {
-                "label": "折扣",
-                "value": "8%",
+                "label": "描述",
+                "value": "未创建",
+                "highlights": []
+              }
+            ]
+          },
+          {
+            "id": "student_structured",
+            "title": "Student 结构化指导",
+            "frameTitle": "Student 结构化指导 · 先登录，再创建",
+            "tone": "after",
+            "events": [
+              {
+                "type": "action",
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
+                  "argsFields": [
+                    "username",
+                    "password"
+                  ],
+                  "resultFields": [
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
+              },
+              {
+                "type": "action",
+                "name": "create_ticket",
+                "args": "priority=3, …",
+                "result": "id=0, status=\"Open\", priority=3",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
+                  "argsFields": [
+                    "title",
+                    "description",
+                    "priority"
+                  ],
+                  "resultFields": [
+                    "id",
+                    "title",
+                    "description",
+                    "status",
+                    "priority",
+                    "created_by"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
+              }
+            ],
+            "resultCells": [
+              {
+                "label": "队列",
+                "value": "1 条",
                 "highlights": [
                   {
                     "start": 0,
-                    "end": 2,
-                    "text": "8%",
+                    "end": 3,
+                    "text": "1 条",
                     "tone": "after"
                   }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "discount_percent"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
+                ]
+              },
+              {
+                "label": "描述",
+                "value": "仅含交易问题",
+                "highlights": [
+                  {
+                    "start": 0,
+                    "end": 6,
+                    "text": "仅含交易问题",
+                    "tone": "after"
+                  }
+                ]
               }
-            ],
-            "articleDescription": "",
-            "description": "指导提前判断任务已完成；agent 仍查询定价并创建订单明细。"
+            ]
           },
           {
             "id": "external_structured",
             "title": "GPT 结构化指导",
-            "tone": "after",
+            "frameTitle": "GPT 结构化指导 · 已创建，但误写登录凭据",
+            "tone": "before",
             "events": [
               {
                 "type": "action",
-                "name": "apply_pricing_rules_to_line",
-                "args": "part_id=1, quantity_ordered=10, order_date=\"2025-10-23\"",
-                "result": "discount_percent=8.0",
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
+                  "argsFields": [
+                    "username",
+                    "password"
+                  ],
+                  "resultFields": [
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
+              },
+              {
+                "type": "action",
+                "name": "create_ticket",
+                "args": "priority=3, description=\"… My username is … and password is … for the ticket login.\"",
+                "result": "id=0, status=\"Open\", priority=3",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
+                  "argsFields": [
+                    "title",
+                    "description",
+                    "priority"
+                  ],
+                  "resultFields": [
+                    "id",
+                    "title",
+                    "description",
+                    "status",
+                    "priority",
+                    "created_by"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "before",
+                "excerpt": true,
+                "returnTone": "neutral",
+                "highlights": {
+                  "args": [
+                    {
+                      "start": 27,
+                      "end": 61,
+                      "text": "My username is … and password is …",
+                      "tone": "before"
+                    }
+                  ]
+                }
+              }
+            ],
+            "resultCells": [
+              {
+                "label": "队列",
+                "value": "1 条",
+                "highlights": [
+                  {
+                    "start": 0,
+                    "end": 3,
+                    "text": "1 条",
+                    "tone": "after"
+                  }
+                ]
+              },
+              {
+                "label": "描述",
+                "value": "误含登录凭据",
+                "highlights": [
+                  {
+                    "start": 0,
+                    "end": 6,
+                    "text": "误含登录凭据",
+                    "tone": "before"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "unguided",
+            "title": "无指导",
+            "frameTitle": "无指导 · 登录后重试，仍误写登录凭据",
+            "tone": "before",
+            "events": [
+              {
+                "type": "action",
+                "name": "create_ticket",
+                "args": "priority=3, …",
+                "result": "User not authenticated. Please log in to create a ticket.",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                  "message": 26,
+                  "returnMessage": 27,
+                  "excerpt": true,
+                  "argsFields": [
+                    "title",
+                    "description",
+                    "priority"
+                  ],
+                  "resultFields": [
+                    "error"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "before",
                 "highlights": {
                   "result": [
                     {
                       "start": 0,
-                      "end": 20,
-                      "text": "discount_percent=8.0"
+                      "end": 23,
+                      "text": "User not authenticated.",
+                      "tone": "before"
                     }
                   ]
                 },
-                "source": {
-                  "message": 10,
-                  "returnMessage": 11,
-                  "argsFields": [
-                    "part_id",
-                    "quantity_ordered",
-                    "order_date"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
-                  ]
-                }
+                "excerpt": true,
+                "returnTone": "before"
               },
               {
                 "type": "action",
-                "name": "create_sales_order_line",
-                "args": "unit_price=9.19, discount_percent=8, backorder_status=\"allow\"",
-                "result": "discount_percent=8.0",
+                "name": "ticket_login",
+                "args": "…",
+                "result": "success=true",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                  "message": 28,
+                  "returnMessage": 29,
+                  "excerpt": true,
+                  "argsFields": [
+                    "username",
+                    "password"
+                  ],
+                  "resultFields": [
+                    "success"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "after",
+                "excerpt": true,
+                "returnTone": "after"
+              },
+              {
+                "type": "action",
+                "name": "create_ticket",
+                "args": "priority=3, description=\"… My username is … and password is … for the ticket login.\"",
+                "result": "id=0, status=\"Open\", priority=3",
+                "source": {
+                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                  "message": 30,
+                  "returnMessage": 31,
+                  "excerpt": true,
+                  "argsFields": [
+                    "title",
+                    "description",
+                    "priority"
+                  ],
+                  "resultFields": [
+                    "id",
+                    "title",
+                    "description",
+                    "status",
+                    "priority",
+                    "created_by"
+                  ],
+                  "displayOmissions": "Login arguments omitted; common ticket parameters excerpted; credential values replaced by ellipses only in display."
+                },
+                "tone": "before",
+                "excerpt": true,
+                "returnTone": "neutral",
                 "highlights": {
                   "args": [
                     {
-                      "start": 0,
-                      "end": 35,
-                      "text": "unit_price=9.19, discount_percent=8"
+                      "start": 27,
+                      "end": 61,
+                      "text": "My username is … and password is …",
+                      "tone": "before"
                     }
-                  ]
-                },
-                "source": {
-                  "message": 20,
-                  "returnMessage": 21,
-                  "argsFields": [
-                    "unit_price",
-                    "discount_percent",
-                    "backorder_status"
-                  ],
-                  "resultFields": [
-                    "discount_percent"
                   ]
                 }
               }
             ],
-            "result": {
-              "text": "油滤芯：10 个，单价 9.19，折扣 8%",
-              "highlights": [
-                {
-                  "start": 9,
-                  "end": 22,
-                  "text": "单价 9.19，折扣 8%",
-                  "tone": "after"
-                }
-              ],
-              "source": {
-                "file": "student/final.db",
-                "table": "sales_order_lines",
-                "id": 21,
-                "fields": [
-                  "unit_price",
-                  "discount_percent"
-                ],
-                "partSku": "OIL-FLTR-001"
-              }
-            },
-            "details": {
-              "label": "查看指导节选",
-              "branches": [
-                {
-                  "title": "指导原文",
-                  "tone": "after",
-                  "text": "Then, one tool call per turn, look up the other two SKUs, apply pricing rules separately to each part using customer_account_id 1, the returned category, requested quantity, and order_date 2025-10-23, and create lines 1–3 from the returned pricing.",
-                  "highlights": [
-                    {
-                      "start": 58,
-                      "end": 101,
-                      "text": "apply pricing rules separately to each part",
-                      "tone": "after"
-                    }
-                  ],
-                  "source": "sales_order_comparison/point_2/external_structured/steering_prompt.txt"
-                }
-              ]
-            },
-            "frameTitle": "GPT 结构化指导 · 按订单日期查询定价",
             "resultCells": [
               {
-                "label": "单价",
-                "value": "9.19",
+                "label": "队列",
+                "value": "1 条",
                 "highlights": [
                   {
                     "start": 0,
-                    "end": 4,
-                    "text": "9.19",
+                    "end": 3,
+                    "text": "1 条",
                     "tone": "after"
                   }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "unit_price"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
+                ]
               },
               {
-                "label": "折扣",
-                "value": "8%",
+                "label": "描述",
+                "value": "误含登录凭据",
                 "highlights": [
                   {
                     "start": 0,
-                    "end": 2,
-                    "text": "8%",
-                    "tone": "after"
+                    "end": 6,
+                    "text": "误含登录凭据",
+                    "tone": "before"
                   }
-                ],
-                "source": {
-                  "file": "student/final.db",
-                  "table": "sales_order_lines",
-                  "id": 21,
-                  "fields": [
-                    "discount_percent"
-                  ],
-                  "partSku": "OIL-FLTR-001"
-                }
+                ]
               }
-            ],
-            "articleDescription": ""
+            ]
           }
         ]
       },

@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-96261765fc35bfe9",
+  "model": "case-model",
+  "created": 1793888511,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nYour urgency-level support ticket has been successfully initiated! Here are the key details:\n\n**Ticket Information:**  \n- **ID:** 0  \n- **Title:** Urgent: Transaction Issue  \n- **Priority:** 3 (High)  \n- **Status:** 🔧 Open  \n- **Raised By:** user123  \n\nA support agent will address this shortly. Let me know if you'd like to update the ticket or need further clarifications!",
+        "reasoning": "\nOkay, the user has created a support ticket with the details they provided. The response shows the ticket was successfully created with ID 0, status Open, and priority 3. Now, I need to inform the user that the ticket was created and provide the details. I should mention the ticket ID, title, priority, and status. Also, offer进一步 assistance in case they need anything else. Make sure the response is clear and confirms the action taken.\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5541,
+    "total_tokens": 5729,
+    "completion_tokens": 188,
+    "completion_tokens_details": {
+      "reasoning_tokens": 93
+    }
+  }
+}

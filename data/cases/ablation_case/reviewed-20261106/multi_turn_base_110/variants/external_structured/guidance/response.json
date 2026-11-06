@@ -1,0 +1,26 @@
+{
+  "id": "resp_0658547ba0a7b97b016aec90d539d487d0850c1440c7d346f6",
+  "object": "chat.completion",
+  "created": 1793888476,
+  "model": "gpt-5.6-sol",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"decision_rule\":\"Authenticate with the ticketing system using the supplied username and password before attempting ticket creation; do not include the password or other login credentials in the ticket description.\",\"expected_transition\":\"A successful ticket-login action establishes `user123` as the current ticketing user while leaving the ticket queue unchanged, enabling ticket creation in the following response.\",\"precondition\":\"The available tools have already been listed once, the trading session is authenticated, but the separate ticketing session has `current_user: null`; the user supplied ticket-login credentials and requested a priority-3 ticket.\",\"recovery_check\":\"Verify that the ticket-login result explicitly indicates success before proceeding. If authentication fails, do not attempt to create the ticket; report the login failure and request corrected credentials.\"}",
+        "reasoning_content": "**Designing login precondition and flow****Validating four nonempty strings**"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 21537,
+    "completion_tokens": 309,
+    "total_tokens": 21846,
+    "completion_tokens_details": {
+      "reasoning_tokens": 145
+    }
+  },
+  "service_tier": "default"
+}

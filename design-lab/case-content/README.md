@@ -74,7 +74,9 @@ Fix the illustrative span offsets to your literal text; spans use JavaScript UTF
 - `training/directory-navigation.json`
 - `inference/watchlist-disambiguation.json`
 - `recovery/fuel-capacity.json`
-- `ablation/sales-order-pricing.json`
+- `ablation/ticket-login-before-create.json`
+
+The former sales-order and car/file ablations are withdrawn from the maintained collection. Their source files remain archival evidence, not selection or prose references for new cases.
 
 Formal page: `design-lab/paper-cases.html?group=<kind>&case=<slug>`.
 Record reader: `design-lab/case-records.html?group=<kind>&case=<slug>&source=<sourceId>&message=<zeroBasedIndex>`.

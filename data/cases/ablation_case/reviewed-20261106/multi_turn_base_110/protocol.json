@@ -1,0 +1,23 @@
+{
+  "models": {
+    "teacher": "/mnt/genming/Arctic-AWM-BitDistiller-full/arctic_quant/common/model/Arctic-AWM-8B",
+    "student": "/mnt/genming/Arctic-AWM-BitDistiller-full/arctic_quant/w4a16/turn_level/common/initial-unified-awq-w4a16-g64"
+  },
+  "task": "multi_turn_base_110",
+  "source": "/mnt/genming/new-ablation-pipeline-20261105/training/cases/multi_turn_base_110",
+  "student_seed": 71785000,
+  "student_temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "repetition_penalty": 1.2,
+  "same_advisor_evidence_sha256": "25a5ce54f8b7a03a87c9ce46a7e900e01b114fa3448b01983dc32605f1b8c7e0",
+  "same_anchor_context_sha256": "602ab2e2b7bdab5b62e77e794eb85a05b809c2cdab7f3bb8cebaca5f9d24f43a",
+  "same_prefix_sha256": "cad3c24ef5bad079323b4b6c2ba55af0340fb6777694f3923b472ec83f2c14ba",
+  "guidance_first_student_response_only": true,
+  "goal_turn": 5,
+  "comparison_unit": "Completed unchanged original user-turn task; local state differences recorded separately",
+  "diagnostic_continuation_after_local_mismatch": true,
+  "diagnostic_trajectories_never_admitted_as_training_repairs": true,
+  "external_teacher": "gpt-5.6-sol",
+  "all_results_preserved": true
+}

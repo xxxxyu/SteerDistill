@@ -8,12 +8,12 @@ This repository is a static publication tree. GitHub Pages serves the root at ht
 | --- | --- | --- |
 | `index.html` | Paper identity, benchmark overview, TL;DR and concept animation | English |
 | `article.html` | Independent research blog post, Xiangyu Li byline, contents and notes | Chinese |
-| `design-lab/paper-cases.html` | Eighteen listed full cases (A5, A2 and A3 ablations accepted) | Chinese |
+| `design-lab/paper-cases.html` | Seventeen listed full cases: 2 training, 9 inference, 5 recovery, 1 ablation | Chinese |
 | `design-lab/case-records.html` | Original trajectories and record navigation | Chinese |
 
 The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.
 
-Current ablation choices, source audits and acceptance checks: [2026-11-05 reselection](ablation-reselection-20261105.md).
+Current case additions and withdrawal decisions: [2026-11-06 integration](case-batch-20261106.md). T2 and A6 await user review; A1–A5 are withdrawn from the collection and the article. The [2026-11-05 reselection](ablation-reselection-20261105.md) records the superseded selection.
 
 ### Sources and ownership
 
@@ -60,7 +60,7 @@ The benchmark follows directly beneath the hero; precision stays in the setting 
 
 ## Case editing and verification
 
-The [2026-11-04 review batch](case-batch-20261104.md) adds R3–R5 using the existing sequence template; the user has accepted all three and confirmed deferral of the ten training packages. The public release has not yet been updated. The subsequent [ablation review](ablation-review-20261104.md) defers upstream 01/03 and updates A1 (upstream 02) with attributed guidance-generation analysis; that update awaits user review.
+The [2026-11-04 review batch](case-batch-20261104.md) adds the user-accepted R3–R5 using the existing sequence template. The [latest evidence audit](latest-cases-review-20261106.md) selects T2 and A6 from newer data; earlier training packages remain deferred. The prior [ablation review](ablation-review-20261104.md) is historical: its A1 selection is now withdrawn. These local updates have not been published.
 
 Read the [case author contract](../../design-lab/case-content/README.md) and [shared interfaces](../../design-lab/case-shared/README.md). Highlights remain explicit, individually reviewed spans.
 

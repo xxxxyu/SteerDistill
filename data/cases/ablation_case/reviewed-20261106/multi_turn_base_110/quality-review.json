@@ -1,0 +1,26 @@
+{
+  "accepted": true,
+  "case": "multi_turn_base_110",
+  "reviewed_at": 1793889288.6511602,
+  "scope": "Whole original user turn 5, including unsteered continuation after the first intervention.",
+  "checks": {
+    "same_anchor_context": true,
+    "same_initial_state": true,
+    "same_student_sampling": true,
+    "native_key_reasoning_all_variants": true,
+    "reference_first_operation_successful": true,
+    "reference_full_completion": true,
+    "ours_local_and_full_success": true
+  },
+  "outcomes": {
+    "teacher_structured": "Login first, then create the requested ticket without appending credentials.",
+    "teacher_freeform": "Attempts creation before authentication; logs in after error but ends without retrying ticket creation.",
+    "student_structured": "Login and ticket creation both succeed.",
+    "external_structured": "Login succeeds and a ticket is created, but its body includes the supplied login credentials despite the guidance explicitly excluding them."
+  },
+  "failed_controls": [
+    "teacher_freeform",
+    "external_structured"
+  ],
+  "interpretation": "The external structured variant passes the immediate login correction; its failure is in the later ticket description, not in authentication. The freeform variant fails to complete ticket creation."
+}

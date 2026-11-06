@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-868737874cd58f80",
+  "model": "case-model",
+  "created": 1793888323,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\nA priority-level 3 support ticket titled **\"Urgent: Transaction Issue\"** has been successfully created in your name! Here are the key details:\n\n**Ticket Summary:**  \n- **ID:** 0  \n- **Title:** Urgent: Transaction Issue  \n- **Priority:** ⚠️ High (Level 3)  \n- **Status:** 🔍 Open  \n- **Creator:** user123  \n\nOur team will prioritize resolving this matter promptly. Let me know if you'd like to track progress or update the ticket later!",
+        "reasoning": "\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 6012,
+    "total_tokens": 6128,
+    "completion_tokens": 116,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1
+    }
+  }
+}

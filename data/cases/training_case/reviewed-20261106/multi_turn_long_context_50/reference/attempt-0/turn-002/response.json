@@ -1,0 +1,25 @@
+{
+  "id": "chatcmpl-a8d39f6d43f9665e",
+  "model": "case-model",
+  "created": 1793930338,
+  "object": "chat.completion",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_setHeadlights\", \"arguments\": \"{\\\"mode\\\": \\\"on\\\"}\"}}\n</tool_call>",
+        "reasoning": "\nOkay, the user wanted to unlock their car doors and turn on the headlights. First, I checked the available tools and saw that there's a tool called mcp_tool_lockDoors. I initially used the wrong identifier, mcp_tool_16, which caused an error. Then I corrected it to mcp_tool_lockDoors and successfully unlocked all four doors. Now, the next step is to address the headlights. The tool for that is mcp_tool_setHeadlights, which takes a mode parameter. The user mentioned it's getting dark, so setting the mode to \"on\" makes sense. I'll call that tool next with mode \"on\" to ensure visibility improves. Let me confirm the parameters again to avoid any mistakes. Once both actions are done, I'll summarize the results for the user.\n"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3792,
+    "total_tokens": 3998,
+    "completion_tokens": 206,
+    "completion_tokens_details": {
+      "reasoning_tokens": 166
+    }
+  }
+}

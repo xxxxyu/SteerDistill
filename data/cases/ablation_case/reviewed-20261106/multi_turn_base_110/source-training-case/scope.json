@@ -1,0 +1,17 @@
+{
+  "goal_turn": 5,
+  "source_student": "/mnt/genming/new-ablation-pipeline-20261105/discovery/cases/multi_turn_base_110/student-user-05",
+  "original_request": [
+    {
+      "role": "user",
+      "content": "Regrettably, I've stumbled upon a complication related to one of my recent transactions. I'd appreciate your help in initiating a priority level 3 support ticket labeled 'Urgent: Transaction Issue' with the description 'There is an issue with a recent transaction involving a canceled buy order for 100 shares of AAPL and I am requesting confirmation of the cancellation along with an account summary. My username is user123 and password is 12345 for the ticket login."
+    }
+  ],
+  "previously_passed_user_turns": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}
