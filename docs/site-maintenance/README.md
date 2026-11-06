@@ -8,10 +8,12 @@ This repository is a static publication tree. GitHub Pages serves the root at ht
 | --- | --- | --- |
 | `index.html` | Paper identity, benchmark overview, TL;DR and concept animation | English |
 | `article.html` | Independent research blog post, Xiangyu Li byline, contents and notes | Chinese |
-| `design-lab/paper-cases.html` | Seventeen listed full cases: 2 training, 9 inference, 5 recovery, 1 ablation | Chinese |
+| `design-lab/paper-cases.html` | Nineteen listed full cases: 4 training, 9 inference, 5 recovery, 1 ablation | Chinese |
 | `design-lab/case-records.html` | Original trajectories and record navigation | Chinese |
 
 The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.
+
+T3 (country restriction) and T4 (create and write the second matching sentence) are added for user review; see [training additions](training-additions-20261106.md).
 
 Current case additions and withdrawal decisions: [2026-11-06 integration](case-batch-20261106.md). T2 and A6 await user review; A1–A5 are withdrawn from the collection and the article. The [2026-11-05 reselection](ablation-reselection-20261105.md) records the superseded selection.
 

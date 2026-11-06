@@ -22,6 +22,20 @@
           "url": "design-lab/case-content/training/tool-list-numbering.json",
           "code": "T2",
           "indexTitle": "工具列表序号"
+        },
+        {
+          "id": "card-country-restriction",
+          "title": "限制银行卡国际交易，不能只填国家名单",
+          "url": "design-lab/case-content/training/card-country-restriction.json",
+          "code": "T3",
+          "indexTitle": "国家限制开关"
+        },
+        {
+          "id": "create-and-write-matching-sentence",
+          "title": "创建文件后，写入第二个匹配句",
+          "url": "design-lab/case-content/training/create-and-write-matching-sentence.json",
+          "code": "T4",
+          "indexTitle": "匹配句写入"
         }
       ]
     },

@@ -1,0 +1,31 @@
+{
+  "id": "cmpl-bd51051f1c3f5fc6",
+  "object": "text_completion",
+  "created": 1793896446,
+  "model": "case-model",
+  "choices": [
+    {
+      "index": 0,
+      "text": "The card is created, updated with a spending limit of 2000.00, set to 'active', and card controls are configured to allow international transactions but only in 'US' and 'CA'.\nI have completed the task.<channel|>",
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 101,
+      "token_ids": null,
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.28.1rc1.dev472+gd9105ea80-5c4075d1",
+  "usage": {
+    "prompt_tokens": 10355,
+    "total_tokens": 10407,
+    "completion_tokens": 52,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

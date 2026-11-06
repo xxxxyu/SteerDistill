@@ -1,0 +1,1057 @@
+{
+  "schemaVersion": 1,
+  "id": "card-country-restriction",
+  "kind": "training",
+  "title": "限制银行卡国际交易，不能只填国家名单",
+  "summary": "用户希望新虚拟卡每月限额为 2000 美元，并只允许在美国和加拿大使用。卡已激活，限额已设置，接下来配置国家限制。接口中的 `international_allowed=1` 允许全部国际交易，设为 `0` 才会执行允许国家名单。",
+  "template": "training",
+  "originalTask": {
+    "question": [
+      [
+        {
+          "role": "user",
+          "content": "Activate a new virtual debit card linked to my checking account ending in '4456' with a monthly spending_limit of 2000.00 USD, set the card_status to 'active', and configure card_controls to lock international transactions outside 'US' and 'CA'."
+        }
+      ]
+    ]
+  },
+  "presentation": {
+    "branches": [
+      {
+        "title": "无指导",
+        "summary": "写入了 US、CA 名单，却没有启用国家限制。",
+        "tone": "before",
+        "events": [
+          {
+            "type": "action",
+            "name": "update_card_controls",
+            "args": "card_id=5, international_allowed=1,\nallowed_countries=\"US,CA\"",
+            "result": "international_allowed: true,\nallowed_countries: \"US,CA\"",
+            "highlights": {
+              "args": [
+                {
+                  "start": 11,
+                  "end": 34,
+                  "text": "international_allowed=1",
+                  "tone": "before"
+                }
+              ],
+              "result": [
+                {
+                  "start": 0,
+                  "end": 27,
+                  "text": "international_allowed: true",
+                  "tone": "before"
+                }
+              ]
+            },
+            "source": {
+              "file": "data/cases/training_case/reviewed-20261106/banking_6_2/before/trajectory.json",
+              "message": 10,
+              "returnMessage": 11
+            }
+          }
+        ],
+        "reasoning": {
+          "title": "无指导 · 推理节选",
+          "text": "If I set `international_allowed` to `1`, it allows all.\nIf I set `international_allowed` to `0`, it enforces the list.\n…\nI'll set `international_allowed` to `1` and `allowed_countries` to \"US,CA\".",
+          "highlights": [
+            {
+              "start": 130,
+              "end": 195,
+              "text": "`international_allowed` to `1` and `allowed_countries` to \"US,CA\"",
+              "tone": "before"
+            }
+          ],
+          "source": {
+            "file": "data/cases/training_case/reviewed-20261106/banking_6_2/before/trajectory.json",
+            "message": 10
+          }
+        },
+        "frameTitle": "工具调用与返回 · 节选"
+      },
+      {
+        "title": "Teacher 指导后",
+        "summary": "把国际交易开关设为 0，启用 US、CA 国家限制。",
+        "tone": "after",
+        "events": [
+          {
+            "type": "action",
+            "name": "create_card_controls",
+            "args": "card_id=5, international_allowed=0,\nallowed_countries=\"US,CA\"",
+            "result": "international_allowed: false,\nallowed_countries: \"US,CA\"",
+            "highlights": {
+              "args": [
+                {
+                  "start": 11,
+                  "end": 34,
+                  "text": "international_allowed=0",
+                  "tone": "after"
+                }
+              ],
+              "result": [
+                {
+                  "start": 0,
+                  "end": 28,
+                  "text": "international_allowed: false",
+                  "tone": "after"
+                }
+              ]
+            },
+            "source": {
+              "file": "data/cases/training_case/reviewed-20261106/banking_6_2/after/trajectory.json",
+              "message": 10,
+              "returnMessage": 11
+            }
+          }
+        ],
+        "reasoning": {
+          "title": "Teacher 指导后 · 推理节选",
+          "text": "The instructions say: \"To lock international transactions outside 'US' and 'CA', use 'mcp_server_create_card_controls' with 'international_allowed' set to 0 (to restrict) and 'allowed_countries' set to 'US,CA'.\"",
+          "highlights": [
+            {
+              "start": 124,
+              "end": 170,
+              "text": "'international_allowed' set to 0 (to restrict)",
+              "tone": "after"
+            }
+          ],
+          "source": {
+            "file": "data/cases/training_case/reviewed-20261106/banking_6_2/after/trajectory.json",
+            "message": 10
+          }
+        },
+        "frameTitle": "工具调用与返回 · 节选"
+      }
+    ],
+    "guidance": {
+      "title": "启用国家限制",
+      "fields": {
+        "precondition": "The virtual card (ID: 5) has been created, its spending limit updated to 2000.00, and its status set to 'active'.",
+        "decision_rule": "To lock international transactions outside 'US' and 'CA', use 'mcp_server_create_card_controls' with 'international_allowed' set to 0 (to restrict) and 'allowed_countries' set to 'US,CA'.",
+        "expected_transition": "A card_controls record is created for card_id 5 with international_allowed=0 and allowed_countries='US,CA'.",
+        "recovery_check": "If the tool returns an error or the status is not updated, verify the card_id and ensure 'international_allowed' is 0 to correctly enforce the country whitelist."
+      },
+      "checks": {
+        "配置状态": "目标卡的 `international_allowed=0`，`allowed_countries=\"US,CA\"`；卡片保持 `active`，限额仍为 2000 美元。",
+        "参考对照": "上述配置与 Teacher 参考操作后的状态一致；无指导分支虽然也写入 US、CA，却保留了允许全部国际交易的开关。"
+      }
+    }
+  },
+  "records": {
+    "defaultSource": "before/trajectory.json",
+    "defaultMessage": 10,
+    "sources": [
+      {
+        "id": "SUMMARY.md",
+        "label": "SUMMARY.md",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/SUMMARY.md",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "after/cot_and_actions.txt",
+        "label": "after/cot_and_actions.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/cot_and_actions.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "after/environment.py",
+        "label": "after/environment.py",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/environment.py",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "after/final.db",
+        "label": "after/final.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "after/local_gate.json",
+        "label": "after/local_gate.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/local_gate.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/local_state.db",
+        "label": "after/local_state.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/local_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "after/openapi.json",
+        "label": "after/openapi.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/openapi.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/result.json",
+        "label": "after/result.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/result.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/trajectory.json",
+        "label": "指导后 agent · 轨迹",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/action/request.json",
+        "label": "after/turn-000/action/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/action/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/action/response.json",
+        "label": "after/turn-000/action/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/action/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/execution.json",
+        "label": "after/turn-000/execution.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/logical_message.json",
+        "label": "after/turn-000/logical_message.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/logical_message.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/original_request.json",
+        "label": "after/turn-000/original_request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/original_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/reasoning.txt",
+        "label": "after/turn-000/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "after/turn-000/request.json",
+        "label": "after/turn-000/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/response.json",
+        "label": "after/turn-000/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/thinking/request.json",
+        "label": "after/turn-000/thinking/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/thinking/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/thinking/response.json",
+        "label": "after/turn-000/thinking/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/thinking/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/thinking_proof.json",
+        "label": "after/turn-000/thinking_proof.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/thinking_proof.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/tokenization/request.json",
+        "label": "after/turn-000/tokenization/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/tokenization/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-000/tokenization/response.json",
+        "label": "after/turn-000/tokenization/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/tokenization/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/action/request.json",
+        "label": "after/turn-001/action/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/action/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/action/response.json",
+        "label": "after/turn-001/action/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/action/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/execution.json",
+        "label": "after/turn-001/execution.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/logical_message.json",
+        "label": "after/turn-001/logical_message.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/logical_message.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/original_request.json",
+        "label": "after/turn-001/original_request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/original_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/reasoning.txt",
+        "label": "after/turn-001/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "after/turn-001/request.json",
+        "label": "after/turn-001/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/response.json",
+        "label": "after/turn-001/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/thinking/request.json",
+        "label": "after/turn-001/thinking/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/thinking/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/thinking/response.json",
+        "label": "after/turn-001/thinking/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/thinking/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/thinking_proof.json",
+        "label": "after/turn-001/thinking_proof.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/thinking_proof.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/tokenization/request.json",
+        "label": "after/turn-001/tokenization/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/tokenization/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "after/turn-001/tokenization/response.json",
+        "label": "after/turn-001/tokenization/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/tokenization/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/cot_and_actions.txt",
+        "label": "before/cot_and_actions.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/cot_and_actions.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "before/environment.py",
+        "label": "before/environment.py",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/environment.py",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "before/final.db",
+        "label": "before/final.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "before/local_gate.json",
+        "label": "before/local_gate.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/local_gate.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/local_state.db",
+        "label": "before/local_state.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/local_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "before/openapi.json",
+        "label": "before/openapi.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/openapi.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/result.json",
+        "label": "before/result.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/result.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/trajectory.json",
+        "label": "无指导 agent · 轨迹",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/action/request.json",
+        "label": "before/turn-000/action/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/action/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/action/response.json",
+        "label": "before/turn-000/action/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/action/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/execution.json",
+        "label": "before/turn-000/execution.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/logical_message.json",
+        "label": "before/turn-000/logical_message.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/logical_message.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/original_request.json",
+        "label": "before/turn-000/original_request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/original_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/reasoning.txt",
+        "label": "before/turn-000/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "before/turn-000/request.json",
+        "label": "before/turn-000/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/response.json",
+        "label": "before/turn-000/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/thinking/request.json",
+        "label": "before/turn-000/thinking/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/thinking/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/thinking/response.json",
+        "label": "before/turn-000/thinking/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/thinking/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/thinking_proof.json",
+        "label": "before/turn-000/thinking_proof.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/thinking_proof.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/tokenization/request.json",
+        "label": "before/turn-000/tokenization/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/tokenization/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-000/tokenization/response.json",
+        "label": "before/turn-000/tokenization/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/tokenization/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/action/request.json",
+        "label": "before/turn-001/action/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/action/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/action/response.json",
+        "label": "before/turn-001/action/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/action/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/execution.json",
+        "label": "before/turn-001/execution.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/logical_message.json",
+        "label": "before/turn-001/logical_message.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/logical_message.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/original_request.json",
+        "label": "before/turn-001/original_request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/original_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/reasoning.txt",
+        "label": "before/turn-001/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "before/turn-001/request.json",
+        "label": "before/turn-001/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/response.json",
+        "label": "before/turn-001/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/thinking/request.json",
+        "label": "before/turn-001/thinking/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/thinking/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/thinking/response.json",
+        "label": "before/turn-001/thinking/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/thinking/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/thinking_proof.json",
+        "label": "before/turn-001/thinking_proof.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/thinking_proof.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/tokenization/request.json",
+        "label": "before/turn-001/tokenization/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/tokenization/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "before/turn-001/tokenization/response.json",
+        "label": "before/turn-001/tokenization/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/tokenization/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "branch-results.json",
+        "label": "branch-results.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/branch-results.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "context.json",
+        "label": "context.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/context.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "effective-local-acceptance.json",
+        "label": "effective-local-acceptance.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/effective-local-acceptance.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "import-manifest.json",
+        "label": "import-manifest.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/import-manifest.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "initial.db",
+        "label": "initial.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/initial.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "pre_state.db",
+        "label": "pre_state.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/pre_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "protocol.json",
+        "label": "protocol.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/protocol.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "quality-review.json",
+        "label": "quality-review.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/quality-review.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/cot_and_actions.txt",
+        "label": "reference/cot_and_actions.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/cot_and_actions.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "reference/environment.py",
+        "label": "reference/environment.py",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/environment.py",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "reference/final.db",
+        "label": "reference/final.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/final.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "reference/local_gate.json",
+        "label": "reference/local_gate.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/local_gate.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/local_state.db",
+        "label": "reference/local_state.db",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/local_state.db",
+        "primary": false,
+        "format": "sqlite"
+      },
+      {
+        "id": "reference/openapi.json",
+        "label": "reference/openapi.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/openapi.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/result.json",
+        "label": "reference/result.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/result.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/trajectory.json",
+        "label": "Teacher · 参考轨迹",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/trajectory.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/action/request.json",
+        "label": "reference/turn-000/action/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/action/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/action/response.json",
+        "label": "reference/turn-000/action/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/action/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/execution.json",
+        "label": "reference/turn-000/execution.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/logical_message.json",
+        "label": "reference/turn-000/logical_message.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/logical_message.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/original_request.json",
+        "label": "reference/turn-000/original_request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/original_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/reasoning.txt",
+        "label": "reference/turn-000/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "reference/turn-000/request.json",
+        "label": "reference/turn-000/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/response.json",
+        "label": "reference/turn-000/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/thinking/request.json",
+        "label": "reference/turn-000/thinking/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/thinking/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/thinking/response.json",
+        "label": "reference/turn-000/thinking/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/thinking/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/thinking_proof.json",
+        "label": "reference/turn-000/thinking_proof.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/thinking_proof.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/tokenization/request.json",
+        "label": "reference/turn-000/tokenization/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/tokenization/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-000/tokenization/response.json",
+        "label": "reference/turn-000/tokenization/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/tokenization/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/action/request.json",
+        "label": "reference/turn-001/action/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/action/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/action/response.json",
+        "label": "reference/turn-001/action/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/action/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/execution.json",
+        "label": "reference/turn-001/execution.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/execution.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/logical_message.json",
+        "label": "reference/turn-001/logical_message.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/logical_message.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/original_request.json",
+        "label": "reference/turn-001/original_request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/original_request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/reasoning.txt",
+        "label": "reference/turn-001/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "reference/turn-001/request.json",
+        "label": "reference/turn-001/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/response.json",
+        "label": "reference/turn-001/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/thinking/request.json",
+        "label": "reference/turn-001/thinking/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/thinking/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/thinking/response.json",
+        "label": "reference/turn-001/thinking/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/thinking/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/thinking_proof.json",
+        "label": "reference/turn-001/thinking_proof.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/thinking_proof.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/tokenization/request.json",
+        "label": "reference/turn-001/tokenization/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/tokenization/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference/turn-001/tokenization/response.json",
+        "label": "reference/turn-001/tokenization/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/tokenization/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference-recheck.json",
+        "label": "reference-recheck.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference-recheck.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "reference_state_comparison.json",
+        "label": "配置状态 · 参考对照",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference_state_comparison.json",
+        "primary": true,
+        "format": "auto"
+      },
+      {
+        "id": "selection.json",
+        "label": "selection.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/selection.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "status.json",
+        "label": "status.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/status.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/analysis.json",
+        "label": "steering/analysis.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/analysis.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/attempt-0/analysis.json",
+        "label": "steering/attempt-0/analysis.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/analysis.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/attempt-0/capture.json",
+        "label": "steering/attempt-0/capture.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/capture.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/attempt-0/raw_steering_prompt.txt",
+        "label": "steering/attempt-0/raw_steering_prompt.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/raw_steering_prompt.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "steering/attempt-0/reasoning.txt",
+        "label": "steering/attempt-0/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "steering/attempt-0/request.json",
+        "label": "steering/attempt-0/request.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/request.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/attempt-0/response.json",
+        "label": "steering/attempt-0/response.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/response.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/attempt-0/token_budget.json",
+        "label": "steering/attempt-0/token_budget.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/token_budget.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "steering/raw_steering_prompt.txt",
+        "label": "Teacher · 指导",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/raw_steering_prompt.txt",
+        "primary": true,
+        "format": "guidance"
+      },
+      {
+        "id": "steering/reasoning.txt",
+        "label": "steering/reasoning.txt",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/reasoning.txt",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "supplement-protocol.json",
+        "label": "supplement-protocol.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/supplement-protocol.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "supplement-result.json",
+        "label": "supplement-result.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/supplement-result.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "task.json",
+        "label": "task.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/task.json",
+        "primary": false,
+        "format": "auto"
+      },
+      {
+        "id": "task_verifier.py",
+        "label": "task_verifier.py",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/task_verifier.py",
+        "primary": false,
+        "format": "text"
+      },
+      {
+        "id": "tools.json",
+        "label": "tools.json",
+        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/tools.json",
+        "primary": false,
+        "format": "auto"
+      }
+    ]
+  }
+}

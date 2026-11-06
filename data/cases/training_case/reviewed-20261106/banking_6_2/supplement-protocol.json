@@ -1,0 +1,22 @@
+{
+  "source": "/mnt/genming/training-local-site-20261104/data/cases/training_case/thinking-20261104/banking_6_2",
+  "student_checkpoint": "/mnt/genming/Arctic-AWM-BitDistiller-full/arctic_quant/gemma4_12b/q_resteer_w4a16/checkpoints/initial-clipped-int4-g64-awq-runtime",
+  "endpoint": "http://127.0.0.1:38682/v1",
+  "task_context_tools_state_and_original_teacher_artifacts_unchanged": true,
+  "temperature": 0.6,
+  "seed": 303,
+  "max_tokens": 8192,
+  "thinking_only_decoder_change": {
+    "minimum_thinking_tokens": 16,
+    "two_phase_same_model": true
+  },
+  "original_outputs_preserved": true,
+  "not_a_claim_of_identical_decoding": true,
+  "original_teacher_reference_reused": false,
+  "original_steering_prompt_reused": true,
+  "paired_sampling": {
+    "temperature": 0.6,
+    "seed": 303
+  },
+  "reference_regenerated_with_thinking": true
+}

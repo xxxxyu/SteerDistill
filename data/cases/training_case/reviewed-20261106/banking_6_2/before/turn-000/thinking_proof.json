@@ -1,0 +1,21 @@
+{
+  "same_checkpoint_for_thinking_and_action": true,
+  "generated_thinking_sha256": "8afa6d5d4b8b71b27c67c6922aef0848a9c064f25feb204c69c94fcd6e867d97",
+  "thinking_chars": 2581,
+  "minimum_thinking_tokens": 16,
+  "actual_thinking_tokens": 688,
+  "total_completion_budget": 8192,
+  "actual_total_tokens": 730,
+  "original_task_messages_unchanged": true,
+  "original_tools_unchanged": true,
+  "original_sampler_unchanged": {
+    "temperature": true,
+    "seed": true,
+    "top_p": true,
+    "top_k": true,
+    "repetition_penalty": true
+  },
+  "decoding_change": "Prevent empty thought closure for the first minimum_thinking_tokens; continue action from the same model-generated thought.",
+  "original_generation_not_recovered": true,
+  "native_responses_unedited": true
+}

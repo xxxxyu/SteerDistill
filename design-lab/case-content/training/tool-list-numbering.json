@@ -21,7 +21,7 @@
         "title": "无指导",
         "summary": "把列表序号拼进工具名，解锁和开灯均报错；重试后仍未执行成功。",
         "tone": "before",
-        "frameTitle": "调用与工具返回 · 节选",
+        "frameTitle": "工具调用与返回 · 节选",
         "events": [
           {
             "type": "action",
@@ -93,7 +93,7 @@
         "title": "Teacher 指导后",
         "summary": "按真实工具名解锁车门；局部核验通过后，撤去指导，继续打开车灯。",
         "tone": "after",
-        "frameTitle": "调用与工具返回",
+        "frameTitle": "工具调用与返回",
         "events": [
           {
             "type": "action",

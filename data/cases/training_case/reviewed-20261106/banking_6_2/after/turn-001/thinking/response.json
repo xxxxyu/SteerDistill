@@ -1,0 +1,31 @@
+{
+  "id": "cmpl-8d20f00c75fb8491",
+  "object": "text_completion",
+  "created": 1793896480,
+  "model": "case-model",
+  "choices": [
+    {
+      "index": 0,
+      "text": "I have completed all the steps requested by the user.\n1. Identified the account (ID 3).\n2. Created the card (ID 5).\n3. Set the spending limit (2000.00).\n4. Set the status to 'active'.\n5. Configured card controls (International restricted to US, CA).\n\nI can now provide the final answer.<channel|>",
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 101,
+      "token_ids": null,
+      "prompt_logprobs": null,
+      "prompt_token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.28.1rc1.dev472+gd9105ea80-5c4075d1",
+  "usage": {
+    "prompt_tokens": 9898,
+    "total_tokens": 9982,
+    "completion_tokens": 84,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  },
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

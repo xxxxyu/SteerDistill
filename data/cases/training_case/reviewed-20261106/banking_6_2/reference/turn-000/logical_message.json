@@ -1,0 +1,19 @@
+{
+  "role": "assistant",
+  "content": null,
+  "refusal": null,
+  "annotations": null,
+  "audio": null,
+  "function_call": null,
+  "tool_calls": [
+    {
+      "id": "chatcmpl-tool-8b1c36a917acb0eb",
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_card_controls",
+        "arguments": "{\"allowed_countries\": \"US,CA\", \"card_id\": 5, \"international_allowed\": 0}"
+      }
+    }
+  ],
+  "reasoning": "Thinking Process:\n1.  **Identify the goal**: Activate a new virtual debit card for account ending in '4456' with a $2000 limit, 'active' status, and restricted international controls (US, CA).\n2.  **Step 1: Find the account**: Already done. Account ID is 3.\n3.  **Step 2: Create the card**: Already done. Card ID is 5.\n4.  **Step 3: Update spending limit**: Already done. Limit is 2000.00.\n5.  **Step 4: Update card status**: Already done. Status is 'active'.\n6.  **Step 5: Configure card controls**: Need to call `mcp_server_create_card_controls` or `mcp_server_update_card_controls`. Since the card was just created, `create_card_controls` is appropriate.\n7.  **Parameters for controls**: `card_id=5`, `international_allowed=0` (to enforce allowed countries), `allowed_countries=\"US,CA\"`.\n8.  **Execute Step 5**."
+}

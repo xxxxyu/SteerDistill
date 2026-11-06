@@ -1,0 +1,39 @@
+{
+  "case": "banking_6_2",
+  "group": "restored_business_tasks",
+  "selected_sources": {
+    "case": "banking_6_2",
+    "group": "restored_business_tasks",
+    "source": "/mnt/genming/training-eight-paired-resampling-20261106/seed-303/cases/banking_6_2",
+    "before": "/mnt/genming/training-eight-paired-resampling-20261106/seed-303/cases/banking_6_2/before",
+    "reference": "/mnt/genming/training-eight-paired-resampling-20261106/seed-303/cases/banking_6_2/reference-rerun",
+    "after": "/mnt/genming/training-eight-paired-resampling-20261106/seed-303/cases/banking_6_2/after",
+    "steering": "/mnt/genming/training-eight-paired-resampling-20261106/seed-303/cases/banking_6_2/steering"
+  },
+  "records": {
+    "before": {
+      "trajectory": "before/trajectory.json",
+      "thinking_message_indices_zero_based": [
+        10,
+        12
+      ]
+    },
+    "reference": {
+      "trajectory": "reference/trajectory.json",
+      "thinking_message_indices_zero_based": [
+        10,
+        12
+      ]
+    },
+    "after": {
+      "trajectory": "after/trajectory.json",
+      "thinking_message_indices_zero_based": [
+        10,
+        12
+      ]
+    }
+  },
+  "teacher_analysis": "steering/analysis.json",
+  "steering_prompt": "steering/raw_steering_prompt.txt",
+  "reference_state_comparison": "reference_state_comparison.json"
+}

@@ -1,0 +1,19 @@
+{
+  "role": "assistant",
+  "content": null,
+  "refusal": null,
+  "annotations": null,
+  "audio": null,
+  "function_call": null,
+  "tool_calls": [
+    {
+      "id": "chatcmpl-tool-92894bf4a9ed2655",
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_card_controls",
+        "arguments": "{\"allowed_countries\": \"US,CA\", \"card_id\": 5, \"international_allowed\": 0}"
+      }
+    }
+  ],
+  "reasoning": "The user wants to:\n1. Create a new virtual debit card linked to the checking account ending in '4456'.\n2. Set the `spending_limit` to 2000.00 USD.\n3. Set the `card_status` to 'active'.\n4. Configure card controls to lock international transactions outside 'US' and 'CA'.\n\nI have already:\n- Found the account ID (3) for the account ending in '4456'.\n- Created a new virtual card (ID: 5).\n- Updated the spending limit to 2000.\n- Updated the card status to 'active'.\n\nThe next step is to configure the card controls.\nThe instructions say: \"To lock international transactions outside 'US' and 'CA', use 'mcp_server_create_card_controls' with 'international_allowed' set to 0 (to restrict) and 'allowed_countries' set to 'US,CA'.\"\n\nI will now call `mcp_server_create_card_controls`."
+}

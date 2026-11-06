@@ -1,0 +1,23 @@
+{
+  "qualified": true,
+  "after": {
+    "valid": true,
+    "passed": true,
+    "finish": "final_response",
+    "official_state": {
+      "valid": true
+    },
+    "official_response": {
+      "valid": true
+    },
+    "goal_turn": 2,
+    "key_reasoning": true,
+    "semantic_errors": [],
+    "guidance_removed": true
+  },
+  "local": true,
+  "selected_after": "/mnt/genming/training-case-protocol-repair-20261106/multi_turn_base_37/after/attempt-0",
+  "selected_steering": "/mnt/genming/training-case-protocol-repair-20261106/multi_turn_base_37/steering/attempt-0",
+  "selected_reference": "/mnt/genming/new-ablation-pipeline-batch2-20261105/training/cases/multi_turn_base_37/reference/attempt-0",
+  "teacher_receives_final_answer_feedback": false
+}

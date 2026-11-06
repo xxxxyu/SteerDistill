@@ -1,0 +1,4384 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "NovaBank Digital Checking & Savings API",
+    "description": "Simplified NovaBank backend for a single demo user (user_id=1).",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/direct-deposit-allocations": {
+      "post": {
+        "tags": [
+          "direct_deposit"
+        ],
+        "summary": "Create allocation for a direct deposit config",
+        "description": "Create direct_deposit_allocations row mapping portion of deposits.",
+        "operationId": "create_direct_deposit_allocation",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectDepositAllocationCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectDepositAllocationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customers/me/kyc-status": {
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Get my customer KYC status",
+        "description": "Return only the kyc_status and kyc_last_reviewed_at for current user.",
+        "operationId": "get_my_kyc_status",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KYCStatusResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/direct-deposit-configs": {
+      "post": {
+        "tags": [
+          "direct_deposit"
+        ],
+        "summary": "Create or upsert direct deposit config",
+        "description": "Create direct_deposit_configs row or update existing metadata.",
+        "operationId": "create_or_update_direct_deposit_config",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DirectDepositConfigCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectDepositConfigResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/scheduled-transfers": {
+      "post": {
+        "tags": [
+          "scheduled_transfers"
+        ],
+        "summary": "Create a new scheduled transfer",
+        "description": "Create scheduled_transfers row for internal or external transfers.",
+        "operationId": "create_scheduled_transfer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScheduledTransferCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduledTransferResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/alert-preferences": {
+      "post": {
+        "tags": [
+          "alert_preferences"
+        ],
+        "summary": "Create alert preference for an account",
+        "description": "Create an alert_preferences row for the given account and type.",
+        "operationId": "create_alert_preference",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertPreferenceCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertPreferenceResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transaction-tags": {
+      "post": {
+        "tags": [
+          "transaction_tags"
+        ],
+        "summary": "Add a tag to a transaction",
+        "description": "Create transaction_tags row to tag a transaction for the current user.",
+        "operationId": "add_tag_to_transaction",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionTagCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionTagResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "transaction_tags"
+        ],
+        "summary": "List tags for a transaction",
+        "description": "Retrieve all transaction_tags rows for a given transaction.",
+        "operationId": "list_tags_for_transaction",
+        "parameters": [
+          {
+            "name": "transaction_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "transactions.id whose tags to list",
+              "title": "Transaction Id"
+            },
+            "description": "transactions.id whose tags to list",
+            "example": 901
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionTagsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/card-controls": {
+      "post": {
+        "tags": [
+          "card_controls"
+        ],
+        "summary": "Create card controls for a card",
+        "description": "Initialize card_controls row for a card.",
+        "operationId": "create_card_controls",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardControlCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardControlResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customers/me": {
+      "get": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Get current user's customer profile",
+        "description": "Retrieve the customer profile for the authenticated user_id=1.",
+        "operationId": "get_my_customer_profile",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transactions": {
+      "get": {
+        "tags": [
+          "transactions"
+        ],
+        "summary": "List account transactions with filters",
+        "description": "Retrieve transactions for an account with optional filters.",
+        "operationId": "list_transactions_for_account",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "accounts.id whose transactions to list",
+              "title": "Account Id"
+            },
+            "description": "accounts.id whose transactions to list",
+            "example": 101
+          },
+          {
+            "name": "start_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Posted_at start date in YYYY-MM-DD",
+              "title": "Start Date"
+            },
+            "description": "Posted_at start date in YYYY-MM-DD",
+            "example": "2026-01-01"
+          },
+          {
+            "name": "end_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Posted_at end date in YYYY-MM-DD",
+              "title": "End Date"
+            },
+            "description": "Posted_at end date in YYYY-MM-DD",
+            "example": "2026-01-31"
+          },
+          {
+            "name": "card_only",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "If true, only card transactions",
+              "default": false,
+              "title": "Card Only"
+            },
+            "description": "If true, only card transactions",
+            "example": true
+          },
+          {
+            "name": "merchant_search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Substring to match in merchant_metadata",
+              "title": "Merchant Search"
+            },
+            "description": "Substring to match in merchant_metadata",
+            "example": "GROCERY"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/customers": {
+      "post": {
+        "tags": [
+          "customers"
+        ],
+        "summary": "Create customer profile for current user",
+        "description": "Create the customer row for authenticated user_id=1 with KYC attributes.",
+        "operationId": "create_my_customer_profile",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomerCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomerResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transfers": {
+      "post": {
+        "tags": [
+          "transfers"
+        ],
+        "summary": "Create an immediate transfer",
+        "description": "Create transfers row and optionally update balances atomically.",
+        "operationId": "create_immediate_transfer",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransferCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferCreateResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/accounts": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "List all accounts for current user",
+        "description": "Retrieve all accounts for current user's customer, with filters.",
+        "operationId": "list_my_accounts",
+        "parameters": [
+          {
+            "name": "account_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by account_type",
+              "title": "Account Type"
+            },
+            "description": "Filter by account_type",
+            "example": "checking"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by status",
+              "title": "Status"
+            },
+            "description": "Filter by status",
+            "example": "open"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Create a new account for current user",
+        "description": "Create a new checking or savings account for current user's customer.",
+        "operationId": "create_account_for_current_customer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/payees": {
+      "post": {
+        "tags": [
+          "payees"
+        ],
+        "summary": "Create a new payee for current user",
+        "description": "Create a payees row for the current user.",
+        "operationId": "create_payee_for_current_user",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayeeCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayeeResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "payees"
+        ],
+        "summary": "List all payees for current user",
+        "description": "Retrieve all payees belonging to current user, with filters.",
+        "operationId": "list_payees_for_current_user",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional substring filter on payee name",
+              "title": "Name"
+            },
+            "description": "Optional substring filter on payee name",
+            "example": "Downtown"
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional filter by category",
+              "title": "Category"
+            },
+            "description": "Optional filter by category",
+            "example": "utilities"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayeesListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cards": {
+      "post": {
+        "tags": [
+          "cards"
+        ],
+        "summary": "Create a new card for an account",
+        "description": "Create a virtual or physical card tied to an account.",
+        "operationId": "create_card_for_account",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardCreateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/direct-deposit-allocations/by-config/{direct_deposit_config_id}": {
+      "get": {
+        "tags": [
+          "direct_deposit"
+        ],
+        "summary": "List allocations for a direct deposit config",
+        "description": "Retrieve all direct_deposit_allocations for a given config.",
+        "operationId": "list_direct_deposit_allocations_for_config",
+        "parameters": [
+          {
+            "name": "direct_deposit_config_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "direct_deposit_configs.id whose allocations to list",
+              "title": "Direct Deposit Config Id"
+            },
+            "description": "direct_deposit_configs.id whose allocations to list",
+            "example": 1301
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectDepositAllocationsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/direct-deposit-configs/by-employer/{employer_id}": {
+      "get": {
+        "tags": [
+          "direct_deposit"
+        ],
+        "summary": "Get direct deposit config and allocations by employer",
+        "description": "Retrieve direct_deposit_configs and allocations for an employer_id.",
+        "operationId": "get_direct_deposit_setup_for_employer",
+        "parameters": [
+          {
+            "name": "employer_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Employer identifier to filter config",
+              "title": "Employer Id"
+            },
+            "description": "Employer identifier to filter config",
+            "example": "ACME-001"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DirectDepositSetupResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/scheduled-transfers/{scheduled_transfer_id}": {
+      "get": {
+        "tags": [
+          "scheduled_transfers"
+        ],
+        "summary": "Get scheduled transfer by ID",
+        "description": "Retrieve one scheduled_transfers row for current user by its ID.",
+        "operationId": "get_scheduled_transfer_by_id",
+        "parameters": [
+          {
+            "name": "scheduled_transfer_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "scheduled_transfers.id to fetch",
+              "title": "Scheduled Transfer Id"
+            },
+            "description": "scheduled_transfers.id to fetch",
+            "example": 701
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduledTransferResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/card-holds/summary/by-account/{account_id}": {
+      "get": {
+        "tags": [
+          "card_holds"
+        ],
+        "summary": "Summarize large holds for an account",
+        "description": "Return simplified list of holds above min_amount.",
+        "operationId": "summarize_large_holds_for_account",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "accounts.id whose holds summary to return",
+              "title": "Account Id"
+            },
+            "description": "accounts.id whose holds summary to return",
+            "example": 101
+          },
+          {
+            "name": "min_amount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "description": "Minimum hold amount to include in the summary",
+              "title": "Min Amount"
+            },
+            "description": "Minimum hold amount to include in the summary",
+            "example": 200.0
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardHoldsSummaryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/alert-preferences/by-account/{account_id}": {
+      "get": {
+        "tags": [
+          "alert_preferences"
+        ],
+        "summary": "List alert preferences for an account",
+        "description": "Retrieve all alert_preferences rows for a specific account.",
+        "operationId": "list_alert_preferences_for_account",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "accounts.id whose alert preferences to list",
+              "title": "Account Id"
+            },
+            "description": "accounts.id whose alert preferences to list",
+            "example": 101
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertPreferencesListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/alert-preferences/{alert_preference_id}": {
+      "patch": {
+        "tags": [
+          "alert_preferences"
+        ],
+        "summary": "Update an alert preference",
+        "description": "Update threshold and channels for an existing alert_preferences row.",
+        "operationId": "update_alert_preference",
+        "parameters": [
+          {
+            "name": "alert_preference_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "alert_preferences.id to update",
+              "title": "Alert Preference Id"
+            },
+            "description": "alert_preferences.id to update",
+            "example": 1101
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AlertPreferenceUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertPreferenceResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cards/by-account-last4/{account_last4}": {
+      "get": {
+        "tags": [
+          "cards"
+        ],
+        "summary": "List cards by account last4 for current user",
+        "description": "Return all cards linked to the account whose account_number ends with last4.",
+        "operationId": "list_cards_by_account_last4",
+        "parameters": [
+          {
+            "name": "account_last4",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Last 4 digits of the parent account_number",
+              "title": "Account Last4"
+            },
+            "description": "Last 4 digits of the parent account_number",
+            "example": "4456"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/card-holds/by-account/{account_id}": {
+      "get": {
+        "tags": [
+          "card_holds"
+        ],
+        "summary": "List active holds for an account",
+        "description": "Retrieve all card_holds with state=authorized for a given account.",
+        "operationId": "list_authorized_holds_for_account",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "accounts.id whose authorized holds to list",
+              "title": "Account Id"
+            },
+            "description": "accounts.id whose authorized holds to list",
+            "example": 101
+          },
+          {
+            "name": "min_amount",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional minimum hold amount filter",
+              "title": "Min Amount"
+            },
+            "description": "Optional minimum hold amount filter",
+            "example": 200.0
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardHoldsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/accounts/by-last4/{account_last4}": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Get my account details by last 4 digits",
+        "description": "Look up an account for current user using the last 4 of account_number.",
+        "operationId": "get_account_by_last4_for_current_user",
+        "parameters": [
+          {
+            "name": "account_last4",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Last 4 digits of the account_number",
+              "title": "Account Last4"
+            },
+            "description": "Last 4 digits of the account_number",
+            "example": "1023"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cards/{card_id}/spending-limit": {
+      "patch": {
+        "tags": [
+          "cards"
+        ],
+        "summary": "Update card spending limit",
+        "description": "Set or change the spending_limit field for a card.",
+        "operationId": "update_card_spending_limit",
+        "parameters": [
+          {
+            "name": "card_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "cards.id whose spending limit to update",
+              "title": "Card Id"
+            },
+            "description": "cards.id whose spending limit to update",
+            "example": 301
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardSpendingLimitUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardSpendingLimitResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/payees/{payee_id}/routing-info": {
+      "post": {
+        "tags": [
+          "payees"
+        ],
+        "summary": "Create routing info for a payee",
+        "description": "Create payee_routing_info row for a given payee.",
+        "operationId": "create_payee_routing_info",
+        "parameters": [
+          {
+            "name": "payee_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "payees.id for which to add routing info",
+              "title": "Payee Id"
+            },
+            "description": "payees.id for which to add routing info",
+            "example": 501
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayeeRoutingInfoCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PayeeRoutingInfoResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/accounts/{account_id}/balance": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Get balance for a specific account",
+        "description": "Return only the current_balance and currency for an account.",
+        "operationId": "get_account_balance_for_current_user",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "accounts.id whose balance to retrieve",
+              "title": "Account Id"
+            },
+            "description": "accounts.id whose balance to retrieve",
+            "example": 101
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountBalanceResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/card-controls/{card_id}": {
+      "patch": {
+        "tags": [
+          "card_controls"
+        ],
+        "summary": "Update controls for a card",
+        "description": "Change international_allowed and allowed_countries fields.",
+        "operationId": "update_card_controls",
+        "parameters": [
+          {
+            "name": "card_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "cards.id whose controls to update",
+              "title": "Card Id"
+            },
+            "description": "cards.id whose controls to update",
+            "example": 301
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardControlUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardControlResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/transfers/{transfer_id}": {
+      "get": {
+        "tags": [
+          "transfers"
+        ],
+        "summary": "Get transfer by ID",
+        "description": "Retrieve a transfers row belonging to the current user by its ID.",
+        "operationId": "get_transfer_by_id",
+        "parameters": [
+          {
+            "name": "transfer_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "transfers.id to retrieve",
+              "title": "Transfer Id"
+            },
+            "description": "transfers.id to retrieve",
+            "example": 801
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransferResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cards/{card_id}/status": {
+      "patch": {
+        "tags": [
+          "cards"
+        ],
+        "summary": "Update a card's status",
+        "description": "Change card_status for a card owned by the current user.",
+        "operationId": "update_card_status",
+        "parameters": [
+          {
+            "name": "card_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "cards.id to update",
+              "title": "Card Id"
+            },
+            "description": "cards.id to update",
+            "example": 301
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardStatusUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/accounts/{account_id}": {
+      "get": {
+        "tags": [
+          "accounts"
+        ],
+        "summary": "Get a specific account by ID",
+        "description": "Retrieve a single account by ID after verifying ownership.",
+        "operationId": "get_account_by_id_for_current_user",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "accounts.id to retrieve",
+              "title": "Account Id"
+            },
+            "description": "accounts.id to retrieve",
+            "example": 101
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccountBalanceResponse": {
+        "properties": {
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Account ID",
+            "example": 101
+          },
+          "current_balance": {
+            "type": "number",
+            "title": "Current Balance",
+            "description": "Current account balance",
+            "example": 1280.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency of the balance",
+            "example": "USD"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "current_balance",
+          "currency"
+        ],
+        "title": "AccountBalanceResponse"
+      },
+      "AccountCreateRequest": {
+        "properties": {
+          "account_type": {
+            "type": "string",
+            "title": "Account Type",
+            "description": "Account type to create (checking or savings)",
+            "example": "savings"
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Three-letter currency code",
+            "example": "USD"
+          },
+          "is_primary": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Primary",
+            "description": "1 to mark as primary, 0 otherwise",
+            "default": 0,
+            "example": 0
+          },
+          "interest_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interest Rate",
+            "description": "Optional explicit interest rate",
+            "example": 0.01
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_type",
+          "currency"
+        ],
+        "title": "AccountCreateRequest"
+      },
+      "AccountModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Account ID",
+            "example": 101
+          },
+          "customer_id": {
+            "type": "integer",
+            "title": "Customer Id",
+            "description": "Linked customers.id",
+            "example": 10
+          },
+          "account_number": {
+            "type": "string",
+            "title": "Account Number",
+            "description": "Unique account number",
+            "example": "000000001023"
+          },
+          "account_type": {
+            "type": "string",
+            "title": "Account Type",
+            "description": "Account type (checking or savings)",
+            "example": "checking"
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Three-letter currency code",
+            "example": "USD"
+          },
+          "current_balance": {
+            "type": "number",
+            "title": "Current Balance",
+            "description": "Current available balance",
+            "example": 1520.75
+          },
+          "interest_rate": {
+            "type": "number",
+            "title": "Interest Rate",
+            "description": "Annual interest rate for this account",
+            "example": 0.015
+          },
+          "is_primary": {
+            "type": "boolean",
+            "title": "Is Primary",
+            "description": "True if this is the primary account of its type",
+            "example": true
+          },
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "Account status",
+            "example": "open"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Creation timestamp",
+            "example": "2026-01-01T08:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Last update timestamp",
+            "example": "2026-01-20T12:00:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "customer_id",
+          "account_number",
+          "account_type",
+          "currency",
+          "current_balance",
+          "interest_rate",
+          "is_primary",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "AccountModel"
+      },
+      "AccountResponse": {
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/AccountModel",
+            "description": "Account details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "account"
+        ],
+        "title": "AccountResponse"
+      },
+      "AccountsListResponse": {
+        "properties": {
+          "accounts": {
+            "items": {
+              "$ref": "#/components/schemas/AccountModel"
+            },
+            "type": "array",
+            "title": "Accounts",
+            "description": "List of accounts",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "accounts"
+        ],
+        "title": "AccountsListResponse"
+      },
+      "AlertPreferenceCreateRequest": {
+        "properties": {
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "accounts.id the alert applies to",
+            "example": 101
+          },
+          "alert_type": {
+            "type": "string",
+            "title": "Alert Type",
+            "description": "low_balance or large_transaction",
+            "example": "low_balance"
+          },
+          "threshold_amount": {
+            "type": "number",
+            "title": "Threshold Amount",
+            "description": "Threshold amount that triggers the alert",
+            "example": 100.0
+          },
+          "channel_email": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Email",
+            "description": "1 to enable email notifications, 0 otherwise",
+            "default": 0,
+            "example": 1
+          },
+          "channel_push": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Push",
+            "description": "1 to enable push notifications, 0 otherwise",
+            "default": 0,
+            "example": 1
+          },
+          "channel_sms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Sms",
+            "description": "1 to enable SMS notifications, 0 otherwise",
+            "default": 0,
+            "example": 0
+          },
+          "is_enabled": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Enabled",
+            "description": "1 to enable this alert preference, 0 to disable",
+            "default": 1,
+            "example": 1
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "alert_type",
+          "threshold_amount"
+        ],
+        "title": "AlertPreferenceCreateRequest"
+      },
+      "AlertPreferenceModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Alert preference ID",
+            "example": 1101
+          },
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Linked accounts.id",
+            "example": 101
+          },
+          "alert_type": {
+            "type": "string",
+            "title": "Alert Type",
+            "description": "Alert type",
+            "example": "low_balance"
+          },
+          "threshold_amount": {
+            "type": "number",
+            "title": "Threshold Amount",
+            "description": "Threshold amount",
+            "example": 100.0
+          },
+          "channel_email": {
+            "type": "boolean",
+            "title": "Channel Email",
+            "description": "Email channel enabled",
+            "example": true
+          },
+          "channel_push": {
+            "type": "boolean",
+            "title": "Channel Push",
+            "description": "Push channel enabled",
+            "example": true
+          },
+          "channel_sms": {
+            "type": "boolean",
+            "title": "Channel Sms",
+            "description": "SMS channel enabled",
+            "example": false
+          },
+          "is_enabled": {
+            "type": "boolean",
+            "title": "Is Enabled",
+            "description": "Enabled flag",
+            "example": true
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:30:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:30:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "account_id",
+          "alert_type",
+          "threshold_amount",
+          "channel_email",
+          "channel_push",
+          "channel_sms",
+          "is_enabled",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "AlertPreferenceModel"
+      },
+      "AlertPreferenceResponse": {
+        "properties": {
+          "alert_preference": {
+            "$ref": "#/components/schemas/AlertPreferenceModel",
+            "description": "Alert preference details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "alert_preference"
+        ],
+        "title": "AlertPreferenceResponse"
+      },
+      "AlertPreferenceUpdateRequest": {
+        "properties": {
+          "threshold_amount": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Threshold Amount",
+            "description": "New threshold amount",
+            "example": 100.0
+          },
+          "channel_email": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Email",
+            "description": "Updated email channel flag",
+            "example": 1
+          },
+          "channel_push": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Push",
+            "description": "Updated push channel flag",
+            "example": 1
+          },
+          "channel_sms": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channel Sms",
+            "description": "Updated SMS channel flag",
+            "example": 0
+          },
+          "is_enabled": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Enabled",
+            "description": "Updated enabled flag",
+            "example": 1
+          }
+        },
+        "type": "object",
+        "title": "AlertPreferenceUpdateRequest"
+      },
+      "AlertPreferencesListResponse": {
+        "properties": {
+          "alert_preferences": {
+            "items": {
+              "$ref": "#/components/schemas/AlertPreferenceModel"
+            },
+            "type": "array",
+            "title": "Alert Preferences",
+            "description": "List of alert preferences",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "alert_preferences"
+        ],
+        "title": "AlertPreferencesListResponse"
+      },
+      "CardControlCreateRequest": {
+        "properties": {
+          "card_id": {
+            "type": "integer",
+            "title": "Card Id",
+            "description": "Card ID to attach controls to",
+            "example": 301
+          },
+          "international_allowed": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "International Allowed",
+            "description": "1 to allow international, 0 to restrict",
+            "default": 1,
+            "example": 0
+          },
+          "allowed_countries": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Countries",
+            "description": "Comma-separated list of allowed country codes",
+            "example": "US,CA"
+          }
+        },
+        "type": "object",
+        "required": [
+          "card_id"
+        ],
+        "title": "CardControlCreateRequest"
+      },
+      "CardControlModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Card controls ID",
+            "example": 401
+          },
+          "card_id": {
+            "type": "integer",
+            "title": "Card Id",
+            "description": "Linked cards.id",
+            "example": 301
+          },
+          "international_allowed": {
+            "type": "boolean",
+            "title": "International Allowed",
+            "description": "International transactions allowed flag",
+            "example": false
+          },
+          "allowed_countries": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Countries",
+            "description": "Comma-separated allowed countries",
+            "example": "US,CA"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Creation timestamp",
+            "example": "2026-02-01T10:15:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Last update timestamp",
+            "example": "2026-02-01T10:15:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "card_id",
+          "international_allowed",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CardControlModel"
+      },
+      "CardControlResponse": {
+        "properties": {
+          "card_controls": {
+            "$ref": "#/components/schemas/CardControlModel",
+            "description": "Card controls details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "card_controls"
+        ],
+        "title": "CardControlResponse"
+      },
+      "CardControlUpdateRequest": {
+        "properties": {
+          "international_allowed": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "International Allowed",
+            "description": "1 to allow all international, 0 to enforce allowed countries",
+            "example": 0
+          },
+          "allowed_countries": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allowed Countries",
+            "description": "Updated comma-separated list of allowed countries",
+            "example": "US,CA"
+          }
+        },
+        "type": "object",
+        "title": "CardControlUpdateRequest"
+      },
+      "CardCreateRequest": {
+        "properties": {
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Account ID that this card should be linked to",
+            "example": 101
+          },
+          "card_type": {
+            "type": "string",
+            "title": "Card Type",
+            "description": "Type of card (virtual or physical)",
+            "example": "virtual"
+          },
+          "last4": {
+            "type": "string",
+            "title": "Last4",
+            "description": "Last 4 digits of the card number",
+            "example": "4456"
+          },
+          "network": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Network",
+            "description": "Card network brand",
+            "example": "VISA"
+          },
+          "spending_limit": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spending Limit",
+            "description": "Optional card-level spending limit",
+            "example": 2000.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Card currency, usually same as account",
+            "example": "USD"
+          },
+          "home_country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Home Country",
+            "description": "Card's home country for controls",
+            "example": "US"
+          }
+        },
+        "type": "object",
+        "required": [
+          "account_id",
+          "card_type",
+          "last4",
+          "currency"
+        ],
+        "title": "CardCreateRequest"
+      },
+      "CardHoldModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Hold ID",
+            "example": 1201
+          },
+          "card_id": {
+            "type": "integer",
+            "title": "Card Id",
+            "description": "Linked cards.id that created the hold",
+            "example": 301
+          },
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Linked accounts.id",
+            "example": 101
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Authorization amount",
+            "example": 250.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency code",
+            "example": "USD"
+          },
+          "merchant_metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Merchant Metadata",
+            "description": "Merchant metadata string",
+            "example": "HOTEL AUSTIN TX"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "Hold state",
+            "example": "authorized"
+          },
+          "authorized_at": {
+            "type": "string",
+            "title": "Authorized At",
+            "description": "Authorization timestamp",
+            "example": "2026-01-25T18:00:00Z"
+          },
+          "captured_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Captured At",
+            "description": "Capture timestamp or null"
+          },
+          "released_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Released At",
+            "description": "Release timestamp or null"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-01-25T18:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-01-25T18:00:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "card_id",
+          "account_id",
+          "amount",
+          "currency",
+          "state",
+          "authorized_at",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CardHoldModel"
+      },
+      "CardHoldSummaryModel": {
+        "properties": {
+          "card_id": {
+            "type": "integer",
+            "title": "Card Id",
+            "description": "cards.id associated with the hold",
+            "example": 301
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Authorized hold amount",
+            "example": 250.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency of the hold",
+            "example": "USD"
+          },
+          "merchant_metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Merchant Metadata",
+            "description": "Merchant metadata string",
+            "example": "HOTEL AUSTIN TX"
+          },
+          "authorized_at": {
+            "type": "string",
+            "title": "Authorized At",
+            "description": "Authorization timestamp",
+            "example": "2026-01-25T18:00:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "card_id",
+          "amount",
+          "currency",
+          "authorized_at"
+        ],
+        "title": "CardHoldSummaryModel"
+      },
+      "CardHoldsListResponse": {
+        "properties": {
+          "holds": {
+            "items": {
+              "$ref": "#/components/schemas/CardHoldModel"
+            },
+            "type": "array",
+            "title": "Holds",
+            "description": "List of holds",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "holds"
+        ],
+        "title": "CardHoldsListResponse"
+      },
+      "CardHoldsSummaryResponse": {
+        "properties": {
+          "holds_summary": {
+            "items": {
+              "$ref": "#/components/schemas/CardHoldSummaryModel"
+            },
+            "type": "array",
+            "title": "Holds Summary",
+            "description": "Summary list of holds",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "holds_summary"
+        ],
+        "title": "CardHoldsSummaryResponse"
+      },
+      "CardModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Card ID",
+            "example": 301
+          },
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Linked accounts.id",
+            "example": 101
+          },
+          "card_type": {
+            "type": "string",
+            "title": "Card Type",
+            "description": "Card type",
+            "example": "virtual"
+          },
+          "last4": {
+            "type": "string",
+            "title": "Last4",
+            "description": "Last 4 digits of the card PAN",
+            "example": "4456"
+          },
+          "network": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Network",
+            "description": "Card network brand",
+            "example": "VISA"
+          },
+          "spending_limit": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spending Limit",
+            "description": "Card spending limit if set",
+            "example": 2000.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Card currency",
+            "example": "USD"
+          },
+          "card_status": {
+            "type": "string",
+            "title": "Card Status",
+            "description": "Card status",
+            "example": "inactive"
+          },
+          "home_country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Home Country",
+            "description": "Home country for this card",
+            "example": "US"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Creation timestamp",
+            "example": "2026-02-01T10:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Last update timestamp",
+            "example": "2026-02-01T10:00:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "account_id",
+          "card_type",
+          "last4",
+          "currency",
+          "card_status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CardModel"
+      },
+      "CardResponse": {
+        "properties": {
+          "card": {
+            "$ref": "#/components/schemas/CardModel",
+            "description": "Card details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "card"
+        ],
+        "title": "CardResponse"
+      },
+      "CardSpendingLimitResponse": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Card ID",
+            "example": 301
+          },
+          "spending_limit": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Spending Limit",
+            "description": "Updated spending limit",
+            "example": 2000.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Card currency",
+            "example": "USD"
+          },
+          "card_status": {
+            "type": "string",
+            "title": "Card Status",
+            "description": "Card status",
+            "example": "active"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Last update timestamp",
+            "example": "2026-02-01T10:10:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "currency",
+          "card_status",
+          "updated_at"
+        ],
+        "title": "CardSpendingLimitResponse"
+      },
+      "CardSpendingLimitUpdateRequest": {
+        "properties": {
+          "spending_limit": {
+            "type": "number",
+            "title": "Spending Limit",
+            "description": "New monthly spending limit amount",
+            "example": 2000.0
+          }
+        },
+        "type": "object",
+        "required": [
+          "spending_limit"
+        ],
+        "title": "CardSpendingLimitUpdateRequest"
+      },
+      "CardStatusUpdateRequest": {
+        "properties": {
+          "card_status": {
+            "type": "string",
+            "title": "Card Status",
+            "description": "New status: inactive, active, blocked, or closed",
+            "example": "active"
+          }
+        },
+        "type": "object",
+        "required": [
+          "card_status"
+        ],
+        "title": "CardStatusUpdateRequest"
+      },
+      "CardsListResponse": {
+        "properties": {
+          "cards": {
+            "items": {
+              "$ref": "#/components/schemas/CardModel"
+            },
+            "type": "array",
+            "title": "Cards",
+            "description": "List of cards",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "cards"
+        ],
+        "title": "CardsListResponse"
+      },
+      "CustomerCreateRequest": {
+        "properties": {
+          "legal_name": {
+            "type": "string",
+            "title": "Legal Name",
+            "description": "Legal full name for KYC",
+            "example": "Jordan Smith"
+          },
+          "date_of_birth": {
+            "type": "string",
+            "title": "Date Of Birth",
+            "description": "Date of birth in ISO format YYYY-MM-DD",
+            "example": "1990-04-12"
+          },
+          "ssn_last4": {
+            "type": "string",
+            "title": "Ssn Last4",
+            "description": "Last 4 digits of SSN",
+            "example": "1234"
+          },
+          "address_line1": {
+            "type": "string",
+            "title": "Address Line1",
+            "description": "Primary street address",
+            "example": "1200 Elm Street"
+          },
+          "address_line2": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Address Line2",
+            "description": "Secondary address line if any"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "City name",
+            "example": "Austin"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "State or province code",
+            "example": "TX"
+          },
+          "postal_code": {
+            "type": "string",
+            "title": "Postal Code",
+            "description": "Postal or ZIP code",
+            "example": "78701"
+          },
+          "country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Country",
+            "description": "Country code, defaults to US",
+            "default": "US",
+            "example": "US"
+          },
+          "mobile_number": {
+            "type": "string",
+            "title": "Mobile Number",
+            "description": "Mobile phone number in E.164 format",
+            "example": "+1-512-555-0199"
+          }
+        },
+        "type": "object",
+        "required": [
+          "legal_name",
+          "date_of_birth",
+          "ssn_last4",
+          "address_line1",
+          "city",
+          "state",
+          "postal_code",
+          "mobile_number"
+        ],
+        "title": "CustomerCreateRequest"
+      },
+      "CustomerModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Customer ID",
+            "example": 10
+          },
+          "user_id": {
+            "type": "integer",
+            "title": "User Id",
+            "description": "Linked users.id",
+            "example": 1
+          },
+          "legal_name": {
+            "type": "string",
+            "title": "Legal Name",
+            "description": "Legal full name",
+            "example": "Jordan Smith"
+          },
+          "date_of_birth": {
+            "type": "string",
+            "title": "Date Of Birth",
+            "description": "Date of birth in ISO format",
+            "example": "1990-04-12"
+          },
+          "ssn_last4": {
+            "type": "string",
+            "title": "Ssn Last4",
+            "description": "Last 4 digits of SSN",
+            "example": "1234"
+          },
+          "address_line1": {
+            "type": "string",
+            "title": "Address Line1",
+            "description": "Primary street address",
+            "example": "1200 Elm Street"
+          },
+          "address_line2": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Address Line2",
+            "description": "Secondary address line",
+            "example": "Apt 5B"
+          },
+          "city": {
+            "type": "string",
+            "title": "City",
+            "description": "City name",
+            "example": "Austin"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "State or province code",
+            "example": "TX"
+          },
+          "postal_code": {
+            "type": "string",
+            "title": "Postal Code",
+            "description": "Postal or ZIP code",
+            "example": "78701"
+          },
+          "country": {
+            "type": "string",
+            "title": "Country",
+            "description": "Country code",
+            "example": "US"
+          },
+          "mobile_number": {
+            "type": "string",
+            "title": "Mobile Number",
+            "description": "Mobile phone number in E.164 format",
+            "example": "+1-512-555-0199"
+          },
+          "kyc_status": {
+            "type": "string",
+            "title": "Kyc Status",
+            "description": "KYC review status",
+            "example": "pending"
+          },
+          "kyc_last_reviewed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kyc Last Reviewed At",
+            "description": "Last KYC review timestamp or null",
+            "example": "2026-01-15T10:03:00Z"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Creation timestamp",
+            "example": "2026-01-10T09:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Last update timestamp",
+            "example": "2026-01-15T10:03:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "user_id",
+          "legal_name",
+          "date_of_birth",
+          "ssn_last4",
+          "address_line1",
+          "city",
+          "state",
+          "postal_code",
+          "country",
+          "mobile_number",
+          "kyc_status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "CustomerModel"
+      },
+      "CustomerResponse": {
+        "properties": {
+          "customer": {
+            "$ref": "#/components/schemas/CustomerModel",
+            "description": "Customer profile",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "customer"
+        ],
+        "title": "CustomerResponse"
+      },
+      "DirectDepositAllocationCreateRequest": {
+        "properties": {
+          "direct_deposit_config_id": {
+            "type": "integer",
+            "title": "Direct Deposit Config Id",
+            "description": "direct_deposit_configs.id to attach this allocation to",
+            "example": 1301
+          },
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "accounts.id receiving this allocation",
+            "example": 202
+          },
+          "percentage": {
+            "type": "number",
+            "title": "Percentage",
+            "description": "Percentage of paycheck routed to this account",
+            "example": 70.0
+          }
+        },
+        "type": "object",
+        "required": [
+          "direct_deposit_config_id",
+          "account_id",
+          "percentage"
+        ],
+        "title": "DirectDepositAllocationCreateRequest"
+      },
+      "DirectDepositAllocationModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Allocation ID",
+            "example": 1401
+          },
+          "direct_deposit_config_id": {
+            "type": "integer",
+            "title": "Direct Deposit Config Id",
+            "description": "Linked direct_deposit_configs.id",
+            "example": 1301
+          },
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Destination accounts.id",
+            "example": 202
+          },
+          "percentage": {
+            "type": "number",
+            "title": "Percentage",
+            "description": "Allocation percentage",
+            "example": 70.0
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:45:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:45:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "direct_deposit_config_id",
+          "account_id",
+          "percentage",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "DirectDepositAllocationModel"
+      },
+      "DirectDepositAllocationResponse": {
+        "properties": {
+          "direct_deposit_allocation": {
+            "$ref": "#/components/schemas/DirectDepositAllocationModel",
+            "description": "Direct deposit allocation details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "direct_deposit_allocation"
+        ],
+        "title": "DirectDepositAllocationResponse"
+      },
+      "DirectDepositAllocationsListResponse": {
+        "properties": {
+          "allocations": {
+            "items": {
+              "$ref": "#/components/schemas/DirectDepositAllocationModel"
+            },
+            "type": "array",
+            "title": "Allocations",
+            "description": "List of allocations",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "allocations"
+        ],
+        "title": "DirectDepositAllocationsListResponse"
+      },
+      "DirectDepositConfigCreateRequest": {
+        "properties": {
+          "employer_id": {
+            "type": "string",
+            "title": "Employer Id",
+            "description": "External employer identifier string",
+            "example": "ACME-001"
+          },
+          "employer_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Employer Name",
+            "description": "Human-readable employer name",
+            "example": "Acme Corp"
+          },
+          "allocation_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Allocation Type",
+            "description": "Allocation type, currently only 'percentage'",
+            "default": "percentage",
+            "example": "percentage"
+          },
+          "is_active": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Active",
+            "description": "1 to enable this config, 0 to disable",
+            "default": 1,
+            "example": 1
+          }
+        },
+        "type": "object",
+        "required": [
+          "employer_id"
+        ],
+        "title": "DirectDepositConfigCreateRequest"
+      },
+      "DirectDepositConfigModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Direct deposit config ID",
+            "example": 1301
+          },
+          "user_id": {
+            "type": "integer",
+            "title": "User Id",
+            "description": "Owner users.id",
+            "example": 1
+          },
+          "employer_id": {
+            "type": "string",
+            "title": "Employer Id",
+            "description": "Employer identifier",
+            "example": "ACME-001"
+          },
+          "employer_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Employer Name",
+            "description": "Employer name",
+            "example": "Acme Corp"
+          },
+          "allocation_type": {
+            "type": "string",
+            "title": "Allocation Type",
+            "description": "Allocation type",
+            "example": "percentage"
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active",
+            "description": "Active flag",
+            "example": true
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:40:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:40:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "user_id",
+          "employer_id",
+          "allocation_type",
+          "is_active",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "DirectDepositConfigModel"
+      },
+      "DirectDepositConfigResponse": {
+        "properties": {
+          "direct_deposit_config": {
+            "$ref": "#/components/schemas/DirectDepositConfigModel",
+            "description": "Direct deposit config details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "direct_deposit_config"
+        ],
+        "title": "DirectDepositConfigResponse"
+      },
+      "DirectDepositSetupResponse": {
+        "properties": {
+          "direct_deposit_config": {
+            "$ref": "#/components/schemas/DirectDepositConfigModel",
+            "description": "Direct deposit config",
+            "example": {}
+          },
+          "allocations": {
+            "items": {
+              "$ref": "#/components/schemas/DirectDepositAllocationModel"
+            },
+            "type": "array",
+            "title": "Allocations",
+            "description": "Allocations for this config",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "direct_deposit_config",
+          "allocations"
+        ],
+        "title": "DirectDepositSetupResponse"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "KYCStatusResponse": {
+        "properties": {
+          "kyc_status": {
+            "type": "string",
+            "title": "Kyc Status",
+            "description": "KYC review status for the customer",
+            "example": "approved"
+          },
+          "kyc_last_reviewed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Kyc Last Reviewed At",
+            "description": "Timestamp when KYC was last reviewed",
+            "example": "2026-01-15T10:03:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "kyc_status"
+        ],
+        "title": "KYCStatusResponse"
+      },
+      "PayeeCreateRequest": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Payee display name",
+            "example": "Downtown Utilities"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category",
+            "description": "Category label for this payee",
+            "example": "utilities"
+          },
+          "default_memo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Default Memo",
+            "description": "Default memo to use for transfers",
+            "example": "Water and electric bill"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "PayeeCreateRequest"
+      },
+      "PayeeModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Payee ID",
+            "example": 501
+          },
+          "user_id": {
+            "type": "integer",
+            "title": "User Id",
+            "description": "Owner users.id",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Payee name",
+            "example": "Downtown Utilities"
+          },
+          "category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category",
+            "description": "Payee category",
+            "example": "utilities"
+          },
+          "default_memo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Default Memo",
+            "description": "Default memo",
+            "example": "Water and electric bill"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:00:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "user_id",
+          "name",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "PayeeModel"
+      },
+      "PayeeResponse": {
+        "properties": {
+          "payee": {
+            "$ref": "#/components/schemas/PayeeModel",
+            "description": "Payee details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "payee"
+        ],
+        "title": "PayeeResponse"
+      },
+      "PayeeRoutingInfoCreateRequest": {
+        "properties": {
+          "bank_name": {
+            "type": "string",
+            "title": "Bank Name",
+            "description": "Destination bank name",
+            "example": "Metro Bank"
+          },
+          "routing_number": {
+            "type": "string",
+            "title": "Routing Number",
+            "description": "ABA routing number",
+            "example": "021000021"
+          },
+          "account_number": {
+            "type": "string",
+            "title": "Account Number",
+            "description": "Destination bank account number",
+            "example": "9988776655"
+          }
+        },
+        "type": "object",
+        "required": [
+          "bank_name",
+          "routing_number",
+          "account_number"
+        ],
+        "title": "PayeeRoutingInfoCreateRequest"
+      },
+      "PayeeRoutingInfoModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Routing info ID",
+            "example": 601
+          },
+          "payee_id": {
+            "type": "integer",
+            "title": "Payee Id",
+            "description": "Linked payees.id",
+            "example": 501
+          },
+          "bank_name": {
+            "type": "string",
+            "title": "Bank Name",
+            "description": "Bank name",
+            "example": "Metro Bank"
+          },
+          "routing_number": {
+            "type": "string",
+            "title": "Routing Number",
+            "description": "Routing number",
+            "example": "021000021"
+          },
+          "account_number": {
+            "type": "string",
+            "title": "Account Number",
+            "description": "Account number",
+            "example": "9988776655"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:05:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:05:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "payee_id",
+          "bank_name",
+          "routing_number",
+          "account_number",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "PayeeRoutingInfoModel"
+      },
+      "PayeeRoutingInfoResponse": {
+        "properties": {
+          "routing_info": {
+            "$ref": "#/components/schemas/PayeeRoutingInfoModel",
+            "description": "Routing info details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "routing_info"
+        ],
+        "title": "PayeeRoutingInfoResponse"
+      },
+      "PayeesListResponse": {
+        "properties": {
+          "payees": {
+            "items": {
+              "$ref": "#/components/schemas/PayeeModel"
+            },
+            "type": "array",
+            "title": "Payees",
+            "description": "List of payees",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "payees"
+        ],
+        "title": "PayeesListResponse"
+      },
+      "ScheduledTransferCreateRequest": {
+        "properties": {
+          "from_account_id": {
+            "type": "integer",
+            "title": "From Account Id",
+            "description": "Source accounts.id",
+            "example": 101
+          },
+          "to_account_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Account Id",
+            "description": "Destination accounts.id for internal transfers",
+            "example": 202
+          },
+          "payee_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Payee Id",
+            "description": "Destination payees.id for external transfers",
+            "example": 501
+          },
+          "transfer_type": {
+            "type": "string",
+            "title": "Transfer Type",
+            "description": "internal or external",
+            "example": "external"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Transfer amount",
+            "example": 120.75
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency code",
+            "example": "USD"
+          },
+          "schedule_type": {
+            "type": "string",
+            "title": "Schedule Type",
+            "description": "one_time or recurring",
+            "example": "recurring"
+          },
+          "recurrence_rule": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recurrence Rule",
+            "description": "Recurrence rule",
+            "example": "FREQ=MONTHLY;BYMONTHDAY=5"
+          },
+          "start_date": {
+            "type": "string",
+            "title": "Start Date",
+            "description": "Scheduled start date in YYYY-MM-DD",
+            "example": "2026-02-05"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Date",
+            "description": "Optional end date in YYYY-MM-DD"
+          },
+          "tag": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tag",
+            "description": "Tag label for this scheduled transfer",
+            "example": "bills"
+          },
+          "memo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Memo",
+            "description": "Optional descriptive memo",
+            "example": "Downtown Utilities monthly bill"
+          }
+        },
+        "type": "object",
+        "required": [
+          "from_account_id",
+          "transfer_type",
+          "amount",
+          "currency",
+          "schedule_type",
+          "start_date"
+        ],
+        "title": "ScheduledTransferCreateRequest"
+      },
+      "ScheduledTransferModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Scheduled transfer ID",
+            "example": 701
+          },
+          "user_id": {
+            "type": "integer",
+            "title": "User Id",
+            "description": "Owner users.id",
+            "example": 1
+          },
+          "from_account_id": {
+            "type": "integer",
+            "title": "From Account Id",
+            "description": "Source accounts.id",
+            "example": 101
+          },
+          "to_account_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Account Id",
+            "description": "Destination accounts.id for internal transfers",
+            "example": 202
+          },
+          "payee_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Payee Id",
+            "description": "Destination payees.id for external transfers",
+            "example": 501
+          },
+          "transfer_type": {
+            "type": "string",
+            "title": "Transfer Type",
+            "description": "Transfer type",
+            "example": "external"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Transfer amount",
+            "example": 120.75
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency code",
+            "example": "USD"
+          },
+          "schedule_type": {
+            "type": "string",
+            "title": "Schedule Type",
+            "description": "Schedule type",
+            "example": "recurring"
+          },
+          "recurrence_rule": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recurrence Rule",
+            "description": "Recurrence rule string",
+            "example": "FREQ=MONTHLY;BYMONTHDAY=5"
+          },
+          "start_date": {
+            "type": "string",
+            "title": "Start Date",
+            "description": "Start date",
+            "example": "2026-02-05"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Date",
+            "description": "End date or null"
+          },
+          "next_run_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Run Date",
+            "description": "Next execution date in YYYY-MM-DD",
+            "example": "2026-02-05"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "State of scheduled transfer",
+            "example": "scheduled"
+          },
+          "tag": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tag",
+            "description": "Tag",
+            "example": "bills"
+          },
+          "memo": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Memo",
+            "description": "Memo",
+            "example": "Downtown Utilities monthly bill"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:10:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:10:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "user_id",
+          "from_account_id",
+          "transfer_type",
+          "amount",
+          "currency",
+          "schedule_type",
+          "start_date",
+          "state",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "ScheduledTransferModel"
+      },
+      "ScheduledTransferResponse": {
+        "properties": {
+          "scheduled_transfer": {
+            "$ref": "#/components/schemas/ScheduledTransferModel",
+            "description": "Scheduled transfer details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "scheduled_transfer"
+        ],
+        "title": "ScheduledTransferResponse"
+      },
+      "TransactionModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Transaction ID",
+            "example": 901
+          },
+          "account_id": {
+            "type": "integer",
+            "title": "Account Id",
+            "description": "Linked accounts.id",
+            "example": 101
+          },
+          "transfer_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transfer Id",
+            "description": "Linked transfers.id if any"
+          },
+          "card_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Card Id",
+            "description": "Linked cards.id for card transactions",
+            "example": 301
+          },
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "debit or credit",
+            "example": "debit"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Transaction amount",
+            "example": 85.32
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency",
+            "example": "USD"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "Transaction description",
+            "example": "CARD PURCHASE"
+          },
+          "merchant_metadata": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Merchant Metadata",
+            "description": "Raw merchant data string",
+            "example": "GROCERY MART AUSTIN TX"
+          },
+          "posted_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Posted At",
+            "description": "Posting timestamp",
+            "example": "2026-01-10T13:45:00Z"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-01-10T13:45:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-01-10T13:45:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "account_id",
+          "type",
+          "amount",
+          "currency",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "TransactionModel"
+      },
+      "TransactionTagCreateRequest": {
+        "properties": {
+          "transaction_id": {
+            "type": "integer",
+            "title": "Transaction Id",
+            "description": "transactions.id to tag",
+            "example": 901
+          },
+          "tag": {
+            "type": "string",
+            "title": "Tag",
+            "description": "Tag label to add",
+            "example": "groceries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "transaction_id",
+          "tag"
+        ],
+        "title": "TransactionTagCreateRequest"
+      },
+      "TransactionTagModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Transaction tag ID",
+            "example": 1001
+          },
+          "transaction_id": {
+            "type": "integer",
+            "title": "Transaction Id",
+            "description": "Linked transactions.id",
+            "example": 901
+          },
+          "tag": {
+            "type": "string",
+            "title": "Tag",
+            "description": "Tag value",
+            "example": "groceries"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created timestamp",
+            "example": "2026-01-10T14:00:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated timestamp",
+            "example": "2026-01-10T14:00:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "transaction_id",
+          "tag",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "TransactionTagModel"
+      },
+      "TransactionTagResponse": {
+        "properties": {
+          "transaction_tag": {
+            "$ref": "#/components/schemas/TransactionTagModel",
+            "description": "Transaction tag details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "transaction_tag"
+        ],
+        "title": "TransactionTagResponse"
+      },
+      "TransactionTagsListResponse": {
+        "properties": {
+          "tags": {
+            "items": {
+              "$ref": "#/components/schemas/TransactionTagModel"
+            },
+            "type": "array",
+            "title": "Tags",
+            "description": "List of tags",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "tags"
+        ],
+        "title": "TransactionTagsListResponse"
+      },
+      "TransactionsListResponse": {
+        "properties": {
+          "transactions": {
+            "items": {
+              "$ref": "#/components/schemas/TransactionModel"
+            },
+            "type": "array",
+            "title": "Transactions",
+            "description": "List of transactions",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "transactions"
+        ],
+        "title": "TransactionsListResponse"
+      },
+      "TransferCreateRequest": {
+        "properties": {
+          "from_account_id": {
+            "type": "integer",
+            "title": "From Account Id",
+            "description": "Source accounts.id",
+            "example": 101
+          },
+          "to_account_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Account Id",
+            "description": "Destination accounts.id for internal transfers",
+            "example": 202
+          },
+          "payee_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Payee Id",
+            "description": "Destination payees.id for external transfers",
+            "example": 501
+          },
+          "transfer_type": {
+            "type": "string",
+            "title": "Transfer Type",
+            "description": "internal or external",
+            "example": "internal"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Transfer amount",
+            "example": 250.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency code",
+            "example": "USD"
+          },
+          "scheduled_transfer_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduled Transfer Id",
+            "description": "Optional linked scheduled_transfers.id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "from_account_id",
+          "transfer_type",
+          "amount",
+          "currency"
+        ],
+        "title": "TransferCreateRequest"
+      },
+      "TransferCreateResponse": {
+        "properties": {
+          "transfer": {
+            "$ref": "#/components/schemas/TransferModel",
+            "description": "Transfer details",
+            "example": {}
+          },
+          "updated_accounts": {
+            "items": {
+              "$ref": "#/components/schemas/UpdatedAccountBalanceModel"
+            },
+            "type": "array",
+            "title": "Updated Accounts",
+            "description": "Updated accounts",
+            "example": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "transfer",
+          "updated_accounts"
+        ],
+        "title": "TransferCreateResponse"
+      },
+      "TransferModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Transfer ID",
+            "example": 801
+          },
+          "scheduled_transfer_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduled Transfer Id",
+            "description": "Linked schedule if any"
+          },
+          "user_id": {
+            "type": "integer",
+            "title": "User Id",
+            "description": "Owner users.id",
+            "example": 1
+          },
+          "from_account_id": {
+            "type": "integer",
+            "title": "From Account Id",
+            "description": "Source accounts.id",
+            "example": 101
+          },
+          "to_account_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Account Id",
+            "description": "Destination accounts.id for internal transfers",
+            "example": 202
+          },
+          "payee_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Payee Id",
+            "description": "Destination payee for external transfers"
+          },
+          "transfer_type": {
+            "type": "string",
+            "title": "Transfer Type",
+            "description": "Transfer type",
+            "example": "internal"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount",
+            "description": "Amount",
+            "example": 250.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Currency",
+            "example": "USD"
+          },
+          "state": {
+            "type": "string",
+            "title": "State",
+            "description": "Transfer state",
+            "example": "completed"
+          },
+          "failure_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Reason",
+            "description": "Failure reason if state is failed"
+          },
+          "executed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Executed At",
+            "description": "Execution timestamp",
+            "example": "2026-02-01T11:20:00Z"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At",
+            "description": "Created at",
+            "example": "2026-02-01T11:20:00Z"
+          },
+          "updated_at": {
+            "type": "string",
+            "title": "Updated At",
+            "description": "Updated at",
+            "example": "2026-02-01T11:20:00Z"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "user_id",
+          "from_account_id",
+          "transfer_type",
+          "amount",
+          "currency",
+          "state",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "TransferModel"
+      },
+      "TransferResponse": {
+        "properties": {
+          "transfer": {
+            "$ref": "#/components/schemas/TransferModel",
+            "description": "Transfer details",
+            "example": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "transfer"
+        ],
+        "title": "TransferResponse"
+      },
+      "UpdatedAccountBalanceModel": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id",
+            "description": "Account ID",
+            "example": 101
+          },
+          "current_balance": {
+            "type": "number",
+            "title": "Current Balance",
+            "description": "Updated balance after transfer",
+            "example": 1280.0
+          },
+          "currency": {
+            "type": "string",
+            "title": "Currency",
+            "description": "Account currency",
+            "example": "USD"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "current_balance",
+          "currency"
+        ],
+        "title": "UpdatedAccountBalanceModel"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

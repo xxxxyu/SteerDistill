@@ -1,0 +1,13 @@
+{
+  "accepted": true,
+  "reviewed_at_utc": "20261106T035235Z",
+  "case": "multi_turn_base_37",
+  "reason": "Under procedural steering without prior terminal-score feedback, student creates the missing file, identifies the second matching sentence from existing context, and writes it. Local gate and final native state/response checks pass.",
+  "teacher_feedback": [],
+  "teacher_reference_scope": "First reference response and execution only",
+  "guidance_removed": true,
+  "actual_after_tools": [
+    "touch",
+    "echo"
+  ]
+}

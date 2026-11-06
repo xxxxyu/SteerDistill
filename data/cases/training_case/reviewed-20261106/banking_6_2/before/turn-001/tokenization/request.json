@@ -1,0 +1,1595 @@
+{
+  "model": "case-model",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an agent operating in an MCP environment. Use the provided function tools to complete the user task. You are already logged in and your user id is 1 when required. Make exactly one concrete tool call per turn, never fabricate a tool response, and use the real observation before deciding the next action. When the task is complete, return a concise final answer without calling another tool."
+    },
+    {
+      "role": "user",
+      "content": "Activate a new virtual debit card linked to my checking account ending in '4456' with a monthly spending_limit of 2000.00 USD, set the card_status to 'active', and configure card_controls to lock international transactions outside 'US' and 'CA'."
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "chatcmpl-tool-a65d05086958fd47",
+          "type": "function",
+          "function": {
+            "name": "mcp_server_get_account_by_last4_for_current_user",
+            "arguments": "{\"account_last4\": \"4456\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "chatcmpl-tool-a65d05086958fd47",
+      "content": "{\"account\": {\"id\": 3, \"customer_id\": 1, \"account_number\": \"00000004456\", \"account_type\": \"checking\", \"currency\": \"USD\", \"current_balance\": 850.0, \"interest_rate\": 0.0, \"is_primary\": false, \"status\": \"open\", \"created_at\": \"2025-12-10T09:30:00Z\", \"updated_at\": \"2026-01-15T09:30:00Z\"}}"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "chatcmpl-tool-94fbee68a7f42b6d",
+          "type": "function",
+          "function": {
+            "name": "mcp_server_create_card_for_account",
+            "arguments": "{\"account_id\": 3, \"card_type\": \"virtual\", \"currency\": \"USD\", \"last4\": \"1234\", \"network\": \"Visa\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "chatcmpl-tool-94fbee68a7f42b6d",
+      "content": "{\"card\": {\"id\": 5, \"account_id\": 3, \"card_type\": \"virtual\", \"last4\": \"1234\", \"network\": \"Visa\", \"spending_limit\": null, \"currency\": \"USD\", \"card_status\": \"inactive\", \"home_country\": \"US\", \"created_at\": \"2026-11-03T05:42:41Z\", \"updated_at\": \"2026-11-03T05:42:41Z\"}}"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "chatcmpl-tool-9cfe32ac65ff17e8",
+          "type": "function",
+          "function": {
+            "name": "mcp_server_update_card_spending_limit",
+            "arguments": "{\"card_id\": 5, \"spending_limit\": 2000}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "chatcmpl-tool-9cfe32ac65ff17e8",
+      "content": "{\"id\": 5, \"spending_limit\": 2000.0, \"currency\": \"USD\", \"card_status\": \"inactive\", \"updated_at\": \"2026-11-03T05:42:44Z\"}"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "chatcmpl-tool-8baff2900cd5eb69",
+          "type": "function",
+          "function": {
+            "name": "mcp_server_update_card_status",
+            "arguments": "{\"card_id\": 5, \"card_status\": \"active\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "chatcmpl-tool-8baff2900cd5eb69",
+      "content": "{\"card\": {\"id\": 5, \"account_id\": 3, \"card_type\": \"virtual\", \"last4\": \"1234\", \"network\": \"Visa\", \"spending_limit\": 2000.0, \"currency\": \"USD\", \"card_status\": \"active\", \"home_country\": \"US\", \"created_at\": \"2026-11-03T05:42:41Z\", \"updated_at\": \"2026-11-03T05:42:47Z\"}}"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "chatcmpl-tool-b6e894467b70a30e",
+          "type": "function",
+          "function": {
+            "name": "mcp_server_update_card_controls",
+            "arguments": "{\"allowed_countries\": \"US,CA\", \"card_id\": 5, \"international_allowed\": 1}"
+          }
+        }
+      ],
+      "reasoning": "The user wants to configure card controls to lock international transactions outside 'US' and 'CA'.\nLooking at the `mcp_server_update_card_controls` tool, it takes `card_id`, `international_allowed`, and `allowed_countries`.\nThe prompt says \"lock international transactions outside 'US' and 'CA'\". This implies `international_allowed` should be set to `1` (to allow international) and `allowed_countries` should be \"US,CA\".\n\nWait, the description for `international_allowed` is \"1 to allow all international, 0 to enforce allowed countries\".\nIf I want to \"lock international transactions outside 'US' and 'CA'\", I should set `international_allowed` to `1` and specify the allowed countries.\nIf I set `international_allowed` to `0`, it would enforce the allowed countries.\nLet's check the description again: \"1 to allow all international, 0 to enforce allowed countries\".\nActually, if I want to *lock* them *outside* those countries, I should set `international_allowed` to `1` and specify `allowed_countries` as \"US,CA\".\nWait, \"lock\" usually means restrict.\nIf I set `international_allowed` to `1`, it allows all.\nIf I set `international_allowed` to `0`, it enforces the list.\nThe prompt says \"lock international transactions outside 'US' and 'CA'\". This means it should only be allowed in 'US' and 'CA'.\nTherefore, `international_allowed` should be `1` (to allow international) and `allowed_countries` should be \"US,CA\".\nWait, let me re-read. \"1 to allow all international, 0 to enforce allowed countries\".\nIf I set it to `0`, it enforces the list. If I set it to `1`, it allows all.\nIf I want to restrict it to only US and CA, I should set `international_allowed` to `1` and `allowed_countries` to \"US,CA\".\nActually, usually, \"1\" allows international and \"0\" enforces the list.\nLet's look at the prompt again: \"lock international transactions outside 'US' and 'CA'\".\nThis means the transaction should be blocked if it's outside US and CA.\nSo I should set `international_allowed` to `1` and `allowed_countries` to \"US,CA\".\nWait, if I set `international_allowed` to `1`, it might allow everything.\nLet's check the tool definition again:\n`international_allowed`: \"1 to allow all international, 0 to enforce allowed countries\"\nIf I want to restrict it to US and CA, I should set `international_allowed` to `1` and `allowed_countries` to \"US,CA\".\nActually, most likely, if I set `international_allowed` to `0`, it would restrict it to the list.\nWait, \"lock\" usually means \"restrict\".\nI'll set `international_allowed` to `1` and `allowed_countries` to \"US,CA\".\n\nWait, the card ID is 5."
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "chatcmpl-tool-b6e894467b70a30e",
+      "content": "{\"card_controls\": {\"id\": 5, \"card_id\": 5, \"international_allowed\": true, \"allowed_countries\": \"US,CA\", \"created_at\": \"2026-11-05T16:34:06Z\", \"updated_at\": \"2026-11-05T16:34:06Z\"}}"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_my_kyc_status",
+        "description": "Get my customer KYC status\n\nReturn only the kyc_status and kyc_last_reviewed_at for current user.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"kyc_status\": \"Kyc Status\"\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "title": "get_my_kyc_statusArguments"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_my_customer_profile",
+        "description": "Get current user's customer profile\n\nRetrieve the customer profile for the authenticated user_id=1.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"customer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"legal_name\": \"Legal Name\",\n    \"date_of_birth\": \"Date Of Birth\",\n    \"ssn_last4\": \"Ssn Last4\",\n    \"address_line1\": \"Address Line1\",\n    \"city\": \"City\",\n    \"state\": \"State\",\n    \"postal_code\": \"Postal Code\",\n    \"country\": \"Country\",\n    \"mobile_number\": \"Mobile Number\",\n    \"kyc_status\": \"Kyc Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "title": "get_my_customer_profileArguments"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_my_customer_profile",
+        "description": "Create customer profile for current user\n\nCreate the customer row for authenticated user_id=1 with KYC attributes.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"customer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"legal_name\": \"Legal Name\",\n    \"date_of_birth\": \"Date Of Birth\",\n    \"ssn_last4\": \"Ssn Last4\",\n    \"address_line1\": \"Address Line1\",\n    \"city\": \"City\",\n    \"state\": \"State\",\n    \"postal_code\": \"Postal Code\",\n    \"country\": \"Country\",\n    \"mobile_number\": \"Mobile Number\",\n    \"kyc_status\": \"Kyc Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "legal_name": {
+              "type": "string",
+              "title": "legal_name",
+              "description": "Legal full name for KYC",
+              "example": "Jordan Smith"
+            },
+            "date_of_birth": {
+              "type": "string",
+              "title": "date_of_birth",
+              "description": "Date of birth in ISO format YYYY-MM-DD",
+              "example": "1990-04-12"
+            },
+            "ssn_last4": {
+              "type": "string",
+              "title": "ssn_last4",
+              "description": "Last 4 digits of SSN",
+              "example": "1234"
+            },
+            "address_line1": {
+              "type": "string",
+              "title": "address_line1",
+              "description": "Primary street address",
+              "example": "1200 Elm Street"
+            },
+            "address_line2": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "address_line2",
+              "description": "Secondary address line if any",
+              "type": "string"
+            },
+            "city": {
+              "type": "string",
+              "title": "city",
+              "description": "City name",
+              "example": "Austin"
+            },
+            "state": {
+              "type": "string",
+              "title": "state",
+              "description": "State or province code",
+              "example": "TX"
+            },
+            "postal_code": {
+              "type": "string",
+              "title": "postal_code",
+              "description": "Postal or ZIP code",
+              "example": "78701"
+            },
+            "country": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "country",
+              "description": "Country code, defaults to US",
+              "default": "US",
+              "example": "US",
+              "type": "string"
+            },
+            "mobile_number": {
+              "type": "string",
+              "title": "mobile_number",
+              "description": "Mobile phone number in E.164 format",
+              "example": "+1-512-555-0199"
+            }
+          },
+          "title": "create_my_customer_profileArguments",
+          "required": [
+            "legal_name",
+            "date_of_birth",
+            "ssn_last4",
+            "address_line1",
+            "city",
+            "state",
+            "postal_code",
+            "mobile_number"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_my_accounts",
+        "description": "List all accounts for current user\n\nRetrieve all accounts for current user's customer, with filters.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"accounts\": [\n    {\n      \"id\": 1,\n      \"customer_id\": 1,\n      \"account_number\": \"Account Number\",\n      \"account_type\": \"Account Type\",\n      \"currency\": \"Currency\",\n      \"current_balance\": 1.0,\n      \"interest_rate\": 1.0,\n      \"is_primary\": true,\n      \"status\": \"Status\",\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by account_type",
+              "title": "account_type",
+              "type": "string"
+            },
+            "status": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by status",
+              "title": "status",
+              "type": "string"
+            }
+          },
+          "title": "list_my_accountsArguments"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_account_for_current_customer",
+        "description": "Create a new account for current user\n\nCreate a new checking or savings account for current user's customer.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"account\": {\n    \"id\": 1,\n    \"customer_id\": 1,\n    \"account_number\": \"Account Number\",\n    \"account_type\": \"Account Type\",\n    \"currency\": \"Currency\",\n    \"current_balance\": 1.0,\n    \"interest_rate\": 1.0,\n    \"is_primary\": true,\n    \"status\": \"Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_type": {
+              "type": "string",
+              "title": "account_type",
+              "description": "Account type to create (checking or savings)",
+              "example": "savings"
+            },
+            "currency": {
+              "type": "string",
+              "title": "currency",
+              "description": "Three-letter currency code",
+              "example": "USD"
+            },
+            "is_primary": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "is_primary",
+              "description": "1 to mark as primary, 0 otherwise",
+              "default": 0,
+              "example": 0,
+              "type": "integer"
+            },
+            "interest_rate": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "interest_rate",
+              "description": "Optional explicit interest rate",
+              "example": 0.01,
+              "type": "number"
+            }
+          },
+          "title": "create_account_for_current_customerArguments",
+          "required": [
+            "account_type",
+            "currency"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_card_for_account",
+        "description": "Create a new card for an account\n\nCreate a virtual or physical card tied to an account.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"card\": {\n    \"id\": 1,\n    \"account_id\": 1,\n    \"card_type\": \"Card Type\",\n    \"last4\": \"Last4\",\n    \"currency\": \"Currency\",\n    \"card_status\": \"Card Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "title": "account_id",
+              "description": "Account ID that this card should be linked to",
+              "example": 101
+            },
+            "card_type": {
+              "type": "string",
+              "title": "card_type",
+              "description": "Type of card (virtual or physical)",
+              "example": "virtual"
+            },
+            "last4": {
+              "type": "string",
+              "title": "last4",
+              "description": "Last 4 digits of the card number",
+              "example": "4456"
+            },
+            "network": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "network",
+              "description": "Card network brand",
+              "example": "VISA",
+              "type": "string"
+            },
+            "spending_limit": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "spending_limit",
+              "description": "Optional card-level spending limit",
+              "example": 2000.0,
+              "type": "number"
+            },
+            "currency": {
+              "type": "string",
+              "title": "currency",
+              "description": "Card currency, usually same as account",
+              "example": "USD"
+            },
+            "home_country": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "home_country",
+              "description": "Card's home country for controls",
+              "example": "US",
+              "type": "string"
+            }
+          },
+          "title": "create_card_for_accountArguments",
+          "required": [
+            "account_id",
+            "card_type",
+            "last4",
+            "currency"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_card_controls",
+        "description": "Create card controls for a card\n\nInitialize card_controls row for a card.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"card_controls\": {\n    \"id\": 1,\n    \"card_id\": 1,\n    \"international_allowed\": true,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "card_id": {
+              "type": "integer",
+              "title": "card_id",
+              "description": "Card ID to attach controls to",
+              "example": 301
+            },
+            "international_allowed": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "international_allowed",
+              "description": "1 to allow international, 0 to restrict",
+              "default": 1,
+              "example": 0,
+              "type": "integer"
+            },
+            "allowed_countries": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "allowed_countries",
+              "description": "Comma-separated list of allowed country codes",
+              "example": "US,CA",
+              "type": "string"
+            }
+          },
+          "title": "create_card_controlsArguments",
+          "required": [
+            "card_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_payee_for_current_user",
+        "description": "Create a new payee for current user\n\nCreate a payees row for the current user.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"payee\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"name\": \"Name\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "title": "name",
+              "description": "Payee display name",
+              "example": "Downtown Utilities"
+            },
+            "category": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "category",
+              "description": "Category label for this payee",
+              "example": "utilities",
+              "type": "string"
+            },
+            "default_memo": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "default_memo",
+              "description": "Default memo to use for transfers",
+              "example": "Water and electric bill",
+              "type": "string"
+            }
+          },
+          "title": "create_payee_for_current_userArguments",
+          "required": [
+            "name"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_payees_for_current_user",
+        "description": "List all payees for current user\n\nRetrieve all payees belonging to current user, with filters.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"payees\": [\n    {\n      \"id\": 1,\n      \"user_id\": 1,\n      \"name\": \"Name\",\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional substring filter on payee name",
+              "title": "name",
+              "type": "string"
+            },
+            "category": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional filter by category",
+              "title": "category",
+              "type": "string"
+            }
+          },
+          "title": "list_payees_for_current_userArguments"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_scheduled_transfer",
+        "description": "Create a new scheduled transfer\n\nCreate scheduled_transfers row for internal or external transfers.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"scheduled_transfer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"from_account_id\": 1,\n    \"transfer_type\": \"Transfer Type\",\n    \"amount\": 1.0,\n    \"currency\": \"Currency\",\n    \"schedule_type\": \"Schedule Type\",\n    \"start_date\": \"Start Date\",\n    \"state\": \"State\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "from_account_id": {
+              "type": "integer",
+              "title": "from_account_id",
+              "description": "Source accounts.id",
+              "example": 101
+            },
+            "to_account_id": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "to_account_id",
+              "description": "Destination accounts.id for internal transfers",
+              "example": 202,
+              "type": "integer"
+            },
+            "payee_id": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "payee_id",
+              "description": "Destination payees.id for external transfers",
+              "example": 501,
+              "type": "integer"
+            },
+            "transfer_type": {
+              "type": "string",
+              "title": "transfer_type",
+              "description": "internal or external",
+              "example": "external"
+            },
+            "amount": {
+              "type": "number",
+              "title": "amount",
+              "description": "Transfer amount",
+              "example": 120.75
+            },
+            "currency": {
+              "type": "string",
+              "title": "currency",
+              "description": "Currency code",
+              "example": "USD"
+            },
+            "schedule_type": {
+              "type": "string",
+              "title": "schedule_type",
+              "description": "one_time or recurring",
+              "example": "recurring"
+            },
+            "recurrence_rule": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "recurrence_rule",
+              "description": "Recurrence rule",
+              "example": "FREQ=MONTHLY;BYMONTHDAY=5",
+              "type": "string"
+            },
+            "start_date": {
+              "type": "string",
+              "title": "start_date",
+              "description": "Scheduled start date in YYYY-MM-DD",
+              "example": "2026-02-05"
+            },
+            "end_date": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "end_date",
+              "description": "Optional end date in YYYY-MM-DD",
+              "type": "string"
+            },
+            "tag": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "tag",
+              "description": "Tag label for this scheduled transfer",
+              "example": "bills",
+              "type": "string"
+            },
+            "memo": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "memo",
+              "description": "Optional descriptive memo",
+              "example": "Downtown Utilities monthly bill",
+              "type": "string"
+            }
+          },
+          "title": "create_scheduled_transferArguments",
+          "required": [
+            "from_account_id",
+            "transfer_type",
+            "amount",
+            "currency",
+            "schedule_type",
+            "start_date"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_immediate_transfer",
+        "description": "Create an immediate transfer\n\nCreate transfers row and optionally update balances atomically.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"transfer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"from_account_id\": 1,\n    \"transfer_type\": \"Transfer Type\",\n    \"amount\": 1.0,\n    \"currency\": \"Currency\",\n    \"state\": \"State\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  },\n  \"updated_accounts\": [\n    {\n      \"id\": 1,\n      \"current_balance\": 1.0,\n      \"currency\": \"Currency\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "from_account_id": {
+              "type": "integer",
+              "title": "from_account_id",
+              "description": "Source accounts.id",
+              "example": 101
+            },
+            "to_account_id": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "to_account_id",
+              "description": "Destination accounts.id for internal transfers",
+              "example": 202,
+              "type": "integer"
+            },
+            "payee_id": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "payee_id",
+              "description": "Destination payees.id for external transfers",
+              "example": 501,
+              "type": "integer"
+            },
+            "transfer_type": {
+              "type": "string",
+              "title": "transfer_type",
+              "description": "internal or external",
+              "example": "internal"
+            },
+            "amount": {
+              "type": "number",
+              "title": "amount",
+              "description": "Transfer amount",
+              "example": 250.0
+            },
+            "currency": {
+              "type": "string",
+              "title": "currency",
+              "description": "Currency code",
+              "example": "USD"
+            },
+            "scheduled_transfer_id": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "scheduled_transfer_id",
+              "description": "Optional linked scheduled_transfers.id",
+              "type": "integer"
+            }
+          },
+          "title": "create_immediate_transferArguments",
+          "required": [
+            "from_account_id",
+            "transfer_type",
+            "amount",
+            "currency"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_transactions_for_account",
+        "description": "List account transactions with filters\n\nRetrieve transactions for an account with optional filters.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"transactions\": [\n    {\n      \"id\": 1,\n      \"account_id\": 1,\n      \"type\": \"Type\",\n      \"amount\": 1.0,\n      \"currency\": \"Currency\",\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "description": "accounts.id whose transactions to list",
+              "title": "account_id"
+            },
+            "start_date": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Posted_at start date in YYYY-MM-DD",
+              "title": "start_date",
+              "type": "string"
+            },
+            "end_date": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Posted_at end date in YYYY-MM-DD",
+              "title": "end_date",
+              "type": "string"
+            },
+            "card_only": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "If true, only card transactions",
+              "default": false,
+              "title": "card_only",
+              "type": "boolean"
+            },
+            "merchant_search": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Substring to match in merchant_metadata",
+              "title": "merchant_search",
+              "type": "string"
+            }
+          },
+          "title": "list_transactions_for_accountArguments",
+          "required": [
+            "account_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_add_tag_to_transaction",
+        "description": "Add a tag to a transaction\n\nCreate transaction_tags row to tag a transaction for the current user.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"transaction_tag\": {\n    \"id\": 1,\n    \"transaction_id\": 1,\n    \"tag\": \"Tag\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "transaction_id": {
+              "type": "integer",
+              "title": "transaction_id",
+              "description": "transactions.id to tag",
+              "example": 901
+            },
+            "tag": {
+              "type": "string",
+              "title": "tag",
+              "description": "Tag label to add",
+              "example": "groceries"
+            }
+          },
+          "title": "add_tag_to_transactionArguments",
+          "required": [
+            "transaction_id",
+            "tag"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_tags_for_transaction",
+        "description": "List tags for a transaction\n\nRetrieve all transaction_tags rows for a given transaction.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"transaction_id\": 1,\n      \"tag\": \"Tag\",\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "transaction_id": {
+              "type": "integer",
+              "description": "transactions.id whose tags to list",
+              "title": "transaction_id"
+            }
+          },
+          "title": "list_tags_for_transactionArguments",
+          "required": [
+            "transaction_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_alert_preference",
+        "description": "Create alert preference for an account\n\nCreate an alert_preferences row for the given account and type.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"alert_preference\": {\n    \"id\": 1,\n    \"account_id\": 1,\n    \"alert_type\": \"Alert Type\",\n    \"threshold_amount\": 1.0,\n    \"channel_email\": true,\n    \"channel_push\": true,\n    \"channel_sms\": true,\n    \"is_enabled\": true,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "title": "account_id",
+              "description": "accounts.id the alert applies to",
+              "example": 101
+            },
+            "alert_type": {
+              "type": "string",
+              "title": "alert_type",
+              "description": "low_balance or large_transaction",
+              "example": "low_balance"
+            },
+            "threshold_amount": {
+              "type": "number",
+              "title": "threshold_amount",
+              "description": "Threshold amount that triggers the alert",
+              "example": 100.0
+            },
+            "channel_email": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "channel_email",
+              "description": "1 to enable email notifications, 0 otherwise",
+              "default": 0,
+              "example": 1,
+              "type": "integer"
+            },
+            "channel_push": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "channel_push",
+              "description": "1 to enable push notifications, 0 otherwise",
+              "default": 0,
+              "example": 1,
+              "type": "integer"
+            },
+            "channel_sms": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "channel_sms",
+              "description": "1 to enable SMS notifications, 0 otherwise",
+              "default": 0,
+              "example": 0,
+              "type": "integer"
+            },
+            "is_enabled": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "is_enabled",
+              "description": "1 to enable this alert preference, 0 to disable",
+              "default": 1,
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          "title": "create_alert_preferenceArguments",
+          "required": [
+            "account_id",
+            "alert_type",
+            "threshold_amount"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_or_update_direct_deposit_config",
+        "description": "Create or upsert direct deposit config\n\nCreate direct_deposit_configs row or update existing metadata.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"direct_deposit_config\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"employer_id\": \"Employer Id\",\n    \"allocation_type\": \"Allocation Type\",\n    \"is_active\": true,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "employer_id": {
+              "type": "string",
+              "title": "employer_id",
+              "description": "External employer identifier string",
+              "example": "ACME-001"
+            },
+            "employer_name": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "employer_name",
+              "description": "Human-readable employer name",
+              "example": "Acme Corp",
+              "type": "string"
+            },
+            "allocation_type": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "allocation_type",
+              "description": "Allocation type, currently only 'percentage'",
+              "default": "percentage",
+              "example": "percentage",
+              "type": "string"
+            },
+            "is_active": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "is_active",
+              "description": "1 to enable this config, 0 to disable",
+              "default": 1,
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          "title": "create_or_update_direct_deposit_configArguments",
+          "required": [
+            "employer_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_direct_deposit_allocation",
+        "description": "Create allocation for a direct deposit config\n\nCreate direct_deposit_allocations row mapping portion of deposits.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"direct_deposit_allocation\": {\n    \"id\": 1,\n    \"direct_deposit_config_id\": 1,\n    \"account_id\": 1,\n    \"percentage\": 1.0,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "direct_deposit_config_id": {
+              "type": "integer",
+              "title": "direct_deposit_config_id",
+              "description": "direct_deposit_configs.id to attach this allocation to",
+              "example": 1301
+            },
+            "account_id": {
+              "type": "integer",
+              "title": "account_id",
+              "description": "accounts.id receiving this allocation",
+              "example": 202
+            },
+            "percentage": {
+              "type": "number",
+              "title": "percentage",
+              "description": "Percentage of paycheck routed to this account",
+              "example": 70.0
+            }
+          },
+          "title": "create_direct_deposit_allocationArguments",
+          "required": [
+            "direct_deposit_config_id",
+            "account_id",
+            "percentage"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_summarize_large_holds_for_account",
+        "description": "Summarize large holds for an account\n\nReturn simplified list of holds above min_amount.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"holds_summary\": [\n    {\n      \"card_id\": 1,\n      \"amount\": 1.0,\n      \"currency\": \"Currency\",\n      \"authorized_at\": \"Authorized At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "description": "accounts.id whose holds summary to return",
+              "title": "account_id"
+            },
+            "min_amount": {
+              "type": "number",
+              "description": "Minimum hold amount to include in the summary",
+              "title": "min_amount"
+            }
+          },
+          "title": "summarize_large_holds_for_accountArguments",
+          "required": [
+            "account_id",
+            "min_amount"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_account_by_last4_for_current_user",
+        "description": "Get my account details by last 4 digits\n\nLook up an account for current user using the last 4 of account_number.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"account\": {\n    \"id\": 1,\n    \"customer_id\": 1,\n    \"account_number\": \"Account Number\",\n    \"account_type\": \"Account Type\",\n    \"currency\": \"Currency\",\n    \"current_balance\": 1.0,\n    \"interest_rate\": 1.0,\n    \"is_primary\": true,\n    \"status\": \"Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_last4": {
+              "type": "string",
+              "description": "Last 4 digits of the account_number",
+              "title": "account_last4"
+            }
+          },
+          "title": "get_account_by_last4_for_current_userArguments",
+          "required": [
+            "account_last4"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_account_balance_for_current_user",
+        "description": "Get balance for a specific account\n\nReturn only the current_balance and currency for an account.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"account_id\": 1,\n  \"current_balance\": 1.0,\n  \"currency\": \"Currency\"\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "description": "accounts.id whose balance to retrieve",
+              "title": "account_id"
+            }
+          },
+          "title": "get_account_balance_for_current_userArguments",
+          "required": [
+            "account_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_update_card_status",
+        "description": "Update a card's status\n\nChange card_status for a card owned by the current user.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"card\": {\n    \"id\": 1,\n    \"account_id\": 1,\n    \"card_type\": \"Card Type\",\n    \"last4\": \"Last4\",\n    \"currency\": \"Currency\",\n    \"card_status\": \"Card Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "card_id": {
+              "type": "integer",
+              "description": "cards.id to update",
+              "title": "card_id"
+            },
+            "card_status": {
+              "type": "string",
+              "title": "card_status",
+              "description": "New status: inactive, active, blocked, or closed",
+              "example": "active"
+            }
+          },
+          "title": "update_card_statusArguments",
+          "required": [
+            "card_id",
+            "card_status"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_update_card_spending_limit",
+        "description": "Update card spending limit\n\nSet or change the spending_limit field for a card.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"id\": 1,\n  \"currency\": \"Currency\",\n  \"card_status\": \"Card Status\",\n  \"updated_at\": \"Updated At\"\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "card_id": {
+              "type": "integer",
+              "description": "cards.id whose spending limit to update",
+              "title": "card_id"
+            },
+            "spending_limit": {
+              "type": "number",
+              "title": "spending_limit",
+              "description": "New monthly spending limit amount",
+              "example": 2000.0
+            }
+          },
+          "title": "update_card_spending_limitArguments",
+          "required": [
+            "card_id",
+            "spending_limit"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_cards_by_account_last4",
+        "description": "List cards by account last4 for current user\n\nReturn all cards linked to the account whose account_number ends with last4.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"cards\": [\n    {\n      \"id\": 1,\n      \"account_id\": 1,\n      \"card_type\": \"Card Type\",\n      \"last4\": \"Last4\",\n      \"currency\": \"Currency\",\n      \"card_status\": \"Card Status\",\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_last4": {
+              "type": "string",
+              "description": "Last 4 digits of the parent account_number",
+              "title": "account_last4"
+            }
+          },
+          "title": "list_cards_by_account_last4Arguments",
+          "required": [
+            "account_last4"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_create_payee_routing_info",
+        "description": "Create routing info for a payee\n\nCreate payee_routing_info row for a given payee.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"routing_info\": {\n    \"id\": 1,\n    \"payee_id\": 1,\n    \"bank_name\": \"Bank Name\",\n    \"routing_number\": \"Routing Number\",\n    \"account_number\": \"Account Number\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "payee_id": {
+              "type": "integer",
+              "description": "payees.id for which to add routing info",
+              "title": "payee_id"
+            },
+            "bank_name": {
+              "type": "string",
+              "title": "bank_name",
+              "description": "Destination bank name",
+              "example": "Metro Bank"
+            },
+            "routing_number": {
+              "type": "string",
+              "title": "routing_number",
+              "description": "ABA routing number",
+              "example": "021000021"
+            },
+            "account_number": {
+              "type": "string",
+              "title": "account_number",
+              "description": "Destination bank account number",
+              "example": "9988776655"
+            }
+          },
+          "title": "create_payee_routing_infoArguments",
+          "required": [
+            "payee_id",
+            "bank_name",
+            "routing_number",
+            "account_number"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_alert_preferences_for_account",
+        "description": "List alert preferences for an account\n\nRetrieve all alert_preferences rows for a specific account.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"alert_preferences\": [\n    {\n      \"id\": 1,\n      \"account_id\": 1,\n      \"alert_type\": \"Alert Type\",\n      \"threshold_amount\": 1.0,\n      \"channel_email\": true,\n      \"channel_push\": true,\n      \"channel_sms\": true,\n      \"is_enabled\": true,\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "description": "accounts.id whose alert preferences to list",
+              "title": "account_id"
+            }
+          },
+          "title": "list_alert_preferences_for_accountArguments",
+          "required": [
+            "account_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_authorized_holds_for_account",
+        "description": "List active holds for an account\n\nRetrieve all card_holds with state=authorized for a given account.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"holds\": [\n    {\n      \"id\": 1,\n      \"card_id\": 1,\n      \"account_id\": 1,\n      \"amount\": 1.0,\n      \"currency\": \"Currency\",\n      \"state\": \"State\",\n      \"authorized_at\": \"Authorized At\",\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "description": "accounts.id whose authorized holds to list",
+              "title": "account_id"
+            },
+            "min_amount": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional minimum hold amount filter",
+              "title": "min_amount",
+              "type": "number"
+            }
+          },
+          "title": "list_authorized_holds_for_accountArguments",
+          "required": [
+            "account_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_list_direct_deposit_allocations_for_config",
+        "description": "List allocations for a direct deposit config\n\nRetrieve all direct_deposit_allocations for a given config.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"allocations\": [\n    {\n      \"id\": 1,\n      \"direct_deposit_config_id\": 1,\n      \"account_id\": 1,\n      \"percentage\": 1.0,\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "direct_deposit_config_id": {
+              "type": "integer",
+              "description": "direct_deposit_configs.id whose allocations to list",
+              "title": "direct_deposit_config_id"
+            }
+          },
+          "title": "list_direct_deposit_allocations_for_configArguments",
+          "required": [
+            "direct_deposit_config_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_direct_deposit_setup_for_employer",
+        "description": "Get direct deposit config and allocations by employer\n\nRetrieve direct_deposit_configs and allocations for an employer_id.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"direct_deposit_config\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"employer_id\": \"Employer Id\",\n    \"allocation_type\": \"Allocation Type\",\n    \"is_active\": true,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  },\n  \"allocations\": [\n    {\n      \"id\": 1,\n      \"direct_deposit_config_id\": 1,\n      \"account_id\": 1,\n      \"percentage\": 1.0,\n      \"created_at\": \"Created At\",\n      \"updated_at\": \"Updated At\"\n    }\n  ]\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "employer_id": {
+              "type": "string",
+              "description": "Employer identifier to filter config",
+              "title": "employer_id"
+            }
+          },
+          "title": "get_direct_deposit_setup_for_employerArguments",
+          "required": [
+            "employer_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_account_by_id_for_current_user",
+        "description": "Get a specific account by ID\n\nRetrieve a single account by ID after verifying ownership.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"account\": {\n    \"id\": 1,\n    \"customer_id\": 1,\n    \"account_number\": \"Account Number\",\n    \"account_type\": \"Account Type\",\n    \"currency\": \"Currency\",\n    \"current_balance\": 1.0,\n    \"interest_rate\": 1.0,\n    \"is_primary\": true,\n    \"status\": \"Status\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "integer",
+              "description": "accounts.id to retrieve",
+              "title": "account_id"
+            }
+          },
+          "title": "get_account_by_id_for_current_userArguments",
+          "required": [
+            "account_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_update_card_controls",
+        "description": "Update controls for a card\n\nChange international_allowed and allowed_countries fields.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"card_controls\": {\n    \"id\": 1,\n    \"card_id\": 1,\n    \"international_allowed\": true,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "card_id": {
+              "type": "integer",
+              "description": "cards.id whose controls to update",
+              "title": "card_id"
+            },
+            "international_allowed": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "international_allowed",
+              "description": "1 to allow all international, 0 to enforce allowed countries",
+              "example": 0,
+              "type": "integer"
+            },
+            "allowed_countries": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "allowed_countries",
+              "description": "Updated comma-separated list of allowed countries",
+              "example": "US,CA",
+              "type": "string"
+            }
+          },
+          "title": "update_card_controlsArguments",
+          "required": [
+            "card_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_scheduled_transfer_by_id",
+        "description": "Get scheduled transfer by ID\n\nRetrieve one scheduled_transfers row for current user by its ID.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"scheduled_transfer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"from_account_id\": 1,\n    \"transfer_type\": \"Transfer Type\",\n    \"amount\": 1.0,\n    \"currency\": \"Currency\",\n    \"schedule_type\": \"Schedule Type\",\n    \"start_date\": \"Start Date\",\n    \"state\": \"State\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "scheduled_transfer_id": {
+              "type": "integer",
+              "description": "scheduled_transfers.id to fetch",
+              "title": "scheduled_transfer_id"
+            }
+          },
+          "title": "get_scheduled_transfer_by_idArguments",
+          "required": [
+            "scheduled_transfer_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_get_transfer_by_id",
+        "description": "Get transfer by ID\n\nRetrieve a transfers row belonging to the current user by its ID.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"transfer\": {\n    \"id\": 1,\n    \"user_id\": 1,\n    \"from_account_id\": 1,\n    \"transfer_type\": \"Transfer Type\",\n    \"amount\": 1.0,\n    \"currency\": \"Currency\",\n    \"state\": \"State\",\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "transfer_id": {
+              "type": "integer",
+              "description": "transfers.id to retrieve",
+              "title": "transfer_id"
+            }
+          },
+          "title": "get_transfer_by_idArguments",
+          "required": [
+            "transfer_id"
+          ]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "mcp_server_update_alert_preference",
+        "description": "Update an alert preference\n\nUpdate threshold and channels for an existing alert_preferences row.\n\n### Responses:\n\n**200**: Successful Response (Success Response)\nContent-Type: application/json\n\n**Example Response:**\n```json\n{\n  \"alert_preference\": {\n    \"id\": 1,\n    \"account_id\": 1,\n    \"alert_type\": \"Alert Type\",\n    \"threshold_amount\": 1.0,\n    \"channel_email\": true,\n    \"channel_push\": true,\n    \"channel_sms\": true,\n    \"is_enabled\": true,\n    \"created_at\": \"Created At\",\n    \"updated_at\": \"Updated At\"\n  }\n}\n```",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "alert_preference_id": {
+              "type": "integer",
+              "description": "alert_preferences.id to update",
+              "title": "alert_preference_id"
+            },
+            "threshold_amount": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "threshold_amount",
+              "description": "New threshold amount",
+              "example": 100.0,
+              "type": "number"
+            },
+            "channel_email": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "channel_email",
+              "description": "Updated email channel flag",
+              "example": 1,
+              "type": "integer"
+            },
+            "channel_push": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "channel_push",
+              "description": "Updated push channel flag",
+              "example": 1,
+              "type": "integer"
+            },
+            "channel_sms": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "channel_sms",
+              "description": "Updated SMS channel flag",
+              "example": 0,
+              "type": "integer"
+            },
+            "is_enabled": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "is_enabled",
+              "description": "Updated enabled flag",
+              "example": 1,
+              "type": "integer"
+            }
+          },
+          "title": "update_alert_preferenceArguments",
+          "required": [
+            "alert_preference_id"
+          ]
+        }
+      }
+    }
+  ],
+  "chat_template_kwargs": {
+    "enable_thinking": true
+  },
+  "add_generation_prompt": true,
+  "return_token_strs": true
+}
