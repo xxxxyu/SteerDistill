@@ -13,7 +13,8 @@ window.DemoTiming = (() => {
     const ends = new Map(runs.map(run => [run.id, run.total]));
     const duration = Math.max(...ends.values()), local = new Map();
     let time = 0;
-    const clamp = (value, end) => Math.max(0, Math.min(value, end));
+    // Native range inputs can round the endpoint by a few floating-point digits.
+    const clamp = (value, end) => Math.abs(value - end) < 1e-9 ? end : Math.max(0, Math.min(value, end));
     return {
       get time() { return time; },
       seekAll(value) { time = clamp(value, duration); local.clear(); },

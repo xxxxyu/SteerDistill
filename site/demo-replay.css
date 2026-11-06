@@ -10,7 +10,7 @@
 .replay-screen-button{padding:0;border:1px solid var(--hair);background:var(--deep);display:block;position:relative;width:100%;cursor:zoom-in;line-height:0}
 .replay-screen{position:relative;aspect-ratio:390/844;overflow:hidden;background:#fff;color:#292825}
 .replay-screen img{width:100%;height:100%;display:block;object-fit:contain}
-.replay-screen-button::after{content:'Enlarge';position:absolute;bottom:8px;right:8px;background:#fffefae8;color:#454440;border:1px solid #dedbd2;padding:3px 7px;font:12px/1.4 var(--sans);opacity:0;transition:opacity .15s}
+.replay-screen-button::after{content:attr(data-enlarge-label);position:absolute;bottom:8px;right:8px;background:#fffefae8;color:#454440;border:1px solid #dedbd2;padding:3px 7px;font:12px/1.4 var(--sans);opacity:0;transition:opacity .15s}
 .replay-screen-button:is(:hover,:focus-visible)::after{opacity:1}
 .replay-tap{position:absolute;width:25px;height:25px;border:2px solid #315f78;background:#77c7ee45;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 4px #fff9;pointer-events:none}
 .replay-tap::after{content:'';position:absolute;inset:7px;border-radius:50%;background:#315f78}
@@ -52,7 +52,7 @@
 @media(max-width:430px){.replay-body{grid-template-columns:43% minmax(0,1fr);gap:10px;padding:12px 10px}.replay-heading{padding:10px}.replay-heading h3{font-size:19px}.replay-heading p{font-size:12px}.replay-outcome{font-size:12px}.replay-reading{height:350px}.replay-reading h4{font-size:15px;margin-bottom:10px;min-height:44px}.demo-replay .replay-output .ev-code{font-size:11px}.replay-state{font-size:11px;flex-wrap:wrap;gap:2px;margin-bottom:7px}.demo-replay .replay-output .ev-prose{font-size:13px}.replay-step-nav button{font-size:12px}.replay-timing-label{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.replay-screen[data-active=true] .replay-tap{animation:none}}
 
-.replay-heading strong{font-weight:600;color:var(--soft)}.replay-output .replay-previous-output{font-size:12px;color:var(--muted);margin-bottom:9px}
+.replay-heading strong{font-weight:600;color:var(--soft)}
 
 
 .replay-controls .replay-key{flex-basis:100%;margin:0;gap:18px;font-size:12px}
@@ -72,7 +72,6 @@
 .demo-replay .replay-output .ev-frame:first-of-type{display:flex;flex-direction:column;min-height:0;flex:0 1 auto}
 .demo-replay .replay-output .ev-frame:first-of-type>.ev-label{flex-shrink:0}
 .demo-replay .replay-output .ev-frame:first-of-type>.ev-body{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
-.replay-previous-output{flex-shrink:0}
 
 /* A paper index for tasks, followed by a quieter method-navigation line. */
 .demo-task-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:18px 0 0;border-bottom:1px solid var(--hair)}

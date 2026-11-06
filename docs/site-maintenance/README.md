@@ -100,3 +100,40 @@ Check root and `/SteerDistill/` hosting, five benchmark settings, scroll continu
 Former layout studies, demos and temporary screenshots were archived outside the repository before removal. [The cleanup manifest](cleanup-manifest.json) records that operation. Original `data/` bytes remain available, including unselected cases. Three appendix candidates are retained as [editorial records](appendix-candidates.md).
 
 No unpublished manuscript notes are included here. Preserve the MIT license, OxyGen notice/license and font licenses. Research decisions and the manuscript fact map are maintained in the private paper repository, separately from this public site.
+
+
+## Bilingual case editorial
+
+The 19 accepted cases and their record reader support `?lang=zh` and `?lang=en`. Chinese remains the default until a reader selects English; the header toggle saves the choice and keeps the current case, method pair, source, message, raw/readable mode and URL fragment. Sidebar and record links carry the selected language. The homepage also supports both languages; the article body remains Chinese.
+
+Chinese case JSON remains the source of truth. English editorial overlays live in `design-lab/case-content/en/{kind}/{id}.json`; they replace explicit JSON-pointer paths after the original data is loaded. They do not translate arbitrary DOM text. `case-locale.js` owns case-specific interface labels and applies the overlays without mutating the cached Chinese data; `site/locale.js` owns the global language preference and navigation. The shared evidence, comparison, training, sequence and record components render both versions.
+
+Translate titles, summaries, editorial explanations/results, frame labels, source display labels and UI. Keep original task turns, actual model reasoning/replies, tool calls and returns, Teacher guidance and source files verbatim. Some evidence fields also contain editor-added chronology headings or “excerpt” markers: only these annotations are translated. Their boundaries are recorded in `mixedFieldNotes`; highlights move with the same source passages. No original response is translated, corrected or paraphrased for the English view.
+
+Each overlay has a short English `indexTitle`, a `preserved` ledger, and a `sourceSha256` tied to the reviewed Chinese case file. The build/check rejects a stale translation until it is reviewed and its source hash updated. Build the English catalogue with `python3 scripts/build-case-locales.py`; `--check` verifies it is current. Regenerate shared HTML with `node scripts/build-pages.mjs` after shell changes. When changing accepted Chinese editorial content, review the corresponding overlay; invalid paths fail visibly rather than falling back to a partially translated case.
+
+Checks: `node --test scripts/case-locales.test.cjs design-lab/case-shared/tests/*.cjs scripts/site.test.cjs`. The locale tests compare source payloads, metadata, action names/arguments, guidance and annotated excerpts, validate all English highlights, and confirm numbering/routes remain unchanged. Browser review covers all 19 English cases and all 68 comparison-method selections, language toggling with selected methods and raw source state retained, Chinese regression, source downloads, desktop/narrow layouts and the record reader. English uses the existing layout; only the requested language toggle is new.
+
+
+### Task scope and header review
+
+All 19 case pages now use an explicit `taskTurns` selection, shared by both languages. Complete requests stay in `originalTask` and the raw record files. Scope decisions are recorded in the [author contract](../../design-lab/case-content/README.md#task-disclosure-scope); only unrelated user turns are hidden on the focused page. T1 now shows only the request to read the file. T5 shows the support-ticket request; I7 keeps the removal, clarification and list-check turns. T2 keeps the earlier requests needed to interpret its output filename and target sentence.
+
+Frame headers use one content-type/context interface across action comparisons, reasoning, guidance and verification. The same type, weight, padding and paper-colored header apply in both languages; red/blue continues to encode evidence meaning in the top rule and content. Paired header rows align even when translated context wraps. No raw call, reply, guidance, task message or result was rewritten.
+
+Checks include `scripts/case-task-scope.test.cjs`, the bilingual fidelity suite and browser inspection of both locales for all 19 cases, including paired-header alignment and narrow-screen layout.
+
+
+## Site language and homepage translation
+
+All four maintained entry points load `site/locale.js`. The header owns a single language switch. An explicit `?lang=zh|en` takes precedence over the saved `steerdistill-language` preference; the older case-only preference is accepted on migration. With no preference, the homepage starts in English and the article/case entries in Chinese. Internal page links preserve the selection, including the continuous homepage-to-article transition. Record source/message/mode and case method selections survive a language change.
+
+`site/home-locale.js` translates only explicitly selected homepage prose, replay controls, task summaries and editorial step titles. Paper identity, benchmark/method names and diagram terminology remain English. Demo thoughts, actions, screenshots and timings remain in the original data. `case-locale.js` delegates language/navigation to the shared locale and applies only the reviewed case overlays. The article surface remains `lang="zh-CN"`; changing the global language affects its shell and destination links, not the post or its embedded cases.
+
+Run `node --test scripts/site-locales.test.cjs scripts/case-locales.test.cjs scripts/demo-replay.test.cjs` after changing localization. Rebuild the four entries with `node scripts/build-pages.mjs`. Translation coverage tests check every recorded demo step title; source-fidelity tests are separate from editorial review.
+
+
+## Follow-up TODOs
+
+- Revise and finalize the research article content. Keep the current Chinese body and embedded examples for this release; translate the article after its content is approved. This is deliberately deferred, not a blocker for publishing the reviewed homepage, demos and case collection.
+- Add the homepage Paper / arXiv link when a public manuscript URL or approved PDF is available.

@@ -1,6 +1,6 @@
 .training-story{font:var(--ev-body)/var(--ev-line) var(--ev-sans);color:var(--ink)}
 .training-story p{margin:0 0 12px}
-.training-branches{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,auto);gap:10px 26px}.training-branch{display:grid;grid-template-rows:subgrid;grid-row:span 3;min-width:0}.training-branch h2,.training-branch>.ev-prose{margin:0}.training-branch>.ev-prose{color:var(--soft)}
+.training-branches{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,auto);gap:10px 26px}.training-branch{display:grid;grid-template-rows:subgrid;grid-row:span 4;min-width:0}.training-branch h2,.training-branch>.ev-prose{margin:0}.training-branch>.ev-prose{color:var(--soft)}
 .teacher-reading{margin-top:30px}.training-takeaway{margin:18px 0 0;font-size:15px}
 .guidance-detail-stack{display:grid;gap:12px}
 @media(max-width:800px){.training-branches{grid-template-columns:1fr;grid-template-rows:none;gap:22px}.training-branch{display:flex;flex-direction:column;gap:10px}}
@@ -13,3 +13,5 @@
 .sequence-compact .sequence-step+.sequence-step{margin-top:12px}
 .sequence-compact .sequence-step>.ev-disclosure,.sequence-compact .sequence-reference-evidence>.ev-disclosure{margin-top:8px}
 .sequence-compact .sequence-steps>.case-section-title{margin-bottom:10px}
+
+@media(min-width:801px){.training-branch>.ev-frame{display:grid;grid-row:span 2;grid-template-rows:subgrid}}

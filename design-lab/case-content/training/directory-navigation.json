@@ -555,5 +555,8 @@
       "href": "data/case-library/training/directory-navigation/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

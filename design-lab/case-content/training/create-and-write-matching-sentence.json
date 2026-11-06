@@ -33,7 +33,6 @@
         "title": "无指导",
         "summary": "第一次写入因文件不存在而报错。随后创建了文件，但写入的仍是选错的句子片段。",
         "tone": "before",
-        "frameTitle": "工具调用与返回",
         "events": [
           {
             "type": "action",
@@ -143,7 +142,6 @@
         "title": "Teacher 指导后",
         "summary": "先创建文件，再写入目标句子；推理中重新计数，纠正了最初选错句子的问题。",
         "tone": "after",
-        "frameTitle": "工具调用与返回",
         "events": [
           {
             "type": "action",
@@ -1104,5 +1102,10 @@
       "href": "data/case-library/training/create-and-write-matching-sentence/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0,
+    1,
+    2
+  ]
 }

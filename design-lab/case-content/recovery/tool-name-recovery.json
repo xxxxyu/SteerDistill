@@ -73,7 +73,8 @@
             "returnMessage": 7
           }
         }
-      ]
+      ],
+      "method": "BF16"
     },
     "steps": [
       {
@@ -362,5 +363,8 @@
       "href": "data/case-library/recovery/tool-name-recovery/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

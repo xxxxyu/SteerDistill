@@ -1,7 +1,7 @@
 /* Native continuous scroll into a separately addressable article. No scroll interception. */
 (() => {
   const surface=document.querySelector('[data-article-surface]'),root=surface.querySelector('#main-article');
-  const homeURL=SitePaths.url('index.html'),articleURL=SitePaths.url('article.html');
+  const homeURL=SiteLocale.url(SitePaths.url('index.html')),articleURL=SiteLocale.url(SitePaths.url('article.html'));
   const homeTitle=document.title,postTitle=surface.querySelector('h1').textContent+' · SteerDistill';
   let inArticle=false,pending=false;
   const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){ResearchArticle.mount(root);observer.disconnect()}},{rootMargin:'900px 0px'});
@@ -16,7 +16,10 @@
     inArticle=next;
     // Passive scrolling updates the address without adding history entries. Explicit links remain normal navigation.
     const hash=location.hash;
-    const target=next?articleURL+((articleIDs.includes(hash.slice(1))||hash.startsWith('#note-'))?hash:''):homeURL;
+    const target=new URL(next?articleURL:homeURL,location.href);
+    const activeTask=document.querySelector('[data-demo-gallery]')?.dataset.activeTask;
+    if(activeTask)target.searchParams.set('demo',activeTask);
+    if(next&&(articleIDs.includes(hash.slice(1))||hash.startsWith('#note-')))target.hash=hash;
     history.replaceState({...history.state,continuousArticle:next},'',target);
     document.title=next?postTitle:homeTitle;SiteShell.current(next?'article':'home');
   }

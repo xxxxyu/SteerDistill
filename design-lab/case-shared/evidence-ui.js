@@ -1,6 +1,8 @@
 /* Shared text-only evidence components. They render editorial decisions; they do not choose emphasis. */
 window.EvidenceUI=(()=>{
+
  'use strict';
+ const t=(text,values)=>window.CaseLocale?.t(text,values)||text.replace(/\{(\w+)\}/g,(match,key)=>values?.[key]??match);
  const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  function validateSpans(text,spans=[]){
   if(typeof text!=='string'||!Array.isArray(spans))throw new TypeError('Evidence text must be a string and spans an array');
@@ -47,7 +49,11 @@ window.EvidenceUI=(()=>{
   flush();if(fenced)outer.append(make('pre','ev-code ev-fenced',fenced.join('\n')));return outer;
  }
  function frame(title,body,{tone='',code=false}={}){
-  const el=make('section','ev-frame'+(tone?' ev-'+tone:''));el.append(make('h3','ev-label',title));
+  const el=make('section','ev-frame'+(tone?' ev-'+tone:'')),label=make('h3','ev-label');
+  const heading=typeof title==='string'?{title}:title;
+  label.append(make('span','ev-label-title',heading.title));
+  if(heading.context)label.append(' ',make('span','ev-label-context',heading.context));
+  el.append(label);
   const inner=make('div','ev-body');inner.append(typeof body==='string'?(code?make('pre','ev-code',body):prose(body)):body);el.append(inner);return el;
  }
  function fields(values,{labels={},renderValue}={}){
@@ -57,7 +63,7 @@ window.EvidenceUI=(()=>{
    row.append(make('dt','',labels[key]||key),dd);dl.append(row);
   }return dl;
  }
- const guidance=values=>fields(values,{labels:{precondition:'当前条件',decision_rule:'修正规则',expected_transition:'预期变化',recovery_check:'核验方式'}});
+ const guidance=values=>fields(values,{labels:{precondition:t('当前条件'),decision_rule:t('修正规则'),expected_transition:t('预期变化'),recovery_check:t('核验方式')}});
  function pair(...items){const el=make('div','pair ev-pair');el.append(...items);return el;}
  function action(event){
   const name=event.name,args=event.args??'';
@@ -72,11 +78,11 @@ window.EvidenceUI=(()=>{
   if(event.result!==undefined){if(typeof event.result!=='string')throw new TypeError('Displayed action result must be a string');const ret=make('span','ev-return'+(event.returnTone?' ev-return-'+event.returnTone:''));ret.append('→ ',highlightedText(event.result,h.result||[]));code.append('\n',ret);}
   el.append(code);return el;
  }
- function reply(event){const el=make('div','ev-reply');el.append(make('p','ev-reply-label',event.label||(event.excerpt?'Agent 回复 · 节选':'Agent 回复')));const p=make('p','ev-prose');p.append(highlightedText(event.text,event.highlights?.text||[],{inlineCode:true}));el.append(p);return el;}
+ function reply(event){const el=make('div','ev-reply');el.append(make('p','ev-reply-label',event.label||(event.excerpt?t('Agent 回复 · 节选'):t('Agent 回复'))));const p=make('p','ev-prose');p.append(highlightedText(event.text,event.highlights?.text||[],{inlineCode:true}));el.append(p);return el;}
  function actionSequence(events){const el=make('div','ev-action-sequence');events.forEach(e=>{if(e.type==='action')el.append(action(e));else if(e.type==='reply')el.append(reply(e));else throw new TypeError(`Unknown evidence event type: ${e.type}`);});return el;}
- function reasoningDisclosure(branches,{label='查看 agent 推理节选',open=false,key,ariaLabel}={}){
+ function reasoningDisclosure(branches,{label=t('查看 agent 推理节选'),open=false,key,ariaLabel}={}){
   const el=make('details','ev-disclosure reasoning');el.open=open;if(key!==undefined)el.dataset.reasoningTurn=String(key);const summary=make('summary','',label);if(ariaLabel)summary.setAttribute('aria-label',ariaLabel);el.append(summary);
-  const items=branches.map(b=>{const body=make('div','ev-prose');body.append(highlightedText(b.text,b.highlights||[],{inlineCode:true}));return frame(b.title,body,{tone:b.tone||''});});
+  const items=branches.map(b=>{const body=make('div','ev-prose');body.append(highlightedText(b.text,b.highlights||[],{inlineCode:true}));return frame(b.header||b.title,body,{tone:b.tone||''});});
   el.append(items.length===1?items[0]:pair(...items));return el;
  }
  function arrow(){const el=make('div','ev-arrow');el.setAttribute('aria-hidden','true');const svg=document.createElementNS('http://www.w3.org/2000/svg','svg'),path=document.createElementNS('http://www.w3.org/2000/svg','path');svg.setAttribute('viewBox','0 0 24 20');path.setAttribute('d','M9 2h6v8h6l-9 8-9-8h6Z');svg.append(path);el.append(svg);return el;}

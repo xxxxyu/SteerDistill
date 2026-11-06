@@ -121,7 +121,8 @@
               "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 12,
               "field": "content[0].text/<think>"
-            }
+            },
+            "context": "踩刹车前"
           },
           {
             "title": "再次启动前 · 推理节选",
@@ -137,7 +138,8 @@
               "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 14,
               "field": "content[0].text/<think>"
-            }
+            },
+            "context": "重试启动前"
           }
         ]
       },
@@ -265,5 +267,8 @@
       "href": "data/case-library/recovery/brake-pressure-retry/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

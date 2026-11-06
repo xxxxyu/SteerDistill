@@ -116,3 +116,15 @@ test('every task has a reviewed, source-faithful replay with valid timing and pr
  }
  assert.equal(count, 172);
 });
+
+
+test('range-input rounding still reaches the exact replay endpoint', () => {
+  const clock = timing.createClock(data.runs), end = Math.max(...data.runs.map(r => r.total));
+  clock.seekAll(Number(end.toPrecision(15)));
+  assert.equal(clock.time, end);
+  for (const run of data.runs) {
+    clock.seekRun(run.id, Number(run.total.toPrecision(15)));
+    assert.equal(clock.forRun(run.id), run.total);
+    assert.equal(timing.at(run, clock.forRun(run.id)).finished, true);
+  }
+});

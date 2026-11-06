@@ -44,3 +44,15 @@
 
 /* A reviewed corrective action can have a different tone from its final-outcome frame. */
 .evidence-reader .ev-action.ev-neutral{--ev-accent:var(--soft)}
+
+/* Every frame uses the same content label and optional reading context. */
+.evidence-reader .ev-label{display:flex;align-items:baseline;justify-content:space-between;gap:6px 18px}
+.evidence-reader .ev-label-title{flex-shrink:0}
+.evidence-reader .ev-label-context{font-weight:400;color:var(--muted);text-align:right;min-width:0;overflow-wrap:anywhere}
+.case-site .ev-pair:has(>.ev-frame){grid-template-rows:auto 1fr}
+.case-site .ev-pair>.ev-frame{display:grid;grid-row:span 2;grid-template-rows:subgrid}
+@media(max-width:800px){
+ .case-site .ev-pair:has(>.ev-frame){grid-template-rows:none}
+ .case-site .ev-pair>.ev-frame{display:block;grid-row:auto}
+}
+@media(max-width:520px){.evidence-reader .ev-label{flex-direction:column;align-items:flex-start;gap:2px}.evidence-reader .ev-label-context{text-align:left}}

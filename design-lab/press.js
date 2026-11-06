@@ -49,6 +49,7 @@ function render(){
  if(type==='multiples')summary=metric==='average'?'五项基准的平均分，比较各模型的七种方法。':'所选基准上，三个模型的七种方法对比。';
  else if(type==='horizontal'&&metric!=='average')summary='所选基准的七种方法对比，BF16 为全精度参考。';
  else summary=`${model}${expanded?' · '+precision:''}: average score ${ours.average.toFixed(2)} (BF16: ${bf.average.toFixed(2)}), ${(ours.average-best.average).toFixed(2)} points above the strongest quantized baseline, ${best.method}.`;
+ if(window.SiteLocale?.lang==='zh'&&type==='grouped')summary=`${model}${expanded?' · '+precision:''}：平均分 ${ours.average.toFixed(2)}（BF16：${bf.average.toFixed(2)}），比最强量化基线 ${best.method} 高 ${(ours.average-best.average).toFixed(2)} 分。`;
  root.querySelector('[data-press-summary]').textContent=summary;
  const settingLabel=root.querySelector('[data-press-setting-label]');if(settingLabel)settingLabel.textContent=precision+' · BF16 reference';
  root.dataset.ready='true';
@@ -63,5 +64,5 @@ fetch(expanded?'experiments/data/benchmark_results.csv':'experiments/data/result
   const lines=csv.trim().split(/\r?\n/),keys=lines.shift().split(',');
   return lines.map(line=>Object.fromEntries(line.split(',').map((v,i)=>[keys[i],i<3?v:Number(v)])));
  });
-}).then(d=>{data=d;render()}).catch(()=>{root.querySelector('.press-plot').textContent='Benchmark data could not be loaded. Please reload.'});
+}).then(d=>{data=d;render()}).catch(()=>{root.querySelector('.press-plot').textContent=window.HomeLocale?.t('Benchmark data could not be loaded. Please reload.')||'Benchmark data could not be loaded. Please reload.'});
 })();

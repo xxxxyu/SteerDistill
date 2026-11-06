@@ -3,6 +3,7 @@
   'use strict';
   const root = document.querySelector('[data-concept-motion]');
   if (!root || !Element.prototype.animate) return;
+  const t = text => window.HomeLocale?.t(text) || text;
   const duration = 17000, fadeAt = 15600, fadeEnd = 16400;
   const control = root.querySelector('[data-concept-play]');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -73,9 +74,9 @@
       if(running) { animation.play(); animation.startTime = start; }
     }
     root.dataset.motionRunning = String(running);
-    control.textContent = playing ? 'Pause Ⅱ' : 'Play ▷';
+    control.textContent = t(playing ? 'Pause Ⅱ' : 'Play ▷');
     control.setAttribute('aria-pressed', String(playing));
-    control.setAttribute('aria-label', playing ? 'Pause method animation' : 'Play method animation');
+    control.setAttribute('aria-label', t(playing ? 'Pause method animation' : 'Play method animation'));
   }
   function showStill() {
     playing = false;

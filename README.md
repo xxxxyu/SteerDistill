@@ -3,9 +3,9 @@
 Research website for **SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering**.
 
 - Website: https://xxxxyu.github.io/SteerDistill/
-- English project homepage: `index.html` (including four interactive task replays at `#demo`)
+- Project homepage (English / Chinese): `index.html?lang=en` / `index.html?lang=zh` (including four interactive task replays at `#demo`)
 - Chinese research article: `article.html`
-- Full cases: `design-lab/paper-cases.html`
+- Full cases (Chinese / English): `design-lab/paper-cases.html?lang=zh` / `design-lab/paper-cases.html?lang=en`
 - Raw-record reader: `design-lab/case-records.html`
 
 This is a static site with local fonts. A small Node script generates the four entry pages from shared templates; hosting needs no build server. To preview:

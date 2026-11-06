@@ -68,7 +68,7 @@
             "message": 10
           }
         },
-        "frameTitle": "工具调用与返回 · 节选"
+        "excerpt": true
       },
       {
         "title": "Teacher 指导后",
@@ -121,7 +121,7 @@
             "message": 10
           }
         },
-        "frameTitle": "工具调用与返回 · 节选"
+        "excerpt": true
       }
     ],
     "guidance": {
@@ -1064,5 +1064,8 @@
       "href": "data/case-library/training/card-country-restriction/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

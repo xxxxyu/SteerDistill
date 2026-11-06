@@ -31,16 +31,16 @@ test('advisor analysis stays attributed and preserves its disclosure across meth
  const first=config.afterTurns([teacher,other]),disclosures=walk(first).filter(n=>n.tagName==='details');
  assert.equal(disclosures.length,2);
  assert.equal(disclosures[0].open,false);
- assert.match(disclosures[0].textContent,/Teacher · 指导生成分析节选Already complete/);
- assert.match(disclosures[0].textContent,/Teacher · 最终指导/);
+ assert.match(disclosures[0].textContent,/指导生成推理节选 TeacherAlready complete/);
+ assert.match(disclosures[0].textContent,/指导原文 Teacher/);
  assert.equal(walk(disclosures[0]).find(n=>n.tagName==='mark').className,'ev-mark-before');
- assert.doesNotMatch(disclosures[1].textContent,/Already complete|指导生成分析节选/);
+ assert.doesNotMatch(disclosures[1].textContent,/Already complete|指导生成推理节选/);
  disclosures[0].open=true;disclosures[0].handlers.toggle();
  const swapped=walk(config.afterTurns([other,teacher])).filter(n=>n.tagName==='details');
  assert.equal(swapped[0].open,false);
  assert.equal(swapped[1].open,true);
  assert.doesNotMatch(swapped[0].textContent,/Already complete/);
- assert.match(swapped[1].textContent,/Teacher · 指导生成分析节选/);
+ assert.match(swapped[1].textContent,/指导生成推理节选 Teacher/);
 });
 
 

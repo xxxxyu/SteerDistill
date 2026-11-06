@@ -269,5 +269,8 @@
       "href": "data/case-library/recovery/message-session-retry/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    3
+  ]
 }

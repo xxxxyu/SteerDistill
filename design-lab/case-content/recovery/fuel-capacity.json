@@ -317,7 +317,8 @@
         }
       },
       "position": "before",
-      "compact": true
+      "compact": true,
+      "method": "BF16"
     },
     "compact": true
   },
@@ -477,5 +478,8 @@
       "href": "data/case-library/recovery/fuel-capacity/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

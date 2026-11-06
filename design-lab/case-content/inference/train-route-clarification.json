@@ -925,5 +925,8 @@
       "href": "data/case-library/inference/train-route-clarification/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

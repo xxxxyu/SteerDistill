@@ -13,6 +13,7 @@ The single maintained component source is `design-lab/case-shared/`. Read the ed
   "summary": "Task and material environment condition.",
   "template": "comparison",
   "originalTask": {"question": [[{"role": "user", "content": "Full verbatim user request"}]]},
+  "taskTurns": [0],
   "presentation": {},
   "records": {
     "defaultSource": "ours",
@@ -33,6 +34,18 @@ For each accepted entry, the integration owner adds a fixed `code` and a separat
 Catalog groups may define ordered `sections: [{id, label}]` for reading subgroups. Each registered case in that group sets `section` to one declared ID. Keep case entries in the intended reading order; the shared adapter supplies the subgroup layout. This classification is editorial data, not inferred from task IDs or keywords.
 
 `indexTitle` is a short subject label, manually chosen to fit one sidebar line with its code (at most eight characters; prefer four to six Chinese characters). It has no final sentence punctuation. The shared sidebar displays `I1 · 工具名大小写`, while the case heading displays the same code followed by the full title. Do not hide an overlong index with an ellipsis or put identifiers into the task summary. Check the actual sidebar fit when integrating a case.
+
+## Task disclosure scope
+
+Keep `originalTask` complete and verbatim. Set root-level `taskTurns` to the ordered, zero-based indices of complete user turns needed to understand the displayed case. The page renders only these turns; unrelated later tasks remain in the original record reader and archive. Do not truncate or rewrite a selected user message, silently renumber nonconsecutive turns, or infer the selection from method names or displayed step counts. If the request depends on prior context (a filename derived from a line count, for example), include that context as well. A single selected turn needs no extra turn heading.
+
+The current selection was reviewed case by case: T1 [0], T2 [0,1,2], T3 [0], T4 [0], T5 [5]; I1–I6 [0], I7 [0,1,2], I8 [0], I9 [0,1,2,3]; R1–R2 [0], R3 [0,1,3], R4 [3], R5 [0]. R3 retains the later read used as evidence but omits the unrelated question about the second filename. T2 retains both preceding requests because they determine the source file and output filename. This is editorial data shared by both languages.
+
+## Frame headings
+
+Use the shared content-type heading and a separate reading context, with no final sentence punctuation. Case action frames use 调用与回复 / Calls and responses; reasoning uses Agent 推理节选 / Agent reasoning excerpt; guidance uses 指导原文 / Original guidance; verification uses 执行结果 / Execution results. The context identifies the method/intervention, turn, or concrete recovery step. Recovery step descriptions remain visible in the header; they are not replaced with generic step numbers.
+
+The shared templates compose these headings. Do not add per-case font, border, color, spacing or header markup. `branches[].excerpt` is an explicit boolean for a shortened action selection. A recovery reference can set `method` for the reasoning context; `reasoning.context` distinguishes multiple excerpts within a step when needed. The old training `frameTitle` and guidance-comparison `guidanceLabel` strings are no longer used.
 
 ## Templates
 

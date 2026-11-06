@@ -186,3 +186,10 @@ Within the continuous rail, non-interactive reading-group labels use the site se
 ## Group aliases
 
 `catalog.groups[].aliases` preserves former category URLs. The loader resolves an alias to the current group before looking up cases and preserves pair/source/message/hash parameters. The former ablation category now belongs to training’s guidance-comparison section. Registered case `kind` matches its catalogue group; comparison rendering still uses the existing template. Raw sources and downloads are served from `data/case-library/`, indexed by stable slug rather than display number.
+
+
+## Scoped requests and uniform frame headers
+
+`CaseTaskSource.create(originalTask, {turns: taskTurns})` renders an explicitly reviewed subset of complete user turns. Omit the option only for legacy consumers that need the full task. It rejects empty, repeated, unordered or out-of-range selections and preserves original turn numbers. No source record is modified.
+
+`EvidenceUI.frame(title, body, options)` accepts either a legacy string or `{title, context}`. Both use the same `.ev-label` structure. The content type is medium-bold; contextual text uses normal weight. The shared comparison, training and recovery templates supply these labels in the selected language. `reasoningDisclosure` accepts a branch `header` with the same structure. Paired case frames share header/body grid rows so a long translated header cannot move one body below the other. Narrow screens stack title and context.

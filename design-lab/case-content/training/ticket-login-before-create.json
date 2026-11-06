@@ -1032,12 +1032,12 @@
     ],
     "turns": [
       {
-        "label": "调用与回复 · 节选"
+        "label": "",
+        "excerpt": true
       }
     ],
     "details": {
       "guidanceTitle": "指导内容",
-      "guidanceLabel": "指导原文节选",
       "resultTitle": "执行结果"
     }
   },
@@ -3339,5 +3339,8 @@
       "href": "data/case-library/training/ticket-login-before-create/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    5
+  ]
 }

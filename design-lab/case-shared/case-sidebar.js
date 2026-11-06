@@ -1,9 +1,10 @@
 /* One catalogue structure and drawer lifecycle for cases and raw-record readers. */
 window.CaseSidebar=(()=>{
+ const t=(text,values)=>window.CaseLocale?.t(text,values)||text.replace(/\{(\w+)\}/g,(match,key)=>values?.[key]??match);
  const instances=new WeakMap();let drawer;
  const variants=new Set(['rail','type','compact']);
  function previewVariant(){const value=new URLSearchParams(location.search).get('sidebar');return variants.has(value)?value:''}
- function previewUrl(href){const url=new URL(href,location.href),variant=previewVariant();if(variant&&!url.searchParams.has('sidebar'))url.searchParams.set('sidebar',variant);return url.pathname+url.search+url.hash;}
+ function previewUrl(href){const url=new URL(href,location.href),variant=previewVariant();if(variant&&!url.searchParams.has('sidebar'))url.searchParams.set('sidebar',variant);if(window.CaseLocale)url.searchParams.set('lang',CaseLocale.lang);return url.pathname+url.search+url.hash;}
  const node=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
  function bind(root){
   const button=document.querySelector('.site-header .site-menu');
@@ -42,8 +43,8 @@ window.CaseSidebar=(()=>{
   return result;
  }
  async function cases(root,active,caseId){
-  const response=await fetch(SitePaths.url('design-lab/case-content/catalog.json'),{cache:'no-cache'});if(!response.ok)throw Error('案例目录无法读取');const catalog=await response.json();
-  return mount(root,{title:'案例目录',current:active+'/'+caseId,groups:catalog.groups.map(caseGroup)});
+  const response=await fetch(SitePaths.url('design-lab/case-content/catalog.json'),{cache:'no-cache'});if(!response.ok)throw Error(t('案例目录无法读取'));let catalog=await response.json();if(window.CaseLocale?.lang==='en'){const translated=await fetch(SitePaths.url('design-lab/case-content/en/catalog.json'));if(!translated.ok)throw Error('Could not load the English case directory');catalog=CaseLocale.apply(catalog,await translated.json());}
+  return mount(root,{title:t('案例目录'),current:active+'/'+caseId,groups:catalog.groups.map(caseGroup)});
  }
 
  const root=document.querySelector('.case-catalog');if(root){root.className='case-catalog case-sidebar';bind(root);if(root.dataset.caseKind)cases(root,root.dataset.caseKind)}

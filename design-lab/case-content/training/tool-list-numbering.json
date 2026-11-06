@@ -21,7 +21,6 @@
         "title": "无指导",
         "summary": "把列表序号加进工具名，解锁和开灯都报错，重试后仍未成功。",
         "tone": "before",
-        "frameTitle": "工具调用与返回 · 节选",
         "events": [
           {
             "type": "action",
@@ -87,13 +86,13 @@
             "file": "data/case-library/training/tool-list-numbering/raw/before/trajectory.json",
             "message": 4
           }
-        }
+        },
+        "excerpt": true
       },
       {
         "title": "Teacher 指导后",
         "summary": "使用正确的工具名解锁车门，随后继续打开车灯。",
         "tone": "after",
-        "frameTitle": "工具调用与返回",
         "events": [
           {
             "type": "action",
@@ -1328,5 +1327,8 @@
       "href": "data/case-library/training/tool-list-numbering/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

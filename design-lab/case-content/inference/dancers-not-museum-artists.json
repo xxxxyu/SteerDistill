@@ -910,5 +910,8 @@
       "href": "data/case-library/inference/dancers-not-museum-artists/records.zip",
       "label": "下载完整记录"
     }
-  }
+  },
+  "taskTurns": [
+    0
+  ]
 }

@@ -5,7 +5,8 @@ window.SiteShell = (() => {
   function theme(dark, save = false) {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     button.setAttribute('aria-pressed', String(dark));
-    button.setAttribute('aria-label', dark ? '切换浅色主题' : '切换深色主题');
+    const label = dark ? '切换浅色主题' : '切换深色主题';
+    button.setAttribute('aria-label', window.SiteLocale?.t(label) || label);
     if (save) try { localStorage.setItem('steerdistill-theme', dark ? 'dark' : 'light'); } catch {}
   }
   function current(page) {

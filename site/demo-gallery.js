@@ -2,20 +2,20 @@
 (() => {
   const root = document.querySelector('[data-demo-gallery]');
   if (!root) return;
-  const make = EvidenceUI.make;
+  const make = EvidenceUI.make, t = HomeLocale.t;
   const catalogURL = new URL(root.dataset.demoGallery, SitePaths.root);
   async function start() {
     const response = await fetch(catalogURL);
     if (!response.ok) throw Error('Demo catalogue unavailable');
     const catalog = await response.json();
     const nav = make('div', 'demo-task-tabs'), description = make('p', 'demo-task-description'), panels = make('div', 'demo-task-panels');
-    nav.setAttribute('role', 'tablist'); nav.setAttribute('aria-label', 'Demo tasks');
+    nav.setAttribute('role', 'tablist'); nav.setAttribute('aria-label', t('Demo tasks'));
     description.id = 'demo-task-description';
     const entries = new Map(); let active;
     for (const task of catalog.tasks) {
       const tab = make('button', 'demo-task-tab'); tab.type = 'button'; tab.id = 'demo-task-tab-' + task.id;
-      tab.setAttribute('role', 'tab'); tab.setAttribute('aria-label', `${task.app}: ${task.label}`);
-      tab.append(make('span', 'demo-task-app', task.app), make('span', 'demo-task-label', task.label));
+      tab.setAttribute('role', 'tab'); tab.setAttribute('aria-label', `${task.app}: ${t(task.label)}`);
+      tab.append(make('span', 'demo-task-app', task.app), make('span', 'demo-task-label', t(task.label)));
       const panel = make('div', 'demo-replay'); panel.dataset.demoTask = task.id;
       panel.id = 'demo-task-panel-' + task.id; panel.hidden = true; panel.setAttribute('role', 'tabpanel');
       panel.setAttribute('aria-labelledby', tab.id); panel.setAttribute('aria-describedby', description.id);
@@ -28,8 +28,8 @@
     for (const sentence of catalog.summary) {
       const paragraph = make('p');
       for (const part of sentence) {
-        if (part.href) { const link = make('a', '', part.text); link.href = part.href; paragraph.append(link); }
-        else paragraph.append(part.text);
+        if (part.href) { const link = make('a', '', t(part.text)); link.href = part.href; paragraph.append(link); }
+        else paragraph.append(t(part.text));
       }
       summary.append(paragraph);
     }
@@ -37,7 +37,7 @@
     async function load(entry) {
       if (entry.controller) return entry.controller;
       if (entry.pending) return entry.pending;
-      entry.panel.replaceChildren(make('p', 'demo-loading', 'Loading ' + entry.task.app + ' replay…'));
+      entry.panel.replaceChildren(make('p', 'demo-loading', t('Loading {app} replay…', {app:entry.task.app})));
       entry.panel.setAttribute('aria-busy', 'true');
       entry.pending = (async () => {
         const base = new URL(entry.task.path, catalogURL);
@@ -51,9 +51,9 @@
         return controller;
       })().catch(error => {
         entry.pending = null; entry.panel.removeAttribute('aria-busy');
-        const retry = make('button', 'replay-play', 'Try again'); retry.type = 'button';
+        const retry = make('button', 'replay-play', t('Try again')); retry.type = 'button';
         retry.onclick = () => load(entry).catch(() => {});
-        entry.panel.replaceChildren(make('p', 'demo-loading', 'This replay could not be loaded.'), retry);
+        entry.panel.replaceChildren(make('p', 'demo-loading', t('This replay could not be loaded.')), retry);
         console.error(error); throw error;
       });
       return entry.pending;
@@ -64,7 +64,7 @@
         const selected = id === key; entry.panel.hidden = !selected;
         entry.tab.setAttribute('aria-selected', String(selected)); entry.tab.tabIndex = selected ? 0 : -1;
       }
-      const entry = entries.get(id); description.textContent = entry.task.task;
+      const entry = entries.get(id); description.textContent = t(entry.task.task);
       if (updateURL) {
         const url = new URL(location.href); url.searchParams.set('demo', id);
         history.replaceState(history.state, '', url.pathname + url.search + url.hash);
@@ -91,8 +91,8 @@
   function boot() {
     if (started) return; started = true; observer.disconnect();
     start().catch(error => {
-      root.replaceChildren(make('p', 'demo-loading', 'The demo catalogue could not be loaded.'));
-      const retry = make('button', 'replay-play', 'Try again'); retry.type = 'button'; retry.onclick = () => location.reload(); root.append(retry); console.error(error);
+      root.replaceChildren(make('p', 'demo-loading', t('The demo catalogue could not be loaded.')));
+      const retry = make('button', 'replay-play', t('Try again')); retry.type = 'button'; retry.onclick = () => location.reload(); root.append(retry); console.error(error);
     });
   }
   if (location.hash === '#demo') boot(); else observer.observe(root);
