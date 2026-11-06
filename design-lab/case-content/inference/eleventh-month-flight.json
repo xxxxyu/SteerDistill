@@ -56,7 +56,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/BF16/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/BF16/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -89,7 +89,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/BF16/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/BF16/trajectory.json",
                 "message": 12,
                 "returnMessage": 13,
                 "argumentFields": [
@@ -119,7 +119,7 @@
             "text": "The user specified November 15, 2026, which should be formatted as YYYY-MM-DD, so 2026-11-15.",
             "highlights": [],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/BF16/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/BF16/trajectory.json",
               "message": 8,
               "field": "content[0].text within <think>",
               "originalText": "The user specified November 15, 2026, which should be formatted as YYYY-MM-DD, so 2026-11-15.",
@@ -154,7 +154,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/GPTQ/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -187,7 +187,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/GPTQ/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/trajectory.json",
                 "message": 16,
                 "returnMessage": 17,
                 "argumentFields": [
@@ -217,7 +217,7 @@
             "text": "Okay, so the user wants to book a first-class flight from San Francisco to Chicago on November 15th, 2026, with a budget under $5000.",
             "highlights": [],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/GPTQ/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/trajectory.json",
               "message": 8,
               "field": "content[0].text within <think>",
               "originalText": "Okay, so the user wants to book a first-class flight from San Francisco to Chicago on November 15th, 2026, with a budget under $5000.",
@@ -252,7 +252,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -289,7 +289,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/trajectory.json",
               "message": 8,
               "field": "content[0].text within <think>",
               "originalText": "Travel date is 2026-12-15, from SFO to ORD, first class. All parameters seem covered. No issues detected, so the booking should go through.",
@@ -324,7 +324,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/BitDistiller/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -357,7 +357,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/BitDistiller/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/trajectory.json",
                 "message": 12,
                 "returnMessage": 13,
                 "argumentFields": [
@@ -394,7 +394,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/BitDistiller/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/trajectory.json",
               "message": 4,
               "field": "content[0].text within <think>",
               "originalText": "The goal is to book a first-class flight from San Francisco to Chicago on December 15, 2026, without exceeding $5000.",
@@ -429,7 +429,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -454,7 +454,7 @@
                 "text": []
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/trajectory.json",
                 "message": 10,
                 "field": "content[0].text after </think>",
                 "originalText": "The flight cost from SFO to ORD on 2026-12-15 in first class is $2000.00, which meets your budget requirement. Please provide your personal details (full name, date of birth, passport number) to proceed with the booking integration.",
@@ -478,7 +478,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/trajectory.json",
               "message": 8,
               "field": "content[0].text within <think>",
               "originalText": "The travel_date should be in YYYY-MM-DD format, which the user specified as December 15th, 2026, so that becomes 2026-12-15.",
@@ -513,7 +513,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/QeRL/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/QeRL/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -546,7 +546,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/QeRL/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/QeRL/trajectory.json",
                 "message": 10,
                 "returnMessage": 11,
                 "argumentFields": [
@@ -583,7 +583,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/QeRL/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/QeRL/trajectory.json",
               "message": 8,
               "field": "content[0].text within <think>",
               "originalText": "The travel date is December 15, 2026, so formatted as 2026-12-15.",
@@ -618,7 +618,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/Ours/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/Ours/trajectory.json",
                 "message": 8,
                 "returnMessage": 9,
                 "argumentFields": [
@@ -651,7 +651,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/032_multi_turn_miss_param_152/Ours/trajectory.json",
+                "file": "data/case-library/inference/eleventh-month-flight/raw/Ours/trajectory.json",
                 "message": 10,
                 "returnMessage": 11,
                 "argumentFields": [
@@ -688,7 +688,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/032_multi_turn_miss_param_152/Ours/trajectory.json",
+              "file": "data/case-library/inference/eleventh-month-flight/raw/Ours/trajectory.json",
               "message": 8,
               "field": "content[0].text within <think>",
               "originalText": "The user's date is November 15th, 2026, so that becomes \"2026-11-15\".",
@@ -720,381 +720,392 @@
       {
         "id": "BF16/actions.json",
         "label": "BF16/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/cot_and_actions.txt",
         "label": "BF16/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BF16/done.json",
         "label": "BF16/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/request_metadata.json",
         "label": "BF16/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/score.json",
         "label": "BF16/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/trajectory.json",
         "label": "BF16 · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/BF16/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BF16/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BitDistiller/actions.json",
         "label": "BitDistiller/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/cot_and_actions.txt",
         "label": "BitDistiller/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BitDistiller/done.json",
         "label": "BitDistiller/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/request_metadata.json",
         "label": "BitDistiller/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/result.json",
         "label": "BitDistiller/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/score.json",
         "label": "BitDistiller/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/trajectory.json",
         "label": "BitDistiller · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/BitDistiller/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/BitDistiller/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/actions.json",
         "label": "EfficientQAT/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/cot_and_actions.txt",
         "label": "EfficientQAT/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "EfficientQAT/done.json",
         "label": "EfficientQAT/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/request_metadata.json",
         "label": "EfficientQAT/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/result.json",
         "label": "EfficientQAT/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/score.json",
         "label": "EfficientQAT/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/trajectory.json",
         "label": "EfficientQAT · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/EfficientQAT/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/EfficientQAT/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "GPTQ/actions.json",
         "label": "GPTQ/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/cot_and_actions.txt",
         "label": "GPTQ/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "GPTQ/done.json",
         "label": "GPTQ/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/request_metadata.json",
         "label": "GPTQ/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/result.json",
         "label": "GPTQ/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/score.json",
         "label": "GPTQ/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/trajectory.json",
         "label": "GPTQ · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/GPTQ/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/GPTQ/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/actions.json",
         "label": "On-Policy QAD/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/cot_and_actions.txt",
         "label": "On-Policy QAD/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "On-Policy QAD/done.json",
         "label": "On-Policy QAD/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/request_metadata.json",
         "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/result.json",
         "label": "On-Policy QAD/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/score.json",
         "label": "On-Policy QAD/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/trajectory.json",
         "label": "On-Policy QAD · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/On-Policy QAD/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/On-Policy QAD/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/actions.json",
         "label": "Ours/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/cot_and_actions.txt",
         "label": "Ours/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "Ours/done.json",
         "label": "Ours/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/request_metadata.json",
         "label": "Ours/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/score.json",
         "label": "Ours/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/trajectory.json",
         "label": "SteerDistill · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/Ours/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "QeRL/actions.json",
         "label": "QeRL/actions.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/actions.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/cot_and_actions.txt",
         "label": "QeRL/cot_and_actions.txt",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/cot_and_actions.txt",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "QeRL/done.json",
         "label": "QeRL/done.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/done.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/request_metadata.json",
         "label": "QeRL/request_metadata.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/request_metadata.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/result.json",
         "label": "QeRL/result.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/result.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/score.json",
         "label": "QeRL/score.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/score.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/trajectory.json",
         "label": "QeRL · 轨迹",
-        "url": "data/cases/032_multi_turn_miss_param_152/QeRL/trajectory.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/QeRL/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "analysis.json",
         "label": "analysis.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/analysis.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "ground_truth.json",
         "label": "ground_truth.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/ground_truth.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "provenance.json",
         "label": "provenance.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/provenance.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/provenance.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "summary.md",
         "label": "summary.md",
-        "url": "data/cases/032_multi_turn_miss_param_152/summary.md",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/summary.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/032_multi_turn_miss_param_152/task.json",
+        "url": "data/case-library/inference/eleventh-month-flight/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/inference/eleventh-month-flight/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/inference/eleventh-month-flight/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

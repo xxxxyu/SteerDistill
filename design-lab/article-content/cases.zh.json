@@ -38,7 +38,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/BF16/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/BF16/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -66,7 +66,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/Ours/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/Ours/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -94,7 +94,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/On-Policy QAD/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -128,7 +128,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/GPTQ/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/GPTQ/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -156,7 +156,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/EfficientQAT/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -184,7 +184,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/BitDistiller/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/BitDistiller/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -212,7 +212,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/QeRL/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/QeRL/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -243,7 +243,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/Ours/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/Ours/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -265,7 +265,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/Ours/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/Ours/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -293,7 +293,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/On-Policy QAD/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -315,7 +315,7 @@
                   ]
                 },
                 "source": {
-                  "file": "data/cases/019_live_simple_31-8-1/On-Policy QAD/trajectory.json",
+                  "file": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/trajectory.json",
                   "message": 4,
                   "field": "tool_calls[0].function.arguments"
                 }
@@ -492,10 +492,10 @@
       "case": {
         "kind": "ablation",
         "id": "ticket-login-before-create",
-        "code": "A1",
+        "code": "T5",
         "title": "登录成功之后，工单是否真的创建",
         "task": "创建优先级为 3 的交易问题工单。用户已提供登录信息，工单系统尚未登录。",
-        "href": "design-lab/paper-cases.html?group=ablation&case=ticket-login-before-create",
+        "href": "design-lab/paper-cases.html?group=training&case=ticket-login-before-create",
         "layout": "comparison",
         "branches": [
           {
@@ -510,7 +510,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -533,7 +533,7 @@
                 "args": "priority=3, …",
                 "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -596,7 +596,7 @@
                 "args": "priority=3, …",
                 "result": "User not authenticated. Please log in to create a ticket.",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -630,7 +630,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -683,7 +683,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -706,7 +706,7 @@
                 "args": "priority=3, …",
                 "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -769,7 +769,7 @@
                 "args": "priority=3, …",
                 "result": "User not authenticated. Please log in to create a ticket.",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -803,7 +803,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -853,7 +853,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -876,7 +876,7 @@
                 "args": "priority=3, …",
                 "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -939,7 +939,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -962,7 +962,7 @@
                 "args": "priority=3, description=\"… My username is … and password is … for the ticket login.\"",
                 "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -1035,7 +1035,7 @@
                 "args": "priority=3, …",
                 "result": "User not authenticated. Please log in to create a ticket.",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
                   "message": 26,
                   "returnMessage": 27,
                   "excerpt": true,
@@ -1069,7 +1069,7 @@
                 "args": "…",
                 "result": "success=true",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
                   "message": 28,
                   "returnMessage": 29,
                   "excerpt": true,
@@ -1092,7 +1092,7 @@
                 "args": "priority=3, description=\"… My username is … and password is … for the ticket login.\"",
                 "result": "id=0, status=\"Open\", priority=3",
                 "source": {
-                  "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                  "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
                   "message": 30,
                   "returnMessage": 31,
                   "excerpt": true,

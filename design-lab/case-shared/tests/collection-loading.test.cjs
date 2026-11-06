@@ -42,3 +42,23 @@ test('newest case navigation wins without clearing the previous case while loadi
  assert.equal(h.root.children[0].title,'b');assert.match(h.location.search,/case=b/);assert.equal(h.historyWrites.length,1);
  assert.equal(h.requests.filter(r=>r.url.endsWith('catalog.json')).length,1);
 });
+
+test('legacy group links retain case, selected methods and record position',async()=>{
+ const h=harness();
+ const pending=h.C.load('/design-lab/case-records.html?group=ablation&case=ticket&left=unguided&right=teacher&source=before&message=26&mode=raw');
+ h.requests[0].resolve({groups:[{id:'training',aliases:['ablation'],cases:[{id:'ticket',code:'T5',url:'/ticket.json'}]}]});await turn();
+ h.requests[1].resolve(config('ticket'));const result=await pending;
+ assert.equal(result.entry.code,'T5');assert.equal(result.config.kind,'training');
+ assert.equal(result.url.searchParams.get('group'),'training');
+ for(const [key,value]of Object.entries({case:'ticket',left:'unguided',right:'teacher',source:'before',message:'26',mode:'raw'}))assert.equal(result.url.searchParams.get(key),value);
+ assert.equal(result.url.pathname,'/design-lab/case-records.html');
+});
+
+test('retired ablation links fall back safely after the group merge',async()=>{
+ const h=harness();const pending=h.C.load('/design-lab/paper-cases.html?group=ablation&case=withdrawn&left=old&source=old&message=7');
+ h.requests[0].resolve({groups:[{id:'training',aliases:['ablation'],retiredCases:['withdrawn'],cases:[{id:'directory',url:'/directory.json'}]}]});await turn();
+ h.requests[1].resolve(config('directory'));const result=await pending;
+ assert.equal(result.config.id,'directory');assert.equal(result.url.searchParams.get('group'),'training');
+ assert.equal(result.url.searchParams.get('case'),'directory');
+ for(const key of ['left','source','message'])assert.equal(result.url.searchParams.has(key),false);
+});

@@ -10,7 +10,7 @@ The user explicitly allows a case whose valid state comparison was supplemented 
 
 - Authored config: `design-lab/case-content/training/card-country-restriction.json`.
 - Shared template/reference: training API; `training/directory-navigation.json` and accepted `training/tool-list-numbering.json` supply composition, not target facts.
-- Raw root: `data/cases/training_case/reviewed-20261106/banking_6_2/`. All source paths below are relative to this root.
+- Raw root: `data/case-library/training/card-country-restriction/raw/`. All source paths below are relative to this root.
 - Coordinator-provided package: `training_steering_9_cases_20261106/cases/003_banking_6_2`, from the training review package on host alias `neogpu-a100-nx-1`. The actual model source is identified by the preserved `protocol.json` and `supplement-protocol.json`.
 - Imported all 129 package files, unchanged. `import-manifest.json` records SHA-256 and byte sizes, checked against the provided package after copying. The manifest is the 130th source. This author did not independently redownload the upstream server package and does not claim a remote-server hash check.
 - Unlike an earlier package description, this actual source includes both `initial.db` and `pre_state.db`. They were inspected and preserved.

@@ -3,7 +3,7 @@
   "id": "create-before-write",
   "kind": "recovery",
   "title": "写入报错后，先创建文件再重试",
-  "summary": "用户要求新建 WebDevProjects 文件夹，并在其中创建三个文件、分别写入指定文本。文件工具将 `touch`（创建文件）与 `echo`（写入内容）分为两个操作。",
+  "summary": "用户要求新建 `WebDevProjects` 文件夹，并在其中创建三个文件、分别写入指定文本。文件工具将 `touch`（创建文件）与 `echo`（写入内容）分为两个操作。",
   "template": "sequence",
   "originalTask": {
     "question": [
@@ -56,7 +56,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+              "file": "data/case-library/recovery/create-before-write/raw/trajectory.json",
               "message": 10,
               "returnMessage": 11,
               "callField": "tool_calls[0].function.arguments",
@@ -84,7 +84,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+              "file": "data/case-library/recovery/create-before-write/raw/trajectory.json",
               "message": 12,
               "returnMessage": 13,
               "callField": "tool_calls[0].function.arguments",
@@ -99,7 +99,7 @@
             "result": "None",
             "highlights": {},
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+              "file": "data/case-library/recovery/create-before-write/raw/trajectory.json",
               "message": 14,
               "returnMessage": 15,
               "callField": "tool_calls[0].function.arguments",
@@ -119,7 +119,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+            "file": "data/case-library/recovery/create-before-write/raw/trajectory.json",
             "message": 12,
             "field": "content[0].text/<think>"
           }
@@ -145,7 +145,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+              "file": "data/case-library/recovery/create-before-write/raw/trajectory.json",
               "message": 30,
               "returnMessage": 31,
               "callField": "tool_calls[0].function.arguments",
@@ -163,55 +163,62 @@
       {
         "id": "trajectory",
         "label": "SteerDistill · 完整轨迹",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/trajectory.json",
+        "url": "data/case-library/recovery/create-before-write/raw/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "category_score",
         "label": "类别评分原始记录",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/category_score.jsonl",
+        "url": "data/case-library/recovery/create-before-write/raw/category_score.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "recovery_excerpt",
         "label": "恢复片段原始记录",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/recovery_excerpt.json",
+        "url": "data/case-library/recovery/create-before-write/raw/recovery_excerpt.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "recovery_suffix",
         "label": "恢复后续原始记录",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/recovery_suffix.json",
+        "url": "data/case-library/recovery/create-before-write/raw/recovery_suffix.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "evidence",
         "label": "归档证据元数据",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/evidence.json",
+        "url": "data/case-library/recovery/create-before-write/raw/evidence.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "checksums",
         "label": "文件校验和",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/checksums.json",
+        "url": "data/case-library/recovery/create-before-write/raw/checksums.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "README",
         "label": "归档说明",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/README.txt",
+        "url": "data/case-library/recovery/create-before-write/raw/README.txt",
         "primary": false,
         "format": "text"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/recovery/create-before-write/manifest.json",
+        "format": "auto",
+        "primary": false
       }
     ],
     "download": {
-      "href": "data/cases/recovery_case/verified_20261103/multi_turn_base_39/case_data.zip",
+      "href": "data/case-library/recovery/create-before-write/records.zip",
       "label": "下载完整记录"
     }
   }

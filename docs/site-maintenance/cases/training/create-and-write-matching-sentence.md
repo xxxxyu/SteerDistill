@@ -11,7 +11,7 @@
 ## 原始包与版本
 
 - 本地输入：协调者核验过的 `training_steering_9_cases_20261106/cases/009_multi_turn_base_37/`。
-- 网站完整副本：`data/cases/training_case/reviewed-20261106/multi_turn_base_37/`（下称 RAW）。119 个原始文件逐字节匹配输入包，没有编辑 raw 内容；另加 `import-manifest.json` 保存 SHA256、大小、来源选择及核验摘要。
+- 网站完整副本：`data/case-library/training/create-and-write-matching-sentence/raw/`（下称 RAW）。119 个原始文件逐字节匹配输入包，没有编辑 raw 内容；另加 `import-manifest.json` 保存 SHA256、大小、来源选择及核验摘要。
 - `selection.json` 确认 before/reference 来自旧训练候选；新 after/steering 来自 `neogpu-a100-nx-1` 的 `/mnt/genming/training-case-protocol-repair-20261106/multi_turn_base_37/`，均为 attempt 0。没有混入旧指导或旧 after。
 - `protocol.json` 保留采集时的 `status: running`；不把该标签当最终判据。实际首步 gate、请求序列、执行记录和最终 score 均已完成且互相吻合。
 - 不修改源码、服务器或执行实验；代码中 gate 通过后停止局部修订的检查由协调者完成。本作者独立核验实际请求/反馈/收据，不仅依赖协议说明。

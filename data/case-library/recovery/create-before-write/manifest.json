@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "create-before-write",
+  "kind": "recovery",
+  "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_39",
+  "files": [
+    {
+      "path": "README.txt",
+      "bytes": 481,
+      "sha256": "3f5c51e21d8640e9f98d316c3328690c3cf3729776ee39304b14ef158f85327b"
+    },
+    {
+      "path": "case_data.zip",
+      "bytes": 99269,
+      "sha256": "e3e7947cada2148053ddb2ebc94de59ce056edb39e3e3d5aa92b05c1e7f37fc7"
+    },
+    {
+      "path": "category_score.jsonl",
+      "bytes": 596475,
+      "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
+    },
+    {
+      "path": "checksums.json",
+      "bytes": 546,
+      "sha256": "1e71b89ebcf00f9b713b75d0062ecb2a54ab4a3c9c902da6e769f5ed3a82f70f"
+    },
+    {
+      "path": "evidence.json",
+      "bytes": 740,
+      "sha256": "6930b9a81655680caaccd98dc34aba6b4b855548bab2a30c682e623c7d46faf6"
+    },
+    {
+      "path": "recovery_excerpt.json",
+      "bytes": 15486,
+      "sha256": "9dfb1c07eb4f287ff91d93953ffab662cba606d2bd9d2685f6466c44edef31a6"
+    },
+    {
+      "path": "recovery_suffix.json",
+      "bytes": 25443,
+      "sha256": "25f3420c0a9b17193d4c313392cbe8aad21f4b6227c00315455ba32e586b187a"
+    },
+    {
+      "path": "trajectory.json",
+      "bytes": 49146,
+      "sha256": "2c052373569d7cf4aefbbe44db8d5372ccc7c4ab69a0050df40d29c9d7283cf3"
+    }
+  ]
+}

@@ -61,7 +61,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/trajectory.json",
+              "file": "data/case-library/training/create-and-write-matching-sentence/raw/before/trajectory.json",
               "message": 20,
               "returnMessage": 21
             }
@@ -75,7 +75,7 @@
             "returnTone": "neutral",
             "highlights": {},
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/trajectory.json",
+              "file": "data/case-library/training/create-and-write-matching-sentence/raw/before/trajectory.json",
               "message": 22,
               "returnMessage": 23
             }
@@ -98,7 +98,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/trajectory.json",
+              "file": "data/case-library/training/create-and-write-matching-sentence/raw/before/trajectory.json",
               "message": 24,
               "returnMessage": 25
             }
@@ -122,7 +122,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/trajectory.json",
+            "file": "data/case-library/training/create-and-write-matching-sentence/raw/before/trajectory.json",
             "message": 20,
             "field": "reasoning",
             "excerpt": true,
@@ -163,7 +163,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/trajectory.json",
+              "file": "data/case-library/training/create-and-write-matching-sentence/raw/after/trajectory.json",
               "message": 20,
               "returnMessage": 21
             }
@@ -186,7 +186,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/trajectory.json",
+              "file": "data/case-library/training/create-and-write-matching-sentence/raw/after/trajectory.json",
               "message": 22,
               "returnMessage": 23
             }
@@ -216,7 +216,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/trajectory.json",
+            "file": "data/case-library/training/create-and-write-matching-sentence/raw/after/trajectory.json",
             "message": 20,
             "field": "reasoning",
             "excerpt": true,
@@ -255,843 +255,854 @@
       {
         "id": "after/local_gate.json",
         "label": "局部核验 · 创建空文件",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/local_gate.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/local_gate.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "after/score.json",
         "label": "指导后 · 任务检查",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/score.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "after/trajectory.json",
         "label": "Teacher 指导后 · 完整轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/trajectory.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "before/score.json",
         "label": "无指导 · 任务检查",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/score.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "before/trajectory.json",
         "label": "无指导 · 完整轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/trajectory.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "reference/trajectory.json",
         "label": "Teacher · 参考轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/trajectory.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "steering/analysis.json",
         "label": "Teacher · 指导推理",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/analysis.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/analysis.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "steering/raw_steering_prompt.txt",
         "label": "Teacher · 指导原文",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/raw_steering_prompt.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/raw_steering_prompt.txt",
         "primary": true,
         "format": "guidance"
       },
       {
         "id": "task.json",
         "label": "完整任务与环境",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/task.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/task.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "SUMMARY.md",
         "label": "SUMMARY.md",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/SUMMARY.md",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/SUMMARY.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/context.json",
         "label": "after/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/cot_and_actions.txt",
         "label": "after/cot_and_actions.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/cot_and_actions.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/execution.json",
         "label": "after/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/restore.json",
         "label": "after/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/restore.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/budget.json",
         "label": "after/turn-000/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/execution.json",
         "label": "after/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/pre-context.json",
         "label": "after/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/reasoning.txt",
         "label": "after/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-000/request.json",
         "label": "after/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/response.json",
         "label": "after/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/transport-1793937036670157810/request.json",
         "label": "after/turn-000/transport-1793937036670157810/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/transport-1793937036670157810/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/transport-1793937036670157810/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/transport-1793937036670157810/response.json",
         "label": "after/turn-000/transport-1793937036670157810/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/transport-1793937036670157810/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/transport-1793937036670157810/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/transport-1793937036670157810/stream.jsonl",
         "label": "after/turn-000/transport-1793937036670157810/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-000/transport-1793937036670157810/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-000/transport-1793937036670157810/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-001/budget.json",
         "label": "after/turn-001/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/execution.json",
         "label": "after/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/pre-context.json",
         "label": "after/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/reasoning.txt",
         "label": "after/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-001/request.json",
         "label": "after/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/response.json",
         "label": "after/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/transport-1793937075814406865/request.json",
         "label": "after/turn-001/transport-1793937075814406865/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/transport-1793937075814406865/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/transport-1793937075814406865/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/transport-1793937075814406865/response.json",
         "label": "after/turn-001/transport-1793937075814406865/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/transport-1793937075814406865/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/transport-1793937075814406865/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/transport-1793937075814406865/stream.jsonl",
         "label": "after/turn-001/transport-1793937075814406865/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-001/transport-1793937075814406865/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-001/transport-1793937075814406865/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-002/budget.json",
         "label": "after/turn-002/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/execution.json",
         "label": "after/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/pre-context.json",
         "label": "after/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/reasoning.txt",
         "label": "after/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-002/request.json",
         "label": "after/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/response.json",
         "label": "after/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/transport-1793937080967921884/request.json",
         "label": "after/turn-002/transport-1793937080967921884/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/transport-1793937080967921884/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/transport-1793937080967921884/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/transport-1793937080967921884/response.json",
         "label": "after/turn-002/transport-1793937080967921884/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/transport-1793937080967921884/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/transport-1793937080967921884/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-002/transport-1793937080967921884/stream.jsonl",
         "label": "after/turn-002/transport-1793937080967921884/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/after/turn-002/transport-1793937080967921884/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/after/turn-002/transport-1793937080967921884/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "anchor-context.json",
         "label": "anchor-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/anchor-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/anchor-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/context.json",
         "label": "before/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/cot_and_actions.txt",
         "label": "before/cot_and_actions.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/cot_and_actions.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/execution.json",
         "label": "before/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/restore.json",
         "label": "before/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/restore.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/execution.json",
         "label": "before/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-000/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/pre-context.json",
         "label": "before/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-000/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/reasoning.txt",
         "label": "before/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-000/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-000/request.json",
         "label": "before/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-000/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/response.json",
         "label": "before/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-000/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/saved-generation.json",
         "label": "before/turn-000/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-000/saved-generation.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-000/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/execution.json",
         "label": "before/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-001/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/pre-context.json",
         "label": "before/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-001/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/reasoning.txt",
         "label": "before/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-001/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-001/request.json",
         "label": "before/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-001/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/response.json",
         "label": "before/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-001/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/saved-generation.json",
         "label": "before/turn-001/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-001/saved-generation.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-001/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/execution.json",
         "label": "before/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-002/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/pre-context.json",
         "label": "before/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-002/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/reasoning.txt",
         "label": "before/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-002/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-002/request.json",
         "label": "before/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-002/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/response.json",
         "label": "before/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-002/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/saved-generation.json",
         "label": "before/turn-002/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-002/saved-generation.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-002/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/execution.json",
         "label": "before/turn-003/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-003/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-003/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/pre-context.json",
         "label": "before/turn-003/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-003/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-003/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/reasoning.txt",
         "label": "before/turn-003/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-003/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-003/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-003/request.json",
         "label": "before/turn-003/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-003/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-003/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/response.json",
         "label": "before/turn-003/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-003/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-003/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/saved-generation.json",
         "label": "before/turn-003/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/before/turn-003/saved-generation.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/before/turn-003/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "failed-decision.json",
         "label": "failed-decision.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/failed-decision.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/failed-decision.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "failed-execution.json",
         "label": "failed-execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/failed-execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/failed-execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "outcome.json",
         "label": "outcome.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/outcome.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/outcome.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "prefix-execution.json",
         "label": "prefix-execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/prefix-execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/prefix-execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "protocol.json",
         "label": "protocol.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/protocol.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/protocol.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "quality-review.json",
         "label": "quality-review.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/quality-review.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/quality-review.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/context.json",
         "label": "reference/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/cot_and_actions.txt",
         "label": "reference/cot_and_actions.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/cot_and_actions.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/execution.json",
         "label": "reference/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/local_gate.json",
         "label": "reference/local_gate.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/local_gate.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/local_gate.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/restore.json",
         "label": "reference/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/restore.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/score.json",
         "label": "reference/score.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/score.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/budget.json",
         "label": "reference/turn-000/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/execution.json",
         "label": "reference/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/pre-context.json",
         "label": "reference/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/reasoning.txt",
         "label": "reference/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-000/request.json",
         "label": "reference/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/response.json",
         "label": "reference/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/transport-1793890398143244650/request.json",
         "label": "reference/turn-000/transport-1793890398143244650/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/transport-1793890398143244650/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/transport-1793890398143244650/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/transport-1793890398143244650/response.json",
         "label": "reference/turn-000/transport-1793890398143244650/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/transport-1793890398143244650/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/transport-1793890398143244650/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/transport-1793890398143244650/stream.jsonl",
         "label": "reference/turn-000/transport-1793890398143244650/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-000/transport-1793890398143244650/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-000/transport-1793890398143244650/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-001/budget.json",
         "label": "reference/turn-001/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/execution.json",
         "label": "reference/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/pre-context.json",
         "label": "reference/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/reasoning.txt",
         "label": "reference/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-001/request.json",
         "label": "reference/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/response.json",
         "label": "reference/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/transport-1793890421907866077/request.json",
         "label": "reference/turn-001/transport-1793890421907866077/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/transport-1793890421907866077/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/transport-1793890421907866077/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/transport-1793890421907866077/response.json",
         "label": "reference/turn-001/transport-1793890421907866077/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/transport-1793890421907866077/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/transport-1793890421907866077/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/transport-1793890421907866077/stream.jsonl",
         "label": "reference/turn-001/transport-1793890421907866077/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-001/transport-1793890421907866077/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-001/transport-1793890421907866077/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-002/budget.json",
         "label": "reference/turn-002/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/execution.json",
         "label": "reference/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/execution.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/pre-context.json",
         "label": "reference/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/pre-context.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/reasoning.txt",
         "label": "reference/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-002/request.json",
         "label": "reference/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/response.json",
         "label": "reference/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/transport-1793890429488820936/request.json",
         "label": "reference/turn-002/transport-1793890429488820936/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/transport-1793890429488820936/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/transport-1793890429488820936/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/transport-1793890429488820936/response.json",
         "label": "reference/turn-002/transport-1793890429488820936/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/transport-1793890429488820936/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/transport-1793890429488820936/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-002/transport-1793890429488820936/stream.jsonl",
         "label": "reference/turn-002/transport-1793890429488820936/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/reference/turn-002/transport-1793890429488820936/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/reference/turn-002/transport-1793890429488820936/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "scope.json",
         "label": "scope.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/scope.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/scope.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "selection.json",
         "label": "selection.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/selection.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/selection.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "status.json",
         "label": "status.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/status.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/status.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/budget.json",
         "label": "steering/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/budget.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/reasoning.txt",
         "label": "steering/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/reasoning.txt",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "steering/request.json",
         "label": "steering/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/response.json",
         "label": "steering/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/transport-1793937022979807508/request.json",
         "label": "steering/transport-1793937022979807508/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/transport-1793937022979807508/request.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/transport-1793937022979807508/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/transport-1793937022979807508/response.json",
         "label": "steering/transport-1793937022979807508/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/transport-1793937022979807508/response.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/transport-1793937022979807508/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/transport-1793937022979807508/stream.jsonl",
         "label": "steering/transport-1793937022979807508/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/steering/transport-1793937022979807508/stream.jsonl",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/steering/transport-1793937022979807508/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "import-manifest.json",
         "label": "import-manifest.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_base_37/import-manifest.json",
+        "url": "data/case-library/training/create-and-write-matching-sentence/raw/import-manifest.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/training/create-and-write-matching-sentence/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/training/create-and-write-matching-sentence/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

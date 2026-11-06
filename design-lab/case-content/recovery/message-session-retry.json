@@ -47,7 +47,7 @@
             "args": "receiver_id=\"USR002\", message=\"I am on my way to your place.\", sender_id=\"USR001\"",
             "result": "Error during execution: MessageAPI.send_message() got an unexpected keyword argument 'sender_id'",
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+              "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
               "message": 24,
               "returnMessage": 25
             },
@@ -81,7 +81,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+            "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
             "message": 24,
             "field": "content[0].text/<think>"
           }
@@ -97,7 +97,7 @@
             "args": "receiver_id=\"USR002\", message=\"I am on my way to your place.\"",
             "result": "error: \"No user is currently logged in.\"",
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+              "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
               "message": 26,
               "returnMessage": 27
             },
@@ -126,14 +126,14 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+            "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
             "message": 26,
             "field": "content[0].text/<think>"
           }
         }
       },
       {
-        "title": "登录发件人，再次发送成功",
+        "title": "以发件人身份登录，重新发送成功",
         "tone": "after",
         "events": [
           {
@@ -142,7 +142,7 @@
             "args": "user_id=\"USR001\"",
             "result": "login_status: true\nmessage: \"User 'USR001' logged in successfully.\"",
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+              "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
               "message": 28,
               "returnMessage": 29
             },
@@ -169,7 +169,7 @@
             "args": "receiver_id=\"USR002\", message=\"I am on my way to your place.\"",
             "result": "sent_status: true\nmessage: \"Message sent to 'USR002' successfully.\"",
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+              "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
               "message": 30,
               "returnMessage": 31
             },
@@ -196,7 +196,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+            "file": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
             "message": 28,
             "field": "content[0].text/<think>"
           }
@@ -211,55 +211,62 @@
       {
         "id": "trajectory.json",
         "label": "SteerDistill · 完整轨迹",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/trajectory.json",
+        "url": "data/case-library/recovery/message-session-retry/raw/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "category_score.jsonl",
         "label": "类别评分与失败清单",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/category_score.jsonl",
+        "url": "data/case-library/recovery/message-session-retry/raw/category_score.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "recovery_excerpt.json",
         "label": "引擎恢复节选 · 原始打包文件",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/recovery_excerpt.json",
+        "url": "data/case-library/recovery/message-session-retry/raw/recovery_excerpt.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "recovery_suffix.json",
         "label": "从引擎恢复开始的后续轨迹",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/recovery_suffix.json",
+        "url": "data/case-library/recovery/message-session-retry/raw/recovery_suffix.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "evidence.json",
         "label": "来源与核验依据",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/evidence.json",
+        "url": "data/case-library/recovery/message-session-retry/raw/evidence.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "checksums.json",
         "label": "原始文件校验值",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/checksums.json",
+        "url": "data/case-library/recovery/message-session-retry/raw/checksums.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "README.txt",
         "label": "原始包说明",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/README.txt",
+        "url": "data/case-library/recovery/message-session-retry/raw/README.txt",
         "primary": false,
         "format": "text"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/recovery/message-session-retry/manifest.json",
+        "format": "auto",
+        "primary": false
       }
     ],
     "download": {
-      "href": "data/cases/recovery_case/verified_20261103/multi_turn_base_51/case_data.zip",
+      "href": "data/case-library/recovery/message-session-retry/records.zip",
       "label": "下载完整记录"
     }
   }

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "message-session-retry",
+  "kind": "recovery",
+  "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_51",
+  "files": [
+    {
+      "path": "README.txt",
+      "bytes": 466,
+      "sha256": "d4cfd72866e329d4b3d2a2b9bd9febff8de9f6f101bdd61208e0c0b0f9a8f642"
+    },
+    {
+      "path": "case_data.zip",
+      "bytes": 96560,
+      "sha256": "0e68379b5959e9e7656fc32f59306c8f988af1dd711ce734bfe85a740c2bbd57"
+    },
+    {
+      "path": "category_score.jsonl",
+      "bytes": 596475,
+      "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
+    },
+    {
+      "path": "checksums.json",
+      "bytes": 546,
+      "sha256": "5b1f32c2dc129065ad1ba0a47c848ee95d1405f93eee5b827ea2bb87ca205840"
+    },
+    {
+      "path": "evidence.json",
+      "bytes": 725,
+      "sha256": "c9889223f4efeb23f7ba8cfbb97ba1acd535d41e073117851b9d0bbbc26c6099"
+    },
+    {
+      "path": "recovery_excerpt.json",
+      "bytes": 9085,
+      "sha256": "5e9a828c16164caae54cbd9b94c7e35aaebbbf38e09c5f505bcf65c298c2aa5d"
+    },
+    {
+      "path": "recovery_suffix.json",
+      "bytes": 20462,
+      "sha256": "1cfc72fcfdcd37b89bc58532555454252a7099c00770c49cbc0ec1e2236f888d"
+    },
+    {
+      "path": "trajectory.json",
+      "bytes": 43577,
+      "sha256": "f373eb883a6dc37a39b257d03106c888823cb3df96bc26a26a3682d6d085a26d"
+    }
+  ]
+}

@@ -150,7 +150,7 @@
     "sequenceTitle": "SteerDistill",
     "steps": [
       {
-        "title": "尝试加 50，返回容量错误",
+        "title": "尝试加入 50 加仑，超出油箱容量",
         "tone": "before",
         "events": [
           {
@@ -227,7 +227,7 @@
         }
       },
       {
-        "title": "补入差额 35，油量达到 50",
+        "title": "补入 35 加仑，油箱加满",
         "tone": "after",
         "events": [
           {
@@ -328,143 +328,154 @@
       {
         "id": "BF16/actions.json",
         "label": "BF16/actions.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/actions.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/cot_and_actions.md",
         "label": "BF16/cot_and_actions.md",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/cot_and_actions.md",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/cot_and_actions.md",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/done.json",
         "label": "BF16/done.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/done.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/recovery_excerpt.json",
         "label": "BF16/recovery_excerpt.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/recovery_excerpt.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/recovery_excerpt.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/request_metadata.json",
         "label": "BF16/request_metadata.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/request_metadata.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/result.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/score.json",
         "label": "BF16 · 任务核验",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/score.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BF16/trajectory.json",
         "label": "BF16 · 轨迹",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/BF16/trajectory.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/actions.json",
         "label": "Ours/actions.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/actions.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/cot_and_actions.md",
         "label": "Ours/cot_and_actions.md",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/cot_and_actions.md",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/cot_and_actions.md",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/done.json",
         "label": "Ours/done.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/done.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/recovery_excerpt.json",
         "label": "Ours/recovery_excerpt.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/recovery_excerpt.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/recovery_excerpt.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/request_metadata.json",
         "label": "Ours/request_metadata.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/request_metadata.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/result.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/score.json",
         "label": "SteerDistill · 任务核验",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/score.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/trajectory.json",
         "label": "SteerDistill · 轨迹",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/Ours/trajectory.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "SUMMARY.md",
         "label": "SUMMARY.md",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/SUMMARY.md",
+        "url": "data/case-library/recovery/fuel-capacity/raw/SUMMARY.md",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "analysis.json",
         "label": "analysis.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/analysis.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "ground_truth.json",
         "label": "ground_truth.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/ground_truth.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/recovery_case/multi_turn_miss_func_68/task.json",
+        "url": "data/case-library/recovery/fuel-capacity/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/recovery/fuel-capacity/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/recovery/fuel-capacity/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

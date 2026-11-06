@@ -37,7 +37,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/Ours/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/Ours/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -59,7 +59,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/Ours/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/Ours/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -91,7 +91,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/On-Policy QAD/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -113,7 +113,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/On-Policy QAD/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -145,7 +145,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/BF16/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/BF16/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -167,7 +167,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/BF16/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/BF16/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -205,7 +205,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/GPTQ/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/GPTQ/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -220,7 +220,7 @@
             "text": "Alternatively, maybe the tool expects the field name as part of the sortBy parameter. But according to the given schema, the sortBy parameter's allowed values are just directions.",
             "highlights": [],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/GPTQ/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/GPTQ/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -252,7 +252,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/EfficientQAT/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -274,7 +274,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/EfficientQAT/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -306,7 +306,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/BitDistiller/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/BitDistiller/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -328,7 +328,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/BitDistiller/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/BitDistiller/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -360,7 +360,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/019_live_simple_31-8-1/QeRL/trajectory.json",
+                "file": "data/case-library/inference/export-sort-direction/raw/QeRL/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments"
               }
@@ -382,7 +382,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/019_live_simple_31-8-1/QeRL/trajectory.json",
+              "file": "data/case-library/inference/export-sort-direction/raw/QeRL/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -412,381 +412,392 @@
       {
         "id": "BF16/actions.json",
         "label": "BF16/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/cot_and_actions.txt",
         "label": "BF16/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BF16/done.json",
         "label": "BF16/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/request_metadata.json",
         "label": "BF16/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/score.json",
         "label": "BF16/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/trajectory.json",
         "label": "BF16 · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/BF16/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BF16/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BitDistiller/actions.json",
         "label": "BitDistiller/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/cot_and_actions.txt",
         "label": "BitDistiller/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BitDistiller/done.json",
         "label": "BitDistiller/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/request_metadata.json",
         "label": "BitDistiller/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/result.json",
         "label": "BitDistiller/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/score.json",
         "label": "BitDistiller/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/trajectory.json",
         "label": "BitDistiller · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/BitDistiller/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/BitDistiller/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/actions.json",
         "label": "EfficientQAT/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/cot_and_actions.txt",
         "label": "EfficientQAT/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "EfficientQAT/done.json",
         "label": "EfficientQAT/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/request_metadata.json",
         "label": "EfficientQAT/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/result.json",
         "label": "EfficientQAT/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/score.json",
         "label": "EfficientQAT/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/trajectory.json",
         "label": "EfficientQAT · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/EfficientQAT/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/EfficientQAT/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "GPTQ/actions.json",
         "label": "GPTQ/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/cot_and_actions.txt",
         "label": "GPTQ/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "GPTQ/done.json",
         "label": "GPTQ/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/request_metadata.json",
         "label": "GPTQ/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/result.json",
         "label": "GPTQ/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/score.json",
         "label": "GPTQ/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/trajectory.json",
         "label": "GPTQ · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/GPTQ/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/GPTQ/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/actions.json",
         "label": "On-Policy QAD/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/cot_and_actions.txt",
         "label": "On-Policy QAD/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "On-Policy QAD/done.json",
         "label": "On-Policy QAD/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/request_metadata.json",
         "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/result.json",
         "label": "On-Policy QAD/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/score.json",
         "label": "On-Policy QAD/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/trajectory.json",
         "label": "On-Policy QAD · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/On-Policy QAD/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/On-Policy QAD/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/actions.json",
         "label": "Ours/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/cot_and_actions.txt",
         "label": "Ours/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "Ours/done.json",
         "label": "Ours/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/request_metadata.json",
         "label": "Ours/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/score.json",
         "label": "Ours/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/trajectory.json",
         "label": "SteerDistill · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/Ours/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "QeRL/actions.json",
         "label": "QeRL/actions.json",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/actions.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/cot_and_actions.txt",
         "label": "QeRL/cot_and_actions.txt",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/cot_and_actions.txt",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "QeRL/done.json",
         "label": "QeRL/done.json",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/done.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/request_metadata.json",
         "label": "QeRL/request_metadata.json",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/request_metadata.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/result.json",
         "label": "QeRL/result.json",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/result.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/score.json",
         "label": "QeRL/score.json",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/score.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/trajectory.json",
         "label": "QeRL · 轨迹",
-        "url": "data/cases/019_live_simple_31-8-1/QeRL/trajectory.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/QeRL/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "analysis.json",
         "label": "analysis.json",
-        "url": "data/cases/019_live_simple_31-8-1/analysis.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "ground_truth.json",
         "label": "ground_truth.json",
-        "url": "data/cases/019_live_simple_31-8-1/ground_truth.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "provenance.json",
         "label": "provenance.json",
-        "url": "data/cases/019_live_simple_31-8-1/provenance.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/provenance.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "summary.md",
         "label": "summary.md",
-        "url": "data/cases/019_live_simple_31-8-1/summary.md",
+        "url": "data/case-library/inference/export-sort-direction/raw/summary.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/019_live_simple_31-8-1/task.json",
+        "url": "data/case-library/inference/export-sort-direction/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/inference/export-sort-direction/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/inference/export-sort-direction/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

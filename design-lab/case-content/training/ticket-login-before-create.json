@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "ticket-login-before-create",
-  "kind": "ablation",
+  "kind": "training",
   "title": "创建工单前，先登录工单系统",
   "summary": "用户想为一笔已取消的 AAPL 订单创建优先级为 3 的工单，并提供了用户名和密码。交易账户已登录，但工单系统需要单独登录。",
   "template": "comparison",
@@ -71,7 +71,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
                 "message": 26,
                 "returnMessage": 27,
                 "excerpt": true,
@@ -104,7 +104,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
                 "message": 28,
                 "returnMessage": 29,
                 "excerpt": true,
@@ -142,7 +142,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
               "message": 26,
               "field": "reasoning",
               "excerpt": true
@@ -169,7 +169,7 @@
           }
         ],
         "guidanceSource": {
-          "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/raw_steering_prompt.txt",
+          "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/raw_steering_prompt.txt",
           "field": "decision_rule"
         },
         "guidanceAnalysis": {
@@ -189,7 +189,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/analysis.json",
+            "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/analysis.json",
             "field": "reasoning"
           }
         },
@@ -205,7 +205,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -226,7 +226,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -247,7 +247,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -283,7 +283,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                 "message": 26,
                 "returnMessage": 27,
                 "excerpt": true,
@@ -308,7 +308,7 @@
               "returnTone": "after",
               "highlights": {},
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                 "message": 28,
                 "returnMessage": 29,
                 "excerpt": true,
@@ -339,7 +339,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
                 "message": 30,
                 "field": "content after </think>; ** delimiters removed",
                 "excerpt": true
@@ -362,7 +362,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
               "message": 30,
               "field": "reasoning",
               "excerpt": true
@@ -386,7 +386,7 @@
           }
         ],
         "guidanceSource": {
-          "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/raw_steering_prompt.txt",
+          "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/raw_steering_prompt.txt",
           "field": "guidance opening sentence; ** removed"
         },
         "resultLines": [
@@ -401,7 +401,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -422,7 +422,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -458,7 +458,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/trajectory.json",
                 "message": 26,
                 "returnMessage": 27,
                 "excerpt": true,
@@ -491,7 +491,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/trajectory.json",
                 "message": 28,
                 "returnMessage": 29,
                 "excerpt": true,
@@ -529,7 +529,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/trajectory.json",
               "message": 26,
               "field": "reasoning",
               "excerpt": true
@@ -556,7 +556,7 @@
           }
         ],
         "guidanceSource": {
-          "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/raw_steering_prompt.txt",
+          "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/raw_steering_prompt.txt",
           "field": "decision_rule"
         },
         "resultLines": [
@@ -571,7 +571,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -592,7 +592,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -613,7 +613,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -649,7 +649,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/trajectory.json",
                 "message": 26,
                 "returnMessage": 27,
                 "excerpt": true,
@@ -682,7 +682,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/trajectory.json",
                 "message": 28,
                 "returnMessage": 29,
                 "excerpt": true,
@@ -720,7 +720,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/trajectory.json",
               "message": 26,
               "field": "reasoning",
               "excerpt": true
@@ -747,7 +747,7 @@
           }
         ],
         "guidanceSource": {
-          "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/raw_steering_prompt.txt",
+          "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/raw_steering_prompt.txt",
           "field": "decision_rule"
         },
         "resultLines": [
@@ -762,7 +762,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -783,7 +783,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -804,7 +804,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/execution.json",
               "event": 8,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -848,7 +848,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
                 "message": 26,
                 "returnMessage": 27,
                 "excerpt": true,
@@ -873,7 +873,7 @@
               "returnTone": "after",
               "highlights": {},
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
                 "message": 28,
                 "returnMessage": 29,
                 "excerpt": true,
@@ -906,7 +906,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+                "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
                 "message": 30,
                 "returnMessage": 31,
                 "excerpt": true,
@@ -944,7 +944,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
               "message": 30,
               "field": "reasoning",
               "excerpt": true
@@ -967,7 +967,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/execution.json",
               "event": 9,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -988,7 +988,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/execution.json",
               "event": 9,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -1009,7 +1009,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/execution.json",
+              "file": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/execution.json",
               "event": 9,
               "field": "after.TicketAPI.attributes",
               "fields": [
@@ -1048,2285 +1048,2296 @@
       {
         "id": "source-training-case/after/attempt-0/local_gate.json",
         "label": "Teacher 结构化指导 · 局部核验",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/local_gate.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/local_gate.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/score.json",
         "label": "Teacher 结构化指导 · 任务检查",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/trajectory.json",
         "label": "Teacher 结构化指导 · 完整轨迹",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/score.json",
         "label": "无指导 · 任务检查",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/trajectory.json",
         "label": "无指导 · 完整轨迹",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/raw_steering_prompt.txt",
         "label": "Teacher 结构化指导 · 指导原文",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/raw_steering_prompt.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/raw_steering_prompt.txt",
         "primary": true,
         "format": "guidance"
       },
       {
         "id": "task.json",
         "label": "完整任务与工具定义",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/task.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/task.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/raw_steering_prompt.txt",
         "label": "GPT 结构化指导 · 指导原文",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/raw_steering_prompt.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/raw_steering_prompt.txt",
         "primary": true,
         "format": "guidance"
       },
       {
         "id": "variants/external_structured/student/score.json",
         "label": "GPT 结构化指导 · 任务检查",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/trajectory.json",
         "label": "GPT 结构化指导 · 完整轨迹",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/raw_steering_prompt.txt",
         "label": "Student 结构化指导 · 指导原文",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/raw_steering_prompt.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/raw_steering_prompt.txt",
         "primary": true,
         "format": "guidance"
       },
       {
         "id": "variants/student_structured/student/score.json",
         "label": "Student 结构化指导 · 任务检查",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/trajectory.json",
         "label": "Student 结构化指导 · 完整轨迹",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/raw_steering_prompt.txt",
         "label": "Teacher 自由文本指导 · 指导原文",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/raw_steering_prompt.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/raw_steering_prompt.txt",
         "primary": true,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/score.json",
         "label": "Teacher 自由文本指导 · 任务检查",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/trajectory.json",
         "label": "Teacher 自由文本指导 · 完整轨迹",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "comparison.json",
         "label": "comparison.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/comparison.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/comparison.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "partial-comparison.json",
         "label": "partial-comparison.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/partial-comparison.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/partial-comparison.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "protocol.json",
         "label": "protocol.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/protocol.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/protocol.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "quality-review.json",
         "label": "quality-review.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/quality-review.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/quality-review.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/context.json",
         "label": "source-training-case/after/attempt-0/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/execution.json",
         "label": "source-training-case/after/attempt-0/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/restore.json",
         "label": "source-training-case/after/attempt-0/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/budget.json",
         "label": "source-training-case/after/attempt-0/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/execution.json",
         "label": "source-training-case/after/attempt-0/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/pre-context.json",
         "label": "source-training-case/after/attempt-0/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/reasoning.txt",
         "label": "source-training-case/after/attempt-0/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/request.json",
         "label": "source-training-case/after/attempt-0/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/response.json",
         "label": "source-training-case/after/attempt-0/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/request.json",
         "label": "source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/response.json",
         "label": "source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/stream.jsonl",
         "label": "source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-000/transport-1793888335226661190/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/budget.json",
         "label": "source-training-case/after/attempt-0/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/execution.json",
         "label": "source-training-case/after/attempt-0/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/pre-context.json",
         "label": "source-training-case/after/attempt-0/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/reasoning.txt",
         "label": "source-training-case/after/attempt-0/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/request.json",
         "label": "source-training-case/after/attempt-0/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/response.json",
         "label": "source-training-case/after/attempt-0/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/request.json",
         "label": "source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/response.json",
         "label": "source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/stream.jsonl",
         "label": "source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-001/transport-1793888357768729348/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/budget.json",
         "label": "source-training-case/after/attempt-0/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/execution.json",
         "label": "source-training-case/after/attempt-0/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/pre-context.json",
         "label": "source-training-case/after/attempt-0/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/reasoning.txt",
         "label": "source-training-case/after/attempt-0/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/request.json",
         "label": "source-training-case/after/attempt-0/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/response.json",
         "label": "source-training-case/after/attempt-0/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/request.json",
         "label": "source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/response.json",
         "label": "source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/stream.jsonl",
         "label": "source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/after/attempt-0/turn-002/transport-1793888365660298399/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/anchor-context.json",
         "label": "source-training-case/anchor-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/anchor-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/anchor-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/context.json",
         "label": "source-training-case/before/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/execution.json",
         "label": "source-training-case/before/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/restore.json",
         "label": "source-training-case/before/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-000/execution.json",
         "label": "source-training-case/before/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-000/pre-context.json",
         "label": "source-training-case/before/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-000/reasoning.txt",
         "label": "source-training-case/before/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/before/turn-000/request.json",
         "label": "source-training-case/before/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-000/response.json",
         "label": "source-training-case/before/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-000/saved-generation.json",
         "label": "source-training-case/before/turn-000/saved-generation.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-000/saved-generation.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-000/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-001/execution.json",
         "label": "source-training-case/before/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-001/pre-context.json",
         "label": "source-training-case/before/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-001/reasoning.txt",
         "label": "source-training-case/before/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/before/turn-001/request.json",
         "label": "source-training-case/before/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-001/response.json",
         "label": "source-training-case/before/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-001/saved-generation.json",
         "label": "source-training-case/before/turn-001/saved-generation.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-001/saved-generation.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-001/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-002/execution.json",
         "label": "source-training-case/before/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-002/pre-context.json",
         "label": "source-training-case/before/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-002/reasoning.txt",
         "label": "source-training-case/before/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/before/turn-002/request.json",
         "label": "source-training-case/before/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-002/response.json",
         "label": "source-training-case/before/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-002/saved-generation.json",
         "label": "source-training-case/before/turn-002/saved-generation.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-002/saved-generation.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-002/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-003/execution.json",
         "label": "source-training-case/before/turn-003/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-003/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-003/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-003/pre-context.json",
         "label": "source-training-case/before/turn-003/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-003/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-003/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-003/reasoning.txt",
         "label": "source-training-case/before/turn-003/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-003/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-003/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/before/turn-003/request.json",
         "label": "source-training-case/before/turn-003/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-003/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-003/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-003/response.json",
         "label": "source-training-case/before/turn-003/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-003/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-003/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/before/turn-003/saved-generation.json",
         "label": "source-training-case/before/turn-003/saved-generation.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/before/turn-003/saved-generation.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/before/turn-003/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/failed-decision.json",
         "label": "source-training-case/failed-decision.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/failed-decision.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/failed-decision.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/failed-execution.json",
         "label": "source-training-case/failed-execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/failed-execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/failed-execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/outcome.json",
         "label": "source-training-case/outcome.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/outcome.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/outcome.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/prefix-execution.json",
         "label": "source-training-case/prefix-execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/prefix-execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/prefix-execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/protocol.json",
         "label": "source-training-case/protocol.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/protocol.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/protocol.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/context.json",
         "label": "source-training-case/reference/attempt-0/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/execution.json",
         "label": "source-training-case/reference/attempt-0/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/restore.json",
         "label": "source-training-case/reference/attempt-0/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/score.json",
         "label": "source-training-case/reference/attempt-0/score.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/trajectory.json",
         "label": "source-training-case/reference/attempt-0/trajectory.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/trajectory.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/budget.json",
         "label": "source-training-case/reference/attempt-0/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/execution.json",
         "label": "source-training-case/reference/attempt-0/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/pre-context.json",
         "label": "source-training-case/reference/attempt-0/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/reasoning.txt",
         "label": "source-training-case/reference/attempt-0/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/request.json",
         "label": "source-training-case/reference/attempt-0/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/response.json",
         "label": "source-training-case/reference/attempt-0/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/request.json",
         "label": "source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/response.json",
         "label": "source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/stream.jsonl",
         "label": "source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-000/transport-1793888252316714577/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/budget.json",
         "label": "source-training-case/reference/attempt-0/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/execution.json",
         "label": "source-training-case/reference/attempt-0/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/pre-context.json",
         "label": "source-training-case/reference/attempt-0/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/reasoning.txt",
         "label": "source-training-case/reference/attempt-0/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/request.json",
         "label": "source-training-case/reference/attempt-0/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/response.json",
         "label": "source-training-case/reference/attempt-0/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/request.json",
         "label": "source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/response.json",
         "label": "source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/stream.jsonl",
         "label": "source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-001/transport-1793888263084274288/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/budget.json",
         "label": "source-training-case/reference/attempt-0/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/execution.json",
         "label": "source-training-case/reference/attempt-0/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/pre-context.json",
         "label": "source-training-case/reference/attempt-0/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/reasoning.txt",
         "label": "source-training-case/reference/attempt-0/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/request.json",
         "label": "source-training-case/reference/attempt-0/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/response.json",
         "label": "source-training-case/reference/attempt-0/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/request.json",
         "label": "source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/response.json",
         "label": "source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/stream.jsonl",
         "label": "source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-0/turn-002/transport-1793888266692466499/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/context.json",
         "label": "source-training-case/reference/attempt-1/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/execution.json",
         "label": "source-training-case/reference/attempt-1/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/restore.json",
         "label": "source-training-case/reference/attempt-1/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/score.json",
         "label": "source-training-case/reference/attempt-1/score.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/trajectory.json",
         "label": "source-training-case/reference/attempt-1/trajectory.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/trajectory.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/budget.json",
         "label": "source-training-case/reference/attempt-1/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/execution.json",
         "label": "source-training-case/reference/attempt-1/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/pre-context.json",
         "label": "source-training-case/reference/attempt-1/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/reasoning.txt",
         "label": "source-training-case/reference/attempt-1/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/request.json",
         "label": "source-training-case/reference/attempt-1/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/response.json",
         "label": "source-training-case/reference/attempt-1/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/request.json",
         "label": "source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/response.json",
         "label": "source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/stream.jsonl",
         "label": "source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-000/transport-1793888270527619258/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/budget.json",
         "label": "source-training-case/reference/attempt-1/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/execution.json",
         "label": "source-training-case/reference/attempt-1/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/pre-context.json",
         "label": "source-training-case/reference/attempt-1/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/reasoning.txt",
         "label": "source-training-case/reference/attempt-1/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/request.json",
         "label": "source-training-case/reference/attempt-1/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/response.json",
         "label": "source-training-case/reference/attempt-1/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/request.json",
         "label": "source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/response.json",
         "label": "source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/stream.jsonl",
         "label": "source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-001/transport-1793888280592301513/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/budget.json",
         "label": "source-training-case/reference/attempt-1/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/execution.json",
         "label": "source-training-case/reference/attempt-1/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/pre-context.json",
         "label": "source-training-case/reference/attempt-1/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/reasoning.txt",
         "label": "source-training-case/reference/attempt-1/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/request.json",
         "label": "source-training-case/reference/attempt-1/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/response.json",
         "label": "source-training-case/reference/attempt-1/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/request.json",
         "label": "source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/response.json",
         "label": "source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/stream.jsonl",
         "label": "source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-002/transport-1793888284145942381/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/budget.json",
         "label": "source-training-case/reference/attempt-1/turn-003/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/execution.json",
         "label": "source-training-case/reference/attempt-1/turn-003/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/pre-context.json",
         "label": "source-training-case/reference/attempt-1/turn-003/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/reasoning.txt",
         "label": "source-training-case/reference/attempt-1/turn-003/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/request.json",
         "label": "source-training-case/reference/attempt-1/turn-003/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/response.json",
         "label": "source-training-case/reference/attempt-1/turn-003/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/request.json",
         "label": "source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/response.json",
         "label": "source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/stream.jsonl",
         "label": "source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-1/turn-003/transport-1793888289385171001/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-2/context.json",
         "label": "source-training-case/reference/attempt-2/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/execution.json",
         "label": "source-training-case/reference/attempt-2/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/restore.json",
         "label": "source-training-case/reference/attempt-2/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/score.json",
         "label": "source-training-case/reference/attempt-2/score.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/score.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/trajectory.json",
         "label": "source-training-case/reference/attempt-2/trajectory.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/trajectory.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/trajectory.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/budget.json",
         "label": "source-training-case/reference/attempt-2/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/execution.json",
         "label": "source-training-case/reference/attempt-2/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/pre-context.json",
         "label": "source-training-case/reference/attempt-2/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/reasoning.txt",
         "label": "source-training-case/reference/attempt-2/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/request.json",
         "label": "source-training-case/reference/attempt-2/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/response.json",
         "label": "source-training-case/reference/attempt-2/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/request.json",
         "label": "source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/response.json",
         "label": "source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/stream.jsonl",
         "label": "source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-000/transport-1793888292250608337/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/budget.json",
         "label": "source-training-case/reference/attempt-2/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/execution.json",
         "label": "source-training-case/reference/attempt-2/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/pre-context.json",
         "label": "source-training-case/reference/attempt-2/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/reasoning.txt",
         "label": "source-training-case/reference/attempt-2/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/request.json",
         "label": "source-training-case/reference/attempt-2/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/response.json",
         "label": "source-training-case/reference/attempt-2/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/request.json",
         "label": "source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/response.json",
         "label": "source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/stream.jsonl",
         "label": "source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-001/transport-1793888317015354922/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/budget.json",
         "label": "source-training-case/reference/attempt-2/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/execution.json",
         "label": "source-training-case/reference/attempt-2/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/pre-context.json",
         "label": "source-training-case/reference/attempt-2/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/reasoning.txt",
         "label": "source-training-case/reference/attempt-2/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/request.json",
         "label": "source-training-case/reference/attempt-2/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/response.json",
         "label": "source-training-case/reference/attempt-2/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/request.json",
         "label": "source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/response.json",
         "label": "source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/stream.jsonl",
         "label": "source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/reference/attempt-2/turn-002/transport-1793888323195762916/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/scope.json",
         "label": "source-training-case/scope.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/scope.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/scope.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/status.json",
         "label": "source-training-case/status.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/status.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/status.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/analysis.json",
         "label": "source-training-case/steering/attempt-0/analysis.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/analysis.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/budget.json",
         "label": "source-training-case/steering/attempt-0/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/reasoning.txt",
         "label": "source-training-case/steering/attempt-0/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/steering/attempt-0/request.json",
         "label": "source-training-case/steering/attempt-0/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/response.json",
         "label": "source-training-case/steering/attempt-0/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/transport-1793888325718054962/request.json",
         "label": "source-training-case/steering/attempt-0/transport-1793888325718054962/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/transport-1793888325718054962/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/transport-1793888325718054962/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/transport-1793888325718054962/response.json",
         "label": "source-training-case/steering/attempt-0/transport-1793888325718054962/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/transport-1793888325718054962/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/transport-1793888325718054962/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "source-training-case/steering/attempt-0/transport-1793888325718054962/stream.jsonl",
         "label": "source-training-case/steering/attempt-0/transport-1793888325718054962/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/steering/attempt-0/transport-1793888325718054962/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/steering/attempt-0/transport-1793888325718054962/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "source-training-case/task.json",
         "label": "source-training-case/task.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/source-training-case/task.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/source-training-case/task.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "status.json",
         "label": "status.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/status.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/status.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/analysis.json",
         "label": "variants/external_structured/guidance/analysis.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/analysis.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/reasoning.txt",
         "label": "variants/external_structured/guidance/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/external_structured/guidance/request-policy.json",
         "label": "variants/external_structured/guidance/request-policy.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/request-policy.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/request-policy.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/request.json",
         "label": "variants/external_structured/guidance/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/response.json",
         "label": "variants/external_structured/guidance/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/transport-attempts/attempt-00/request.json",
         "label": "variants/external_structured/guidance/transport-attempts/attempt-00/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/transport-attempts/attempt-00/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/transport-attempts/attempt-00/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/guidance/transport-attempts/attempt-00/response.json",
         "label": "variants/external_structured/guidance/transport-attempts/attempt-00/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/guidance/transport-attempts/attempt-00/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/guidance/transport-attempts/attempt-00/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/context.json",
         "label": "variants/external_structured/student/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/execution.json",
         "label": "variants/external_structured/student/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/local-comparison.json",
         "label": "variants/external_structured/student/local-comparison.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/local-comparison.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/local-comparison.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/restore.json",
         "label": "variants/external_structured/student/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/budget.json",
         "label": "variants/external_structured/student/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/execution.json",
         "label": "variants/external_structured/student/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/message.json",
         "label": "variants/external_structured/student/turn-000/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/pre-context.json",
         "label": "variants/external_structured/student/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/reasoning.txt",
         "label": "variants/external_structured/student/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/external_structured/student/turn-000/request.json",
         "label": "variants/external_structured/student/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/response.json",
         "label": "variants/external_structured/student/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/transport-1793888486588899089/request.json",
         "label": "variants/external_structured/student/turn-000/transport-1793888486588899089/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/transport-1793888486588899089/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/transport-1793888486588899089/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/transport-1793888486588899089/response.json",
         "label": "variants/external_structured/student/turn-000/transport-1793888486588899089/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/transport-1793888486588899089/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/transport-1793888486588899089/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-000/transport-1793888486588899089/stream.jsonl",
         "label": "variants/external_structured/student/turn-000/transport-1793888486588899089/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-000/transport-1793888486588899089/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-000/transport-1793888486588899089/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/external_structured/student/turn-001/budget.json",
         "label": "variants/external_structured/student/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/execution.json",
         "label": "variants/external_structured/student/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/message.json",
         "label": "variants/external_structured/student/turn-001/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/pre-context.json",
         "label": "variants/external_structured/student/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/reasoning.txt",
         "label": "variants/external_structured/student/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/external_structured/student/turn-001/request.json",
         "label": "variants/external_structured/student/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/response.json",
         "label": "variants/external_structured/student/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/transport-1793888501910426093/request.json",
         "label": "variants/external_structured/student/turn-001/transport-1793888501910426093/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/transport-1793888501910426093/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/transport-1793888501910426093/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/transport-1793888501910426093/response.json",
         "label": "variants/external_structured/student/turn-001/transport-1793888501910426093/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/transport-1793888501910426093/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/transport-1793888501910426093/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-001/transport-1793888501910426093/stream.jsonl",
         "label": "variants/external_structured/student/turn-001/transport-1793888501910426093/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-001/transport-1793888501910426093/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-001/transport-1793888501910426093/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/external_structured/student/turn-002/budget.json",
         "label": "variants/external_structured/student/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/execution.json",
         "label": "variants/external_structured/student/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/message.json",
         "label": "variants/external_structured/student/turn-002/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/pre-context.json",
         "label": "variants/external_structured/student/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/reasoning.txt",
         "label": "variants/external_structured/student/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/external_structured/student/turn-002/request.json",
         "label": "variants/external_structured/student/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/response.json",
         "label": "variants/external_structured/student/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/transport-1793888511092197625/request.json",
         "label": "variants/external_structured/student/turn-002/transport-1793888511092197625/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/transport-1793888511092197625/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/transport-1793888511092197625/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/transport-1793888511092197625/response.json",
         "label": "variants/external_structured/student/turn-002/transport-1793888511092197625/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/transport-1793888511092197625/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/transport-1793888511092197625/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/external_structured/student/turn-002/transport-1793888511092197625/stream.jsonl",
         "label": "variants/external_structured/student/turn-002/transport-1793888511092197625/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/external_structured/student/turn-002/transport-1793888511092197625/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/external_structured/student/turn-002/transport-1793888511092197625/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/guidance/analysis.json",
         "label": "variants/student_structured/guidance/analysis.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/analysis.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/budget.json",
         "label": "variants/student_structured/guidance/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/reasoning.txt",
         "label": "variants/student_structured/guidance/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/guidance/request.json",
         "label": "variants/student_structured/guidance/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/response.json",
         "label": "variants/student_structured/guidance/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/transport-1793888416331296272/request.json",
         "label": "variants/student_structured/guidance/transport-1793888416331296272/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/transport-1793888416331296272/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/transport-1793888416331296272/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/transport-1793888416331296272/response.json",
         "label": "variants/student_structured/guidance/transport-1793888416331296272/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/transport-1793888416331296272/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/transport-1793888416331296272/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/guidance/transport-1793888416331296272/stream.jsonl",
         "label": "variants/student_structured/guidance/transport-1793888416331296272/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/guidance/transport-1793888416331296272/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/guidance/transport-1793888416331296272/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/student/context.json",
         "label": "variants/student_structured/student/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/execution.json",
         "label": "variants/student_structured/student/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/local-comparison.json",
         "label": "variants/student_structured/student/local-comparison.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/local-comparison.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/local-comparison.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/restore.json",
         "label": "variants/student_structured/student/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/budget.json",
         "label": "variants/student_structured/student/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/execution.json",
         "label": "variants/student_structured/student/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/message.json",
         "label": "variants/student_structured/student/turn-000/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/pre-context.json",
         "label": "variants/student_structured/student/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/reasoning.txt",
         "label": "variants/student_structured/student/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/student/turn-000/request.json",
         "label": "variants/student_structured/student/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/response.json",
         "label": "variants/student_structured/student/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/transport-1793888427087206719/request.json",
         "label": "variants/student_structured/student/turn-000/transport-1793888427087206719/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/transport-1793888427087206719/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/transport-1793888427087206719/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/transport-1793888427087206719/response.json",
         "label": "variants/student_structured/student/turn-000/transport-1793888427087206719/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/transport-1793888427087206719/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/transport-1793888427087206719/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-000/transport-1793888427087206719/stream.jsonl",
         "label": "variants/student_structured/student/turn-000/transport-1793888427087206719/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-000/transport-1793888427087206719/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-000/transport-1793888427087206719/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/student/turn-001/budget.json",
         "label": "variants/student_structured/student/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/execution.json",
         "label": "variants/student_structured/student/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/message.json",
         "label": "variants/student_structured/student/turn-001/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/pre-context.json",
         "label": "variants/student_structured/student/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/reasoning.txt",
         "label": "variants/student_structured/student/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/student/turn-001/request.json",
         "label": "variants/student_structured/student/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/response.json",
         "label": "variants/student_structured/student/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/transport-1793888450520749885/request.json",
         "label": "variants/student_structured/student/turn-001/transport-1793888450520749885/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/transport-1793888450520749885/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/transport-1793888450520749885/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/transport-1793888450520749885/response.json",
         "label": "variants/student_structured/student/turn-001/transport-1793888450520749885/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/transport-1793888450520749885/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/transport-1793888450520749885/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-001/transport-1793888450520749885/stream.jsonl",
         "label": "variants/student_structured/student/turn-001/transport-1793888450520749885/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-001/transport-1793888450520749885/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-001/transport-1793888450520749885/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/student/turn-002/budget.json",
         "label": "variants/student_structured/student/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/execution.json",
         "label": "variants/student_structured/student/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/message.json",
         "label": "variants/student_structured/student/turn-002/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/pre-context.json",
         "label": "variants/student_structured/student/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/reasoning.txt",
         "label": "variants/student_structured/student/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/student_structured/student/turn-002/request.json",
         "label": "variants/student_structured/student/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/response.json",
         "label": "variants/student_structured/student/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/transport-1793888459091172374/request.json",
         "label": "variants/student_structured/student/turn-002/transport-1793888459091172374/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/transport-1793888459091172374/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/transport-1793888459091172374/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/transport-1793888459091172374/response.json",
         "label": "variants/student_structured/student/turn-002/transport-1793888459091172374/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/transport-1793888459091172374/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/transport-1793888459091172374/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/student_structured/student/turn-002/transport-1793888459091172374/stream.jsonl",
         "label": "variants/student_structured/student/turn-002/transport-1793888459091172374/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/student_structured/student/turn-002/transport-1793888459091172374/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/student_structured/student/turn-002/transport-1793888459091172374/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/guidance/analysis.json",
         "label": "variants/teacher_freeform/guidance/analysis.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/analysis.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/budget.json",
         "label": "variants/teacher_freeform/guidance/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/reasoning.txt",
         "label": "variants/teacher_freeform/guidance/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/guidance/request.json",
         "label": "variants/teacher_freeform/guidance/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/response.json",
         "label": "variants/teacher_freeform/guidance/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/transport-1793888372322194761/request.json",
         "label": "variants/teacher_freeform/guidance/transport-1793888372322194761/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/transport-1793888372322194761/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/transport-1793888372322194761/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/transport-1793888372322194761/response.json",
         "label": "variants/teacher_freeform/guidance/transport-1793888372322194761/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/transport-1793888372322194761/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/transport-1793888372322194761/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/guidance/transport-1793888372322194761/stream.jsonl",
         "label": "variants/teacher_freeform/guidance/transport-1793888372322194761/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/guidance/transport-1793888372322194761/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/guidance/transport-1793888372322194761/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/context.json",
         "label": "variants/teacher_freeform/student/context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/execution.json",
         "label": "variants/teacher_freeform/student/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/local-comparison.json",
         "label": "variants/teacher_freeform/student/local-comparison.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/local-comparison.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/local-comparison.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/restore.json",
         "label": "variants/teacher_freeform/student/restore.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/restore.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/budget.json",
         "label": "variants/teacher_freeform/student/turn-000/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/execution.json",
         "label": "variants/teacher_freeform/student/turn-000/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/message.json",
         "label": "variants/teacher_freeform/student/turn-000/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/pre-context.json",
         "label": "variants/teacher_freeform/student/turn-000/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/reasoning.txt",
         "label": "variants/teacher_freeform/student/turn-000/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/request.json",
         "label": "variants/teacher_freeform/student/turn-000/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/response.json",
         "label": "variants/teacher_freeform/student/turn-000/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/transport-1793888382464056590/request.json",
         "label": "variants/teacher_freeform/student/turn-000/transport-1793888382464056590/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/transport-1793888382464056590/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/transport-1793888382464056590/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/transport-1793888382464056590/response.json",
         "label": "variants/teacher_freeform/student/turn-000/transport-1793888382464056590/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/transport-1793888382464056590/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/transport-1793888382464056590/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-000/transport-1793888382464056590/stream.jsonl",
         "label": "variants/teacher_freeform/student/turn-000/transport-1793888382464056590/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-000/transport-1793888382464056590/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-000/transport-1793888382464056590/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/budget.json",
         "label": "variants/teacher_freeform/student/turn-001/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/execution.json",
         "label": "variants/teacher_freeform/student/turn-001/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/message.json",
         "label": "variants/teacher_freeform/student/turn-001/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/pre-context.json",
         "label": "variants/teacher_freeform/student/turn-001/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/reasoning.txt",
         "label": "variants/teacher_freeform/student/turn-001/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/request.json",
         "label": "variants/teacher_freeform/student/turn-001/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/response.json",
         "label": "variants/teacher_freeform/student/turn-001/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/transport-1793888402755178230/request.json",
         "label": "variants/teacher_freeform/student/turn-001/transport-1793888402755178230/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/transport-1793888402755178230/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/transport-1793888402755178230/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/transport-1793888402755178230/response.json",
         "label": "variants/teacher_freeform/student/turn-001/transport-1793888402755178230/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/transport-1793888402755178230/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/transport-1793888402755178230/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-001/transport-1793888402755178230/stream.jsonl",
         "label": "variants/teacher_freeform/student/turn-001/transport-1793888402755178230/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-001/transport-1793888402755178230/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-001/transport-1793888402755178230/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/budget.json",
         "label": "variants/teacher_freeform/student/turn-002/budget.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/budget.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/execution.json",
         "label": "variants/teacher_freeform/student/turn-002/execution.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/execution.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/message.json",
         "label": "variants/teacher_freeform/student/turn-002/message.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/message.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/pre-context.json",
         "label": "variants/teacher_freeform/student/turn-002/pre-context.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/pre-context.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/reasoning.txt",
         "label": "variants/teacher_freeform/student/turn-002/reasoning.txt",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/reasoning.txt",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/request.json",
         "label": "variants/teacher_freeform/student/turn-002/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/response.json",
         "label": "variants/teacher_freeform/student/turn-002/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/transport-1793888408452077526/request.json",
         "label": "variants/teacher_freeform/student/turn-002/transport-1793888408452077526/request.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/transport-1793888408452077526/request.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/transport-1793888408452077526/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/transport-1793888408452077526/response.json",
         "label": "variants/teacher_freeform/student/turn-002/transport-1793888408452077526/response.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/transport-1793888408452077526/response.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/transport-1793888408452077526/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "variants/teacher_freeform/student/turn-002/transport-1793888408452077526/stream.jsonl",
         "label": "variants/teacher_freeform/student/turn-002/transport-1793888408452077526/stream.jsonl",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/variants/teacher_freeform/student/turn-002/transport-1793888408452077526/stream.jsonl",
+        "url": "data/case-library/training/ticket-login-before-create/raw/variants/teacher_freeform/student/turn-002/transport-1793888408452077526/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "import-manifest.json",
         "label": "import-manifest.json",
-        "url": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110/import-manifest.json",
+        "url": "data/case-library/training/ticket-login-before-create/raw/import-manifest.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/training/ticket-login-before-create/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/training/ticket-login-before-create/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

@@ -56,7 +56,7 @@
           "result": "… fuelLevel: 15.0",
           "highlights": {},
           "source": {
-            "file": "data/cases/recovery_case/multi_turn_long_context_68/BF16/trajectory.json",
+            "file": "data/case-library/recovery/tool-name-recovery/raw/BF16/trajectory.json",
             "message": 4,
             "returnMessage": 5
           }
@@ -68,7 +68,7 @@
           "result": "fuelLevel: 50.0",
           "highlights": {},
           "source": {
-            "file": "data/cases/recovery_case/multi_turn_long_context_68/BF16/trajectory.json",
+            "file": "data/case-library/recovery/tool-name-recovery/raw/BF16/trajectory.json",
             "message": 6,
             "returnMessage": 7
           }
@@ -102,7 +102,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+              "file": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
               "message": 4,
               "returnMessage": 5
             }
@@ -120,14 +120,14 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+            "file": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
             "message": 4,
             "field": "content[0].text/<think>"
           }
         }
       },
       {
-        "title": "改为正确工具名，查到当前油量 15",
+        "title": "改正工具名，查到当前油量",
         "tone": "after",
         "events": [
           {
@@ -145,7 +145,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+              "file": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
               "message": 6,
               "returnMessage": 7
             }
@@ -162,14 +162,14 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+            "file": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
             "message": 6,
             "field": "content[0].text/<think>"
           }
         }
       },
       {
-        "title": "补入 35，油量达到 50",
+        "title": "补入 35 加仑，油箱加满",
         "tone": "after",
         "events": [
           {
@@ -187,7 +187,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+              "file": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
               "message": 8,
               "returnMessage": 9
             }
@@ -198,7 +198,7 @@
           "text": "To fill the tank completely, the user needs to add 50 - 15 = 35 gallons.",
           "highlights": [],
           "source": {
-            "file": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+            "file": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
             "message": 8,
             "field": "content[0].text/<think>"
           }
@@ -213,143 +213,154 @@
       {
         "id": "BF16/actions.json",
         "label": "BF16/actions.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/actions.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/cot_and_actions.md",
         "label": "BF16/cot_and_actions.md",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/cot_and_actions.md",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/cot_and_actions.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BF16/done.json",
         "label": "BF16/done.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/done.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/recovery_excerpt.json",
         "label": "BF16/recovery_excerpt.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/recovery_excerpt.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/recovery_excerpt.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/request_metadata.json",
         "label": "BF16/request_metadata.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/request_metadata.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/result.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/score.json",
         "label": "BF16/score.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/score.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/trajectory.json",
         "label": "BF16 · 轨迹",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/BF16/trajectory.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/actions.json",
         "label": "Ours/actions.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/actions.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/cot_and_actions.md",
         "label": "Ours/cot_and_actions.md",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/cot_and_actions.md",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/cot_and_actions.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "Ours/done.json",
         "label": "Ours/done.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/done.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/recovery_excerpt.json",
         "label": "Ours/recovery_excerpt.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/recovery_excerpt.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/recovery_excerpt.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/request_metadata.json",
         "label": "Ours/request_metadata.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/request_metadata.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/result.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/score.json",
         "label": "Ours/score.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/score.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/trajectory.json",
         "label": "SteerDistill · 轨迹",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/Ours/trajectory.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "SUMMARY.md",
         "label": "SUMMARY.md",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/SUMMARY.md",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/SUMMARY.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "analysis.json",
         "label": "analysis.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/analysis.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "ground_truth.json",
         "label": "ground_truth.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/ground_truth.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/recovery_case/multi_turn_long_context_68/task.json",
+        "url": "data/case-library/recovery/tool-name-recovery/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/recovery/tool-name-recovery/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/recovery/tool-name-recovery/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

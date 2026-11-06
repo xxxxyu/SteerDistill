@@ -956,381 +956,392 @@
       {
         "id": "BF16/actions.json",
         "label": "BF16/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/cot_and_actions.txt",
         "label": "BF16/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/done.json",
         "label": "BF16/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/request_metadata.json",
         "label": "BF16/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/score.json",
         "label": "BF16 · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BF16/trajectory.json",
         "label": "BF16 · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/BF16/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BitDistiller/actions.json",
         "label": "BitDistiller/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/cot_and_actions.txt",
         "label": "BitDistiller/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/done.json",
         "label": "BitDistiller/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/request_metadata.json",
         "label": "BitDistiller/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/result.json",
         "label": "BitDistiller/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/score.json",
         "label": "BitDistiller · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BitDistiller/trajectory.json",
         "label": "BitDistiller · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/BitDistiller/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/actions.json",
         "label": "EfficientQAT/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/cot_and_actions.txt",
         "label": "EfficientQAT/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/done.json",
         "label": "EfficientQAT/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/request_metadata.json",
         "label": "EfficientQAT/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/result.json",
         "label": "EfficientQAT/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/score.json",
         "label": "EfficientQAT · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/trajectory.json",
         "label": "EfficientQAT · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/EfficientQAT/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "GPTQ/actions.json",
         "label": "GPTQ/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/cot_and_actions.txt",
         "label": "GPTQ/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/done.json",
         "label": "GPTQ/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/request_metadata.json",
         "label": "GPTQ/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/result.json",
         "label": "GPTQ/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/score.json",
         "label": "GPTQ · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "GPTQ/trajectory.json",
         "label": "GPTQ · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/GPTQ/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/actions.json",
         "label": "On-Policy QAD/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/cot_and_actions.txt",
         "label": "On-Policy QAD/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/done.json",
         "label": "On-Policy QAD/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/request_metadata.json",
         "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/result.json",
         "label": "On-Policy QAD/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/score.json",
         "label": "On-Policy QAD · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/trajectory.json",
         "label": "On-Policy QAD · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/On-Policy QAD/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/actions.json",
         "label": "Ours/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/cot_and_actions.txt",
         "label": "Ours/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/done.json",
         "label": "Ours/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/request_metadata.json",
         "label": "Ours/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/score.json",
         "label": "SteerDistill · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/trajectory.json",
         "label": "SteerDistill · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/Ours/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "QeRL/actions.json",
         "label": "QeRL/actions.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/actions.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/cot_and_actions.txt",
         "label": "QeRL/cot_and_actions.txt",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/cot_and_actions.txt",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/cot_and_actions.txt",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/done.json",
         "label": "QeRL/done.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/done.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/request_metadata.json",
         "label": "QeRL/request_metadata.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/request_metadata.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/result.json",
         "label": "QeRL/result.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/result.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/score.json",
         "label": "QeRL · 完整任务核验",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/score.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "QeRL/trajectory.json",
         "label": "QeRL · 轨迹",
-        "url": "data/cases/030_multi_turn_miss_param_117/QeRL/trajectory.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "analysis.json",
         "label": "analysis.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/analysis.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "ground_truth.json",
         "label": "ground_truth.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/ground_truth.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "provenance.json",
         "label": "provenance.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/provenance.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/provenance.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "summary.md",
         "label": "summary.md",
-        "url": "data/cases/030_multi_turn_miss_param_117/summary.md",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/summary.md",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/030_multi_turn_miss_param_117/task.json",
+        "url": "data/case-library/inference/watchlist-disambiguation/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/inference/watchlist-disambiguation/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/inference/watchlist-disambiguation/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

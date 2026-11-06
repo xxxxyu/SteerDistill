@@ -11,7 +11,8 @@ window.CaseCollection=(()=>{
  function json(url){url=SitePaths.url(url);if(!jsonCache.has(url))jsonCache.set(url,fetch(url,{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error(`${url}: HTTP ${r.status}`);return r.json()}).catch(e=>{jsonCache.delete(url);throw e}));return jsonCache.get(url)}
  function validate(c){if(c.schemaVersion!==1||!['training','comparison','sequence'].includes(c.template)||!c.originalTask||!Array.isArray(c.records?.sources)||!c.records.sources.length)throw Error('案例配置不符合 schemaVersion 1');return c}
  async function load(href){
-  const url=new URL(href||location.href,location.href),catalog=await json(base+'case-content/catalog.json'),p=url.searchParams,group=catalog.groups.find(g=>g.id===p.get('group'))||catalog.groups[0];
+  const url=new URL(href||location.href,location.href),catalog=await json(base+'case-content/catalog.json'),p=url.searchParams,group=catalog.groups.find(g=>g.id===p.get('group')||g.aliases?.includes(p.get('group')))||catalog.groups[0];
+  if(group.aliases?.includes(p.get('group')))p.set('group',group.id);
   let requested=p.get('case');
   if(group.retiredCases?.includes(requested)){requested=null;p.set('group',group.id);p.set('case',group.cases[0].id);['left','right','source','message','mode'].forEach(key=>p.delete(key));if(!href)history.replaceState(history.state,'',url.pathname+'?'+p+url.hash);}
   const entry=group.cases.find(c=>c.id===requested||c.aliases?.includes(requested))||(requested&&/^[a-z0-9_-]+$/.test(requested)?{id:requested,url:base+'case-content/'+group.id+'/'+requested+'.json'}:group.cases[0]);

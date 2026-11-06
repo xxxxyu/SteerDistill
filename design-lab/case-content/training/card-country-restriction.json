@@ -46,7 +46,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/banking_6_2/before/trajectory.json",
+              "file": "data/case-library/training/card-country-restriction/raw/before/trajectory.json",
               "message": 10,
               "returnMessage": 11
             }
@@ -64,7 +64,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/training_case/reviewed-20261106/banking_6_2/before/trajectory.json",
+            "file": "data/case-library/training/card-country-restriction/raw/before/trajectory.json",
             "message": 10
           }
         },
@@ -99,7 +99,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/banking_6_2/after/trajectory.json",
+              "file": "data/case-library/training/card-country-restriction/raw/after/trajectory.json",
               "message": 10,
               "returnMessage": 11
             }
@@ -117,7 +117,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/training_case/reviewed-20261106/banking_6_2/after/trajectory.json",
+            "file": "data/case-library/training/card-country-restriction/raw/after/trajectory.json",
             "message": 10
           }
         },
@@ -145,913 +145,924 @@
       {
         "id": "SUMMARY.md",
         "label": "SUMMARY.md",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/SUMMARY.md",
+        "url": "data/case-library/training/card-country-restriction/raw/SUMMARY.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/cot_and_actions.txt",
         "label": "after/cot_and_actions.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/cot_and_actions.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/after/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/environment.py",
         "label": "after/environment.py",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/environment.py",
+        "url": "data/case-library/training/card-country-restriction/raw/after/environment.py",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/final.db",
         "label": "after/final.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/final.db",
+        "url": "data/case-library/training/card-country-restriction/raw/after/final.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "after/local_gate.json",
         "label": "after/local_gate.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/local_gate.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/local_gate.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/local_state.db",
         "label": "after/local_state.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/local_state.db",
+        "url": "data/case-library/training/card-country-restriction/raw/after/local_state.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "after/openapi.json",
         "label": "after/openapi.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/openapi.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/openapi.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/result.json",
         "label": "after/result.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/result.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/trajectory.json",
         "label": "指导后 agent · 轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/trajectory.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "after/turn-000/action/request.json",
         "label": "after/turn-000/action/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/action/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/action/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/action/response.json",
         "label": "after/turn-000/action/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/action/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/action/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/execution.json",
         "label": "after/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/execution.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/logical_message.json",
         "label": "after/turn-000/logical_message.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/logical_message.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/logical_message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/original_request.json",
         "label": "after/turn-000/original_request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/original_request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/original_request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/reasoning.txt",
         "label": "after/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-000/request.json",
         "label": "after/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/response.json",
         "label": "after/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/thinking/request.json",
         "label": "after/turn-000/thinking/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/thinking/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/thinking/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/thinking/response.json",
         "label": "after/turn-000/thinking/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/thinking/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/thinking/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/thinking_proof.json",
         "label": "after/turn-000/thinking_proof.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/thinking_proof.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/thinking_proof.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/tokenization/request.json",
         "label": "after/turn-000/tokenization/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/tokenization/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/tokenization/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-000/tokenization/response.json",
         "label": "after/turn-000/tokenization/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-000/tokenization/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-000/tokenization/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/action/request.json",
         "label": "after/turn-001/action/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/action/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/action/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/action/response.json",
         "label": "after/turn-001/action/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/action/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/action/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/execution.json",
         "label": "after/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/execution.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/logical_message.json",
         "label": "after/turn-001/logical_message.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/logical_message.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/logical_message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/original_request.json",
         "label": "after/turn-001/original_request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/original_request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/original_request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/reasoning.txt",
         "label": "after/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/turn-001/request.json",
         "label": "after/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/response.json",
         "label": "after/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/thinking/request.json",
         "label": "after/turn-001/thinking/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/thinking/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/thinking/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/thinking/response.json",
         "label": "after/turn-001/thinking/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/thinking/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/thinking/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/thinking_proof.json",
         "label": "after/turn-001/thinking_proof.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/thinking_proof.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/thinking_proof.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/tokenization/request.json",
         "label": "after/turn-001/tokenization/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/tokenization/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/tokenization/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/turn-001/tokenization/response.json",
         "label": "after/turn-001/tokenization/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/after/turn-001/tokenization/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/after/turn-001/tokenization/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/cot_and_actions.txt",
         "label": "before/cot_and_actions.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/cot_and_actions.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/before/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/environment.py",
         "label": "before/environment.py",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/environment.py",
+        "url": "data/case-library/training/card-country-restriction/raw/before/environment.py",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/final.db",
         "label": "before/final.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/final.db",
+        "url": "data/case-library/training/card-country-restriction/raw/before/final.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "before/local_gate.json",
         "label": "before/local_gate.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/local_gate.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/local_gate.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/local_state.db",
         "label": "before/local_state.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/local_state.db",
+        "url": "data/case-library/training/card-country-restriction/raw/before/local_state.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "before/openapi.json",
         "label": "before/openapi.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/openapi.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/openapi.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/result.json",
         "label": "before/result.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/result.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/trajectory.json",
         "label": "无指导 agent · 轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/trajectory.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "before/turn-000/action/request.json",
         "label": "before/turn-000/action/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/action/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/action/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/action/response.json",
         "label": "before/turn-000/action/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/action/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/action/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/execution.json",
         "label": "before/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/execution.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/logical_message.json",
         "label": "before/turn-000/logical_message.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/logical_message.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/logical_message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/original_request.json",
         "label": "before/turn-000/original_request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/original_request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/original_request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/reasoning.txt",
         "label": "before/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-000/request.json",
         "label": "before/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/response.json",
         "label": "before/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/thinking/request.json",
         "label": "before/turn-000/thinking/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/thinking/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/thinking/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/thinking/response.json",
         "label": "before/turn-000/thinking/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/thinking/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/thinking/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/thinking_proof.json",
         "label": "before/turn-000/thinking_proof.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/thinking_proof.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/thinking_proof.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/tokenization/request.json",
         "label": "before/turn-000/tokenization/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/tokenization/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/tokenization/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/tokenization/response.json",
         "label": "before/turn-000/tokenization/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-000/tokenization/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-000/tokenization/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/action/request.json",
         "label": "before/turn-001/action/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/action/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/action/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/action/response.json",
         "label": "before/turn-001/action/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/action/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/action/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/execution.json",
         "label": "before/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/execution.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/logical_message.json",
         "label": "before/turn-001/logical_message.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/logical_message.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/logical_message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/original_request.json",
         "label": "before/turn-001/original_request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/original_request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/original_request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/reasoning.txt",
         "label": "before/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-001/request.json",
         "label": "before/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/response.json",
         "label": "before/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/thinking/request.json",
         "label": "before/turn-001/thinking/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/thinking/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/thinking/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/thinking/response.json",
         "label": "before/turn-001/thinking/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/thinking/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/thinking/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/thinking_proof.json",
         "label": "before/turn-001/thinking_proof.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/thinking_proof.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/thinking_proof.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/tokenization/request.json",
         "label": "before/turn-001/tokenization/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/tokenization/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/tokenization/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/tokenization/response.json",
         "label": "before/turn-001/tokenization/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/before/turn-001/tokenization/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/before/turn-001/tokenization/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "branch-results.json",
         "label": "branch-results.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/branch-results.json",
+        "url": "data/case-library/training/card-country-restriction/raw/branch-results.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "context.json",
         "label": "context.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/context.json",
+        "url": "data/case-library/training/card-country-restriction/raw/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "effective-local-acceptance.json",
         "label": "effective-local-acceptance.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/effective-local-acceptance.json",
+        "url": "data/case-library/training/card-country-restriction/raw/effective-local-acceptance.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "import-manifest.json",
         "label": "import-manifest.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/import-manifest.json",
+        "url": "data/case-library/training/card-country-restriction/raw/import-manifest.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "initial.db",
         "label": "initial.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/initial.db",
+        "url": "data/case-library/training/card-country-restriction/raw/initial.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "pre_state.db",
         "label": "pre_state.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/pre_state.db",
+        "url": "data/case-library/training/card-country-restriction/raw/pre_state.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "protocol.json",
         "label": "protocol.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/protocol.json",
+        "url": "data/case-library/training/card-country-restriction/raw/protocol.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "quality-review.json",
         "label": "quality-review.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/quality-review.json",
+        "url": "data/case-library/training/card-country-restriction/raw/quality-review.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/cot_and_actions.txt",
         "label": "reference/cot_and_actions.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/cot_and_actions.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/environment.py",
         "label": "reference/environment.py",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/environment.py",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/environment.py",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/final.db",
         "label": "reference/final.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/final.db",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/final.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "reference/local_gate.json",
         "label": "reference/local_gate.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/local_gate.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/local_gate.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/local_state.db",
         "label": "reference/local_state.db",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/local_state.db",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/local_state.db",
         "primary": false,
         "format": "sqlite"
       },
       {
         "id": "reference/openapi.json",
         "label": "reference/openapi.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/openapi.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/openapi.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/result.json",
         "label": "reference/result.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/result.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/trajectory.json",
         "label": "Teacher · 参考轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/trajectory.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/action/request.json",
         "label": "reference/turn-000/action/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/action/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/action/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/action/response.json",
         "label": "reference/turn-000/action/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/action/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/action/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/execution.json",
         "label": "reference/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/execution.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/logical_message.json",
         "label": "reference/turn-000/logical_message.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/logical_message.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/logical_message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/original_request.json",
         "label": "reference/turn-000/original_request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/original_request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/original_request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/reasoning.txt",
         "label": "reference/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-000/request.json",
         "label": "reference/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/response.json",
         "label": "reference/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/thinking/request.json",
         "label": "reference/turn-000/thinking/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/thinking/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/thinking/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/thinking/response.json",
         "label": "reference/turn-000/thinking/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/thinking/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/thinking/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/thinking_proof.json",
         "label": "reference/turn-000/thinking_proof.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/thinking_proof.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/thinking_proof.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/tokenization/request.json",
         "label": "reference/turn-000/tokenization/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/tokenization/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/tokenization/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-000/tokenization/response.json",
         "label": "reference/turn-000/tokenization/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-000/tokenization/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-000/tokenization/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/action/request.json",
         "label": "reference/turn-001/action/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/action/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/action/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/action/response.json",
         "label": "reference/turn-001/action/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/action/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/action/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/execution.json",
         "label": "reference/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/execution.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/logical_message.json",
         "label": "reference/turn-001/logical_message.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/logical_message.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/logical_message.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/original_request.json",
         "label": "reference/turn-001/original_request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/original_request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/original_request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/reasoning.txt",
         "label": "reference/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/turn-001/request.json",
         "label": "reference/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/response.json",
         "label": "reference/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/thinking/request.json",
         "label": "reference/turn-001/thinking/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/thinking/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/thinking/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/thinking/response.json",
         "label": "reference/turn-001/thinking/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/thinking/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/thinking/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/thinking_proof.json",
         "label": "reference/turn-001/thinking_proof.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/thinking_proof.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/thinking_proof.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/tokenization/request.json",
         "label": "reference/turn-001/tokenization/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/tokenization/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/tokenization/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/turn-001/tokenization/response.json",
         "label": "reference/turn-001/tokenization/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference/turn-001/tokenization/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference/turn-001/tokenization/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference-recheck.json",
         "label": "reference-recheck.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference-recheck.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference-recheck.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference_state_comparison.json",
         "label": "配置状态 · 参考对照",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/reference_state_comparison.json",
+        "url": "data/case-library/training/card-country-restriction/raw/reference_state_comparison.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "selection.json",
         "label": "selection.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/selection.json",
+        "url": "data/case-library/training/card-country-restriction/raw/selection.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "status.json",
         "label": "status.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/status.json",
+        "url": "data/case-library/training/card-country-restriction/raw/status.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/analysis.json",
         "label": "steering/analysis.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/analysis.json",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/analysis.json",
         "label": "steering/attempt-0/analysis.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/analysis.json",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/capture.json",
         "label": "steering/attempt-0/capture.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/capture.json",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/capture.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/raw_steering_prompt.txt",
         "label": "steering/attempt-0/raw_steering_prompt.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/raw_steering_prompt.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/raw_steering_prompt.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "steering/attempt-0/reasoning.txt",
         "label": "steering/attempt-0/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "steering/attempt-0/request.json",
         "label": "steering/attempt-0/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/request.json",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/response.json",
         "label": "steering/attempt-0/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/response.json",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/token_budget.json",
         "label": "steering/attempt-0/token_budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/attempt-0/token_budget.json",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/attempt-0/token_budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/raw_steering_prompt.txt",
         "label": "Teacher · 指导",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/raw_steering_prompt.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/raw_steering_prompt.txt",
         "primary": true,
         "format": "guidance"
       },
       {
         "id": "steering/reasoning.txt",
         "label": "steering/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/steering/reasoning.txt",
+        "url": "data/case-library/training/card-country-restriction/raw/steering/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "supplement-protocol.json",
         "label": "supplement-protocol.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/supplement-protocol.json",
+        "url": "data/case-library/training/card-country-restriction/raw/supplement-protocol.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "supplement-result.json",
         "label": "supplement-result.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/supplement-result.json",
+        "url": "data/case-library/training/card-country-restriction/raw/supplement-result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/task.json",
+        "url": "data/case-library/training/card-country-restriction/raw/task.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "task_verifier.py",
         "label": "task_verifier.py",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/task_verifier.py",
+        "url": "data/case-library/training/card-country-restriction/raw/task_verifier.py",
         "primary": false,
         "format": "text"
       },
       {
         "id": "tools.json",
         "label": "tools.json",
-        "url": "data/cases/training_case/reviewed-20261106/banking_6_2/tools.json",
+        "url": "data/case-library/training/card-country-restriction/raw/tools.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/training/card-country-restriction/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/training/card-country-restriction/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

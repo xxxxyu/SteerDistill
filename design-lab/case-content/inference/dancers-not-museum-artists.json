@@ -38,7 +38,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/Ours/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/trajectory.json",
                 "message": 4,
                 "field": "content[0].text",
                 "originalText": "None of the available MCP tools can fulfill the request to identify famous dancers of the 19th Century."
@@ -61,7 +61,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/Ours/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -101,7 +101,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/On-Policy QAD/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments",
                 "returnMessage": 5
@@ -115,7 +115,7 @@
                 "text": []
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/On-Policy QAD/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/trajectory.json",
                 "message": 6,
                 "field": "content[0].text",
                 "originalText": "However, this tool does not explicitly focus on dancers, so the results may not include prominent choreographers or performers."
@@ -138,7 +138,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/On-Policy QAD/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -170,7 +170,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/BF16/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/trajectory.json",
                 "message": 4,
                 "field": "content[0].text",
                 "originalText": "None of the available MCP tools can effectively address the query about 19th-century dancers."
@@ -193,7 +193,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/BF16/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -233,7 +233,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/GPTQ/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments",
                 "returnMessage": 5
@@ -247,7 +247,7 @@
                 "text": []
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/GPTQ/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/trajectory.json",
                 "message": 6,
                 "field": "content[0].text",
                 "originalText": "Unfortunately, there are no tools currently available to directly identify famous 19th-century dancers."
@@ -270,7 +270,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/GPTQ/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -310,7 +310,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/BitDistiller/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments",
                 "returnMessage": 5
@@ -324,7 +324,7 @@
                 "text": []
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/BitDistiller/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/trajectory.json",
                 "message": 6,
                 "field": "content[0].text",
                 "originalText": "retrieves general artists associated with museums during specified periods but does not explicitly focus on dancers."
@@ -347,7 +347,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/BitDistiller/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -380,7 +380,7 @@
                 "args": []
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/EfficientQAT/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments",
                 "returnMessage": 5
@@ -394,7 +394,7 @@
                 "text": []
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/EfficientQAT/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/trajectory.json",
                 "message": 6,
                 "field": "content[0].text",
                 "originalText": "Based on the available tools and execution attempts, the MCP environment does not provide direct functionality to retrieve biographical or performance history data of individuals (including dancers) from specific centuries."
@@ -417,7 +417,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/EfficientQAT/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -457,7 +457,7 @@
                 ]
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/QeRL/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/trajectory.json",
                 "message": 4,
                 "field": "tool_calls[0].function.arguments",
                 "returnMessage": 5
@@ -471,7 +471,7 @@
                 "text": []
               },
               "source": {
-                "file": "data/cases/001_irrelevance_162/QeRL/trajectory.json",
+                "file": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/trajectory.json",
                 "message": 6,
                 "field": "content[0].text",
                 "originalText": "To refine the search, we would need a tool tailored to historical performers or dance archives."
@@ -494,7 +494,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/001_irrelevance_162/QeRL/trajectory.json",
+              "file": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/trajectory.json",
               "message": 4,
               "field": "content[0].text"
             }
@@ -523,381 +523,392 @@
       {
         "id": "BF16/actions.json",
         "label": "BF16/actions.json",
-        "url": "data/cases/001_irrelevance_162/BF16/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/cot_and_actions.txt",
         "label": "BF16/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/BF16/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BF16/done.json",
         "label": "BF16/done.json",
-        "url": "data/cases/001_irrelevance_162/BF16/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/request_metadata.json",
         "label": "BF16/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/BF16/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
-        "url": "data/cases/001_irrelevance_162/BF16/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/score.json",
         "label": "BF16/score.json",
-        "url": "data/cases/001_irrelevance_162/BF16/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BF16/trajectory.json",
         "label": "BF16 · 轨迹",
-        "url": "data/cases/001_irrelevance_162/BF16/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BF16/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "BitDistiller/actions.json",
         "label": "BitDistiller/actions.json",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/cot_and_actions.txt",
         "label": "BitDistiller/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "BitDistiller/done.json",
         "label": "BitDistiller/done.json",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/request_metadata.json",
         "label": "BitDistiller/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/result.json",
         "label": "BitDistiller/result.json",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/score.json",
         "label": "BitDistiller/score.json",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "BitDistiller/trajectory.json",
         "label": "BitDistiller · 轨迹",
-        "url": "data/cases/001_irrelevance_162/BitDistiller/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/BitDistiller/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/actions.json",
         "label": "EfficientQAT/actions.json",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/cot_and_actions.txt",
         "label": "EfficientQAT/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "EfficientQAT/done.json",
         "label": "EfficientQAT/done.json",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/request_metadata.json",
         "label": "EfficientQAT/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/result.json",
         "label": "EfficientQAT/result.json",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/score.json",
         "label": "EfficientQAT/score.json",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "EfficientQAT/trajectory.json",
         "label": "EfficientQAT · 轨迹",
-        "url": "data/cases/001_irrelevance_162/EfficientQAT/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/EfficientQAT/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "GPTQ/actions.json",
         "label": "GPTQ/actions.json",
-        "url": "data/cases/001_irrelevance_162/GPTQ/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/cot_and_actions.txt",
         "label": "GPTQ/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/GPTQ/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "GPTQ/done.json",
         "label": "GPTQ/done.json",
-        "url": "data/cases/001_irrelevance_162/GPTQ/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/request_metadata.json",
         "label": "GPTQ/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/GPTQ/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/result.json",
         "label": "GPTQ/result.json",
-        "url": "data/cases/001_irrelevance_162/GPTQ/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/score.json",
         "label": "GPTQ/score.json",
-        "url": "data/cases/001_irrelevance_162/GPTQ/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "GPTQ/trajectory.json",
         "label": "GPTQ · 轨迹",
-        "url": "data/cases/001_irrelevance_162/GPTQ/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/GPTQ/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/actions.json",
         "label": "On-Policy QAD/actions.json",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/cot_and_actions.txt",
         "label": "On-Policy QAD/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "On-Policy QAD/done.json",
         "label": "On-Policy QAD/done.json",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/request_metadata.json",
         "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/result.json",
         "label": "On-Policy QAD/result.json",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/score.json",
         "label": "On-Policy QAD/score.json",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "On-Policy QAD/trajectory.json",
         "label": "On-Policy QAD · 轨迹",
-        "url": "data/cases/001_irrelevance_162/On-Policy QAD/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/On-Policy QAD/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "Ours/actions.json",
         "label": "Ours/actions.json",
-        "url": "data/cases/001_irrelevance_162/Ours/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/cot_and_actions.txt",
         "label": "Ours/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/Ours/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "Ours/done.json",
         "label": "Ours/done.json",
-        "url": "data/cases/001_irrelevance_162/Ours/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/request_metadata.json",
         "label": "Ours/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/Ours/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
-        "url": "data/cases/001_irrelevance_162/Ours/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/score.json",
         "label": "Ours/score.json",
-        "url": "data/cases/001_irrelevance_162/Ours/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "Ours/trajectory.json",
         "label": "SteerDistill · 轨迹",
-        "url": "data/cases/001_irrelevance_162/Ours/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "QeRL/actions.json",
         "label": "QeRL/actions.json",
-        "url": "data/cases/001_irrelevance_162/QeRL/actions.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/actions.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/cot_and_actions.txt",
         "label": "QeRL/cot_and_actions.txt",
-        "url": "data/cases/001_irrelevance_162/QeRL/cot_and_actions.txt",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/cot_and_actions.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "QeRL/done.json",
         "label": "QeRL/done.json",
-        "url": "data/cases/001_irrelevance_162/QeRL/done.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/done.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/request_metadata.json",
         "label": "QeRL/request_metadata.json",
-        "url": "data/cases/001_irrelevance_162/QeRL/request_metadata.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/result.json",
         "label": "QeRL/result.json",
-        "url": "data/cases/001_irrelevance_162/QeRL/result.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/result.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/score.json",
         "label": "QeRL/score.json",
-        "url": "data/cases/001_irrelevance_162/QeRL/score.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "QeRL/trajectory.json",
         "label": "QeRL · 轨迹",
-        "url": "data/cases/001_irrelevance_162/QeRL/trajectory.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/QeRL/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "analysis.json",
         "label": "analysis.json",
-        "url": "data/cases/001_irrelevance_162/analysis.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "ground_truth.json",
         "label": "ground_truth.json",
-        "url": "data/cases/001_irrelevance_162/ground_truth.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "provenance.json",
         "label": "provenance.json",
-        "url": "data/cases/001_irrelevance_162/provenance.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/provenance.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "summary.md",
         "label": "summary.md",
-        "url": "data/cases/001_irrelevance_162/summary.md",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/summary.md",
         "primary": false,
         "format": "text"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/001_irrelevance_162/task.json",
+        "url": "data/case-library/inference/dancers-not-museum-artists/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/inference/dancers-not-museum-artists/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/inference/dancers-not-museum-artists/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

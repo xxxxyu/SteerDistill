@@ -39,7 +39,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/trajectory.json",
+              "file": "data/case-library/training/tool-list-numbering/raw/before/trajectory.json",
               "message": 4,
               "returnMessage": 5
             }
@@ -60,7 +60,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/trajectory.json",
+              "file": "data/case-library/training/tool-list-numbering/raw/before/trajectory.json",
               "message": 6,
               "returnMessage": 7
             }
@@ -84,7 +84,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/trajectory.json",
+            "file": "data/case-library/training/tool-list-numbering/raw/before/trajectory.json",
             "message": 4
           }
         }
@@ -119,7 +119,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/trajectory.json",
+              "file": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/trajectory.json",
               "message": 4,
               "returnMessage": 5
             }
@@ -148,7 +148,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/trajectory.json",
+              "file": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/trajectory.json",
               "message": 6,
               "returnMessage": 7
             }
@@ -172,7 +172,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/trajectory.json",
+            "file": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/trajectory.json",
             "message": 4
           }
         }
@@ -199,1123 +199,1134 @@
       {
         "id": "after/attempt-0/context.json",
         "label": "after/attempt-0/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/execution.json",
         "label": "after/attempt-0/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/local_gate.json",
         "label": "局部核验",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/local_gate.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/local_gate.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/restore.json",
         "label": "after/attempt-0/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/restore.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/score.json",
         "label": "任务核验",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/score.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/score.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/trajectory.json",
         "label": "指导后 agent · 轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/trajectory.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/budget.json",
         "label": "after/attempt-0/turn-000/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/execution.json",
         "label": "after/attempt-0/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/pre-context.json",
         "label": "after/attempt-0/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/reasoning.txt",
         "label": "after/attempt-0/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/attempt-0/turn-000/request.json",
         "label": "after/attempt-0/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/response.json",
         "label": "after/attempt-0/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/transport-1793930367783635384/request.json",
         "label": "after/attempt-0/turn-000/transport-1793930367783635384/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/transport-1793930367783635384/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/transport-1793930367783635384/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/transport-1793930367783635384/response.json",
         "label": "after/attempt-0/turn-000/transport-1793930367783635384/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/transport-1793930367783635384/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/transport-1793930367783635384/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-000/transport-1793930367783635384/stream.jsonl",
         "label": "after/attempt-0/turn-000/transport-1793930367783635384/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-000/transport-1793930367783635384/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-000/transport-1793930367783635384/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/attempt-0/turn-001/budget.json",
         "label": "after/attempt-0/turn-001/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/execution.json",
         "label": "after/attempt-0/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/pre-context.json",
         "label": "after/attempt-0/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/reasoning.txt",
         "label": "after/attempt-0/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/attempt-0/turn-001/request.json",
         "label": "after/attempt-0/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/response.json",
         "label": "after/attempt-0/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/transport-1793930376364169272/request.json",
         "label": "after/attempt-0/turn-001/transport-1793930376364169272/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/transport-1793930376364169272/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/transport-1793930376364169272/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/transport-1793930376364169272/response.json",
         "label": "after/attempt-0/turn-001/transport-1793930376364169272/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/transport-1793930376364169272/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/transport-1793930376364169272/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-001/transport-1793930376364169272/stream.jsonl",
         "label": "after/attempt-0/turn-001/transport-1793930376364169272/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-001/transport-1793930376364169272/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-001/transport-1793930376364169272/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/attempt-0/turn-002/budget.json",
         "label": "after/attempt-0/turn-002/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/execution.json",
         "label": "after/attempt-0/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/pre-context.json",
         "label": "after/attempt-0/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/reasoning.txt",
         "label": "after/attempt-0/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "after/attempt-0/turn-002/request.json",
         "label": "after/attempt-0/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/response.json",
         "label": "after/attempt-0/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/transport-1793930388369052750/request.json",
         "label": "after/attempt-0/turn-002/transport-1793930388369052750/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/transport-1793930388369052750/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/transport-1793930388369052750/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/transport-1793930388369052750/response.json",
         "label": "after/attempt-0/turn-002/transport-1793930388369052750/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/transport-1793930388369052750/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/transport-1793930388369052750/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "after/attempt-0/turn-002/transport-1793930388369052750/stream.jsonl",
         "label": "after/attempt-0/turn-002/transport-1793930388369052750/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/after/attempt-0/turn-002/transport-1793930388369052750/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/after/attempt-0/turn-002/transport-1793930388369052750/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "anchor-context.json",
         "label": "anchor-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/anchor-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/anchor-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/context.json",
         "label": "before/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/execution.json",
         "label": "before/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/restore.json",
         "label": "before/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/restore.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/score.json",
         "label": "before/score.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/score.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/trajectory.json",
         "label": "无指导 agent · 轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/trajectory.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "before/turn-000/execution.json",
         "label": "before/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-000/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/pre-context.json",
         "label": "before/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-000/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/reasoning.txt",
         "label": "before/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-000/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-000/request.json",
         "label": "before/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-000/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/response.json",
         "label": "before/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-000/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-000/saved-generation.json",
         "label": "before/turn-000/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-000/saved-generation.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-000/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/execution.json",
         "label": "before/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-001/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/pre-context.json",
         "label": "before/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-001/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/reasoning.txt",
         "label": "before/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-001/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-001/request.json",
         "label": "before/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-001/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/response.json",
         "label": "before/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-001/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-001/saved-generation.json",
         "label": "before/turn-001/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-001/saved-generation.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-001/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/execution.json",
         "label": "before/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-002/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/pre-context.json",
         "label": "before/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-002/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/reasoning.txt",
         "label": "before/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-002/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-002/request.json",
         "label": "before/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-002/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/response.json",
         "label": "before/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-002/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-002/saved-generation.json",
         "label": "before/turn-002/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-002/saved-generation.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-002/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/execution.json",
         "label": "before/turn-003/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-003/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-003/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/pre-context.json",
         "label": "before/turn-003/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-003/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-003/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/reasoning.txt",
         "label": "before/turn-003/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-003/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-003/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-003/request.json",
         "label": "before/turn-003/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-003/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-003/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/response.json",
         "label": "before/turn-003/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-003/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-003/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-003/saved-generation.json",
         "label": "before/turn-003/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-003/saved-generation.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-003/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-004/execution.json",
         "label": "before/turn-004/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-004/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-004/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-004/pre-context.json",
         "label": "before/turn-004/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-004/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-004/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-004/reasoning.txt",
         "label": "before/turn-004/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-004/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-004/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "before/turn-004/request.json",
         "label": "before/turn-004/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-004/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-004/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-004/response.json",
         "label": "before/turn-004/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-004/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-004/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "before/turn-004/saved-generation.json",
         "label": "before/turn-004/saved-generation.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/before/turn-004/saved-generation.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/before/turn-004/saved-generation.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "failed-decision.json",
         "label": "failed-decision.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/failed-decision.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/failed-decision.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "failed-execution.json",
         "label": "failed-execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/failed-execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/failed-execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "import-manifest.json",
         "label": "import-manifest.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/import-manifest.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/import-manifest.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "outcome.json",
         "label": "outcome.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/outcome.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/outcome.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "prefix-execution.json",
         "label": "prefix-execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/prefix-execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/prefix-execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "protocol.json",
         "label": "protocol.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/protocol.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/protocol.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/context.json",
         "label": "reference/attempt-0/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/execution.json",
         "label": "reference/attempt-0/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/restore.json",
         "label": "reference/attempt-0/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/restore.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/score.json",
         "label": "reference/attempt-0/score.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/score.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/trajectory.json",
         "label": "reference/attempt-0/trajectory.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/trajectory.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/trajectory.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/budget.json",
         "label": "reference/attempt-0/turn-000/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/execution.json",
         "label": "reference/attempt-0/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/pre-context.json",
         "label": "reference/attempt-0/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/reasoning.txt",
         "label": "reference/attempt-0/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-000/request.json",
         "label": "reference/attempt-0/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/response.json",
         "label": "reference/attempt-0/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/transport-1793930327176796475/request.json",
         "label": "reference/attempt-0/turn-000/transport-1793930327176796475/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/transport-1793930327176796475/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/transport-1793930327176796475/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/transport-1793930327176796475/response.json",
         "label": "reference/attempt-0/turn-000/transport-1793930327176796475/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/transport-1793930327176796475/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/transport-1793930327176796475/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-000/transport-1793930327176796475/stream.jsonl",
         "label": "reference/attempt-0/turn-000/transport-1793930327176796475/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-000/transport-1793930327176796475/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-000/transport-1793930327176796475/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-001/budget.json",
         "label": "reference/attempt-0/turn-001/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/execution.json",
         "label": "reference/attempt-0/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/pre-context.json",
         "label": "reference/attempt-0/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/reasoning.txt",
         "label": "reference/attempt-0/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-001/request.json",
         "label": "reference/attempt-0/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/response.json",
         "label": "reference/attempt-0/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/transport-1793930333319305436/request.json",
         "label": "reference/attempt-0/turn-001/transport-1793930333319305436/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/transport-1793930333319305436/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/transport-1793930333319305436/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/transport-1793930333319305436/response.json",
         "label": "reference/attempt-0/turn-001/transport-1793930333319305436/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/transport-1793930333319305436/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/transport-1793930333319305436/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-001/transport-1793930333319305436/stream.jsonl",
         "label": "reference/attempt-0/turn-001/transport-1793930333319305436/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-001/transport-1793930333319305436/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-001/transport-1793930333319305436/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-002/budget.json",
         "label": "reference/attempt-0/turn-002/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/execution.json",
         "label": "reference/attempt-0/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/pre-context.json",
         "label": "reference/attempt-0/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/reasoning.txt",
         "label": "reference/attempt-0/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-002/request.json",
         "label": "reference/attempt-0/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/response.json",
         "label": "reference/attempt-0/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/transport-1793930338428998133/request.json",
         "label": "reference/attempt-0/turn-002/transport-1793930338428998133/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/transport-1793930338428998133/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/transport-1793930338428998133/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/transport-1793930338428998133/response.json",
         "label": "reference/attempt-0/turn-002/transport-1793930338428998133/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/transport-1793930338428998133/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/transport-1793930338428998133/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-002/transport-1793930338428998133/stream.jsonl",
         "label": "reference/attempt-0/turn-002/transport-1793930338428998133/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-002/transport-1793930338428998133/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-002/transport-1793930338428998133/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-003/budget.json",
         "label": "reference/attempt-0/turn-003/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/execution.json",
         "label": "reference/attempt-0/turn-003/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/pre-context.json",
         "label": "reference/attempt-0/turn-003/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/reasoning.txt",
         "label": "reference/attempt-0/turn-003/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-0/turn-003/request.json",
         "label": "reference/attempt-0/turn-003/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/response.json",
         "label": "reference/attempt-0/turn-003/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/transport-1793930342896168841/request.json",
         "label": "reference/attempt-0/turn-003/transport-1793930342896168841/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/transport-1793930342896168841/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/transport-1793930342896168841/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/transport-1793930342896168841/response.json",
         "label": "reference/attempt-0/turn-003/transport-1793930342896168841/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/transport-1793930342896168841/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/transport-1793930342896168841/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-0/turn-003/transport-1793930342896168841/stream.jsonl",
         "label": "reference/attempt-0/turn-003/transport-1793930342896168841/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-0/turn-003/transport-1793930342896168841/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-0/turn-003/transport-1793930342896168841/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-1/context.json",
         "label": "reference/attempt-1/context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/execution.json",
         "label": "reference/attempt-1/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/restore.json",
         "label": "reference/attempt-1/restore.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/restore.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/restore.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/score.json",
         "label": "reference/attempt-1/score.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/score.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/score.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/trajectory.json",
         "label": "Teacher · 参考轨迹",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/trajectory.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/budget.json",
         "label": "reference/attempt-1/turn-000/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/execution.json",
         "label": "reference/attempt-1/turn-000/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/pre-context.json",
         "label": "reference/attempt-1/turn-000/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/reasoning.txt",
         "label": "reference/attempt-1/turn-000/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-1/turn-000/request.json",
         "label": "reference/attempt-1/turn-000/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/response.json",
         "label": "reference/attempt-1/turn-000/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/transport-1793930343951247977/request.json",
         "label": "reference/attempt-1/turn-000/transport-1793930343951247977/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/transport-1793930343951247977/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/transport-1793930343951247977/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/transport-1793930343951247977/response.json",
         "label": "reference/attempt-1/turn-000/transport-1793930343951247977/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/transport-1793930343951247977/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/transport-1793930343951247977/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-000/transport-1793930343951247977/stream.jsonl",
         "label": "reference/attempt-1/turn-000/transport-1793930343951247977/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-000/transport-1793930343951247977/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-000/transport-1793930343951247977/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-1/turn-001/budget.json",
         "label": "reference/attempt-1/turn-001/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/execution.json",
         "label": "reference/attempt-1/turn-001/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/pre-context.json",
         "label": "reference/attempt-1/turn-001/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/reasoning.txt",
         "label": "reference/attempt-1/turn-001/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-1/turn-001/request.json",
         "label": "reference/attempt-1/turn-001/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/response.json",
         "label": "reference/attempt-1/turn-001/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/transport-1793930355346417125/request.json",
         "label": "reference/attempt-1/turn-001/transport-1793930355346417125/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/transport-1793930355346417125/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/transport-1793930355346417125/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/transport-1793930355346417125/response.json",
         "label": "reference/attempt-1/turn-001/transport-1793930355346417125/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/transport-1793930355346417125/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/transport-1793930355346417125/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-001/transport-1793930355346417125/stream.jsonl",
         "label": "reference/attempt-1/turn-001/transport-1793930355346417125/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-001/transport-1793930355346417125/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-001/transport-1793930355346417125/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-1/turn-002/budget.json",
         "label": "reference/attempt-1/turn-002/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/execution.json",
         "label": "reference/attempt-1/turn-002/execution.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/execution.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/execution.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/pre-context.json",
         "label": "reference/attempt-1/turn-002/pre-context.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/pre-context.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/pre-context.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/reasoning.txt",
         "label": "reference/attempt-1/turn-002/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "reference/attempt-1/turn-002/request.json",
         "label": "reference/attempt-1/turn-002/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/response.json",
         "label": "reference/attempt-1/turn-002/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/transport-1793930356263035804/request.json",
         "label": "reference/attempt-1/turn-002/transport-1793930356263035804/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/transport-1793930356263035804/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/transport-1793930356263035804/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/transport-1793930356263035804/response.json",
         "label": "reference/attempt-1/turn-002/transport-1793930356263035804/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/transport-1793930356263035804/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/transport-1793930356263035804/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "reference/attempt-1/turn-002/transport-1793930356263035804/stream.jsonl",
         "label": "reference/attempt-1/turn-002/transport-1793930356263035804/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/reference/attempt-1/turn-002/transport-1793930356263035804/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/reference/attempt-1/turn-002/transport-1793930356263035804/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "scope.json",
         "label": "scope.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/scope.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/scope.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "status.json",
         "label": "status.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/status.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/status.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/analysis.json",
         "label": "steering/attempt-0/analysis.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/analysis.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/analysis.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/budget.json",
         "label": "steering/attempt-0/budget.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/budget.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/budget.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/raw_steering_prompt.txt",
         "label": "Teacher · 指导",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/raw_steering_prompt.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/raw_steering_prompt.txt",
         "primary": true,
         "format": "guidance"
       },
       {
         "id": "steering/attempt-0/reasoning.txt",
         "label": "steering/attempt-0/reasoning.txt",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/reasoning.txt",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/reasoning.txt",
         "primary": false,
         "format": "text"
       },
       {
         "id": "steering/attempt-0/request.json",
         "label": "steering/attempt-0/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/response.json",
         "label": "steering/attempt-0/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/transport-1793930361806452701/request.json",
         "label": "steering/attempt-0/transport-1793930361806452701/request.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/transport-1793930361806452701/request.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/transport-1793930361806452701/request.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/transport-1793930361806452701/response.json",
         "label": "steering/attempt-0/transport-1793930361806452701/response.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/transport-1793930361806452701/response.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/transport-1793930361806452701/response.json",
         "primary": false,
         "format": "auto"
       },
       {
         "id": "steering/attempt-0/transport-1793930361806452701/stream.jsonl",
         "label": "steering/attempt-0/transport-1793930361806452701/stream.jsonl",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/steering/attempt-0/transport-1793930361806452701/stream.jsonl",
+        "url": "data/case-library/training/tool-list-numbering/raw/steering/attempt-0/transport-1793930361806452701/stream.jsonl",
         "primary": false,
         "format": "text"
       },
       {
         "id": "task.json",
         "label": "task.json",
-        "url": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/task.json",
+        "url": "data/case-library/training/tool-list-numbering/raw/task.json",
         "primary": false,
         "format": "auto"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/training/tool-list-numbering/manifest.json",
+        "format": "auto",
+        "primary": false
       }
-    ]
+    ],
+    "download": {
+      "href": "data/case-library/training/tool-list-numbering/records.zip",
+      "label": "下载完整记录"
+    }
   }
 }

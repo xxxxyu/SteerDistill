@@ -1,6 +1,6 @@
 # Formal case author contract · schemaVersion 1
 
-Authors write exactly one `case-content/<kind>/<slug>.json` and one editorial ledger under `docs/site-maintenance/cases/<kind>/<slug>.md`. Kinds are `training`, `inference`, `recovery`, `ablation`. Do not change the registry, readers, shared assets or another author's case. An integration owner registers accepted JSON in `catalog.json`; loading a case never generates or rewrites its content.
+Authors write exactly one `case-content/<kind>/<slug>.json` and one editorial ledger under `docs/site-maintenance/cases/<kind>/<slug>.md`. Current kinds are `training`, `inference`, and `recovery`. Training includes `correction` (修正过程) and `guidance-comparison` (指导对照) sections. Do not change the registry, readers, shared assets or another author's case. An integration owner registers accepted JSON in `catalog.json`; loading a case never generates or rewrites its content.
 
 The single maintained component source is `design-lab/case-shared/`. Read the editorial SKILL and `case-shared/README.md`; follow the selection gate and review raw data before authoring. Existing case JSON is a composition reference, not evidence for a different task.
 
@@ -28,7 +28,7 @@ All `url` / external-download `href` values are site-relative (`data/cases/...`,
 
 Use a full `title` that identifies the task and its key decision, without a final period, Chinese full stop, question mark or exclamation mark. Keep the title in the case JSON and matching catalog entry identical; do not include the case code in that text.
 
-For each accepted entry, the integration owner adds a fixed `code` and a separate `indexTitle` to `catalog.json`. Prefixes are `T` (training), `I` (inference), `R` (recovery) and `A` (ablation), followed by a positive integer. Assign the next unused number in the category; never derive it from display order or recycle a withdrawn code. Existing entries are renumbered only when the user explicitly requests a reorganization; record that mapping in the integration notes. Unregistered author previews need no code.
+For each accepted entry, the integration owner adds a fixed `code` and a separate `indexTitle` to `catalog.json`. Prefixes are `T` (training, including guidance comparisons), `I` (inference) and `R` (recovery), followed by a positive integer. Assign the next unused number in the category; never derive it from display order or recycle a withdrawn code. Existing entries are renumbered only when the user explicitly requests a reorganization; record that mapping in the integration notes. Unregistered author previews need no code.
 
 Catalog groups may define ordered `sections: [{id, label}]` for reading subgroups. Each registered case in that group sets `section` to one declared ID. Keep case entries in the intended reading order; the shared adapter supplies the subgroup layout. This classification is editorial data, not inferred from task IDs or keywords.
 
@@ -74,7 +74,7 @@ Fix the illustrative span offsets to your literal text; spans use JavaScript UTF
 - `training/directory-navigation.json`
 - `inference/watchlist-disambiguation.json`
 - `recovery/fuel-capacity.json`
-- `ablation/ticket-login-before-create.json`
+- `training/ticket-login-before-create.json`
 
 The former sales-order and car/file ablations are withdrawn from the maintained collection. Their source files remain archival evidence, not selection or prose references for new cases.
 
@@ -109,3 +109,9 @@ Action events also accept an explicit `tone: "before" | "after" | "neutral"` for
 ## Supplemental state comparisons
 
 A later comparison may support a displayed state match when the saved checkpoints, shared prefix and action boundary are independently verified. Preserve the actual comparison provenance in records and the ledger. Describe the observed match; do not invent a runtime acceptance decision or imply the later comparison controlled continuation. A terminal state is not a substitute for a missing local checkpoint. Keep local acceptance, subsequent unguided actions and terminal verification distinct.
+
+## Publication data library
+
+Final case records live under `data/case-library/<kind>/<slug>/raw/`. Preserve original bytes and relative paths inside each imported record root. Each case has a `manifest.json` with its original root and per-file SHA-256, plus `records.zip`; the library index maps current codes to stable slugs. Set `records.download` to that case archive and include the manifest as a secondary source. Keep source IDs stable during migration so bookmarked record selections still work. Source file references in presentation data must resolve to the same canonical case root. Verify with `python3 scripts/case-library.py --check`.
+
+The catalogue group alias `ablation` resolves to `training`, preserving old case, pair and record links. Guidance comparison uses `kind: "training"`, `template: "comparison"`; template and category are independent. The article embed may retain its internal `ablation` composition style without creating a separate catalogue group.

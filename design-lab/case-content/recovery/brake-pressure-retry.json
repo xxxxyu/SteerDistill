@@ -3,7 +3,7 @@
   "id": "brake-pressure-retry",
   "kind": "recovery",
   "title": "刹车踩到一半仍无法启动，踩到底后重试成功",
-  "summary": "用户要求以 START 模式启动发动机，此时加油、锁门和驻车制动均已完成。脚刹工具的 `pedalPosition` 取值为 0 到 1，1 表示完全踩下。",
+  "summary": "用户要求以 `START` 模式启动发动机。此时已加油、锁门并启用驻车制动。脚刹工具的 `pedalPosition` 取值为 0 到 1，1 表示完全踩下。",
   "template": "sequence",
   "originalTask": {
     "question": [
@@ -43,7 +43,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 10,
               "returnMessage": 11
             }
@@ -54,7 +54,7 @@
           "text": "Before calling that tool, do I need to check anything else? The user mentioned ensuring doors are secured and parking brake is set, which we've done. So it's safe to proceed.",
           "highlights": [],
           "source": {
-            "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+            "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
             "message": 10,
             "field": "content[0].text/<think>"
           }
@@ -79,7 +79,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 12,
               "returnMessage": 13
             },
@@ -100,7 +100,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 14,
               "returnMessage": 15
             }
@@ -118,7 +118,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 12,
               "field": "content[0].text/<think>"
             }
@@ -134,7 +134,7 @@
               }
             ],
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 14,
               "field": "content[0].text/<think>"
             }
@@ -160,7 +160,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 16,
               "returnMessage": 17
             }
@@ -180,7 +180,7 @@
               ]
             },
             "source": {
-              "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+              "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
               "message": 18,
               "returnMessage": 19
             }
@@ -197,7 +197,7 @@
             }
           ],
           "source": {
-            "file": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+            "file": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
             "message": 16,
             "field": "content[0].text/<think>"
           }
@@ -213,49 +213,56 @@
       {
         "id": "trajectory",
         "label": "SteerDistill · 完整轨迹",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/trajectory.json",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/trajectory.json",
         "primary": true,
         "format": "auto"
       },
       {
         "id": "recovery-excerpt",
         "label": "启动与重试片段",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/recovery_excerpt.json",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/recovery_excerpt.json",
         "format": "auto"
       },
       {
         "id": "recovery-suffix",
         "label": "恢复及后续轨迹",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/recovery_suffix.json",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/recovery_suffix.json",
         "format": "auto"
       },
       {
         "id": "category-score",
         "label": "整类评分与失败记录",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/category_score.jsonl",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/category_score.jsonl",
         "format": "text"
       },
       {
         "id": "evidence",
         "label": "来源与核验索引",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/evidence.json",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/evidence.json",
         "format": "auto"
       },
       {
         "id": "checksums",
         "label": "文件校验和",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/checksums.json",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/checksums.json",
         "format": "auto"
       },
       {
         "id": "readme",
         "label": "原始数据包说明",
-        "url": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/README.txt",
+        "url": "data/case-library/recovery/brake-pressure-retry/raw/README.txt",
         "format": "text"
+      },
+      {
+        "id": "publication-manifest",
+        "label": "文件清单与校验值",
+        "url": "data/case-library/recovery/brake-pressure-retry/manifest.json",
+        "format": "auto",
+        "primary": false
       }
     ],
     "download": {
-      "href": "data/cases/recovery_case/verified_20261103/multi_turn_base_84/case_data.zip",
+      "href": "data/case-library/recovery/brake-pressure-retry/records.zip",
       "label": "下载完整记录"
     }
   }

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "brake-pressure-retry",
+  "kind": "recovery",
+  "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_84",
+  "files": [
+    {
+      "path": "README.txt",
+      "bytes": 475,
+      "sha256": "91ccbe5b5acf842be72a84230a3f3cf8fd2c849e5d63198fe33597f7f618f0f3"
+    },
+    {
+      "path": "case_data.zip",
+      "bytes": 94939,
+      "sha256": "e9a3c68d13357435bf8d63db81f569a811e2efc8ef1518c2fd8eb0eccf9f56de"
+    },
+    {
+      "path": "category_score.jsonl",
+      "bytes": 596475,
+      "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
+    },
+    {
+      "path": "checksums.json",
+      "bytes": 546,
+      "sha256": "b7363b5ec01fbd9d5caa177229f849aaaf2a6d2499ee52624d68b07345b39a29"
+    },
+    {
+      "path": "evidence.json",
+      "bytes": 734,
+      "sha256": "796253bed9b36447954642f7ae2f743b5beb1a438bac5c73daedc34f47e8f9ba"
+    },
+    {
+      "path": "recovery_excerpt.json",
+      "bytes": 11076,
+      "sha256": "ef4f3c569476de87915ca15d57a94e93a342fa8392d2991a8ea35be5d9153c59"
+    },
+    {
+      "path": "recovery_suffix.json",
+      "bytes": 15438,
+      "sha256": "3dbe58a17ace0d331beedfdfa25a64964e38a0ed362c50bba45e9ab8fce9f7a7"
+    },
+    {
+      "path": "trajectory.json",
+      "bytes": 39599,
+      "sha256": "c0f82d5ebd1606141adffe7dba0fd1c6cdbf21d4862b4b0141adf916e5ca86b1"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ The causal unit is compact: advertised tool identity → actual name sent → to
 
 - Authored config: `design-lab/case-content/training/tool-list-numbering.json`.
 - Accepted composition: `design-lab/case-content/training/directory-navigation.json`; only its shared training composition was reused.
-- Raw root (all paths below relative to this root): `data/cases/training_case/reviewed-20261106/multi_turn_long_context_50/`.
+- Raw root (all paths below relative to this root): `data/case-library/training/tool-list-numbering/raw/`.
 - Remote source: host alias `neogpu-a100-nx-1`, `/mnt/genming/training-bfcl-long-context-search-20261106/training/cases/multi_turn_long_context_50/`.
 - `import-manifest.json` records source location, per-file sizes and SHA-256 values. All 159 imported files were compared with hashes independently computed on the source server; every hash matched. The manifest is an additional local provenance file. No source bytes were changed; no model was rerun.
 - Selected paths independently confirmed through `outcome.json`: `before/`, `reference/attempt-1/`, `steering/attempt-0/`, `after/attempt-0/`. Other saved reference attempts remain in the inventory.

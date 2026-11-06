@@ -14,29 +14,62 @@
             "multi_turn_base_22"
           ],
           "code": "T1",
-          "indexTitle": "目录定位"
+          "indexTitle": "目录定位",
+          "section": "correction"
         },
         {
           "id": "create-and-write-matching-sentence",
           "title": "新建文件，写入第二个包含关键词的句子",
           "url": "design-lab/case-content/training/create-and-write-matching-sentence.json",
           "code": "T2",
-          "indexTitle": "匹配句写入"
+          "indexTitle": "匹配句写入",
+          "section": "correction"
         },
         {
           "id": "tool-list-numbering",
           "title": "解锁车门时，误把列表序号加进工具名",
           "url": "design-lab/case-content/training/tool-list-numbering.json",
           "code": "T3",
-          "indexTitle": "工具列表序号"
+          "indexTitle": "工具列表序号",
+          "section": "correction"
         },
         {
           "id": "card-country-restriction",
           "title": "限制银行卡的使用范围，不能只填国家名单",
           "url": "design-lab/case-content/training/card-country-restriction.json",
           "code": "T4",
-          "indexTitle": "国家限制开关"
+          "indexTitle": "国家限制开关",
+          "section": "correction"
+        },
+        {
+          "id": "ticket-login-before-create",
+          "title": "创建工单前，先登录工单系统",
+          "url": "design-lab/case-content/training/ticket-login-before-create.json",
+          "code": "T5",
+          "indexTitle": "登录后创建工单",
+          "section": "guidance-comparison"
         }
+      ],
+      "aliases": [
+        "ablation"
+      ],
+      "sections": [
+        {
+          "id": "correction",
+          "label": "修正过程"
+        },
+        {
+          "id": "guidance-comparison",
+          "label": "指导对照"
+        }
+      ],
+      "retiredCases": [
+        "sales-order-header",
+        "enter-before-rename",
+        "sales-order-pricing",
+        "create-in-target-directory",
+        "lock-doors",
+        "convert-then-refuel"
       ]
     },
     {
@@ -180,27 +213,6 @@
           "code": "R5",
           "indexTitle": "刹车力度"
         }
-      ]
-    },
-    {
-      "id": "ablation",
-      "label": "消融对照",
-      "cases": [
-        {
-          "id": "ticket-login-before-create",
-          "title": "创建工单前，先登录工单系统",
-          "url": "design-lab/case-content/ablation/ticket-login-before-create.json",
-          "code": "A1",
-          "indexTitle": "登录后建单"
-        }
-      ],
-      "retiredCases": [
-        "sales-order-header",
-        "enter-before-rename",
-        "sales-order-pricing",
-        "create-in-target-directory",
-        "lock-doors",
-        "convert-then-refuel"
       ]
     }
   ]

@@ -8,14 +8,14 @@ This repository is a static publication tree. GitHub Pages serves the root at ht
 | --- | --- | --- |
 | `index.html` | Paper identity, benchmark overview, TL;DR and concept animation | English |
 | `article.html` | Independent research blog post, Xiangyu Li byline, contents and notes | Chinese |
-| `design-lab/paper-cases.html` | Nineteen listed full cases: 4 training, 9 inference, 5 recovery, 1 ablation | Chinese |
+| `design-lab/paper-cases.html` | Nineteen listed full cases: 5 training, 9 inference, 5 recovery | Chinese |
 | `design-lab/case-records.html` | Original trajectories and record navigation | Chinese |
 
 The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.
 
-Current numbering and copy: [2026-11-06 editorial pass](case-copy-renumbering-20261106.md). Training cases now run T1 directory → T2 matching sentence → T3 tool names → T4 country restriction. The retained ticket-login ablation is A1 (formerly A6). Stable case slugs and links are unchanged.
+Current release review: [2026-11-06 case finalization](case-finalization-20261106.md). The collection has three groups. Training contains 修正过程 (T1–T4) and 指导对照 (T5, formerly A6/A1). Old ablation URLs remain compatible. Current raw records and per-case downloads are indexed in [the case library](../../data/case-library/README.md).
 
-Earlier additions and withdrawal decisions remain in [training additions](training-additions-20261106.md) and [batch integration](case-batch-20261106.md). Those reports use the numbers assigned at the time; the current A1 is not the withdrawn historical A1.
+Earlier audits keep their historical numbering; consult the finalization mapping rather than interpreting old A1 references as the current ticket case.
 
 ### Sources and ownership
 
