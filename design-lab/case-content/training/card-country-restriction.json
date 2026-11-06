@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "card-country-restriction",
   "kind": "training",
-  "title": "限制银行卡国际交易，不能只填国家名单",
-  "summary": "用户希望新虚拟卡每月限额为 2000 美元，并只允许在美国和加拿大使用。卡已激活，限额已设置，接下来配置国家限制。接口中的 `international_allowed=1` 允许全部国际交易，设为 `0` 才会执行允许国家名单。",
+  "title": "限制银行卡的使用范围，不能只填国家名单",
+  "summary": "用户希望新虚拟卡每月限额为 2000 美元，且只能在美国和加拿大使用。卡已激活，限额也已设置，现在需要配置国家限制。参数 `international_allowed=1` 表示允许所有国际交易；设为 `0`，才会按国家名单限制使用范围。",
   "template": "training",
   "originalTask": {
     "question": [
@@ -19,7 +19,7 @@
     "branches": [
       {
         "title": "无指导",
-        "summary": "写入了 US、CA 名单，却没有启用国家限制。",
+        "summary": "填入了美国和加拿大，却把开关设为允许所有国际交易，国家限制没有生效。",
         "tone": "before",
         "events": [
           {
@@ -72,7 +72,7 @@
       },
       {
         "title": "Teacher 指导后",
-        "summary": "把国际交易开关设为 0，启用 US、CA 国家限制。",
+        "summary": "将开关设为 0，启用限制，只允许在美国和加拿大使用。",
         "tone": "after",
         "events": [
           {
@@ -133,8 +133,8 @@
         "recovery_check": "If the tool returns an error or the status is not updated, verify the card_id and ensure 'international_allowed' is 0 to correctly enforce the country whitelist."
       },
       "checks": {
-        "配置状态": "目标卡的 `international_allowed=0`，`allowed_countries=\"US,CA\"`；卡片保持 `active`，限额仍为 2000 美元。",
-        "参考对照": "上述配置与 Teacher 参考操作后的状态一致；无指导分支虽然也写入 US、CA，却保留了允许全部国际交易的开关。"
+        "配置状态": "`international_allowed=0`，`allowed_countries=\"US,CA\"`。卡片保持激活，月限额仍为 2000 美元。",
+        "参考对照": "配置与 Teacher 参考操作后的状态一致。无指导分支也填了相同的国家名单，但 `international_allowed=1`，仍允许所有国际交易。"
       }
     }
   },

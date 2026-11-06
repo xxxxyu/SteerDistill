@@ -3,7 +3,7 @@
   "id": "ticket-login-before-create",
   "kind": "ablation",
   "title": "创建工单前，先登录工单系统",
-  "summary": "用户要求为一笔已取消的 AAPL 订单创建优先级为 3 的工单，并提供了登录信息。交易账户已经登录，但工单系统使用独立会话，当前尚未登录。",
+  "summary": "用户想为一笔已取消的 AAPL 订单创建优先级为 3 的工单，并提供了用户名和密码。交易账户已登录，但工单系统需要单独登录。",
   "template": "comparison",
   "originalTask": {
     "question": [
@@ -50,7 +50,7 @@
       {
         "id": "teacher_structured",
         "name": "Teacher 结构化指导",
-        "description": "先登录工单系统，再创建工单，返回实际生成的工单信息。",
+        "description": "登录工单系统后成功创建工单，并向用户返回工单信息。",
         "turns": [
           [
             {
@@ -237,12 +237,12 @@
             }
           },
           {
-            "text": "描述保留了交易问题，登录信息没有写入工单。",
+            "text": "工单描述只包含交易问题，没有写入用户名和密码。",
             "highlights": [
               {
-                "start": 10,
-                "end": 20,
-                "text": "登录信息没有写入工单",
+                "start": 12,
+                "end": 22,
+                "text": "没有写入用户名和密码",
                 "tone": "after"
               }
             ],
@@ -262,7 +262,7 @@
       {
         "id": "teacher_freeform",
         "name": "Teacher 自由文本指导",
-        "description": "先建单时因未登录报错；补登录后没有重新建单，却向用户报告完成。",
+        "description": "未登录就创建工单，收到报错后才登录。登录后没有再次创建工单，却向用户报告已完成。",
         "turns": [
           [
             {
@@ -412,11 +412,11 @@
             }
           },
           {
-            "text": "登录后没有重试创建，工单队列仍为空。",
+            "text": "登录后没有再次创建工单，工单队列仍为空。",
             "highlights": [
               {
-                "start": 10,
-                "end": 17,
+                "start": 12,
+                "end": 19,
                 "text": "工单队列仍为空",
                 "tone": "before"
               }
@@ -437,7 +437,7 @@
       {
         "id": "student_structured",
         "name": "Student 结构化指导",
-        "description": "先登录再建单，工单内容和优先级均符合请求。",
+        "description": "先登录，再创建工单。工单内容和优先级都符合用户要求。",
         "turns": [
           [
             {
@@ -603,12 +603,12 @@
             }
           },
           {
-            "text": "描述保留了交易问题，登录信息没有写入工单。",
+            "text": "工单描述只包含交易问题，没有写入用户名和密码。",
             "highlights": [
               {
-                "start": 10,
-                "end": 20,
-                "text": "登录信息没有写入工单",
+                "start": 12,
+                "end": 22,
+                "text": "没有写入用户名和密码",
                 "tone": "after"
               }
             ],
@@ -628,7 +628,7 @@
       {
         "id": "external_structured",
         "name": "GPT 结构化指导",
-        "description": "指导要求先登录、不要写入密码；agent 完成了登录和建单，却把登录信息也写进了工单。",
+        "description": "指导明确要求先登录，并且不要把密码写入工单。agent 完成了登录和创建，却仍把用户名和密码写进了工单描述。",
         "turns": [
           [
             {
@@ -819,7 +819,7 @@
       {
         "id": "unguided",
         "name": "无指导",
-        "description": "建单报错后自行补登录并重试，但把登录信息一起写进了工单描述。",
+        "description": "创建工单报错后，自行登录并重试成功，但把用户名和密码也写进了工单描述。",
         "turns": [
           [
             {

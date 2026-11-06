@@ -492,7 +492,7 @@
       "case": {
         "kind": "ablation",
         "id": "ticket-login-before-create",
-        "code": "A6",
+        "code": "A1",
         "title": "登录成功之后，工单是否真的创建",
         "task": "创建优先级为 3 的交易问题工单。用户已提供登录信息，工单系统尚未登录。",
         "href": "design-lab/paper-cases.html?group=ablation&case=ticket-login-before-create",

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "create-and-write-matching-sentence",
   "kind": "training",
-  "title": "创建文件后，写入第二个匹配句",
-  "summary": "`dev_summary.txt` 的行数是 1。用户要求新建 `1.txt`，写入原文中第二个包含 `server error` 的句子。第一处说初期没有发生错误，第二处才说最终测试发现错误。这里的 `echo` 只能写入已有文件。",
+  "title": "新建文件，写入第二个包含关键词的句子",
+  "summary": "用户要求新建 `1.txt`，写入 `dev_summary.txt` 中第二个包含 `server error` 的完整句子。第一处说初期没有发生错误，第二处说最终测试发现错误。环境中的 `echo` 只能向已有文件写入。",
   "template": "training",
   "originalTask": {
     "question": [
@@ -31,7 +31,7 @@
     "branches": [
       {
         "title": "无指导",
-        "summary": "写入报错后自行补建文件，但仍把错误的句子片段写了进去。",
+        "summary": "第一次写入因文件不存在而报错。随后创建了文件，但写入的仍是选错的句子片段。",
         "tone": "before",
         "frameTitle": "工具调用与返回",
         "events": [
@@ -141,7 +141,7 @@
       },
       {
         "title": "Teacher 指导后",
-        "summary": "重新核对匹配顺序，并按先创建、再写入的顺序完成任务。",
+        "summary": "先创建文件，再写入目标句子；推理中重新计数，纠正了最初选错句子的问题。",
         "tone": "after",
         "frameTitle": "工具调用与返回",
         "events": [
@@ -243,8 +243,8 @@
         "recovery_check": "Verify the file '1.txt' exists and contains the correct sentence. If not, reattempt creation and appending."
       },
       "checks": {
-        "局部核验": "`touch` 创建了内容为空的 `1.txt`，环境状态与 Teacher 参考步骤一致，局部核验通过。此时还没有写入句子。",
-        "后续执行": "撤去指导后，agent 写入 `However, a server error was detected in the final testing phase.`，与原文第二个匹配句一致，任务核验通过。"
+        "局部核验": "`touch` 创建了空文件 `1.txt`，状态与 Teacher 参考步骤一致，局部核验通过。",
+        "后续执行": "撤去指导后，agent 写入了原文中第二个包含 `server error` 的完整句子，任务核验通过。"
       }
     }
   },

@@ -3,7 +3,7 @@
   "id": "directory-navigation",
   "kind": "training",
   "title": "读取文件前，先确认所在目录",
-  "summary": "用户希望查看 `workspace/project_analysis.txt`。agent 当前位于 `/alex`，而 `cat` 只能读取当前目录中的文件。",
+  "summary": "用户想查看 `workspace/project_analysis.txt` 的内容。agent 当前位于 `/alex`，而 `cat` 只能读取当前目录中的文件。",
   "template": "training",
   "originalTask": {
     "id": "multi_turn_base_22",
@@ -118,8 +118,8 @@
   "presentation": {
     "branches": [
       {
-        "title": "无指导：直接读取",
-        "summary": "把 workspace 当作当前目录，直接读取文件；报错后，请用户确认文件位置。",
+        "title": "无指导",
+        "summary": "假定自己已在 workspace 中，直接读取文件。报错后没有切换目录，而是请用户确认文件位置。",
         "tone": "before",
         "events": [
           {
@@ -151,8 +151,8 @@
         }
       },
       {
-        "title": "有指导：先确认目录",
-        "summary": "先查询当前位置，进入 workspace，再读取文件。",
+        "title": "Teacher 指导后",
+        "summary": "先确认当前位置，再进入 workspace，成功读出文件内容。",
         "tone": "after",
         "events": [
           {
@@ -193,7 +193,7 @@
           }
         ],
         "reasoning": {
-          "title": "有指导 · 推理节选",
+          "title": "Teacher 指导后 · 推理节选",
           "text": "First, I need to confirm the current directory.\n…\nBut if not, we need to cd to the right folder first.",
           "highlights": [
             {

@@ -66,7 +66,7 @@ No token-based selection or inferred comparison diff was used. The following are
 - Reasoning msg26: mark `first authenticate, then create the ticket.` blue. This is the causal ordering, not a generic confidence statement; remaining exact sentence text is unmarked.
 - Guide decision rule: mark `before creating the ticket` blue, foregrounding the prerequisite rather than all four fields.
 - Advisor full analysis: mark the exact initial clause `which led to an authentication failure because the ticket creation tool didn't accept credentials.` red; later `the assistant skipped the login step and directly attempted to create the ticket, leading to the error.` blue. Other analysis remains unmarked.
-- Results: mark `已登录`, `工单已创建`, `登录信息没有写入工单` blue. These are three distinct observed state/content facts; priority and status wording need no additional mark.
+- Results: mark `已登录`, `工单已创建`, `没有写入用户名和密码` blue. These are three distinct observed state/content facts; priority and status wording need no additional mark.
 
 ### Teacher freeform
 
@@ -83,7 +83,7 @@ No token-based selection or inferred comparison diff was used. The following are
 - Create msg28: blue event; `status="Open"` blue background. Other common args remain unmarked.
 - Reasoning msg26: `first log in using the provided credentials, then create the ticket.` blue, recording its correct final choice without coloring the preceding uncertainty.
 - Guide: `Always use the ticket login tool first` blue, direct prerequisite support. No criticism of “always” as a generic policy is inferred from this single task.
-- Results: `已登录`, `工单已创建`, `登录信息没有写入工单` blue, all checked against stored state.
+- Results: `已登录`, `工单已创建`, `没有写入用户名和密码` blue, all checked against stored state.
 
 ### GPT structured
 
@@ -122,3 +122,7 @@ No token-based selection or inferred comparison diff was used. The following are
 ## Coordinator integration
 
 Registered after source review for local preview. Desktop/narrow interaction and record-reader checks, integration edits and user-review status are recorded in [the batch review](../../case-batch-20261106.md). This supersedes the pending coordinator QA status at author handoff; user acceptance is still pending.
+
+## 2026-11-06 中文编辑与重编号
+
+当前编号 A1（原 A6）。结果标注改为“没有写入用户名和密码”，事实、来源和正向颜色含义不变；其余中文描述按 [统一编辑记录](../../case-copy-renumbering-20261106.md) 更新。

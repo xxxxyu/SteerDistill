@@ -13,9 +13,9 @@ This repository is a static publication tree. GitHub Pages serves the root at ht
 
 The navigation labels are shared and deliberately Chinese: SteerDistill / 研究文章 / 案例分析 / theme. A bilingual interface is deferred until the content is settled.
 
-T3 (country restriction) and T4 (create and write the second matching sentence) are added for user review; see [training additions](training-additions-20261106.md).
+Current numbering and copy: [2026-11-06 editorial pass](case-copy-renumbering-20261106.md). Training cases now run T1 directory → T2 matching sentence → T3 tool names → T4 country restriction. The retained ticket-login ablation is A1 (formerly A6). Stable case slugs and links are unchanged.
 
-Current case additions and withdrawal decisions: [2026-11-06 integration](case-batch-20261106.md). T2 and A6 await user review; A1–A5 are withdrawn from the collection and the article. The [2026-11-05 reselection](ablation-reselection-20261105.md) records the superseded selection.
+Earlier additions and withdrawal decisions remain in [training additions](training-additions-20261106.md) and [batch integration](case-batch-20261106.md). Those reports use the numbers assigned at the time; the current A1 is not the withdrawn historical A1.
 
 ### Sources and ownership
 
@@ -62,7 +62,7 @@ The benchmark follows directly beneath the hero; precision stays in the setting 
 
 ## Case editing and verification
 
-The [2026-11-04 review batch](case-batch-20261104.md) adds the user-accepted R3–R5 using the existing sequence template. The [latest evidence audit](latest-cases-review-20261106.md) selects T2 and A6 from newer data; earlier training packages remain deferred. The prior [ablation review](ablation-review-20261104.md) is historical: its A1 selection is now withdrawn. These local updates have not been published.
+The [2026-11-04 review batch](case-batch-20261104.md) adds the user-accepted R3–R5 using the existing sequence template. The [latest evidence audit](latest-cases-review-20261106.md) selected the tool-name training case and ticket-login ablation from newer data (then T2 and A6); earlier training packages remain deferred. The prior [ablation review](ablation-review-20261104.md) is historical: its A1 selection is now withdrawn. These local updates have not been published.
 
 Read the [case author contract](../../design-lab/case-content/README.md) and [shared interfaces](../../design-lab/case-shared/README.md). Highlights remain explicit, individually reviewed spans.
 

@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "tool-list-numbering",
   "kind": "training",
-  "title": "解锁车门时，把列表序号误当成工具名",
-  "summary": "用户希望解锁全部车门，并打开车灯。工具列表把 `lockDoors` 列为第 16 项、`setHeadlights` 列为第 20 项；这些序号并不是工具名的一部分。",
+  "title": "解锁车门时，误把列表序号加进工具名",
+  "summary": "用户希望解锁全部车门，并打开车灯。工具列表中的第 16 项是 `lockDoors`，第 20 项是 `setHeadlights`。16 和 20 只是列表序号，不属于工具名。",
   "template": "training",
   "originalTask": {
     "question": [
@@ -19,7 +19,7 @@
     "branches": [
       {
         "title": "无指导",
-        "summary": "把列表序号拼进工具名，解锁和开灯均报错；重试后仍未执行成功。",
+        "summary": "把列表序号加进工具名，解锁和开灯都报错，重试后仍未成功。",
         "tone": "before",
         "frameTitle": "工具调用与返回 · 节选",
         "events": [
@@ -91,7 +91,7 @@
       },
       {
         "title": "Teacher 指导后",
-        "summary": "按真实工具名解锁车门；局部核验通过后，撤去指导，继续打开车灯。",
+        "summary": "使用正确的工具名解锁车门，随后继续打开车灯。",
         "tone": "after",
         "frameTitle": "工具调用与返回",
         "events": [
@@ -155,7 +155,7 @@
           }
         ],
         "reasoning": {
-          "title": "指导后 · 推理节选",
+          "title": "Teacher 指导后 · 推理节选",
           "text": "From the list_tools response, there's mcp_tool_lockDoors which can unlock doors.\n…\nAlso, there's mcp_tool_setHeadlights with a mode parameter. Setting mode=\"on\" should activate the headlights.",
           "highlights": [
             {
@@ -187,8 +187,8 @@
         "recovery_check": "Verify door status and headlight status post-tool execution to ensure functionality."
       },
       "checks": {
-        "局部核验": "解锁调用成功，四扇车门均变为 `unlocked`，环境状态与 Teacher 参考步骤一致。此时车灯仍为 `off`，解锁这一步通过核验。",
-        "后续执行": "撤去指导后，agent 调用 `setHeadlights(mode=\"on\")`。最终四扇车门保持解锁，车灯为 `on`，任务核验通过。"
+        "局部核验": "四扇车门均已解锁，车灯尚未打开。环境状态与 Teacher 参考步骤一致，局部核验通过。",
+        "后续执行": "撤去指导后，agent 调用 `setHeadlights(mode=\"on\")` 打开车灯。车门保持解锁，任务核验通过。"
       }
     }
   },
