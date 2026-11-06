@@ -26,7 +26,7 @@ T4：新 Teacher 请求不含终局失败反馈，第一次指导尝试即局部
 ## 验收
 
 - 19 个配置、245 个精确标注、1322 个来源 URL 校验通过。
-- 现有 24 项测试通过；四个生成入口与模板一致；git whitespace 检查通过。
+- 现有 24 项测试通过；四个生成入口与模板一致；编辑内容的 git whitespace 检查通过；原始日志自带的尾随空格原样保留，以维持字节一致性。
 - 浏览器检查双栏桌面、400px 窄屏（无页面横向溢出）、原始任务/推理折叠、T3/T4 目录及完整轨迹入口。
 - 检查指导表与执行结果共用行布局、短箭头、统一边缘，以及 red/blue 标注和中性返回。
 - 本地入口：`design-lab/paper-cases.html?group=training&case=card-country-restriction`、`design-lab/paper-cases.html?group=training&case=create-and-write-matching-sentence`。
