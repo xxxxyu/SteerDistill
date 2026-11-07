@@ -34,5 +34,5 @@
     await document.fonts.ready;
     if (location.hash) document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({block:'start'});
   }
-  if (document.body.dataset.page === 'article') openHash();
+  if (document.body.dataset.page === 'article' && !document.querySelector('.home-main')) openHash();
 })();

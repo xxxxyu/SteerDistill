@@ -13,6 +13,7 @@
       "id": "bf16",
       "label": "BF16",
       "precision": "BF16",
+      "language": "zh-CN",
       "success": true,
       "total": 27.494403380027507,
       "inference": 13.289828458917327,
@@ -501,12 +502,14 @@
             "status": "finished"
           }
         }
-      ]
+      ],
+      "repetition": null
     },
     {
       "id": "ours",
       "label": "SteerDistill",
       "precision": "W4A16",
+      "language": "zh-CN",
       "success": true,
       "total": 25.215270703018177,
       "inference": 8.573801402875688,
@@ -997,50 +1000,1060 @@
             "status": "finished"
           }
         }
-      ]
+      ],
+      "repetition": null
     },
     {
       "id": "qad",
       "label": "On-Policy QAD",
       "precision": "W4A16",
+      "language": "zh-CN",
       "success": false,
-      "total": 1.054680228990037,
-      "inference": 0.5037162000080571,
-      "execution": 2.2795982658863068e-05,
+      "total": 46.17095344502013,
+      "inference": 13.931951482198201,
+      "execution": 25.819387986324728,
       "final": "raw/qad/final.png",
       "steps": [
         {
           "index": 0,
-          "title": "Stop at the sign-in screen",
+          "title": "Focus the email field",
           "start": 0,
-          "inferStart": 0.5509338370175101,
-          "actStart": 1.0546500370255671,
-          "end": 1.054672833008226,
+          "inferStart": 0.5511693160515279,
+          "actStart": 0.9747776919975877,
+          "end": 1.3798441069666296,
           "image": "raw/qad/000.png",
-          "thought": "The task requires reading articles from the 'Sports' category, but the current screen is a sign-in page for Google News. Since no sign-in is required to browse content, I should bypass this screen to proceed with the task.",
-          "action": "device.end_task('infeasible')",
+          "thought": "首先需要登录Google News才能访问体育分类文章，先点击邮箱输入框，准备输入随机的登录信息来完成登录流程。",
+          "action": "device.click(480, 559)",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.end_task",
-            "args": "'infeasible'",
+            "name": "device.click",
+            "args": "480, 559",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 187,
+            "y": 471
+          }
+        },
+        {
+          "index": 1,
+          "title": "Enter a test email",
+          "start": 1.3798441069666296,
+          "inferStart": 1.6179644379299134,
+          "actStart": 2.079684217926115,
+          "end": 2.4999920149566606,
+          "image": "raw/qad/001.png",
+          "thought": "现在需要登录Google News，先在邮箱输入框中输入随机的测试邮箱地址，比如testuser12345@gmail.com，来完成登录步骤。",
+          "action": "device.type(\"testuser12345@gmail.com\")",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.type",
+            "args": "\"testuser12345@gmail.com\"",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "input_text",
+            "text": "testuser12345@gmail.com"
+          }
+        },
+        {
+          "index": 2,
+          "title": "Continue to password",
+          "start": 2.4999920149566606,
+          "inferStart": 2.684564923052676,
+          "actStart": 3.0519617539830506,
+          "end": 3.4670993420295417,
+          "image": "raw/qad/002.png",
+          "thought": "已经输入了测试邮箱，现在需要点击Next按钮继续登录流程，以便后续访问体育分类的文章。",
+          "action": "device.click(731, 637)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "731, 637",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 284,
+            "y": 537
+          }
+        },
+        {
+          "index": 3,
+          "title": "Enter a test password",
+          "start": 3.4670993420295417,
+          "inferStart": 4.11870250897482,
+          "actStart": 4.551295601064339,
+          "end": 4.9638717010384426,
+          "image": "raw/qad/003.png",
+          "thought": "现在需要在密码输入框中输入随机测试密码，比如TestPass123!，来完成登录步骤，以便后续访问体育分类的文章。",
+          "action": "device.type(\"TestPass123!\")",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.type",
+            "args": "\"TestPass123!\"",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "input_text",
+            "text": "TestPass123!"
+          }
+        },
+        {
+          "index": 4,
+          "title": "Submit the sign-in form",
+          "start": 4.9638717010384426,
+          "inferStart": 5.184981761965901,
+          "actStart": 5.569714089971967,
+          "end": 5.982236576965079,
+          "image": "raw/qad/004.png",
+          "thought": "现在已经填好了邮箱和密码，需要点击Next按钮完成登录，以便后续访问体育分类的文章。",
+          "action": "device.click(731, 677)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "731, 677",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 284,
+            "y": 571
+          }
+        },
+        {
+          "index": 5,
+          "title": "Wait for sign-in",
+          "start": 5.982236576965079,
+          "inferStart": 6.570006508845836,
+          "actStart": 6.9580673589371145,
+          "end": 7.959130569011904,
+          "image": "raw/qad/005.png",
+          "thought": "现在登录按钮处于加载状态，需要等待页面加载完成，才能继续进入Google News应用，进而访问体育分类的文章。",
+          "action": "device.wait()",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.wait",
+            "args": "",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "wait"
+          }
+        },
+        {
+          "index": 6,
+          "title": "Open the Sports category",
+          "start": 7.959130569011904,
+          "inferStart": 8.13883778010495,
+          "actStart": 8.61222966806963,
+          "end": 9.019784084986895,
+          "image": "raw/qad/006.png",
+          "thought": "现在需要进入Sports分类页面，点击顶部导航栏最右侧的Sports标签，这样就能查看体育类的文章，完成阅读至少3篇的任务。",
+          "action": "device.click(950, 107)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "950, 107",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 370,
+            "y": 90
+          }
+        },
+        {
+          "index": 7,
+          "title": "Open the first Sports article",
+          "start": 9.019784084986895,
+          "inferStart": 9.768385283881798,
+          "actStart": 10.246200031950139,
+          "end": 10.65512437094003,
+          "image": "raw/qad/007.png",
+          "thought": "现在需要阅读第一篇体育文章，点击标题为\"NBA Playoffs: Celtics Sweep Heat in Dominant Fashion\"的文章卡片，进入详情页面阅读。",
+          "action": "device.click(300, 230)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "300, 230",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 117,
+            "y": 194
+          }
+        },
+        {
+          "index": 8,
+          "title": "Wait for the article",
+          "start": 10.65512437094003,
+          "inferStart": 10.715625065844506,
+          "actStart": 11.077860664925538,
+          "end": 12.078919781022705,
+          "image": "raw/qad/008.png",
+          "thought": "刚才点击文章后页面正在加载中，需要等待页面加载完成，才能正常阅读这篇NBA季后赛的文章，完成第一篇阅读。",
+          "action": "device.wait()",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.wait",
+            "args": "",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "wait"
+          }
+        },
+        {
+          "index": 9,
+          "title": "Try to return to Sports",
+          "start": 12.078919781022705,
+          "inferStart": 12.215176222845912,
+          "actStart": 12.675826701917686,
+          "end": 13.079579061944969,
+          "image": "raw/qad/009.png",
+          "thought": "已经成功阅读第一篇体育文章，现在需要返回Sports分类页面，选择第二篇不同的体育文章进行阅读，点击左上角的返回箭头。",
+          "action": "device.click(70, 37)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "70, 37",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 27,
+            "y": 31
+          }
+        },
+        {
+          "index": 10,
+          "title": "Scroll inside the first article",
+          "start": 13.079579061944969,
+          "inferStart": 13.297572555951774,
+          "actStart": 13.772534893010743,
+          "end": 14.97246240102686,
+          "image": "raw/qad/010.png",
+          "thought": "现在需要向上滑动页面，查看更多文章列表，找到第二篇不同的体育文章进行阅读。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 20,
+              "end": 36,
+              "text": "找到第二篇不同的体育文章进行阅读",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
             "tone": "before",
             "highlights": {
               "call": [
                 {
-                  "start": 16,
-                  "end": 28,
-                  "text": "'infeasible'",
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
                   "tone": "before"
                 }
               ]
             }
           },
           "executed": {
-            "action": "finish",
-            "status": "infeasible"
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 11,
+          "title": "Mistake article text for a list",
+          "start": 14.97246240102686,
+          "inferStart": 15.031931490986608,
+          "actStart": 15.549593389965594,
+          "end": 16.73849792999681,
+          "image": "raw/qad/011.png",
+          "thought": "刚才滑动后页面显示的是非体育文章，需要继续向上滑动页面，找到第二篇体育分类的文章进行阅读。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 5,
+              "end": 16,
+              "text": "页面显示的是非体育文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 12,
+          "title": "Return to the Sports list",
+          "start": 16.73849792999681,
+          "inferStart": 16.821429789066315,
+          "actStart": 17.274330388987437,
+          "end": 17.68168386502657,
+          "image": "raw/qad/012.png",
+          "thought": "现在需要回到Sports分类的文章列表页面，选择第二篇不同的体育文章进行阅读，点击左上角的返回箭头。",
+          "action": "device.click(70, 37)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "70, 37",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 27,
+            "y": 31
+          }
+        },
+        {
+          "index": 13,
+          "title": "Scroll past available stories",
+          "start": 17.68168386502657,
+          "inferStart": 18.432532214093953,
+          "actStart": 18.943755605025217,
+          "end": 19.98839512898121,
+          "image": "raw/qad/013.png",
+          "thought": "现在需要向上滑动页面，找到第二篇不同的体育分类文章，以便完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 14,
+          "title": "Keep scrolling without opening a story",
+          "start": 19.98839512898121,
+          "inferStart": 20.06381561292801,
+          "actStart": 20.57925673900172,
+          "end": 21.621597829973325,
+          "image": "raw/qad/014.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 15,
+          "title": "Keep scrolling without opening a story",
+          "start": 21.621597829973325,
+          "inferStart": 21.6981069680769,
+          "actStart": 22.178266957984306,
+          "end": 23.222861659014598,
+          "image": "raw/qad/015.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 16,
+          "title": "Keep scrolling without opening a story",
+          "start": 23.222861659014598,
+          "inferStart": 23.304687070893124,
+          "actStart": 23.784612175892107,
+          "end": 24.838454799959436,
+          "image": "raw/qad/016.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 17,
+          "title": "Keep scrolling without opening a story",
+          "start": 24.838454799959436,
+          "inferStart": 24.9136705029523,
+          "actStart": 25.39536329905968,
+          "end": 26.438230784027837,
+          "image": "raw/qad/017.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 18,
+          "title": "Keep scrolling without opening a story",
+          "start": 26.438230784027837,
+          "inferStart": 26.513812556979246,
+          "actStart": 26.99588068993762,
+          "end": 28.038033067947254,
+          "image": "raw/qad/018.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 19,
+          "title": "Keep scrolling without opening a story",
+          "start": 28.038033067947254,
+          "inferStart": 28.113423533039168,
+          "actStart": 28.59572612203192,
+          "end": 29.638088003033772,
+          "image": "raw/qad/019.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 20,
+          "title": "Keep scrolling without opening a story",
+          "start": 29.638088003033772,
+          "inferStart": 29.71456520690117,
+          "actStart": 30.198049520957284,
+          "end": 31.237918038968928,
+          "image": "raw/qad/020.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 21,
+          "title": "Keep scrolling without opening a story",
+          "start": 31.237918038968928,
+          "inferStart": 31.313447040040046,
+          "actStart": 31.79493123095017,
+          "end": 32.82699261093512,
+          "image": "raw/qad/021.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 22,
+          "title": "Keep scrolling without opening a story",
+          "start": 32.82699261093512,
+          "inferStart": 33.430705901933834,
+          "actStart": 33.91200008196756,
+          "end": 34.95424553297926,
+          "image": "raw/qad/022.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 23,
+          "title": "Keep scrolling without opening a story",
+          "start": 34.95424553297926,
+          "inferStart": 35.032782354042865,
+          "actStart": 35.51419226406142,
+          "end": 36.55426212097518,
+          "image": "raw/qad/023.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 24,
+          "title": "Keep scrolling without opening a story",
+          "start": 36.55426212097518,
+          "inferStart": 36.63018820399884,
+          "actStart": 37.11198923899792,
+          "end": 38.154513629036956,
+          "image": "raw/qad/024.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 25,
+          "title": "Keep scrolling without opening a story",
+          "start": 38.154513629036956,
+          "inferStart": 38.23004191194195,
+          "actStart": 38.713506856933236,
+          "end": 39.77114558999892,
+          "image": "raw/qad/025.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 26,
+          "title": "Keep scrolling without opening a story",
+          "start": 39.77114558999892,
+          "inferStart": 39.848300188896246,
+          "actStart": 40.33183753688354,
+          "end": 41.37078452995047,
+          "image": "raw/qad/026.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 27,
+          "title": "Keep scrolling without opening a story",
+          "start": 41.37078452995047,
+          "inferStart": 41.44594655290712,
+          "actStart": 41.92700754199177,
+          "end": 42.97041549196001,
+          "image": "raw/qad/027.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 28,
+          "title": "Keep scrolling without opening a story",
+          "start": 42.97041549196001,
+          "inferStart": 43.046150521957316,
+          "actStart": 43.52800623793155,
+          "end": 44.570758751942776,
+          "image": "raw/qad/028.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
+          }
+        },
+        {
+          "index": 29,
+          "title": "Keep scrolling without opening a story",
+          "start": 44.570758751942776,
+          "inferStart": 44.64598901197314,
+          "actStart": 45.128005928942,
+          "end": 46.17092909198254,
+          "image": "raw/qad/029.png",
+          "thought": "现在需要向上滑动页面，找到第三篇不同的体育分类文章，以完成阅读至少3篇体育文章的任务。",
+          "action": "device.swipe((500, 800), (500, 200))",
+          "thoughtHighlights": [
+            {
+              "start": 11,
+              "end": 25,
+              "text": "找到第三篇不同的体育分类文章",
+              "tone": "before"
+            }
+          ],
+          "actionEvent": {
+            "name": "device.swipe",
+            "args": "(500, 800), (500, 200)",
+            "tone": "before",
+            "highlights": {
+              "call": [
+                {
+                  "start": 0,
+                  "end": 12,
+                  "text": "device.swipe",
+                  "tone": "before"
+                }
+              ]
+            }
+          },
+          "executed": {
+            "action": "swipe",
+            "x1": 194,
+            "y1": 674,
+            "x2": 194,
+            "y2": 169
           }
         }
-      ]
+      ],
+      "repetition": {
+        "from": 15,
+        "label": "Repeated scrolling",
+        "review": "Manually reviewed contiguous tail: no new task progress. The initial action and first repetition remain outside the fold."
+      }
     }
   ]
 }

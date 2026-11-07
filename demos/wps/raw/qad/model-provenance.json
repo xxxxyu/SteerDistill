@@ -1,32 +1,28 @@
 {
-  "label": "qad",
-  "model": "/redacted/steerdistill-scalewob-runs/plain-qad-20261021/from-step-0002/awq-984fb2b1a1",
+  "label": "brownie-qad-step7",
+  "model": "/redacted/steerdistill-scalewob-runs/brownie-qad-matched-20261106/from-step-0006/awq-b15b0eecd8",
   "teacher_guidance": false,
   "artifact_role": "benchmark_evaluation",
-  "tasks": [
-    {
-      "env_id": "slack",
-      "task_id": "5",
-      "description": "Send the file \"Team_Offsite.jpg\" to design team in Acme Corp"
-    },
-    {
-      "env_id": "wps",
-      "task_id": "9",
-      "description": "Find the doc file in WPS that contains an 'Apple MACBook' image description."
-    }
-  ],
   "prompt_sha256": "9b7cd0bbb2bf5eaf31a696cf606aad19eb03717128a6767397b40dd3643a74b5",
   "max_steps": 30,
   "max_tokens": 256,
-  "repeats": 3,
   "seed": 0,
   "temperature": 0,
-  "gpu": "1",
+  "gpu": "6",
   "timing": "perf_counter from first observation acquisition after reset/warmup through evaluator done; recordings saved afterward; model loading and reset excluded",
-  "baseline_limit": "Historical QAD uses Qwen3-VL base; ours and BF16 use brownie fine-tune. Not a matched-training ablation.",
+  "checkpoint_step": 7,
+  "initializer": "brownie-qwen3-vl-8b-0517-compatible",
   "enforce_eager": false,
   "max_num_seqs": 1,
   "kv_cache_memory_bytes": 2147483648,
   "enable_prefix_caching": false,
-  "experiment": "Same-device optimized episode evaluation; all repetitions retained"
+  "adapter_sha256": "cf732bdb4e91c088628bb004c8daa3910cf65905e44600b065ef902e5db71c9a",
+  "task": {
+    "env_id": "wps",
+    "task_id": "9",
+    "description": "Find the doc file in WPS that contains an 'Apple MACBook' image description."
+  },
+  "source_trajectory_directory": "/redacted/brownie-qad-demo-failures-20261106/results/repeat-2/wps-9",
+  "artifact_scope": "This selected failed demo trajectory only.",
+  "metadata_origin": "Relevant fields extracted from the original run provenance; trajectory files themselves are byte-for-byte originals."
 }

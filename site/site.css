@@ -1,7 +1,4 @@
 /* Shared foundation. Page styles own composition, never palette or navigation. */
-@font-face{font-family:Libre;src:url('../fonts/libre.woff2') format('woff2');font-display:swap}
-@font-face{font-family:SourceSans;src:url('../fonts/sans.woff2') format('woff2');font-display:swap}
-@font-face{font-family:SourceSerif;src:url('../fonts/serif.woff2') format('woff2');font-display:swap}
 :root{--paper:#fffefa;--sheet:var(--paper);--deep:#f3f1eb;--ink:#292825;--soft:#454440;--muted:#696760;--hair:#dedbd2;--blue:#315f78;--red:#a33a31;--serif:SourceSerif,'Songti SC',Georgia,serif;--sans:SourceSans,'PingFang SC','Microsoft YaHei',Arial,sans-serif;--case-serif:Libre,'Songti SC',Georgia,serif;--reading-page:1080px;--reading-gutter:clamp(20px,4vw,40px);--reading-width:min(var(--reading-page),calc(100% - 2 * var(--reading-gutter)));--header-height:64px;color-scheme:light}
 html[data-theme=dark]{--paper:#20221f;--deep:#292c28;--ink:#ebe8de;--soft:#d0cfc5;--muted:#a7aba1;--hair:#474c44;--blue:#98c3d5;--red:#e39888;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-padding-top:88px;scrollbar-gutter:stable;overflow-y:scroll}body.site-page{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 var(--sans)}

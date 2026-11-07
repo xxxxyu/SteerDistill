@@ -1,9 +1,9 @@
 # Website chart inputs
 
-The homepage reads these numerical files:
+The homepage and article share these numerical inputs:
 
 - [benchmark_results.csv](data/benchmark_results.csv): the paper's 33 model/precision/method rows, also offered as a download.
-- [results-chart.json](data/results-chart.json): the W4A16/BF16 chart projection.
+- [efficiency.json](data/efficiency.json): Fig. 3 training GPU hours, means and standard deviations, and inference token counts for Qwen3-8B W4A16 on τ²-Bench.
 
 ## Metrics
 

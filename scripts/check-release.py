@@ -50,19 +50,28 @@ def main():
                     if member.suffix in TEXT:
                         scan(f'{relative}!{name}', archive.read(name))
     assert {p.name for p in (ROOT / 'data').iterdir()} == {'README.md', 'case-library'}, 'Unused data bank'
-    assert {p.name for p in (ROOT / 'experiments/data').iterdir()} == {'benchmark_results.csv', 'results-chart.json'}, 'Unused experiment inputs'
-    catalog = json.loads((ROOT / 'design-lab/case-content/catalog.json').read_text())
+    assert {p.name for p in (ROOT / 'experiments/data').iterdir()} == {'benchmark_results.csv', 'efficiency.json'}, 'Unused experiment inputs'
+    demos = json.loads((ROOT / 'demos/catalog.json').read_text())
+    expected_demos = {task['path'].rstrip('/') for task in demos['tasks']}
+    assert {p.name for p in (ROOT / 'demos').iterdir() if p.is_dir()} == expected_demos, 'Unregistered demo directory'
+    for task in demos['tasks']:
+        folder = ROOT / 'demos' / task['path']
+        replay = json.loads((folder / 'replay.json').read_text())
+        expected_images = {run['final'] for run in replay['runs']}
+        expected_images.update(step['image'] for run in replay['runs'] for step in run['steps'])
+        assert {p.relative_to(folder).as_posix() for p in folder.rglob('*.png')} == expected_images, f'Unused or missing demo screenshots: {task["id"]}'
+    catalog = json.loads((ROOT / 'content/cases/catalog.json').read_text())
     for group in catalog['groups']:
         expected = {case['id'] + '.json' for case in group['cases']}
-        actual = {p.name for p in (ROOT / 'design-lab/case-content' / group['id']).glob('*.json')}
+        actual = {p.name for p in (ROOT / 'content/cases' / group['id']).glob('*.json')}
         assert actual == expected, f'Unregistered case content: {group["id"]}'
     run('node', 'scripts/build-pages.mjs', '--check')
     run(sys.executable, 'scripts/build-case-locales.py', '--check')
     run(sys.executable, 'scripts/case-library.py', '--check')
     tests = sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'scripts').glob('*.test.cjs'))
-    tests += sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'design-lab/case-shared/tests').glob('*.cjs'))
+    tests += sorted(str(p.relative_to(ROOT)) for p in (ROOT / 'site/cases/tests').glob('*.cjs'))
     run('node', '--test', *tests)
-    run('node', 'design-lab/case-shared/validate-case.cjs')
+    run('node', 'site/cases/validate-case.cjs')
     print('PASS: static publication tree, sanitized text/ZIPs, pages, cases and replays')
 
 

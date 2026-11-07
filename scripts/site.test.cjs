@@ -4,7 +4,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const vm=require('node:vm');
 const root=path.resolve(__dirname,'..');
-const pages=['index.html','article.html','design-lab/paper-cases.html','design-lab/case-records.html'];
+const pages=['index.html','article/index.html','cases/index.html','records/index.html'];
 test('every entry uses the same shell and resolves its local dependencies',()=>{
  for(const file of pages){
   const html=fs.readFileSync(path.join(root,file),'utf8');
@@ -20,17 +20,17 @@ test('every entry uses the same shell and resolves its local dependencies',()=>{
  }
 });
 test('site URLs preserve root and GitHub project prefixes without duplication',()=>{
- const script=fs.readFileSync(path.join(root,'design-lab/case-shared/site-paths.js'),'utf8');
+ const script=fs.readFileSync(path.join(root,'site/cases/site-paths.js'),'utf8');
  for(const prefix of ['/','/SteerDistill/']){
-  const context={URL,window:{},document:{currentScript:{src:`https://example.com${prefix}design-lab/case-shared/site-paths.js`}}};
+  const context={URL,window:{},document:{currentScript:{src:`https://example.com${prefix}site/cases/site-paths.js`}}};
   vm.runInNewContext(script,context);const url=context.window.SitePaths.url;
-  for(const resource of ['index.html','article.html#method','design-lab/paper-cases.html?group=training']){
+  for(const resource of ['index.html','article/#method','cases/?group=training']){
    assert.equal(url(resource),prefix+resource);assert.equal(url(url(resource)),prefix+resource);
   }
  }
 });
 test('article notes have unique targets and frozen case embeds remain complete',()=>{
- const data=JSON.parse(fs.readFileSync(path.join(root,'design-lab/main-article.zh.json')));
+ const data=JSON.parse(fs.readFileSync(path.join(root,'content/article/post.zh.json')));
  const notes=data.sections.flatMap(s=>s.blocks.filter(b=>b.note).map(b=>b.note.id));
  assert.equal(new Set(notes).size,notes.length);
  assert.equal(data.post.author.name,'Xiangyu Li');

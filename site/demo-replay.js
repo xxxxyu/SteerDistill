@@ -7,13 +7,16 @@ window.DemoReplay = (() => {
   };
   async function mount(root, {data, base}) {
     let playing = false, speed = 1, previousFrame = 0, raf = 0, dialog;
-    const views = [], duration = Math.max(...data.runs.map(r => r.total));
+    const views = [], expanded = new Set();
+    const map = run => timing.presentation(run, expanded.has(run.id));
+    let duration = Math.max(...data.runs.map(r => map(r).total));
+    const actualTime = run => playback.isLocal(run.id) ? playback.forRun(run.id) : map(run).actual(playback.time);
     const playback = timing.createClock(data.runs);
     root.classList.add('evidence-reader');
     const displayName = run => run.label + (run.precision === 'BF16' ? '' : ' ' + run.precision);
-    // Decode all snapshots before playback: no blank image between decisions or methods.
-    const urls = [...new Set(data.runs.flatMap(r => [...r.steps.map(s => s.image), r.final]))];
-    async function decode(path) {
+    // First screens unblock interaction; remaining snapshots warm in a bounded queue.
+    const urls = [...new Set(data.runs.flatMap(r => [...r.steps.map(s => ({path:s.image,time:s.start})), {path:r.final,time:r.total}]).sort((a,b)=>a.time-b.time).map(x=>x.path))];
+    async function fetchImage(path) {
       for (let attempt = 0; attempt < 2; attempt++) {
         try {
           await new Promise((resolve, reject) => {
@@ -28,16 +31,21 @@ window.DemoReplay = (() => {
         }
       }
     }
-    // Bound image requests so a cold load also works on small local preview servers.
+    const pendingImages = new Map(), readyImages = new Set();
+    function decode(path) {
+      if (!pendingImages.has(path)) pendingImages.set(path, fetchImage(path).then(() => readyImages.add(path)).catch(error => {pendingImages.delete(path);throw error;}));
+      return pendingImages.get(path);
+    }
+    await Promise.all(data.runs.map(run => decode(run.steps[0].image)));
     let nextImage = 0;
-    await Promise.all(Array.from({length:3}, async () => {
-      while (nextImage < urls.length) await decode(urls[nextImage++]);
+    Promise.all(Array.from({length:2}, async () => {
+      while (nextImage < urls.length) { try { await decode(urls[nextImage++]); } catch {} }
     }));
     root.replaceChildren();
     const railRoot = make('div'); root.append(railRoot);
     const controls = make('div', 'replay-controls'), play = button('Play', 'replay-play', 'Play synchronized replay');
-    const clock = make('span', 'replay-clock'), clockValue = make('output', '', '0.00'); clockValue.setAttribute('aria-live', 'off'); clock.append(clockValue, ' / ' + seconds(duration));
-    const seek = make('input', 'replay-seek'); seek.type = 'range'; seek.min = 0; seek.max = duration; seek.step = 'any'; seek.value = 0; seek.setAttribute('aria-label', t('Shared replay time in seconds'));
+    const clock = make('span', 'replay-clock'), clockValue = make('output', '', '0.00'); clockValue.setAttribute('aria-live', 'off'); const clockEnd = make('span'); clock.append(make('span', 'replay-progress-label', t('Presentation progress')), clockValue, clockEnd);
+    const seek = make('input', 'replay-seek'); seek.type = 'range'; seek.min = 0; seek.max = duration; seek.step = 'any'; seek.value = 0; seek.setAttribute('aria-label', t('Presentation progress'));
     const rateLabel = make('label', 'replay-rate', t('Speed')), rate = make('select'); rate.setAttribute('aria-label', t('Playback speed'));
     for (const value of [.5, 1, 2]) { const option = make('option', '', value + '×'); option.value = value; option.selected = value === 1; rate.append(option); }
     rateLabel.append(rate); controls.append(play, clock, seek, rateLabel);
@@ -54,12 +62,36 @@ window.DemoReplay = (() => {
     }
     function tick(now) {
       if (!playing) return;
-      if (previousFrame) playback.advance((now - previousFrame) / 1000 * speed);
+      if (previousFrame) playback.advance(Math.min((now - previousFrame) / 1000 * speed, Math.max(0, duration - playback.time)));
       previousFrame = now; render();
       if (playback.time >= duration) setPlaying(false); else raf = requestAnimationFrame(tick);
     }
     function jump(value) { playback.seekAll(value); setPlaying(false); render(); }
-    function inspect(id, value) { playback.seekRun(id, value); render(); }
+    function inspect(id, value) {
+      const run = data.runs.find(r => r.id === id), m = map(run);
+      if (m.folded && value >= m.start && value < run.total) { expanded.add(id); layoutTimelines(); }
+      playback.seekRun(id, value); render();
+    }
+    function layoutTimelines() {
+      duration = Math.max(...data.runs.map(r => map(r).total)); seek.max = duration;
+      if (playback.time > duration) playback.seekAll(duration);
+      for (const v of views) {
+        const m = map(v.run);
+        v.steps.forEach((b,i) => {
+          const step = v.run.steps[i]; b.hidden = m.folded && i >= v.run.repetition.from;
+          b.style.left = 100*m.position(step.start)/duration+'%';
+          b.style.width = 100*(m.position(step.end)-m.position(step.start))/duration+'%';
+        });
+        v.end.style.left = 100*m.total/duration+'%';
+        if (v.fold) {
+          v.fold.hidden = !m.folded;
+          v.fold.style.left = 100*m.start/duration+'%'; v.fold.style.width = 200/duration+'%';
+          v.toggle.textContent = t(m.folded ? 'Expand repetitions' : 'Collapse repetitions');
+          v.toggle.setAttribute('aria-expanded', String(!m.folded));
+        }
+        v.cache = '';
+      }
+    }
     function openScreen(view) {
       setPlaying(false);
       if (!dialog) {
@@ -69,7 +101,7 @@ window.DemoReplay = (() => {
       const header = make('header'), title = make('h3', '', displayName(view.run)), close = button('Close', '');
       title.id = 'replay-dialog-title-' + data.id; close.onclick = () => dialog.close(); header.append(title, close);
       const screen = view.screen.cloneNode(true); screen.dataset.active = 'false';
-      const state = timing.at(view.run, playback.forRun(view.run.id));
+      const state = timing.at(view.run, actualTime(view.run));
       dialog.replaceChildren(header, screen, make('p', '', t('Step {n}', {n:state.step.index + 1}) + ' · ' + t(state.step.title)));
       dialog.setAttribute('aria-labelledby', title.id); dialog.showModal(); close.focus();
     }
@@ -104,9 +136,29 @@ window.DemoReplay = (() => {
       const scale = make('div', 'replay-scale'), end = make('span', '', seconds(run.total));
       end.style.left = 100 * run.total / duration + '%'; scale.append(make('span', '', '0 s'), end);
       timeline.append(head); timingBox.append(timingLabel, timeline, scale); node.append(heading, body, timingBox);
-      const view = {run, node, screen, img, tap, swipe, swipePath, input, stepLabel, phaseLabel, title, output, timingLabel, head, steps, previous, next, cache:''};
-      previous.onclick = () => { const state = timing.at(run, playback.forRun(run.id)); inspect(run.id, timing.decisionTime(run.steps[Math.max(0, state.step.index - 1)])); };
-      next.onclick = () => { const localTime = playback.forRun(run.id), state = timing.at(run, localTime); const i = Math.min(run.steps.length - 1, state.step.index + (localTime >= state.step.actStart ? 1 : 0)); inspect(run.id, timing.decisionTime(run.steps[i])); };
+      const view = {run, node, end, screen, img, tap, swipe, swipePath, input, stepLabel, phaseLabel, title, output, timingLabel, head, steps, previous, next, cache:''};
+      previous.onclick = () => { const state = timing.at(run, actualTime(run)); inspect(run.id, timing.decisionTime(run.steps[Math.max(0, state.step.index - 1)])); };
+      next.onclick = () => { const localTime = actualTime(run), state = timing.at(run, localTime); const i = Math.min(run.steps.length - 1, state.step.index + (localTime >= state.step.actStart ? 1 : 0)); inspect(run.id, timing.decisionTime(run.steps[i])); };
+      if (run.repetition) {
+        const count = run.steps.length-run.repetition.from, elapsed = run.total-run.steps[run.repetition.from].start;
+        const summary = t('{label} × {count} · {time}', {label:t(run.repetition.label), count, time:seconds(elapsed)});
+        view.repeatSummary = summary;
+        view.fold = button('⋯', 'replay-fold', 'Expand repetitions'); view.fold.title = summary;
+        view.toggle = button('Expand repetitions', 'replay-fold-toggle');
+        const note = make('div','replay-repeat-note'); note.append(make('span','',summary),view.toggle);
+        timingBox.append(note); timeline.append(view.fold);
+        const toggle = () => {
+          setPlaying(false); const time = actualTime(run);
+          if (expanded.has(run.id)) expanded.delete(run.id); else expanded.add(run.id);
+          layoutTimelines();
+          // Expanding allows inspection at the exact recorded step; collapsing returns
+          // to synchronized presentation, without advancing any other method.
+          if (expanded.has(run.id)) playback.seekRun(run.id,time);
+          else playback.seekRun(run.id,time >= map(run).start ? run.total : time);
+          render();
+        };
+        view.toggle.onclick = toggle; view.fold.onclick = toggle;
+      }
       screenButton.onclick = () => openScreen(view); views.push(view); return node;
     }
     const items = data.runs.map(run => ({id:run.id, title:run.label, detail:run.precision === 'BF16' ? '' : run.precision, node:card(run)}));
@@ -114,24 +166,29 @@ window.DemoReplay = (() => {
     railRoot.querySelector('.rail-toolbar').after(controls);
     controls.append(key);
     function render() {
-      clockValue.value = playback.time.toFixed(2); seek.value = playback.time; seek.setAttribute('aria-valuetext', seconds(playback.time));
+      clockValue.value = Math.round(100*playback.time/duration)+'%'; clockEnd.textContent = ''; seek.value = playback.time; seek.setAttribute('aria-valuetext', clockValue.value);
       for (const v of views) {
-        const s = timing.at(v.run, playback.forRun(v.run.id)), step = s.step, available = s.phase === 'act' || s.finished;
+        const s = timing.at(v.run, actualTime(v.run)), step = s.step, available = s.phase === 'act' || s.finished;
         v.timingLabel.replaceChildren(make('span', '', `${t('Inference')} ${seconds(s.inference)} · ${t('Execution')} ${seconds(s.execution)}`), make('span', 'replay-local-time', `${playback.isLocal(v.run.id) ? t('Local') + ' · ' : ''}${seconds(s.time)}`));
         v.screen.dataset.active = String(playing && !playback.isLocal(v.run.id) && !s.finished);
-        v.head.style.left = Math.min(100, s.time / duration * 100) + '%';
+        const m = map(v.run), holding = !playback.isLocal(v.run.id) && m.holding(playback.time);
+        v.head.style.left = Math.min(100, (holding ? playback.time : m.position(s.time)) / duration * 100) + '%';
         // A new decision must not inherit an unlabeled output from the previous step.
         const outputStep = available ? step : null;
-        const cache = `${step.index}:${s.phase}`;
+        const cache = `${step.index}:${s.phase}:${holding}`;
         if (cache === v.cache) continue; v.cache = cache;
-        const image = new URL(s.finished ? v.run.final : step.image, base).href;
-        if (v.img.src !== image) v.img.src = image;
+        const imagePath = s.finished ? v.run.final : step.image, image = new URL(imagePath, base).href;
+        v.imageTarget = image;
+        const showImage = () => {if(v.imageTarget !== image)return;v.img.src=image;v.screen.removeAttribute('aria-busy');};
+        if (readyImages.has(imagePath)) showImage();
+        else {v.screen.setAttribute('aria-busy','true');decode(imagePath).then(showImage).catch(()=>{});}
         v.img.alt = `${v.run.label}, ${t('Step {n}', {n:step.index + 1})}: ${t(step.title)}${s.finished ? ', ' + t('final screen') : ''}`;
         v.stepLabel.textContent = t('Step {n} / {total}', {n:step.index + 1, total:v.run.steps.length});
         v.phaseLabel.textContent = t(s.finished ? (v.run.success ? 'Completed' : 'Not completed') : ({observe:'Observing', infer:'Thinking', act:'Executing'})[s.phase]);
         v.phaseLabel.classList.toggle('replay-outcome', s.finished);
         v.phaseLabel.dataset.failed = String(s.finished && !v.run.success);
-        v.title.textContent = t(step.title);
+        v.title.textContent = holding ? t(v.run.repetition.label) : t(step.title);
+        if (holding) { v.phaseLabel.textContent = t('Repetitions condensed'); v.stepLabel.textContent = t('Steps {from}–{to}',{from:v.run.repetition.from+1,to:v.run.steps.length}); }
         v.previous.disabled = step.index === 0; v.next.disabled = step.index === v.run.steps.length - 1 && available;
         v.steps.forEach((b, i) => { if (i === step.index) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
         const action = step.executed, executing = s.phase === 'act';
@@ -146,9 +203,10 @@ window.DemoReplay = (() => {
         v.input.hidden = !(executing && ['input_text', 'press_enter'].includes(action.action));
         if (!v.input.hidden) v.input.replaceChildren(make('small', '', t(action.action === 'input_text' ? 'Typing' : 'Key press')), document.createTextNode(action.text || 'Enter'));
         v.output.replaceChildren(); v.output.scrollTop = 0;
+        if (holding || (m.folded && s.finished)) v.output.append(make('p','replay-repeat-summary',t('Condensed: {summary}',{summary:v.repeatSummary})));
         if (!outputStep) v.output.append(make('p', 'replay-waiting', t(s.phase === 'infer' ? 'Generating the next action…' : 'Reading the screen…')));
         else {
-          const thought = make('p', 'ev-prose'); thought.lang = v.run.id === 'qad' ? 'en' : 'zh-CN';
+          const thought = make('p', 'ev-prose'); thought.lang = v.run.language;
           thought.append(EvidenceUI.highlightedText(outputStep.thought, outputStep.thoughtHighlights));
           const thoughtFrame = EvidenceUI.frame(t('Thinking'), thought);
           const thoughtBody = thoughtFrame.querySelector('.ev-body'); thoughtBody.tabIndex = 0; thoughtBody.setAttribute('role', 'region'); thoughtBody.setAttribute('aria-label', t('{method} thinking', {method:v.run.label}));
@@ -169,7 +227,7 @@ window.DemoReplay = (() => {
     document.addEventListener('visibilitychange', onVisibility);
     const visibility = new IntersectionObserver(entries => { if (!entries[0].isIntersecting) setPlaying(false); });
     visibility.observe(root);
-    render(); root.dataset.ready = 'true';
+    layoutTimelines(); render(); root.dataset.ready = 'true';
     return {
       pause: () => setPlaying(false),
       activate: () => render(),

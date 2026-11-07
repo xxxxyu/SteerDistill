@@ -74,7 +74,7 @@
 .demo-replay .replay-output .ev-frame:first-of-type>.ev-body{min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin}
 
 /* A paper index for tasks, followed by a quieter method-navigation line. */
-.demo-task-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:18px 0 0;border-bottom:1px solid var(--hair)}
+.demo-task-tabs{display:grid;grid-template-columns:repeat(var(--demo-task-count,3),minmax(0,1fr));gap:24px;margin:18px 0 0;border-bottom:1px solid var(--hair)}
 .demo-task-tab{position:relative;background:none;border:0;padding:10px 0 13px;text-align:left;min-width:0;color:var(--soft);cursor:pointer}
 .demo-task-tab::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:transparent;transition:background .15s}
 .demo-task-app{display:block;font:600 16px/1.4 var(--sans);margin-bottom:3px}
@@ -94,10 +94,10 @@
 .demo-replay .rail-controls button{border:0;background:none;width:32px;height:30px;font-size:25px}
 .demo-replay .rail-controls button:not(:disabled):hover{color:var(--blue);background:var(--deep)}
 @media(max-width:760px){
- .demo-task-tabs{gap:0 22px;grid-template-columns:repeat(2,minmax(0,1fr));border-bottom:0;margin-top:14px}
- .demo-task-tab{border-bottom:1px solid var(--hair);padding:10px 0 11px}
+ .demo-task-tabs{gap:12px;margin-top:14px}
+ .demo-task-tab{padding:10px 0 11px}
  .demo-task-tab::after{bottom:-1px}
- .demo-task-app{font-size:15px}.demo-task-label{font-size:17px}
+ .demo-task-app{font-size:14px;white-space:nowrap}.demo-task-label{font-size:15px;min-height:2.7em;text-wrap:balance}
  .demo-task-description{min-height:3.2em;margin:12px 0 10px}
  .demo-replay .rail-toolbar{gap:8px;margin-bottom:12px}
  .demo-replay .rail-methods{gap:20px;scrollbar-width:none;mask-image:linear-gradient(to right,#000 calc(100% - 14px),transparent)}
@@ -116,3 +116,19 @@
 .demo-summary p{margin:0;text-wrap:pretty}.demo-summary a{color:inherit;text-decoration:underline;text-decoration-color:var(--hair);text-underline-offset:3px}.demo-summary a:hover{color:var(--blue)}
 
 @media(max-width:360px){.demo-task-description{min-height:4.8em}}
+
+/* Do not show a previous screen or its interaction marks as a newly selected frame. */
+.replay-screen[aria-busy=true]> *{visibility:hidden}
+.replay-screen[aria-busy=true]{background:var(--deep)}
+
+/* A reviewed repeated tail uses a visible break; successful runs retain their
+   shared, linear time scale. Exact wall times remain on the cards and endpoints. */
+.replay-progress-label{display:block;font-size:12px;color:var(--muted);line-height:1.25}
+.replay-fold{position:absolute;top:0;height:100%;min-width:0;padding:0;border:0;border-inline:2px solid var(--paper);background:repeating-linear-gradient(120deg,var(--deep) 0,var(--deep) 5px,var(--hair) 5px,var(--hair) 6px);color:var(--soft);font:700 18px/1 var(--sans);cursor:pointer;z-index:2}
+.replay-fold:hover,.replay-fold:focus-visible{background:var(--hair)}
+.replay-repeat-note{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted)}
+.replay-fold-toggle{flex-shrink:0;border:0;border-bottom:1px solid var(--hair);background:none;padding:0;color:var(--blue);font:inherit}
+.replay-repeat-summary{margin:0 0 12px;padding:8px 0;border-block:1px solid var(--hair);font-size:14px;line-height:1.5;color:var(--soft)}
+@media(max-width:600px){.replay-repeat-note{align-items:flex-start;flex-wrap:wrap;gap:4px 12px}}
+/* Keep the measured timelines level when only one card has a fold control. */
+.replay-timing{margin-top:0}

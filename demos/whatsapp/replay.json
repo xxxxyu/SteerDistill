@@ -13,6 +13,7 @@
       "id": "bf16",
       "label": "BF16",
       "precision": "BF16",
+      "language": "zh-CN",
       "success": true,
       "total": 27.812568344990723,
       "inference": 14.494311058078893,
@@ -627,12 +628,14 @@
             }
           }
         }
-      ]
+      ],
+      "repetition": null
     },
     {
       "id": "ours",
       "label": "SteerDistill",
       "precision": "W4A16",
+      "language": "zh-CN",
       "success": true,
       "total": 21.119013098010328,
       "inference": 8.6181084678974,
@@ -1193,32 +1196,34 @@
             }
           }
         }
-      ]
+      ],
+      "repetition": null
     },
     {
       "id": "qad",
       "label": "On-Policy QAD",
       "precision": "W4A16",
+      "language": "zh-CN",
       "success": false,
-      "total": 32.08824323001318,
-      "inference": 15.2222748491331,
-      "execution": 13.433333877066616,
+      "total": 29.43624542991165,
+      "inference": 13.78393628320191,
+      "execution": 12.521403132588603,
       "final": "raw/qad/final.png",
       "steps": [
         {
           "index": 0,
           "title": "Accept the welcome screen",
           "start": 0,
-          "inferStart": 1.0835936549701728,
-          "actStart": 1.6323733769822866,
-          "end": 2.0551148499944247,
+          "inferStart": 1.067415712052025,
+          "actStart": 1.544141817954369,
+          "end": 1.96695924596861,
           "image": "raw/qad/000.png",
-          "thought": "To proceed with creating a poll in the 'Project Alpha 🚀' group, I must first agree to the terms to access the app's features. The \"AGREE AND CONTINUE\" button is the clear next step to move forward.",
-          "action": "device.click(449, 819)",
+          "thought": "首先需要点击\"AGREE AND CONTINUE\"按钮完成欢迎页的同意步骤，才能继续后续进入群组创建投票的操作。",
+          "action": "device.click(500, 807)",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.click",
-            "args": "449, 819",
+            "args": "500, 807",
             "tone": "neutral",
             "highlights": {
               "call": []
@@ -1226,19 +1231,44 @@
           },
           "executed": {
             "action": "tap",
-            "x": 175,
-            "y": 690
+            "x": 194,
+            "y": 680
           }
         },
         {
           "index": 1,
-          "title": "Enter a test phone number",
-          "start": 2.0551148499944247,
-          "inferStart": 2.212031663977541,
-          "actStart": 2.7449120790115558,
-          "end": 3.157656097027939,
+          "title": "Focus the phone number field",
+          "start": 1.96695924596861,
+          "inferStart": 2.1287280218675733,
+          "actStart": 2.695852816919796,
+          "end": 3.0989924379391596,
           "image": "raw/qad/001.png",
-          "thought": "To proceed with creating a poll in the 'Project Alpha 🚀' group, I must first verify my phone number. The current screen requires entering a phone number, and the \"Next\" button is available for submission after input.",
+          "thought": "现在需要完成手机号登录步骤，先点击手机号输入框，输入随机的测试手机号，比如1234567890，之后点击Next按钮继续流程，以便后续进入群组创建投票。",
+          "action": "device.click(300, 275)",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.click",
+            "args": "300, 275",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "tap",
+            "x": 117,
+            "y": 232
+          }
+        },
+        {
+          "index": 2,
+          "title": "Enter a test phone number",
+          "start": 3.0989924379391596,
+          "inferStart": 3.1617297548800707,
+          "actStart": 3.628305049845949,
+          "end": 4.040126043953933,
+          "image": "raw/qad/002.png",
+          "thought": "现在需要在手机号输入框中输入测试用的随机手机号1234567890，完成登录步骤以便后续创建投票。",
           "action": "device.type(\"1234567890\")",
           "thoughtHighlights": [],
           "actionEvent": {
@@ -1255,14 +1285,14 @@
           }
         },
         {
-          "index": 2,
+          "index": 3,
           "title": "Continue to verification",
-          "start": 3.157656097027939,
-          "inferStart": 3.195318545040209,
-          "actStart": 3.638790627999697,
-          "end": 4.045465475996025,
-          "image": "raw/qad/002.png",
-          "thought": "The phone number has been entered, and the next step is to submit it by clicking the \"Next\" button to proceed with accessing the app features required for creating a poll.",
+          "start": 4.040126043953933,
+          "inferStart": 4.0789072018815205,
+          "actStart": 4.523864251910709,
+          "end": 4.930765718920156,
+          "image": "raw/qad/003.png",
+          "thought": "现在需要点击底部的绿色Next按钮，继续完成手机号登录的验证步骤，以便后续进入群组创建投票。",
           "action": "device.click(500, 900)",
           "thoughtHighlights": [],
           "actionEvent": {
@@ -1280,65 +1310,68 @@
           }
         },
         {
-          "index": 3,
-          "title": "Wait for verification",
-          "start": 4.045465475996025,
-          "inferStart": 4.695166732009966,
-          "actStart": 5.128218951984309,
-          "end": 6.129285805975087,
-          "image": "raw/qad/003.png",
-          "thought": "The system is waiting for SMS verification, which is a prerequisite to access the app features needed to create a poll. Since the code hasn't arrived yet, I should wait briefly before attempting any further actions.",
-          "action": "device.wait()",
-          "thoughtHighlights": [],
-          "actionEvent": {
-            "name": "device.wait",
-            "args": "",
-            "tone": "neutral",
-            "highlights": {
-              "call": []
-            }
-          },
-          "executed": {
-            "action": "wait"
-          }
-        },
-        {
           "index": 4,
-          "title": "Wait for the profile screen",
-          "start": 6.129285805975087,
-          "inferStart": 6.1764371389872395,
-          "actStart": 6.59414621401811,
-          "end": 7.5952100430149585,
+          "title": "Tap the verification field",
+          "start": 4.930765718920156,
+          "inferStart": 5.594687124947086,
+          "actStart": 6.112519982969388,
+          "end": 6.515387383988127,
           "image": "raw/qad/004.png",
-          "thought": "The screen appears blank, likely indicating the app is still loading or waiting for SMS verification. Since the previous step involved waiting, another brief wait is reasonable before proceeding.",
-          "action": "device.wait()",
+          "thought": "现在需要完成手机号验证，先点击验证码输入框，输入随机的6位验证码123456，完成登录验证以便后续进入群组创建投票。",
+          "action": "device.click(500, 230)",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.wait",
-            "args": "",
+            "name": "device.click",
+            "args": "500, 230",
             "tone": "neutral",
             "highlights": {
               "call": []
             }
           },
           "executed": {
-            "action": "wait"
+            "action": "tap",
+            "x": 194,
+            "y": 194
           }
         },
         {
           "index": 5,
-          "title": "Type without focusing the name field",
-          "start": 7.5952100430149585,
-          "inferStart": 7.645193149975967,
-          "actStart": 8.101861968985759,
-          "end": 8.538286358001642,
+          "title": "Enter a verification code",
+          "start": 6.515387383988127,
+          "inferStart": 6.660926896962337,
+          "actStart": 7.175228924956173,
+          "end": 7.638932749978267,
           "image": "raw/qad/005.png",
-          "thought": "The app is prompting for a name entry as part of profile setup, which is likely required before accessing group features. Entering a name will enable proceeding to the next step, moving closer to creating the poll.",
-          "action": "device.type(\"User\")",
+          "thought": "现在需要完成验证码输入，先点击验证码输入框，输入测试用的6位验证码123456，完成登录验证以便后续进入群组创建投票。",
+          "action": "device.type(\"123456\")",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"User\"",
+            "args": "\"123456\"",
+            "tone": "neutral",
+            "highlights": {
+              "call": []
+            }
+          },
+          "executed": {
+            "action": "input_text",
+            "text": "123456"
+          }
+        },
+        {
+          "index": 6,
+          "title": "Type without focusing the name field",
+          "start": 7.638932749978267,
+          "inferStart": 7.677341830916703,
+          "actStart": 8.165885597933084,
+          "end": 8.587037162971683,
+          "image": "raw/qad/006.png",
+          "thought": "现在需要完成个人信息填写，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
+          "thoughtHighlights": [],
+          "actionEvent": {
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
               "call": [
@@ -1353,639 +1386,728 @@
           },
           "executed": {
             "action": "input_text",
-            "text": "User"
-          }
-        },
-        {
-          "index": 6,
-          "title": "Submit an empty name field",
-          "start": 8.538286358001642,
-          "inferStart": 8.578641152009368,
-          "actStart": 9.040900422027335,
-          "end": 9.455983848019969,
-          "image": "raw/qad/006.png",
-          "thought": "The name \"User\" has been entered, and the next logical step is to submit this information by clicking the \"Next\" button to proceed toward accessing group features for creating a poll.",
-          "action": "device.click(500, 900)",
-          "thoughtHighlights": [
-            {
-              "start": 0,
-              "end": 32,
-              "text": "The name \"User\" has been entered",
-              "tone": "before"
-            }
-          ],
-          "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
-            "tone": "before",
-            "highlights": {
-              "call": []
-            }
-          },
-          "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "text": "Test User"
           }
         },
         {
           "index": 7,
-          "title": "Try Next again",
-          "start": 9.455983848019969,
-          "inferStart": 9.495945619011763,
-          "actStart": 10.00247536500683,
-          "end": 10.406667231000029,
+          "title": "Type without focusing the name field",
+          "start": 8.587037162971683,
+          "inferStart": 8.627362716943026,
+          "actStart": 9.082468973007053,
+          "end": 9.50291462300811,
           "image": "raw/qad/007.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要完成个人信息填写，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 8,
-          "title": "Try Next again",
-          "start": 10.406667231000029,
-          "inferStart": 10.446320763905533,
-          "actStart": 10.980313624953851,
-          "end": 11.384553027979564,
+          "title": "Type without focusing the name field",
+          "start": 9.50291462300811,
+          "inferStart": 9.544077681028284,
+          "actStart": 9.992283990024589,
+          "end": 10.419933083932847,
           "image": "raw/qad/008.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 9,
-          "title": "Try Next again",
-          "start": 11.384553027979564,
-          "inferStart": 11.429373652033973,
-          "actStart": 11.967624509008601,
-          "end": 12.371985331992619,
+          "title": "Type without focusing the name field",
+          "start": 10.419933083932847,
+          "inferStart": 10.46055496588815,
+          "actStart": 10.90904369589407,
+          "end": 11.336064385948703,
           "image": "raw/qad/009.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 10,
-          "title": "Try Next again",
-          "start": 12.371985331992619,
-          "inferStart": 12.41281222802354,
-          "actStart": 12.916155335027725,
-          "end": 13.320209997007623,
+          "title": "Type without focusing the name field",
+          "start": 11.336064385948703,
+          "inferStart": 11.37723795894999,
+          "actStart": 11.827845591004007,
+          "end": 12.252889066003263,
           "image": "raw/qad/010.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 11,
-          "title": "Type the name again",
-          "start": 13.320209997007623,
-          "inferStart": 13.379362920008134,
-          "actStart": 13.815836663008668,
-          "end": 14.220968362991698,
+          "title": "Type without focusing the name field",
+          "start": 12.252889066003263,
+          "inferStart": 12.293915183050558,
+          "actStart": 12.741734002018347,
+          "end": 13.152562569011934,
           "image": "raw/qad/011.png",
-          "thought": "The screen requires entering a name to proceed. Since the name field is visible and the \"Next\" button is active, typing a name will allow progression toward creating the poll in the group.",
-          "action": "device.type(\"User\")",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"User\"",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
             "action": "input_text",
-            "text": "User"
+            "text": "Test User"
           }
         },
         {
           "index": 12,
-          "title": "Try Next again",
-          "start": 14.220968362991698,
-          "inferStart": 14.34566797199659,
-          "actStart": 14.883591045974754,
-          "end": 15.287792749993969,
+          "title": "Type without focusing the name field",
+          "start": 13.152562569011934,
+          "inferStart": 13.195820481865667,
+          "actStart": 13.643162452965043,
+          "end": 14.06921105098445,
           "image": "raw/qad/012.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 13,
-          "title": "Try Next again",
-          "start": 15.287792749993969,
-          "inferStart": 15.345688193978276,
-          "actStart": 15.852227926021442,
-          "end": 16.25757168600103,
+          "title": "Type without focusing the name field",
+          "start": 14.06921105098445,
+          "inferStart": 14.110730051877908,
+          "actStart": 14.557911515934393,
+          "end": 14.969140821951441,
           "image": "raw/qad/013.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 14,
-          "title": "Try Next again",
-          "start": 16.25757168600103,
-          "inferStart": 16.295994688000064,
-          "actStart": 16.800126318004914,
-          "end": 17.20430031500291,
+          "title": "Type without focusing the name field",
+          "start": 14.969140821951441,
+          "inferStart": 15.011243204004131,
+          "actStart": 15.459865573910065,
+          "end": 15.885907550924458,
           "image": "raw/qad/014.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 15,
-          "title": "Try a different name",
-          "start": 17.20430031500291,
-          "inferStart": 17.24583566695219,
-          "actStart": 17.862329392984975,
-          "end": 18.279174330993555,
+          "title": "Type without focusing the name field",
+          "start": 15.885907550924458,
+          "inferStart": 15.927448822883889,
+          "actStart": 16.37446870992426,
+          "end": 16.785893208929338,
           "image": "raw/qad/015.png",
-          "thought": "The name field is already filled with \"User\", and the \"Next\" button is visible. Repeatedly clicking \"Next\" without changing the input may not progress the task. The screen indicates the name entry is required, so typing a different name or confirming the current one might be necessary.",
-          "action": "device.type(\"Project Alpha User\")",
-          "thoughtHighlights": [
-            {
-              "start": 80,
-              "end": 160,
-              "text": "Repeatedly clicking \"Next\" without changing the input may not progress the task.",
-              "tone": "after"
-            }
-          ],
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
+          "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"Project Alpha User\"",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
             "action": "input_text",
-            "text": "Project Alpha User"
+            "text": "Test User"
           }
         },
         {
           "index": 16,
-          "title": "Try Next again",
-          "start": 18.279174330993555,
-          "inferStart": 18.32977504597511,
-          "actStart": 18.84969457797706,
-          "end": 19.253452972974628,
+          "title": "Type without focusing the name field",
+          "start": 16.785893208929338,
+          "inferStart": 16.827061310992576,
+          "actStart": 17.273258278961293,
+          "end": 17.685432021971792,
           "image": "raw/qad/016.png",
-          "thought": "The name field is filled, and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 17,
-          "title": "Try Next again",
-          "start": 19.253452972974628,
-          "inferStart": 19.296611483965535,
-          "actStart": 19.817370820965152,
-          "end": 20.22099686297588,
+          "title": "Type without focusing the name field",
+          "start": 17.685432021971792,
+          "inferStart": 17.72691321594175,
+          "actStart": 18.173861767863855,
+          "end": 18.58570614294149,
           "image": "raw/qad/017.png",
-          "thought": "The name field is already filled with \"Project Alpha User\", and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
-          "thoughtHighlights": [
-            {
-              "start": 0,
-              "end": 58,
-              "text": "The name field is already filled with \"Project Alpha User\"",
-              "tone": "before"
-            }
-          ],
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
+          "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 18,
-          "title": "Try Next again",
-          "start": 20.22099686297588,
-          "inferStart": 20.263088117993902,
-          "actStart": 20.752112269983627,
-          "end": 21.155881058017258,
+          "title": "Type without focusing the name field",
+          "start": 18.58570614294149,
+          "inferStart": 18.62713541695848,
+          "actStart": 19.07407426799182,
+          "end": 19.485564336995594,
           "image": "raw/qad/018.png",
-          "thought": "The name field is already filled, and the \"Next\" button is visible. Clicking \"Next\" will likely proceed to the next step, moving closer to accessing group features for creating the poll.",
-          "action": "device.click(500, 900)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "500, 900",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 194,
-            "y": 759
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 19,
-          "title": "Retype without fixing focus",
-          "start": 21.155881058017258,
-          "inferStart": 21.228915696090553,
-          "actStart": 21.78396282606991,
-          "end": 22.19533764902735,
+          "title": "Type without focusing the name field",
+          "start": 19.485564336995594,
+          "inferStart": 19.52684705692809,
+          "actStart": 19.974301363923587,
+          "end": 20.385219945921563,
           "image": "raw/qad/019.png",
-          "thought": "The screen repeatedly prompts for a name, and previous attempts to proceed by clicking \"Next\" have not advanced the task. Since the name field is already filled, the issue may be with the input or validation. Retyping the name might resolve any flaky input state.",
-          "action": "device.type(\"Project Alpha User\")",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"Project Alpha User\"",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
             "action": "input_text",
-            "text": "Project Alpha User"
+            "text": "Test User"
           }
         },
         {
           "index": 20,
-          "title": "Retype the name again",
-          "start": 22.19533764902735,
-          "inferStart": 22.26328803092474,
-          "actStart": 22.681371768936515,
-          "end": 23.093147774983663,
+          "title": "Type without focusing the name field",
+          "start": 20.385219945921563,
+          "inferStart": 20.42780454189051,
+          "actStart": 20.874011827865615,
+          "end": 21.285214941948652,
           "image": "raw/qad/020.png",
-          "thought": "The name field is already filled, but the system repeatedly prompts for it. Retyping the name may resolve input validation issues preventing progression to the poll creation screen.",
-          "action": "device.type(\"Project Alpha User\")",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"Project Alpha User\"",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
             "action": "input_text",
-            "text": "Project Alpha User"
+            "text": "Test User"
           }
         },
         {
           "index": 21,
-          "title": "Retype the name again",
-          "start": 23.093147774983663,
-          "inferStart": 23.179976087936666,
-          "actStart": 23.629841858986765,
-          "end": 24.041022346005775,
+          "title": "Type without focusing the name field",
+          "start": 21.285214941948652,
+          "inferStart": 21.327130106044933,
+          "actStart": 21.774086053017527,
+          "end": 22.185141180991195,
           "image": "raw/qad/021.png",
-          "thought": "The screen repeatedly prompts for a name, despite it being filled. Retyping the name may resolve input validation issues preventing progression to the poll creation screen.",
-          "action": "device.type(\"Project Alpha User\")",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"Project Alpha User\"",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
             "action": "input_text",
-            "text": "Project Alpha User"
+            "text": "Test User"
           }
         },
         {
           "index": 22,
-          "title": "Retype the name again",
-          "start": 24.041022346005775,
-          "inferStart": 24.114642493019346,
-          "actStart": 24.55564694298664,
-          "end": 24.97022876201663,
+          "title": "Type without focusing the name field",
+          "start": 22.185141180991195,
+          "inferStart": 22.22712984390091,
+          "actStart": 22.676734576001763,
+          "end": 23.10289841191843,
           "image": "raw/qad/022.png",
-          "thought": "The screen repeatedly prompts for a name, despite it being filled. Retyping the name may resolve input validation issues preventing progression to the poll creation screen.",
-          "action": "device.type(\"Project Alpha User\")",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
             "name": "device.type",
-            "args": "\"Project Alpha User\"",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
             "action": "input_text",
-            "text": "Project Alpha User"
+            "text": "Test User"
           }
         },
         {
           "index": 23,
-          "title": "Return to clicking Next",
-          "start": 24.97022876201663,
-          "inferStart": 25.147714951017406,
-          "actStart": 25.676102502038702,
-          "end": 26.0802601390169,
+          "title": "Type without focusing the name field",
+          "start": 23.10289841191843,
+          "inferStart": 23.144155597896315,
+          "actStart": 23.5936596369138,
+          "end": 24.01971429598052,
           "image": "raw/qad/023.png",
-          "thought": "Retyping the name repeatedly is not resolving the issue. The screen consistently prompts for a name despite it being filled, suggesting a possible UI bug or validation glitch. Switching strategy to bypass by clicking \"Next\" may allow progression.",
-          "action": "device.click(489, 905)",
-          "thoughtHighlights": [
-            {
-              "start": 125,
-              "end": 174,
-              "text": "suggesting a possible UI bug or validation glitch",
-              "tone": "before"
-            }
-          ],
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
+          "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 24,
-          "title": "Try Next again",
-          "start": 26.0802601390169,
-          "inferStart": 26.130207286973018,
-          "actStart": 26.614346031972673,
-          "end": 27.01828828797443,
+          "title": "Type without focusing the name field",
+          "start": 24.01971429598052,
+          "inferStart": 24.06046545796562,
+          "actStart": 24.506969989975914,
+          "end": 24.918796375975944,
           "image": "raw/qad/024.png",
-          "thought": "The screen repeatedly prompts for a name despite it being filled, indicating a possible UI bug. Clicking \"Next\" is the logical next step to bypass this issue and proceed to the poll creation screen.",
-          "action": "device.click(489, 905)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 25,
-          "title": "Try Next again",
-          "start": 27.01828828797443,
-          "inferStart": 27.063028835051227,
-          "actStart": 27.60997008602135,
-          "end": 28.01327237597434,
+          "title": "Type without focusing the name field",
+          "start": 24.918796375975944,
+          "inferStart": 24.96001134288963,
+          "actStart": 25.4076196688693,
+          "end": 25.81908260495402,
           "image": "raw/qad/025.png",
-          "thought": "The screen repeatedly prompts for a name despite it being filled, indicating a possible UI bug. Since clicking \"Next\" has been attempted multiple times without success, switching strategy to bypass by clicking \"Next\" again is the logical next step to attempt progression.",
-          "action": "device.click(489, 905)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 26,
-          "title": "Try Next once more",
-          "start": 28.01327237597434,
-          "inferStart": 28.06227958499221,
-          "actStart": 28.682646255998407,
-          "end": 29.085993909975514,
+          "title": "Type without focusing the name field",
+          "start": 25.81908260495402,
+          "inferStart": 25.85998255480081,
+          "actStart": 26.307573901838623,
+          "end": 26.71879348892253,
           "image": "raw/qad/026.png",
-          "thought": "Despite repeated attempts to proceed by clicking \"Next,\" the screen persists in prompting for a name. Since the name field is likely already filled and the issue appears to be a UI bug, the logical next step is to attempt clicking \"Next\" one more time to see if it finally bypasses the validation.",
-          "action": "device.click(489, 905)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 27,
-          "title": "Repeat the same submission",
-          "start": 29.085993909975514,
-          "inferStart": 29.12840998894535,
-          "actStart": 29.68723839998711,
-          "end": 30.090704097005073,
+          "title": "Type without focusing the name field",
+          "start": 26.71879348892253,
+          "inferStart": 26.76006259501446,
+          "actStart": 27.207768197986297,
+          "end": 27.618795896996744,
           "image": "raw/qad/027.png",
-          "thought": "The screen repeatedly prompts for a name despite it being filled, indicating a possible UI bug. Since clicking \"Next\" has been attempted multiple times without success, switching strategy to bypass by clicking \"Next\" again is the logical next step to attempt progression.",
-          "action": "device.click(489, 905)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 28,
-          "title": "Repeat the same submission",
-          "start": 30.090704097005073,
-          "inferStart": 30.12858287297422,
-          "actStart": 30.68346298695542,
-          "end": 31.08687658800045,
+          "title": "Type without focusing the name field",
+          "start": 27.618795896996744,
+          "inferStart": 27.66003796888981,
+          "actStart": 28.1112578389002,
+          "end": 28.535514425951988,
           "image": "raw/qad/028.png",
-          "thought": "The screen repeatedly prompts for a name despite it being filled, indicating a possible UI bug. Since clicking \"Next\" has been attempted multiple times without success, switching strategy to bypass by clicking \"Next\" again is the logical next step to attempt progression.",
-          "action": "device.click(489, 905)",
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
           "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         },
         {
           "index": 29,
-          "title": "Reach the step limit",
-          "start": 31.08687658800045,
-          "inferStart": 31.128404974995647,
-          "actStart": 31.68493289098842,
-          "end": 32.088229582994245,
+          "title": "Type without focusing the name field",
+          "start": 28.535514425951988,
+          "inferStart": 28.576603665947914,
+          "actStart": 29.02364425198175,
+          "end": 29.4362165259663,
           "image": "raw/qad/029.png",
-          "thought": "The screen repeatedly prompts for a name despite it being filled, indicating a possible UI bug. Since clicking \"Next\" has been attempted multiple times without success, switching strategy to bypass by clicking \"Next\" again is the logical next step to attempt progression.",
-          "action": "device.click(489, 905)",
-          "thoughtHighlights": [
-            {
-              "start": 169,
-              "end": 222,
-              "text": "switching strategy to bypass by clicking \"Next\" again",
-              "tone": "before"
-            }
-          ],
+          "thought": "现在需要填写个人信息，先点击名字输入框，输入测试用的名字\"Test User\"，之后点击Next按钮继续登录流程，以便后续进入群组创建投票。",
+          "action": "device.type(\"Test User\")",
+          "thoughtHighlights": [],
           "actionEvent": {
-            "name": "device.click",
-            "args": "489, 905",
+            "name": "device.type",
+            "args": "\"Test User\"",
             "tone": "before",
             "highlights": {
-              "call": []
+              "call": [
+                {
+                  "start": 0,
+                  "end": 11,
+                  "text": "device.type",
+                  "tone": "before"
+                }
+              ]
             }
           },
           "executed": {
-            "action": "tap",
-            "x": 190,
-            "y": 763
+            "action": "input_text",
+            "text": "Test User"
           }
         }
-      ]
+      ],
+      "repetition": {
+        "from": 8,
+        "label": "Repeated name entry",
+        "review": "Manually reviewed contiguous tail: no new task progress. The initial action and first repetition remain outside the fold."
+      }
     }
   ]
 }

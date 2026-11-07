@@ -3,7 +3,7 @@ import json
 import hashlib
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-CONTENT = ROOT / 'design-lab/case-content'
+CONTENT = ROOT / 'content/cases'
 catalog = json.loads((CONTENT / 'catalog.json').read_text())
 group_labels = {'training': 'Training corrections', 'inference': 'Inference comparisons', 'recovery': 'Self-recovery'}
 section_labels = {'correction': 'Correction process', 'guidance-comparison': 'Guidance comparison', 'request-interface': 'Requests & APIs', 'action-conditions': 'Prerequisites', 'execution-state': 'Execution & state'}

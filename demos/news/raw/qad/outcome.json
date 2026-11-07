@@ -1,17 +1,7 @@
 {
-  "observation": null,
-  "reward": 0.0,
   "done": true,
   "info": {
     "success": false,
-    "status": "infeasible",
-    "normalized_action": {
-      "action": "finish",
-      "status": "infeasible"
-    },
-    "executed_action": {
-      "action": "finish",
-      "status": "infeasible"
-    }
+    "reason": "step_limit"
   }
 }

@@ -220,7 +220,8 @@
           }
         ]
       }
-    ]
+    ],
+    "language": "zh-CN"
   },
   "ours": {
     "precision": "W4A16",
@@ -424,257 +425,372 @@
           }
         ]
       }
-    ]
+    ],
+    "language": "zh-CN"
   },
   "qad": {
     "precision": "W4A16",
+    "language": "zh-CN",
     "steps": [
       {
         "title": "Accept the welcome screen",
+        "review": "进入手机号页面。",
         "actionTone": "neutral",
-        "review": "欢迎页动作成功。",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Focus the phone number field",
+        "review": "下一帧输入框获得焦点。",
+        "actionTone": "neutral",
         "thoughtHighlights": [],
         "actionHighlights": []
       },
       {
         "title": "Enter a test phone number",
+        "review": "下一帧显示手机号。",
         "actionTone": "neutral",
-        "review": "手机号已有效输入。",
         "thoughtHighlights": [],
         "actionHighlights": []
       },
       {
         "title": "Continue to verification",
+        "review": "下一帧进入验证码页。",
         "actionTone": "neutral",
-        "review": "进入验证。",
         "thoughtHighlights": [],
         "actionHighlights": []
       },
       {
-        "title": "Wait for verification",
+        "title": "Tap the verification field",
+        "review": "环境自行推进验证码；本步是点击。",
         "actionTone": "neutral",
-        "review": "等待自动验证，合理。",
         "thoughtHighlights": [],
         "actionHighlights": []
       },
       {
-        "title": "Wait for the profile screen",
+        "title": "Enter a verification code",
+        "review": "保留实际 type 调用；下一帧为 Profile Info，不把环境自动验证全归因于本步。",
         "actionTone": "neutral",
-        "review": "加载过渡等待，非错误循环。",
         "thoughtHighlights": [],
         "actionHighlights": []
       },
       {
         "title": "Type without focusing the name field",
+        "review": "第 7 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
         "actionTone": "before",
-        "review": "未聚焦姓名框，屏幕姓名仍为空。",
         "thoughtHighlights": [],
         "actionHighlights": [
           {
             "text": "device.type",
             "tone": "before",
-            "reason": "未先聚焦姓名字段，输入未落入目标框。"
+            "reason": "第 7 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
           }
         ]
       },
       {
-        "title": "Submit an empty name field",
+        "title": "Type without focusing the name field",
+        "review": "第 8 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
         "actionTone": "before",
-        "review": "误认为已填写，点击 Next 后提示 Please enter your name。",
-        "thoughtHighlights": [
+        "thoughtHighlights": [],
+        "actionHighlights": [
           {
-            "text": "The name \"User\" has been entered",
+            "text": "device.type",
             "tone": "before",
-            "reason": "与当前空白姓名框矛盾，导致提交失败。"
+            "reason": "第 8 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
           }
-        ],
-        "actionHighlights": []
+        ]
       },
       {
-        "title": "Try Next again",
+        "title": "Type without focusing the name field",
+        "review": "第 9 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
         "actionTone": "before",
-        "review": "字段仍为空，错误地认为填好。",
         "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "同一空字段继续提交。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "同一空字段继续提交。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "同一空字段继续提交。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Type the name again",
-        "actionTone": "before",
-        "review": "没有重新聚焦字段，输入仍未写入姓名。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "空字段提交未推进。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "空字段提交未推进。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "空字段提交未推进。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try a different name",
-        "actionTone": "before",
-        "review": "意识到重复点击无效，但只换文本，未解决焦点。",
-        "thoughtHighlights": [
+        "actionHighlights": [
           {
-            "text": "Repeatedly clicking \"Next\" without changing the input may not progress the task.",
-            "tone": "after",
-            "reason": "确实察觉重复动作没有推进，不能把这部分正确观察染红。"
-          }
-        ],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "姓名仍未显示，继续点击。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "把拟输入的 Project Alpha User 误认为字段内容。",
-        "thoughtHighlights": [
-          {
-            "text": "The name field is already filled with \"Project Alpha User\"",
+            "text": "device.type",
             "tone": "before",
-            "reason": "新名字同样没有写入实际字段。"
+            "reason": "第 9 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
           }
-        ],
-        "actionHighlights": []
+        ]
       },
       {
-        "title": "Try Next again",
+        "title": "Type without focusing the name field",
+        "review": "第 10 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
         "actionTone": "before",
-        "review": "缺少字段确认，继续无效提交。",
         "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Retype without fixing focus",
-        "actionTone": "before",
-        "review": "归因输入状态，但未执行聚焦。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Retype the name again",
-        "actionTone": "before",
-        "review": "缺少聚焦，姓名仍为空。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Retype the name again",
-        "actionTone": "before",
-        "review": "重复输入未改变字段。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Retype the name again",
-        "actionTone": "before",
-        "review": "重复输入未改变字段。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Return to clicking Next",
-        "actionTone": "before",
-        "review": "改回点击 Next，声称可能 UI 问题；实际姓名为空。",
-        "thoughtHighlights": [
+        "actionHighlights": [
           {
-            "text": "suggesting a possible UI bug or validation glitch",
+            "text": "device.type",
             "tone": "before",
-            "reason": "把缺失输入误判为页面故障。"
+            "reason": "第 10 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
           }
-        ],
-        "actionHighlights": []
+        ]
       },
       {
-        "title": "Try Next again",
+        "title": "Type without focusing the name field",
+        "review": "第 11 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
         "actionTone": "before",
-        "review": "沿用 UI 故障假设，无进展。",
         "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next again",
-        "actionTone": "before",
-        "review": "错误称再点 Next 是换策略，实际重复。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Try Next once more",
-        "actionTone": "before",
-        "review": "意识到重复失败但再次提交空字段。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Repeat the same submission",
-        "actionTone": "before",
-        "review": "同一预测与动作继续重复。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Repeat the same submission",
-        "actionTone": "before",
-        "review": "同一预测与动作继续重复。",
-        "thoughtHighlights": [],
-        "actionHighlights": []
-      },
-      {
-        "title": "Reach the step limit",
-        "actionTone": "before",
-        "review": "仍无姓名、未到群聊；30 步上限终止。",
-        "thoughtHighlights": [
+        "actionHighlights": [
           {
-            "text": "switching strategy to bypass by clicking \"Next\" again",
+            "text": "device.type",
             "tone": "before",
-            "reason": "声称换策略，执行仍是相同提交，循环没有解除。"
+            "reason": "第 11 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
           }
-        ],
-        "actionHighlights": []
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 12 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 12 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 13 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 13 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 14 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 14 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 15 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 15 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 16 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 16 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 17 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 17 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 18 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 18 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 19 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 19 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 20 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 20 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 21 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 21 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 22 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 22 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 23 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 23 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 24 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 24 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 25 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 25 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 26 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 26 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 27 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 27 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 28 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 28 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 29 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 29 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
+      },
+      {
+        "title": "Type without focusing the name field",
+        "review": "第 30 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。 思考中的先点击是正确意图，不标红；只高亮没有落实该前置动作的 type 调用。",
+        "actionTone": "before",
+        "thoughtHighlights": [],
+        "actionHighlights": [
+          {
+            "text": "device.type",
+            "tone": "before",
+            "reason": "第 30 步：思考提出先点击，但实际只有 type；前后画面姓名框均为空。"
+          }
+        ]
       }
-    ]
+    ],
+    "repetition": {
+      "from": 8,
+      "label": "Repeated name entry",
+      "review": "Manually reviewed contiguous tail: no new task progress. The initial action and first repetition remain outside the fold."
+    }
   }
 }

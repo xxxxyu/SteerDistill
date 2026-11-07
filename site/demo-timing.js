@@ -27,5 +27,22 @@ window.DemoTiming = (() => {
       isLocal(id) { return local.has(id); }
     };
   }
-  return {at, decisionTime, createClock};
+  // Only editorially reviewed trailing repetitions may be folded. Raw times never change.
+  function presentation(run, expanded = false) {
+    const from = run.repetition?.from;
+    const start = Number.isInteger(from) ? run.steps[from]?.start : undefined;
+    const folded = !expanded && start !== undefined && run.total - start > 2;
+    const total = folded ? start + 2 : run.total;
+    return {
+      folded, start, total,
+      position(time) { return !folded || time <= start ? time : start + (time-start)/(run.total-start)*2; },
+      actual(time) {
+        if (!folded || time < start) return Math.min(time,run.total);
+        if (time >= total - 1e-9) return run.total;
+        return decisionTime(run.steps[from]);
+      },
+      holding(time) { return folded && time >= start && time < total - 1e-9; }
+    };
+  }
+  return {at, decisionTime, createClock, presentation};
 })();

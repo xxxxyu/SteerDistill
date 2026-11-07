@@ -10,7 +10,7 @@
   },
   {
     "method": "qad",
-    "source": "/redacted/steerdistill-scalewob-runs/plain-qad-20261021/from-step-0002/awq-984fb2b1a1/config.json",
+    "source": "/redacted/steerdistill-scalewob-runs/brownie-qad-matched-20261106/from-step-0006/awq-b15b0eecd8/config.json",
     "dtype": "float16",
     "text_dtype": "bfloat16",
     "quant_method": "awq",

@@ -15,19 +15,6 @@
       "path": "wps/"
     },
     {
-      "id": "slack",
-      "rawTask": "slack-5",
-      "app": "Slack",
-      "label": "Share an image",
-      "title": "Send an image to the team",
-      "task": "Send Team_Offsite.jpg to the design-team channel in Acme Corp.",
-      "caption": "From the attachment menu to an image posted in the channel.",
-      "notes": [
-        "Both successful runs upload an image twice. The replay retains both uploads and their waiting time."
-      ],
-      "path": "slack/"
-    },
-    {
       "id": "whatsapp",
       "rawTask": "WhatsApp-7",
       "app": "WhatsApp",

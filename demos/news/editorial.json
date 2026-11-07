@@ -163,7 +163,8 @@
         ],
         "actionHighlights": []
       }
-    ]
+    ],
+    "language": "zh-CN"
   },
   "ours": {
     "precision": "W4A16",
@@ -324,24 +325,444 @@
           }
         ]
       }
-    ]
+    ],
+    "language": "zh-CN"
   },
   "qad": {
     "precision": "W4A16",
+    "language": "zh-CN",
     "steps": [
       {
-        "title": "Stop at the sign-in screen",
-        "actionTone": "before",
-        "review": "思考拟绕过登录，实际却直接 infeasible 终止；没有浏览文章。",
+        "title": "Focus the email field",
+        "review": "下一帧邮箱框获得焦点。",
+        "actionTone": "neutral",
         "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter a test email",
+        "review": "下一帧显示邮箱。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Continue to password",
+        "review": "下一帧密码框获得焦点。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Enter a test password",
+        "review": "下一帧密码框显示已输入。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Submit the sign-in form",
+        "review": "下一帧登录按钮加载。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for sign-in",
+        "review": "下一帧进入新闻首页。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open the Sports category",
+        "review": "下一帧显示体育列表。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Open the first Sports article",
+        "review": "点击 NBA 文章，下一帧详情加载。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Wait for the article",
+        "review": "下一帧详情标题与正文出现。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Try to return to Sports",
+        "review": "点击返回，但下一张观测仍在同篇文章；不臆测延迟原因。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Scroll inside the first article",
+        "review": "意图寻找第二篇，但前后画面均为第一篇正文。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第二篇不同的体育文章进行阅读",
+            "tone": "before",
+            "reason": "意图寻找第二篇，但前后画面均为第一篇正文。"
+          }
+        ],
         "actionHighlights": [
           {
-            "text": "'infeasible'",
+            "text": "device.swipe",
             "tone": "before",
-            "reason": "与继续浏览的意图不一致，直接放弃。"
+            "reason": "意图寻找第二篇，但前后画面均为第一篇正文。"
+          }
+        ]
+      },
+      {
+        "title": "Mistake article text for a list",
+        "review": "截图仍为 NBA 文章正文；非体育文章的判断与画面不符。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "页面显示的是非体育文章",
+            "tone": "before",
+            "reason": "截图仍为 NBA 文章正文；非体育文章的判断与画面不符。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "截图仍为 NBA 文章正文；非体育文章的判断与画面不符。"
+          }
+        ]
+      },
+      {
+        "title": "Return to the Sports list",
+        "review": "下一帧确实回到 Sports 列表。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Scroll past available stories",
+        "review": "列表已经有未读新闻；本步滑动，尚未打开第二篇。",
+        "actionTone": "neutral",
+        "thoughtHighlights": [],
+        "actionHighlights": []
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 15 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 15 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 15 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 16 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 16 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 16 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 17 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 17 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 17 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 18 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 18 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 18 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 19 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 19 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 19 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 20 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 20 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 20 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 21 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 21 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 21 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 22 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 22 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 22 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 23 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 23 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 23 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 24 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 24 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 24 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 25 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 25 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 25 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 26 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 26 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 26 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 27 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 27 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 27 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 28 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 28 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 28 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 29 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 29 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 29 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ]
+      },
+      {
+        "title": "Keep scrolling without opening a story",
+        "review": "第 30 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。",
+        "actionTone": "before",
+        "thoughtHighlights": [
+          {
+            "text": "找到第三篇不同的体育分类文章",
+            "tone": "before",
+            "reason": "第 30 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
+          }
+        ],
+        "actionHighlights": [
+          {
+            "text": "device.swipe",
+            "tone": "before",
+            "reason": "第 30 步：仍是 Sports 列表，没有新的文章详情；仅打开过第一篇，却已在寻找第三篇。"
           }
         ]
       }
-    ]
+    ],
+    "repetition": {
+      "from": 15,
+      "label": "Repeated scrolling",
+      "review": "Manually reviewed contiguous tail: no new task progress. The initial action and first repetition remain outside the fold."
+    }
   }
 }

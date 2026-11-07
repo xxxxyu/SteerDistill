@@ -21,7 +21,7 @@ window.SiteLocale = (() => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('#') || a.hasAttribute('download')) return;
       const target = new URL(a.href, location.href);
-      if (target.origin === location.origin && /\/(?:index|article|paper-cases|case-records)\.html$/.test(target.pathname)) a.href = url(a.href);
+      if (target.origin === location.origin && /(?:\/index\.html|\/(?:article|cases|records)\/|\/)$/.test(target.pathname)) a.href = url(a.href);
     });
   }
   document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';

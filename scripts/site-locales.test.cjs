@@ -1,7 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const root=path.resolve(__dirname,'..');
 function context({page='home',search='',saved=null}={}){
- const storage=new Map(saved?[['steerdistill-language',saved]]:[]),location=new URL('https://example.org/SteerDistill/'+(page==='home'?'index.html':'article.html')+search);
+ const storage=new Map(saved?[['steerdistill-language',saved]]:[]),location=new URL('https://example.org/SteerDistill/'+(page==='home'?'index.html':'article/')+search);
  const c={URL,URLSearchParams,location,localStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)},document:{body:{dataset:{page}},documentElement:{},querySelector:()=>null,querySelectorAll:()=>[],addEventListener(){}}};c.window=c;
  for(const file of ['site/locale.js','site/home-locale.js'])vm.runInNewContext(fs.readFileSync(path.join(root,file),'utf8'),c);
  return c;
@@ -9,8 +9,8 @@ function context({page='home',search='',saved=null}={}){
 test('shared locale honors explicit selection, then saved preference, with original page defaults',()=>{
  assert.equal(context().SiteLocale.lang,'en');assert.equal(context({page:'article'}).SiteLocale.lang,'zh');
  assert.equal(context({saved:'zh'}).SiteLocale.lang,'zh');assert.equal(context({saved:'zh',search:'?lang=en'}).SiteLocale.lang,'en');
- const c=context({search:'?lang=zh'}),url=c.SiteLocale.url('design-lab/paper-cases.html?group=training&case=directory-navigation#case-start');
- assert.equal(url,'/SteerDistill/design-lab/paper-cases.html?group=training&case=directory-navigation&lang=zh#case-start');
+ const c=context({search:'?lang=zh'}),url=c.SiteLocale.url('cases/?group=training&case=directory-navigation#case-start');
+ assert.equal(url,'/SteerDistill/cases/?group=training&case=directory-navigation&lang=zh#case-start');
  assert.equal(c.SiteLocale.url('https://scalewob.github.io/'),'https://scalewob.github.io/');
 });
 test('all demo task descriptions and step annotations have reviewed Chinese translations',()=>{
@@ -24,8 +24,8 @@ test('all demo task descriptions and step annotations have reviewed Chinese tran
  assert.equal(context({search:'?lang=en'}).HomeLocale.t('Focus the search field'),'Focus the search field');
 });
 test('every generated entry has one switch and shared locale; article remains explicitly Chinese',()=>{
- for(const file of ['index.html','article.html','design-lab/paper-cases.html','design-lab/case-records.html']){
+ for(const file of ['index.html','article/index.html','cases/index.html','records/index.html']){
   const html=fs.readFileSync(path.join(root,file),'utf8');assert.equal((html.match(/class="site-language"/g)||[]).length,1,file);assert.match(html,/site\/locale\.js/);
  }
- const article=fs.readFileSync(path.join(root,'article.html'),'utf8');assert.match(article,/post-surface" lang="zh-CN"/);assert.doesNotMatch(article,/home-locale\.js/);
+ const article=fs.readFileSync(path.join(root,'article/index.html'),'utf8');assert.match(article,/post-surface" lang="zh-CN"/);assert.match(article,/home-locale\.js/);assert.match(article,/class="home-main"/);
 });

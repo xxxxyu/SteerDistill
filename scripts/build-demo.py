@@ -35,6 +35,9 @@ def build(task):
         editorial = edits[model]
         if len(editorial['steps']) != len(rows):
             raise ValueError(f'Every decision needs an editorial review: {model}')
+        repetition = editorial.get('repetition')
+        if repetition and (not isinstance(repetition.get('from'), int) or not 2 <= repetition['from'] < len(rows)-1 or not repetition.get('review')):
+            raise ValueError(f'Repetition folding requires a reviewed trailing range: {model}')
         steps, start = [], 0
         for index, row in enumerate(rows):
             end = row['episode_elapsed_seconds']
@@ -56,10 +59,10 @@ def build(task):
                               actionEvent=action_event,
                               executed=row['result']['info']['executed_action']))
             start = end
-        runs.append(dict(id=model, label=label, precision=editorial['precision'], success=metrics['success'],
+        runs.append(dict(id=model, label=label, precision=editorial['precision'], language=editorial['language'], success=metrics['success'],
                          total=metrics['episode_seconds'], inference=metrics['inference_seconds'],
                          execution=sum(row['environment_seconds'] for row in rows),
-                         final=f'raw/{model}/final.png', steps=steps))
+                         final=f'raw/{model}/final.png', steps=steps, repetition=editorial.get('repetition')))
     data = dict(id=task['rawTask'], title=task['title'], task=task['task'], caption=task['caption'], notes=task['notes'],
                 width=390, height=844, runs=runs)
     (dest / 'replay.json').write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n')

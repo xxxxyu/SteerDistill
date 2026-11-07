@@ -8,7 +8,7 @@ import zipfile
 
 SITE = Path(__file__).resolve().parents[1]
 LIBRARY = SITE / 'data/case-library'
-CATALOG = SITE / 'design-lab/case-content/catalog.json'
+CATALOG = SITE / 'content/cases/catalog.json'
 
 
 def digest(data):

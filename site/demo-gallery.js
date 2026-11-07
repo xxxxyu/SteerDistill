@@ -9,6 +9,7 @@
     if (!response.ok) throw Error('Demo catalogue unavailable');
     const catalog = await response.json();
     const nav = make('div', 'demo-task-tabs'), description = make('p', 'demo-task-description'), panels = make('div', 'demo-task-panels');
+    nav.style.setProperty('--demo-task-count', catalog.tasks.length);
     nav.setAttribute('role', 'tablist'); nav.setAttribute('aria-label', t('Demo tasks'));
     description.id = 'demo-task-description';
     const entries = new Map(); let active;
@@ -78,22 +79,24 @@
       entries.get(ids[next]).tab.focus({preventScroll:true}); activate(ids[next]);
     });
     const requested = new URL(location.href).searchParams.get('demo');
-    await activate(entries.has(requested) ? requested : catalog.default, false);
+    await activate(entries.has(requested) ? requested : catalog.default, Boolean(requested && !entries.has(requested)));
     if (location.hash === '#demo') {
       await document.fonts.ready;
       requestAnimationFrame(() => document.getElementById('demo').scrollIntoView({block:'start'}));
     }
   }
-  let started = false;
+  let pending;
   const observer = new IntersectionObserver(entries => {
     if (entries.some(entry => entry.isIntersecting)) boot();
   }, {rootMargin:'700px'});
   function boot() {
-    if (started) return; started = true; observer.disconnect();
-    start().catch(error => {
+    if (pending) return pending; observer.disconnect();
+    pending = start().catch(error => {
       root.replaceChildren(make('p', 'demo-loading', t('The demo catalogue could not be loaded.')));
       const retry = make('button', 'replay-play', t('Try again')); retry.type = 'button'; retry.onclick = () => location.reload(); root.append(retry); console.error(error);
     });
+    return pending;
   }
+  window.DemoGallery = {prepare:boot};
   if (location.hash === '#demo') boot(); else observer.observe(root);
 })();
