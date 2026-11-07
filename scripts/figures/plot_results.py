@@ -169,19 +169,6 @@ def diagnostics(data, output):
     fig.colorbar(image, ax=ax, label="Score (%)")
     save(fig, output, "additional_metrics")
 
-    rows = read(data, "reasoning_prefix")
-    labels = list(rows[0])[2:]
-    fig, axes = plt.subplots(1, 2, figsize=(13, 5), layout="constrained")
-    for ax, case in zip(axes, ("door_locking", "file_ordering")):
-        selected = [row for row in rows if row["case"] == case]
-        image = heatmap(ax, [[float(row[col]) for col in labels] for row in selected],
-                        [row["weights_label"] for row in selected], labels, maximum=1)
-        ax.set_title(case.replace("_", " ").title())
-        ax.set_xlabel("Reasoning prefix source")
-        ax.set_ylabel("Model weights")
-    fig.colorbar(image, ax=list(axes), label="Verified correct-action probability")
-    save(fig, output, "figure_08_reasoning_prefix")
-
     rows = read(data, "inference_statistics")
     fig, axes = plt.subplots(1, 3, figsize=(13, 4), layout="constrained")
     for ax, key in zip(axes, ("output_tokens", "interaction_steps", "tool_calls")):
@@ -193,7 +180,7 @@ def diagnostics(data, output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--data", type=Path, required=True, help="CSV directory from the gh-pages experiment collection")
+    parser.add_argument("--data", type=Path, required=True, help="CSV directory (results/data in this checkout)")
     parser.add_argument("--output", type=Path, required=True, help="Destination for generated PDF and PNG figures")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
@@ -205,7 +192,7 @@ def main():
         path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(args.data.glob("*.csv"))
     }, "figures": sorted(path.name for path in args.output.iterdir() if path.suffix in (".png", ".pdf"))}
     (args.output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(f"Saved 8 figures as PDF and PNG to {args.output}")
+    print(f"Saved 7 figures as PDF and PNG to {args.output}")
 
 
 if __name__ == "__main__":

@@ -1,18 +1,18 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "steerdistill"
 version = "0.1.0"
-description = "Online teacher-steered trajectory distillation for quantized LLM agents"
+description = "Quantizing LLM agents via closed-loop teacher steering"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {file = "LICENSE"}
-authors = [{name = "Anonymous authors"}]
+license = "MIT AND Apache-2.0"
+license-files = ["LICENSE", "licenses/*", "docs/third_party_notices.md"]
+authors = [{name = "SteerDistill authors"}]
 classifiers = [
   "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
   "Operating System :: POSIX :: Linux",
 ]
 

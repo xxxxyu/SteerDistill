@@ -1,25 +1,30 @@
-# Experiment data and figures
+# Paper results
 
-[Project overview](../../README.md)
+[Project overview](../../README.md) · [Numerical inputs](../../results/README.md)
 
-Run the commands below from the repository root.
-
-The result tables cover three model families and five benchmarks. Metric
-definitions and evaluation settings are listed with the [evaluation guide](../evaluation/README.md).
-
-Organized [experiment data and figures](https://github.com/ustccuigm/bitdistill/tree/gh-pages/experiments)
-and the existing [40-case collection](https://github.com/ustccuigm/bitdistill/tree/gh-pages/data/cases)
-are maintained on `gh-pages`. The `main` branch contains the implementation,
-plotting scripts, and documentation, without duplicating these datasets.
-Plot the quantitative results without running model inference:
+This checkout includes the paper's main scores, ablations, training settings,
+additional metrics, trajectory statistics, and displayed efficiency coordinates.
+They can be inspected and plotted without fetching another branch:
 
 ```bash
 python -m pip install -r requirements/figures.txt
-git fetch origin gh-pages
-git worktree add --detach ../bitdistill-pages origin/gh-pages
-python scripts/figures/plot_results.py \
-  --data ../bitdistill-pages/experiments/data \
-  --output ../bitdistill-pages/experiments/figures
+python scripts/figures/plot_results.py --data results/data --output /tmp/steerdistill-figures
 ```
 
-See [figure generation](../../docs/figures.md) for data checks and PDF-coordinate extraction.
+The headline average is the unweighted mean of BFCL V4 Overall, tau2-Bench
+Pass@1, WebShop SR, ALFWorld SR, and Search QA's seven-dataset mean EM.
+All scores are percentages. W4A16 covers the three models; W2A16 and W4A8
+cover Qwen3-8B. The 67% GPU-hour reduction compares a 32-GPUh SteerDistill
+checkpoint with QeRL at 96 GPUh on Qwen3-8B / tau2-Bench; it does not imply
+that every final score is obtained at 32 GPUh.
+
+The efficiency files contain displayed means, bands, and marker coordinates,
+not per-seed or per-task runs. The training bands represent four evaluations
+per checkpoint. Raw benchmark datasets, checkpoints, and unpublished experiment
+archives are not bundled. The website presents selected qualitative cases;
+those examples do not estimate benchmark success rates.
+
+To run the method, follow [training](../training/README.md) and
+[evaluation](../evaluation/README.md). Exact score reproduction also requires
+the matching post-RL checkpoints, data, external revisions, and evaluation
+settings. Checkpoint download links are pending the public release.

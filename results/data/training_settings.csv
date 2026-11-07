@@ -1,0 +1,6 @@
+method,epochs,learning_rate,batch_size
+EfficientQAT,1+1,8e-6,16
+BitDistiller,2,8e-6,16
+On-Policy QAD,2,8e-6,16
+QeRL,2,8e-6,16
+Ours,2,8e-6,16

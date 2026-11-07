@@ -5,9 +5,7 @@ SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 source "$SCRIPT_DIR/../_bootstrap.sh"
 ROOT="$STEERDISTILL_ROOT"
 fail=0
-forbidden='(BEGIN (OPENSSH|RSA|EC|DSA) PRIVATE KEY|AKIA[0-9A-Z]{16}|sk-[a-zA-Z0-9_-]{32,}|/mnt/|/root/|/home/|/remote-home|root@[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)'
-if grep -RInE --exclude='check_release.sh' --exclude='*.pyc' --exclude='*.log' --exclude-dir=__pycache__ --exclude-dir=.git "$forbidden" \
-    "$ROOT"; then
+if ! python3 "$SCRIPT_DIR/check_publication.py" "$ROOT"; then
   echo "STEER_RELEASE_SIGNAL status=failed reason=forbidden_metadata" >&2
   fail=1
 fi

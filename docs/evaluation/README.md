@@ -19,6 +19,15 @@ student directory, not the BF16 source checkpoint. The `--model` argument is
 the local serving name; architecture and tool parsers are read from the checkpoint.
 No evaluator uses the distillation teacher or steering.
 
+The paper uses temperature 0.001 for BFCL V4, 0 for tau2-Bench, and 0.7
+for WebShop, ALFWorld and Search QA. Output limits are 32,768 tokens, except
+4,096 for WebShop/ALFWorld. Interaction limits are 200 for tau2, 15 for
+WebShop, 50 for ALFWorld and 4 for Search QA; BFCL follows the official
+evaluator. Search QA retrieves three passages per query. For the paper's tau2
+protocol, configure the GPT-5.6 user simulator at temperature 0 and retain
+its exact provider/model revision with the run manifest. Substituting another
+simulator changes the evaluation conditions.
+
 Open a separate shell for direct Python evaluation, then load the environment
 paths and private settings once:
 

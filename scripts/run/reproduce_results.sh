@@ -12,9 +12,9 @@ source "$ROOT/scripts/lib/load_config.sh"
 mode=${1:-smoke}
 case "$mode" in
   smoke)
-    tmp=${SMOKE_ROOT:-/tmp/steerdistill-smoke}
-    rm -rf "$tmp"
-    mkdir -p "$tmp"
+    smoke_parent=${SMOKE_ROOT:-${TMPDIR:-/tmp}}
+    mkdir -p "$smoke_parent"
+    tmp=$(mktemp -d "$smoke_parent/steerdistill-smoke.XXXXXX")
     head -n 1 "$PROMPT_MANIFEST" > "$tmp/prompts.jsonl"
     "$ENV_ROOT/bin/python" "$ROOT/scripts/metadata/record_run_manifest.py" \
       --output "$tmp/run_manifest.json" --asset-root "$STEER_ASSET_ROOT" \

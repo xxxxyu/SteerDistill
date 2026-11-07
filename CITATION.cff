@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use SteerDistill, please cite the paper. The arXiv identifier will be added when available."
+title: "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering"
+type: software
+repository-code: "https://github.com/xxxxyu/SteerDistill"
+authors:
+  - family-names: Cui
+    given-names: Genming
+  - family-names: Li
+    given-names: Xiangyu
+  - family-names: Hao
+    given-names: Zixu
+  - family-names: Ding
+    given-names: Xin
+  - family-names: Liu
+    given-names: Yunxin
+  - family-names: Cao
+    given-names: Ting

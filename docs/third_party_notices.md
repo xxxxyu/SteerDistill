@@ -1,8 +1,8 @@
 # Third-Party Notices
 
-This supplementary archive contains the method-specific glue and modified
+This source release contains the method-specific glue and modified
 training/quantization code. Large models, datasets, vLLM, and the tool-use environment
-are external dependencies and are not bundled in the archive.
+are external dependencies and are not bundled in this checkout.
 
 The following projects are used or referenced by the route. Their licenses
 and citation requirements must be preserved when the corresponding external
