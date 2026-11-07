@@ -42,9 +42,8 @@ not the distillation teacher.
    not a dotenv file. Put overrides above its final `source` command. Keep
    private keys there; do not edit tracked templates to configure a machine.
 3. Supply the post-RL checkpoint, executable task manifest, environment tables,
-   and calibration records listed in [benchmarks.md](benchmarks.md). Public
-   checkpoint URLs are pending. A base pretrained model is not equivalent to
-   the paper's post-RL initialization.
+   and calibration records listed in [model and data setup](benchmarks.md).
+   Use the task-specific post-RL checkpoint for the paper's initialization.
 4. Run:
 
 ```bash

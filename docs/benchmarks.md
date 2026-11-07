@@ -22,12 +22,10 @@ either, scripts retain the environment-variable configuration interface.
 
 ## Checkpoints
 
-The quantization stage takes the benchmark-specific BF16 checkpoint produced
-by RL as input. It initializes both the frozen teacher and the student master
-weights from this checkpoint. This repository does not distribute those
-post-RL checkpoints. Public checkpoint downloads are planned; the release
-links have not yet been added. Until then, provide compatible checkpoints
-through the path overrides below.
+The quantization stage initializes the frozen teacher and student master
+weights from the same benchmark-specific, post-RL BF16 checkpoint.
+
+TODO: Add checkpoint download links for each model and task group.
 
 | Model | Registry key | Base model | Required checkpoint architecture |
 | --- | --- | --- | --- |

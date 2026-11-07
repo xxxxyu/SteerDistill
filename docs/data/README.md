@@ -1,19 +1,21 @@
 # Data preparation
 
-[Project overview](../../README.md)
+Prepare training tasks and calibration records after installing the
+[benchmark environments](../benchmarks.md#data-and-environment-downloads).
+Run commands from the repository root.
 
-Run the commands below from the repository root.
+## Tool-use tasks
 
-Download the training data and install the benchmark environments following
-[benchmark setup](../../docs/benchmarks.md#data-and-environment-downloads).
+BFCL V4 and tau2-Bench share the tool-use training records, executable prompt
+manifest, and environment tables described in
+[tool-use training](../benchmarks.md#tool-use-training). tau2 evaluation uses
+its official environment.
 
-**BFCL V4 and tau2-Bench:** provide the shared tool-use training records,
-executable prompt manifest, and environment tables. tau2-Bench does not require
-a second training dataset. Its evaluation uses the official tau2 environment.
+## Native environment tasks
 
-**WebShop, ALFWorld, and Search QA:** export training tasks from their native
-environments using the Python entry point below. Search QA uses NQ and HotpotQA
-training records. Each export is performed once and shared by all three models.
+Export WebShop, ALFWorld, and Search QA tasks from their training environments.
+Search QA uses NQ and HotpotQA training records. Each export is shared by all
+three models.
 
 ```bash
 (
@@ -33,6 +35,8 @@ training records. Each export is performed once and shared by all three models.
 Run only the exports needed for your benchmarks. The parentheses keep these
 configuration variables out of the shell used to launch different training routes.
 The quantization launcher also generates missing native training records.
+
+## Calibration records
 
 Calibration records are normalized and deduplicated automatically before
 clipping. To inspect this preprocessing independently:

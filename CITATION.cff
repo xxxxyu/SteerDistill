@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "If you use SteerDistill, please cite the paper. The arXiv identifier will be added when available."
+message: "If you use SteerDistill, please cite the paper."
+# TODO: Add the paper DOI/arXiv URL and preferred-citation entry.
 title: "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering"
 type: software
 repository-code: "https://github.com/xxxxyu/SteerDistill"

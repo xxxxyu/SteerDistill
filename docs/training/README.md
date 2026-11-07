@@ -1,8 +1,10 @@
 # Quantization and training
 
-[Project overview](../../README.md)
+Quantize and train a task-specific BF16 checkpoint with online teacher steering.
+Run commands from the repository root after completing
+[environment setup](../reproducibility.md) and [data preparation](../data/README.md).
 
-Run the commands below from the repository root.
+## Workflow
 
 For 2-bit weights or 8-bit activations, see the [precision configurations](precision.md).
 Add `--precision w2a16` or `--precision w4a8` to the commands below after
@@ -17,10 +19,9 @@ artifacts before reuse.
 
 For every model, run the tool-use training route once for **both BFCL V4 and
 tau2-Bench**. WebShop, ALFWorld, and Search QA each require their own post-RL
-checkpoint and training run. The examples below are independent experiments,
-not consecutive stages of one model.
+checkpoint and training run. Choose the model and task group below for each training run.
 
-### Qwen3-8B
+## Qwen3-8B
 
 Set the `QWEN3_8B_*_MODEL` paths in `configs/local.env`, or place the four
 checkpoints under `models/qwen3_8b/` in the asset directory.
@@ -43,7 +44,7 @@ bash scripts/run/run_benchmark.sh quantize --model qwen3_8b --benchmark search_q
 bash scripts/run/run_benchmark.sh train --model qwen3_8b --benchmark search_qa
 ```
 
-### Qwen3.5-4B
+## Qwen3.5-4B
 
 Set the `QWEN35_4B_*_MODEL` paths, or use `models/qwen3_5_4b/` in the asset
 directory. This route requires the FLA dependencies in the training lock file
@@ -67,7 +68,7 @@ bash scripts/run/run_benchmark.sh quantize --model qwen3_5_4b --benchmark search
 bash scripts/run/run_benchmark.sh train --model qwen3_5_4b --benchmark search_qa
 ```
 
-### Gemma 4 12B-it
+## Gemma 4 12B-it
 
 Set the `GEMMA4_12B_*_MODEL` paths, or use `models/gemma4_12b/` in the asset
 directory. Supply a text checkpoint with architecture `gemma4_unified_text`;

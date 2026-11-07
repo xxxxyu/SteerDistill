@@ -1,32 +1,30 @@
 # Evaluation
 
-For a non-default quantization run, pass the same `--precision w2a16` or
-`--precision w4a8` used during training to `run_benchmark.sh eval`.
-See [precision configurations](../training/precision.md) for plugin setup
-and the reference backend's compute semantics.
+Evaluate an exported quantized student checkpoint on the five benchmarks.
+All commands run from the repository root.
 
-[Project overview](../../README.md)
+## Settings
 
-Run the commands below from the repository root.
+| Benchmark | Temperature | Output token limit | Interaction limit |
+| --- | ---: | ---: | --- |
+| BFCL V4 | 0.001 | 32,768 | Official evaluator |
+| tau2-Bench | 0 | 32,768 | 200 |
+| WebShop | 0.7 | 4,096 | 15 |
+| ALFWorld | 0.7 | 4,096 | 50 |
+| Search QA | 0.7 | 32,768 | 4 |
 
-Each route below lists its evaluation scope and prerequisites alongside the
-command. See [evaluation protocols](../../docs/benchmarks.md#evaluation) for the
-complete settings and output formats.
+Search QA retrieves three passages per query. The paper uses GPT-5.6 as the
+tau2 user simulator at temperature 0; record its provider/model revision
+with each run. The simulator acts as part of the environment.
 
-The Python evaluators below accept an explicit trained quantized checkpoint
-and apply to all three model families. Replace `/path/to/...` with the exported
-student directory, not the BF16 source checkpoint. The `--model` argument is
-the local serving name; architecture and tool parsers are read from the checkpoint.
-No evaluator uses the distillation teacher or steering.
+Python evaluators accept the exported student directory. Architecture and
+tool parsers are read from the checkpoint; `--model` is the local serving name.
+For W2A16 or W4A8, pass the training run's `--precision` value to
+`run_benchmark.sh eval`. See [precision settings](../training/precision.md)
+for runtime details and [benchmark setup](../benchmarks.md#evaluation) for
+data requirements and result formats.
 
-The paper uses temperature 0.001 for BFCL V4, 0 for tau2-Bench, and 0.7
-for WebShop, ALFWorld and Search QA. Output limits are 32,768 tokens, except
-4,096 for WebShop/ALFWorld. Interaction limits are 200 for tau2, 15 for
-WebShop, 50 for ALFWorld and 4 for Search QA; BFCL follows the official
-evaluator. Search QA retrieves three passages per query. For the paper's tau2
-protocol, configure the GPT-5.6 user simulator at temperature 0 and retain
-its exact provider/model revision with the run manifest. Substituting another
-simulator changes the evaluation conditions.
+## Environment
 
 Open a separate shell for direct Python evaluation, then load the environment
 paths and private settings once:
@@ -36,7 +34,7 @@ source scripts/_bootstrap.sh
 source scripts/lib/load_config.sh
 ```
 
-### BFCL V4
+## BFCL V4
 
 Uses the official scoring categories and Overall score. Install the memory
 dependencies and configure `SERPAPI_API_KEY` for web-search tasks.
@@ -47,7 +45,7 @@ dependencies and configure `SERPAPI_API_KEY` for web-search tasks.
   --output /path/to/results/bfcl_v4 --gpus 0
 ```
 
-### tau2-Bench
+## tau2-Bench
 
 Use the **same checkpoint as BFCL V4**. Configure `TAU2_USER_MODEL` and its API
 settings in `configs/local.env`. Evaluation covers airline, retail, and telecom
@@ -59,7 +57,7 @@ with four trials per task; the user simulator is separate from the student.
   --output /path/to/results/tau2_bench --gpus 0
 ```
 
-### WebShop
+## WebShop
 
 Uses the WebShop-specific checkpoint and the 500 held-out shopping goals.
 The catalog, search index, JDK, and Pyserini must be installed.
@@ -70,7 +68,7 @@ The catalog, search index, JDK, and Pyserini must be installed.
   --model steerdistill --output /path/to/results/webshop --gpus 0 --workers 4
 ```
 
-### ALFWorld
+## ALFWorld
 
 Uses the ALFWorld-specific checkpoint and unseen evaluation games. Install
 the game data, TextWorld, and Fast Downward planner.
@@ -81,7 +79,7 @@ the game data, TextWorld, and Fast Downward planner.
   --model steerdistill --output /path/to/results/alfworld --gpus 0 --workers 4
 ```
 
-### Search QA
+## Search QA
 
 Uses the Search-QA-specific checkpoint. Start the retrieval service configured
 by `SEARCH_RETRIEVER_URL` and provide all seven evaluation datasets: NQ,
@@ -94,6 +92,8 @@ include per-dataset exact match and their unweighted mean.
   --model steerdistill --output /path/to/results/search_qa --gpus 0 --workers 4
 ```
 
+## Checkpoint selection
+
 Use a distinct output directory for each model, benchmark, and checkpoint.
 To select the latest completed training checkpoint automatically, run this
 alternative from a fresh shell; change the model and benchmark as needed:
@@ -104,5 +104,5 @@ bash scripts/run/run_benchmark.sh eval --model qwen3_8b --benchmark tau2_bench
 ```
 
 Set `EVAL_STEP` in `configs/local.env` to select a specific completed update.
-The [all-configuration example](../../docs/benchmarks.md#running-all-configurations)
+The [all-configuration example](../benchmarks.md#running-all-configurations)
 covers the 12 training runs and 15 evaluations.
