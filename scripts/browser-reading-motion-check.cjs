@@ -42,8 +42,11 @@ const BASE=process.env.BASE_URL||'http://127.0.0.1:18775/';
    assert.ok(times.length&&times.every(t=>t<500),selector+' replay');
   }
   for(const story of ['repair','distill']){
-   const figure=p.locator(`[data-story=${story}]`);await figure.scrollIntoViewIfNeeded();await p.waitForTimeout(4600);
+   const figure=p.locator(`[data-story=${story}]`);await figure.scrollIntoViewIfNeeded();await p.waitForTimeout(1800);
    assert.equal(await figure.getAttribute('data-stage'),'1');
+   const last=story==='repair'?4:3;await figure.locator('.am-steps button').nth(last).click();await figure.locator('.am-play').click();
+   await p.waitForTimeout(2100);assert.equal(await figure.getAttribute('data-stage'),String(last),'completed diagram holds longer than intermediate steps');
+   await p.waitForTimeout(2900);assert.equal(await figure.getAttribute('data-stage'),'0','loop resumes after the final hold');
    await p.evaluate(()=>scrollTo(0,0));await p.waitForTimeout(100);await figure.scrollIntoViewIfNeeded();await p.waitForTimeout(150);
    assert.equal(await figure.getAttribute('data-stage'),'0');
    await figure.locator('.am-steps button').nth(2).click();await p.evaluate(()=>scrollTo(0,0));await p.waitForTimeout(100);await figure.scrollIntoViewIfNeeded();await p.waitForTimeout(100);

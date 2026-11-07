@@ -176,7 +176,9 @@ window.ArticleMotion = (() => {
     const controls=el('div','am-steps');controls.setAttribute('role','group');controls.setAttribute('aria-label',title+'：逐步查看');
     const steps=stories[kind],buttons=steps.map(([label],i)=>{const b=el('button','',label);b.type='button';b.setAttribute('aria-label',`第 ${i+1} 步：${label}`);b.append(el('span','am-step-progress'));controls.append(b);return b;});
     const caption=el('figcaption','am-caption');const counter=el('span','am-counter'),copy=el('span');caption.append(counter,copy);figure.append(controls,caption);
-    const reduced=matchMedia('(prefers-reduced-motion: reduce)'),phaseMs=4400,total=phaseMs*steps.length;
+    // Move briskly through the explanation, then hold the completed diagram.
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)'),phaseMs=1600,lastHoldMs=4800;
+    const total=(steps.length-1)*phaseMs+lastHoldMs;
     let elapsed=reduced.matches?(steps.length-1)*phaseMs:0,playing=!reduced.matches,visible=false,frame=0,previous=0,current=-1;
     const reveals=[...stage.querySelectorAll('[data-enter]')];
     function paint() {
@@ -187,7 +189,8 @@ window.ArticleMotion = (() => {
         buttons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)));
         counter.textContent=String(index+1).padStart(2,'0');copy.textContent=steps[index][1];
       }
-      figure.style.setProperty('--am-progress',(elapsed%phaseMs)/phaseMs);
+      const duration=index===steps.length-1?lastHoldMs:phaseMs;
+      figure.style.setProperty('--am-progress',(elapsed-index*phaseMs)/duration);
     }
     function tick(now){if(previous)elapsed=(elapsed+now-previous)%total;previous=now;paint();frame=requestAnimationFrame(tick);}
     function sync(){

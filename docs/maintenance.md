@@ -262,3 +262,23 @@ removed. The homepage benchmark now contains only its shipped grouped chart and 
 same CSV as the article. Unused prototype chart modes and the redundant W4A16 JSON projection
 are removed. Legacy page redirects remain so existing article/case links continue to work.
 The release checker rejects unregistered demo directories and unused or missing screenshots.
+
+
+### Editing the Chinese article
+
+Edit `content/article/post.zh.json`: `post.title` / `titleLines` set the heading,
+`post.intro` sets the TL;DR, and each section's `title`, `navTitle`, and paragraph
+`html` fields set the main text and contents labels. Paragraph HTML accepts inline
+`<strong>`, `<code>`, and links. Keep JSON string quoting valid. `note.text` is the
+complete endnote and optional `note.aside` is its shorter desktop version. Keep section
+IDs stable for existing chapter links.
+
+`content/article/cases.zh.json` owns the four embedded case excerpts. Shared animation
+labels/captions live in `site/article-motion.js`. Its intermediate stages last 1.6 s,
+and the final stage holds for 4.8 s before repeating; progress uses each stage's own duration.
+
+After editing, run `node scripts/build-pages.mjs`, then `python3 scripts/check-release.py`.
+Preview with `python3 scripts/serve.py` and open `/article/?lang=zh`; if the preview is
+already running, rebuild and refresh. Generated `index.html` and `article/index.html`
+are outputs, not editing sources. Committing and pushing the website branch publishes
+both entry points together.
