@@ -1,7 +1,0 @@
-{
-  "input_tokens": 14115,
-  "context_limit": 65536,
-  "requested_output_tokens": 8192,
-  "available_output_tokens": 51405,
-  "input_truncated": false
-}

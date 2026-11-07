@@ -1,5 +1,0 @@
-{
-  "role": "assistant",
-  "content": "<think>\n</think>\n\n\nThe file 'project_plan.md' was not found in the current directory. Please verify the file exists and try again. If it's located elsewhere, provide the full path.",
-  "reasoning": "\n"
-}

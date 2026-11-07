@@ -1,6 +1,0 @@
-All steps completed:
-1. Found account ending in 4456 (ID: 3).
-2. Created virtual card (ID: 5).
-3. Set spending limit to 2000.00.
-4. Set status to 'active'.
-5. Configured card controls to restrict international transactions to 'US' and 'CA'.

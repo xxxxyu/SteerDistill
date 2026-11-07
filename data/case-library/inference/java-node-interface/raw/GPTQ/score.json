@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-java-rerun-20261026/scoring/wave_016/GPTQ/scores/agentfly_custom/non_live/BFCL_v4_simple_java_score.json",
+  "score_file": "/redacted/steerdistill-java-rerun-20261026/scoring/wave_016/GPTQ/scores/agentfly_custom/non_live/BFCL_v4_simple_java_score.json",
   "header": {
     "accuracy": 0.0,
     "correct_count": 0,
@@ -71,7 +71,7 @@
       }
     ]
   },
-  "source_dir": "/mnt/genming/steerdistill-java-rerun-20261026/methods/GPTQ/tasks/simple_java_39/samples/trial_16",
+  "source_dir": "/redacted/steerdistill-java-rerun-20261026/methods/GPTQ/tasks/simple_java_39/samples/trial_16",
   "trial_index": 16,
   "missing_list_tools": false,
   "turn_limited": false,

@@ -196,20 +196,6 @@
         "format": "auto"
       },
       {
-        "id": "checksums",
-        "label": "文件校验和",
-        "url": "data/case-library/recovery/create-before-write/raw/checksums.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "README",
-        "label": "归档说明",
-        "url": "data/case-library/recovery/create-before-write/raw/README.txt",
-        "primary": false,
-        "format": "text"
-      },
-      {
         "id": "publication-manifest",
         "label": "文件清单与校验值",
         "url": "data/case-library/recovery/create-before-write/manifest.json",

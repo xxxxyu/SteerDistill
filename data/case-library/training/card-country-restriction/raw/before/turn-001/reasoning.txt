@@ -1,2 +1,0 @@
-The card is created, updated with a spending limit of 2000.00, set to 'active', and card controls are configured to allow international transactions but only in 'US' and 'CA'.
-I have completed the task.

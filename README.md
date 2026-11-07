@@ -1,26 +1,42 @@
-# SteerDistill
+# SteerDistill website
 
 Research website for **SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering**.
 
-- Website: https://xxxxyu.github.io/SteerDistill/
-- Project homepage (English / Chinese): `index.html?lang=en` / `index.html?lang=zh` (including four interactive task replays at `#demo`)
-- Chinese research article: `article.html`
-- Full cases (Chinese / English): `design-lab/paper-cases.html?lang=zh` / `design-lab/paper-cases.html?lang=en`
-- Raw-record reader: `design-lab/case-records.html`
+[Website](https://xxxxyu.github.io/SteerDistill/) · [Project code](https://github.com/xxxxyu/SteerDistill)
 
-This is a static site with local fonts. A small Node script generates the four entry pages from shared templates; hosting needs no build server. To preview:
+This checkout serves the website only. It includes the bilingual homepage,
+four interactive GUI task replays, the Chinese research article, and 19
+reviewed bilingual cases: 5 training corrections/guidance comparisons, 9
+inference comparisons, and 5 autonomous recoveries. Each case links to its
+sanitized source records and a self-contained ZIP download.
 
-```sh
+## Preview and maintain
+
+Use Node.js 20+ and Python 3.10+. No package installation or framework server is needed.
+
+```bash
 node scripts/build-pages.mjs
 python3 -m http.server 18775
 ```
 
-Open `http://localhost:18775/`. The release source branch is `codex/steerdistill-site` in `xxxxyu/SteerDistill`; GitHub Pages publishes the repository root. Links and data requests also support the `/SteerDistill/` project prefix; the former `design-lab/p2.html` entry redirects to the homepage.
+Open [the local preview](http://localhost:18775/). The four maintained entry points are:
 
-The collection currently includes 19 reviewed cases: 5 training corrections (including guidance comparisons), 9 inference comparisons, and 5 autonomous recoveries. The research article presents four concise examples; full case pages retain method comparisons, reasoning, guidance, and links to original records. Archived raw data is preserved for future case review and expansion.
+- `index.html?lang=en` / `index.html?lang=zh`: homepage, results, and GUI replays.
+- `article.html`: Chinese article, also reached by scrolling below the homepage.
+- `design-lab/paper-cases.html?lang=en` / `?lang=zh`: full case collection.
+- `design-lab/case-records.html`: source reader linked from each case.
 
-See [site maintenance](docs/site-maintenance/README.md) for the source map, validation, and editorial interfaces. This repository contains the website only. Training and evaluation implementation is maintained in [ustccuigm/bitdistill](https://github.com/ustccuigm/bitdistill).
+The current development branch is `codex/case-expansion-20261104`. GitHub Pages
+can serve this checkout's root under `/SteerDistill/`; hosting needs no build
+server. The former `design-lab/p2.html` URL redirects to the homepage.
 
-Code is distributed under the [MIT license](LICENSE). Visual reference and font licenses are listed in [third-party notices](THIRD-PARTY-NOTICES.txt).
+Run `python3 scripts/check-release.py` before publication. See
+[maintenance](docs/maintenance.md) for the source map, build commands, and
+verification scope, and [case evidence](data/case-library/README.md) for the
+sanitization policy. All assets required by the pages are in this checkout.
+Unselected experiments and candidate case banks are excluded.
 
-Published case sources, hashes, and per-case downloads are indexed in [the case library](data/case-library/README.md). Run `python3 scripts/case-library.py --check` to verify the source inventory and archives.
+Paper and checkpoint URLs will be added when available.
+
+Code is distributed under the [MIT license](LICENSE). Layout references and
+font licenses are listed in [third-party notices](THIRD-PARTY-NOTICES.txt).

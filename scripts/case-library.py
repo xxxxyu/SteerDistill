@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Package or verify the publication case library without rewriting source records."""
+"""Package or verify sanitized evidence for the cases displayed on this site."""
 import argparse
 import hashlib
 import json
@@ -76,17 +76,17 @@ def run(package=False):
                     assert digest(z.read('raw/' + f['path'])) == f['sha256'], f'Archive differs: {archive}'
             cases.append(dict(id=entry['id'], code=entry['code'], kind=group['id'], section=entry.get('section'),
                               title=entry['title'], root=str(case_root.relative_to(SITE)),
-                              originalRoot=manifest['originalRoot'], files=len(files),
+                              files=len(files),
                               sourceBytes=sum(f['bytes'] for f in files),
                               download=str(archive.relative_to(SITE)), archiveBytes=archive.stat().st_size,
                               archiveSha256=digest(archive.read_bytes())))
             file_count += len(files)
-    index = dict(schemaVersion=1, cases=cases)
+    index = dict(schemaVersion=2, recordScope='Sanitized publication evidence', cases=cases)
     if package:
         write(LIBRARY / 'index.json', index)
     else:
         assert read(LIBRARY / 'index.json') == index, 'Library index is stale; review then run --package'
-    print(f'PASS: {len(cases)} cases, {file_count} unchanged source files, {len(cases)} verified archives')
+    print(f'PASS: {len(cases)} cases, {file_count} sanitized evidence files, {len(cases)} verified archives')
 
 
 if __name__ == '__main__':

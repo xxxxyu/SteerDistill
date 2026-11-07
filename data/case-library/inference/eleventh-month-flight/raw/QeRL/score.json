@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/scoring/wave_11009/QeRL/scores/agentfly_custom/multi_turn/BFCL_v4_multi_turn_miss_param_score.json",
+  "score_file": "/redacted/steerdistill-case-studies-20261017/reevaluation/scoring/wave_11009/QeRL/scores/agentfly_custom/multi_turn/BFCL_v4_multi_turn_miss_param_score.json",
   "header": {
     "accuracy": 0.14285714285714285,
     "correct_count": 1,
@@ -278,7 +278,7 @@
     ],
     "inference_log": ""
   },
-  "source_dir": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/methods/QeRL/tasks/multi_turn_miss_param_152",
+  "source_dir": "/redacted/steerdistill-case-studies-20261017/reevaluation/methods/QeRL/tasks/multi_turn_miss_param_152",
   "trial_index": 0,
   "missing_list_tools": false,
   "turn_limited": false,

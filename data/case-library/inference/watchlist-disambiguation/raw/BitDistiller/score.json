@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/scoring/wave_30021/BitDistiller/scores/agentfly_custom/multi_turn/BFCL_v4_multi_turn_miss_param_score.json",
+  "score_file": "/redacted/steerdistill-case-studies-20261017/reevaluation/scoring/wave_30021/BitDistiller/scores/agentfly_custom/multi_turn/BFCL_v4_multi_turn_miss_param_score.json",
   "header": {
     "accuracy": 0.0,
     "correct_count": 0,
@@ -562,7 +562,7 @@
     ],
     "inference_log": ""
   },
-  "source_dir": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/methods/BitDistiller/tasks/multi_turn_miss_param_117/samples/trial_02",
+  "source_dir": "/redacted/steerdistill-case-studies-20261017/reevaluation/methods/BitDistiller/tasks/multi_turn_miss_param_117/samples/trial_02",
   "trial_index": 2,
   "missing_list_tools": false,
   "turn_limited": false,

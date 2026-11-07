@@ -1,6 +1,0 @@
-{
-  "source": "/mnt/genming/ablation-bfcl-discovery-20261104/cases/multi_turn_base_27/teacher/attempt-0/turn-005/response.json",
-  "source_sha256": "24f7ced38d2fc3c8d6ba36c34c0140c96a543c80b8f1f46893a5453eeae659f8",
-  "fixed_teacher_suffix_reexecution": true,
-  "fresh_generation": false
-}

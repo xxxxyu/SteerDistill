@@ -19,14 +19,14 @@
     "/presentation/methods/6/description": "Lists the available tools, then calls the factorial tool for 5, 7 and 9.",
     "/presentation/methods/6/outcomes/0": "Generates a correct call for each of 5, 7 and 9.",
     "/presentation/turns/0/label": "Tool discovery and calls",
-    "/records/sources/6/label": "BF16 · Trajectory",
-    "/records/sources/13/label": "BitDistiller · Trajectory",
-    "/records/sources/20/label": "EfficientQAT · Trajectory",
-    "/records/sources/27/label": "GPTQ · Trajectory",
-    "/records/sources/34/label": "On-Policy QAD · Trajectory",
-    "/records/sources/41/label": "SteerDistill · Trajectory",
-    "/records/sources/48/label": "QeRL · Trajectory",
-    "/records/sources/52/label": "File inventory and checksums",
+    "/records/sources/5/label": "BF16 · Trajectory",
+    "/records/sources/11/label": "BitDistiller · Trajectory",
+    "/records/sources/17/label": "EfficientQAT · Trajectory",
+    "/records/sources/23/label": "GPTQ · Trajectory",
+    "/records/sources/29/label": "On-Policy QAD · Trajectory",
+    "/records/sources/35/label": "SteerDistill · Trajectory",
+    "/records/sources/41/label": "QeRL · Trajectory",
+    "/records/sources/44/label": "File inventory and checksums",
     "/records/download/label": "Download full records",
     "/presentation/methods/0/turns/0/0/result": "math.factorial (excerpt)",
     "/presentation/methods/1/turns/0/0/result": "math.factorial (excerpt)",
@@ -252,5 +252,5 @@
       "reason": "Only the editor-added excerpt marker is translated; the tool name math.factorial is unchanged."
     }
   ],
-  "sourceSha256": "75d988d2bb3e5a33aba0f8a17b1ebb50599245f5b3a36daa2e97d1e3d60b7439"
+  "sourceSha256": "858265119b455b1af88be7da354da7be05e3246b45f55882c9835e3c2751010a"
 }

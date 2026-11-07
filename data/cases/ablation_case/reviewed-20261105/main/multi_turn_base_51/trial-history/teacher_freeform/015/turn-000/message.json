@@ -1,5 +1,0 @@
-{
-  "role": "assistant",
-  "content": "<think>\n</think>\n\n\nThe current door status indicates that all doors (driver, passenger, rear left, rear right) are **unlocked**. To secure the vehicle, I recommend locking the doors immediately. Would you like me to perform that action now?\n\nIf yes, I’ll use the `mcp_tool_lockDoors` function with `unlock=false` to lock all doors.  \nIf no, please confirm your preference.",
-  "reasoning": "\n"
-}

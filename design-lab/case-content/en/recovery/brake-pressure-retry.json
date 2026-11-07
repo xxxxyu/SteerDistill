@@ -16,9 +16,7 @@
     "/records/sources/2/label": "Recovery and subsequent trajectory",
     "/records/sources/3/label": "Category scores and failure records",
     "/records/sources/4/label": "Source and verification index",
-    "/records/sources/5/label": "File checksums",
-    "/records/sources/6/label": "Original data package notes",
-    "/records/sources/7/label": "File inventory and checksums",
+    "/records/sources/5/label": "File inventory and checksums",
     "/records/download/label": "Download full records",
     "/presentation/steps/1/reasoning/0/context": "Before pressing the brake",
     "/presentation/steps/1/reasoning/1/context": "Before retrying the engine"
@@ -89,5 +87,5 @@
       "reason": "Original reasoning excerpt and its annotation/source mapping remain unchanged; only the display title is translated."
     }
   ],
-  "sourceSha256": "920c6225d7e5ba99d1c7cbb2210ddc045834b49eb69b0b11c15453e25ceb3213"
+  "sourceSha256": "c19c116e33faaeea791a00eab3703f8eb316f391fd8ade086e8e36edf032ae4f"
 }

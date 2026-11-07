@@ -1,6 +1,6 @@
 {
   "label": "bf16",
-  "model": "/mnt/genming/models/brownie-qwen3-vl-8b-0517-compatible",
+  "model": "/redacted/models/brownie-qwen3-vl-8b-0517-compatible",
   "teacher_guidance": false,
   "artifact_role": "benchmark_evaluation",
   "tasks": [

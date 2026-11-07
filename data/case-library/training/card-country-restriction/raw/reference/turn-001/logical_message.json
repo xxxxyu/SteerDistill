@@ -1,9 +1,0 @@
-{
-  "role": "assistant",
-  "content": "I have successfully activated your new virtual debit card. Here are the details:\n\n- **Account**: Checking account ending in '4456' (ID: 3)\n- **Card ID**: 5 (Virtual Visa)\n- **Status**: Active\n- **Monthly Spending Limit**: 2000.00 USD\n- **Card Controls**: International transactions are restricted to 'US' and 'CA'.",
-  "refusal": null,
-  "annotations": null,
-  "audio": null,
-  "function_call": null,
-  "reasoning": "All steps completed:\n1. Found account ending in 4456 (ID: 3).\n2. Created virtual card (ID: 5).\n3. Set spending limit to 2000.00.\n4. Set status to 'active'.\n5. Configured card controls to restrict international transactions to 'US' and 'CA'."
-}

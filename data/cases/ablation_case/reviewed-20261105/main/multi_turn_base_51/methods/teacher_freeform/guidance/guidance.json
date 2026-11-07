@@ -1,4 +1,0 @@
-{
-  "text": "\n\n<tool_call>\n{\"name\": \"call_tool\", \"arguments\": {\"tool_name\": \"mcp_tool_lockDoors\", \"arguments\": \"{\\\"unlock\\\": false, \\\"door\\\": [\\\"driver\\\", \\\"passenger\\\", \\\"rear_left\\\", \\\"rear_right\\\"]}\"}}\n</tool_call>",
-  "variant": "teacher_freeform"
-}

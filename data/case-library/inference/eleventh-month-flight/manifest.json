@@ -1,8 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "eleventh-month-flight",
   "kind": "inference",
-  "originalRoot": "data/cases/032_multi_turn_miss_param_152",
+  "recordScope": "Sanitized publication evidence for the displayed case; transport logs, database dumps and import archives excluded.",
+  "sanitization": {
+    "version": 1,
+    "machinePaths": "Experiment host and user roots replaced with /redacted; simulated task paths preserved.",
+    "taskData": "Benchmark-provided simulated users, credentials and tool arguments retained as task evidence."
+  },
   "files": [
     {
       "path": "BF16/actions.json",
@@ -20,19 +25,14 @@
       "sha256": "e970a976a82ab540f374c6ed6dbedfcacfb69d2777958a589728c46c8e9d8cff"
     },
     {
-      "path": "BF16/request_metadata.json",
-      "bytes": 2519,
-      "sha256": "71d3f7c526d08872ed7a2b44d905c422c95e170cc1df48e1c0c25a62f011f579"
-    },
-    {
       "path": "BF16/result.json",
       "bytes": 1286,
       "sha256": "b1ca0aa1687be08796db95cb1167e73ea498f5a01d208973963825d789aa3faf"
     },
     {
       "path": "BF16/score.json",
-      "bytes": 547,
-      "sha256": "bf7c7337eb5ee37af1cc24c5c5c91b3dd96a904ab87ff09e381ddb7362ff34e5"
+      "bytes": 541,
+      "sha256": "0e75d1d1df9cddbef292d450e8b85541485b280812fc47b16d7017765bc964bc"
     },
     {
       "path": "BF16/trajectory.json",
@@ -55,19 +55,14 @@
       "sha256": "e48a1677f3116a38683c1270e1434427659967afa03c1bc94f169913c695eb3f"
     },
     {
-      "path": "BitDistiller/request_metadata.json",
-      "bytes": 3259,
-      "sha256": "73a4671c426cf03c83ac5ddc21391e712ab33226a5dc39b4abf3a0e4cf1c4e51"
-    },
-    {
       "path": "BitDistiller/result.json",
       "bytes": 1383,
       "sha256": "d411f39995acbae978412efeed238f1f0db1fd23e232eb78f6001c4c8794e654"
     },
     {
       "path": "BitDistiller/score.json",
-      "bytes": 11461,
-      "sha256": "6b58617ee7fd89eaf291cd0219bf8894ef740e5ecefac2889e48a56247132962"
+      "bytes": 11455,
+      "sha256": "5fff461b63df8c6b5723a4baa34c35483f2ca1d4e36d13ed192b12f09499fe39"
     },
     {
       "path": "BitDistiller/trajectory.json",
@@ -90,19 +85,14 @@
       "sha256": "ab0fbcbc3316334d204c0cf2d448a06748e2961219b582902212e1fecd03c3c2"
     },
     {
-      "path": "EfficientQAT/request_metadata.json",
-      "bytes": 2522,
-      "sha256": "16a0e6055e172892c339339a05fecbc45ed66d1526a8930e4715ad975c2f404d"
-    },
-    {
       "path": "EfficientQAT/result.json",
       "bytes": 773,
       "sha256": "761eb481707c7deeabf2f561817537eab6411489150816e5f63b8c89e6479ceb"
     },
     {
       "path": "EfficientQAT/score.json",
-      "bytes": 9707,
-      "sha256": "3fce4e6d6e028dc977aa52a99b949f451d4615c0dc3cd12043c81b2262fd0459"
+      "bytes": 9701,
+      "sha256": "de2423a48d02bdfc7990cf1986cccc9481016659de0d33b619c2a2245b177e2a"
     },
     {
       "path": "EfficientQAT/trajectory.json",
@@ -125,19 +115,14 @@
       "sha256": "e6c5a3910c650004e234d75811a1ba675d85cb4aaaefc751fdabfb85d3f1954d"
     },
     {
-      "path": "GPTQ/request_metadata.json",
-      "bytes": 3362,
-      "sha256": "46800d2380facfe1cd00db897142e8ae14252515e9c761fcc5eeb977ed51ec21"
-    },
-    {
       "path": "GPTQ/result.json",
       "bytes": 1325,
       "sha256": "5de91fcc7deafbf826e924aa399e7dbf5efa1e465455c4f67da7161fd27f5265"
     },
     {
       "path": "GPTQ/score.json",
-      "bytes": 8283,
-      "sha256": "f09c571e8fcdc7ef0f6bd726c076c84b5f87e1d28ab8c0415306f3d76beabfad"
+      "bytes": 8277,
+      "sha256": "6e62c49b6140d5a466b88daa6f75da08925af4aaedbb90c713c23747015a237b"
     },
     {
       "path": "GPTQ/trajectory.json",
@@ -160,19 +145,14 @@
       "sha256": "c215351dc21cf34bf3a72f83ef6f91c0c9c2298dce45847edf83d1e637f0e9cf"
     },
     {
-      "path": "On-Policy QAD/request_metadata.json",
-      "bytes": 1631,
-      "sha256": "463bcad2d01a0b276e1d9ce87accbb48a21697647c19721daba445a76c3e0a97"
-    },
-    {
       "path": "On-Policy QAD/result.json",
       "bytes": 657,
       "sha256": "845fee9ac33c3c40635d7422a99b5a490f16441936636903e4f20711d760cb68"
     },
     {
       "path": "On-Policy QAD/score.json",
-      "bytes": 8695,
-      "sha256": "6214f7286523efa13da9d3bd7fc0aae3e89b420c7ee92688040bf07864992b3c"
+      "bytes": 8689,
+      "sha256": "82b5abb77b101a4db6f9d0471b9cb31629753c185dc8759e8b0482167b755c2f"
     },
     {
       "path": "On-Policy QAD/trajectory.json",
@@ -195,19 +175,14 @@
       "sha256": "f3133ea7baf66d562004a1ffcb552842d321a2ad20353d30ab75f49b8d05c071"
     },
     {
-      "path": "Ours/request_metadata.json",
-      "bytes": 2732,
-      "sha256": "92bdf53f3947f2350765dfa4de5ca9cf1dd736303d4e7b5ecb6a8e4ca8870bb5"
-    },
-    {
       "path": "Ours/result.json",
       "bytes": 881,
       "sha256": "b911b8188221ccd75c056bf936458bbb7801b55347de51733cb094a939d5f99a"
     },
     {
       "path": "Ours/score.json",
-      "bytes": 565,
-      "sha256": "ea3e138b853ca495d4dbee04bf9676db25f44350174eabeb4b486ce7b9f406ca"
+      "bytes": 559,
+      "sha256": "371e16332ff510604a15ba6a89d4ab5ee04307f084c9d861ff285d5b8a0954cf"
     },
     {
       "path": "Ours/trajectory.json",
@@ -230,19 +205,14 @@
       "sha256": "bb2337da60a6f0dc4206d0a5d33b9dce8f6ab3b58d930646cfc528e0f05630c0"
     },
     {
-      "path": "QeRL/request_metadata.json",
-      "bytes": 1927,
-      "sha256": "6d9bbc51d7e651f7442da9558b10e7e0cb567934a9c44cf65e2209dc885c9ee2"
-    },
-    {
       "path": "QeRL/result.json",
       "bytes": 882,
       "sha256": "502a850b578608ae33016bcbdf8b7eb2ba0812bf6d12295d1835fbd7b8ba900d"
     },
     {
       "path": "QeRL/score.json",
-      "bytes": 10012,
-      "sha256": "1fc6b2049c938491b44e47a95046fdd257dbb3dd86398beead9dfc1a4ff2fbc5"
+      "bytes": 10006,
+      "sha256": "577ec5e9f567115f6b2099112ac03986a1e1d5df5679e34a7437d796c164a85d"
     },
     {
       "path": "QeRL/trajectory.json",
@@ -258,16 +228,6 @@
       "path": "ground_truth.json",
       "bytes": 642,
       "sha256": "7928214ead843f8c4362c700403372105ce985a1a04c2d5a07acefa457b2f1d8"
-    },
-    {
-      "path": "provenance.json",
-      "bytes": 2699,
-      "sha256": "a7842785a067bf27b8d17135a310c6b4ee6e0cce1ed6bbc1077b963d9a82ee93"
-    },
-    {
-      "path": "summary.md",
-      "bytes": 28527,
-      "sha256": "521f21d2fa0076f9a44a132d61052a8b17ecc9c89c09c8fff6a178872f9e337d"
     },
     {
       "path": "task.json",

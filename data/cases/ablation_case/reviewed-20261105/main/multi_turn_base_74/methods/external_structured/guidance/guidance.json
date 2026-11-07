@@ -1,6 +1,0 @@
-{
-  "text": "{\"decision_rule\":\"Call `call_tool` once with `tool_name` set to `mcp_tool_fillFuelTank` and `arguments` set to the JSON string `{\\\"fuelAmount\\\":10.04}`; do not repeat the conversion or claim completion before this call succeeds.\",\"expected_transition\":\"The refill adds 10.04 gallons, changing `VehicleControlAPI.attributes.fuelLevel` from 10.0 to 20.04 while leaving the other vehicle attributes unchanged.\",\"precondition\":\"The required tool list has already been retrieved, and 38 liters has already been converted to 10.038536 gallons and rounded to the requested two-decimal amount, 10.04 gallons. The tank has not yet been refilled and its current fuel level is 10.0.\",\"recovery_check\":\"Verify that the tool response is `{\\\"fuelLevel\\\":20.04}`; then continue normally without repeating this correction.\"}",
-  "variant": "external_structured",
-  "actual_model_generation": true,
-  "evidence_sha256": "2428e41994d924458ea7ed193e66bc48487b70fa43c8607c78da6239fce0eb12"
-}

@@ -17,14 +17,14 @@
     "/presentation/turns/1/title": "Which file is second",
     "/presentation/turns/1/summary": "The user asks for system order, excluding hidden files.",
     "/presentation/turns/2/title": "Read the first file",
-    "/records/sources/6/label": "BF16 · Trajectory",
-    "/records/sources/13/label": "BitDistiller · Trajectory",
-    "/records/sources/20/label": "EfficientQAT · Trajectory",
-    "/records/sources/27/label": "GPTQ · Trajectory",
-    "/records/sources/34/label": "On-Policy QAD · Trajectory",
-    "/records/sources/41/label": "SteerDistill · Trajectory",
-    "/records/sources/48/label": "QeRL · Trajectory",
-    "/records/sources/54/label": "File inventory and checksums",
+    "/records/sources/5/label": "BF16 · Trajectory",
+    "/records/sources/11/label": "BitDistiller · Trajectory",
+    "/records/sources/17/label": "EfficientQAT · Trajectory",
+    "/records/sources/23/label": "GPTQ · Trajectory",
+    "/records/sources/29/label": "On-Policy QAD · Trajectory",
+    "/records/sources/35/label": "SteerDistill · Trajectory",
+    "/records/sources/41/label": "QeRL · Trajectory",
+    "/records/sources/45/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -601,5 +601,5 @@
       "reason": "Original tool call, returned excerpt or agent reply remains unchanged."
     }
   ],
-  "sourceSha256": "9d2022710f0a9740cde9e0ad3762d287042583a9863fa29dab8f598a9a94e271"
+  "sourceSha256": "bff29ca70e6127c85b19f38f75659a9061495702f47ce2aea2d2b36461f14623"
 }

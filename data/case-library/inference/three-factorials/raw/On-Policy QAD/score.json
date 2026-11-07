@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-appendix-selected-20261026/scoring/wave_000/On-Policy QAD/scores/agentfly_custom/non_live/BFCL_v4_parallel_score.json",
+  "score_file": "/redacted/steerdistill-appendix-selected-20261026/scoring/wave_000/On-Policy QAD/scores/agentfly_custom/non_live/BFCL_v4_parallel_score.json",
   "header": {
     "accuracy": 0.0,
     "correct_count": 0,
@@ -70,7 +70,7 @@
       }
     ]
   },
-  "source_dir": "/mnt/genming/steerdistill-appendix-selected-20261026/methods/On-Policy QAD/tasks/parallel_60",
+  "source_dir": "/redacted/steerdistill-appendix-selected-20261026/methods/On-Policy QAD/tasks/parallel_60",
   "trial_index": 0,
   "missing_list_tools": true,
   "turn_limited": false,

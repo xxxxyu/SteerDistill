@@ -1,8 +1,13 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "fuel-capacity",
   "kind": "recovery",
-  "originalRoot": "data/cases/recovery_case/multi_turn_miss_func_68",
+  "recordScope": "Sanitized publication evidence for the displayed case; transport logs, database dumps and import archives excluded.",
+  "sanitization": {
+    "version": 1,
+    "machinePaths": "Experiment host and user roots replaced with /redacted; simulated task paths preserved.",
+    "taskData": "Benchmark-provided simulated users, credentials and tool arguments retained as task evidence."
+  },
   "files": [
     {
       "path": "BF16/actions.json",
@@ -16,18 +21,13 @@
     },
     {
       "path": "BF16/done.json",
-      "bytes": 339,
-      "sha256": "511118e90dd5601627868cd912f1e7bb6013b59f80667aee398a88977d643445"
+      "bytes": 336,
+      "sha256": "7e55eeab87b52289a6477b4327456b29a028426b4566aa79b8b72da5e22fbea7"
     },
     {
       "path": "BF16/recovery_excerpt.json",
       "bytes": 3687,
       "sha256": "0409ce193a66edc09313ec91a65745f64257f97329f29222c7d00c7d74e17530"
-    },
-    {
-      "path": "BF16/request_metadata.json",
-      "bytes": 3,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
     },
     {
       "path": "BF16/result.json",
@@ -36,8 +36,8 @@
     },
     {
       "path": "BF16/score.json",
-      "bytes": 519,
-      "sha256": "9168b4d9c774ff6e79d611354233400d0b7fa8acd79570f5d6d9ae4c86251172"
+      "bytes": 513,
+      "sha256": "faa0ad296d1bd7ad9acba88bf6234a091771acbef376e5a32559e9947544eb5d"
     },
     {
       "path": "BF16/trajectory.json",
@@ -56,18 +56,13 @@
     },
     {
       "path": "Ours/done.json",
-      "bytes": 331,
-      "sha256": "42e56409e61b557620058dc5f828fe0fa1ca232931e204ef55049437f4565470"
+      "bytes": 328,
+      "sha256": "9214dc0b387037361b8734d760375e398490ddff8faadeb24d697e95cee7c394"
     },
     {
       "path": "Ours/recovery_excerpt.json",
       "bytes": 7700,
       "sha256": "d4fd236b94ab5eff7619881abe39d2d349e1c524a6b6aecb351ca4a069b93545"
-    },
-    {
-      "path": "Ours/request_metadata.json",
-      "bytes": 3,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
     },
     {
       "path": "Ours/result.json",
@@ -76,18 +71,13 @@
     },
     {
       "path": "Ours/score.json",
-      "bytes": 535,
-      "sha256": "a893a6b16d732cb350968efb50c1d2506a851e0a9ba877b0ebc4c6492e08dc72"
+      "bytes": 529,
+      "sha256": "c7b8cf0f130493359e9f9bb1e60cd11c77c59ea95751303be643b4555d0a07c2"
     },
     {
       "path": "Ours/trajectory.json",
       "bytes": 56829,
       "sha256": "82ca56d15ba7d7edde78398cc46f1b1d6091a7b93ec679b9f15d95e496873cf5"
-    },
-    {
-      "path": "SUMMARY.md",
-      "bytes": 2097,
-      "sha256": "db74cea1c24c4a1f663d847706c2e695b61f4c2ebe86408dbe77367ae5be28cc"
     },
     {
       "path": "analysis.json",

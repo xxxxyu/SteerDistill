@@ -12,14 +12,14 @@
     "/presentation/methods/5/description": "Checks the fare and books for December.",
     "/presentation/methods/6/description": "Checks the fare and books for November.",
     "/presentation/turns/0/label": "First-turn actions · Excerpts",
-    "/records/sources/6/label": "BF16 · Trajectory",
-    "/records/sources/13/label": "BitDistiller · Trajectory",
-    "/records/sources/20/label": "EfficientQAT · Trajectory",
-    "/records/sources/27/label": "GPTQ · Trajectory",
-    "/records/sources/34/label": "On-Policy QAD · Trajectory",
-    "/records/sources/41/label": "SteerDistill · Trajectory",
-    "/records/sources/48/label": "QeRL · Trajectory",
-    "/records/sources/54/label": "File inventory and checksums",
+    "/records/sources/5/label": "BF16 · Trajectory",
+    "/records/sources/11/label": "BitDistiller · Trajectory",
+    "/records/sources/17/label": "EfficientQAT · Trajectory",
+    "/records/sources/23/label": "GPTQ · Trajectory",
+    "/records/sources/29/label": "On-Policy QAD · Trajectory",
+    "/records/sources/35/label": "SteerDistill · Trajectory",
+    "/records/sources/41/label": "QeRL · Trajectory",
+    "/records/sources/45/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -204,5 +204,5 @@
       "reason": "Original tool call, returned excerpt or agent reply remains unchanged."
     }
   ],
-  "sourceSha256": "5a5ec99c34ca72dd252c763e990bd21e4b557c48fe417cbbb7b9314733519930"
+  "sourceSha256": "94cad97599f13b0080960a2e91c42e62db5159f5dca9a76222a0ccfb143cf1a6"
 }

@@ -12,14 +12,14 @@
     "/presentation/methods/5/description": "Calls the museum tool without the required `museum_name`.",
     "/presentation/methods/6/description": "Chooses the Metropolitan Museum of Art and substitutes a museum query for the requested dancer search.",
     "/presentation/turns/0/label": "Actions and replies after inspecting the tool",
-    "/records/sources/6/label": "BF16 · Trajectory",
-    "/records/sources/13/label": "BitDistiller · Trajectory",
-    "/records/sources/20/label": "EfficientQAT · Trajectory",
-    "/records/sources/27/label": "GPTQ · Trajectory",
-    "/records/sources/34/label": "On-Policy QAD · Trajectory",
-    "/records/sources/41/label": "SteerDistill · Trajectory",
-    "/records/sources/48/label": "QeRL · Trajectory",
-    "/records/sources/54/label": "File inventory and checksums",
+    "/records/sources/5/label": "BF16 · Trajectory",
+    "/records/sources/11/label": "BitDistiller · Trajectory",
+    "/records/sources/17/label": "EfficientQAT · Trajectory",
+    "/records/sources/23/label": "GPTQ · Trajectory",
+    "/records/sources/29/label": "On-Policy QAD · Trajectory",
+    "/records/sources/35/label": "SteerDistill · Trajectory",
+    "/records/sources/41/label": "QeRL · Trajectory",
+    "/records/sources/45/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -124,5 +124,5 @@
       "reason": "Original tool call, returned excerpt or agent reply remains unchanged."
     }
   ],
-  "sourceSha256": "043fd1afe0be3f9a7412c4100a0bae1895c1134ea5cd3f1c57c9d08c56710f80"
+  "sourceSha256": "449860c6a673c6ad82b21602b0857a5b2849de968b9585d0b61280ada38e1749"
 }

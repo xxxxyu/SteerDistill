@@ -24,7 +24,7 @@
     "/records/sources/6/label": "Teacher · Guidance reasoning",
     "/records/sources/7/label": "Teacher · Original guidance",
     "/records/sources/8/label": "Full task and environment",
-    "/records/sources/120/label": "File inventory and checksums",
+    "/records/sources/17/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -61,5 +61,5 @@
       "reason": "Offsets and text refer to the unchanged reasoning excerpt."
     }
   ],
-  "sourceSha256": "49e2d417aa4ac4b6c98667ef37e1c00ffa09c82199c5cc790eb886d1edcc9430"
+  "sourceSha256": "fbc1c9dd7c7eca5b5a27adf493187b1b29f0de3c6c3c799bafccfdca366540b5"
 }

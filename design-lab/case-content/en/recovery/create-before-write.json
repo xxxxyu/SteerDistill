@@ -14,9 +14,7 @@
     "/records/sources/2/label": "Recovery excerpt · Original record",
     "/records/sources/3/label": "Continuation after recovery · Original record",
     "/records/sources/4/label": "Archived evidence metadata",
-    "/records/sources/5/label": "File checksums",
-    "/records/sources/6/label": "Archive notes",
-    "/records/sources/7/label": "File inventory and checksums",
+    "/records/sources/5/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -49,5 +47,5 @@
       "reason": "Recorded calls, arguments, tool returns, source references and highlight spans remain unchanged."
     }
   ],
-  "sourceSha256": "568ac056c357010c058d0516104b14a3773067cc01b64974fe82f40f15ff5558"
+  "sourceSha256": "906ed80b0a3a7aea720ded791faee98473bc6e8021b239ff735ce9dd77a76b03"
 }

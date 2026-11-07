@@ -355,13 +355,6 @@
         "format": "auto"
       },
       {
-        "id": "BF16/request_metadata.json",
-        "label": "BF16/request_metadata.json",
-        "url": "data/case-library/recovery/fuel-capacity/raw/BF16/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
         "url": "data/case-library/recovery/fuel-capacity/raw/BF16/result.json",
@@ -411,13 +404,6 @@
         "format": "auto"
       },
       {
-        "id": "Ours/request_metadata.json",
-        "label": "Ours/request_metadata.json",
-        "url": "data/case-library/recovery/fuel-capacity/raw/Ours/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
         "url": "data/case-library/recovery/fuel-capacity/raw/Ours/result.json",
@@ -436,13 +422,6 @@
         "label": "SteerDistill · 轨迹",
         "url": "data/case-library/recovery/fuel-capacity/raw/Ours/trajectory.json",
         "primary": true,
-        "format": "auto"
-      },
-      {
-        "id": "SUMMARY.md",
-        "label": "SUMMARY.md",
-        "url": "data/case-library/recovery/fuel-capacity/raw/SUMMARY.md",
-        "primary": false,
         "format": "auto"
       },
       {

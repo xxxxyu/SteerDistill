@@ -1,33 +1,23 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "brake-pressure-retry",
   "kind": "recovery",
-  "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_84",
+  "recordScope": "Sanitized publication evidence for the displayed case; transport logs, database dumps and import archives excluded.",
+  "sanitization": {
+    "version": 1,
+    "machinePaths": "Experiment host and user roots replaced with /redacted; simulated task paths preserved.",
+    "taskData": "Benchmark-provided simulated users, credentials and tool arguments retained as task evidence."
+  },
   "files": [
-    {
-      "path": "README.txt",
-      "bytes": 475,
-      "sha256": "91ccbe5b5acf842be72a84230a3f3cf8fd2c849e5d63198fe33597f7f618f0f3"
-    },
-    {
-      "path": "case_data.zip",
-      "bytes": 94939,
-      "sha256": "e9a3c68d13357435bf8d63db81f569a811e2efc8ef1518c2fd8eb0eccf9f56de"
-    },
     {
       "path": "category_score.jsonl",
       "bytes": 596475,
       "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
     },
     {
-      "path": "checksums.json",
-      "bytes": 546,
-      "sha256": "b7363b5ec01fbd9d5caa177229f849aaaf2a6d2499ee52624d68b07345b39a29"
-    },
-    {
       "path": "evidence.json",
-      "bytes": 734,
-      "sha256": "796253bed9b36447954642f7ae2f743b5beb1a438bac5c73daedc34f47e8f9ba"
+      "bytes": 731,
+      "sha256": "3c2ad1bb1e3c91d4b754033d785a7bf23f6f321d04d5acbdcb798529be5ee815"
     },
     {
       "path": "recovery_excerpt.json",

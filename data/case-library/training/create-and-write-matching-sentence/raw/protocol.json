@@ -1,8 +1,0 @@
-{
-  "pid": 60316,
-  "source": "/mnt/genming/new-ablation-pipeline-batch2-20261105/training/cases/multi_turn_base_37",
-  "reference": "/mnt/genming/new-ablation-pipeline-batch2-20261105/training/cases/multi_turn_base_37/reference/attempt-0",
-  "attempt_budget": 3,
-  "feedback_policy": "Only local gate failures. No final score, ground-truth answer, or prior continuation is fed to teacher. Stop retrying once local gate passes.",
-  "status": "running"
-}

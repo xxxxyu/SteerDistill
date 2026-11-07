@@ -1,6 +1,6 @@
 {
   "package": "SteerDistill-FourTasks-FullTrajectories-And-Media.zip",
-  "source": "nx:/mnt/genming/demo-readable-20261103/",
+  "source": "/redacted/demo-readable-20261103/",
   "sha256": "382f85303f19b430b71d21bf4bbde099cf9bad6a5b335c225389aefe5a2e7bd4",
   "selection": "First qualifying matched-repeat triple in experiment order for each task. Require student success, BF16 success, QAD failure, and student episode time lower than BF16. Post-hoc examples, not aggregate speed or reliability claims.",
   "timing": "Same perf_counter boundaries: first observation after reset and warmup through evaluator completion or 30-action cap; includes screenshot acquisition, generation, browser actions and waits. Excludes model loading, reset, warmup and recording export.",

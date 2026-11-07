@@ -12,14 +12,14 @@
     "/presentation/methods/5/description": "Makes the first call correctly, then changes the tool name in the second.",
     "/presentation/methods/6/description": "Uses the same tool for both science queries.",
     "/presentation/turns/0/label": "Two science queries · Excerpts",
-    "/records/sources/6/label": "BF16 · Trajectory",
-    "/records/sources/13/label": "BitDistiller · Trajectory",
-    "/records/sources/20/label": "EfficientQAT · Trajectory",
-    "/records/sources/27/label": "GPTQ · Trajectory",
-    "/records/sources/34/label": "On-Policy QAD · Trajectory",
-    "/records/sources/41/label": "SteerDistill · Trajectory",
-    "/records/sources/48/label": "QeRL · Trajectory",
-    "/records/sources/52/label": "File inventory and checksums",
+    "/records/sources/5/label": "BF16 · Trajectory",
+    "/records/sources/11/label": "BitDistiller · Trajectory",
+    "/records/sources/17/label": "EfficientQAT · Trajectory",
+    "/records/sources/23/label": "GPTQ · Trajectory",
+    "/records/sources/29/label": "On-Policy QAD · Trajectory",
+    "/records/sources/35/label": "SteerDistill · Trajectory",
+    "/records/sources/41/label": "QeRL · Trajectory",
+    "/records/sources/44/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -168,5 +168,5 @@
       "reason": "Original tool call, returned excerpt or agent reply remains unchanged."
     }
   ],
-  "sourceSha256": "39873700712304f2aa295e8a0e2ddc482193cd44a813412a0566d18a18d3091c"
+  "sourceSha256": "12df7ce68b055e3bb8fea9066224d7a9954204a72449e7a0326c693ba1f5be26"
 }

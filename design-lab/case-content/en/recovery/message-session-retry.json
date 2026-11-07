@@ -15,9 +15,7 @@
     "/records/sources/2/label": "Engine recovery excerpt · Original package file",
     "/records/sources/3/label": "Trajectory from engine recovery onward",
     "/records/sources/4/label": "Sources and verification evidence",
-    "/records/sources/5/label": "Original file checksums",
-    "/records/sources/6/label": "Original package notes",
-    "/records/sources/7/label": "File inventory and checksums",
+    "/records/sources/5/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -74,5 +72,5 @@
       "reason": "Original reasoning excerpt and its annotation/source mapping remain unchanged; only the display title is translated."
     }
   ],
-  "sourceSha256": "08fbd23b6b6f9f55c098f399da0bd2be409ab22f7db775c9acab29b1c3d71fac"
+  "sourceSha256": "474361802db01688c68d598d58d3c731a9ff64d39711ffcfca44c7723bb7a52f"
 }

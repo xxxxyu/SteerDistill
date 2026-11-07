@@ -12,11 +12,11 @@
     "/presentation/steps/2/reasoning/title": "Agent reasoning · Excerpt",
     "/presentation/reference/title": "BF16 · Check the fuel level first, then top up",
     "/presentation/reference/reasoning/title": "Agent reasoning · Excerpt",
-    "/records/sources/6/label": "BF16 · Task verification",
-    "/records/sources/7/label": "BF16 · Trajectory",
-    "/records/sources/14/label": "SteerDistill · Task verification",
-    "/records/sources/15/label": "SteerDistill · Trajectory",
-    "/records/sources/20/label": "File inventory and checksums",
+    "/records/sources/5/label": "BF16 · Task verification",
+    "/records/sources/6/label": "BF16 · Trajectory",
+    "/records/sources/12/label": "SteerDistill · Task verification",
+    "/records/sources/13/label": "SteerDistill · Trajectory",
+    "/records/sources/17/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -89,5 +89,5 @@
       "reason": "Original BF16 reasoning and its annotations/source mapping remain unchanged."
     }
   ],
-  "sourceSha256": "58f6ea7925d7c3b0761d6297f49d1fa98286e89f35504f37460e6761498a267d"
+  "sourceSha256": "7f50dc519a55cc482561d9bf60a20c103dde330d29aac558b934f866f78bb72a"
 }

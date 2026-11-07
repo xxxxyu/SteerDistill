@@ -1,4 +1,0 @@
-{
-  "text": "{\n\n\"precondition\": \"Current door status indicates all doors are unlocked.\",\n\"decision_rule\": \"Call mcp_tool_lockDoors with unlock=False and specify all doors (driver, passenger, rear_left, rear_right) to lock them.\",\n\"expected_transition\": \"All doors are successfully locked, confirmed by updated doorStatus.\",\n\"recovery_check\": \"Verify doorStatus after lock operation to ensure all doors are locked.\"\n}",
-  "variant": "student_structured"
-}

@@ -1,6 +1,6 @@
 {
   "label": "qad",
-  "model": "/mnt/genming/steerdistill-scalewob-runs/plain-qad-20261021/from-step-0002/awq-984fb2b1a1",
+  "model": "/redacted/steerdistill-scalewob-runs/plain-qad-20261021/from-step-0002/awq-984fb2b1a1",
   "teacher_guidance": false,
   "artifact_role": "benchmark_evaluation",
   "tasks": [

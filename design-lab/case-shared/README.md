@@ -29,7 +29,7 @@ Both formal case/record pages load `case-sidebar.js` and `case-sidebar.css`; the
 
 ## EvidenceUI
 
-All text is inserted through DOM text nodes. `prose(text)` interprets explicit backticks and fenced code only; ordinary quotes stay ordinary text. `markdown(text)` additionally handles headings, lists and bold for readable raw records. Raw-file views and download links should keep the original bytes.
+All text is inserted through DOM text nodes. `prose(text)` interprets explicit backticks and fenced code only; ordinary quotes stay ordinary text. `markdown(text)` additionally handles headings, lists and bold for readable raw records. Raw-file views and downloads must use the same sanitized public bytes as the case manifest.
 
 - `frame(title, body, {tone, code})`: shared label and evidence box; tone is empty, `before` or `after`. A string body uses prose, or a literal code block with `code: true`.
 - `actionSequence(events)`: call on one line, return on the next, 4px between events, no internal rules. `action(event)` and `reply(event)` are also available.
@@ -163,7 +163,7 @@ Within the formal case collection, ordinary case links keep the current document
 
 Catalog/config requests are deduplicated and retained only for the current document. They revalidate on a fresh page load so local editorial changes remain visible after Reload. Pointer/focus intent prefetches only the linked case's presentation JSON; raw trajectories and other records are never prefetched. A failed request is evicted. Sidebar/scroll geometry is kept while a destination loads, without an empty page, spinner or faded overlay.
 
-Run `node --test design-lab/case-shared/tests/collection-loading.test.cjs` for the real loader's in-flight/resolved cache reuse, failed-request retry and out-of-order navigation commit checks (small browser-shell stub). Browser QA on 2026-11-01 covered cross-category navigation, method selection with Back/Forward, dark theme persistence, narrow drawer/overflow, record preloads and return navigation; see [site maintenance](../../docs/site-maintenance/README.md).
+Run `node --test design-lab/case-shared/tests/collection-loading.test.cjs` for the real loader's in-flight/resolved cache reuse, failed-request retry and out-of-order navigation commit checks (small browser-shell stub). Browser QA on 2026-11-01 covered cross-category navigation, method selection with Back/Forward, dark theme persistence, narrow drawer/overflow, record preloads and return navigation; see [site maintenance](../../docs/maintenance.md).
 
 
 ## Sidebar visual hierarchy
@@ -181,7 +181,7 @@ Within the continuous rail, non-interactive reading-group labels use the site se
 
 `ArticleCaseRail.mount(container, {id, label, items, initial, stability: 'content'})` 是共享横向轨道；`items` 为 `{id, title, node}`，返回 `{element, position, destroy}`。支持触摸、触摸板、方法标题定位和键盘；尺寸变化后重新定位已选方法。正式正文使用 `content` 策略；历史实验页面已归档。
 
-展示数据中的 `href` 是站点相对路径，调用者通过 `SitePaths.url()` 解析，不能依赖宿主页面目录。正文数据在 `../article-content/cases.zh.json`；维护与验收见 [站点维护](../../docs/site-maintenance/README.md)。
+展示数据中的 `href` 是站点相对路径，调用者通过 `SitePaths.url()` 解析，不能依赖宿主页面目录。正文数据在 `../article-content/cases.zh.json`；维护与验收见 [站点维护](../../docs/maintenance.md)。
 
 ## Group aliases
 

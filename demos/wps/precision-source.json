@@ -1,7 +1,7 @@
 [
   {
     "method": "ours",
-    "source": "/mnt/genming/steerdistill-scalewob-runs/brownie-full-20261027/online/from-step-0006/awq-ff0cda28a8/config.json",
+    "source": "/redacted/steerdistill-scalewob-runs/brownie-full-20261027/online/from-step-0006/awq-ff0cda28a8/config.json",
     "dtype": "float16",
     "text_dtype": "bfloat16",
     "quant_method": "awq",
@@ -10,7 +10,7 @@
   },
   {
     "method": "qad",
-    "source": "/mnt/genming/steerdistill-scalewob-runs/plain-qad-20261021/from-step-0002/awq-984fb2b1a1/config.json",
+    "source": "/redacted/steerdistill-scalewob-runs/plain-qad-20261021/from-step-0002/awq-984fb2b1a1/config.json",
     "dtype": "float16",
     "text_dtype": "bfloat16",
     "quant_method": "awq",

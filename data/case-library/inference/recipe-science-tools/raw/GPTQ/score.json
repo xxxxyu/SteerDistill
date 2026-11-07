@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-paper-inference-stage-20261026/scoring/wave_001/GPTQ/scores/agentfly_custom/non_live/BFCL_v4_parallel_multiple_score.json",
+  "score_file": "/redacted/steerdistill-paper-inference-stage-20261026/scoring/wave_001/GPTQ/scores/agentfly_custom/non_live/BFCL_v4_parallel_multiple_score.json",
   "header": {
     "accuracy": 0.0,
     "correct_count": 0,
@@ -132,7 +132,7 @@
       }
     ]
   },
-  "source_dir": "/mnt/genming/steerdistill-paper-inference-stage-20261026/methods/GPTQ/tasks/parallel_multiple_198",
+  "source_dir": "/redacted/steerdistill-paper-inference-stage-20261026/methods/GPTQ/tasks/parallel_multiple_198",
   "trial_index": 0,
   "missing_list_tools": false,
   "turn_limited": false,

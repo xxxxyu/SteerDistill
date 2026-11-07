@@ -11,9 +11,9 @@
     "/presentation/steps/1/reasoning/title": "Agent reasoning · Excerpt",
     "/presentation/steps/2/title": "Add the remaining 35 gallons to fill the tank",
     "/presentation/steps/2/reasoning/title": "Agent reasoning · Excerpt",
-    "/records/sources/7/label": "BF16 · Trajectory",
-    "/records/sources/15/label": "SteerDistill · Trajectory",
-    "/records/sources/20/label": "File inventory and checksums",
+    "/records/sources/6/label": "BF16 · Trajectory",
+    "/records/sources/13/label": "SteerDistill · Trajectory",
+    "/records/sources/17/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -74,5 +74,5 @@
       "reason": "BF16 reference calls and tool returns remain verbatim."
     }
   ],
-  "sourceSha256": "cfff3f3c572d962d0034f3a396645eaee8a6d543fc297aadb830cb11d849d13c"
+  "sourceSha256": "a95bf9136532353137dc29deae297f420dd4ec7149ddd4b317e077a1a3d499d2"
 }

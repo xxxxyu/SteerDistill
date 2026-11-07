@@ -1,6 +1,6 @@
 # Formal case author contract · schemaVersion 1
 
-Authors write exactly one `case-content/<kind>/<slug>.json` and one editorial ledger under `docs/site-maintenance/cases/<kind>/<slug>.md`. Current kinds are `training`, `inference`, and `recovery`. Training includes `correction` (修正过程) and `guidance-comparison` (指导对照) sections. Do not change the registry, readers, shared assets or another author's case. An integration owner registers accepted JSON in `catalog.json`; loading a case never generates or rewrites its content.
+Authors maintain one `case-content/<kind>/<slug>.json` plus its reviewed English overlay. Keep private research ledgers outside the public site. Current kinds are `training`, `inference`, and `recovery`. Training includes `correction` (修正过程) and `guidance-comparison` (指导对照) sections. Do not change the registry, readers, shared assets or another author's case. An integration owner registers accepted JSON in `catalog.json`; loading a case never generates or rewrites its content.
 
 The single maintained component source is `design-lab/case-shared/`. Read the editorial SKILL and `case-shared/README.md`; follow the selection gate and review raw data before authoring. Existing case JSON is a composition reference, not evidence for a different task.
 
@@ -18,12 +18,12 @@ The single maintained component source is `design-lab/case-shared/`. Read the ed
   "records": {
     "defaultSource": "ours",
     "defaultMessage": 4,
-    "sources": [{"id": "ours", "label": "SteerDistill · 轨迹", "url": "data/cases/example/Ours/trajectory.json", "primary": true, "format": "auto"}]
+    "sources": [{"id": "ours", "label": "SteerDistill · 轨迹", "url": "data/case-library/inference/example/raw/Ours/trajectory.json", "primary": true, "format": "auto"}]
   }
 }
 ```
 
-All `url` / external-download `href` values are site-relative (`data/cases/...`, without a leading slash), or portable HTTPS URLs when needed. `SitePaths.url()` resolves these resource paths relative to the deployed site, including its project prefix. Do not rewrite filesystem paths inside raw records. Raw bytes stay in their original location; do not duplicate archives. IDs/slugs must be stable `[a-z0-9_-]+`. `title`/`summary` belong in the envelope only; no machine provenance or protocol boilerplate in the task summary.
+All `url` / external-download `href` values are site-relative (`data/case-library/...`, without a leading slash), or portable HTTPS URLs when needed. `SitePaths.url()` resolves these resource paths relative to the deployed site, including its project prefix. Preserve simulated task paths. Redact researcher machine paths before publication, consistently across displayed and downloadable records. IDs/slugs must be stable `[a-z0-9_-]+`. `title`/`summary` belong in the envelope only; no machine provenance or protocol boilerplate in the task summary.
 
 ## Titles and explicit case codes
 
@@ -125,6 +125,6 @@ A later comparison may support a displayed state match when the saved checkpoint
 
 ## Publication data library
 
-Final case records live under `data/case-library/<kind>/<slug>/raw/`. Preserve original bytes and relative paths inside each imported record root. Each case has a `manifest.json` with its original root and per-file SHA-256, plus `records.zip`; the library index maps current codes to stable slugs. Set `records.download` to that case archive and include the manifest as a secondary source. Keep source IDs stable during migration so bookmarked record selections still work. Source file references in presentation data must resolve to the same canonical case root. Verify with `python3 scripts/case-library.py --check`.
+Final case records live under `data/case-library/<kind>/<slug>/raw/`. Publish only sanitized evidence used by the case. Each case has a `manifest.json` describing the public files and per-file SHA-256, plus `records.zip`; the library index maps current codes to stable slugs. Set `records.download` to that case archive and include the manifest as a secondary source. Keep source IDs stable during migration so bookmarked record selections still work. Source file references in presentation data must resolve to the same canonical case root. Verify with `python3 scripts/case-library.py --check`.
 
 The catalogue group alias `ablation` resolves to `training`, preserving old case, pair and record links. Guidance comparison uses `kind: "training"`, `template: "comparison"`; template and category are independent. The article embed may retain its internal `ablation` composition style without creating a separate catalogue group.

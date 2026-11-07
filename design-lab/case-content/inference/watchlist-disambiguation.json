@@ -975,13 +975,6 @@
         "format": "auto"
       },
       {
-        "id": "BF16/request_metadata.json",
-        "label": "BF16/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/BF16/result.json",
@@ -1020,13 +1013,6 @@
         "id": "BitDistiller/done.json",
         "label": "BitDistiller/done.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BitDistiller/request_metadata.json",
-        "label": "BitDistiller/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -1073,13 +1059,6 @@
         "format": "auto"
       },
       {
-        "id": "EfficientQAT/request_metadata.json",
-        "label": "EfficientQAT/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "EfficientQAT/result.json",
         "label": "EfficientQAT/result.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/EfficientQAT/result.json",
@@ -1118,13 +1097,6 @@
         "id": "GPTQ/done.json",
         "label": "GPTQ/done.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "GPTQ/request_metadata.json",
-        "label": "GPTQ/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -1171,13 +1143,6 @@
         "format": "auto"
       },
       {
-        "id": "On-Policy QAD/request_metadata.json",
-        "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "On-Policy QAD/result.json",
         "label": "On-Policy QAD/result.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/On-Policy QAD/result.json",
@@ -1216,13 +1181,6 @@
         "id": "Ours/done.json",
         "label": "Ours/done.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "Ours/request_metadata.json",
-        "label": "Ours/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -1269,13 +1227,6 @@
         "format": "auto"
       },
       {
-        "id": "QeRL/request_metadata.json",
-        "label": "QeRL/request_metadata.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "QeRL/result.json",
         "label": "QeRL/result.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/QeRL/result.json",
@@ -1307,20 +1258,6 @@
         "id": "ground_truth.json",
         "label": "ground_truth.json",
         "url": "data/case-library/inference/watchlist-disambiguation/raw/ground_truth.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "provenance.json",
-        "label": "provenance.json",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/provenance.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "summary.md",
-        "label": "summary.md",
-        "url": "data/case-library/inference/watchlist-disambiguation/raw/summary.md",
         "primary": false,
         "format": "auto"
       },

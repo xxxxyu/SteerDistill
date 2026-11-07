@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/scoring/wave_11005/EfficientQAT/scores/agentfly_custom/live/BFCL_v4_live_irrelevance_score.json",
+  "score_file": "/redacted/steerdistill-case-studies-20261017/reevaluation/scoring/wave_11005/EfficientQAT/scores/agentfly_custom/live/BFCL_v4_live_irrelevance_score.json",
   "header": {
     "accuracy": 0.7142857142857143,
     "correct_count": 5,
@@ -318,7 +318,7 @@
     ],
     "error_type": "irrelevance_error:decoder_success"
   },
-  "source_dir": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/methods/EfficientQAT/tasks/live_irrelevance_876-361-0/samples/trial_04",
+  "source_dir": "/redacted/steerdistill-case-studies-20261017/reevaluation/methods/EfficientQAT/tasks/live_irrelevance_876-361-0/samples/trial_04",
   "trial_index": 4,
   "missing_list_tools": false,
   "turn_limited": false,

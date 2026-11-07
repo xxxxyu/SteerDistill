@@ -330,7 +330,7 @@
     "/records/sources/13/label": "Free-form teacher guidance · Original guidance",
     "/records/sources/14/label": "Free-form teacher guidance · Task check",
     "/records/sources/15/label": "Free-form teacher guidance · Full trajectory",
-    "/records/sources/326/label": "File inventory and checksums",
+    "/records/sources/35/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -431,5 +431,5 @@
       "reason": "Actual agent reasoning and existing highlights, unchanged."
     }
   ],
-  "sourceSha256": "02a026795899676b9a1bdabc421f088ad9b28736452635c263eb9d4d33308e04"
+  "sourceSha256": "4851c92b896c12328f8c894049d8dee4d919243b54a0a315e6f2539364e0df7c"
 }

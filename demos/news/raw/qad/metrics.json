@@ -10,6 +10,6 @@
   "inference_seconds": 0.5037162000080571,
   "output_tokens": 61,
   "initial_image_sha256": "6c9ce52bc4c03e328c41ad4b0f220f628a5a84af7afbbb06e0448f6bf35381ac",
-  "directory": "/mnt/genming/benchmark-fast-news-20261103/qad/repeat-1/googlenews-4",
+  "directory": "/redacted/benchmark-fast-news-20261103/qad/repeat-1/googlenews-4",
   "status": "completed"
 }

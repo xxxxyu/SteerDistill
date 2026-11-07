@@ -244,20 +244,6 @@
         "format": "auto"
       },
       {
-        "id": "checksums.json",
-        "label": "原始文件校验值",
-        "url": "data/case-library/recovery/message-session-retry/raw/checksums.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "README.txt",
-        "label": "原始包说明",
-        "url": "data/case-library/recovery/message-session-retry/raw/README.txt",
-        "primary": false,
-        "format": "text"
-      },
-      {
         "id": "publication-manifest",
         "label": "文件清单与校验值",
         "url": "data/case-library/recovery/message-session-retry/manifest.json",

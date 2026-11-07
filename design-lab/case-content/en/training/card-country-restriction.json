@@ -15,12 +15,12 @@
     "/presentation/branches/0/reasoning/title": "Without guidance · Reasoning excerpt",
     "/presentation/branches/1/title": "With teacher guidance",
     "/presentation/branches/1/reasoning/title": "With teacher guidance · Reasoning excerpt",
-    "/records/sources/8/label": "Guided agent · Trajectory",
-    "/records/sources/42/label": "Unguided agent · Trajectory",
-    "/records/sources/84/label": "Teacher · Reference trajectory",
-    "/records/sources/112/label": "Configuration · Reference comparison",
-    "/records/sources/123/label": "Teacher · Guidance",
-    "/records/sources/130/label": "File inventory and checksums",
+    "/records/sources/3/label": "Guided agent · Trajectory",
+    "/records/sources/7/label": "Unguided agent · Trajectory",
+    "/records/sources/11/label": "Teacher · Reference trajectory",
+    "/records/sources/12/label": "Configuration · Reference comparison",
+    "/records/sources/16/label": "Teacher · Guidance",
+    "/records/sources/18/label": "File inventory and checksums",
     "/records/download/label": "Download full records"
   },
   "preserved": [
@@ -57,5 +57,5 @@
       "reason": "Offsets and text refer to the unchanged reasoning excerpt."
     }
   ],
-  "sourceSha256": "2bdc6cee0a5c9361ddd7fd6f718f6ddb67cda34c1820ca6e89bc4f75e5ba80a0"
+  "sourceSha256": "1dd83b0690af2965c2fbaa4e21d27c3517fcaa0abb5272fee6e67f3f62f62b49"
 }

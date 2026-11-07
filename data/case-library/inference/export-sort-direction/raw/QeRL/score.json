@@ -1,6 +1,6 @@
 {
   "passed": false,
-  "score_file": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/scoring/wave_30016/QeRL/scores/agentfly_custom/live/BFCL_v4_live_simple_score.json",
+  "score_file": "/redacted/steerdistill-case-studies-20261017/reevaluation/scoring/wave_30016/QeRL/scores/agentfly_custom/live/BFCL_v4_live_simple_score.json",
   "header": {
     "accuracy": 0.5,
     "correct_count": 1,
@@ -142,7 +142,7 @@
       }
     ]
   },
-  "source_dir": "/mnt/genming/steerdistill-case-studies-20261017/reevaluation/methods/QeRL/tasks/live_simple_31-8-1/samples/trial_02",
+  "source_dir": "/redacted/steerdistill-case-studies-20261017/reevaluation/methods/QeRL/tasks/live_simple_31-8-1/samples/trial_02",
   "trial_index": 2,
   "missing_list_tools": false,
   "turn_limited": false,

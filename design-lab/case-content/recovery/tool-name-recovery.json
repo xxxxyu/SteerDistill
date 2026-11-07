@@ -240,13 +240,6 @@
         "format": "auto"
       },
       {
-        "id": "BF16/request_metadata.json",
-        "label": "BF16/request_metadata.json",
-        "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
         "url": "data/case-library/recovery/tool-name-recovery/raw/BF16/result.json",
@@ -296,13 +289,6 @@
         "format": "auto"
       },
       {
-        "id": "Ours/request_metadata.json",
-        "label": "Ours/request_metadata.json",
-        "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "Ours/result.json",
         "label": "Ours/result.json",
         "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/result.json",
@@ -322,13 +308,6 @@
         "url": "data/case-library/recovery/tool-name-recovery/raw/Ours/trajectory.json",
         "primary": true,
         "format": "auto"
-      },
-      {
-        "id": "SUMMARY.md",
-        "label": "SUMMARY.md",
-        "url": "data/case-library/recovery/tool-name-recovery/raw/SUMMARY.md",
-        "primary": false,
-        "format": "text"
       },
       {
         "id": "analysis.json",

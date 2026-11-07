@@ -1,33 +1,23 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "id": "message-session-retry",
   "kind": "recovery",
-  "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_51",
+  "recordScope": "Sanitized publication evidence for the displayed case; transport logs, database dumps and import archives excluded.",
+  "sanitization": {
+    "version": 1,
+    "machinePaths": "Experiment host and user roots replaced with /redacted; simulated task paths preserved.",
+    "taskData": "Benchmark-provided simulated users, credentials and tool arguments retained as task evidence."
+  },
   "files": [
-    {
-      "path": "README.txt",
-      "bytes": 466,
-      "sha256": "d4cfd72866e329d4b3d2a2b9bd9febff8de9f6f101bdd61208e0c0b0f9a8f642"
-    },
-    {
-      "path": "case_data.zip",
-      "bytes": 96560,
-      "sha256": "0e68379b5959e9e7656fc32f59306c8f988af1dd711ce734bfe85a740c2bbd57"
-    },
     {
       "path": "category_score.jsonl",
       "bytes": 596475,
       "sha256": "a639f5c0a99a682715212e77b0aafd4964dae4c489b30f25e994f40485e08ea4"
     },
     {
-      "path": "checksums.json",
-      "bytes": 546,
-      "sha256": "5b1f32c2dc129065ad1ba0a47c848ee95d1405f93eee5b827ea2bb87ca205840"
-    },
-    {
       "path": "evidence.json",
-      "bytes": 725,
-      "sha256": "c9889223f4efeb23f7ba8cfbb97ba1acd535d41e073117851b9d0bbbc26c6099"
+      "bytes": 722,
+      "sha256": "d1dd3f4ef21aabd8793d917b4789928a9cb30c864916041da6b82f8aef28152f"
     },
     {
       "path": "recovery_excerpt.json",

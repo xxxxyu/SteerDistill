@@ -1,5 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "recordScope": "Sanitized publication evidence",
   "cases": [
     {
       "id": "directory-navigation",
@@ -8,12 +9,11 @@
       "section": "correction",
       "title": "读取文件前，先确认所在目录",
       "root": "data/case-library/training/directory-navigation",
-      "originalRoot": "data/cases/training_case/directory_navigation/multi_turn_base_22",
-      "files": 46,
-      "sourceBytes": 620944,
+      "files": 12,
+      "sourceBytes": 109648,
       "download": "data/case-library/training/directory-navigation/records.zip",
-      "archiveBytes": 228841,
-      "archiveSha256": "f1852482f9d09cad94415cc7804dee8518bfb44053daf7727eb5aff8f501bd63"
+      "archiveBytes": 24113,
+      "archiveSha256": "898dfef4cd0291d51c00dc121336ce3bed053a61b7dd269599c96bb732bbb2f7"
     },
     {
       "id": "create-and-write-matching-sentence",
@@ -22,12 +22,11 @@
       "section": "correction",
       "title": "新建文件，写入第二个包含关键词的句子",
       "root": "data/case-library/training/create-and-write-matching-sentence",
-      "originalRoot": "data/cases/training_case/reviewed-20261106/multi_turn_base_37",
-      "files": 120,
-      "sourceBytes": 3064423,
+      "files": 17,
+      "sourceBytes": 496217,
       "download": "data/case-library/training/create-and-write-matching-sentence/records.zip",
-      "archiveBytes": 426945,
-      "archiveSha256": "c48acc39c4248b7c3147537afe6d12236cb2443ad6632391dd2c964476de7534"
+      "archiveBytes": 74179,
+      "archiveSha256": "994d4d8b7321af1cb4ac6d5ac452687763275624cfbc481266dbed95b17eba6a"
     },
     {
       "id": "tool-list-numbering",
@@ -36,12 +35,11 @@
       "section": "correction",
       "title": "解锁车门时，误把列表序号加进工具名",
       "root": "data/case-library/training/tool-list-numbering",
-      "originalRoot": "data/cases/training_case/reviewed-20261106/multi_turn_long_context_50",
-      "files": 160,
-      "sourceBytes": 1856452,
+      "files": 16,
+      "sourceBytes": 224197,
       "download": "data/case-library/training/tool-list-numbering/records.zip",
-      "archiveBytes": 344865,
-      "archiveSha256": "67e65c3264510355ca78b2005a1237950540cae51536e5e022dd516cc81f8a60"
+      "archiveBytes": 40006,
+      "archiveSha256": "502d0d3fdef52965cb0fbff1aafb79c8055c1636a1f3542a2d63333e5c28fd7a"
     },
     {
       "id": "card-country-restriction",
@@ -50,12 +48,11 @@
       "section": "correction",
       "title": "限制银行卡的使用范围，不能只填国家名单",
       "root": "data/case-library/training/card-country-restriction",
-      "originalRoot": "data/cases/training_case/reviewed-20261106/banking_6_2",
-      "files": 130,
-      "sourceBytes": 7835143,
+      "files": 18,
+      "sourceBytes": 51012,
       "download": "data/case-library/training/card-country-restriction/records.zip",
-      "archiveBytes": 644516,
-      "archiveSha256": "01fc365b2fc2538db127bf80f8d83464e7879a5407eaf2b976087a78b2ed6126"
+      "archiveBytes": 19197,
+      "archiveSha256": "79794007a7d253c341f7c2dec862a511edd142ee9a400665e7f2fa1e76da615d"
     },
     {
       "id": "ticket-login-before-create",
@@ -64,12 +61,11 @@
       "section": "guidance-comparison",
       "title": "创建工单前，先登录工单系统",
       "root": "data/case-library/training/ticket-login-before-create",
-      "originalRoot": "data/cases/ablation_case/reviewed-20261106/multi_turn_base_110",
-      "files": 326,
-      "sourceBytes": 8411578,
+      "files": 35,
+      "sourceBytes": 1181050,
       "download": "data/case-library/training/ticket-login-before-create/records.zip",
-      "archiveBytes": 1259440,
-      "archiveSha256": "ed195aa6acedb67ade21157b51aed6ab43e0dc4b1c20d99b36b1d25db5e11386"
+      "archiveBytes": 139279,
+      "archiveSha256": "2e258318fbc4e48ba2fdf954011d011ba1cde5c73929b1e0caf3a2e49436e321"
     },
     {
       "id": "java-node-interface",
@@ -78,12 +74,11 @@
       "section": "request-interface",
       "title": "调用 Java 工具，保留工具名与参数名的大小写",
       "root": "data/case-library/inference/java-node-interface",
-      "originalRoot": "data/cases/paper_inference/simple_java_39",
-      "files": 52,
-      "sourceBytes": 119587,
+      "files": 44,
+      "sourceBytes": 116308,
       "download": "data/case-library/inference/java-node-interface/records.zip",
-      "archiveBytes": 52794,
-      "archiveSha256": "50be6476b21e53d6e1154a9bcb4356d9afa66eb7115cbb79c04fc3539b9a5911"
+      "archiveBytes": 50610,
+      "archiveSha256": "cfbaf7af4da38cf38f388238ef05031db611d65d7ade8b9bf753e6a51c63f48b"
     },
     {
       "id": "recipe-science-tools",
@@ -92,12 +87,11 @@
       "section": "request-interface",
       "title": "查询两项科学发现，保持工具名一致",
       "root": "data/case-library/inference/recipe-science-tools",
-      "originalRoot": "data/cases/paper_inference/parallel_multiple_198",
-      "files": 52,
-      "sourceBytes": 215161,
+      "files": 44,
+      "sourceBytes": 213136,
       "download": "data/case-library/inference/recipe-science-tools/records.zip",
-      "archiveBytes": 72385,
-      "archiveSha256": "1f8827e502d844fce071df82c95045546dee5c0dafb8822f192f51d5665f7e50"
+      "archiveBytes": 70351,
+      "archiveSha256": "0e286b4cd797279595bb6d553161be40e8bc929cbe36fac6166e94af435c44ac"
     },
     {
       "id": "export-sort-direction",
@@ -106,12 +100,11 @@
       "section": "request-interface",
       "title": "查询导出列表，区分排序字段与方向",
       "root": "data/case-library/inference/export-sort-direction",
-      "originalRoot": "data/cases/019_live_simple_31-8-1",
-      "files": 54,
-      "sourceBytes": 228842,
+      "files": 45,
+      "sourceBytes": 214992,
       "download": "data/case-library/inference/export-sort-direction/records.zip",
-      "archiveBytes": 81438,
-      "archiveSha256": "c957c7946b4fd346bfbc1e03acf2f890696bd09abfc7c935f185e664d858b57f"
+      "archiveBytes": 76139,
+      "archiveSha256": "9992068494556f717abffa0a38138cb6b112b5939d3eba89b506dac4f41f2f44"
     },
     {
       "id": "eleventh-month-flight",
@@ -120,12 +113,11 @@
       "section": "request-interface",
       "title": "预订十一月航班，避免误读为十二月",
       "root": "data/case-library/inference/eleventh-month-flight",
-      "originalRoot": "data/cases/032_multi_turn_miss_param_152",
-      "files": 54,
-      "sourceBytes": 894497,
+      "files": 45,
+      "sourceBytes": 845277,
       "download": "data/case-library/inference/eleventh-month-flight/records.zip",
-      "archiveBytes": 209147,
-      "archiveSha256": "70e877b9c9103098d8fa94eeac95b4620c40186c8c2a9426e36329ae3c19dfa2"
+      "archiveBytes": 198734,
+      "archiveSha256": "46e97a854a950c0eeb84c2378cf05d3d99fb20546c6fddee5f0dc73313750cd4"
     },
     {
       "id": "dancers-not-museum-artists",
@@ -134,12 +126,11 @@
       "section": "action-conditions",
       "title": "查询历史舞者，避免误用馆藏工具",
       "root": "data/case-library/inference/dancers-not-museum-artists",
-      "originalRoot": "data/cases/001_irrelevance_162",
-      "files": 54,
-      "sourceBytes": 163750,
+      "files": 45,
+      "sourceBytes": 150471,
       "download": "data/case-library/inference/dancers-not-museum-artists/records.zip",
-      "archiveBytes": 67019,
-      "archiveSha256": "8fdd4b03919c22ebe3bd3910244c8bf8ce4964ec391589f5cee33c5d96f7018a"
+      "archiveBytes": 61598,
+      "archiveSha256": "2efca6a3a18629b8543db97f384b7c066c3d896b3da1ca1f18092f94a7b4f29b"
     },
     {
       "id": "train-route-clarification",
@@ -148,12 +139,11 @@
       "section": "action-conditions",
       "title": "预订火车票前，先补齐出发地与目的地",
       "root": "data/case-library/inference/train-route-clarification",
-      "originalRoot": "data/cases/011_live_irrelevance_876-361-0",
-      "files": 54,
-      "sourceBytes": 360835,
+      "files": 45,
+      "sourceBytes": 346103,
       "download": "data/case-library/inference/train-route-clarification/records.zip",
-      "archiveBytes": 108190,
-      "archiveSha256": "6ebcfca06b72dd4a58efe9df98868d18b69a7d91518572fd294d9bc2b5fb389e"
+      "archiveBytes": 102479,
+      "archiveSha256": "dfb13af24dbebf60dcd9861f9f7c43fe90b7df46568845343caa0ec2495feaad"
     },
     {
       "id": "watchlist-disambiguation",
@@ -162,12 +152,11 @@
       "section": "action-conditions",
       "title": "移除自选股前，先确认公司名称",
       "root": "data/case-library/inference/watchlist-disambiguation",
-      "originalRoot": "data/cases/030_multi_turn_miss_param_117",
-      "files": 54,
-      "sourceBytes": 810840,
+      "files": 45,
+      "sourceBytes": 762695,
       "download": "data/case-library/inference/watchlist-disambiguation/records.zip",
-      "archiveBytes": 204846,
-      "archiveSha256": "e214f8a8e3aff3316b239028b415c601adbaa9130017ac9f97f4080ef26aae71"
+      "archiveBytes": 193695,
+      "archiveSha256": "3e0188cfc224e89352b35eb87badd2d3bf825485cbc27432221726e305896153"
     },
     {
       "id": "three-factorials",
@@ -176,12 +165,11 @@
       "section": "execution-state",
       "title": "计算三个阶乘，逐项完成工具调用",
       "root": "data/case-library/inference/three-factorials",
-      "originalRoot": "data/cases/paper_inference/parallel_60",
-      "files": 52,
-      "sourceBytes": 130985,
+      "files": 44,
+      "sourceBytes": 126855,
       "download": "data/case-library/inference/three-factorials/records.zip",
-      "archiveBytes": 51481,
-      "archiveSha256": "3758063903209b45a0bfab9c485869cb75cb7aa29d44e014c51c702ed99cf45f"
+      "archiveBytes": 49202,
+      "archiveSha256": "4b146ef5f17009f9630b54cbdd7b866e3a6e971e256fe7a323c4ed73000e43c4"
     },
     {
       "id": "files-written-before-reading",
@@ -190,12 +178,11 @@
       "section": "execution-state",
       "title": "创建三个文件后，继续写入指定内容",
       "root": "data/case-library/inference/files-written-before-reading",
-      "originalRoot": "data/cases/022_multi_turn_base_39",
-      "files": 54,
-      "sourceBytes": 734081,
+      "files": 45,
+      "sourceBytes": 683217,
       "download": "data/case-library/inference/files-written-before-reading/records.zip",
-      "archiveBytes": 164484,
-      "archiveSha256": "d925e743197d2ed7dc2909fbd454392b40603edfa65b512ffd9e019c99f4f894"
+      "archiveBytes": 153906,
+      "archiveSha256": "450adb8202504d2e9125493b80cb239f2e672bc2ee20345caba433838c933ff8"
     },
     {
       "id": "fuel-capacity",
@@ -204,12 +191,11 @@
       "section": null,
       "title": "加油超量报错后，查询余量再补足",
       "root": "data/case-library/recovery/fuel-capacity",
-      "originalRoot": "data/cases/recovery_case/multi_turn_miss_func_68",
-      "files": 20,
-      "sourceBytes": 231767,
+      "files": 17,
+      "sourceBytes": 229646,
       "download": "data/case-library/recovery/fuel-capacity/records.zip",
-      "archiveBytes": 60185,
-      "archiveSha256": "25fe91165c8936950fae6a281fde6028a2cd69a97e68aff537db8cb2eac4c478"
+      "archiveBytes": 58597,
+      "archiveSha256": "193f2e4795a9310a840363222628249c2c55fc9b0303b4ccc9acce83b23eca6d"
     },
     {
       "id": "tool-name-recovery",
@@ -218,12 +204,11 @@
       "section": null,
       "title": "查询油量报错后，改正工具名再加油",
       "root": "data/case-library/recovery/tool-name-recovery",
-      "originalRoot": "data/cases/recovery_case/multi_turn_long_context_68",
-      "files": 20,
-      "sourceBytes": 358596,
+      "files": 17,
+      "sourceBytes": 356200,
       "download": "data/case-library/recovery/tool-name-recovery/records.zip",
-      "archiveBytes": 84308,
-      "archiveSha256": "ca5bce9bec392ab2dac9b21b3da4e0ae0144f86c44831ab4a120cbbecf297eec"
+      "archiveBytes": 82584,
+      "archiveSha256": "7eb021252d187c76d62d122b0ff88f71d71c2cf03694606606818051f4f2a388"
     },
     {
       "id": "create-before-write",
@@ -232,12 +217,11 @@
       "section": null,
       "title": "写入报错后，先创建文件再重试",
       "root": "data/case-library/recovery/create-before-write",
-      "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_39",
-      "files": 8,
-      "sourceBytes": 787586,
+      "files": 5,
+      "sourceBytes": 687287,
       "download": "data/case-library/recovery/create-before-write/records.zip",
-      "archiveBytes": 199183,
-      "archiveSha256": "936363f6158982d6cd7af0f4987b026a7ab493d07c75e0c45a2c1d95c9e46e40"
+      "archiveBytes": 99139,
+      "archiveSha256": "430c24465ef746e070c5aa14e69e797859e04b3d843af893278b52c065502e8b"
     },
     {
       "id": "message-session-retry",
@@ -246,12 +230,11 @@
       "section": null,
       "title": "消息发送接连报错，修正参数并登录重试",
       "root": "data/case-library/recovery/message-session-retry",
-      "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_51",
-      "files": 8,
-      "sourceBytes": 767896,
+      "files": 5,
+      "sourceBytes": 670321,
       "download": "data/case-library/recovery/message-session-retry/records.zip",
-      "archiveBytes": 193777,
-      "archiveSha256": "8df81f076d86c11c9521ab3acefe34512649bd8b265cdd77700a378aa9e247bd"
+      "archiveBytes": 96432,
+      "archiveSha256": "f0abdda086e6b7a62f98ab5f0cbe03ca2f0a75e741a6e203034074315221bb3b"
     },
     {
       "id": "brake-pressure-retry",
@@ -260,12 +243,11 @@
       "section": null,
       "title": "刹车踩到一半仍无法启动，踩到底后重试成功",
       "root": "data/case-library/recovery/brake-pressure-retry",
-      "originalRoot": "data/cases/recovery_case/verified_20261103/multi_turn_base_84",
-      "files": 8,
-      "sourceBytes": 759282,
+      "files": 5,
+      "sourceBytes": 663319,
       "download": "data/case-library/recovery/brake-pressure-retry/records.zip",
-      "archiveBytes": 190537,
-      "archiveSha256": "6ea5b984202bc5ffdadee3ee417e44bc4e69a64c79a3df00c639b2a1f128bcdb"
+      "archiveBytes": 94802,
+      "archiveSha256": "0c24591663f82a44f6300d97557e16aab59f8d4b861b993e7700a283ff712fa8"
     }
   ]
 }

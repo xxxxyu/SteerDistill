@@ -1467,13 +1467,6 @@
         "format": "auto"
       },
       {
-        "id": "BF16/request_metadata.json",
-        "label": "BF16/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/BF16/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "BF16/result.json",
         "label": "BF16/result.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/BF16/result.json",
@@ -1512,13 +1505,6 @@
         "id": "BitDistiller/done.json",
         "label": "BitDistiller/done.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/BitDistiller/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BitDistiller/request_metadata.json",
-        "label": "BitDistiller/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -1565,13 +1551,6 @@
         "format": "auto"
       },
       {
-        "id": "EfficientQAT/request_metadata.json",
-        "label": "EfficientQAT/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/EfficientQAT/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "EfficientQAT/result.json",
         "label": "EfficientQAT/result.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/EfficientQAT/result.json",
@@ -1610,13 +1589,6 @@
         "id": "GPTQ/done.json",
         "label": "GPTQ/done.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/GPTQ/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "GPTQ/request_metadata.json",
-        "label": "GPTQ/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -1663,13 +1635,6 @@
         "format": "auto"
       },
       {
-        "id": "On-Policy QAD/request_metadata.json",
-        "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/On-Policy QAD/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "On-Policy QAD/result.json",
         "label": "On-Policy QAD/result.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/On-Policy QAD/result.json",
@@ -1708,13 +1673,6 @@
         "id": "Ours/done.json",
         "label": "Ours/done.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/Ours/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "Ours/request_metadata.json",
-        "label": "Ours/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -1761,13 +1719,6 @@
         "format": "auto"
       },
       {
-        "id": "QeRL/request_metadata.json",
-        "label": "QeRL/request_metadata.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/QeRL/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "QeRL/result.json",
         "label": "QeRL/result.json",
         "url": "data/case-library/inference/files-written-before-reading/raw/QeRL/result.json",
@@ -1801,20 +1752,6 @@
         "url": "data/case-library/inference/files-written-before-reading/raw/ground_truth.json",
         "primary": false,
         "format": "auto"
-      },
-      {
-        "id": "provenance.json",
-        "label": "provenance.json",
-        "url": "data/case-library/inference/files-written-before-reading/raw/provenance.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "summary.md",
-        "label": "summary.md",
-        "url": "data/case-library/inference/files-written-before-reading/raw/summary.md",
-        "primary": false,
-        "format": "text"
       },
       {
         "id": "task.json",

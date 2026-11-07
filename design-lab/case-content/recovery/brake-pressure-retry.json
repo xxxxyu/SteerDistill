@@ -244,18 +244,6 @@
         "format": "auto"
       },
       {
-        "id": "checksums",
-        "label": "文件校验和",
-        "url": "data/case-library/recovery/brake-pressure-retry/raw/checksums.json",
-        "format": "auto"
-      },
-      {
-        "id": "readme",
-        "label": "原始数据包说明",
-        "url": "data/case-library/recovery/brake-pressure-retry/raw/README.txt",
-        "format": "text"
-      },
-      {
         "id": "publication-manifest",
         "label": "文件清单与校验值",
         "url": "data/case-library/recovery/brake-pressure-retry/manifest.json",

@@ -612,13 +612,6 @@
         "format": "auto"
       },
       {
-        "id": "bf16-request-metadata",
-        "label": "BF16/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/BF16/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "bf16-result",
         "label": "BF16/result.json",
         "url": "data/case-library/inference/three-factorials/raw/BF16/result.json",
@@ -657,13 +650,6 @@
         "id": "bitdistiller-done",
         "label": "BitDistiller/done.json",
         "url": "data/case-library/inference/three-factorials/raw/BitDistiller/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "bitdistiller-request-metadata",
-        "label": "BitDistiller/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/BitDistiller/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -710,13 +696,6 @@
         "format": "auto"
       },
       {
-        "id": "efficientqat-request-metadata",
-        "label": "EfficientQAT/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/EfficientQAT/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "efficientqat-result",
         "label": "EfficientQAT/result.json",
         "url": "data/case-library/inference/three-factorials/raw/EfficientQAT/result.json",
@@ -755,13 +734,6 @@
         "id": "gptq-done",
         "label": "GPTQ/done.json",
         "url": "data/case-library/inference/three-factorials/raw/GPTQ/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "gptq-request-metadata",
-        "label": "GPTQ/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/GPTQ/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -808,13 +780,6 @@
         "format": "auto"
       },
       {
-        "id": "qad-request-metadata",
-        "label": "On-Policy QAD/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/On-Policy QAD/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "qad-result",
         "label": "On-Policy QAD/result.json",
         "url": "data/case-library/inference/three-factorials/raw/On-Policy QAD/result.json",
@@ -853,13 +818,6 @@
         "id": "ours-done",
         "label": "Ours/done.json",
         "url": "data/case-library/inference/three-factorials/raw/Ours/done.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "ours-request-metadata",
-        "label": "Ours/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/Ours/request_metadata.json",
         "primary": false,
         "format": "auto"
       },
@@ -906,13 +864,6 @@
         "format": "auto"
       },
       {
-        "id": "qerl-request-metadata",
-        "label": "QeRL/request_metadata.json",
-        "url": "data/case-library/inference/three-factorials/raw/QeRL/request_metadata.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "qerl-result",
         "label": "QeRL/result.json",
         "url": "data/case-library/inference/three-factorials/raw/QeRL/result.json",
@@ -932,13 +883,6 @@
         "url": "data/case-library/inference/three-factorials/raw/QeRL/trajectory.json",
         "primary": true,
         "format": "auto"
-      },
-      {
-        "id": "summary",
-        "label": "SUMMARY.md",
-        "url": "data/case-library/inference/three-factorials/raw/SUMMARY.md",
-        "primary": false,
-        "format": "text"
       },
       {
         "id": "ground-truth",

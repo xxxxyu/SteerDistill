@@ -10,6 +10,6 @@
   "inference_seconds": 6.990538203099277,
   "output_tokens": 507,
   "initial_image_sha256": "90518d1000e5f62f09170f6e443919ec3a0217751d73b96766863db01a29a7bc",
-  "directory": "/mnt/genming/benchmark-fast-sampling-20261103/bf16/repeat-2/slack-5",
+  "directory": "/redacted/benchmark-fast-sampling-20261103/bf16/repeat-2/slack-5",
   "status": "completed"
 }

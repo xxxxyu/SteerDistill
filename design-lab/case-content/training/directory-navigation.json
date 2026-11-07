@@ -236,90 +236,6 @@
         "format": "auto"
       },
       {
-        "id": "BF16/requests/00.json",
-        "label": "BF16/requests/00.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/requests/00.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/requests/01.json",
-        "label": "BF16/requests/01.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/requests/01.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/requests/02.json",
-        "label": "BF16/requests/02.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/requests/02.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/requests/03.json",
-        "label": "BF16/requests/03.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/requests/03.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/requests/04.json",
-        "label": "BF16/requests/04.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/requests/04.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/requests/05.json",
-        "label": "BF16/requests/05.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/requests/05.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/responses/00.json",
-        "label": "BF16/responses/00.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/responses/00.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/responses/01.json",
-        "label": "BF16/responses/01.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/responses/01.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/responses/02.json",
-        "label": "BF16/responses/02.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/responses/02.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/responses/03.json",
-        "label": "BF16/responses/03.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/responses/03.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/responses/04.json",
-        "label": "BF16/responses/04.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/responses/04.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "BF16/responses/05.json",
-        "label": "BF16/responses/05.json",
-        "url": "data/case-library/training/directory-navigation/raw/BF16/responses/05.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "BF16/score.json",
         "label": "BF16/score.json",
         "url": "data/case-library/training/directory-navigation/raw/BF16/score.json",
@@ -334,72 +250,9 @@
         "format": "auto"
       },
       {
-        "id": "SUMMARY.md",
-        "label": "SUMMARY.md",
-        "url": "data/case-library/training/directory-navigation/raw/SUMMARY.md",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "after/execution.json",
         "label": "after/execution.json",
         "url": "data/case-library/training/directory-navigation/raw/after/execution.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/requests/00.json",
-        "label": "after/requests/00.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/requests/00.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/requests/01.json",
-        "label": "after/requests/01.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/requests/01.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/requests/02.json",
-        "label": "after/requests/02.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/requests/02.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/requests/03.json",
-        "label": "after/requests/03.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/requests/03.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/responses/00.json",
-        "label": "after/responses/00.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/responses/00.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/responses/01.json",
-        "label": "after/responses/01.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/responses/01.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/responses/02.json",
-        "label": "after/responses/02.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/responses/02.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "after/responses/03.json",
-        "label": "after/responses/03.json",
-        "url": "data/case-library/training/directory-navigation/raw/after/responses/03.json",
         "primary": false,
         "format": "auto"
       },
@@ -425,34 +278,6 @@
         "format": "auto"
       },
       {
-        "id": "before/requests/00.json",
-        "label": "before/requests/00.json",
-        "url": "data/case-library/training/directory-navigation/raw/before/requests/00.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "before/requests/01.json",
-        "label": "before/requests/01.json",
-        "url": "data/case-library/training/directory-navigation/raw/before/requests/01.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "before/responses/00.json",
-        "label": "before/responses/00.json",
-        "url": "data/case-library/training/directory-navigation/raw/before/responses/00.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "before/responses/01.json",
-        "label": "before/responses/01.json",
-        "url": "data/case-library/training/directory-navigation/raw/before/responses/01.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "before/score.json",
         "label": "before/score.json",
         "url": "data/case-library/training/directory-navigation/raw/before/score.json",
@@ -467,55 +292,6 @@
         "format": "auto"
       },
       {
-        "id": "checksums.json",
-        "label": "checksums.json",
-        "url": "data/case-library/training/directory-navigation/raw/checksums.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "context_before.json",
-        "label": "context_before.json",
-        "url": "data/case-library/training/directory-navigation/raw/context_before.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "environment_manifest.json",
-        "label": "environment_manifest.json",
-        "url": "data/case-library/training/directory-navigation/raw/environment_manifest.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "environment_tools.txt",
-        "label": "environment_tools.txt",
-        "url": "data/case-library/training/directory-navigation/raw/environment_tools.txt",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "run_manifest.json",
-        "label": "run_manifest.json",
-        "url": "data/case-library/training/directory-navigation/raw/run_manifest.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "steering/prompt.txt",
-        "label": "steering/prompt.txt",
-        "url": "data/case-library/training/directory-navigation/raw/steering/prompt.txt",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "steering/request.json",
-        "label": "steering/request.json",
-        "url": "data/case-library/training/directory-navigation/raw/steering/request.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
         "id": "steering/response.json",
         "label": "Teacher · 指导",
         "url": "data/case-library/training/directory-navigation/raw/steering/response.json",
@@ -526,13 +302,6 @@
         "id": "task.json",
         "label": "task.json",
         "url": "data/case-library/training/directory-navigation/raw/task.json",
-        "primary": false,
-        "format": "auto"
-      },
-      {
-        "id": "tools.json",
-        "label": "tools.json",
-        "url": "data/case-library/training/directory-navigation/raw/tools.json",
         "primary": false,
         "format": "auto"
       },

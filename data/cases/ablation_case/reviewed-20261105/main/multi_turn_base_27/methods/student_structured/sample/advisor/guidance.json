@@ -1,4 +1,0 @@
-{
-  "text": "{\n\n\"precondition\": \"Current directory is not set to 'workspace'\", \n\"decision_rule\": \"Call mcp_tool_cd with folder='workspace' to navigate into the workspace directory before attempting the rename operation.\", \n\"expected_transition\": \"Successfully rename 'project_plan.md' to 'project_overview.md' within the workspace directory.\", \n\"recovery_check\": \"Verify current working directory is 'workspace' and confirm 'project_plan.md' exists there before proceeding with the rename.\"\n}",
-  "variant": "student_structured"
-}
