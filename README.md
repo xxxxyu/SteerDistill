@@ -23,25 +23,9 @@ The pipeline starts from task-specific, post-RL BF16 checkpoints and covers data
 preparation, clipping calibration, quantized model export, online distillation,
 and evaluation.
 
-## Main results
-
-Average scores across five benchmarks (percent; higher is better):
-
-| Model | BF16 | QeRL W4A16 | SteerDistill W4A16 |
-| --- | ---: | ---: | ---: |
-| Qwen3-8B | 53.54 | 51.00 | **53.18** |
-| Qwen3.5-4B | 61.68 | 59.24 | **60.95** |
-| Gemma 4 12B-it | 65.13 | 62.64 | **64.31** |
-
-SteerDistill improves on QeRL, the strongest W4A16 baseline, by 1.67–2.18 points
-and stays within one point of BF16. On Qwen3-8B / tau2-Bench, its 32-GPUh
-checkpoint exceeds QeRL at 96 GPUh by 1.84 points in success rate, using 67%
-fewer training GPU hours. See [paper results](docs/experiments/README.md) for
-all benchmark scores, ablations, and efficiency comparisons.
-
 ## Models and benchmarks
 
-| Model | Paper precisions | Training guide |
+| Model | Precision | Training guide |
 | --- | --- | --- |
 | Qwen3-8B | W4A16, W4A8, W2A16 | [Qwen3-8B](docs/training/README.md#qwen3-8b) |
 | Qwen3.5-4B | W4A16 | [Qwen3.5-4B](docs/training/README.md#qwen35-4b) |
@@ -121,8 +105,6 @@ completed checkpoint. Outputs go to
 | [Data preparation](docs/data/README.md) | Training inputs and calibration preprocessing |
 | [Quantization and training](docs/training/README.md) | Model-specific commands and training outputs |
 | [Evaluation](docs/evaluation/README.md) | Benchmark protocols and checkpoint selection |
-| [Paper results](docs/experiments/README.md) | Scores, ablations, and efficiency comparisons |
-| [Figure generation](docs/figures.md) | Plotting the included numerical results |
 
 ## For agents
 
