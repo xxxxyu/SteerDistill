@@ -1,20 +1,22 @@
-# Published case evidence / 正式案例证据
+# Published case evidence
 
 19 reviewed cases: 5 training, 9 inference, and 5 autonomous recovery cases.
 
-- `raw/` holds the **sanitized publication records**, not untouched private originals.
+## Files
+
+- `raw/` holds the sanitized publication records.
 - `manifest.json` lists the distributed files, their byte sizes, SHA-256 hashes, and sanitization scope.
 - `records.zip` contains the same `raw/` files and manifest.
 - [index.json](index.json) maps stable slugs to displayed case codes and archive hashes.
 
-Research-machine host/user path roots are replaced with `/redacted`. Task paths,
-actions, tool arguments, reasoning, outcomes, and mock benchmark account fields
-are preserved. Import ZIPs, SQLite databases, transport/tokenization logs,
-unselected cases, and stale import checksums are excluded. Hashes describe this
-public copy; they do not assert byte identity with the private originals.
+## Sanitization
 
-本目录只保留网站当前展示案例的证据。实验机器路径已脱敏；任务中的模拟路径、
-工具调用、指导和执行结果保持原义。公开清单与 ZIP 的哈希均按脱敏后的文件重算。
+Research-machine host/user path roots are replaced with `/redacted`. Task paths, actions, tool
+arguments, reasoning, outcomes, and mock benchmark account fields are preserved. Import ZIPs, SQLite
+databases, transport/tokenization logs, unselected cases, and stale import checksums are excluded.
+Hashes verify the sanitized public files.
+
+## Cases
 
 | Code | Case | Evidence | Download |
 | --- | --- | --- | --- |
@@ -38,7 +40,8 @@ public copy; they do not assert byte identity with the private originals.
 | R4 | 消息发送接连报错，修正参数并登录重试 | [5 files](recovery/message-session-retry/manifest.json) | [ZIP](recovery/message-session-retry/records.zip) |
 | R5 | 刹车踩到一半仍无法启动，踩到底后重试成功 | [5 files](recovery/brake-pressure-retry/manifest.json) | [ZIP](recovery/brake-pressure-retry/records.zip) |
 
-From the repository root, run `python3 scripts/case-library.py --check`.
-After reviewing a changed manifest, rebuild the deterministic ZIPs with
-`python3 scripts/case-library.py --package`. Run the full publication checks
-with `python3 scripts/check-release.py`.
+## Validation
+
+From the repository root, run `python3 scripts/case-library.py --check`. After reviewing a changed
+manifest, rebuild the deterministic ZIPs with `python3 scripts/case-library.py --package`. Run the
+full publication checks with `python3 scripts/check-release.py`.
